@@ -1,0 +1,752 @@
+/* =========================================================
+   READING ORDERS VIỆT NAM - ADDON STYLES
+   Tích hợp tương tác thông minh trên nền tảng bản mirror gốc
+   ========================================================= */
+
+/* --- Top Quick Action Floating Bar --- */
+#ro-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  z-index: 100000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+#ro-top-bar::-webkit-scrollbar {
+  display: none;
+}
+
+body.has-ro-bar {
+  padding-top: 38px !important;
+}
+
+.ro-bar-left, .ro-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ro-badge {
+  background: #e42525;
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ro-btn {
+  background: #333;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.ro-btn:hover {
+  background: #e42525;
+  color: #fff !important;
+  border-color: #e42525;
+}
+
+.ro-search-trigger {
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 16px;
+  padding: 4px 14px;
+  color: #aaa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.ro-search-trigger:hover {
+  background: #2a2a2a;
+  border-color: #e42525;
+  color: #fff;
+}
+
+.ro-search-kbd {
+  background: #333;
+  color: #ccc;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid #555;
+}
+
+/* --- Progress Bar Card on Reading Order Pages --- */
+.ro-tracker-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #e42525;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 18px 0 24px 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.ro-tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ro-tracker-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ro-tracker-stats {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e42525;
+}
+
+.ro-tracker-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.ro-tracker-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e42525, #febd11);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.ro-tracker-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ro-tracker-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s;
+}
+
+.ro-tracker-btn:hover {
+  background: #e42525;
+  color: #fff;
+  border-color: #e42525;
+}
+
+/* --- Interactive Issue Item --- */
+.ro-issue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin: 2px 0;
+  transition: background 0.15s ease;
+  line-height: 1.5;
+}
+
+.ro-issue-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.ro-issue-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.ro-issue-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #e42525;
+  flex-shrink: 0;
+}
+
+.ro-issue-item.is-read .ro-issue-label {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.ro-issue-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.ro-read-link-btn {
+  background: #f0f0f0;
+  color: #0066cc;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 11px;
+  text-decoration: none !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.ro-read-link-btn:hover {
+  background: #e42525;
+  color: #ffffff !important;
+  border-color: #e42525;
+}
+
+/* --- Global Search Modal --- */
+.ro-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 200000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.ro-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ro-search-box {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 680px;
+  max-height: 80vh;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: roSlideDown 0.2s ease;
+}
+
+@keyframes roSlideDown {
+  from { transform: translateY(-20px); }
+  to { transform: translateY(0); }
+}
+
+.ro-search-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ro-search-input {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  color: #222;
+  background: transparent;
+}
+
+.ro-search-results {
+  overflow-y: auto;
+  padding: 8px 0;
+  max-height: 55vh;
+}
+
+.ro-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  text-decoration: none !important;
+  color: #333;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.ro-search-item:hover, .ro-search-item.is-selected {
+  background: #f5f8ff;
+  color: #e42525;
+}
+
+.ro-search-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.ro-search-item-badge {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.badge-marvel { background: #fee2e2; color: #dc2626; }
+.badge-dc { background: #dbeafe; color: #2563eb; }
+.badge-other { background: #fef3c7; color: #d97706; }
+
+.ro-search-footer {
+  padding: 10px 18px;
+  border-top: 1px solid #eee;
+  background: #fbfbfb;
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- Auth Modal & User Status --- */
+.ro-user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #f1f1f1;
+}
+
+.ro-user-badge.is-admin {
+  background: #e42525;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ro-auth-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: roSlideDown 0.2s ease;
+  padding: 24px;
+  position: relative;
+}
+
+.ro-auth-tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+
+.ro-auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.ro-auth-tab.active {
+  color: #e42525;
+  border-bottom-color: #e42525;
+}
+
+.ro-form-group {
+  margin-bottom: 14px;
+}
+
+.ro-form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.ro-form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ro-form-input:focus {
+  border-color: #e42525;
+}
+
+.ro-form-btn {
+  width: 100%;
+  padding: 10px;
+  background: #e42525;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ro-form-btn:hover {
+  background: #cc1f1f;
+}
+
+.ro-auth-msg {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: none;
+}
+
+.ro-auth-msg.error {
+  display: block;
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.ro-auth-msg.success {
+  display: block;
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
+
+.ro-admin-setup-btn {
+  background: #333;
+  color: #febd11 !important;
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.ro-admin-setup-btn:hover {
+  background: #000;
+  border-color: #febd11;
+}
+
+.ro-admin-banner {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Global Reading Progress Dashboard --- */
+.ro-dashboard-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 620px;
+  max-height: 80vh;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: roSlideDown 0.2s ease;
+  position: relative;
+}
+
+.ro-dashboard-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ro-dashboard-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ro-dashboard-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.ro-dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ro-stat-box {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.ro-stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e42525;
+}
+
+.ro-stat-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.ro-dashboard-item {
+  background: #fdfdfd;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.ro-dashboard-item:hover {
+  border-color: #e42525;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ro-dashboard-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.ro-dashboard-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+
+.ro-dashboard-item-title:hover {
+  color: #e42525;
+}
+
+/* Huy hiệu tiến độ trên trang danh mục (Directory badges) */
+.ro-dir-badge {
+  display: inline-block;
+  background: #e42525;
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  text-decoration: none !important;
+}
+
+.ro-dir-badge.completed {
+  background: #16a34a;
+}
+
+p.has-ro-issues {
+  margin-top: 0 !important;
+  margin-bottom: 3px !important;
+}
+
+/* --- Khắc phục thanh Menu không bị tràn hoặc che nội dung khi dịch --- */
+.x-navbar .desktop .x-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.x-navbar .desktop .x-nav > li > a {
+  font-size: 17px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  height: 56px !important;
+  padding-top: 17px !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.5px !important;
+}
+
+.x-navbar .desktop .x-nav > li ul {
+  top: 56px !important;
+}
+
+.x-navbar-inner {
+  min-height: 56px !important;
+}
+
+body.x-navbar-fixed-top-active .x-navbar-wrap {
+  height: auto !important;
+  min-height: 56px !important;
+}
+
+/* =========================================================
+   RESPONSIVE: TOP BAR - Tránh vỡ khi thu nhỏ cửa sổ
+   ========================================================= */
+
+/* Màn hình nhỏ trung bình (< 1024px): ẩn nav links Marvel/DC/Other */
+@media (max-width: 1023px) {
+  /* Ẩn các nav link phụ (Marvel, DC, Truyện Khác) */
+  #ro-top-bar .ro-bar-right > a.ro-btn {
+    display: none !important;
+  }
+
+  /* Thu gọn nút ngôn ngữ */
+  #ro-lang-btn {
+    font-size: 11px !important;
+    padding: 3px 7px !important;
+  }
+
+  /* Thu gọn tiến độ */
+  #ro-open-dashboard {
+    font-size: 12px !important;
+    padding: 3px 8px !important;
+  }
+}
+
+/* Màn hình nhỏ (< 768px): ẩn text dài */
+@media (max-width: 767px) {
+  /* Ẩn text tìm kiếm dài */
+  .ro-search-text {
+    display: none !important;
+  }
+
+  /* Ẩn text ngôn ngữ */
+  .ro-lang-text {
+    display: none !important;
+  }
+
+  /* Ẩn text tiến độ, chỉ giữ icon + số */
+  .ro-dashboard-text {
+    display: none !important;
+  }
+
+  /* Hiện số count riêng bên cạnh icon */
+  #ro-open-dashboard::after {
+    content: ' ' attr(data-count);
+    font-size: 12px;
+  }
+
+  /* Ẩn summary tracker */
+  #ro-global-tracker-summary {
+    display: none !important;
+  }
+
+  /* Rút gọn gaps */
+  .ro-bar-left, .ro-bar-right {
+    gap: 6px !important;
+  }
+}
+
+/* Màn hình rất nhỏ (< 540px): rút gọn tối đa */
+@media (max-width: 539px) {
+  /* Ẩn "Reading Orders VN" text, chỉ giữ icon */
+  #ro-top-bar .ro-bar-left > a.ro-btn {
+    font-size: 0 !important;
+    padding: 4px 7px !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Hiện lại emoji */
+  #ro-top-bar .ro-bar-left > a.ro-btn::before {
+    content: '📚';
+    font-size: 15px;
+  }
+
+  /* Rút gọn gaps */
+  .ro-bar-left, .ro-bar-right {
+    gap: 4px !important;
+  }
+
+  .ro-btn {
+    padding: 3px 7px !important;
+    font-size: 11px !important;
+  }
+}

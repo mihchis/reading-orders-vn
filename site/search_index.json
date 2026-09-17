@@ -1,0 +1,5483 @@
+[
+  {
+    "id": "2099-reading-order",
+    "title": "2099 Reading Order",
+    "slug": "2099-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/2099-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "a-fresh-start-reading-order",
+    "title": "A Fresh Start Reading Order",
+    "slug": "a-fresh-start-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/a-fresh-start-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "a-x-e-judgment-day-reading-order",
+    "title": "A.X.E.: Judgment Day Reading Order",
+    "slug": "a-x-e-judgment-day-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/a-x-e-judgment-day-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "absolute-carnage-reading-order",
+    "title": "Absolute Carnage Reading Order",
+    "slug": "absolute-carnage-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/absolute-carnage-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "acts-of-vengeance-reading-order",
+    "title": "Acts of Vengeance Reading Order",
+    "slug": "acts-of-vengeance-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/acts-of-vengeance-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "age-of-apocalypse-reading-order",
+    "title": "Age of Apocalypse Reading Order",
+    "slug": "age-of-apocalypse-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/age-of-apocalypse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "age-of-ultron-reading-order",
+    "title": "Age of Ultron Reading Order",
+    "slug": "age-of-ultron-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/age-of-ultron-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "age-of-x-man-reading-order",
+    "title": "Age of X-Man Reading Order",
+    "slug": "age-of-x-man-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/age-of-x-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "age-of-x-reading-order",
+    "title": "Age of X Reading Order",
+    "slug": "age-of-x-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/age-of-x-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "all-new-all-different-marvel-reading-order",
+    "title": "All-New, All-Different Marvel Reading Order",
+    "slug": "all-new-all-different-marvel-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/all-new-all-different-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "annihilation-conquest-reading-order",
+    "title": "Annihilation: Conquest Reading Order",
+    "slug": "annihilation-conquest-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/annihilation-conquest-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "annihilation-reading-order",
+    "title": "Annihilation Reading Order",
+    "slug": "annihilation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/annihilation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "annihilation-scourge-reading-order",
+    "title": "Annihilation: Scourge Reading Order",
+    "slug": "annihilation-scourge-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/annihilation-scourge-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "apocalypse-the-twelve-reading-order",
+    "title": "Apocalypse: The Twelve Reading Order",
+    "slug": "apocalypse-the-twelve-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/apocalypse-the-twelve-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "apocalypse-wars-reading-order",
+    "title": "Apocalypse Wars Reading Order",
+    "slug": "apocalypse-wars-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/apocalypse-wars-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "atlantis-attacks-reading-order",
+    "title": "Atlantis Attacks Reading Order",
+    "slug": "atlantis-attacks-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/atlantis-attacks-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-assemble-reading-order",
+    "title": "Avengers Assemble Reading Order",
+    "slug": "avengers-assemble-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-assemble-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-defenders-war-reading-order",
+    "title": "Avengers/Defenders War Reading Order",
+    "slug": "avengers-defenders-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-defenders-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-disassembled-reading-order",
+    "title": "Avengers Disassembled Reading Order",
+    "slug": "avengers-disassembled-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-disassembled-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-standoff-reading-order",
+    "title": "Avengers: Standoff! Reading Order",
+    "slug": "avengers-standoff-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-standoff-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-vs-x-men-reading-order",
+    "title": "Avengers vs. X-Men Reading Order",
+    "slug": "avengers-vs-x-men-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-vs-x-men-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-x-men-axis-reading-order",
+    "title": "Avengers &amp; X-Men: AXIS Reading Order",
+    "slug": "avengers-x-men-axis-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/avengers-x-men-axis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "battle-of-the-atom-reading-order",
+    "title": "Battle of the Atom Reading Order",
+    "slug": "battle-of-the-atom-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/battle-of-the-atom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-vortex-reading-order",
+    "title": "Black Vortex Reading Order",
+    "slug": "black-vortex-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/black-vortex-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blood-and-thunder-reading-order",
+    "title": "Blood and Thunder Reading Order",
+    "slug": "blood-and-thunder-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/blood-and-thunder-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blood-hunt-reading-order",
+    "title": "Blood Hunt Reading Order",
+    "slug": "blood-hunt-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/blood-hunt-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bloodties-reading-order",
+    "title": "Bloodties Reading Order",
+    "slug": "bloodties-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/bloodties-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "chaos-war-reading-order",
+    "title": "Chaos War Reading Order",
+    "slug": "chaos-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/chaos-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "childs-play-reading-order",
+    "title": "Child&#039;s Play Reading Order",
+    "slug": "childs-play-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/childs-play-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "civil-war-ii-reading-order",
+    "title": "Civil War II Reading Order",
+    "slug": "civil-war-ii-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/civil-war-ii-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "civil-war-reading-order",
+    "title": "Civil War Reading Order",
+    "slug": "civil-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/civil-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cosmic-marvel-reading-order",
+    "title": "Cosmic Marvel (1966-2016) Reading Order",
+    "slug": "cosmic-marvel-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/cosmic-marvel-reading-order/",
+    "year": "1966-2016"
+  },
+  {
+    "id": "countdown-reading-order",
+    "title": "Countdown Reading Order",
+    "slug": "countdown-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/countdown-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "curse-of-the-mutants-reading-order",
+    "title": "Curse of the Mutants Reading Order",
+    "slug": "curse-of-the-mutants-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/curse-of-the-mutants-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "damnation-reading-order",
+    "title": "Damnation Reading Order",
+    "slug": "damnation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/damnation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dark-reign-reading-order",
+    "title": "Dark Reign Reading Order",
+    "slug": "dark-reign-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/dark-reign-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dark-web-reading-order",
+    "title": "Dark Web Reading Order",
+    "slug": "dark-web-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/dark-web-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "days-of-future-present-reading-order",
+    "title": "Days of Future Present Reading Order",
+    "slug": "days-of-future-present-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/days-of-future-present-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dead-mans-hand-reading-order",
+    "title": "Dead Man&#039;s Hand Reading Order",
+    "slug": "dead-mans-hand-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/dead-mans-hand-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dead-no-more-clone-conspiracy-reading-order",
+    "title": "Dead No More: The Clone Conspiracy Reading Order",
+    "slug": "dead-no-more-clone-conspiracy-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/dead-no-more-clone-conspiracy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "death-of-doctor-strange-reading-order",
+    "title": "Death of Doctor Strange Reading Order",
+    "slug": "death-of-doctor-strange-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/death-of-doctor-strange-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "death-of-wolverine-reading-order",
+    "title": "Death of Wolverine Reading Order",
+    "slug": "death-of-wolverine-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/death-of-wolverine-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "decimation-reading-order",
+    "title": "Decimation Reading Order",
+    "slug": "decimation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/decimation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "devils-reign-reading-order",
+    "title": "Devil&#039;s Reign Reading Order",
+    "slug": "devils-reign-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/devils-reign-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "earth-x-reading-order",
+    "title": "Earth X Reading Order",
+    "slug": "earth-x-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/earth-x-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "eighth-day-reading-order",
+    "title": "Eighth Day Reading Order",
+    "slug": "eighth-day-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/eighth-day-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "empyre-reading-order",
+    "title": "Empyre Reading Order",
+    "slug": "empyre-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/empyre-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "eve-of-destruction-reading-order",
+    "title": "Eve of Destruction Reading Order",
+    "slug": "eve-of-destruction-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/eve-of-destruction-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "evolutionary-war-reading-order",
+    "title": "Evolutionary War Reading Order",
+    "slug": "evolutionary-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/evolutionary-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fall-of-the-hulks-reading-order",
+    "title": "Fall of the Hulks Reading Order",
+    "slug": "fall-of-the-hulks-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/fall-of-the-hulks-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fall-of-the-mutants-reading-order",
+    "title": "Fall of the Mutants Reading Order",
+    "slug": "fall-of-the-mutants-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/fall-of-the-mutants-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fatal-attractions-reading-order",
+    "title": "Fatal Attractions Reading Order",
+    "slug": "fatal-attractions-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/fatal-attractions-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fear-itself-reading-order",
+    "title": "Fear Itself Reading Order",
+    "slug": "fear-itself-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/fear-itself-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "for-love-nor-money-reading-order",
+    "title": "For Love Nor Money Reading Order",
+    "slug": "for-love-nor-money-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/for-love-nor-money-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "gang-war-reading-order",
+    "title": "Gang War Reading Order",
+    "slug": "gang-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/gang-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "goblin-nation-reading-order",
+    "title": "Goblin Nation Reading Order",
+    "slug": "goblin-nation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/goblin-nation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hellfire-gala-reading-order",
+    "title": "Hellfire Gala Reading Order",
+    "slug": "hellfire-gala-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/hellfire-gala-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "heroes-reborn-2021-reading-order",
+    "title": "Heroes Reborn (2021) Reading Order",
+    "slug": "heroes-reborn-2021-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/heroes-reborn-2021-reading-order/",
+    "year": "2021"
+  },
+  {
+    "id": "heroes-reborn-reading-order",
+    "title": "Heroes Reborn Reading Order",
+    "slug": "heroes-reborn-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/heroes-reborn-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "heroic-age-reading-order",
+    "title": "Heroic Age Reading Order",
+    "slug": "heroic-age-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/heroic-age-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "house-of-m-reading-order",
+    "title": "House of M Reading Order",
+    "slug": "house-of-m-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/house-of-m-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hunt-for-xavier-reading-order",
+    "title": "The Hunt for Xavier Reading Order",
+    "slug": "hunt-for-xavier-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/hunt-for-xavier-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "imperial-reading-order",
+    "title": "Imperial Reading Order",
+    "slug": "imperial-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/imperial-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "inferno-reading-order",
+    "title": "Inferno Reading Order",
+    "slug": "inferno-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/inferno-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-countdown-reading-order",
+    "title": "Infinity Countdown Reading Order",
+    "slug": "infinity-countdown-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-countdown-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-crusade-reading-order",
+    "title": "Infinity Crusade Reading Order",
+    "slug": "infinity-crusade-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-crusade-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-gauntlet-reading-order",
+    "title": "Infinity Gauntlet Reading Order",
+    "slug": "infinity-gauntlet-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-gauntlet-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-reading-order",
+    "title": "Infinity Reading Order",
+    "slug": "infinity-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-war-reading-order",
+    "title": "Infinity War Reading Order",
+    "slug": "infinity-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinity-wars-reading-order",
+    "title": "Infinity Wars Reading Order",
+    "slug": "infinity-wars-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/infinity-wars-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "inhumanity-reading-order",
+    "title": "Inhumanity Reading Order",
+    "slug": "inhumanity-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/inhumanity-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "inhumans-vs-x-men-reading-order",
+    "title": "Inhumans vs. X-Men Reading Order",
+    "slug": "inhumans-vs-x-men-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/inhumans-vs-x-men-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "iron-man-2020",
+    "title": "Iron Man 2020",
+    "slug": "iron-man-2020",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/iron-man-2020/",
+    "year": ""
+  },
+  {
+    "id": "jonathan-hickmans-marvel-2009-2015-reading-order",
+    "title": "Jonathan Hickman&#039;s Marvel (2009-2015) Reading Order",
+    "slug": "jonathan-hickmans-marvel-2009-2015-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/jonathan-hickmans-marvel-2009-2015-reading-order/",
+    "year": "2009-2015"
+  },
+  {
+    "id": "king-in-black-reading-order",
+    "title": "King In Black Reading Order",
+    "slug": "king-in-black-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/king-in-black-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kravens-last-hunt-reading-order",
+    "title": "Kraven&#039;s Last Hunt Reading Order",
+    "slug": "kravens-last-hunt-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/kravens-last-hunt-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "last-annihilation-reading-order",
+    "title": "Last Annihilation Reading Order",
+    "slug": "last-annihilation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/last-annihilation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "magneto-war-reading-order",
+    "title": "Magneto War Reading Order",
+    "slug": "magneto-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/magneto-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-1602-reading-order",
+    "title": "Marvel 1602 Reading Order",
+    "slug": "marvel-1602-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/marvel-1602-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-2099-reading-order",
+    "title": "Marvel 2099 Reading Order",
+    "slug": "marvel-2099-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/marvel-2099-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-legacy-reading-order",
+    "title": "Marvel Legacy Reading Order",
+    "slug": "marvel-legacy-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/marvel-legacy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-now-reading-order",
+    "title": "Marvel NOW! Reading Order",
+    "slug": "marvel-now-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/marvel-now-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-zombies-reading-order",
+    "title": "Marvel Zombies Reading Order",
+    "slug": "marvel-zombies-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/marvel-zombies-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "maximum-carnage-reading-order",
+    "title": "Maximum Carnage Reading Order",
+    "slug": "maximum-carnage-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/maximum-carnage-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "maximum-security-reading-order",
+    "title": "Maximum Security Reading Order",
+    "slug": "maximum-security-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/maximum-security-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mc2-reading-order",
+    "title": "MC2 Reading Order",
+    "slug": "mc2-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/mc2-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "messiah-war-reading-order",
+    "title": "Messiah War Reading Order",
+    "slug": "messiah-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/messiah-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "midnight-massacre-reading-order",
+    "title": "Midnight Massacre Reading Order",
+    "slug": "midnight-massacre-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/midnight-massacre-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "minimum-carnage-reading-order",
+    "title": "Minimum Carnage Reading Order",
+    "slug": "minimum-carnage-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/minimum-carnage-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "monsters-unleashed-reading-order",
+    "title": "Monsters Unleashed Reading Order",
+    "slug": "monsters-unleashed-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/monsters-unleashed-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "muir-island-saga-reading-order",
+    "title": "Muir Island Saga Reading Order",
+    "slug": "muir-island-saga-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/muir-island-saga-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mutant-massacre-reading-order",
+    "title": "Mutant Massacre Reading Order",
+    "slug": "mutant-massacre-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/mutant-massacre-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "necrosha-reading-order",
+    "title": "Necrosha Reading Order",
+    "slug": "necrosha-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/necrosha-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "one-more-day-reading-order",
+    "title": "One More Day Reading Order",
+    "slug": "one-more-day-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/one-more-day-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "one-world-under-doom-reading-order",
+    "title": "One World Under Doom Reading Order",
+    "slug": "one-world-under-doom-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/one-world-under-doom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "onslaught-saga-reading-order",
+    "title": "Onslaught Saga Reading Order",
+    "slug": "onslaught-saga-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/onslaught-saga-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "operation-galactic-storm-reading-order",
+    "title": "Operation: Galactic Storm Reading Order",
+    "slug": "operation-galactic-storm-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/operation-galactic-storm-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "operation-zero-tolerance-reading-order",
+    "title": "Operation: Zero Tolerance Reading Order",
+    "slug": "operation-zero-tolerance-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/operation-zero-tolerance-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "original-sin-reading-order",
+    "title": "Original Sin Reading Order",
+    "slug": "original-sin-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/original-sin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "over-the-edge-reading-order",
+    "title": "Over the Edge Reading Order",
+    "slug": "over-the-edge-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/over-the-edge-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "phalanx-covenant-reading-order",
+    "title": "Phalanx Covenant Reading Order",
+    "slug": "phalanx-covenant-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/phalanx-covenant-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "planet-hulk-reading-order",
+    "title": "Planet Hulk Reading Order",
+    "slug": "planet-hulk-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/planet-hulk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "realm-of-kings-reading-order",
+    "title": "Realm of Kings Reading Order",
+    "slug": "realm-of-kings-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/realm-of-kings-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "revolutionary-war-reading-order",
+    "title": "Revolutionary War Reading Order",
+    "slug": "revolutionary-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/revolutionary-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "rise-of-the-midnight-sons-reading-order",
+    "title": "Rise of the Midnight Sons Reading Order",
+    "slug": "rise-of-the-midnight-sons-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/rise-of-the-midnight-sons-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "road-to-vengeance-missing-link-reading-order",
+    "title": "Road to Vengeance: Missing Link Reading Order",
+    "slug": "road-to-vengeance-missing-link-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/road-to-vengeance-missing-link-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "second-clone-saga-reading-order",
+    "title": "Second Clone Saga Reading Order",
+    "slug": "second-clone-saga-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/second-clone-saga-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "secret-empire-reading-order",
+    "title": "Secret Empire Reading Order",
+    "slug": "secret-empire-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/secret-empire-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "secret-invasion-reading-order",
+    "title": "Secret Invasion Reading Order",
+    "slug": "secret-invasion-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/secret-invasion-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "secret-wars-2015-reading-order",
+    "title": "Secret Wars (2015) Reading Order",
+    "slug": "secret-wars-2015-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/secret-wars-2015-reading-order/",
+    "year": "2015"
+  },
+  {
+    "id": "secret-wars-ii-reading-order",
+    "title": "Secret Wars II Reading Order",
+    "slug": "secret-wars-ii-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/secret-wars-ii-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "shadowland-reading-order",
+    "title": "Shadowland Reading Order",
+    "slug": "shadowland-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/shadowland-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "shattered-heroes-reading-order",
+    "title": "Shattered Heroes Reading Order",
+    "slug": "shattered-heroes-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/shattered-heroes-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "siege-of-darkness-reading-order",
+    "title": "Siege of Darkness Reading Order",
+    "slug": "siege-of-darkness-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/siege-of-darkness-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "siege-reading-order",
+    "title": "Siege Reading Order",
+    "slug": "siege-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/siege-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "sins-of-sinister-reading-order",
+    "title": "Sins of Sinister Reading Order",
+    "slug": "sins-of-sinister-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/sins-of-sinister-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-geddon-reading-order",
+    "title": "Spider-Geddon Reading Order",
+    "slug": "spider-geddon-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-geddon-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-island-reading-order",
+    "title": "Spider-Island Reading Order",
+    "slug": "spider-island-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-island-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-man-identity-crisis-reading-order",
+    "title": "Spider-Man: Identity Crisis Reading Order",
+    "slug": "spider-man-identity-crisis-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-man-identity-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-man-the-other-reading-order",
+    "title": "Spider-Man: The Other Reading Order",
+    "slug": "spider-man-the-other-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-man-the-other-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-verse-reading-order",
+    "title": "Spider-Verse Reading Order",
+    "slug": "spider-verse-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-verse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-women-reading-order",
+    "title": "Spider-Women Reading Order",
+    "slug": "spider-women-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/spider-women-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "thanos-imperative-reading-order",
+    "title": "The Thanos Imperative Reading Order",
+    "slug": "thanos-imperative-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/thanos-imperative-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "thanos-war-reading-order",
+    "title": "Thanos War Reading Order",
+    "slug": "thanos-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/thanos-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-initiative-reading-order",
+    "title": "The Initiative Reading Order",
+    "slug": "the-initiative-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/the-initiative-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "time-and-time-again-reading-order",
+    "title": "Time and Time Again Reading Order",
+    "slug": "time-and-time-again-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/time-and-time-again-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "trial-of-jean-grey-reading-order",
+    "title": "The Trial of Jean Grey Reading Order",
+    "slug": "trial-of-jean-grey-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/trial-of-jean-grey-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ultimate-marvel-reading-order",
+    "title": "Ultimate Marvel Reading Order",
+    "slug": "ultimate-marvel-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/ultimate-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ultimate-universe-reading-order",
+    "title": "Ultimate Universe Reading Order",
+    "slug": "ultimate-universe-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/ultimate-universe-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "utopia-reading-order",
+    "title": "Utopia Reading Order",
+    "slug": "utopia-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/utopia-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "venom-inc-reading-order",
+    "title": "Venom Inc. Reading Order",
+    "slug": "venom-inc-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/venom-inc-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "venom-war-reading-order",
+    "title": "Venom War Reading Order",
+    "slug": "venom-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/venom-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "venomverse-reading-order",
+    "title": "Venomverse Reading Order",
+    "slug": "venomverse-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/venomverse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "war-of-kings-reading-order",
+    "title": "War of Kings Reading Order",
+    "slug": "war-of-kings-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/war-of-kings-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "war-of-the-realms-reading-order",
+    "title": "War of the Realms Reading Order",
+    "slug": "war-of-the-realms-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/war-of-the-realms-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wolverine-goes-to-hell-reading-order",
+    "title": "Wolverine Goes to Hell Reading Order",
+    "slug": "wolverine-goes-to-hell-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/wolverine-goes-to-hell-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "world-war-hulk-reading-order",
+    "title": "World War Hulk Reading Order",
+    "slug": "world-war-hulk-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/world-war-hulk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "world-war-hulks-reading-order",
+    "title": "World War Hulks Reading Order",
+    "slug": "world-war-hulks-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/world-war-hulks-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wraith-war-reading-order",
+    "title": "Wraith War Reading Order",
+    "slug": "wraith-war-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/wraith-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-cutioners-song-reading-order",
+    "title": "X-Cutioner&#039;s Song Reading Order",
+    "slug": "x-cutioners-song-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-cutioners-song-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-age-of-revelation-reading-order",
+    "title": "X-Men: Age of Revelation Reading Order",
+    "slug": "x-men-age-of-revelation-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-age-of-revelation-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-divided-we-stand-reading-order",
+    "title": "X-Men: Divided We Stand Reading Order",
+    "slug": "x-men-divided-we-stand-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-divided-we-stand-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-endangered-species-reading-order",
+    "title": "X-Men: Endangered Species Reading Order",
+    "slug": "x-men-endangered-species-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-endangered-species-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-manifest-destiny-reading-order",
+    "title": "X-Men: Manifest Destiny Reading Order",
+    "slug": "x-men-manifest-destiny-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-manifest-destiny-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-messiah-complex-reading-order",
+    "title": "X-Men: Messiah Complex Reading Order",
+    "slug": "x-men-messiah-complex-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-messiah-complex-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-nation-x-reading-order",
+    "title": "X-Men: Nation X Reading Order",
+    "slug": "x-men-nation-x-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-nation-x-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-original-sin-reading-order",
+    "title": "X-Men: Original Sin Reading Order",
+    "slug": "x-men-original-sin-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-original-sin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-regenesis-reading-order",
+    "title": "X-Men: Regenesis Reading Order",
+    "slug": "x-men-regenesis-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-regenesis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-schism-reading-order",
+    "title": "X-Men: Schism Reading Order",
+    "slug": "x-men-schism-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-schism-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-second-coming-reading-order",
+    "title": "X-Men: Second Coming Reading Order",
+    "slug": "x-men-second-coming-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-men-second-coming-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-of-swords-reading-order",
+    "title": "X of Swords Reading Order",
+    "slug": "x-of-swords-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-of-swords-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-termination-reading-order",
+    "title": "X-Termination Reading Order",
+    "slug": "x-termination-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-termination-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-tinction-agenda-reading-order",
+    "title": "X-Tinction Agenda Reading Order",
+    "slug": "x-tinction-agenda-reading-order",
+    "universe": "Marvel",
+    "category": "Sự kiện",
+    "url": "/marvel/events/x-tinction-agenda-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "abomination-reading-order",
+    "title": "Abomination Reading Order",
+    "slug": "abomination-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/abomination-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "adam-warlock-reading-order",
+    "title": "Adam Warlock Reading Order",
+    "slug": "adam-warlock-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/adam-warlock-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "agatha-harkness-reading-order",
+    "title": "Agatha Harkness Reading Order",
+    "slug": "agatha-harkness-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/agatha-harkness-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "agents-of-atlas-reading-order",
+    "title": "Agents of Atlas Reading Order",
+    "slug": "agents-of-atlas-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/agents-of-atlas-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "alpha-flight-reading-order",
+    "title": "Alpha Flight Reading Order",
+    "slug": "alpha-flight-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/alpha-flight-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "anya-corazon-reading-order",
+    "title": "Anya Corazon Reading Order",
+    "slug": "anya-corazon-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/anya-corazon-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "apocalypse-reading-order",
+    "title": "Apocalypse Reading Order",
+    "slug": "apocalypse-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/apocalypse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "arcade-reading-order",
+    "title": "Arcade Reading Order",
+    "slug": "arcade-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/arcade-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "avengers-reading-order",
+    "title": "Avengers Reading Order",
+    "slug": "avengers-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/avengers-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "baron-zemo-reading-order",
+    "title": "Baron Zemo Reading Order",
+    "slug": "baron-zemo-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/baron-zemo-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "beta-ray-bill-reading-order",
+    "title": "Beta Ray Bill Reading Order",
+    "slug": "beta-ray-bill-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/beta-ray-bill-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-bolt-reading-order",
+    "title": "Black Bolt Reading Order",
+    "slug": "black-bolt-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/black-bolt-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-cat-reading-order",
+    "title": "Black Cat Reading Order",
+    "slug": "black-cat-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/black-cat-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-panther-reading-order",
+    "title": "Black Panther Reading Order",
+    "slug": "black-panther-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/black-panther-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-widow-reading-order",
+    "title": "Black Widow Reading Order",
+    "slug": "black-widow-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/black-widow-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blade-reading-order",
+    "title": "Blade Reading Order",
+    "slug": "blade-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/blade-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blink-reading-order",
+    "title": "Blink Reading Order",
+    "slug": "blink-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/blink-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bullseye-reading-order",
+    "title": "Bullseye Reading Order",
+    "slug": "bullseye-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/bullseye-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cable-reading-order",
+    "title": "Cable Reading Order",
+    "slug": "cable-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/cable-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "captain-america-reading-order",
+    "title": "Captain America Reading Order",
+    "slug": "captain-america-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/captain-america-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "captain-britain-reading-order",
+    "title": "Captain Britain Reading Order",
+    "slug": "captain-britain-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/captain-britain-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "carnage-reading-order",
+    "title": "Carnage Reading Order",
+    "slug": "carnage-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/carnage-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "carol-danvers-reading-order",
+    "title": "Carol Danvers Reading Order",
+    "slug": "carol-danvers-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/carol-danvers-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cloak-and-dagger-reading-order",
+    "title": "Cloak and Dagger Reading Order",
+    "slug": "cloak-and-dagger-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/cloak-and-dagger-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cyclops-reading-order",
+    "title": "Cyclops Reading Order",
+    "slug": "cyclops-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/cyclops-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "daisy-johnson-reading-order",
+    "title": "Daisy Johnson Reading Order",
+    "slug": "daisy-johnson-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/daisy-johnson-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "daken-reading-order",
+    "title": "Daken Reading Order",
+    "slug": "daken-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/daken-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "daredevil-reading-order",
+    "title": "Daredevil Reading Order",
+    "slug": "daredevil-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/daredevil-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "deadpool-reading-order",
+    "title": "Deadpool Reading Order",
+    "slug": "deadpool-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/deadpool-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "defenders-reading-order",
+    "title": "Defenders Reading Order",
+    "slug": "defenders-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/defenders-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doctor-doom-reading-order",
+    "title": "Doctor Doom Reading Order",
+    "slug": "doctor-doom-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/doctor-doom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doctor-octopus-reading-order",
+    "title": "Doctor Octopus Reading Order",
+    "slug": "doctor-octopus-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/doctor-octopus-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doctor-strange-reading-order",
+    "title": "Doctor Strange Reading Order",
+    "slug": "doctor-strange-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/doctor-strange-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "domino-reading-order",
+    "title": "Domino Reading Order",
+    "slug": "domino-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/domino-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doop-reading-order",
+    "title": "Doop Reading Order",
+    "slug": "doop-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/doop-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dormammu-reading-order",
+    "title": "Dormammu Reading Order",
+    "slug": "dormammu-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/dormammu-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "echo-reading-order",
+    "title": "Echo Reading Order",
+    "slug": "echo-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/echo-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ego-the-living-planet-reading-order",
+    "title": "Ego the Living Planet Reading Order",
+    "slug": "ego-the-living-planet-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/ego-the-living-planet-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "elektra-reading-order",
+    "title": "Elektra Reading Order",
+    "slug": "elektra-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/elektra-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "elsa-bloodstone-reading-order",
+    "title": "Elsa Bloodstone Reading Order",
+    "slug": "elsa-bloodstone-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/elsa-bloodstone-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "eternals-reading-order",
+    "title": "Eternals Reading Order",
+    "slug": "eternals-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/eternals-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fantastic-four-reading-order",
+    "title": "Fantastic Four Reading Order",
+    "slug": "fantastic-four-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/fantastic-four-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "galactus-reading-order",
+    "title": "Galactus Reading Order",
+    "slug": "galactus-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/galactus-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "gambit-reading-order",
+    "title": "Gambit Reading Order",
+    "slug": "gambit-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/gambit-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ghost-rider-reading-order",
+    "title": "Ghost Rider Reading Order",
+    "slug": "ghost-rider-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/ghost-rider-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-goblin-and-hobgoblin-reading-order",
+    "title": "Page not found - comicbookreadingorders",
+    "slug": "green-goblin-and-hobgoblin-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/green-goblin-and-hobgoblin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-goblin-reading-order",
+    "title": "Green Goblin Reading Order",
+    "slug": "green-goblin-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/green-goblin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "guardians-of-the-galaxy-1969-reading-order",
+    "title": "Guardians of the Galaxy (1969) Reading Order",
+    "slug": "guardians-of-the-galaxy-1969-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/guardians-of-the-galaxy-1969-reading-order/",
+    "year": "1969"
+  },
+  {
+    "id": "guardians-of-the-galaxy-reading-order",
+    "title": "Guardians of the Galaxy Reading Order",
+    "slug": "guardians-of-the-galaxy-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/guardians-of-the-galaxy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hawkeye-reading-order",
+    "title": "Hawkeye Reading Order",
+    "slug": "hawkeye-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hawkeye-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hela-reading-order",
+    "title": "Hela Reading Order",
+    "slug": "hela-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hela-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hercules-reading-order",
+    "title": "Hercules Reading Order",
+    "slug": "hercules-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hercules-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "high-evolutionary-reading-order",
+    "title": "High Evolutionary Reading Order",
+    "slug": "high-evolutionary-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/high-evolutionary-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hobgoblin-reading-order",
+    "title": "Hobgoblin Reading Order",
+    "slug": "hobgoblin-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hobgoblin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hope-summers-reading-order",
+    "title": "Hope Summers Reading Order",
+    "slug": "hope-summers-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hope-summers-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "howard-the-duck-reading-order",
+    "title": "Howard the Duck Reading Order",
+    "slug": "howard-the-duck-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/howard-the-duck-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hulk-reading-order",
+    "title": "Hulk Reading Order",
+    "slug": "hulk-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/hulk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "inhumans-reading-order",
+    "title": "Inhumans Reading Order",
+    "slug": "inhumans-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/inhumans-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "iron-fist-reading-order",
+    "title": "Iron Fist Reading Order",
+    "slug": "iron-fist-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/iron-fist-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "iron-man-reading-order",
+    "title": "Iron Man Reading Order",
+    "slug": "iron-man-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/iron-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ironheart-reading-order",
+    "title": "Ironheart Reading Order",
+    "slug": "ironheart-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/ironheart-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jean-grey-reading-order",
+    "title": "Jean Grey Reading Order",
+    "slug": "jean-grey-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/jean-grey-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jeff-the-land-shark-reading-order",
+    "title": "Jeff the Land Shark Reading Order",
+    "slug": "jeff-the-land-shark-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/jeff-the-land-shark-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jessica-jones-reading-order",
+    "title": "Jessica Jones Reading Order",
+    "slug": "jessica-jones-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/jessica-jones-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "juggernaut-reading-order",
+    "title": "Juggernaut Reading Order",
+    "slug": "juggernaut-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/juggernaut-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kamala-khan-reading-order",
+    "title": "Kamala Khan Reading Order",
+    "slug": "kamala-khan-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/kamala-khan-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kang-the-conqueror-reading-order",
+    "title": "Kang the Conqueror Reading Order",
+    "slug": "kang-the-conqueror-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/kang-the-conqueror-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kingpin-reading-order",
+    "title": "Kingpin Reading Order",
+    "slug": "kingpin-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/kingpin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kitty-pryde-reading-order",
+    "title": "Kitty Pryde Reading Order",
+    "slug": "kitty-pryde-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/kitty-pryde-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "kraven-the-hunter-reading-order",
+    "title": "Kraven the Hunter Reading Order",
+    "slug": "kraven-the-hunter-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/kraven-the-hunter-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "legion-reading-order",
+    "title": "Legion Reading Order",
+    "slug": "legion-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/legion-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "loki-reading-order",
+    "title": "Loki Reading Order",
+    "slug": "loki-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/loki-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "luke-cage-and-iron-fist-reading-order",
+    "title": "Page not found - comicbookreadingorders",
+    "slug": "luke-cage-and-iron-fist-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/luke-cage-and-iron-fist-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "luke-cage-reading-order",
+    "title": "Luke Cage Reading Order",
+    "slug": "luke-cage-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/luke-cage-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "m-o-d-o-k-reading-order",
+    "title": "M.O.D.O.K. Reading Order",
+    "slug": "m-o-d-o-k-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/m-o-d-o-k-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "machine-man-reading-order",
+    "title": "Machine Man Reading Order",
+    "slug": "machine-man-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/machine-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "maestro-reading-order",
+    "title": "Maestro Reading Order",
+    "slug": "maestro-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/maestro-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "magik-reading-order",
+    "title": "Magik Reading Order",
+    "slug": "magik-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/magik-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "magneto-reading-order",
+    "title": "Magneto Reading Order",
+    "slug": "magneto-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/magneto-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "malekith-reading-order",
+    "title": "Malekith Reading Order",
+    "slug": "malekith-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/malekith-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "man-thing-reading-order",
+    "title": "Man-Thing Reading Order",
+    "slug": "man-thing-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/man-thing-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "miles-morales-reading-order",
+    "title": "Miles Morales Reading Order",
+    "slug": "miles-morales-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/miles-morales-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mister-sinister-reading-order",
+    "title": "Mister Sinister Reading Order",
+    "slug": "mister-sinister-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/mister-sinister-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mockingbird-reading-order",
+    "title": "Mockingbird Reading Order",
+    "slug": "mockingbird-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/mockingbird-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "moon-knight-reading-order",
+    "title": "Moon Knight Reading Order",
+    "slug": "moon-knight-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/moon-knight-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "moonstone-reading-order",
+    "title": "Moonstone Reading Order",
+    "slug": "moonstone-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/moonstone-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "morbius-reading-order",
+    "title": "Morbius Reading Order",
+    "slug": "morbius-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/morbius-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mysterio-reading-order",
+    "title": "Mysterio Reading Order",
+    "slug": "mysterio-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/mysterio-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "namor-reading-order",
+    "title": "Namor Reading Order",
+    "slug": "namor-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/namor-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "new-mutants-reading-order",
+    "title": "New Mutants Reading Order",
+    "slug": "new-mutants-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/new-mutants-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "nick-fury-reading-order",
+    "title": "Nick Fury Reading Order",
+    "slug": "nick-fury-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/nick-fury-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "nightcrawler-reading-order",
+    "title": "Nightcrawler Reading Order",
+    "slug": "nightcrawler-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/nightcrawler-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "nova-reading-order",
+    "title": "Nova Reading Order",
+    "slug": "nova-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/nova-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "pete-wisdom-reading-order",
+    "title": "Pete Wisdom Reading Order",
+    "slug": "pete-wisdom-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/pete-wisdom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "power-pack-reading-order",
+    "title": "Power Pack Reading Order",
+    "slug": "power-pack-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/power-pack-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "psylocke-reading-order",
+    "title": "Psylocke Reading Order",
+    "slug": "psylocke-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/psylocke-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "punisher-reading-order",
+    "title": "Punisher Reading Order",
+    "slug": "punisher-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/punisher-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "quicksilver-reading-order",
+    "title": "Quicksilver Reading Order",
+    "slug": "quicksilver-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/quicksilver-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "red-hulk-reading-order",
+    "title": "Red Hulk Reading Order",
+    "slug": "red-hulk-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/red-hulk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "red-skull-reading-order",
+    "title": "Red Skull Reading Order",
+    "slug": "red-skull-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/red-skull-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "rogue-reading-order",
+    "title": "Rogue Reading Order",
+    "slug": "rogue-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/rogue-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ronan-the-accuser-reading-order",
+    "title": "Ronan the Accuser Reading Order",
+    "slug": "ronan-the-accuser-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/ronan-the-accuser-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "runaways-reading-order",
+    "title": "Runaways Reading Order",
+    "slug": "runaways-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/runaways-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "sabretooth-reading-order",
+    "title": "Sabretooth Reading Order",
+    "slug": "sabretooth-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/sabretooth-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "sam-wilson-reading-order",
+    "title": "Sam Wilson Reading Order",
+    "slug": "sam-wilson-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/sam-wilson-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "scarlet-witch-reading-order",
+    "title": "Scarlet Witch Reading Order",
+    "slug": "scarlet-witch-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/scarlet-witch-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "scorpion-reading-order",
+    "title": "Scorpion Reading Order",
+    "slug": "scorpion-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/scorpion-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "scott-lang-reading-order",
+    "title": "Scott Lang Reading Order",
+    "slug": "scott-lang-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/scott-lang-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "shang-chi-reading-order",
+    "title": "Shang-Chi Reading Order",
+    "slug": "shang-chi-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/shang-chi-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "she-hulk-reading-order",
+    "title": "She-Hulk Reading Order",
+    "slug": "she-hulk-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/she-hulk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "silk-reading-order",
+    "title": "Silk Reading Order",
+    "slug": "silk-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/silk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "silver-surfer-reading-order",
+    "title": "Silver Surfer Reading Order",
+    "slug": "silver-surfer-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/silver-surfer-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-gwen-reading-order",
+    "title": "Spider-Gwen Reading Order",
+    "slug": "spider-gwen-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/spider-gwen-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-man-reading-order",
+    "title": "Spider-Man Reading Order",
+    "slug": "spider-man-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/spider-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "spider-woman-reading-order",
+    "title": "Spider-Woman Reading Order",
+    "slug": "spider-woman-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/spider-woman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "squirrel-girl-reading-order",
+    "title": "Squirrel Girl Reading Order",
+    "slug": "squirrel-girl-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/squirrel-girl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "symbiotes-reading-order",
+    "title": "Symbiotes Reading Order",
+    "slug": "symbiotes-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/symbiotes-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "taskmaster-reading-order",
+    "title": "Taskmaster Reading Order",
+    "slug": "taskmaster-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/taskmaster-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "thanos-reading-order",
+    "title": "Thanos Reading Order",
+    "slug": "thanos-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/thanos-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-hood-reading-order",
+    "title": "The Hood Reading Order",
+    "slug": "the-hood-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/the-hood-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-leader-reading-order",
+    "title": "The Leader Reading Order",
+    "slug": "the-leader-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/the-leader-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-maker-reading-order",
+    "title": "The Maker Reading Order",
+    "slug": "the-maker-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/the-maker-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-mandarin-reading-order",
+    "title": "The Mandarin Reading Order",
+    "slug": "the-mandarin-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/the-mandarin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-sentry-reading-order",
+    "title": "The Sentry Reading Order",
+    "slug": "the-sentry-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/the-sentry-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "thor-reading-order",
+    "title": "Thor Reading Order",
+    "slug": "thor-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/thor-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "thunderbolts-reading-order",
+    "title": "Thunderbolts Reading Order",
+    "slug": "thunderbolts-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/thunderbolts-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "tigra-reading-order",
+    "title": "Tigra Reading Order",
+    "slug": "tigra-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/tigra-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ultron-reading-order",
+    "title": "Ultron Reading Order",
+    "slug": "ultron-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/ultron-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "venom-reading-order",
+    "title": "Venom Reading Order",
+    "slug": "venom-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/venom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "vision-and-scarlet-witch-reading-order",
+    "title": "Page not found - comicbookreadingorders",
+    "slug": "vision-and-scarlet-witch-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/vision-and-scarlet-witch-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "vision-reading-order",
+    "title": "Vision Reading Order",
+    "slug": "vision-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/vision-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "war-machine-reading-order",
+    "title": "War Machine Reading Order",
+    "slug": "war-machine-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/war-machine-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "winter-soldier-reading-order",
+    "title": "Winter Soldier Reading Order",
+    "slug": "winter-soldier-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/winter-soldier-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wolverine-reading-order",
+    "title": "Wolverine Reading Order",
+    "slug": "wolverine-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/wolverine-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wonder-man-reading-order",
+    "title": "Wonder Man Reading Order",
+    "slug": "wonder-man-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/wonder-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-23-reading-order",
+    "title": "X-23 Reading Order",
+    "slug": "x-23-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/x-23-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-factor-reading-order",
+    "title": "X-Factor Reading Order",
+    "slug": "x-factor-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/x-factor-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-force-reading-order",
+    "title": "X-Force Reading Order",
+    "slug": "x-force-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/x-force-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-krakoa-era-reading-order",
+    "title": "X-Men: Krakoa Era Reading Order",
+    "slug": "x-men-krakoa-era-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/x-men-krakoa-era-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "x-men-reading-order",
+    "title": "X-Men Reading Order",
+    "slug": "x-men-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/x-men-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "young-avengers-reading-order",
+    "title": "Young Avengers Reading Order",
+    "slug": "young-avengers-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/young-avengers-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "young-marvel-heroes-reading-order",
+    "title": "Young Marvel Heroes Reading Order",
+    "slug": "young-marvel-heroes-reading-order",
+    "universe": "Marvel",
+    "category": "Nhân vật",
+    "url": "/marvel/characters/young-marvel-heroes-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "all-new-all-different-marvel-reading-order-part-1",
+    "title": "All-New, All-Different Marvel Reading Order Part 1",
+    "slug": "all-new-all-different-marvel-reading-order-part-1",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/all-new-all-different-marvel-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "all-new-all-different-marvel-reading-order-part-2",
+    "title": "All-New, All-Different Marvel Reading Order Part 2",
+    "slug": "all-new-all-different-marvel-reading-order-part-2",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/all-new-all-different-marvel-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "event-timeline",
+    "title": "Marvel Event Timeline",
+    "slug": "event-timeline",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/event-timeline/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order",
+    "title": "Marvel Master Reading Order",
+    "slug": "marvel-master-reading-order",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-1",
+    "title": "Marvel Master Reading Order Part 1",
+    "slug": "marvel-master-reading-order-part-1",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-10",
+    "title": "Marvel Master Reading Order Part 10",
+    "slug": "marvel-master-reading-order-part-10",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-10/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-11",
+    "title": "Marvel Master Reading Order Part 11",
+    "slug": "marvel-master-reading-order-part-11",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-11/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-12",
+    "title": "Marvel Master Reading Order Part 12",
+    "slug": "marvel-master-reading-order-part-12",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-12/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-13",
+    "title": "Marvel Master Reading Order Part 13",
+    "slug": "marvel-master-reading-order-part-13",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-13/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-14",
+    "title": "Marvel Master Reading Order Part 14",
+    "slug": "marvel-master-reading-order-part-14",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-14/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-15",
+    "title": "Marvel Master Reading Order Part 15",
+    "slug": "marvel-master-reading-order-part-15",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-15/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-2",
+    "title": "Marvel Master Reading Order Part 2",
+    "slug": "marvel-master-reading-order-part-2",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-3",
+    "title": "Marvel Master Reading Order Part 3",
+    "slug": "marvel-master-reading-order-part-3",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-3/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-4",
+    "title": "Marvel Master Reading Order Part 4",
+    "slug": "marvel-master-reading-order-part-4",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-4/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-5",
+    "title": "Marvel Master Reading Order Part 5",
+    "slug": "marvel-master-reading-order-part-5",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-5/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-6",
+    "title": "Marvel Master Reading Order Part 6",
+    "slug": "marvel-master-reading-order-part-6",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-6/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-7",
+    "title": "Marvel Master Reading Order Part 7",
+    "slug": "marvel-master-reading-order-part-7",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-7/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-8",
+    "title": "Marvel Master Reading Order Part 8",
+    "slug": "marvel-master-reading-order-part-8",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-8/",
+    "year": ""
+  },
+  {
+    "id": "marvel-master-reading-order-part-9",
+    "title": "Marvel Master Reading Order Part 9",
+    "slug": "marvel-master-reading-order-part-9",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-master-reading-order-part-9/",
+    "year": ""
+  },
+  {
+    "id": "marvel-now-reading-order-part-1",
+    "title": "Marvel NOW! Reading Order Part 1",
+    "slug": "marvel-now-reading-order-part-1",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-now-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "marvel-now-reading-order-part-2",
+    "title": "Marvel NOW! Reading Order Part 2",
+    "slug": "marvel-now-reading-order-part-2",
+    "universe": "Marvel",
+    "category": "Chính / Master",
+    "url": "/marvel/marvel-now-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "absolute-power-reading-order",
+    "title": "Absolute Power Reading Order",
+    "slug": "absolute-power-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/absolute-power-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "absolute-universe-reading-order",
+    "title": "Absolute Universe Reading Order",
+    "slug": "absolute-universe-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/absolute-universe-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "amazons-attack-reading-order",
+    "title": "Amazons Attack! Reading Order",
+    "slug": "amazons-attack-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/amazons-attack-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "aquaman-death-of-a-prince-reading-order",
+    "title": "Aquaman: Death of a Prince Reading Order",
+    "slug": "aquaman-death-of-a-prince-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/aquaman-death-of-a-prince-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "armageddon-2001-reading-order",
+    "title": "Armageddon 2001 Reading Order",
+    "slug": "armageddon-2001-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/armageddon-2001-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-a-lonely-place-of-dying-reading-order",
+    "title": "Batman: A Lonely Place of Dying Reading Order",
+    "slug": "batman-a-lonely-place-of-dying-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-a-lonely-place-of-dying-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-cataclysm-reading-order",
+    "title": "Batman: Cataclysm Reading Order",
+    "slug": "batman-cataclysm-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-cataclysm-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-contagion-reading-order",
+    "title": "Batman: Contagion Reading Order",
+    "slug": "batman-contagion-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-contagion-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-endgame-reading-order",
+    "title": "Batman: Endgame Reading Order",
+    "slug": "batman-endgame-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-endgame-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-face-the-face-reading-order",
+    "title": "Batman: Face the Face Reading Order",
+    "slug": "batman-face-the-face-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-face-the-face-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-judgment-on-gotham-reading-order",
+    "title": "Batman: Judgment on Gotham Reading Order",
+    "slug": "batman-judgment-on-gotham-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-judgment-on-gotham-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-legacy-reading-order",
+    "title": "Batman: Legacy Reading Order",
+    "slug": "batman-legacy-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-legacy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-no-mans-land-reading-order",
+    "title": "Batman: No Man&#039;s Land Reading Order",
+    "slug": "batman-no-mans-land-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-no-mans-land-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-officer-down-reading-order",
+    "title": "Batman: Officer Down Reading Order",
+    "slug": "batman-officer-down-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-officer-down-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-prodigal-reading-order",
+    "title": "Batman: Prodigal Reading Order",
+    "slug": "batman-prodigal-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-prodigal-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-requiem-reading-order",
+    "title": "Batman: Requiem Reading Order",
+    "slug": "batman-requiem-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-requiem-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-troika-reading-order",
+    "title": "Batman: Troika Reading Order",
+    "slug": "batman-troika-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-troika-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-war-crimes-reading-order",
+    "title": "Batman: War Crimes Reading Order",
+    "slug": "batman-war-crimes-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-war-crimes-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-war-games-reading-order",
+    "title": "Batman: War Games Reading Order",
+    "slug": "batman-war-games-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-war-games-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-zero-year-reading-order",
+    "title": "Batman: Zero Year Reading Order",
+    "slug": "batman-zero-year-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/batman-zero-year-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "battle-for-the-cowl-reading-order",
+    "title": "Battle for the Cowl Reading Order",
+    "slug": "battle-for-the-cowl-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/battle-for-the-cowl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "behold-the-millennium-giants-reading-order",
+    "title": "Behold! The Millennium Giants! Reading Order",
+    "slug": "behold-the-millennium-giants-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/behold-the-millennium-giants-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blackest-night-reading-order",
+    "title": "Blackest Night Reading Order",
+    "slug": "blackest-night-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/blackest-night-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bloodlines-reading-order",
+    "title": "Bloodlines Reading Order",
+    "slug": "bloodlines-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/bloodlines-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "brightest-day-reading-order",
+    "title": "Brightest Day Reading Order",
+    "slug": "brightest-day-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/brightest-day-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "brotherhood-of-the-fist-reading-order",
+    "title": "Brotherhood of the Fist Reading Order",
+    "slug": "brotherhood-of-the-fist-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/brotherhood-of-the-fist-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bruce-wayne-fugitive-reading-order",
+    "title": "Bruce Wayne: Fugitive Reading Order",
+    "slug": "bruce-wayne-fugitive-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/bruce-wayne-fugitive-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bruce-wayne-murderer-reading-order",
+    "title": "Bruce Wayne: Murderer? Reading Order",
+    "slug": "bruce-wayne-murderer-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/bruce-wayne-murderer-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "city-of-bane-reading-order",
+    "title": "City of Bane Reading Order",
+    "slug": "city-of-bane-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/city-of-bane-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "convergence-reading-order",
+    "title": "Convergence Reading Order",
+    "slug": "convergence-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/convergence-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "countdown-to-infinite-crisis-reading-order",
+    "title": "Countdown to Infinite Crisis Reading Order",
+    "slug": "countdown-to-infinite-crisis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/countdown-to-infinite-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "crisis-on-infinite-earths-reading-order",
+    "title": "Crisis on Infinite Earths Reading Order",
+    "slug": "crisis-on-infinite-earths-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/crisis-on-infinite-earths-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dark-crisis-on-infinite-earths-reading-order",
+    "title": "Dark Crisis on Infinite Earths Reading Order",
+    "slug": "dark-crisis-on-infinite-earths-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dark-crisis-on-infinite-earths-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dark-nights-death-metal-reading-order",
+    "title": "Dark Nights: Death Metal Reading Order",
+    "slug": "dark-nights-death-metal-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dark-nights-death-metal-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dark-nights-metal-reading-order",
+    "title": "Dark Nights: Metal Reading Order",
+    "slug": "dark-nights-metal-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dark-nights-metal-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "darkseid-war-reading-order",
+    "title": "Darkseid War Reading Order",
+    "slug": "darkseid-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/darkseid-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "day-of-judgment-reading-order",
+    "title": "Day of Judgment Reading Order",
+    "slug": "day-of-judgment-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/day-of-judgment-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-k-o-reading-order",
+    "title": "DC K.O. Reading Order",
+    "slug": "dc-k-o-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dc-k-o-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-one-million-reading-order",
+    "title": "DC One Million Reading Order",
+    "slug": "dc-one-million-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dc-one-million-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-universe-trinity-reading-order",
+    "title": "DC Universe: Trinity Reading Order",
+    "slug": "dc-universe-trinity-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dc-universe-trinity-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-you-reading-order",
+    "title": "DC You Reading Order",
+    "slug": "dc-you-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dc-you-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dceased-reading-order",
+    "title": "DCeased Reading Order",
+    "slug": "dceased-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/dceased-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "death-of-superman-reading-order",
+    "title": "Death of Superman Reading Order",
+    "slug": "death-of-superman-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/death-of-superman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "death-of-the-family-reading-order",
+    "title": "Death of the Family Reading Order",
+    "slug": "death-of-the-family-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/death-of-the-family-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "drowned-earth-reading-order",
+    "title": "Drowned Earth Reading Order",
+    "slug": "drowned-earth-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/drowned-earth-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "eclipso-the-darkness-within-reading-order",
+    "title": "Eclipso: The Darkness Within Reading Order",
+    "slug": "eclipso-the-darkness-within-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/eclipso-the-darkness-within-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "endless-winter-reading-order",
+    "title": "Endless Winter Reading Order",
+    "slug": "endless-winter-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/endless-winter-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "event-leviathan-reading-order",
+    "title": "Event Leviathan Reading Order",
+    "slug": "event-leviathan-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/event-leviathan-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "fear-state-reading-order",
+    "title": "Fear State Reading Order",
+    "slug": "fear-state-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/fear-state-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "final-crisis-reading-order",
+    "title": "Final Crisis Reading Order",
+    "slug": "final-crisis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/final-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "final-days-of-superman-reading-order",
+    "title": "Final Days of Superman Reading Order",
+    "slug": "final-days-of-superman-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/final-days-of-superman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "final-night-reading-order",
+    "title": "Final Night Reading Order",
+    "slug": "final-night-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/final-night-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "flash-dead-heat-reading-order",
+    "title": "Flash: Dead Heat Reading Order",
+    "slug": "flash-dead-heat-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/flash-dead-heat-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "flashpoint-reading-order",
+    "title": "Flashpoint Reading Order",
+    "slug": "flashpoint-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/flashpoint-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "forever-evil-blight-reading-order",
+    "title": "Forever Evil: Blight Reading Order",
+    "slug": "forever-evil-blight-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/forever-evil-blight-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "forever-evil-reading-order",
+    "title": "Forever Evil Reading Order",
+    "slug": "forever-evil-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/forever-evil-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "funeral-for-a-friend-reading-order",
+    "title": "Funeral for a Friend Reading Order",
+    "slug": "funeral-for-a-friend-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/funeral-for-a-friend-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "future-state-reading-order",
+    "title": "Future State Reading Order",
+    "slug": "future-state-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/future-state-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "genesis-reading-order",
+    "title": "Genesis Reading Order",
+    "slug": "genesis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/genesis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "gotham-war-reading-order",
+    "title": "Gotham War Reading Order",
+    "slug": "gotham-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/gotham-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "gothtopia-reading-order",
+    "title": "Gothtopia Reading Order",
+    "slug": "gothtopia-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/gothtopia-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "grant-morrisons-batman-reading-order",
+    "title": "Grant Morrison&#039;s Batman Reading Order",
+    "slug": "grant-morrisons-batman-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/grant-morrisons-batman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-lantern-godhead-reading-order",
+    "title": "Green Lantern: Godhead Reading Order",
+    "slug": "green-lantern-godhead-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/green-lantern-godhead-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-lantern-lights-out-reading-order",
+    "title": "Green Lantern: Lights Out Reading Order",
+    "slug": "green-lantern-lights-out-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/green-lantern-lights-out-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-lantern-uprising-reading-order",
+    "title": "Green Lantern: Uprising Reading Order",
+    "slug": "green-lantern-uprising-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/green-lantern-uprising-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "heroes-in-crisis-reading-order",
+    "title": "Heroes in Crisis Reading Order",
+    "slug": "heroes-in-crisis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/heroes-in-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "identity-crisis-reading-order",
+    "title": "Identity Crisis Reading Order",
+    "slug": "identity-crisis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/identity-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "infinite-crisis-reading-order",
+    "title": "Infinite Crisis Reading Order",
+    "slug": "infinite-crisis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/infinite-crisis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "injustice-reading-order",
+    "title": "Injustice Reading Order",
+    "slug": "injustice-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/injustice-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "invasion-reading-order",
+    "title": "Invasion! Reading Order",
+    "slug": "invasion-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/invasion-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jack-kirbys-fourth-world-reading-order",
+    "title": "Jack Kirby&#039;s Fourth World Reading Order",
+    "slug": "jack-kirbys-fourth-world-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/jack-kirbys-fourth-world-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "janus-directive-reading-order",
+    "title": "Janus Directive Reading Order",
+    "slug": "janus-directive-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/janus-directive-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "joker-war-reading-order",
+    "title": "Joker War Reading Order",
+    "slug": "joker-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/joker-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jokers-last-laugh-reading-order",
+    "title": "Joker&#039;s Last Laugh Reading Order",
+    "slug": "jokers-last-laugh-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/jokers-last-laugh-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jsa-black-reign-reading-order",
+    "title": "JSA: Black Reign Reading Order",
+    "slug": "jsa-black-reign-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/jsa-black-reign-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "justice-league-breakdowns-reading-order",
+    "title": "Justice League: Breakdowns Reading Order",
+    "slug": "justice-league-breakdowns-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/justice-league-breakdowns-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "justice-league-vs-suicide-squad-reading-order",
+    "title": "Justice League vs. Suicide Squad Reading Order",
+    "slug": "justice-league-vs-suicide-squad-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/justice-league-vs-suicide-squad-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "knight-terrors-reading-order",
+    "title": "Knight Terrors Reading Order",
+    "slug": "knight-terrors-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/knight-terrors-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "knightfall-saga-reading-order",
+    "title": "Knightfall Saga Reading Order",
+    "slug": "knightfall-saga-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/knightfall-saga-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "krypton-returns-reading-order",
+    "title": "Krypton Returns Reading Order",
+    "slug": "krypton-returns-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/krypton-returns-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lazarus-contract-reading-order",
+    "title": "Lazarus Contract Reading Order",
+    "slug": "lazarus-contract-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/lazarus-contract-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lazarus-planet-reading-order",
+    "title": "Lazarus Planet Reading Order",
+    "slug": "lazarus-planet-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/lazarus-planet-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "legends-reading-order",
+    "title": "Legends Reading Order",
+    "slug": "legends-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/legends-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lightning-saga-reading-order",
+    "title": "Lightning Saga Reading Order",
+    "slug": "lightning-saga-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/lightning-saga-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "millennium-reading-order",
+    "title": "Millennium Reading Order",
+    "slug": "millennium-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/millennium-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "multiversity-reading-order",
+    "title": "Multiversity Reading Order",
+    "slug": "multiversity-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/multiversity-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "new-52-futures-end-reading-order",
+    "title": "New 52: Futures End Reading Order",
+    "slug": "new-52-futures-end-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/new-52-futures-end-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "new-52-reading-order",
+    "title": "New 52 Reading Order",
+    "slug": "new-52-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/new-52-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "night-of-the-monster-men-reading-order",
+    "title": "Night of the Monster Men Reading Order",
+    "slug": "night-of-the-monster-men-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/night-of-the-monster-men-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "night-of-the-owls-reading-order",
+    "title": "Night of the Owls Reading Order",
+    "slug": "night-of-the-owls-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/night-of-the-owls-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "our-worlds-at-war-reading-order",
+    "title": "Our Worlds at War Reading Order",
+    "slug": "our-worlds-at-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/our-worlds-at-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "panic-in-the-sky-reading-order",
+    "title": "Panic in the Sky Reading Order",
+    "slug": "panic-in-the-sky-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/panic-in-the-sky-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "red-daughter-of-krypton-reading-order",
+    "title": "Red Daughter of Krypton Reading Order",
+    "slug": "red-daughter-of-krypton-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/red-daughter-of-krypton-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "reign-of-doomsday-reading-order",
+    "title": "Reign of Doomsday Reading Order",
+    "slug": "reign-of-doomsday-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/reign-of-doomsday-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "reign-of-the-supermen-reading-order",
+    "title": "Reign of the Supermen Reading Order",
+    "slug": "reign-of-the-supermen-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/reign-of-the-supermen-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "rise-of-the-third-army-reading-order",
+    "title": "Rise of the Third Army Reading Order",
+    "slug": "rise-of-the-third-army-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/rise-of-the-third-army-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "robin-rises-reading-order",
+    "title": "Robin Rises Reading Order",
+    "slug": "robin-rises-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/robin-rises-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "robin-war-reading-order",
+    "title": "Robin War Reading Order",
+    "slug": "robin-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/robin-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "rotworld-reading-order",
+    "title": "Rotworld Reading Order",
+    "slug": "rotworld-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/rotworld-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "shadow-war-reading-order",
+    "title": "Shadow War Reading Order",
+    "slug": "shadow-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/shadow-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "sinestro-corps-war-reading-order",
+    "title": "Sinestro Corps War Reading Order",
+    "slug": "sinestro-corps-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/sinestro-corps-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-doomed-reading-order",
+    "title": "Superman: Doomed Reading Order",
+    "slug": "superman-doomed-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-doomed-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-emperor-joker-reading-order",
+    "title": "Superman: Emperor Joker Reading Order",
+    "slug": "superman-emperor-joker-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-emperor-joker-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-exile-reading-order",
+    "title": "Superman: Exile Reading Order",
+    "slug": "superman-exile-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-exile-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-hel-on-earth-reading-order",
+    "title": "Superman: H&#039;el on Earth Reading Order",
+    "slug": "superman-hel-on-earth-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-hel-on-earth-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-house-of-brainiac-reading-order",
+    "title": "Superman: House of Brainiac Reading Order",
+    "slug": "superman-house-of-brainiac-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-house-of-brainiac-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-new-krypton-reading-order",
+    "title": "Superman: New Krypton Reading Order",
+    "slug": "superman-new-krypton-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-new-krypton-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-reborn-reading-order",
+    "title": "Superman Reborn Reading Order",
+    "slug": "superman-reborn-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-reborn-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-savage-dawn-reading-order",
+    "title": "Superman: Savage Dawn Reading Order",
+    "slug": "superman-savage-dawn-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-savage-dawn-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-up-up-and-away-reading-order",
+    "title": "Superman: Up, Up, and Away Reading Order",
+    "slug": "superman-up-up-and-away-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/superman-up-up-and-away-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-black-diamond-probability-reading-order",
+    "title": "The Black Diamond Probability Reading Order",
+    "slug": "the-black-diamond-probability-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/the-black-diamond-probability-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-culling-reading-order",
+    "title": "The Culling Reading Order",
+    "slug": "the-culling-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/the-culling-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-infected-reading-order",
+    "title": "The Infected Reading Order",
+    "slug": "the-infected-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/the-infected-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-justice-society-returns-reading-order",
+    "title": "The Justice Society Returns! Reading Order",
+    "slug": "the-justice-society-returns-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/the-justice-society-returns-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-resurrection-of-ras-al-ghul-reading-order",
+    "title": "The Resurrection of Ra&#039;s al Ghul Reading Order",
+    "slug": "the-resurrection-of-ras-al-ghul-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/the-resurrection-of-ras-al-ghul-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "throne-of-atlantis-reading-order",
+    "title": "Throne of Atlantis Reading Order",
+    "slug": "throne-of-atlantis-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/throne-of-atlantis-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "titans-beast-world-reading-order",
+    "title": "Titans: Beast World Reading Order",
+    "slug": "titans-beast-world-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/titans-beast-world-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "trial-of-the-amazons-reading-order",
+    "title": "Trial of the Amazons Reading Order",
+    "slug": "trial-of-the-amazons-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/trial-of-the-amazons-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "trial-superman-reading-order",
+    "title": "Trial of Superman Reading Order",
+    "slug": "trial-superman-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/trial-superman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "trinity-war-reading-order",
+    "title": "Trinity War Reading Order",
+    "slug": "trinity-war-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/trinity-war-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "underworld-unleashed-reading-order",
+    "title": "Underworld Unleashed Reading Order",
+    "slug": "underworld-unleashed-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/underworld-unleashed-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "war-of-the-gods-reading-order",
+    "title": "War of the Gods Reading Order",
+    "slug": "war-of-the-gods-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/war-of-the-gods-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "war-of-the-green-lanterns-reading-order",
+    "title": "War of the Green Lanterns Reading Order",
+    "slug": "war-of-the-green-lanterns-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/war-of-the-green-lanterns-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "world-without-young-justice-reading-order",
+    "title": "World Without Young Justice Reading Order",
+    "slug": "world-without-young-justice-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/world-without-young-justice-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "worlds-collide-reading-order",
+    "title": "Worlds Collide Reading Order",
+    "slug": "worlds-collide-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/worlds-collide-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wrath-of-the-first-lantern-reading-order",
+    "title": "Wrath of the First Lantern Reading Order",
+    "slug": "wrath-of-the-first-lantern-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/wrath-of-the-first-lantern-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "zatannas-search-reading-order",
+    "title": "Zatanna&#039;s Search Reading Order",
+    "slug": "zatannas-search-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/zatannas-search-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "zero-hour-reading-order",
+    "title": "Zero Hour Reading Order",
+    "slug": "zero-hour-reading-order",
+    "universe": "DC",
+    "category": "Sự kiện",
+    "url": "/dc/events/zero-hour-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "animal-man-reading-order",
+    "title": "Animal Man Reading Order",
+    "slug": "animal-man-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/animal-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "aquaman-reading-order",
+    "title": "Aquaman Reading Order",
+    "slug": "aquaman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/aquaman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "azrael-reading-order",
+    "title": "Azrael Reading Order",
+    "slug": "azrael-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/azrael-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bane-reading-order",
+    "title": "Bane Reading Order",
+    "slug": "bane-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/bane-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "barbara-gordon-reading-order",
+    "title": "Barbara Gordon Reading Order",
+    "slug": "barbara-gordon-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/barbara-gordon-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-beyond-reading-order",
+    "title": "Batman Beyond Reading Order",
+    "slug": "batman-beyond-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/batman-beyond-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-reading-order",
+    "title": "Batman Reading Order",
+    "slug": "batman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/batman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batman-villains-reading-order",
+    "title": "Batman Villains Reading Order",
+    "slug": "batman-villains-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/batman-villains-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "batwoman-reading-order",
+    "title": "Batwoman Reading Order",
+    "slug": "batwoman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/batwoman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "big-barda-reading-order",
+    "title": "Big Barda Reading Order",
+    "slug": "big-barda-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/big-barda-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "bizarro-reading-order",
+    "title": "Bizarro Reading Order",
+    "slug": "bizarro-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/bizarro-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-adam-reading-order",
+    "title": "Black Adam Reading Order",
+    "slug": "black-adam-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/black-adam-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-canary-reading-order",
+    "title": "Black Canary Reading Order",
+    "slug": "black-canary-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/black-canary-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-lightning-reading-order",
+    "title": "Black Lightning Reading Order",
+    "slug": "black-lightning-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/black-lightning-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "black-manta-reading-order",
+    "title": "Black Manta Reading Order",
+    "slug": "black-manta-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/black-manta-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "blue-beetle-and-booster-gold-reading-order",
+    "title": "Blue Beetle &amp; Booster Gold Reading Order",
+    "slug": "blue-beetle-and-booster-gold-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/blue-beetle-and-booster-gold-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "brainiac-reading-order",
+    "title": "Brainiac Reading Order",
+    "slug": "brainiac-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/brainiac-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "captain-cold-reading-order",
+    "title": "Captain Cold Reading Order",
+    "slug": "captain-cold-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/captain-cold-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cassandra-cain-reading-order",
+    "title": "Cassandra Cain Reading Order",
+    "slug": "cassandra-cain-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/cassandra-cain-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "catwoman-reading-order",
+    "title": "Catwoman Reading Order",
+    "slug": "catwoman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/catwoman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cheetah-reading-order",
+    "title": "Cheetah Reading Order",
+    "slug": "cheetah-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/cheetah-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "clayface-reading-order",
+    "title": "Clayface Reading Order",
+    "slug": "clayface-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/clayface-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cyborg-reading-order",
+    "title": "Cyborg Reading Order",
+    "slug": "cyborg-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/cyborg-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "cyborg-superman-reading-order",
+    "title": "Cyborg Superman Reading Order",
+    "slug": "cyborg-superman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/cyborg-superman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "damian-wayne-reading-order",
+    "title": "Damian Wayne Reading Order",
+    "slug": "damian-wayne-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/damian-wayne-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "darkseid-reading-order",
+    "title": "Darkseid Reading Order",
+    "slug": "darkseid-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/darkseid-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "deadman-reading-order",
+    "title": "Deadman Reading Order",
+    "slug": "deadman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/deadman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "deathstroke-reading-order",
+    "title": "Deathstroke Reading Order",
+    "slug": "deathstroke-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/deathstroke-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dick-grayson-reading-order",
+    "title": "Dick Grayson Reading Order",
+    "slug": "dick-grayson-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/dick-grayson-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doctor-fate-reading-order",
+    "title": "Doctor Fate Reading Order",
+    "slug": "doctor-fate-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/doctor-fate-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doom-patrol-reading-order",
+    "title": "Doom Patrol Reading Order",
+    "slug": "doom-patrol-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/doom-patrol-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "duke-thomas-reading-order",
+    "title": "Duke Thomas Reading Order",
+    "slug": "duke-thomas-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/duke-thomas-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "elongated-man-reading-order",
+    "title": "Elongated Man Reading Order",
+    "slug": "elongated-man-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/elongated-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "etrigan-the-demon-reading-order",
+    "title": "Etrigan the Demon Reading Order",
+    "slug": "etrigan-the-demon-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/etrigan-the-demon-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "firestorm-reading-order",
+    "title": "Firestorm Reading Order",
+    "slug": "firestorm-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/firestorm-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-arrow-reading-order",
+    "title": "Green Arrow Reading Order",
+    "slug": "green-arrow-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/green-arrow-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "green-lantern-reading-order",
+    "title": "Green Lantern Reading Order",
+    "slug": "green-lantern-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/green-lantern-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "guy-gardner-reading-order",
+    "title": "Guy Gardner Reading Order",
+    "slug": "guy-gardner-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/guy-gardner-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "harley-quinn-reading-order",
+    "title": "Harley Quinn Reading Order",
+    "slug": "harley-quinn-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/harley-quinn-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hawkman-and-hawkgirl-reading-order",
+    "title": "Hawkman and Hawkgirl Reading Order",
+    "slug": "hawkman-and-hawkgirl-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/hawkman-and-hawkgirl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "huntress-reading-order",
+    "title": "Huntress Reading Order",
+    "slug": "huntress-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/huntress-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jason-todd-reading-order",
+    "title": "Jason Todd Reading Order",
+    "slug": "jason-todd-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/jason-todd-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jim-gordon-reading-order",
+    "title": "Jim Gordon Reading Order",
+    "slug": "jim-gordon-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/jim-gordon-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "jimmy-olsen-reading-order",
+    "title": "Jimmy Olsen Reading Order",
+    "slug": "jimmy-olsen-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/jimmy-olsen-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "john-constantine-reading-order",
+    "title": "John Constantine Reading Order",
+    "slug": "john-constantine-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/john-constantine-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "joker-reading-order",
+    "title": "Joker Reading Order",
+    "slug": "joker-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/joker-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "justice-league-dark-reading-order",
+    "title": "Justice League Dark Reading Order",
+    "slug": "justice-league-dark-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/justice-league-dark-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "justice-league-reading-order",
+    "title": "Justice League Reading Order",
+    "slug": "justice-league-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/justice-league-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "justice-society-reading-order",
+    "title": "Justice Society Reading Order",
+    "slug": "justice-society-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/justice-society-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "killer-croc-reading-order",
+    "title": "Killer Croc Reading Order",
+    "slug": "killer-croc-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/killer-croc-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "king-shark-reading-order",
+    "title": "King Shark Reading Order",
+    "slug": "king-shark-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/king-shark-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "krypto-reading-order",
+    "title": "Krypto Reading Order",
+    "slug": "krypto-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/krypto-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "larfleeze-reading-order",
+    "title": "Larfleeze Reading Order",
+    "slug": "larfleeze-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/larfleeze-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "legion-of-super-heroes-reading-order",
+    "title": "Legion of Super-Heroes Reading Order",
+    "slug": "legion-of-super-heroes-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/legion-of-super-heroes-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lex-luthor-reading-order",
+    "title": "Lex Luthor Reading Order",
+    "slug": "lex-luthor-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/lex-luthor-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lobo-reading-order",
+    "title": "Lobo Reading Order",
+    "slug": "lobo-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/lobo-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "lois-lane-reading-order",
+    "title": "Lois Lane Reading Order",
+    "slug": "lois-lane-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/lois-lane-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "martian-manhunter-reading-order",
+    "title": "Martian Manhunter Reading Order",
+    "slug": "martian-manhunter-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/martian-manhunter-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mary-marvel-reading-order",
+    "title": "Mary Marvel Reading Order",
+    "slug": "mary-marvel-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/mary-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "metal-men-reading-order",
+    "title": "Metal Men Reading Order",
+    "slug": "metal-men-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/metal-men-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "metallo-reading-order",
+    "title": "Metallo Reading Order",
+    "slug": "metallo-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/metallo-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "metamorpho-reading-order",
+    "title": "Metamorpho Reading Order",
+    "slug": "metamorpho-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/metamorpho-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mister-freeze-reading-order",
+    "title": "Mister Freeze Reading Order",
+    "slug": "mister-freeze-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/mister-freeze-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "mister-mxyzptlk-reading-order",
+    "title": "Mister Mxyzptlk Reading Order",
+    "slug": "mister-mxyzptlk-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/mister-mxyzptlk-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "new-gods-reading-order",
+    "title": "New Gods Reading Order",
+    "slug": "new-gods-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/new-gods-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ocean-master-reading-order",
+    "title": "Ocean Master Reading Order",
+    "slug": "ocean-master-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/ocean-master-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "onomatopoeia-reading-order",
+    "title": "Onomatopoeia Reading Order",
+    "slug": "onomatopoeia-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/onomatopoeia-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "parasite-reading-order",
+    "title": "Parasite Reading Order",
+    "slug": "parasite-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/parasite-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "peacemaker-reading-order",
+    "title": "Peacemaker Reading Order",
+    "slug": "peacemaker-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/peacemaker-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "penguin-reading-order",
+    "title": "The Penguin Reading Order",
+    "slug": "penguin-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/penguin-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "phantom-stranger-reading-order",
+    "title": "Phantom Stranger Reading Order",
+    "slug": "phantom-stranger-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/phantom-stranger-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "phantom-zone-reading-order",
+    "title": "Phantom Zone Reading Order",
+    "slug": "phantom-zone-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/phantom-zone-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "plastic-man-reading-order",
+    "title": "Plastic Man Reading Order",
+    "slug": "plastic-man-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/plastic-man-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "poison-ivy-reading-order",
+    "title": "Poison Ivy Reading Order",
+    "slug": "poison-ivy-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/poison-ivy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "power-girl-reading-order",
+    "title": "Power Girl Reading Order",
+    "slug": "power-girl-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/power-girl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ragman-reading-order",
+    "title": "Ragman Reading Order",
+    "slug": "ragman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/ragman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ras-al-ghul-reading-order",
+    "title": "Ra&#039;s al Ghul Reading Order",
+    "slug": "ras-al-ghul-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/ras-al-ghul-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "renee-montoya-reading-order",
+    "title": "Renee Montoya Reading Order",
+    "slug": "renee-montoya-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/renee-montoya-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "reverse-flash-reading-order",
+    "title": "Reverse-Flash Reading Order",
+    "slug": "reverse-flash-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/reverse-flash-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "scarecrow-reading-order",
+    "title": "Scarecrow Reading Order",
+    "slug": "scarecrow-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/scarecrow-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "shazam-captain-marvel-reading-order",
+    "title": "Shazam (Captain Marvel) Reading Order",
+    "slug": "shazam-captain-marvel-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/shazam-captain-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "sinestro-reading-order",
+    "title": "Sinestro Reading Order",
+    "slug": "sinestro-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/sinestro-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "solomon-grundy-reading-order",
+    "title": "Solomon Grundy Reading Order",
+    "slug": "solomon-grundy-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/solomon-grundy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "stargirl-reading-order",
+    "title": "Stargirl Reading Order",
+    "slug": "stargirl-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/stargirl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "stephanie-brown-reading-order",
+    "title": "Stephanie Brown Reading Order",
+    "slug": "stephanie-brown-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/stephanie-brown-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "suicide-squad-reading-order",
+    "title": "Suicide Squad Reading Order",
+    "slug": "suicide-squad-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/suicide-squad-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superboy-reading-order",
+    "title": "Superboy Reading Order",
+    "slug": "superboy-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/superboy-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "supergirl-reading-order",
+    "title": "Supergirl Reading Order",
+    "slug": "supergirl-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/supergirl-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "superman-reading-order",
+    "title": "Superman Reading Order",
+    "slug": "superman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/superman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "swamp-thing-reading-order",
+    "title": "Swamp Thing Reading Order",
+    "slug": "swamp-thing-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/swamp-thing-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "teen-titans-reading-order",
+    "title": "Teen Titans Reading Order",
+    "slug": "teen-titans-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/teen-titans-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-atom-reading-order",
+    "title": "The Atom Reading Order",
+    "slug": "the-atom-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-atom-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-creeper-reading-order",
+    "title": "The Creeper Reading Order",
+    "slug": "the-creeper-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-creeper-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-flash-reading-order",
+    "title": "The Flash Reading Order",
+    "slug": "the-flash-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-flash-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-question-reading-order",
+    "title": "The Question Reading Order",
+    "slug": "the-question-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-question-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-riddler-reading-order",
+    "title": "The Riddler Reading Order",
+    "slug": "the-riddler-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-riddler-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-rogues-reading-order",
+    "title": "The Rogues Reading Order",
+    "slug": "the-rogues-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-rogues-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-spectre-reading-order",
+    "title": "The Spectre Reading Order",
+    "slug": "the-spectre-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-spectre-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "the-titans-reading-order",
+    "title": "The Titans Reading Order",
+    "slug": "the-titans-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/the-titans-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "tim-drake-reading-order",
+    "title": "Tim Drake Reading Order",
+    "slug": "tim-drake-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/tim-drake-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "two-face-reading-order",
+    "title": "Two-Face Reading Order",
+    "slug": "two-face-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/two-face-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wally-west-reading-order",
+    "title": "Wally West Reading Order",
+    "slug": "wally-west-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/wally-west-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "wonder-woman-reading-order",
+    "title": "Wonder Woman Reading Order",
+    "slug": "wonder-woman-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/wonder-woman-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "zatanna-reading-order",
+    "title": "Zatanna Reading Order",
+    "slug": "zatanna-reading-order",
+    "universe": "DC",
+    "category": "Nhân vật",
+    "url": "/dc/characters/zatanna-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dawn-of-dc-reading-order",
+    "title": "Dawn of DC Reading Order",
+    "slug": "dawn-of-dc-reading-order",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dawn-of-dc-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-all-in-reading-order",
+    "title": "DC All In Reading Order",
+    "slug": "dc-all-in-reading-order",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-all-in-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order",
+    "title": "DC Master Reading Order",
+    "slug": "dc-master-reading-order",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-1",
+    "title": "DC Master Reading Order Part 1",
+    "slug": "dc-master-reading-order-part-1",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-2",
+    "title": "DC Master Reading Order Part 2",
+    "slug": "dc-master-reading-order-part-2",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-3",
+    "title": "DC Master Reading Order Part 3",
+    "slug": "dc-master-reading-order-part-3",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-3/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-4",
+    "title": "DC Master Reading Order Part 4",
+    "slug": "dc-master-reading-order-part-4",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-4/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-5",
+    "title": "DC Master Reading Order Part 5",
+    "slug": "dc-master-reading-order-part-5",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-5/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-6",
+    "title": "DC Master Reading Order Part 6",
+    "slug": "dc-master-reading-order-part-6",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-6/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-7",
+    "title": "DC Master Reading Order Part 7",
+    "slug": "dc-master-reading-order-part-7",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-7/",
+    "year": ""
+  },
+  {
+    "id": "dc-master-reading-order-part-8",
+    "title": "DC Master Reading Order Part 8",
+    "slug": "dc-master-reading-order-part-8",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-master-reading-order-part-8/",
+    "year": ""
+  },
+  {
+    "id": "dc-rebirth-reading-order",
+    "title": "DC Rebirth Reading Order",
+    "slug": "dc-rebirth-reading-order",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-rebirth-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "dc-rebirth-reading-order-part-1",
+    "title": "DC Rebirth Reading Order Part 1",
+    "slug": "dc-rebirth-reading-order-part-1",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-rebirth-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "dc-rebirth-reading-order-part-2",
+    "title": "DC Rebirth Reading Order Part 2",
+    "slug": "dc-rebirth-reading-order-part-2",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-rebirth-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "dc-rebirth-reading-order-part-3",
+    "title": "DC Rebirth Reading Order Part 3",
+    "slug": "dc-rebirth-reading-order-part-3",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/dc-rebirth-reading-order-part-3/",
+    "year": ""
+  },
+  {
+    "id": "event-timeline",
+    "title": "DC Event Timeline",
+    "slug": "event-timeline",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/event-timeline/",
+    "year": ""
+  },
+  {
+    "id": "infinite-frontier-reading-order",
+    "title": "Infinite Frontier Reading Order",
+    "slug": "infinite-frontier-reading-order",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/infinite-frontier-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "new-52-reading-order-part-1",
+    "title": "New 52 Reading Order Part 1",
+    "slug": "new-52-reading-order-part-1",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/new-52-reading-order-part-1/",
+    "year": ""
+  },
+  {
+    "id": "new-52-reading-order-part-2",
+    "title": "New 52 Reading Order Part 2",
+    "slug": "new-52-reading-order-part-2",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/new-52-reading-order-part-2/",
+    "year": ""
+  },
+  {
+    "id": "new-52-reading-order-part-3",
+    "title": "New 52 Reading Order Part 3",
+    "slug": "new-52-reading-order-part-3",
+    "universe": "DC",
+    "category": "Chính / Master",
+    "url": "/dc/new-52-reading-order-part-3/",
+    "year": ""
+  },
+  {
+    "id": "4001-ad-reading-order",
+    "title": "4001 A.D. Reading Order",
+    "slug": "4001-ad-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/4001-ad-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "action-reading-list",
+    "title": "Action Reading List",
+    "slug": "action-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/action-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "alan-moore-reading-list",
+    "title": "Alan Moore Reading List",
+    "slug": "alan-moore-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/alan-moore-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "armor-hunters-reading-order",
+    "title": "Armor Hunters Reading Order",
+    "slug": "armor-hunters-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/armor-hunters-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "brian-k-vaughan-reading-list",
+    "title": "Brian K. Vaughan Reading List",
+    "slug": "brian-k-vaughan-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/brian-k-vaughan-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "brian-michael-bendis-reading-list",
+    "title": "Brian Michael Bendis Reading List",
+    "slug": "brian-michael-bendis-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/brian-michael-bendis-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "buffyverse-reading-order",
+    "title": "Buffyverse Reading Order",
+    "slug": "buffyverse-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/buffyverse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "conan-reading-list",
+    "title": "Conan Reading List",
+    "slug": "conan-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/conan-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "crime-reading-list",
+    "title": "Crime Reading List",
+    "slug": "crime-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/crime-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "doctor-who-idw-reading-order",
+    "title": "Doctor Who (IDW) Reading Order",
+    "slug": "doctor-who-idw-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/doctor-who-idw-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "doctor-who-titan-comics-reading-order",
+    "title": "Doctor Who (Titan Comics) Reading Order",
+    "slug": "doctor-who-titan-comics-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/doctor-who-titan-comics-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "drama-reading-list",
+    "title": "Drama Reading List",
+    "slug": "drama-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/drama-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "drama-reading-order",
+    "title": "Page not found - comicbookreadingorders",
+    "slug": "drama-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/drama-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "ed-brubaker-reading-list",
+    "title": "Ed Brubaker Reading List",
+    "slug": "ed-brubaker-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/ed-brubaker-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "fables-reading-order",
+    "title": "Fables Reading Order",
+    "slug": "fables-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/fables-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "feed",
+    "title": "feed",
+    "slug": "feed",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/feed/",
+    "year": ""
+  },
+  {
+    "id": "garth-ennis-reading-list",
+    "title": "Garth Ennis Reading List",
+    "slug": "garth-ennis-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/garth-ennis-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "gi-joe-idw-reading-order",
+    "title": "G.I. Joe (IDW) Reading Order",
+    "slug": "gi-joe-idw-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/gi-joe-idw-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "gi-joe-marvel-reading-order",
+    "title": "G.I. Joe (Marvel) Reading Order",
+    "slug": "gi-joe-marvel-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/gi-joe-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "godzilla-reading-list",
+    "title": "Godzilla Reading List",
+    "slug": "godzilla-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/godzilla-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "harbinger-wars-reading-order",
+    "title": "Harbinger Wars Reading Order",
+    "slug": "harbinger-wars-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/harbinger-wars-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "hellboy-mignolaverse-reading-order",
+    "title": "Hellboy (Mignolaverse) Reading Order",
+    "slug": "hellboy-mignolaverse-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/hellboy-mignolaverse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "invincible-reading-order",
+    "title": "Invincible Reading Order",
+    "slug": "invincible-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/invincible-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "irredeemable-incorruptible-reading-order",
+    "title": "Irredeemable/Incorruptible Reading Order",
+    "slug": "irredeemable-incorruptible-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/irredeemable-incorruptible-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "john-carter-dynamite-reading-order",
+    "title": "John Carter (Dynamite) Reading Order",
+    "slug": "john-carter-dynamite-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/john-carter-dynamite-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "judge-dredd-2000-ad-reading-order",
+    "title": "Judge Dredd (2000 AD) Reading Order",
+    "slug": "judge-dredd-2000-ad-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/judge-dredd-2000-ad-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "planetary-reading-order",
+    "title": "Planetary Reading Order",
+    "slug": "planetary-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/planetary-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "prophet-reading-order",
+    "title": "Prophet Reading Order",
+    "slug": "prophet-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/prophet-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "revolution-idw-reading-order",
+    "title": "Revolution (IDW) Reading Order",
+    "slug": "revolution-idw-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/revolution-idw-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "science-fiction-reading-list",
+    "title": "Science Fiction Reading List",
+    "slug": "science-fiction-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/science-fiction-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "spawn-reading-order",
+    "title": "Spawn Reading Order",
+    "slug": "spawn-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/spawn-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "star-wars-dark-horse-reading-order",
+    "title": "Star Wars (Dark Horse) Reading Order",
+    "slug": "star-wars-dark-horse-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/star-wars-dark-horse-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "star-wars-marvel-reading-order",
+    "title": "Star Wars (Marvel) Reading Order",
+    "slug": "star-wars-marvel-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/star-wars-marvel-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "teenage-mutant-ninja-turtles-idw-reading-order",
+    "title": "Teenage Mutant Ninja Turtles (IDW) Reading Order",
+    "slug": "teenage-mutant-ninja-turtles-idw-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/teenage-mutant-ninja-turtles-idw-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "teenage-mutant-ninja-turtles-reading-list",
+    "title": "Teenage Mutant Ninja Turtles Reading List",
+    "slug": "teenage-mutant-ninja-turtles-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/teenage-mutant-ninja-turtles-reading-list/",
+    "year": ""
+  },
+  {
+    "id": "the-boys-reading-order",
+    "title": "The Boys Reading Order",
+    "slug": "the-boys-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/the-boys-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "to-kill-a-king-reading-order",
+    "title": "To Kill a King Reading Order",
+    "slug": "to-kill-a-king-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/to-kill-a-king-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "transformers-idw-reading-order",
+    "title": "Transformers (IDW) Reading Order",
+    "slug": "transformers-idw-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/transformers-idw-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "valiant-universe-reading-order",
+    "title": "Valiant Universe Reading Order",
+    "slug": "valiant-universe-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/valiant-universe-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "watchmen-reading-order",
+    "title": "Watchmen Reading Order",
+    "slug": "watchmen-reading-order",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/watchmen-reading-order/",
+    "year": ""
+  },
+  {
+    "id": "zombie-reading-list",
+    "title": "Zombie Reading List",
+    "slug": "zombie-reading-list",
+    "universe": "Khác (Dark Horse, Image, IDW...)",
+    "category": "Series",
+    "url": "/other/zombie-reading-list/",
+    "year": ""
+  }
+]
