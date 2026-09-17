@@ -91,20 +91,21 @@
     const topBar = document.createElement('div');
     topBar.id = 'ro-top-bar';
     topBar.innerHTML = `
-      <div class="ro-bar-left">
-        <a href="/" class="ro-btn" style="background:#e42525;border-color:#e42525;font-weight:bold;">
+      <!-- Desktop layout -->
+      <div class="ro-bar-left ro-desktop-only">
+        <a href="/" class="ro-btn ro-logo-btn">
           📚 Reading Orders VN
         </a>
-        <div class="ro-search-trigger" id="ro-open-search" title="Tìm kiếm sự kiện hoặc nhân vật">
+        <div class="ro-search-trigger" id="ro-open-search" title="Tìm kiếm">
           🔍 <span class="ro-search-text">Tìm kiếm sự kiện, nhân vật... <span class="ro-search-kbd">Ctrl + K</span></span>
         </div>
-        <button id="ro-open-dashboard" class="ro-btn" style="background:#1e3a8a;border-color:#3b82f6;font-weight:600;" title="Xem tất cả các bộ truyện bạn đang theo dõi">
-          📊 <span class="ro-dashboard-text">Tiến độ của tôi</span> (<span id="ro-global-count">0</span>)
+        <button id="ro-open-dashboard" class="ro-btn" style="background:#1e3a8a;border-color:#3b82f6;font-weight:600;" title="Tiến độ đọc của bạn">
+          📊 <span class="ro-dashboard-text">Tiến độ</span> (<span id="ro-global-count">0</span>)
         </button>
       </div>
-      <div class="ro-bar-right">
+      <div class="ro-bar-right ro-desktop-only">
         <span id="ro-global-tracker-summary" style="font-size:12px;color:#fbbf24;font-weight:600;"></span>
-        <button id="ro-lang-btn" class="ro-btn" style="background:#334155;border-color:#475569;font-size:12px;font-weight:600;" title="Chuyển đổi ngôn ngữ Tiếng Việt / English">
+        <button id="ro-lang-btn" class="ro-btn" style="background:#334155;border-color:#475569;font-size:12px;font-weight:600;" title="Chuyển ngôn ngữ">
           ${curLang === 'vi' ? '🇻🇳 <span class="ro-lang-text">Tiếng Việt</span>' : '🇬🇧 <span class="ro-lang-text">English</span>'}
         </button>
         <a href="/marvel/events/" class="ro-btn">Marvel</a>
@@ -112,20 +113,75 @@
         <a href="/other/" class="ro-btn">Truyện Khác</a>
         <div id="ro-auth-section"></div>
       </div>
+
+      <!-- Mobile layout -->
+      <div class="ro-mobile-bar">
+        <a href="/" class="ro-logo-btn" style="color:#fff;text-decoration:none;font-weight:bold;font-size:14px;display:flex;align-items:center;gap:6px;">
+          📚 <span>Reading Orders VN</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button id="ro-mobile-search" class="ro-icon-btn" title="Tìm kiếm">🔍</button>
+          <button id="ro-mobile-dashboard" class="ro-icon-btn" title="Tiến độ" style="position:relative;">
+            📊<span id="ro-mobile-count" class="ro-mobile-badge">0</span>
+          </button>
+          <button id="ro-mobile-menu" class="ro-icon-btn ro-hamburger" title="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown drawer -->
+      <div id="ro-mobile-drawer" class="ro-mobile-drawer">
+        <div class="ro-drawer-section">
+          <a href="/marvel/events/" class="ro-drawer-link">🦸 Marvel Universe</a>
+          <a href="/dc/events/" class="ro-drawer-link">⚡ DC Comics</a>
+          <a href="/other/" class="ro-drawer-link">📖 Truyện Khác</a>
+        </div>
+        <div class="ro-drawer-divider"></div>
+        <div class="ro-drawer-section">
+          <button id="ro-drawer-lang" class="ro-drawer-link ro-drawer-btn">
+            ${curLang === 'vi' ? '🇻🇳 Tiếng Việt' : '🇬🇧 English'}
+          </button>
+        </div>
+        <div class="ro-drawer-divider"></div>
+        <div class="ro-drawer-section" id="ro-mobile-auth-section"></div>
+      </div>
     `;
 
     document.body.prepend(topBar);
 
+    // Desktop events
     document.getElementById('ro-open-search')?.addEventListener('click', openSearchModal);
     document.getElementById('ro-open-dashboard')?.addEventListener('click', openDashboardModal);
     document.getElementById('ro-lang-btn')?.addEventListener('click', () => {
       setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
     });
 
-    // Lắng nghe sự kiện đăng xuất toàn cục trên document
+    // Mobile events
+    document.getElementById('ro-mobile-search')?.addEventListener('click', openSearchModal);
+    document.getElementById('ro-mobile-dashboard')?.addEventListener('click', openDashboardModal);
+    document.getElementById('ro-drawer-lang')?.addEventListener('click', () => {
+      setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
+    });
+
+    // Hamburger toggle
+    const menuBtn = document.getElementById('ro-mobile-menu');
+    const drawer = document.getElementById('ro-mobile-drawer');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-active', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Đóng drawer khi bấm bên ngoài
     document.addEventListener('click', (e) => {
-      const btn = e.target && e.target.closest ? e.target.closest('#ro-logout-btn') : null;
-      if (btn) {
+      if (!e.target.closest('#ro-mobile-menu') && !e.target.closest('#ro-mobile-drawer')) {
+        drawer?.classList.remove('is-open');
+        menuBtn?.classList.remove('is-active');
+      }
+      // Đăng xuất
+      const logoutBtn = e.target?.closest('#ro-logout-btn, #ro-mobile-logout-btn');
+      if (logoutBtn) {
         e.preventDefault();
         e.stopPropagation();
         setCurrentUser(null, null);
@@ -135,36 +191,57 @@
   }
 
   function updateUserBar() {
+    // Desktop auth
     const authSection = document.getElementById('ro-auth-section');
-    if (!authSection) return;
+    // Mobile auth
+    const mobileAuth = document.getElementById('ro-mobile-auth-section');
 
     const user = getCurrentUser();
-    if (user) {
-      const isAdmin = user.role === 'admin';
-      authSection.innerHTML = `
-        <span class="ro-user-badge ${isAdmin ? 'is-admin' : ''}">
-          ${isAdmin ? '👑 Quản Trị Viên' : '👤'} ${escapeHtml(user.display_name || user.username)}
-        </span>
-        <button id="ro-logout-btn" class="ro-btn" style="background:#444;font-size:11px;cursor:pointer;" title="Đăng xuất khỏi tài khoản">Đăng xuất</button>
-      `;
 
-      const logoutBtn = document.getElementById('ro-logout-btn');
-      logoutBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setCurrentUser(null, null);
-        window.location.reload();
-      });
-    } else {
-      authSection.innerHTML = `
-        <button id="ro-login-btn" class="ro-btn" style="background:#2563eb;border-color:#2563eb;font-weight:bold;">
-          🔑 Đăng nhập
-        </button>
-      `;
+    if (authSection) {
+      if (user) {
+        const isAdmin = user.role === 'admin';
+        authSection.innerHTML = `
+          <span class="ro-user-badge ${isAdmin ? 'is-admin' : ''}">
+            ${isAdmin ? '👑 Quản Trị Viên' : '👤'} ${escapeHtml(user.display_name || user.username)}
+          </span>
+          <button id="ro-logout-btn" class="ro-btn" style="background:#444;font-size:11px;cursor:pointer;">Đăng xuất</button>
+        `;
+        document.getElementById('ro-logout-btn')?.addEventListener('click', (e) => {
+          e.preventDefault(); e.stopPropagation();
+          setCurrentUser(null, null); window.location.reload();
+        });
+      } else {
+        authSection.innerHTML = `
+          <button id="ro-login-btn" class="ro-btn" style="background:#2563eb;border-color:#2563eb;font-weight:bold;">🔑 Đăng nhập</button>
+        `;
+        document.getElementById('ro-login-btn')?.addEventListener('click', () => openAuthModal('login'));
+      }
+    }
 
-      document.getElementById('ro-login-btn')?.addEventListener('click', () => {
-        openAuthModal('login');
-      });
+    if (mobileAuth) {
+      if (user) {
+        const isAdmin = user.role === 'admin';
+        mobileAuth.innerHTML = `
+          <div class="ro-drawer-user">
+            <span>${isAdmin ? '👑' : '👤'} ${escapeHtml(user.display_name || user.username)}</span>
+            ${isAdmin ? '<span class="ro-drawer-role">Quản Trị Viên</span>' : ''}
+          </div>
+          <button id="ro-mobile-logout-btn" class="ro-drawer-link ro-drawer-btn" style="color:#f87171;">🚪 Đăng xuất</button>
+        `;
+        document.getElementById('ro-mobile-logout-btn')?.addEventListener('click', (e) => {
+          e.preventDefault(); e.stopPropagation();
+          setCurrentUser(null, null); window.location.reload();
+        });
+      } else {
+        mobileAuth.innerHTML = `
+          <button id="ro-mobile-login-btn" class="ro-drawer-link ro-drawer-btn" style="color:#60a5fa;font-weight:600;">🔑 Đăng nhập</button>
+        `;
+        document.getElementById('ro-mobile-login-btn')?.addEventListener('click', () => {
+          document.getElementById('ro-mobile-drawer')?.classList.remove('is-open');
+          openAuthModal('login');
+        });
+      }
     }
   }
 
@@ -353,15 +430,23 @@
   }
 
   function updateGlobalBadgeCount() {
-    const badge = document.getElementById('ro-global-count');
-    if (!badge) return;
-
     try {
       const list = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-      const keys = Object.keys(list);
-      badge.textContent = keys.length;
+      const count = Object.keys(list).length;
+
+      const badge = document.getElementById('ro-global-count');
+      if (badge) badge.textContent = count;
+
+      const mobileBadge = document.getElementById('ro-mobile-count');
+      if (mobileBadge) {
+        mobileBadge.textContent = count;
+        mobileBadge.style.display = count > 0 ? 'flex' : 'none';
+      }
     } catch {
-      badge.textContent = '0';
+      const badge = document.getElementById('ro-global-count');
+      if (badge) badge.textContent = '0';
+      const mobileBadge = document.getElementById('ro-mobile-count');
+      if (mobileBadge) mobileBadge.style.display = 'none';
     }
   }
 

@@ -43,6 +43,171 @@ body.has-ro-bar {
   flex-shrink: 0;
 }
 
+/* Desktop-only: ẩn khi mobile */
+.ro-desktop-only {
+  display: flex;
+}
+
+/* --- Mobile Bar --- */
+.ro-mobile-bar {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+/* --- Mobile Icon Buttons --- */
+.ro-icon-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.ro-icon-btn:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* --- Mobile Badge trên nút tiến độ --- */
+.ro-mobile-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e42525;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  line-height: 1;
+}
+
+/* --- Hamburger Icon --- */
+.ro-hamburger {
+  flex-direction: column;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+}
+
+.ro-hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X khi mở */
+.ro-hamburger.is-active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.ro-hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.ro-hamburger.is-active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* --- Mobile Drawer --- */
+.ro-mobile-drawer {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  background: rgba(18, 18, 22, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 99999;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  opacity: 0;
+  display: none;
+}
+
+.ro-mobile-drawer.is-open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.ro-drawer-section {
+  padding: 8px 0;
+}
+
+.ro-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ro-drawer-link:hover, .ro-drawer-link:active {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+
+.ro-drawer-btn {
+  font-size: 15px;
+}
+
+.ro-drawer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 0 16px;
+}
+
+.ro-drawer-user {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ro-drawer-role {
+  background: #854d0e;
+  color: #fef3c7;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
 .ro-badge {
   background: #e42525;
   color: #fff;
@@ -750,3 +915,39 @@ body.x-navbar-fixed-top-active .x-navbar-wrap {
     font-size: 11px !important;
   }
 }
+
+/* =========================================================
+   MOBILE: Chuyển sang hamburger menu dưới 768px
+   ========================================================= */
+@media (max-width: 767px) {
+  /* Tăng chiều cao bar cho mobile (dễ bấm hơn) */
+  #ro-top-bar {
+    height: 48px !important;
+    overflow: visible !important;
+  }
+
+  body.has-ro-bar {
+    padding-top: 48px !important;
+  }
+
+  /* Ẩn toàn bộ desktop layout */
+  .ro-desktop-only {
+    display: none !important;
+  }
+
+  /* Hiện mobile bar */
+  .ro-mobile-bar {
+    display: flex !important;
+  }
+
+  /* Hiện drawer khi cần */
+  .ro-mobile-drawer {
+    display: block !important;
+  }
+
+  /* Điều chỉnh drawer top theo chiều cao bar mobile */
+  .ro-mobile-drawer {
+    top: 48px !important;
+  }
+}
+
