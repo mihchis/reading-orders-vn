@@ -64,6 +64,43 @@ if (fs.existsSync(searchIndexSrc) && !fs.existsSync(searchIndexDest)) {
   fs.copyFileSync(searchIndexSrc, searchIndexDest);
 }
 
+// 4. Tạo các trang alias/redirect tại gốc cho toàn bộ 609 reading orders
+// Giúp truy cập trực tiếp /the-boys-reading-order hay /house-of-m-reading-order tự động chuyển hướng đúng, không bị 404
+if (fs.existsSync(searchIndexSrc)) {
+  try {
+    const items = JSON.parse(fs.readFileSync(searchIndexSrc, 'utf8'));
+    let aliasCount = 0;
+    const reserved = ['marvel', 'dc', 'other', 'updates', 'faq', 'contact', 'assets', 'wp-content', 'wp-includes', 'wp-json'];
+
+    for (const item of items) {
+      if (!item.slug || !item.url || reserved.includes(item.slug)) continue;
+
+      const slugDir = path.join(distDir, item.slug);
+      if (!fs.existsSync(slugDir)) {
+        fs.mkdirSync(slugDir, { recursive: true });
+        const redirectHtml = `<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=${item.url}">
+  <link rel="canonical" href="${item.url}">
+  <title>${item.title || 'Reading Order'}</title>
+  <script>window.location.replace("${item.url}");</script>
+</head>
+<body>
+  <p>Đang chuyển hướng đến <a href="${item.url}">${item.title || 'Reading Order'}</a>...</p>
+</body>
+</html>`;
+        fs.writeFileSync(path.join(slugDir, 'index.html'), redirectHtml, 'utf8');
+        aliasCount++;
+      }
+    }
+    console.log(`🔗 Đã tạo ${aliasCount} đường dẫn trực tiếp (alias/redirect) cho các reading orders.`);
+  } catch (err) {
+    console.warn('Lỗi khi tạo alias redirect:', err);
+  }
+}
+
 const duration = ((Date.now() - startTime) / 1000).toFixed(2);
 console.log(`✅ Build hoàn tất trong ${duration}s!`);
 console.log(`📊 Đã copy ${fileCount} files, tối ưu & chèn addon cho ${htmlCount} trang HTML.`);
