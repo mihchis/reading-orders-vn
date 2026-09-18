@@ -22,6 +22,7 @@ window.grecaptcha = window.grecaptcha || {
     const tasks = [
       ['createTopBar', createTopBar],
       ['createDashboardModal', createDashboardModal],
+      ['createAdminModal', createAdminModal],
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
       ['updateGlobalBadgeCount', updateGlobalBadgeCount],
@@ -201,11 +202,17 @@ window.grecaptcha = window.grecaptcha || {
       if (user) {
         const isAdmin = user.role === 'admin';
         authSection.innerHTML = `
-          <span class="ro-user-badge ${isAdmin ? 'is-admin' : ''}">
+          <button id="ro-admin-badge-btn" class="ro-user-badge ${isAdmin ? 'is-admin' : ''}" style="background:none;border:none;cursor:${isAdmin ? 'pointer' : 'default'};" title="${isAdmin ? 'Bấm để mở Bảng Quản Lý Quản Trị Viên' : ''}">
             ${isAdmin ? '👑 Quản Trị Viên' : '👤'} ${escapeHtml(user.display_name || user.username)}
-          </span>
+          </button>
           <button id="ro-logout-btn" class="ro-btn" style="background:#444;font-size:11px;cursor:pointer;">Đăng xuất</button>
         `;
+        if (isAdmin) {
+          document.getElementById('ro-admin-badge-btn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            openAdminModal();
+          });
+        }
         document.getElementById('ro-logout-btn')?.addEventListener('click', (e) => {
           e.preventDefault(); e.stopPropagation();
           setCurrentUser(null, null); window.location.reload();
@@ -426,6 +433,283 @@ window.grecaptcha = window.grecaptcha || {
   function closeDashboardModal() {
     const modal = document.getElementById('ro-dashboard-modal');
     if (modal) modal.classList.remove('is-open');
+  }
+
+  /* =========================================================
+     3B. MODAL QUẢN LÝ QUẢN TRỊ VIÊN (ADMIN MODAL)
+     ========================================================= */
+  function createAdminModal() {
+    if (document.getElementById('ro-admin-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'ro-admin-modal';
+    modal.className = 'ro-modal-backdrop';
+    modal.innerHTML = `
+      <div class="ro-dashboard-card" style="max-width: 660px; max-height: 85vh;">
+        <div class="ro-dashboard-header" style="background: #fffbeb; border-bottom: 2px solid #f59e0b; padding: 16px 20px;">
+          <div>
+            <h3 style="margin:0;font-size:17px;color:#92400e;display:flex;align-items:center;gap:8px;">
+              👑 <span>Bảng Điều Khiển Quản Trị Viên</span>
+            </h3>
+            <p style="margin:4px 0 0 0;font-size:12px;color:#b45309;">
+              Quản lý hệ thống, sao lưu / phục hồi tiến độ và tài khoản độc giả
+            </p>
+          </div>
+          <button id="ro-admin-modal-close" style="background:none;border:none;font-size:22px;cursor:pointer;color:#92400e;padding:4px 8px;">✕</button>
+        </div>
+
+        <div id="ro-admin-modal-content" class="ro-dashboard-body" style="padding: 20px; overflow-y: auto;">
+          <!-- Nội dung do renderAdminContent() sinh ra -->
+        </div>
+
+        <div class="ro-dashboard-footer" style="background:#fef3c7;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-top:1px solid #fde68a;">
+          <span style="color:#92400e;font-size:12px;font-weight:600;">Reading Orders VN • Admin Panel</span>
+          <button id="ro-admin-modal-logout" class="ro-btn" style="background:#dc2626;border-color:#dc2626;color:#fff;font-size:11px;font-weight:bold;cursor:pointer;">
+            🚪 Đăng xuất Admin
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeAdminModal();
+    });
+
+    document.getElementById('ro-admin-modal-close')?.addEventListener('click', closeAdminModal);
+    document.getElementById('ro-admin-modal-logout')?.addEventListener('click', () => {
+      if (confirm('Bạn có chắc muốn đăng xuất khỏi tài khoản Quản trị viên không?')) {
+        setCurrentUser(null, null);
+        window.location.reload();
+      }
+    });
+
+    // Bắt sự kiện click ủy nhiệm toàn trang cho ro-admin-export-btn
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('#ro-admin-export-btn');
+      if (btn) {
+        e.preventDefault();
+        e.stopPropagation();
+        openAdminModal();
+      }
+    });
+  }
+
+  function openAdminModal() {
+    const modal = document.getElementById('ro-admin-modal');
+    if (!modal) return;
+    renderAdminContent();
+    modal.classList.add('is-open');
+  }
+
+  function closeAdminModal() {
+    const modal = document.getElementById('ro-admin-modal');
+    if (modal) modal.classList.remove('is-open');
+  }
+
+  function renderAdminContent() {
+    const container = document.getElementById('ro-admin-modal-content');
+    if (!container) return;
+
+    let readingList = {};
+    try {
+      readingList = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
+    } catch {}
+
+    const trackedCount = Object.keys(readingList).length;
+    let totalReadIssues = 0;
+    Object.values(readingList).forEach(it => { totalReadIssues += (it.completed || 0); });
+
+    let localUsers = {};
+    try {
+      localUsers = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
+    } catch {}
+    const userNames = Object.keys(localUsers);
+
+    container.innerHTML = `
+      <!-- Thống kê nhanh -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:12px;margin-bottom:20px;">
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#0f172a;">609+</div>
+          <div style="font-size:11px;color:#64748b;font-weight:600;">Reading Orders</div>
+        </div>
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#16a34a;">${trackedCount}</div>
+          <div style="font-size:11px;color:#15803d;font-weight:600;">Bộ đang theo dõi</div>
+        </div>
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#2563eb;">${totalReadIssues}</div>
+          <div style="font-size:11px;color:#1d4ed8;font-weight:600;">Tập đã đọc</div>
+        </div>
+        <div style="background:#fdf4ff;border:1px solid #f5d0fe;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#a855f7;">${userNames.length}</div>
+          <div style="font-size:11px;color:#7e22ce;font-weight:600;">Độc giả đã lưu</div>
+        </div>
+      </div>
+
+      <!-- Sao lưu & Xuất nhập dữ liệu -->
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-bottom:16px;">
+        <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
+          💾 <span>Sao Lưu &amp; Khôi Phục Dữ Liệu</span>
+        </h4>
+        <p style="margin:0 0 12px 0;font-size:12px;color:#64748b;">
+          Xuất toàn bộ tiến độ đọc và cài đặt ra file JSON để chuyển sang máy khác, hoặc nhập file sao lưu đã có.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button id="ro-btn-export-json" class="ro-btn" style="background:#2563eb;color:#fff;font-weight:600;font-size:12px;cursor:pointer;padding:6px 14px;">
+            📥 Xuất dữ liệu (JSON)
+          </button>
+          <label class="ro-btn" style="background:#059669;color:#fff;font-weight:600;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;padding:6px 14px;">
+            📤 Nhập file sao lưu (JSON)
+            <input type="file" id="ro-input-import-json" accept=".json" style="display:none;" />
+          </label>
+          <button id="ro-btn-reset-data" class="ro-btn" style="background:#dc2626;color:#fff;font-weight:600;font-size:12px;cursor:pointer;padding:6px 14px;">
+            🗑️ Đặt lại tiến độ
+          </button>
+        </div>
+      </div>
+
+      <!-- Danh sách độc giả local -->
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-bottom:16px;">
+        <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
+          👥 <span>Danh Sách Độc Giả Trên Trình Duyệt (${userNames.length})</span>
+        </h4>
+        ${userNames.length === 0 ? `
+          <p style="font-size:12px;color:#94a3b8;margin:0;">Chưa có tài khoản độc giả nào được tạo cục bộ trên máy này.</p>
+        ` : `
+          <div style="display:flex;flex-direction:column;gap:8px;max-height:160px;overflow-y:auto;">
+            ${userNames.map(name => {
+              const u = localUsers[name];
+              return `
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f8fafc;border-radius:6px;font-size:12px;">
+                  <div>
+                    <strong>${escapeHtml(u.displayName || name)}</strong>
+                    <span style="color:#64748b;margin-left:6px;">(@${escapeHtml(name)})</span>
+                  </div>
+                  <button class="ro-btn ro-btn-del-user" data-user="${escapeHtml(name)}" style="background:#fee2e2;color:#dc2626;border:none;font-size:11px;padding:2px 8px;cursor:pointer;">
+                    Xóa
+                  </button>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `}
+      </div>
+
+      <!-- Phím tắt nhanh -->
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;">
+        <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
+          ⚡ <span>Liên Kết Nhanh Hệ Thống</span>
+        </h4>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button id="ro-admin-open-dash" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;cursor:pointer;">
+            📊 Xem Bảng Tiến Độ Đọc
+          </button>
+          <a href="/updates/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
+            📝 Trang Nhật Ký Cập Nhật
+          </a>
+          <a href="/faq/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
+            ❓ Trang Hỏi Đáp (FAQ)
+          </a>
+          <a href="/contact/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
+            ✉️ Trang Liên Hệ
+          </a>
+        </div>
+      </div>
+    `;
+
+    // Gán sự kiện Export JSON
+    document.getElementById('ro-btn-export-json')?.addEventListener('click', () => {
+      const backup = {
+        version: '1.0',
+        exportedAt: new Date().toISOString(),
+        site: 'Reading Orders VN',
+        readingList: JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}'),
+        localUsers: JSON.parse(localStorage.getItem('ro_local_users') || '{}'),
+        progress: {}
+      };
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('ro_progress_')) {
+          backup.progress[k] = localStorage.getItem(k);
+        }
+      }
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `reading_orders_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Gán sự kiện Import JSON
+    document.getElementById('ro-input-import-json')?.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const data = JSON.parse(event.target.result);
+          if (data.readingList) {
+            localStorage.setItem('ro_global_reading_list', JSON.stringify(data.readingList));
+          }
+          if (data.localUsers) {
+            localStorage.setItem('ro_local_users', JSON.stringify(data.localUsers));
+          }
+          if (data.progress) {
+            for (const [k, v] of Object.entries(data.progress)) {
+              localStorage.setItem(k, v);
+            }
+          }
+          alert('✅ Nhập dữ liệu sao lưu thành công!');
+          renderAdminContent();
+          updateGlobalBadgeCount();
+          renderDirectoryBadges();
+        } catch (err) {
+          alert('❌ File sao lưu không hợp lệ: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Gán sự kiện Reset Data
+    document.getElementById('ro-btn-reset-data')?.addEventListener('click', () => {
+      if (confirm('CẢNH BÁO: Thao tác này sẽ xóa sạch toàn bộ tiến độ đọc trên trình duyệt. Bạn có chắc muốn tiếp tục?')) {
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && (k.startsWith('ro_progress_') || k === 'ro_global_reading_list')) {
+            keysToRemove.push(k);
+          }
+        }
+        keysToRemove.forEach(k => localStorage.removeItem(k));
+        alert('Đã đặt lại toàn bộ tiến độ đọc.');
+        renderAdminContent();
+        updateGlobalBadgeCount();
+        renderDirectoryBadges();
+      }
+    });
+
+    // Xóa user
+    container.querySelectorAll('.ro-btn-del-user').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const uName = e.target.getAttribute('data-user');
+        if (confirm(`Bạn có chắc muốn xóa tài khoản "${uName}" không?`)) {
+          const lu = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
+          delete lu[uName];
+          localStorage.setItem('ro_local_users', JSON.stringify(lu));
+          renderAdminContent();
+        }
+      });
+    });
+
+    // Xem Bảng tiến độ
+    document.getElementById('ro-admin-open-dash')?.addEventListener('click', () => {
+      closeAdminModal();
+      openDashboardModal();
+    });
   }
 
   function updateGlobalBadgeCount() {
@@ -850,8 +1134,12 @@ window.grecaptcha = window.grecaptcha || {
       adminBanner.className = 'ro-admin-banner';
       adminBanner.innerHTML = `
         <span>👑 <strong>Chế độ Quản Trị Viên</strong></span>
-        <button id="ro-admin-export-btn" class="ro-btn" style="background:#b45309;font-size:11px;">Quản lý chung</button>
+        <button id="ro-admin-export-btn" class="ro-btn" style="background:#b45309;font-size:11px;cursor:pointer;">Quản lý chung</button>
       `;
+      adminBanner.querySelector('#ro-admin-export-btn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        openAdminModal();
+      });
       if (targetPanel) {
         targetPanel.insertBefore(adminBanner, targetPanel.firstChild);
       } else if (firstTransformedP) {
