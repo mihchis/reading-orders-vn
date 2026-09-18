@@ -1007,10 +1007,12 @@ window.grecaptcha = window.grecaptcha || {
       .replace(/<strong[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue)[^"]*"[^>]*>[\s\S]*?<\/strong>/gi, '');
     
     const cleanWithoutComments = strWithoutComments.replace(/<[^>]+>/g, '').trim();
-    const clean = str.replace(/<[^>]+>/g, '').trim();
-    if (!clean || clean.length < 3) return false;
 
-    // 2. Loại trừ các mô tả / chú thích / metadata / hướng dẫn đọc
+    // Nếu sau khi loại bỏ ghi chú mà không còn nội dung hoặc quá ngắn (< 3 ký tự)
+    // -> Dòng này 100% thuần túy là ghi chú / bình luận, KHÔNG PHẢI tập truyện!
+    if (!cleanWithoutComments || cleanWithoutComments.length < 3) return false;
+
+    // 2. Loại trừ các mô tả / chú thích / metadata / hướng dẫn đọc dựa trên PHẦN TÊN TẬP THỰC TẾ
     const excludes = [
       'year published', 'featured characters', 'previous event', 'next event',
       'ongoing series', 'limited series', 'one-shots', 'comments',
@@ -1033,21 +1035,19 @@ window.grecaptcha = window.grecaptcha || {
       'takes place in backups', 'diễn ra trong các phần truyện phụ',
       'click here to expand', 'bấm vào đây để mở rộng',
       'click here to collapse', 'bấm vào đây để thu gọn',
-      'contains minor spoilers', 'có chứa tình tiết tiết lộ',
-      'can be read after', 'có thể đọc sau',
       'the series was retitled', 'the series is retitled', 'được đổi tên thành',
       'reverts to its original numbering', 'quay lại cách đánh số tập gốc',
       'first appearance of', 'lần xuất hiện đầu tiên',
       'uncollected in trade', 'chưa được phát hành dưới dạng'
     ];
-    const cleanLower = clean.toLowerCase();
+    const cleanLower = cleanWithoutComments.toLowerCase();
     for (const ex of excludes) {
       if (cleanLower.includes(ex)) return false;
     }
 
-    // 3. Nếu là đoạn văn bản tự sự dài hoặc chứa nhiều câu (không phải tên tập truyện đơn lẻ)
-    if (clean.length > 70 && (/\.\s+[A-ZÀ-Ỹ]/.test(clean) || /[.!?]$/.test(clean))) {
-      if (!/^[\w\s:.'’\-–&]+#\d+\s*\(\d{4}\)/i.test(clean)) {
+    // 3. Nếu phần tên tập thực tế là đoạn văn bản tự sự dài hoặc chứa nhiều câu
+    if (cleanWithoutComments.length > 70 && (/\.\s+[A-ZÀ-Ỹ]/.test(cleanWithoutComments) || /[.!?]$/.test(cleanWithoutComments))) {
+      if (!/^[\w\s:.'’\-–&]+#\d+\s*\(\d{4}\)/i.test(cleanWithoutComments)) {
         return false;
       }
     }
@@ -1148,11 +1148,16 @@ window.grecaptcha = window.grecaptcha || {
         if (isIssueLine(trimmed)) {
           const issueId = `issue_${issueGlobalIndex}`;
           const isChecked = isLoggedIn && Boolean(savedProgress[issueId]);
-          const textOnly = trimmed.replace(/<[^>]+>/g, '').trim();
+          const titleWithoutNote = trimmed
+            .replace(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue|rgb\(\s*0\s*,\s*(?:0|102)\s*,\s*(?:255|170)\s*\))[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+            .replace(/<[^>]+>/g, '')
+            .replace(/\s*[-–—]\s*$/, '')
+            .trim();
+          const displayTitle = titleWithoutNote || trimmed.replace(/<[^>]+>/g, '').trim();
           issueGlobalIndex++;
 
           return `
-            <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(textOnly)}">
+            <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(displayTitle)}">
               <label class="ro-issue-left">
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
                 <span class="ro-issue-label">${trimmed}</span>
@@ -1487,11 +1492,25 @@ window.grecaptcha = window.grecaptcha || {
       }
     });
 
-    // 9. Accordion toggles
+    // 9. Accordion toggles & Coming Soon
     document.querySelectorAll('.x-accordion-toggle span').forEach(sp => {
       const t = sp.textContent.trim();
       if (t === 'Click here to expand') sp.textContent = 'Bấm vào đây để mở rộng';
       else if (t === 'Click here to collapse') sp.textContent = 'Bấm vào đây để thu gọn';
+    });
+
+    document.querySelectorAll('.x-tabs-panel').forEach(panel => {
+      const txt = panel.textContent.trim();
+      if (txt === 'Coming Soon.' || txt === 'Coming Soon') {
+        panel.innerHTML = '<p style="color:#888;font-style:italic;padding:12px 0;">Sắp ra mắt.</p>';
+      }
+    });
+
+    // Dịch giá trị metadata chung (Featured Characters: Everyone -> Tất cả nhân vật)
+    document.querySelectorAll('.entry-content p, #cs-content p, .x-text p').forEach(p => {
+      if (/\bEveryone\b/.test(p.innerHTML)) {
+        p.innerHTML = p.innerHTML.replace(/\bEveryone\b/g, 'Tất cả nhân vật');
+      }
     });
 
     // 10. Việt hóa các ghi chú, lưu ý và chú thích sự kiện (Notes & Annotations)
@@ -1525,7 +1544,16 @@ window.grecaptcha = window.grecaptcha || {
     'Whatever Happened to the Man of Tomorrow?': 'Điều Gì Đã Xảy Ra Với Người Đàn Ông Của Ngày Mai?',
     'The for-real-this-time Post-Crisis origin of Superman.': 'Nguồn gốc thực sự thời kỳ Post-Crisis của Superman.',
     'Wonder Woman tells two different stories in alternating issues.': 'Wonder Woman kể hai câu chuyện khác nhau xen kẽ qua từng tập.',
-    'Batman: War Games Book Two also includes the Batman: War Crimes event.': 'Batman: War Games Book Two cũng bao gồm sự kiện Batman: War Crimes.'
+    'Batman: War Games Book Two also includes the Batman: War Crimes event.': 'Batman: War Games Book Two cũng bao gồm sự kiện Batman: War Crimes.',
+    'This comic is not canon.': 'Tập này không thuộc canon (Non-canon).',
+    'Non-canon.': 'Không thuộc canon (Non-canon).',
+    'Non-canon': 'Không thuộc canon (Non-canon)',
+    'Terrible. Recommend to not read, it doesn\'t tie into anything else.':
+      'Chất lượng rất tệ. Khuyên bạn không nên đọc, tập này không liên kết với mạch truyện chung.',
+    'Ultimate Spider-Man went back to the original numbering at this point.':
+      'Bộ truyện Ultimate Spider-Man quay trở lại cách đánh số tập gốc từ thời điểm này.',
+    'Coming Soon.': 'Sắp ra mắt.',
+    'Coming Soon': 'Sắp ra mắt'
   };
 
   const READING_NOTE_RULES = [
@@ -1536,6 +1564,14 @@ window.grecaptcha = window.grecaptcha || {
     {
       re: /^Read\s+([\w\s:.'’\-–]+?)\s+here\.?$/i,
       fn: (_, title) => `Đọc ${title} tại đây.`
+    },
+    {
+      re: /The\s+(<a[^>]*>[\s\S]*?<\/a>)\s+can\s+be\s+read\s+here\.?\s*([\w\s:.'’#\-–]+?)\s+is\s+the\s+beginning\s+of\s+the\s+([\w\s:.'’#\-–]+?)\s+universe\.?/i,
+      fn: (_, link, iss, univ) => `Có thể đọc ${link} tại đây. ${iss} chính là khởi đầu của vũ trụ ${univ}.`
+    },
+    {
+      re: /The\s+([\w\s:.'’\-–]+?)\s+can\s+be\s+read\s+here\.?\s*([\w\s:.'’#\-–]+?)\s+is\s+the\s+beginning\s+of\s+the\s+([\w\s:.'’#\-–]+?)\s+universe\.?/i,
+      fn: (_, name, iss, univ) => `Có thể đọc ${name} tại đây. ${iss} chính là khởi đầu của vũ trụ ${univ}.`
     },
     {
       re: /^After\s+([\w\s:.'’#\-–]+?)\s+the\s+series\s+(?:was|is)\s+retitled\s+([\w\s:.'’#\-–]+?)(?:\s+and\s+continues\s+with\s+issue\s+(#?\d+))?\.?$/i,
