@@ -586,23 +586,20 @@ window.grecaptcha = window.grecaptcha || {
       <!-- Phím tắt nhanh -->
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;">
         <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
-          Liên Kết Nhanh Hệ Thống
+          ⚡ <span>Liên Kết Nhanh Hệ Thống</span>
         </h4>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <button id="ro-admin-open-dash" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;cursor:pointer;">
-            Xem Bảng Tiến Độ Đọc
+            📊 Xem Bảng Tiến Độ Đọc
           </button>
           <a href="/updates/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            Nhật Ký Cập Nhật
+            📝 Trang Nhật Ký Cập Nhật
           </a>
           <a href="/faq/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            Hỏi Đáp (FAQ)
+            ❓ Trang Hỏi Đáp (FAQ)
           </a>
-          <a href="https://t.me/mihchis" target="_blank" rel="noopener noreferrer" class="ro-btn" style="background:#0088cc;color:#fff;border:1px solid #0077b5;font-size:12px;text-decoration:none;">
-            Telegram @mihchis
-          </a>
-          <a href="mailto:trin79136@gmail.com" class="ro-btn" style="background:#ea4335;color:#fff;border:1px solid #c5221f;font-size:12px;text-decoration:none;">
-            trin79136@gmail.com
+          <a href="/contact/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
+            ✉️ Trang Liên Hệ
           </a>
         </div>
       </div>
