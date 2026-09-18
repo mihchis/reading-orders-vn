@@ -1,0 +1,447 @@
+{
+  "id": 43,
+  "slug": "decimation",
+  "direct_slug": "decimation-reading-order",
+  "title": "Decimation",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/decimation-reading-order/",
+  "description": "",
+  "year_published": "2006",
+  "featured_characters": "X-Men, X-Factor",
+  "previous_event_title": "House of M",
+  "previous_event_slug": "house-of-m",
+  "next_event_title": "Spider-Man: The Other",
+  "next_event_slug": "spider-man-the-other",
+  "cover_image": "",
+  "total_issues": 53,
+  "comic_issues_count": 53,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Decimation: House of M: The Day After #1",
+      "issue_type": "oneshot",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Mutopia X #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Men: The 198 Files #1",
+      "issue_type": "oneshot",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Sentinel Squad O*N*E #1",
+      "issue_type": "limited",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Sentinel Squad O*N*E #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Sentinel Squad O*N*E #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Sentinel Squad O*N*E #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Sentinel Squad O*N*E #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "New Excalibur #1",
+      "issue_type": "ongoing",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "New Excalibur #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "New Excalibur #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "X-Men Vol. 2 #177",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "X-Men Vol. 2 #178",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "X-Men Vol. 2 #179",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "New X-Men Vol. 2 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "New X-Men Vol. 2 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "New X-Men Vol. 2 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "New X-Men Vol. 2 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Generation M #1",
+      "issue_type": "limited",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Generation M #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Generation M #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Generation M #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Generation M #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Son of M #1",
+      "issue_type": "limited",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Son of M #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Son of M #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Son of M #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Son of M #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Son of M #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "X-Men: The 198 #1",
+      "issue_type": "limited",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "X-Men: The 198 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "X-Men: The 198 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "X-Men: The 198 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "X-Men: The 198 #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "X-Men: Deadly Genesis #1",
+      "issue_type": "limited",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "X-Men: Deadly Genesis #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "X-Men: Deadly Genesis #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "X-Men: Deadly Genesis #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "X-Men: Deadly Genesis #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "X-Men: Deadly Genesis #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Wolverine Vol. 3 #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Wolverine Vol. 3 #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Wolverine Vol. 3 #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Wolverine Vol. 3 #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Wolverine Vol. 3 #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Uncanny X-Men #466",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Uncanny X-Men #467",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Uncanny X-Men #468",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "X-Factor Vol. 3 #1",
+      "issue_type": "ongoing",
+      "year": "2006",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "X-Factor Vol. 3 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "X-Factor Vol. 3 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "X-Factor Vol. 3 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "X-Men Unlimited Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

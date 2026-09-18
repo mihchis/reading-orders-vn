@@ -1,0 +1,623 @@
+{
+  "id": 510,
+  "slug": "ocean-master",
+  "direct_slug": "ocean-master-reading-order",
+  "title": "Ocean Master",
+  "universe_slug": "dc",
+  "category_slug": "characters",
+  "category_name": "Nhân vật",
+  "url": "/dc/characters/ocean-master-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 75,
+  "comic_issues_count": 75,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Aquaman #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Ocean Master",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Aquaman #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Aquaman #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Aquaman #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Aquaman #49",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Aquaman #50",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Aquaman #51",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Aquaman #52",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Teen Titans #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Teen Titans #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Aquaman #62",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Aquaman #63",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "DC Comics Presents #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Action Comics #517",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Action Comics #518",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Action Comics #519",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Action Comics #520",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Aquaman Vol. 2 #1",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Aquaman Vol. 2 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Aquaman Vol. 2 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Aquaman Vol. 2 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Underworld Unleashed #1",
+      "issue_type": "limited",
+      "year": "1995",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Aquaman Vol. 5 #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Aquaman Vol. 5 #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Aquaman Vol. 5 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "JLA #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "JLA #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "JLA #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "JLA #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Aquaman Vol. 5 #63",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Aquaman Vol. 5 #64",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Aquaman Vol. 5 #65",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Aquaman Vol. 5 #66",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Aquaman Vol. 5 #67",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Aquaman Vol. 5 #68",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Aquaman Vol. 5 #69",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Aquaman Vol. 6 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Aquaman Vol. 6 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Aquaman: Sword of Atlantis #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Aquaman: Sword of Atlantis #44",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Aquaman: Sword of Atlantis #45",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Aquaman Vol. 7 #0",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Read Throne of Atlantis here.",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Aquaman Vol. 7 #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Aquaman Vol. 7 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Aquaman Vol. 7 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Aquaman Vol. 7 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Aquaman Vol. 7 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Aquaman Vol. 7 #23.1",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Black Manta",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Aquaman Vol. 7 #23.2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Ocean Master",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "Mera: Queen of Atlantis #1",
+      "issue_type": "limited",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Mera: Queen of Atlantis #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Mera: Queen of Atlantis #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Mera: Queen of Atlantis #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Mera: Queen of Atlantis #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Mera: Queen of Atlantis #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Aquaman Vol. 8 #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Justice League/Aquaman: Drowned Earth #1",
+      "issue_type": "oneshot",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Aquaman Vol. 8 #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Ocean Master: Year of the Villain #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Aquaman Vol. 8 #57",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Aquaman Vol. 8 #58",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Aquaman Vol. 8 #59",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Aquaman Vol. 8 #60",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Aquaman Vol. 8 #61",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "Aquaman Vol. 8 #62",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Aquaman Vol. 8 #63",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Aquaman Vol. 8 #64",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Aquaman Vol. 8 #65",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Aquamen #1",
+      "issue_type": "limited",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Aquamen #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Aquamen #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Aquamen #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Aquamen #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Aquamen #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

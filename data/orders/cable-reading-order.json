@@ -1,0 +1,2295 @@
+{
+  "id": 172,
+  "slug": "cable",
+  "direct_slug": "cable-reading-order",
+  "title": "Cable",
+  "universe_slug": "marvel",
+  "category_slug": "characters",
+  "category_name": "Nhân vật",
+  "url": "/marvel/characters/cable-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 284,
+  "comic_issues_count": 280,
+  "comments_count": 4,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Cable #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Cable #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Cable #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Cable #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Cable #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Cable #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Cable #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Cable #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Cable #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Cable #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Cable #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Cable #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Cable #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Cable #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Cable #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Cable #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Cable #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Cable #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Cable #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Cable #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Cable #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Cable #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Cable #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Cable #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Cable #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Cable #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Cable #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Cable #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Cable #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Cable #44",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Soldier X #1",
+      "issue_type": "ongoing",
+      "year": "2002",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Soldier X #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Soldier X #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Soldier X #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Soldier X #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Soldier X #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Soldier X #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Soldier X #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Soldier X #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Soldier X #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Soldier X #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Soldier X #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Cable & Deadpool #1",
+      "issue_type": "ongoing",
+      "year": "2004",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Cable & Deadpool #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Cable & Deadpool #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Cable & Deadpool #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Cable & Deadpool #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Cable & Deadpool #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Cable & Deadpool #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Cable & Deadpool #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "Cable & Deadpool #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Cable & Deadpool #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Cable & Deadpool #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Cable & Deadpool #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Cable & Deadpool #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Cable & Deadpool #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Cable & Deadpool #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Cable & Deadpool #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Cable & Deadpool #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Cable & Deadpool #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Cable & Deadpool #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Cable & Deadpool #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Cable & Deadpool #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Cable & Deadpool #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Cable & Deadpool #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "Cable & Deadpool #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Cable & Deadpool #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Cable & Deadpool #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Cable & Deadpool #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Cable & Deadpool #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Cable & Deadpool #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Cable & Deadpool #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Cable & Deadpool #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Cable & Deadpool #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "X-Men Vol. 2 #188",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "X-Men Vol. 2 #189",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "X-Men Vol. 2 #190",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "X-Men Vol. 2 #191",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 79,
+      "title": "X-Men Vol. 2 #192",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 80,
+      "title": "X-Men Vol. 2 #193",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 81,
+      "title": "Cable & Deadpool #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 82,
+      "title": "Cable & Deadpool #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 83,
+      "title": "Cable & Deadpool #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 84,
+      "title": "Cable & Deadpool #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 85,
+      "title": "Cable & Deadpool #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 86,
+      "title": "Cable & Deadpool #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 87,
+      "title": "Cable & Deadpool #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 88,
+      "title": "X-Men Vol. 2 #194",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 89,
+      "title": "X-Men Vol. 2 #195",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 90,
+      "title": "X-Men Vol. 2 #196",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 91,
+      "title": "X-Men Vol. 2 #197",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 92,
+      "title": "X-Men Vol. 2 #198",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 93,
+      "title": "Cable & Deadpool #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 94,
+      "title": "X-Men Vol. 2 #199",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 95,
+      "title": "Cable & Deadpool #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 96,
+      "title": "X-Men Vol. 2 #200",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 97,
+      "title": "Cable & Deadpool #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 98,
+      "title": "Cable Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 99,
+      "title": "Cable Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 100,
+      "title": "Cable Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 101,
+      "title": "Cable Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 102,
+      "title": "Cable Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 103,
+      "title": "Cable Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 104,
+      "title": "Cable Vol. 2 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 105,
+      "title": "Cable Vol. 2 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 106,
+      "title": "Cable Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 107,
+      "title": "Cable Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 108,
+      "title": "Cable Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 109,
+      "title": "Cable Vol. 2 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 110,
+      "title": "Read Messiah War here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 111,
+      "title": "Cable Vol. 2 #16",
+      "issue_type": "ongoing",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 112,
+      "title": "Cable Vol. 2 #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 113,
+      "title": "Cable Vol. 2 #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 114,
+      "title": "Cable Vol. 2 #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 115,
+      "title": "Cable Vol. 2 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 116,
+      "title": "Cable Vol. 2 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 117,
+      "title": "Cable Vol. 2 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 118,
+      "title": "Cable Vol. 2 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 119,
+      "title": "Cable Vol. 2 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 120,
+      "title": "Deadpool & Cable #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 121,
+      "title": "Deadpool & Cable #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 122,
+      "title": "Read X-Men: Second Coming here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 123,
+      "title": "Avengers: X-Sanction #1",
+      "issue_type": "limited",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 124,
+      "title": "Avengers: X-Sanction #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 125,
+      "title": "Avengers: X-Sanction #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 126,
+      "title": "Avengers: X-Sanction #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 127,
+      "title": "Cable and X-Force #1",
+      "issue_type": "ongoing",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 128,
+      "title": "Cable and X-Force #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 129,
+      "title": "Cable and X-Force #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 130,
+      "title": "Cable and X-Force #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 131,
+      "title": "Cable and X-Force #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 132,
+      "title": "Cable and X-Force #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 133,
+      "title": "Cable and X-Force #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 134,
+      "title": "Cable and X-Force #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 135,
+      "title": "Cable and X-Force #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 136,
+      "title": "Cable and X-Force #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 137,
+      "title": "Cable and X-Force #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 138,
+      "title": "Cable and X-Force #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 139,
+      "title": "Cable and X-Force #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 140,
+      "title": "Cable and X-Force #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 141,
+      "title": "Cable and X-Force #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 142,
+      "title": "Cable and X-Force #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 143,
+      "title": "Cable and X-Force #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 144,
+      "title": "Cable and X-Force #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 145,
+      "title": "Uncanny X-Force Vol. 2 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 146,
+      "title": "Cable and X-Force #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 147,
+      "title": "Uncanny X-Force Vol. 2 #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 148,
+      "title": "X-Force Vol. 4 #1",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 149,
+      "title": "X-Force Vol. 4 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 150,
+      "title": "X-Force Vol. 4 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 151,
+      "title": "X-Force Vol. 4 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 152,
+      "title": "X-Force Vol. 4 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 153,
+      "title": "X-Force Vol. 4 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 154,
+      "title": "X-Force Vol. 4 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 155,
+      "title": "X-Force Vol. 4 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 156,
+      "title": "X-Force Vol. 4 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 157,
+      "title": "X-Force Vol. 4 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 158,
+      "title": "X-Force Vol. 4 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 159,
+      "title": "X-Force Vol. 4 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 160,
+      "title": "X-Force Vol. 4 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 161,
+      "title": "X-Force Vol. 4 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 162,
+      "title": "X-Force Vol. 4 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 163,
+      "title": "Uncanny Avengers Vol. 3 #1",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 164,
+      "title": "Uncanny Avengers Vol. 3 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 165,
+      "title": "Uncanny Avengers Vol. 3 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 166,
+      "title": "Uncanny Avengers Vol. 3 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 167,
+      "title": "Uncanny Avengers Vol. 3 Annual #1",
+      "issue_type": "ongoing",
+      "year": "2016",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 168,
+      "title": "Uncanny Avengers Vol. 3 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 169,
+      "title": "Uncanny Avengers Vol. 3 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 170,
+      "title": "Uncanny Avengers Vol. 3 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 171,
+      "title": "Uncanny Avengers Vol. 3 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 172,
+      "title": "Uncanny Avengers Vol. 3 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 173,
+      "title": "Uncanny Avengers Vol. 3 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 174,
+      "title": "Uncanny Avengers Vol. 3 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 175,
+      "title": "Uncanny Avengers Vol. 3 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 176,
+      "title": "Read Civil War II here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 177,
+      "title": "Uncanny Avengers Vol. 3 #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 178,
+      "title": "Uncanny Avengers Vol. 3 #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 179,
+      "title": "Uncanny Avengers Vol. 3 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 180,
+      "title": "Uncanny Avengers Vol. 3 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 181,
+      "title": "Uncanny Avengers Vol. 3 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 182,
+      "title": "Uncanny Avengers Vol. 3 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 183,
+      "title": "Cable Vol. 3 #1",
+      "issue_type": "ongoing",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 184,
+      "title": "Cable Vol. 3 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 185,
+      "title": "Cable Vol. 3 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 186,
+      "title": "Cable Vol. 3 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 187,
+      "title": "Cable Vol. 3 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 188,
+      "title": "Cable #150",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 189,
+      "title": "Cable #151",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 190,
+      "title": "Cable #152",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 191,
+      "title": "Cable #153",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 192,
+      "title": "Cable #154",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 193,
+      "title": "Cable #155",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 194,
+      "title": "Cable #156",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 195,
+      "title": "Cable #157",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 196,
+      "title": "Cable #158",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 197,
+      "title": "Cable #159",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 198,
+      "title": "Extermination #1",
+      "issue_type": "limited",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 199,
+      "title": "Extermination #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 200,
+      "title": "Extermination #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 201,
+      "title": "Extermination #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 202,
+      "title": "Extermination #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 203,
+      "title": "Major X #0",
+      "issue_type": "limited",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 204,
+      "title": "Major X #1",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 205,
+      "title": "Major X #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 206,
+      "title": "Major X #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 207,
+      "title": "Major X #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 208,
+      "title": "Major X #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 209,
+      "title": "Major X #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 210,
+      "title": "X-Force Vol. 5 #1",
+      "issue_type": "ongoing",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 211,
+      "title": "X-Force Vol. 5 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 212,
+      "title": "X-Force Vol. 5 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 213,
+      "title": "X-Force Vol. 5 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 214,
+      "title": "X-Force Vol. 5 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 215,
+      "title": "X-Force Vol. 5 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 216,
+      "title": "X-Force Vol. 5 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 217,
+      "title": "X-Force Vol. 5 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 218,
+      "title": "X-Force Vol. 5 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 219,
+      "title": "X-Force Vol. 5 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 220,
+      "title": "X-Men Vol. 5 #1",
+      "issue_type": "ongoing",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 221,
+      "title": "Fallen Angels Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 222,
+      "title": "Fallen Angels Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 223,
+      "title": "Fallen Angels Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 224,
+      "title": "Fallen Angels Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 225,
+      "title": "X-Men Vol. 5 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 226,
+      "title": "Fallen Angels Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 227,
+      "title": "Fallen Angels Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 228,
+      "title": "Cable Vol. 4 #1",
+      "issue_type": "ongoing",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 229,
+      "title": "Cable Vol. 4 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 230,
+      "title": "Cable Vol. 4 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 231,
+      "title": "Cable Vol. 4 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 232,
+      "title": "Read X of Swords here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 233,
+      "title": "S.W.O.R.D. Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 234,
+      "title": "S.W.O.R.D. Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 235,
+      "title": "S.W.O.R.D. Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 236,
+      "title": "S.W.O.R.D. Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 237,
+      "title": "Cable Vol. 4 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 238,
+      "title": "Cable Vol. 4 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 239,
+      "title": "Cable Vol. 4 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 240,
+      "title": "Cable Vol. 4 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 241,
+      "title": "Cable Vol. 4 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 242,
+      "title": "Cable Vol. 4 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 243,
+      "title": "S.W.O.R.D. Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 244,
+      "title": "S.W.O.R.D. Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 245,
+      "title": "S.W.O.R.D. Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 246,
+      "title": "X-Men: Red Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 247,
+      "title": "X-Men: Red Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 248,
+      "title": "X-Men: Red Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 249,
+      "title": "X-Men: Red Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 250,
+      "title": "A.X.E.: Judgment Day #1",
+      "issue_type": "limited",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 251,
+      "title": "X-Men: Red Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 252,
+      "title": "A.X.E.: Judgment Day #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 253,
+      "title": "A.X.E.: Judgment Day #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 254,
+      "title": "X-Men: Red Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 255,
+      "title": "X-Men: Red Vol. 2 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 256,
+      "title": "X-Men: Red Vol. 2 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 257,
+      "title": "X-Men: Red Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 258,
+      "title": "X-Men: Red Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 259,
+      "title": "Children of the Vault #1",
+      "issue_type": "limited",
+      "year": "2023",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 260,
+      "title": "Children of the Vault #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 261,
+      "title": "Children of the Vault #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 262,
+      "title": "Children of the Vault #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 263,
+      "title": "Cable Vol. 5 #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 264,
+      "title": "Cable Vol. 5 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 265,
+      "title": "Cable Vol. 5 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 266,
+      "title": "Cable Vol. 5 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 267,
+      "title": "X-Men: Heir of Apocalypse #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 268,
+      "title": "X-Men: Heir of Apocalypse #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 269,
+      "title": "X-Men: Heir of Apocalypse #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 270,
+      "title": "X-Men: Heir of Apocalypse #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 271,
+      "title": "Cable: Love and Chrome #1",
+      "issue_type": "limited",
+      "year": "2025",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 272,
+      "title": "Cable: Love and Chrome #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 273,
+      "title": "Cable: Love and Chrome #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 274,
+      "title": "Cable: Love and Chrome #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 275,
+      "title": "Cable: Love and Chrome #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 276,
+      "title": "Weapon X-Men: Vol. 2 #1",
+      "issue_type": "limited",
+      "year": "2025",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 277,
+      "title": "Weapon X-Men: Vol. 2 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 278,
+      "title": "Weapon X-Men: Vol. 2 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 279,
+      "title": "Weapon X-Men: Vol. 2 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 280,
+      "title": "Phoenix #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 281,
+      "title": "Phoenix #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 282,
+      "title": "Phoenix #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 283,
+      "title": "Phoenix #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 284,
+      "title": "Phoenix #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

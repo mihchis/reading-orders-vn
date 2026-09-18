@@ -1,0 +1,775 @@
+{
+  "id": 204,
+  "slug": "hela",
+  "direct_slug": "hela-reading-order",
+  "title": "Hela",
+  "universe_slug": "marvel",
+  "category_slug": "characters",
+  "category_name": "Nhân vật",
+  "url": "/marvel/characters/hela-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 94,
+  "comic_issues_count": 94,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Journey Into Mystery #102",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Hela",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Thor #186",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Thor #187",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Thor #188",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Thor #189",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Thor #190",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Thor #251",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Thor #277",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Thor #278",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Defenders #66",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Defenders #67",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Defenders #68",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Thor #312",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Backup story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Thor #313",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Thor #314",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Thor #360",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Thor #361",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Thor #362",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "New Mutants #77",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "New Mutants #78",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "New Mutants #79",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "New Mutants #80",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "New Mutants #82",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "New Mutants #83",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "New Mutants #84",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "New Mutants #85",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Incredible Hulk #423",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Thor #488",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Thor #489",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Thor #611",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Thor #612",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Thor #613",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Thor #614",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Journey Into Mystery #622",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Journey Into Mystery #623",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Journey Into Mystery #624",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Journey Into Mystery #625",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Journey Into Mystery #626",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Journey Into Mystery #627",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Journey Into Mystery #628",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Journey Into Mystery #629",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Journey Into Mystery #630",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Journey Into Mystery #631",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Journey Into Mystery #632",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Journey Into Mystery #633",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Journey Into Mystery #634",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Journey Into Mystery #635",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Journey Into Mystery #636",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Exiled #1",
+      "issue_type": "oneshot",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Journey into Mystery #637",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "New Mutants Vol. 3 #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Journey into Mystery #638",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "New Mutants Vol. 3 #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Journey Into Mystery #639",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Journey Into Mystery #640",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Journey Into Mystery #641",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Mighty Thor #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Journey into Mystery #642",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Mighty Thor #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Journey into Mystery #643",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Mighty Thor #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Journey into Mystery #644",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Mighty Thor #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Journey Into Mystery #645",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "X-Factor #250",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "X-Factor #251",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "X-Factor #252",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "X-Factor #253",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "X-Factor #254",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "X-Factor #255",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Angela: Queen of Hel #1",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Angela: Queen of Hel #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Angela: Queen of Hel #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Angela: Queen of Hel #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Angela: Queen of Hel #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "Guardians of the Galaxy Vol. 5 #1",
+      "issue_type": "ongoing",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "Guardians of the Galaxy Vol. 5 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "Guardians of the Galaxy Vol. 5 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 79,
+      "title": "Guardians of the Galaxy Vol. 5 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 80,
+      "title": "Guardians of the Galaxy Vol. 5 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 81,
+      "title": "Guardians of the Galaxy Vol. 5 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 82,
+      "title": "Mighty Valkyries #1",
+      "issue_type": "limited",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 83,
+      "title": "Mighty Valkyries #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 84,
+      "title": "Mighty Valkyries #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 85,
+      "title": "Mighty Valkyries #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 86,
+      "title": "Mighty Valkyries #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 87,
+      "title": "Carnage Vol. 3 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 88,
+      "title": "Carnage Vol. 3 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 89,
+      "title": "Carnage Vol. 3 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 90,
+      "title": "Thor Vol. 6 #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 91,
+      "title": "Thor Vol. 6 #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 92,
+      "title": "Thor Vol. 6 #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 93,
+      "title": "Thor Vol. 6 #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 94,
+      "title": "Thor Vol. 6 #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

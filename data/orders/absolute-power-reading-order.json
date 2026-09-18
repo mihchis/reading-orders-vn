@@ -1,0 +1,279 @@
+{
+  "id": 317,
+  "slug": "absolute-power",
+  "direct_slug": "absolute-power-reading-order",
+  "title": "Absolute Power",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/absolute-power-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 32,
+  "comic_issues_count": 32,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Absolute Power: Ground Zero #1",
+      "issue_type": "oneshot",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "FCBD 2024 Absolute Power Special Edition #1",
+      "issue_type": "oneshot",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Absolute Power #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Wonder Woman Vol. 6 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Absolute Power: Task Force VII #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Batman Vol. 3 #150",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Superman Vol. 6 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Green Arrow Vol. 7 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Green Lantern Vol. 7 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Absolute Power: Task Force VII #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Absolute Power: Task Force VII #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Absolute Power #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Green Lantern Vol. 7 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Green Arrow Vol. 7 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Wonder Woman Vol. 6 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Batman Vol. 3 #151",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Batman Vol. 3 #152",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Green Arrow Vol. 7 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Superman Vol. 6 #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Superman Vol. 6 #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Absolute Power: Task Force VII #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Absolute Power: Task Force VII #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Absolute Power #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Green Lantern Vol. 7 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Absolute Power: Super Son #1",
+      "issue_type": "oneshot",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Absolute Power: Task Force VII #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Wonder Woman Vol. 6 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Absolute Power: Task Force VII #7",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Absolute Power: Origins #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Absolute Power: Origins #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Absolute Power: Origins #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Absolute Power #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

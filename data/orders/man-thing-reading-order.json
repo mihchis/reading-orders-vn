@@ -1,0 +1,895 @@
+{
+  "id": 234,
+  "slug": "man-thing",
+  "direct_slug": "man-thing-reading-order",
+  "title": "Man-Thing",
+  "universe_slug": "marvel",
+  "category_slug": "characters",
+  "category_name": "Nhân vật",
+  "url": "/marvel/characters/man-thing-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 109,
+  "comic_issues_count": 108,
+  "comments_count": 1,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Savage Tales #1",
+      "issue_type": "ongoing",
+      "year": "1971",
+      "note": "Xuất hiện lần đầu của Man-Thing",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Astonishing Tales #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Astonishing Tales #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Adventure into Fear #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Adventure into Fear #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Adventure into Fear #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Adventure into Fear #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Adventure into Fear #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Adventure into Fear #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Adventure into Fear #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Adventure into Fear #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Adventure into Fear #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Adventure into Fear #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Man-Thing #1",
+      "issue_type": "ongoing",
+      "year": "1974",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Man-Thing #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Man-Thing #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Man-Thing #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Man-Thing #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Man-Thing #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Man-Thing #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Man-Thing #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Giant-Size Man-Thing #1",
+      "issue_type": "ongoing",
+      "year": "1975",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Giant-Size Man-Thing #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Man-Thing #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Man-Thing #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Man-Thing #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Man-Thing #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Man-Thing #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Man-Thing #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Giant-Size Man-Thing #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Man-Thing #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Man-Thing #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Giant-Size Man-Thing #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Man-Thing #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Man-Thing #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Giant-Size Man-Thing #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Man-Thing #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Man-Thing #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Man-Thing #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Man-Thing #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Monsters Unleashed #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Monsters Unleashed #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Monsters Unleashed #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Incredible Hulk #197",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Incredible Hulk #198",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Rampaging Hulk #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Marvel Team-Up #68",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Marvel Two-in-One #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Micronauts #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Man-Thing Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "Man-Thing Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Man-Thing Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Man-Thing Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Doctor Strange Vol. 2 #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Man-Thing Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": "1979",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Man-Thing Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Man-Thing Vol. 2 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Man-Thing Vol. 2 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Man-Thing Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Man-Thing Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Man-Thing Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Spider-Man: Fear Itself #1",
+      "issue_type": "oneshot",
+      "year": "1992",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Dead of Night Featuring Man-Thing #1",
+      "issue_type": "limited",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Dead of Night Featuring Man-Thing #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Dead of Night Featuring Man-Thing #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "Dead of Night Featuring Man-Thing #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Infernal Man-Thing #1",
+      "issue_type": "limited",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Infernal Man-Thing #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Infernal Man-Thing #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Mrs. Deadpool and the Howling Commandos #1",
+      "issue_type": "limited",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Mrs. Deadpool and the Howling Commandos #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Mrs. Deadpool and the Howling Commandos #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Mrs. Deadpool and the Howling Commandos #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Howling Commandos of S.H.I.E.L.D. #1",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Howling Commandos of S.H.I.E.L.D. #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "Howling Commandos of S.H.I.E.L.D. #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "Howling Commandos of S.H.I.E.L.D. #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "Howling Commandos of S.H.I.E.L.D. #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 79,
+      "title": "Howling Commandos of S.H.I.E.L.D. #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 80,
+      "title": "Old Man Logan Vol. 2 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 81,
+      "title": "Old Man Logan Vol. 2 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 82,
+      "title": "Man-Thing Vol. 5 #1",
+      "issue_type": "limited",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 83,
+      "title": "Man-Thing Vol. 5 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 84,
+      "title": "Man-Thing Vol. 5 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 85,
+      "title": "Man-Thing Vol. 5 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 86,
+      "title": "Man-Thing Vol. 5 #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 87,
+      "title": "Read Damnation here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 88,
+      "title": "Weapon H #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 89,
+      "title": "Weapon H #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 90,
+      "title": "Weapon H #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 91,
+      "title": "Weapon H #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 92,
+      "title": "Weapon H #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 93,
+      "title": "Weapon H #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 94,
+      "title": "Weapon H #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 95,
+      "title": "Weapon H #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 96,
+      "title": "Weapon H #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 97,
+      "title": "Weapon H #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 98,
+      "title": "Avengers: Curse of the Man-Thing #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 99,
+      "title": "Spider-Man: Curse of the Man-Thing #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 100,
+      "title": "X-Men: Curse of the Man-Thing #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 101,
+      "title": "Incredible Hulk Vol. 6 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 102,
+      "title": "Incredible Hulk Vol. 6 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 103,
+      "title": "Venom War: Deadpool #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 104,
+      "title": "Venom War: Deadpool #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 105,
+      "title": "Venom War: Deadpool #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 106,
+      "title": "Uncanny X-Men Vol. 6 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 107,
+      "title": "Uncanny X-Men Vol. 6 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 108,
+      "title": "Uncanny X-Men Vol. 6 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 109,
+      "title": "Uncanny X-Men Vol. 6 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

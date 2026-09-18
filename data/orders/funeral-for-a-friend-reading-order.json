@@ -1,0 +1,111 @@
+{
+  "id": 373,
+  "slug": "funeral-for-a-friend",
+  "direct_slug": "funeral-for-a-friend-reading-order",
+  "title": "Funeral for a Friend",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/funeral-for-a-friend-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 11,
+  "comic_issues_count": 11,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Justice League America #70",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Adventures of Superman #498",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Action Comics #685",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Superman: Man of Steel #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Superman Vol. 2 #76",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Adventures of Superman #499",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Action Comics #686",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Superman: Man of Steel #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Superman Vol. 2 #77",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Legacy of Superman #1",
+      "issue_type": "oneshot",
+      "year": "1993",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Supergirl and Team Luthor #1",
+      "issue_type": "oneshot",
+      "year": "1993",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

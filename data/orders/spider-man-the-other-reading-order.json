@@ -1,0 +1,119 @@
+{
+  "id": 120,
+  "slug": "spider-man-the-other",
+  "direct_slug": "spider-man-the-other-reading-order",
+  "title": "Spider-Man: The Other",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/spider-man-the-other-reading-order/",
+  "description": "",
+  "year_published": "2005",
+  "featured_characters": "Spider-Man, Morlun",
+  "previous_event_title": "Decimation",
+  "previous_event_slug": "decimation",
+  "next_event_title": "Civil War",
+  "next_event_slug": "civil-war",
+  "cover_image": "",
+  "total_issues": 12,
+  "comic_issues_count": 12,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Friendly Neighborhood Spider-Man #1",
+      "issue_type": "ongoing",
+      "year": "2005",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Marvel Knights: Spider-Man #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Amazing Spider-Man #525",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Friendly Neighborhood Spider-Man #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Marvel Knights: Spider-Man #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Amazing Spider-Man #526",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Friendly Neighborhood Spider-Man #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Marvel Knights: Spider-Man #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Amazing Spider-Man #527",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Friendly Neighborhood Spider-Man #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Marvel Knights: Spider-Man #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Amazing Spider-Man #528",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

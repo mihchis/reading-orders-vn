@@ -1,0 +1,71 @@
+{
+  "id": 147,
+  "slug": "x-men-original-sin",
+  "direct_slug": "x-men-original-sin-reading-order",
+  "title": "X-Men: Original Sin",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/x-men-original-sin-reading-order/",
+  "description": "",
+  "year_published": "2008",
+  "featured_characters": "Wolverine, X-Men",
+  "previous_event_title": "X-Men: Manifest Destiny",
+  "previous_event_slug": "x-men-manifest-destiny",
+  "next_event_title": "Messiah War",
+  "next_event_slug": "messiah-war",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Wolverine: Origins #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "X-Men: Original Sin #1",
+      "issue_type": "oneshot",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Men: Legacy #217",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Wolverine: Origins #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "X-Men: Legacy #218",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Wolverine: Origins #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

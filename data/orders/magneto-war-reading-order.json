@@ -1,0 +1,87 @@
+{
+  "id": 78,
+  "slug": "magneto-war",
+  "direct_slug": "magneto-war-reading-order",
+  "title": "Magneto War",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/magneto-war-reading-order/",
+  "description": "",
+  "year_published": "1999",
+  "featured_characters": "X-Men, Magneto",
+  "previous_event_title": "The Hunt for Xavier",
+  "previous_event_slug": "hunt-for-xavier",
+  "next_event_title": "Apocalypse: The Twelve",
+  "next_event_slug": "apocalypse-the-twelve",
+  "cover_image": "",
+  "total_issues": 8,
+  "comic_issues_count": 8,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "X-Men: Magneto War #1",
+      "issue_type": "oneshot",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Uncanny X-Men #366",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Men Vol. 2 #86",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Uncanny X-Men #367",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "X-Men Vol. 2 #87",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Magneto Rex #1",
+      "issue_type": "limited",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Magneto Rex #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Magneto Rex #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

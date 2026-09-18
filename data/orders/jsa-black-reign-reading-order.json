@@ -1,0 +1,71 @@
+{
+  "id": 391,
+  "slug": "jsa-black-reign",
+  "direct_slug": "jsa-black-reign-reading-order",
+  "title": "JSA: Black Reign",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/jsa-black-reign-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "JSA #56",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Hawkman Vol. 4 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "JSA #57",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Hawkman Vol. 4 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "JSA #58",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Hawkman Vol. 4 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

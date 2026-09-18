@@ -1,0 +1,287 @@
+{
+  "id": 11,
+  "slug": "annihilation-conquest",
+  "direct_slug": "annihilation-conquest-reading-order",
+  "title": "Annihilation: Conquest",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/annihilation-conquest-reading-order/",
+  "description": "Lợi dụng sự tàn phá sau Làn sóng Hủy diệt, chủng tộc nửa máy Phalanx do Ultron chỉ huy đã phát động cuộc thôn tính thần tốc, đồng hóa toàn bộ đế chế Kree bằng công nghệ nano và bao bọc dải ngân hà trong một màn chắn năng lượng bất khả xâm phạm. Một nhóm chiến binh du kích vũ trụ do Star-Lord dẫn đầu - tiền thân của Guardians of the Galaxy hiện đại - phải đứng lên giải cứu thiên hà.",
+  "year_published": "2007",
+  "featured_characters": "Nova, Star-Lord, Quasar, Ultron",
+  "previous_event_title": "Messiah War",
+  "previous_event_slug": "messiah-war",
+  "next_event_title": "Secret Invasion",
+  "next_event_slug": "secret-invasion",
+  "cover_image": "",
+  "total_issues": 33,
+  "comic_issues_count": 33,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Annihilation Saga #1",
+      "issue_type": "oneshot",
+      "year": "2007",
+      "note": "This a recap of the Annihilation crossover",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Annihilation: Conquest Prologue #1",
+      "issue_type": "oneshot",
+      "year": "2007",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Annihilation: Conquest Starlord #1",
+      "issue_type": "limited",
+      "year": "2007",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Annihilation: Conquest Starlord #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Annihilation: Conquest Starlord #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Annihilation: Conquest Starlord #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Annihilation: Conquest Quasar #1",
+      "issue_type": "limited",
+      "year": "2007",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Annihilation: Conquest Quasar #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Annihilation: Conquest Quasar #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Annihilation: Conquest Quasar #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Annihilation: Conquest Wraith #1",
+      "issue_type": "limited",
+      "year": "2007",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Annihilation: Conquest Wraith #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Annihilation: Conquest Wraith #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Annihilation: Conquest Wraith #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Nova Vol. 4 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Nova Vol. 4 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Nova Vol. 4 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Nova Vol. 4 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Annihilation: Conquest #1",
+      "issue_type": "limited",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Annihilation: Conquest #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Nova Vol. 4 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Nova Vol. 4 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Nova Vol. 4 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Nova Vol. 4 Annual #1",
+      "issue_type": "ongoing",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Annihilation: Conquest #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Annihilation: Conquest #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Annihilation: Conquest #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Nova Vol. 4 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Nova Vol. 4 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Annihilation: Conquest #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Guardians of the Galaxy Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Guardians of the Galaxy Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Guardians of the Galaxy Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

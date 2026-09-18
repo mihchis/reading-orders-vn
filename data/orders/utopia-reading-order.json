@@ -1,0 +1,231 @@
+{
+  "id": 130,
+  "slug": "utopia",
+  "direct_slug": "utopia-reading-order",
+  "title": "Utopia",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/utopia-reading-order/",
+  "description": "",
+  "year_published": "2009",
+  "featured_characters": "X-Men, Dark Avengers",
+  "previous_event_title": "Dark Reign",
+  "previous_event_slug": "dark-reign",
+  "next_event_title": "X-Men: Nation X",
+  "next_event_slug": "x-men-nation-x",
+  "cover_image": "",
+  "total_issues": 26,
+  "comic_issues_count": 26,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Dark X-Men: Confession #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Dark Avengers/Uncanny X-Men: Utopia #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Men: Legacy #226",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "X-Men: Legacy #227",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Uncanny X-Men #513",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Dark X-Men: The Beginning #1",
+      "issue_type": "limited",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Dark Avengers #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Dark X-Men: The Beginning #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Uncanny X-Men #514",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Dark Avengers #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Dark X-Men: The Beginning #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Dark Avengers/Uncanny X-Men: Exodus #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Dark Reign: The List: X-Men #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Dark Avengers/Uncanny X-Men: Utopia #1",
+      "issue_type": "oneshot",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Uncanny X-Men #513",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Dark X-Men: The Beginning #1",
+      "issue_type": "limited",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "X-Men: Legacy #226",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Dark Avengers #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Dark X-Men: The Beginning #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Uncanny X-Men #514",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "X-Men: Legacy #227",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Dark Avengers #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Dark X-Men: The Beginning #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Dark Avengers/Uncanny X-Men: Exodus #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Dark X-Men: Confession #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Dark Reign: The List: X-Men #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

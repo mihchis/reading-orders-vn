@@ -1,0 +1,4911 @@
+{
+  "id": 552,
+  "slug": "dc-master-reading-order-part-1",
+  "direct_slug": "dc-master-reading-order-part-1-reading-order",
+  "title": "DC Master Reading Order Part 1",
+  "universe_slug": "dc",
+  "category_slug": "master",
+  "category_name": "Chính / Master",
+  "url": "/dc/dc-master-reading-order-part-1/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 611,
+  "comic_issues_count": 607,
+  "comments_count": 4,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Many early DC Comics are anthologies with multiple stories. In these cases the relevant story to read will be noted after the issue.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Action Comics #1",
+      "issue_type": "ongoing",
+      "year": "1938",
+      "note": "Xuất hiện lần đầu của Superman, Lois Lane",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Action Comics #6 - Superman’s Phony Manager, The Man Who Sold Superman. Xuất hiện lần đầu của Jimmy Olsen",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Detective Comics #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Batman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Detective Comics #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Robin",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Batman #1",
+      "issue_type": "ongoing",
+      "year": "1940",
+      "note": "Xuất hiện lần đầu của The Joker, Catwoman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Action Comics #60",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Lois Lane - Superwoman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Superman #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Mysterious Mr. Mxyzptlk. Xuất hiện lần đầu của Mister Mxyzptlk",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "All-American Comics #61 - Fighters Never Quit. Xuất hiện lần đầu của Solomon Grundy",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "DC Special #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Superman #45",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Lois Lane, Superwoman!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Golden Age Secret Files and Origins #1",
+      "issue_type": "oneshot",
+      "year": "2001",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Superman #53",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Nguồn gốc của Superman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Batman #47",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Nguồn gốc của The Batman!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Superman #61",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Superman Returns to Krypton!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Detective Comics #168",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Man Behind the Red Hood",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Superman #76",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Mightiest Team in the World",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "The Golden Age #1",
+      "issue_type": "limited",
+      "year": "1993",
+      "note": "Alternate Universe.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "The Golden Age #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "The Golden Age #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "The Golden Age #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Adventure Comics #210",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Superman #90",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Superman’s Secret Past",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Adventure Comics #214",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Dog of Steel",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Detective Comics #235",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The First Batman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "DC: The New Frontier #1",
+      "issue_type": "limited",
+      "year": "2004",
+      "note": "Alternate Universe. One of the greatest comics of all time.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "DC: The New Frontier #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "DC: The New Frontier #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "DC: The New Frontier #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "DC: The New Frontier #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "DC: The New Frontier #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Showcase #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Barry Allen",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Adventure Comics #239",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Super-Tricks of the Dog of Steel",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Showcase #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The New Lois Lane",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Showcase #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Sightless Lois Lane",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Superboy #64",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Rebel Super-Dog",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Adventure Comics #247",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của the Legion of Super-Heroes",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Superboy #65",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Superboy’s Moonlight Spell",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Action Comics #242",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Brainiac",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Superboy #68",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Bizarro",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Superman’s Girlfriend, Lois Lane #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Fattest Girl in Metropolis",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Superman #129",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Girl in Superman’s Past",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Action Comics #252",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Menace of Metallo, The Supergirl from Krypton! Xuất hiện lần đầu của Supergirl, Metallo",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Adventure Comics #259",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Blind Boy of Steel!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Action Comics #254",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Battle with Bizarro!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Action Comics #255",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Bride of Bizarro!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Adventure Comics #262",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Colossal Super-Dog!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Adventure Comics #266",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Super-Pranks of Krypto!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Superman’s Girlfriend, Lois Lane #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Three Nights in the Fortress of Solitude!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "The Flash #110",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Wally West, Weather Wizard",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "The Brave and the Bold #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của the Justice League",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Adventure Comics #271",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "How Luthor Met Superboy",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Adventure Comics #272",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Super-Star of Hollywood!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Superman #141",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Superboy #85",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Impossible Mission",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "World’s Finest #113",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Bat-Mite Meets Mr. Mxyzptlk",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "The Flash #117",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Captain Boomerang",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Superman #143",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Bizarro Meets Frankenstein!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Tales of the Bizarro World #1",
+      "issue_type": "oneshot",
+      "year": "2000",
+      "note": "Collects back-ups from Adventure Comics #285-299",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Superman #147",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Legion of Super-Villains",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Action Comics #277",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Battle of the Super-Pets!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Superboy #89",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Superboy’s Big Brother",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Superboy #90",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Girl Who Saw the Future Superboy!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "The Flash #123",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Superman #149",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "Green Lantern Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Showcase #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của the Metal Men",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Showcase #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Showcase #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Showcase #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Superman’s Pal, Jimmy Olsen #61",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Jimmy Olsen’s Wildest Adventure",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "The Flash #131",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Superman #156",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Superman’s Girlfriend, Lois Lane #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Kryptonian Courtship",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Superman #159",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Lois Lane, the Supermaid from Earth",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "The Flash #137",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "Superman #161",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Last Days of Ma and Pa Kent!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "Superman #162",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 79,
+      "title": "Justice League of America #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 80,
+      "title": "Justice League of America #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 81,
+      "title": "Metal Men #1",
+      "issue_type": "ongoing",
+      "year": "1963",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 82,
+      "title": "Metal Men #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 83,
+      "title": "Metal Men #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 84,
+      "title": "Metal Men #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 85,
+      "title": "Metal Men #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 86,
+      "title": "Superman #164",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Showdown Between Luthor and Superman!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 87,
+      "title": "Batman #156",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Robin Dies at Dawn",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 88,
+      "title": "Superman #167",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 89,
+      "title": "Superman #168",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 90,
+      "title": "My Greatest Adventure #80",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của the Doom Patrol",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 91,
+      "title": "My Greatest Adventure #81",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 92,
+      "title": "My Greatest Adventure #82",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 93,
+      "title": "My Greatest Adventure #83",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 94,
+      "title": "My Greatest Adventure #84",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 95,
+      "title": "My Greatest Adventure #85",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 96,
+      "title": "After My Greatest Adventure #85 the series was retitled Doom Patrol.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 97,
+      "title": "Superman #169",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Bizarro Invasion of Earth",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 98,
+      "title": "The Brave and the Bold #54",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 99,
+      "title": "Justice League of America #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 100,
+      "title": "Justice League of America #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 101,
+      "title": "Action Comics #318",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Cái chết của Luthor!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 102,
+      "title": "Action Comics #319",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Condemned Superman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 103,
+      "title": "The Flash #148",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Day The Flash Went Into Orbit!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 104,
+      "title": "Read Zatanna's Search here.",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 105,
+      "title": "Metal Men #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 106,
+      "title": "Metal Men #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 107,
+      "title": "Metal Men #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 108,
+      "title": "Metal Men #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 109,
+      "title": "Metal Men #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 110,
+      "title": "Metal Men #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 111,
+      "title": "Metal Men #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 112,
+      "title": "Doom Patrol #86",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 113,
+      "title": "Doom Patrol #87",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 114,
+      "title": "Doom Patrol #88",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 115,
+      "title": "Doom Patrol #89",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 116,
+      "title": "Doom Patrol #90",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 117,
+      "title": "Doom Patrol #91",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 118,
+      "title": "Doom Patrol #92",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 119,
+      "title": "Doom Patrol #93",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 120,
+      "title": "Doom Patrol #94",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 121,
+      "title": "Doom Patrol #95",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 122,
+      "title": "Doom Patrol #96",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 123,
+      "title": "Doom Patrol #97",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 124,
+      "title": "Doom Patrol #98",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 125,
+      "title": "Doom Patrol #99",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 126,
+      "title": "Doom Patrol #100",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 127,
+      "title": "Superman #174",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Super-Mxyzptlk... Hero!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 128,
+      "title": "Adventure Comics #322",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Super Tests of the Super-Pets",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 129,
+      "title": "The Flash #155",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của The Rogues",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 130,
+      "title": "Metal Men #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 131,
+      "title": "Metal Men #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 132,
+      "title": "Metal Men #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 133,
+      "title": "Metal Men #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 134,
+      "title": "Metal Men #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 135,
+      "title": "Metal Men #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 136,
+      "title": "Deadman #1",
+      "issue_type": "limited",
+      "year": "1985",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 137,
+      "title": "Deadman #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 138,
+      "title": "Deadman #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 139,
+      "title": "Deadman #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 140,
+      "title": "Deadman #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 141,
+      "title": "Deadman #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 142,
+      "title": "Deadman #7",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 143,
+      "title": "Deadman Vol. 2 #1",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 144,
+      "title": "Deadman Vol. 2 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 145,
+      "title": "Deadman Vol. 2 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 146,
+      "title": "Deadman Vol. 2 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 147,
+      "title": "Superboy #126",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Krypto’s Family Tree",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 148,
+      "title": "Doom Patrol #101",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 149,
+      "title": "Challengers of the Unknown #48",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 150,
+      "title": "Doom Patrol #102",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 151,
+      "title": "Doom Patrol #103",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 152,
+      "title": "Doom Patrol #104",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 153,
+      "title": "Doom Patrol #105",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 154,
+      "title": "Doom Patrol #106",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 155,
+      "title": "Doom Patrol #107",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 156,
+      "title": "Doom Patrol #108",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 157,
+      "title": "Doom Patrol #109",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 158,
+      "title": "Doom Patrol #110",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 159,
+      "title": "Doom Patrol #111",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 160,
+      "title": "Doom Patrol #112",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 161,
+      "title": "Doom Patrol #113",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 162,
+      "title": "Doom Patrol #114",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 163,
+      "title": "Doom Patrol #115",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 164,
+      "title": "Doom Patrol #116",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 165,
+      "title": "Doom Patrol #117",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 166,
+      "title": "Doom Patrol #118",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 167,
+      "title": "Doom Patrol #119",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 168,
+      "title": "Doom Patrol #120",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 169,
+      "title": "Doom Patrol #121",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 170,
+      "title": "Superboy #131",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Dog from S.C.P.A.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 171,
+      "title": "Metal Men #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 172,
+      "title": "Metal Men #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 173,
+      "title": "Metal Men #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 174,
+      "title": "Metal Men #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 175,
+      "title": "Metal Men #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 176,
+      "title": "Metal Men #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 177,
+      "title": "Metal Men #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 178,
+      "title": "Metal Men #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 179,
+      "title": "Action Comics #340",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Power of the Parasite! Xuất hiện lần đầu của Parasite",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 180,
+      "title": "Superman’s Girlfriend, Lois Lane #68",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 181,
+      "title": "Adventure Comics #352",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 182,
+      "title": "Adventure Comics #353",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 183,
+      "title": "Action Comics #347",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 184,
+      "title": "The Brave and the Bold #71",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 185,
+      "title": "Superman’s Pal, Jimmy Olsen #104",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 186,
+      "title": "Metal Men #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 187,
+      "title": "Metal Men #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 188,
+      "title": "Metal Men #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 189,
+      "title": "Metal Men #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 190,
+      "title": "Metal Men #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 191,
+      "title": "Metal Men #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 192,
+      "title": "Action Comics #360",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 193,
+      "title": "The Flash #179",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 194,
+      "title": "Showcase #73",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của The Creeper",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 195,
+      "title": "Beware the Creeper #1",
+      "issue_type": "ongoing",
+      "year": "1968",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 196,
+      "title": "Beware the Creeper #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 197,
+      "title": "Beware the Creeper #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 198,
+      "title": "Beware the Creeper #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 199,
+      "title": "Beware the Creeper #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 200,
+      "title": "Beware the Creeper #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 201,
+      "title": "The Brave and the Bold #80",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 202,
+      "title": "Adventure Comics #369",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 203,
+      "title": "Adventure Comics #370",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 204,
+      "title": "Justice League of America #70",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 205,
+      "title": "Aquaman #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 206,
+      "title": "Aquaman #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 207,
+      "title": "Aquaman #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 208,
+      "title": "Aquaman #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 209,
+      "title": "Aquaman #44",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 210,
+      "title": "Aquaman #45",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 211,
+      "title": "Aquaman #46",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 212,
+      "title": "Aquaman #47",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 213,
+      "title": "Aquaman #48",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 214,
+      "title": "Superman’s Pal, Jimmy Olsen #113",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 215,
+      "title": "Action Comics #373",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 216,
+      "title": "Phantom Stranger Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "1969",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 217,
+      "title": "Phantom Stranger Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 218,
+      "title": "Phantom Stranger Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 219,
+      "title": "Phantom Stranger Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 220,
+      "title": "Phantom Stranger Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 221,
+      "title": "Phantom Stranger Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 222,
+      "title": "Phantom Stranger Vol. 2 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 223,
+      "title": "Phantom Stranger Vol. 2 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 224,
+      "title": "Phantom Stranger Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 225,
+      "title": "Phantom Stranger Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 226,
+      "title": "Phantom Stranger Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 227,
+      "title": "The Brave and the Bold #85",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 228,
+      "title": "Superman’s Pal, Jimmy Olsen #122",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 229,
+      "title": "Green Lantern Vol. 2 #76",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 230,
+      "title": "Green Lantern Vol. 2 #77",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 231,
+      "title": "Green Lantern Vol. 2 #78",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 232,
+      "title": "Green Lantern Vol. 2 #79",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 233,
+      "title": "Green Lantern Vol. 2 #80",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 234,
+      "title": "Green Lantern Vol. 2 #81",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 235,
+      "title": "Green Lantern Vol. 2 #82",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 236,
+      "title": "Green Lantern Vol. 2 #83",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 237,
+      "title": "Green Lantern Vol. 2 #84",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 238,
+      "title": "Green Lantern Vol. 2 #85",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 239,
+      "title": "Green Lantern Vol. 2 #86",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 240,
+      "title": "Green Lantern Vol. 2 #87",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 241,
+      "title": "Green Lantern Vol. 2 #88",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 242,
+      "title": "Green Lantern Vol. 2 #89",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 243,
+      "title": "Superman’s Pal, Jimmy Olsen #131",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 244,
+      "title": "Superman’s Girlfriend, Lois Lane #106",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "I Am Curious (Black)!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 245,
+      "title": "Detective Comics #411",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Into the Den of the Death-Dealers!. Xuất hiện lần đầu của Talia al Ghul",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 246,
+      "title": "The Flash #217",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 247,
+      "title": "The Flash #218",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 248,
+      "title": "The Flash #219",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 249,
+      "title": "Phantom Stranger Vol. 2 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 250,
+      "title": "Phantom Stranger Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 251,
+      "title": "Phantom Stranger Vol. 2 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 252,
+      "title": "Phantom Stranger Vol. 2 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 253,
+      "title": "Phantom Stranger Vol. 2 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 254,
+      "title": "Phantom Stranger Vol. 2 #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 255,
+      "title": "Phantom Stranger Vol. 2 #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 256,
+      "title": "Phantom Stranger Vol. 2 #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 257,
+      "title": "Phantom Stranger Vol. 2 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 258,
+      "title": "Detective Comics #418",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "...And Be a Villain",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 259,
+      "title": "Superman #233",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Superman Breaks Loose",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 260,
+      "title": "Superman #234",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "How to Tame a Wild Volcano!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 261,
+      "title": "Superman #235",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 262,
+      "title": "Superman #236",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 263,
+      "title": "Superman #237",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 264,
+      "title": "Superman #238",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Menace at 1000 Degrees!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 265,
+      "title": "Superman #240",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "To Save a Superman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 266,
+      "title": "Superman #241",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Shape of Fear!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 267,
+      "title": "Superman #242",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Ultimate Battle!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 268,
+      "title": "Batman #232",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 269,
+      "title": "House of Secrets #92",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Swamp Thing",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 270,
+      "title": "Batman #234",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Half an Evil",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 271,
+      "title": "Batman #235",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Swamp Sinister",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 272,
+      "title": "Batman #237",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Night of the Reaper",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 273,
+      "title": "Superman #247",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Must There Be a Superman?",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 274,
+      "title": "Batman #240",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Vengeance for a Dead Man",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 275,
+      "title": "The Brave and the Bold #100",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Warrior in a Wheel-Chair",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 276,
+      "title": "Batman #242",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Bruce Wayne R.I.P.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 277,
+      "title": "Batman #243",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 278,
+      "title": "Batman #244",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Demon Lives Again!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 279,
+      "title": "Justice League of America #100",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 280,
+      "title": "Justice League of America #101",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 281,
+      "title": "Justice League of America #102",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 282,
+      "title": "Swamp Thing #1",
+      "issue_type": "ongoing",
+      "year": "1972",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 283,
+      "title": "Swamp Thing #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 284,
+      "title": "Swamp Thing #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 285,
+      "title": "Swamp Thing #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 286,
+      "title": "Swamp Thing #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 287,
+      "title": "Swamp Thing #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 288,
+      "title": "Swamp Thing #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 289,
+      "title": "Swamp Thing #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 290,
+      "title": "Swamp Thing #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 291,
+      "title": "Swamp Thing #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 292,
+      "title": "Swamp Thing #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 293,
+      "title": "Swamp Thing #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 294,
+      "title": "Swamp Thing #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 295,
+      "title": "Justice League of America #107",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 296,
+      "title": "Justice League of America #108",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 297,
+      "title": "Phantom Stranger Vol. 2 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 298,
+      "title": "Phantom Stranger Vol. 2 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 299,
+      "title": "Phantom Stranger Vol. 2 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 300,
+      "title": "Phantom Stranger Vol. 2 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 301,
+      "title": "Phantom Stranger Vol. 2 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 302,
+      "title": "Phantom Stranger Vol. 2 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 303,
+      "title": "Phantom Stranger Vol. 2 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 304,
+      "title": "Phantom Stranger Vol. 2 #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 305,
+      "title": "The Brave and the Bold #106",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 306,
+      "title": "Batman #250",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Batman Nobody Knows!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 307,
+      "title": "Batman #251",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 308,
+      "title": "Read Jack Kirby’s Fourth World here.",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 309,
+      "title": "Detective Comics #437",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Deathmask!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 310,
+      "title": "Phantom Stranger Vol. 2 #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 311,
+      "title": "Phantom Stranger Vol. 2 #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 312,
+      "title": "Phantom Stranger Vol. 2 #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 313,
+      "title": "Phantom Stranger Vol. 2 #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 314,
+      "title": "Phantom Stranger Vol. 2 #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 315,
+      "title": "Phantom Stranger Vol. 2 #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 316,
+      "title": "Detective Comics #439",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 317,
+      "title": "Wrath of The Spectre #1",
+      "issue_type": "limited",
+      "year": "1988",
+      "note": "Reprints Adventure Comics #431-440.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 318,
+      "title": "Wrath of The Spectre #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 319,
+      "title": "Wrath of The Spectre #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 320,
+      "title": "Wrath of The Spectre #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 321,
+      "title": "Superman #283",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "One of Our Imps is Missing!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 322,
+      "title": "Phantom Stranger Vol. 2 #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 323,
+      "title": "Phantom Stranger Vol. 2 #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 324,
+      "title": "Phantom Stranger Vol. 2 #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 325,
+      "title": "Phantom Stranger Vol. 2 #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 326,
+      "title": "Phantom Stranger Vol. 2 #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 327,
+      "title": "Phantom Stranger Vol. 2 #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 328,
+      "title": "Phantom Stranger Vol. 2 #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 329,
+      "title": "Superman #287",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Who was that Dog I Saw You With Last Night?",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 330,
+      "title": "Detective Comics #447",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Enter: The Creeper",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 331,
+      "title": "Detective Comics #448",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 332,
+      "title": "Detective Comics #449",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Mystery Man Who Walked on Air",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 333,
+      "title": "Detective Comics #450",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Cape and Cowl Deathtrap",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 334,
+      "title": "Joker #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 335,
+      "title": "1st Issue Special #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 336,
+      "title": "Superman #292",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Luthor Nobody Knows!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 337,
+      "title": "Super-Team Family #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 338,
+      "title": "Plastic Man 80-Page Giant #1",
+      "issue_type": "oneshot",
+      "year": "2004",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 339,
+      "title": "Detective Comics #457",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "There is No Hope in Crime Alley!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 340,
+      "title": "Superman #301",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 341,
+      "title": "The Brave and the Bold #129",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 342,
+      "title": "The Brave and the Bold #130",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 343,
+      "title": "Justice League of America #135",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 344,
+      "title": "Justice League of America #136",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 345,
+      "title": "Justice League of America #137",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 346,
+      "title": "Action Comics #467",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "A Superman’s Best Friend is His Superdog",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 347,
+      "title": "Secret Society of Super-Villains #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 348,
+      "title": "Secret Society of Super-Villains #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 349,
+      "title": "Action Comics #471",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "One of Our Phantoms is Missing!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 350,
+      "title": "Action Comics #472",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Phantom Touch of Death!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 351,
+      "title": "Action Comics #473",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 352,
+      "title": "Detective Comics #469",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 353,
+      "title": "Detective Comics #470",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 354,
+      "title": "Detective Comics #471",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 355,
+      "title": "Detective Comics #472",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 356,
+      "title": "Detective Comics #473",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 357,
+      "title": "Detective Comics #474",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 358,
+      "title": "Detective Comics #475",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 359,
+      "title": "Detective Comics #476",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 360,
+      "title": "Detective Comics #478",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 361,
+      "title": "Detective Comics #479",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "If a Man be Made of Clay",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 362,
+      "title": "Batman #291",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 363,
+      "title": "Batman #292",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 364,
+      "title": "Batman #293",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 365,
+      "title": "Batman #294",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 366,
+      "title": "The Brave and the Bold #136",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 367,
+      "title": "Read Aquaman: Cái chết của a Prince here.",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 368,
+      "title": "Showcase #100",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 369,
+      "title": "Action Comics #484",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 370,
+      "title": "Superboy and the Legion of Super-Heroes #241",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 371,
+      "title": "Superboy and the Legion of Super-Heroes #242",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 372,
+      "title": "Superboy and the Legion of Super-Heroes #243",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 373,
+      "title": "Superboy and the Legion of Super-Heroes #244",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 374,
+      "title": "Superboy and the Legion of Super-Heroes #245",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 375,
+      "title": "The Brave and the Bold #143",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Cast the First Stone",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 376,
+      "title": "The Brave and the Bold #144",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Arrow of Eternity",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 377,
+      "title": "DC Comics Presents #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 378,
+      "title": "DC Comics Presents #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 379,
+      "title": "DC Comics Presents #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 380,
+      "title": "The Flash #275",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 381,
+      "title": "The Flash #276",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 382,
+      "title": "The Flash #277",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 383,
+      "title": "The Flash #278",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 384,
+      "title": "The Flash #279",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 385,
+      "title": "The Flash #280",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 386,
+      "title": "The Flash #281",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 387,
+      "title": "The Flash #282",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 388,
+      "title": "The Flash #283",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 389,
+      "title": "The Flash #284",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 390,
+      "title": "Superboy Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 391,
+      "title": "Action Comics #507",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 392,
+      "title": "Action Comics #508",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 393,
+      "title": "Superman #349",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 394,
+      "title": "DC Comics Presents #28 - Warworld!",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 395,
+      "title": "DC Comics Presents #29 - Where No Superman has Gone Before!",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 396,
+      "title": "The Brave and the Bold #168 - Shackles of the Mind!",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 397,
+      "title": "Justice League of America #183",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 398,
+      "title": "Justice League of America #184",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 399,
+      "title": "Justice League of America #185",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 400,
+      "title": "New Teen Titans #1",
+      "issue_type": "ongoing",
+      "year": "1980",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 401,
+      "title": "New Teen Titans #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của Deathstroke",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 402,
+      "title": "New Teen Titans #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 403,
+      "title": "New Teen Titans #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 404,
+      "title": "New Teen Titans #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 405,
+      "title": "New Teen Titans #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 406,
+      "title": "New Teen Titans #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 407,
+      "title": "Batman #332",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Fallout!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 408,
+      "title": "Batman #333",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The China Syndrome!",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 409,
+      "title": "Batman #334",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Infinity Island",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 410,
+      "title": "Batman #335",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 411,
+      "title": "Detective Comics #500",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 412,
+      "title": "Tales of the Green Lantern Corps #1",
+      "issue_type": "limited",
+      "year": "1981",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 413,
+      "title": "Tales of the Green Lantern Corps #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 414,
+      "title": "Tales of the Green Lantern Corps #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 415,
+      "title": "Legion of Super-Heroes Vol. 2 #277",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 416,
+      "title": "Legion of Super-Heroes Vol. 2 #278",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 417,
+      "title": "Legion of Super-Heroes Vol. 2 #279",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 418,
+      "title": "Legion of Super-Heroes Vol. 2 #280",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 419,
+      "title": "Legion of Super-Heroes Vol. 2 #281",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 420,
+      "title": "Legion of Super-Heroes Vol. 2 #282",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 421,
+      "title": "Legion of Super-Heroes Vol. 2 #283",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 422,
+      "title": "Superman Annual #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 423,
+      "title": "The Flash #300",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 424,
+      "title": "The Brave and the Bold #178",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Paperchase",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 425,
+      "title": "Phantom Zone #1",
+      "issue_type": "limited",
+      "year": "1982",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 426,
+      "title": "Phantom Zone #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 427,
+      "title": "Phantom Zone #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 428,
+      "title": "Phantom Zone #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 429,
+      "title": "Legion of Super-Heroes Vol. 2 #284",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 430,
+      "title": "Legion of Super-Heroes Vol. 2 #285",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 431,
+      "title": "Legion of Super-Heroes Vol. 2 #286",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 432,
+      "title": "Legion of Super-Heroes Vol. 2 #287",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 433,
+      "title": "Legion of Super-Heroes Vol. 2 #288",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 434,
+      "title": "Legion of Super-Heroes Vol. 2 #289",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 435,
+      "title": "Legion of Super-Heroes Vol. 2 Annual #1",
+      "issue_type": "ongoing",
+      "year": "1982",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 436,
+      "title": "New Teen Titans #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 437,
+      "title": "New Teen Titans #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 438,
+      "title": "New Teen Titans #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 439,
+      "title": "New Teen Titans #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 440,
+      "title": "New Teen Titans #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 441,
+      "title": "New Teen Titans #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 442,
+      "title": "New Teen Titans #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 443,
+      "title": "New Teen Titans #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 444,
+      "title": "New Teen Titans #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 445,
+      "title": "New Teen Titans #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 446,
+      "title": "New Teen Titans #18",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 447,
+      "title": "The Brave and the Bold #185",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Falcon’s Lair",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 448,
+      "title": "The Brave and the Bold #187",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Whatever Happened to What’s’ername?",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 449,
+      "title": "Justice League of America #207",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 450,
+      "title": "All-Star Squadron #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 451,
+      "title": "Justice League of America #208",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 452,
+      "title": "All-Star Squadron #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 453,
+      "title": "Justice League of America #209",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 454,
+      "title": "Legion of Super-Heroes Vol. 2 #290",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 455,
+      "title": "Legion of Super-Heroes Vol. 2 #291",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 456,
+      "title": "Legion of Super-Heroes Vol. 2 #292",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 457,
+      "title": "Legion of Super-Heroes Vol. 2 #293",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 458,
+      "title": "Legion of Super-Heroes Vol. 2 #294",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 459,
+      "title": "New Teen Titans #19",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 460,
+      "title": "New Teen Titans #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 461,
+      "title": "Tales of the New Teen Titans #1",
+      "issue_type": "limited",
+      "year": "1982",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 462,
+      "title": "Tales of the New Teen Titans #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 463,
+      "title": "Tales of the New Teen Titans #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 464,
+      "title": "Tales of the New Teen Titans #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 465,
+      "title": "New Teen Titans #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 466,
+      "title": "New Teen Titans #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 467,
+      "title": "New Teen Titans #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 468,
+      "title": "New Teen Titans #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 469,
+      "title": "New Teen Titans #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 470,
+      "title": "New Teen Titans Annual #1",
+      "issue_type": "ongoing",
+      "year": "1982",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 471,
+      "title": "New Teen Titans #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 472,
+      "title": "New Teen Titans #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 473,
+      "title": "Detective Comics #523",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 474,
+      "title": "Batman #357",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 475,
+      "title": "Detective Comics #524",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 476,
+      "title": "Batman #358",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 477,
+      "title": "Detective Comics #525",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 478,
+      "title": "Batman #359",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 479,
+      "title": "Detective Comics #526",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 480,
+      "title": "The Brave and the Bold #197",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 481,
+      "title": "Legion of Super-Heroes Vol. 2 #295",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 482,
+      "title": "Legion of Super-Heroes Vol. 2 #296",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 483,
+      "title": "Legion of Super-Heroes Vol. 2 #297",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 484,
+      "title": "Legion of Super-Heroes Vol. 2 #298",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 485,
+      "title": "Legion of Super-Heroes Vol. 2 #299",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 486,
+      "title": "Legion of Super-Heroes Vol. 2 #300",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 487,
+      "title": "New Teen Titans #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 488,
+      "title": "New Teen Titans #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 489,
+      "title": "New Teen Titans #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 490,
+      "title": "New Teen Titans #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 491,
+      "title": "New Teen Titans #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 492,
+      "title": "New Teen Titans #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 493,
+      "title": "New Teen Titans #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 494,
+      "title": "New Teen Titans Annual #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 495,
+      "title": "Action Comics #544",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 496,
+      "title": "Action Comics #545",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 497,
+      "title": "Action Comics #546",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 498,
+      "title": "Superman #385",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 499,
+      "title": "Superman #386",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 500,
+      "title": "Legion of Super-Heroes Vol. 2 #301",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 501,
+      "title": "Legion of Super-Heroes Vol. 2 #302",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 502,
+      "title": "Legion of Super-Heroes Vol. 2 #303",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 503,
+      "title": "Legion of Super-Heroes Vol. 2 Annual #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 504,
+      "title": "Legion of Super-Heroes Vol. 2 #304",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 505,
+      "title": "Legion of Super-Heroes Vol. 2 #305",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 506,
+      "title": "Legion of Super-Heroes Vol. 2 #306",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 507,
+      "title": "Legion of Super-Heroes Vol. 2 #307",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 508,
+      "title": "Legion of Super-Heroes Vol. 2 #308",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 509,
+      "title": "Legion of Super-Heroes Vol. 2 #309",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 510,
+      "title": "Legion of Super-Heroes Vol. 2 #310",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 511,
+      "title": "Legion of Super-Heroes Vol. 2 #311",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 512,
+      "title": "New Teen Titans #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 513,
+      "title": "New Teen Titans #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 514,
+      "title": "New Teen Titans #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 515,
+      "title": "Batman and The Outsiders #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 516,
+      "title": "New Teen Titans #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 517,
+      "title": "New Teen Titans #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 518,
+      "title": "New Teen Titans #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 519,
+      "title": "After New Teen Titans #40 the series is retitled Tales of the Teen Titans.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 520,
+      "title": "Tales of the Teen Titans #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 521,
+      "title": "Swamp Thing Vol. 2 #20",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 522,
+      "title": "Swamp Thing Vol. 2 #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 523,
+      "title": "Swamp Thing Vol. 2 #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 524,
+      "title": "Swamp Thing Vol. 2 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 525,
+      "title": "Swamp Thing Vol. 2 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 526,
+      "title": "Swamp Thing Vol. 2 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 527,
+      "title": "Swamp Thing Vol. 2 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 528,
+      "title": "Swamp Thing Vol. 2 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 529,
+      "title": "Swamp Thing Vol. 2 #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 530,
+      "title": "Swamp Thing Vol. 2 #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 531,
+      "title": "Swamp Thing Vol. 2 #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 532,
+      "title": "Swamp Thing Vol. 2 #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 533,
+      "title": "Swamp Thing Vol. 2 Annual #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 534,
+      "title": "DC Comics Presents #71",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 535,
+      "title": "Legion of Super-Heroes Vol. 2 #312",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 536,
+      "title": "Legion of Super-Heroes Vol. 2 #313",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 537,
+      "title": "After Legion of Super-Heroes #313 the series is retitled Tales of the Legion of Super-Heroes.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 538,
+      "title": "Tales of the Legion of Super-Heroes #314",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 539,
+      "title": "Tales of the Legion of Super-Heroes #315",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 540,
+      "title": "Legion of Super-Heroes Vol. 2 Annual #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 541,
+      "title": "Tales of the Legion of Super-Heroes #316",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 542,
+      "title": "Tales of the Legion of Super-Heroes #317",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 543,
+      "title": "Tales of the Legion of Super-Heroes #318",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 544,
+      "title": "Tales of the Legion of Super-Heroes #319",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 545,
+      "title": "Tales of the Teen Titans #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 546,
+      "title": "Tales of the Teen Titans #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 547,
+      "title": "Tales of the Teen Titans #44",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 548,
+      "title": "Tales of the Teen Titans Annual #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 549,
+      "title": "Tales of the Teen Titans #45",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 550,
+      "title": "Tales of the Teen Titans #46",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 551,
+      "title": "Tales of the Teen Titans #47",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 552,
+      "title": "All-Star Squadron #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 553,
+      "title": "All-Star Squadron #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 554,
+      "title": "Superman vs. Shazam #1",
+      "issue_type": "oneshot",
+      "year": "2013",
+      "note": "Collects All-New Collectors’ Edition #58, DC Presents #33-34, 49, Annual #3.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 555,
+      "title": "Tales of the Teen Titans #48",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 556,
+      "title": "Tales of the Teen Titans #49",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 557,
+      "title": "Tales of the Teen Titans #50",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 558,
+      "title": "Tales of the Teen Titans #51",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 559,
+      "title": "Tales of the Teen Titans #52",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 560,
+      "title": "Tales of the Legion of Super-Heroes #320",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 561,
+      "title": "Tales of the Legion of Super-Heroes #321",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 562,
+      "title": "Tales of the Legion of Super-Heroes #322",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 563,
+      "title": "Tales of the Legion of Super-Heroes #323",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 564,
+      "title": "Tales of the Legion of Super-Heroes #324",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 565,
+      "title": "Tales of the Legion of Super-Heroes #325",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 566,
+      "title": "Swamp Thing Vol. 2 #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 567,
+      "title": "Swamp Thing Vol. 2 #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 568,
+      "title": "Swamp Thing Vol. 2 #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 569,
+      "title": "Swamp Thing Vol. 2 #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 570,
+      "title": "Swamp Thing Vol. 2 #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 571,
+      "title": "Swamp Thing Vol. 2 #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Xuất hiện lần đầu của John Constantine",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 572,
+      "title": "Swamp Thing Vol. 2 #38",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 573,
+      "title": "Swamp Thing Vol. 2 #39",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 574,
+      "title": "Swamp Thing Vol. 2 #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 575,
+      "title": "Swamp Thing Vol. 2 #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 576,
+      "title": "Swamp Thing Vol. 2 #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 577,
+      "title": "Swamp Thing Vol. 2 #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 578,
+      "title": "Green Lantern Vol. 2 #188",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Mogo Doesn’t Socialize",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 579,
+      "title": "Superman Annual #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 580,
+      "title": "Tales of the Teen Titans #53",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 581,
+      "title": "Tales of the Teen Titans #54",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 582,
+      "title": "Tales of the Teen Titans #55",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 583,
+      "title": "New Teen Titans Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "1984",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 584,
+      "title": "New Teen Titans Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 585,
+      "title": "New Teen Titans Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 586,
+      "title": "New Teen Titans Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 587,
+      "title": "New Teen Titans Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 588,
+      "title": "Legion of Super-Heroes Vol. 3 #1",
+      "issue_type": "ongoing",
+      "year": "1984",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 589,
+      "title": "Legion of Super-Heroes Vol. 3 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 590,
+      "title": "Legion of Super-Heroes Vol. 3 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 591,
+      "title": "Legion of Super-Heroes Vol. 3 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 592,
+      "title": "Legion of Super-Heroes Vol. 3 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 593,
+      "title": "Superman #416",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 594,
+      "title": "Lois Lane #1",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 595,
+      "title": "Lois Lane #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 596,
+      "title": "Batman #400",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 597,
+      "title": "Read Crisis on Infinite Earths here.",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 598,
+      "title": "Swamp Thing Vol. 2 #47",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 599,
+      "title": "Swamp Thing Vol. 2 #48",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 600,
+      "title": "Swamp Thing Vol. 2 #49",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 601,
+      "title": "Swamp Thing Vol. 2 #50",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 602,
+      "title": "Superman #423",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Whatever Happened to the Man of Tomorrow?",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 603,
+      "title": "Action Comics #583",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 604,
+      "title": "Legend of Wonder Woman #1",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 605,
+      "title": "Legend of Wonder Woman #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 606,
+      "title": "Legend of Wonder Woman #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 607,
+      "title": "Legend of Wonder Woman #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 608,
+      "title": "Legionnaires 3 #1",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 609,
+      "title": "Legionnaires 3 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 610,
+      "title": "Legionnaires 3 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 611,
+      "title": "Legionnaires 3 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

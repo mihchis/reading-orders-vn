@@ -1,0 +1,87 @@
+{
+  "id": 119,
+  "slug": "spider-man-identity-crisis",
+  "direct_slug": "spider-man-identity-crisis-reading-order",
+  "title": "Spider-Man: Identity Crisis",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/spider-man-identity-crisis-reading-order/",
+  "description": "",
+  "year_published": "1998",
+  "featured_characters": "Spider-Man",
+  "previous_event_title": "Heroes Reborn",
+  "previous_event_slug": "heroes-reborn",
+  "next_event_title": "MC2",
+  "next_event_slug": "mc2",
+  "cover_image": "",
+  "total_issues": 8,
+  "comic_issues_count": 8,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Amazing Spider-Man #434",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Amazing Spider-Man #435",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Sensational Spider-Man #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Sensational Spider-Man #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Peter Parker: Spider-Man #91",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Peter Parker: Spider-Man #92",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Spectacular Spider-Man #257",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Spectacular Spider-Man #258",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

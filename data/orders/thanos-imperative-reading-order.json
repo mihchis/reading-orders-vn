@@ -1,0 +1,103 @@
+{
+  "id": 123,
+  "slug": "thanos-imperative",
+  "direct_slug": "thanos-imperative-reading-order",
+  "title": "The Thanos Imperative",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/thanos-imperative-reading-order/",
+  "description": "Vết nứt không gian The Fault mở ra, giải phóng những sinh vật kinh hoàng từ Cancerverse - một thực tại nơi Cái Chết đã bị tiêu diệt và sự sống mục ruỗng phát triển vô tận dưới sự dẫn dắt của Chúa tể Mar-Vell ác độc. Guardians of the Galaxy buộc phải bắt tay với kẻ thù nguy hiểm nhất của họ - Thanos vừa được hồi sinh - vì chỉ có Thực thể Cái Chết mới có thể tiêu diệt được một vũ trụ bất tử.",
+  "year_published": "2010",
+  "featured_characters": "Guardians of the Galaxy, Nova, Thanos",
+  "previous_event_title": "Realm of Kings",
+  "previous_event_slug": "realm-of-kings",
+  "next_event_title": "Fall of the Hulks",
+  "next_event_slug": "fall-of-the-hulks",
+  "cover_image": "",
+  "total_issues": 10,
+  "comic_issues_count": 10,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Guardians of the Galaxy Vol. 2 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Nova Vol. 4 #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "The Thanos Imperative: Ignition #1",
+      "issue_type": "oneshot",
+      "year": "2010",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "The Thanos Imperative #1",
+      "issue_type": "limited",
+      "year": "2010",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "The Thanos Imperative #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "The Thanos Imperative #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "The Thanos Imperative #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "The Thanos Imperative #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "The Thanos Imperative #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "The Thanos Imperative: Devastation #1",
+      "issue_type": "oneshot",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

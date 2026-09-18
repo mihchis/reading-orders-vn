@@ -1,0 +1,103 @@
+{
+  "id": 17,
+  "slug": "avengers-assemble",
+  "direct_slug": "avengers-assemble-reading-order",
+  "title": "Avengers Assemble",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/avengers-assemble-reading-order/",
+  "description": "",
+  "year_published": "2022",
+  "featured_characters": "Avengers",
+  "previous_event_title": "A.X.E.: Judgment Day",
+  "previous_event_slug": "a-x-e-judgment-day",
+  "next_event_title": "Dark Web",
+  "next_event_slug": "dark-web",
+  "cover_image": "",
+  "total_issues": 10,
+  "comic_issues_count": 10,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Avengers Assemble Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2023",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Avengers Vol. 8 #63",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Avengers Forever Vol. 2 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Avengers Vol. 8 #64",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Avengers Forever Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Avengers Vol. 8 #65",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Avengers Forever Vol. 2 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Avengers Vol. 8 #66",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Avengers Forever Vol. 2 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Avengers Assemble Omega #1",
+      "issue_type": "oneshot",
+      "year": "2023",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": 38,
+  "slug": "days-of-future-present",
+  "direct_slug": "days-of-future-present-reading-order",
+  "title": "Days of Future Present",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/days-of-future-present-reading-order/",
+  "description": "",
+  "year_published": "1990",
+  "featured_characters": "Franklin Richards, X-Factor, New Mutants",
+  "previous_event_title": "Acts of Vengeance",
+  "previous_event_slug": "acts-of-vengeance",
+  "next_event_title": "X-Tinction Agenda",
+  "next_event_slug": "x-tinction-agenda",
+  "cover_image": "",
+  "total_issues": 4,
+  "comic_issues_count": 4,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Fantastic Four Annual #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "New Mutants Annual #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Factor Annual #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Uncanny X-Men Annual #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

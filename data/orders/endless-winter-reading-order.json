@@ -1,0 +1,95 @@
+{
+  "id": 363,
+  "slug": "endless-winter",
+  "direct_slug": "endless-winter-reading-order",
+  "title": "Endless Winter",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/endless-winter-reading-order/",
+  "description": "",
+  "year_published": "2020",
+  "featured_characters": "Justice League",
+  "previous_event_title": "Dark Nights: Death Metal",
+  "previous_event_slug": "dark-nights-death-metal",
+  "next_event_title": "Future State",
+  "next_event_slug": "future-state",
+  "cover_image": "",
+  "total_issues": 9,
+  "comic_issues_count": 9,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Justice League: Endless Winter #1",
+      "issue_type": "limited",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "The Flash #767",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Superman: Endless Winter Special #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Aquaman Vol. 8 #66",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Justice League Vol. 4 #58",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Teen Titans: Endless Winter Special #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Justice League Dark Vol. 2 #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Black Adam: Endless Winter Special #1",
+      "issue_type": "oneshot",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Justice League: Endless Winter #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

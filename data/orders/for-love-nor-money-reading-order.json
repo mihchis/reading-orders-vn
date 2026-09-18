@@ -1,0 +1,71 @@
+{
+  "id": 54,
+  "slug": "for-love-nor-money",
+  "direct_slug": "for-love-nor-money-reading-order",
+  "title": "For Love Nor Money",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/for-love-nor-money-reading-order/",
+  "description": "",
+  "year_published": "1993",
+  "featured_characters": "Luke Cage, Silver Sable",
+  "previous_event_title": "X-Cutioner's Song",
+  "previous_event_slug": "x-cutioners-song",
+  "next_event_title": "Maximum Carnage",
+  "next_event_slug": "maximum-carnage",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Terror Inc. #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Cage #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Silver Sable #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Terror Inc. #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Cage #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Silver Sable #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

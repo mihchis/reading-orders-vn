@@ -1,0 +1,183 @@
+{
+  "id": 571,
+  "slug": "alan-moore-reading-list",
+  "direct_slug": "alan-moore-reading-list-reading-order",
+  "title": "Danh Sách Đọc Alan Moore",
+  "universe_slug": "other",
+  "category_slug": "series",
+  "category_name": "Series",
+  "url": "/other/alan-moore-reading-list/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 20,
+  "comic_issues_count": 20,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Miracleman #1-16",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": "The recent Marvel reprint series is the easiest way to read this.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Swamp Thing Vol. 2 #20-64",
+      "issue_type": "ongoing",
+      "year": "1984",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Green Lantern Vol. 2 #188",
+      "issue_type": "ongoing",
+      "year": "1985",
+      "note": "Mogo Doesn’t Socialize",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Tales of the Green Lantern Corps Annual #2",
+      "issue_type": "ongoing",
+      "year": "1986",
+      "note": "Tygers",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Tales of the Green Lantern Corps Annual #3",
+      "issue_type": "ongoing",
+      "year": "1987",
+      "note": "In Blackest Night",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Superman #423",
+      "issue_type": "ongoing",
+      "year": "1986",
+      "note": "Whatever Happened to the Man of Tomorrow",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Action Comics #583",
+      "issue_type": "ongoing",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Watchmen #1-12",
+      "issue_type": "limited",
+      "year": "1986",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Batman: The Killing Joke #1",
+      "issue_type": "oneshot",
+      "year": "1988",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "V for Vendetta #1-10",
+      "issue_type": "ongoing",
+      "year": "1988",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "From Hell #1",
+      "issue_type": "oneshot",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Supreme #41-52",
+      "issue_type": "ongoing",
+      "year": "1996",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Tom Strong #1-22, 36",
+      "issue_type": "ongoing",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Promethea #1-32",
+      "issue_type": "ongoing",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Top Ten #1-12",
+      "issue_type": "limited",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Top Ten: The Forty-Niners #1",
+      "issue_type": "oneshot",
+      "year": "2005",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "The League of Extraordinary Gentlemen #1-6",
+      "issue_type": "limited",
+      "year": "1999",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "The League of Extraordinary Gentlemen Vol. 2 #1-6",
+      "issue_type": "limited",
+      "year": "2002",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "The League of Extraordinary Gentlemen: Black Dossier #1",
+      "issue_type": "oneshot",
+      "year": "2007",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Crossed +100 #1-6",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -34,6 +34,19 @@ app.get('/api/health', (req, res) => {
 // Phục vụ tài nguyên tĩnh công khai (assets, wp-content, wp-includes, wp-json)
 const rootDir = process.cwd();
 
+// Middleware bắt mọi request tài nguyên tĩnh (dù là relative path từ thư mục con sâu như /marvel/events/wp-includes/...)
+app.use((req, res, next) => {
+  const match = req.path.match(/\/(wp-content|wp-includes|assets|wp-json)\/(.+)$/);
+  if (match) {
+    const [, folder, subpath] = match;
+    const resolvedPath = path.join(rootDir, folder, subpath);
+    if (fs.existsSync(resolvedPath)) {
+      return res.sendFile(resolvedPath);
+    }
+  }
+  next();
+});
+
 app.use('/assets', express.static(path.join(rootDir, 'assets')));
 app.use('/wp-content', express.static(path.join(rootDir, 'wp-content')));
 app.use('/wp-includes', express.static(path.join(rootDir, 'wp-includes')));
@@ -64,6 +77,11 @@ const sendHtml = (res: express.Response, filePath: string) => {
   try {
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
     let content = fs.readFileSync(filePath, 'utf8');
+
+    // 0. Đảm bảo base href="/" để các liên kết/tài nguyên tương đối luôn trỏ đúng về root
+    if (!content.includes('<base href=')) {
+      content = content.replace(/<head>/i, '<head>\n<base href="/">');
+    }
 
     // 1. Header Navigation
     if (fs.existsSync(headerNavComponentPath)) {
@@ -165,7 +183,8 @@ app.get('*', (req, res, next) => {
     return sendHtml(res, rootIndex);
   }
 
-  next();
+  // 5. 404 Fallback tùy chỉnh thân thiện, tránh CSP 'default-src none' mặc định của Express
+  res.status(404).type('text/html').send(`<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><title>404 - Không tìm thấy trang</title></head><body style="font-family:sans-serif;padding:40px;text-align:center;"><h2>404 - Không tìm thấy trang</h2><p>Trang bạn yêu cầu không tồn tại hoặc đã được di chuyển.</p><p><a href="/">Quay về trang chủ</a></p></body></html>`);
 });
 
 app.listen(PORT, () => {

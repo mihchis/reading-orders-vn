@@ -1,0 +1,71 @@
+{
+  "id": 13,
+  "slug": "annihilation-scourge",
+  "direct_slug": "annihilation-scourge-reading-order",
+  "title": "Annihilation: Scourge",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/annihilation-scourge-reading-order/",
+  "description": "",
+  "year_published": "2019",
+  "featured_characters": "Nova, Fantastic Four, Beta Ray Bill, Silver Surfer",
+  "previous_event_title": "Absolute Carnage",
+  "previous_event_slug": "absolute-carnage",
+  "next_event_title": "2099",
+  "next_event_slug": "2099",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Annihilation: Scourge Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Annihilation: Scourge: Nova #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Annihilation: Scourge: Fantastic Four #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Annihilation: Scourge: Beta Ray Bill #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Annihilation: Scourge: Silver Surfer #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Annihilation: Scourge Omega #1",
+      "issue_type": "oneshot",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

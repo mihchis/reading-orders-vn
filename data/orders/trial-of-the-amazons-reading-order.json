@@ -1,0 +1,87 @@
+{
+  "id": 434,
+  "slug": "trial-of-the-amazons",
+  "direct_slug": "trial-of-the-amazons-reading-order",
+  "title": "Trial of the Amazons",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/trial-of-the-amazons-reading-order/",
+  "description": "",
+  "year_published": "2022",
+  "featured_characters": "Wonder Woman",
+  "previous_event_title": "Fear State",
+  "previous_event_slug": "fear-state",
+  "next_event_title": "Shadow War",
+  "next_event_slug": "shadow-war",
+  "cover_image": "",
+  "total_issues": 8,
+  "comic_issues_count": 8,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Trial of the Amazons #1",
+      "issue_type": "limited",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Nubia and the Amazons #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Wonder Woman #785",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Trial of the Amazons: Wonder Girl #1",
+      "issue_type": "limited",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Wonder Woman #786",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Trial of the Amazons: Wonder Girl #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Trial of the Amazons #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Nubia: Coronation Special #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": 609,
+  "slug": "zombie-reading-list",
+  "direct_slug": "zombie-reading-list-reading-order",
+  "title": "Danh Sách Đọc Zombie",
+  "universe_slug": "other",
+  "category_slug": "series",
+  "category_name": "Series",
+  "url": "/other/zombie-reading-list/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 17,
+  "comic_issues_count": 17,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Danh Sách Đọc Zombie - Comic Book Reading Orders VN Skip to content Điều hướng Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Trang chủ Other Zombie Reading List Zombie",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Dưới đây là danh sách truyện tranh được đề xuất trong thể loại Zombie. Cần có sự trợ giúp để điền vào danh sách này. Nếu bạn có đề xuất để thêm vào danh sách này, vui lòng sử dụng trang Liên hệ. Hãy nhớ rằng tôi đang tìm kiếm các đề xuất khác ngoài truyện tranh thuộc thể loại Siêu anh hùng (ít nhất là Marvel và DC) trừ khi chúng là những ví dụ xuất sắc về thể loại này.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Walking Dead #1-164+",
+      "issue_type": "ongoing",
+      "year": "2003",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Dead West #1",
+      "issue_type": "oneshot",
+      "year": "2005",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Marvel Zombies",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Crossed #0-9",
+      "issue_type": "limited",
+      "year": "2008",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Crossed: Family Values #1-7",
+      "issue_type": "limited",
+      "year": "2010",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Crossed: Psychopath #1-7",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Crossed: Badlands #1-100",
+      "issue_type": "ongoing",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Crossed +100 #1-18",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "iZOMBIE #1-28",
+      "issue_type": "ongoing",
+      "year": "2010",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "‘68 #1-4",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "‘68: Scars #1-4",
+      "issue_type": "limited",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "‘68: Jungle Jim #1-4",
+      "issue_type": "limited",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "‘68: Rule of War #1-4",
+      "issue_type": "limited",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "‘68: Homefront #1-4",
+      "issue_type": "limited",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "‘68: Last Rites #1-4",
+      "issue_type": "limited",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

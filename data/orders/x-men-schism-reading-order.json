@@ -1,0 +1,111 @@
+{
+  "id": 149,
+  "slug": "x-men-schism",
+  "direct_slug": "x-men-schism-reading-order",
+  "title": "X-Men: Schism",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/x-men-schism-reading-order/",
+  "description": "",
+  "year_published": "2011",
+  "featured_characters": "X-Men",
+  "previous_event_title": "Spider-Island",
+  "previous_event_slug": "spider-island",
+  "next_event_title": "Shattered Heroes",
+  "next_event_slug": "shattered-heroes",
+  "cover_image": "",
+  "total_issues": 11,
+  "comic_issues_count": 11,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "X-Men: Mở đầu cho Schism #1",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "X-Men: Mở đầu cho Schism #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Men: Mở đầu cho Schism #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "X-Men: Mở đầu cho Schism #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "X-Men: Schism #1",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "X-Men: Schism #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "X-Men: Schism #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Generation Hope #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Generation Hope #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "X-Men: Schism #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "X-Men: Schism #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

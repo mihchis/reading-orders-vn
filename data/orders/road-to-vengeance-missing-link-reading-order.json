@@ -1,0 +1,71 @@
+{
+  "id": 106,
+  "slug": "road-to-vengeance-missing-link",
+  "direct_slug": "road-to-vengeance-missing-link-reading-order",
+  "title": "Road to Vengeance: Missing Link",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/road-to-vengeance-missing-link-reading-order/",
+  "description": "",
+  "year_published": "1993",
+  "featured_characters": "Ghost Rider",
+  "previous_event_title": "Midnight Massacre",
+  "previous_event_slug": "midnight-massacre",
+  "next_event_title": "Siege of Darkness",
+  "next_event_slug": "siege-of-darkness",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Ghost Rider Vol. 3 #41",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Spirits of Vengeance #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Ghost Rider Vol. 3 #42",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Spirits of Vengeance #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Ghost Rider Vol. 3 #43",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Spirits of Vengeance #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

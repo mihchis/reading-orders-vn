@@ -1,0 +1,87 @@
+{
+  "id": 104,
+  "slug": "revolutionary-war",
+  "direct_slug": "revolutionary-war-reading-order",
+  "title": "Revolutionary War",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/revolutionary-war-reading-order/",
+  "description": "",
+  "year_published": "2014",
+  "featured_characters": "Captain Britain, Pete Wisdom, Dark Angel",
+  "previous_event_title": "Battle of the Atom",
+  "previous_event_slug": "battle-of-the-atom",
+  "next_event_title": "Goblin Nation",
+  "next_event_slug": "goblin-nation",
+  "cover_image": "",
+  "total_issues": 8,
+  "comic_issues_count": 8,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Revolutionary War: Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Revolutionary War: Dark Angel #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Revolutionary War: Knights of Pendragon #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Revolutionary War: Death’s Head II #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Revolutionary War: Supersoldiers #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Revolutionary War: Motormouth #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Revolutionary War: Warheads #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Revolutionary War: Omega #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": 49,
+  "slug": "evolutionary-war",
+  "direct_slug": "evolutionary-war-reading-order",
+  "title": "Evolutionary War",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/evolutionary-war-reading-order/",
+  "description": "",
+  "year_published": "1988",
+  "featured_characters": "Avengers, X-Men, Spider-Man, Silver Surfer",
+  "previous_event_title": "Fall of the Mutants",
+  "previous_event_slug": "fall-of-the-mutants",
+  "next_event_title": "Inferno",
+  "next_event_slug": "inferno",
+  "cover_image": "",
+  "total_issues": 11,
+  "comic_issues_count": 11,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "X-Factor Annual #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Punisher Annual Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "1988",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Silver Surfer Annual #1",
+      "issue_type": "ongoing",
+      "year": "1988",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "New Mutants Annual #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Amazing Spider-Man Annual #22",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Fantastic Four Annual #21",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Uncanny X-Men Annual #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Web of Spider-Man Annual #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "West Coast Avengers Annual #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Spectacular Spider-Man Annual #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Avengers Annual #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

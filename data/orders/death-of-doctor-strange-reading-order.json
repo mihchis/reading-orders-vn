@@ -1,0 +1,119 @@
+{
+  "id": 41,
+  "slug": "death-of-doctor-strange",
+  "direct_slug": "death-of-doctor-strange-reading-order",
+  "title": "Cái chết của Doctor Strange",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/death-of-doctor-strange-reading-order/",
+  "description": "",
+  "year_published": "2021",
+  "featured_characters": "Doctor Strange",
+  "previous_event_title": "Last Annihilation",
+  "previous_event_slug": "last-annihilation",
+  "next_event_title": "Devil's Reign",
+  "next_event_slug": "devils-reign",
+  "cover_image": "",
+  "total_issues": 12,
+  "comic_issues_count": 12,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Cái chết của Doctor Strange #1",
+      "issue_type": "limited",
+      "year": "2021",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Cái chết của Doctor Strange #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Cái chết của Doctor Strange: Avengers #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Strange Academy Presents: The Cái chết của Doctor Strange #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Cái chết của Doctor Strange #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Cái chết của Doctor Strange: Spider-Man #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Cái chết của Doctor Strange: White Fox #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Cái chết của Doctor Strange: Blade #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Cái chết của Doctor Strange: X-Men/Black Knight #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Cái chết của Doctor Strange #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Cái chết của Doctor Strange: Bloodstone #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Cái chết của Doctor Strange #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

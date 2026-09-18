@@ -1,0 +1,119 @@
+{
+  "id": 576,
+  "slug": "conan-reading-list",
+  "direct_slug": "conan-reading-list-reading-order",
+  "title": "Danh Sách Đọc Conan",
+  "universe_slug": "other",
+  "category_slug": "series",
+  "category_name": "Series",
+  "url": "/other/conan-reading-list/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 12,
+  "comic_issues_count": 12,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Danh Sách Đọc Conan - Comic Book Reading Orders VN Skip to content Điều hướng Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Trang chủ Other Conan Reading List Conan",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Dưới đây là danh sách tất cả truyện tranh Conan thường được khuyến khích đọc.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Nhà xuất bản: Marvel, Dark Horse",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Thời gian xuất bản: 1970-Present",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Thể loại: Sword & Sorcery",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Tác giả sáng tạo: Robert E. Howard",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Conan the Barbarian #1-115, 241-253",
+      "issue_type": "ongoing",
+      "year": "1970",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Savage Tales #1-5",
+      "issue_type": "ongoing",
+      "year": "1971",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Savage Sword of Conan #1-60",
+      "issue_type": "ongoing",
+      "year": "1974",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "King Conan #1-8",
+      "issue_type": "ongoing",
+      "year": "1980",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Conan #1-28, 32, 39, 45-46",
+      "issue_type": "ongoing",
+      "year": "2004",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Conan: Road of Kings #1-12",
+      "issue_type": "ongoing",
+      "year": "2010",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

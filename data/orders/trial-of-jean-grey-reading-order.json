@@ -1,0 +1,71 @@
+{
+  "id": 127,
+  "slug": "trial-of-jean-grey",
+  "direct_slug": "trial-of-jean-grey-reading-order",
+  "title": "The Trial of Jean Grey",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/trial-of-jean-grey-reading-order/",
+  "description": "",
+  "year_published": "2014",
+  "featured_characters": "X-Men, Guardians of the Galaxy",
+  "previous_event_title": "Goblin Nation",
+  "previous_event_slug": "goblin-nation",
+  "next_event_title": "Original Sin",
+  "next_event_slug": "original-sin",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "All-New X-Men #22.NOW",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Guardians of the Galaxy Vol. 3 #11.NOW",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "All-New X-Men #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Guardians of the Galaxy Vol. 3 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "All-New X-Men #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Guardians of the Galaxy Vol. 3 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

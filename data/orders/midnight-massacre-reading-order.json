@@ -1,0 +1,63 @@
+{
+  "id": 88,
+  "slug": "midnight-massacre",
+  "direct_slug": "midnight-massacre-reading-order",
+  "title": "Midnight Massacre",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/midnight-massacre-reading-order/",
+  "description": "",
+  "year_published": "1993",
+  "featured_characters": "Ghost Rider, Blade, Morbius",
+  "previous_event_title": "Marvel 2099",
+  "previous_event_slug": "marvel-2099",
+  "next_event_title": "Road to Vengeance: Missing Link",
+  "next_event_slug": "road-to-vengeance-missing-link",
+  "cover_image": "",
+  "total_issues": 5,
+  "comic_issues_count": 5,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Nightstalkers #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Ghost Rider Vol. 3 #40",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Darkhold #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Morbius: The Living Vampire #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Spirits of Vengeance #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

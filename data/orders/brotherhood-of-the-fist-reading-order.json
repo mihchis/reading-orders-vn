@@ -1,0 +1,71 @@
+{
+  "id": 342,
+  "slug": "brotherhood-of-the-fist",
+  "direct_slug": "brotherhood-of-the-fist-reading-order",
+  "title": "Brotherhood of the Fist",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/brotherhood-of-the-fist-reading-order/",
+  "description": "",
+  "year_published": "1998",
+  "featured_characters": "Batman, Green Arrow, Nightwing, Tim Drake",
+  "previous_event_title": "Batman: Cataclysm",
+  "previous_event_slug": "batman-cataclysm",
+  "next_event_title": "Behold! The Millennium Giants",
+  "next_event_slug": "behold-the-millennium-giants",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 5,
+  "comments_count": 1,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Green Arrow Vol. 2 #134",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Detective Comics #723",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Robin Vol. 4 #55",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Nightwing Vol. 2 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Green Arrow Vol. 2 #135",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "This event is uncollected in trade paperback format.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

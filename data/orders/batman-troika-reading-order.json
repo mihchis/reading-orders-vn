@@ -1,0 +1,63 @@
+{
+  "id": 333,
+  "slug": "batman-troika",
+  "direct_slug": "batman-troika-reading-order",
+  "title": "Batman: Troika",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/batman-troika-reading-order/",
+  "description": "",
+  "year_published": "1995",
+  "featured_characters": "Batman",
+  "previous_event_title": "Batman: Prodigal",
+  "previous_event_slug": "batman-prodigal",
+  "next_event_title": "Worlds Collide",
+  "next_event_slug": "worlds-collide",
+  "cover_image": "",
+  "total_issues": 5,
+  "comic_issues_count": 5,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Batman #515",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Shadow of the Bat #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Detective Comics #682",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Robin Vol. 4 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Nightwing: Alfred’s Return #1",
+      "issue_type": "oneshot",
+      "year": "1995",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

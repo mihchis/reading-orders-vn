@@ -1,0 +1,63 @@
+{
+  "id": 91,
+  "slug": "muir-island-saga",
+  "direct_slug": "muir-island-saga-reading-order",
+  "title": "Muir Island Saga",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/muir-island-saga-reading-order/",
+  "description": "",
+  "year_published": "1991",
+  "featured_characters": "X-Men, X-Factor",
+  "previous_event_title": "X-Tinction Agenda",
+  "previous_event_slug": "x-tinction-agenda",
+  "next_event_title": "Infinity Gauntlet",
+  "next_event_slug": "infinity-gauntlet",
+  "cover_image": "",
+  "total_issues": 5,
+  "comic_issues_count": 5,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Uncanny X-Men #278",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Uncanny X-Men #279",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Factor #69",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Uncanny X-Men #280",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "X-Factor #70",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

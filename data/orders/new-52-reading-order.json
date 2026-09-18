@@ -1,0 +1,151 @@
+{
+  "id": 404,
+  "slug": "new-52",
+  "direct_slug": "new-52-reading-order",
+  "title": "New 52",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/new-52-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 16,
+  "comic_issues_count": 16,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Chào mừng bạn đến với Lệnh đọc 52 mới. Đây là thứ tự đọc cho tất cả truyện tranh DC được xuất bản dưới dòng New 52, ​​bắt đầu sau sự kiện Flashpoint và kết thúc bằng sự kiện Hội tụ. Tính liên tục của New 52 tiếp tục trong Thứ tự đọc DC You.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Issues: Dial H #0 to Sword of Sorcery Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Years: 2011-2013",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Events: Batman: Zero Year, The Culling, Night of the Owls",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "First Appearances: None",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "The reading order begins in the distant past and gradually catches up to present day. There are many changes to the status quo of the DC Universe with the beginning of the New 52. Most of the characters are rebooted and revamped, with the notable exceptions of Batman and Green Lantern, whose continuities remain largely intact.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Issues: Justice League Dark #9 to Batman: Joker’s Daughter #1",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Years: 2012-2014",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Events: Rise of the Third Army, Wrath of the First Lantern, Rotworld, Throne of Atlantis, Superman: H&#8217;el on Earth, Cái chết của the Family, Green Lantern: Lights Out, Batman: Requiem",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "First Appearances: None",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "The second (and 3rd through 6th) wave of New 52 comics begin to appear and events become more frequent.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Issues: Detective Comics Vol. 2 #22 to Legion of Super-Heroes Vol. 7 #23",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Years: 2013-2015",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Events: Gothtopia, Trinity War, Forever Evil, Forever Evil: Blight, Krypton Returns, Red Daughter of Krypton, Superman: Doomed, Green Lantern: Uprising, New 52: Futures End, Green Lantern: Godhead, Robin Rises, Batman: Endgame, Multiversity, Convergence",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "First Appearances: None",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "The biggest event of the New 52, Forever Evil, takes place. The Convergence event marks the end of the New 52 branding and leads into DC You. The end of the reading order contains the New 52 series taking place in the far future.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": 87,
+  "slug": "messiah-war",
+  "direct_slug": "messiah-war-reading-order",
+  "title": "Messiah War",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/messiah-war-reading-order/",
+  "description": "",
+  "year_published": "2009",
+  "featured_characters": "Cable, X-Force",
+  "previous_event_title": "X-Men: Original Sin",
+  "previous_event_slug": "x-men-original-sin",
+  "next_event_title": "Annihilation: Conquest",
+  "next_event_slug": "annihilation-conquest",
+  "cover_image": "",
+  "total_issues": 7,
+  "comic_issues_count": 7,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "X-Force / Cable: Messiah War #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Cable Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Force Vol. 3 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Cable Vol. 2 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "X-Force Vol. 3 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Cable Vol. 2 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "X-Force Vol. 3 #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

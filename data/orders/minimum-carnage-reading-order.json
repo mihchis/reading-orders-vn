@@ -1,0 +1,71 @@
+{
+  "id": 89,
+  "slug": "minimum-carnage",
+  "direct_slug": "minimum-carnage-reading-order",
+  "title": "Minimum Carnage",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/minimum-carnage-reading-order/",
+  "description": "",
+  "year_published": "2012",
+  "featured_characters": "Venom, Scarlet Spider, Carnage",
+  "previous_event_title": "Avengers vs. X-Men",
+  "previous_event_slug": "avengers-vs-x-men",
+  "next_event_title": "X-Termination",
+  "next_event_slug": "x-termination",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Minimum Carnage: Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Scarlet Spider Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Venom Vol. 2 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Scarlet Spider Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Venom Vol. 2 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Minimum Carnage: Omega #1",
+      "issue_type": "oneshot",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

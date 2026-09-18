@@ -1,0 +1,55 @@
+{
+  "id": 29,
+  "slug": "childs-play",
+  "direct_slug": "childs-play-reading-order",
+  "title": "Child&#039;s Play",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/childs-play-reading-order/",
+  "description": "",
+  "year_published": "1994",
+  "featured_characters": "New Warriors, X-Force",
+  "previous_event_title": "Siege of Darkness",
+  "previous_event_slug": "siege-of-darkness",
+  "next_event_title": "Time and Time Again",
+  "next_event_slug": "time-and-time-again",
+  "cover_image": "",
+  "total_issues": 4,
+  "comic_issues_count": 4,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "X-Force #32",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "New Warriors #45",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "X-Force #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "New Warriors #46",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

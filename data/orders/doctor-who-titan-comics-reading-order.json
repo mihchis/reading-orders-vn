@@ -1,0 +1,2263 @@
+{
+  "id": 579,
+  "slug": "doctor-who-titan-comics",
+  "direct_slug": "doctor-who-titan-comics-reading-order",
+  "title": "Doctor Who (Titan Comics)",
+  "universe_slug": "other",
+  "category_slug": "series",
+  "category_name": "Series",
+  "url": "/other/doctor-who-titan-comics-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 280,
+  "comic_issues_count": 274,
+  "comments_count": 6,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Timeline placements are relative to the protagonist of the story. Some issues contain some potential spoilers for episodes that happen after their timeline placement.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "In the Classic Era S##S## means Season ## Serial ##. In the Revival Era S##E## means Season ## Episode ##. Also in the Revival Era S##SP## means Season ## Special ##.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Classic Era",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Doctor Who: The Third Doctor #1",
+      "issue_type": "limited",
+      "year": "2016",
+      "note": "Takes place between S10S01 and S10S02.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Doctor Who: The Third Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Doctor Who: The Third Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Doctor Who: The Third Doctor #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Doctor Who: The Third Doctor #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Doctor Who: The Fourth Doctor #1",
+      "issue_type": "limited",
+      "year": "2016",
+      "note": "Takes place between S13S03 and S13S04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Doctor Who: The Fourth Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Doctor Who: The Fourth Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Doctor Who: The Fourth Doctor #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Doctor Who: The Fourth Doctor #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "FCBD 2018 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2018",
+      "note": "Second Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Doctor Who: The Seventh Doctor #1",
+      "issue_type": "limited",
+      "year": "2018",
+      "note": "Takes place between S26S04 and Doctor Who (TV Movie).",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Doctor Who: The Seventh Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Doctor Who: The Seventh Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Revival Era",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Doctor Who: The Eighth Doctor #1",
+      "issue_type": "limited",
+      "year": "2015",
+      "note": "Takes place between Doctor Who (TV Movie) and Night of the Doctor mini-episode.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Doctor Who: The Eighth Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Doctor Who: The Eighth Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Doctor Who: The Eighth Doctor #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Doctor Who: The Eighth Doctor #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Doctor Who: The Ninth Doctor #1",
+      "issue_type": "limited",
+      "year": "2015",
+      "note": "Takes place between S01E10 and S01E11.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Doctor Who: The Ninth Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Doctor Who: The Ninth Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Doctor Who: The Ninth Doctor #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Doctor Who: The Ninth Doctor #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #1",
+      "issue_type": "ongoing",
+      "year": "2016",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Doctor Who: The Ninth Doctor Vol. 2 #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "FCBD 2016 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2016",
+      "note": "Fourth Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Doctor Who: Once Upon a Time Lord #1",
+      "issue_type": "oneshot",
+      "year": "2023",
+      "note": "Takes place between S03E03 and S03E04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Doctor Who: The Tenth Doctor #1",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": "Takes place between S04SP03 and S04SP04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Doctor Who: The Tenth Doctor #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Doctor Who: The Tenth Doctor #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Doctor Who: The Tenth Doctor #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Doctor Who: The Tenth Doctor #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "Doctor Who: The Tenth Doctor #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Doctor Who: The Tenth Doctor #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Doctor Who: The Tenth Doctor #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Doctor Who: The Tenth Doctor #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Doctor Who: The Tenth Doctor #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Doctor Who: The Tenth Doctor #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Doctor Who: The Tenth Doctor #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Doctor Who: The Tenth Doctor #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Doctor Who: The Tenth Doctor #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Doctor Who: The Tenth Doctor #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Doctor Who: The Eleventh Doctor #1",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": "Takes place between S06SP01 and S06E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Doctor Who: The Eleventh Doctor #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Doctor Who: The Eleventh Doctor #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Doctor Who: The Eleventh Doctor #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Doctor Who: The Eleventh Doctor #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "FCBD 2015 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2025",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Doctor Who: The Eleventh Doctor #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Doctor Who: The Eleventh Doctor #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Doctor Who: The Eleventh Doctor #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Doctor Who: The Eleventh Doctor #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Doctor Who: The Eleventh Doctor #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Doctor Who: The Eleventh Doctor #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Doctor Who: The Eleventh Doctor #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Doctor Who: The Eleventh Doctor #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Doctor Who: The Eleventh Doctor #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "Doctor Who: The Eleventh Doctor #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "Doctor Who: The Twelfth Doctor #1",
+      "issue_type": "ongoing",
+      "year": "2014",
+      "note": "Takes place between S08E06 and S08E07.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "Doctor Who: The Twelfth Doctor #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 79,
+      "title": "Doctor Who: The Twelfth Doctor #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 80,
+      "title": "Doctor Who: The Twelfth Doctor #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 81,
+      "title": "Doctor Who: The Twelfth Doctor #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 82,
+      "title": "Doctor Who: The Twelfth Doctor #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S08E10 and S08E11.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 83,
+      "title": "Doctor Who: The Twelfth Doctor #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 84,
+      "title": "Doctor Who: The Twelfth Doctor #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 85,
+      "title": "Doctor Who: The Twelfth Doctor #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 86,
+      "title": "Doctor Who: The Twelfth Doctor #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 87,
+      "title": "Doctor Who: The Twelfth Doctor #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 88,
+      "title": "Doctor Who: The Twelfth Doctor #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S09SP01 and S09E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 89,
+      "title": "Doctor Who: The Twelfth Doctor #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 90,
+      "title": "Doctor Who: The Twelfth Doctor #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 91,
+      "title": "Doctor Who: The Twelfth Doctor #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 92,
+      "title": "Doctor Who: The Twelfth Doctor #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 93,
+      "title": "Doctor Who: 2015 Convention Special #1",
+      "issue_type": "oneshot",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 94,
+      "title": "Doctor Who: Four Doctors #1",
+      "issue_type": "limited",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 95,
+      "title": "Doctor Who: Four Doctors #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 96,
+      "title": "Doctor Who: Four Doctors #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 97,
+      "title": "Doctor Who: Four Doctors #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 98,
+      "title": "Doctor Who: Four Doctors #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 99,
+      "title": "Doctor Who: The Tenth Doctor Year Two #1",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": "Takes place between S04SP03 and S04SP04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 100,
+      "title": "Doctor Who: The Tenth Doctor Year Two #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 101,
+      "title": "Doctor Who: The Tenth Doctor Year Two #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 102,
+      "title": "Doctor Who: The Tenth Doctor Year Two #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 103,
+      "title": "Doctor Who: The Tenth Doctor Year Two #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 104,
+      "title": "Doctor Who: The Tenth Doctor Year Two #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 105,
+      "title": "Doctor Who: The Tenth Doctor Year Two #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 106,
+      "title": "FCBD 2016 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2016",
+      "note": "Third Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 107,
+      "title": "Doctor Who: The Tenth Doctor Year Two #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 108,
+      "title": "Doctor Who: The Tenth Doctor Year Two #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 109,
+      "title": "Doctor Who: The Tenth Doctor Year Two #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 110,
+      "title": "Doctor Who: The Tenth Doctor Year Two #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 111,
+      "title": "Doctor Who: The Tenth Doctor Year Two #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 112,
+      "title": "Doctor Who: The Tenth Doctor Year Two #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 113,
+      "title": "Doctor Who: The Tenth Doctor Year Two #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 114,
+      "title": "Doctor Who: The Tenth Doctor Year Two #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 115,
+      "title": "Doctor Who: The Tenth Doctor Year Two #16",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 116,
+      "title": "Doctor Who: The Tenth Doctor Year Two #17",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 117,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #1",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": "Takes place between S06SP01 and S06E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 118,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 119,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 120,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 121,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 122,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 123,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 124,
+      "title": "FCBD 2016 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2016",
+      "note": "Second Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 125,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 126,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 127,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 128,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 129,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 130,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 131,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 132,
+      "title": "Doctor Who: The Eleventh Doctor Year Two #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 133,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #1",
+      "issue_type": "ongoing",
+      "year": "2016",
+      "note": "Takes place between S09E08 and S09E11.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 134,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 135,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 136,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 137,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 138,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S09E12 and S09SP02.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 139,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 140,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 141,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 142,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 143,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 144,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 145,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 146,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 147,
+      "title": "Doctor Who: The Twelfth Doctor Year Two #15",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 148,
+      "title": "FCBD 2016 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2016",
+      "note": "First Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 149,
+      "title": "Doctor Who: 2016 Convention Special #1",
+      "issue_type": "oneshot",
+      "year": "2016",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 150,
+      "title": "Doctor Who: Supremacy of the Cybermen #1",
+      "issue_type": "limited",
+      "year": "2016",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 151,
+      "title": "Doctor Who: Supremacy of the Cybermen #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 152,
+      "title": "Doctor Who: Supremacy of the Cybermen #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 153,
+      "title": "Doctor Who: Supremacy of the Cybermen #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 154,
+      "title": "Doctor Who: Supremacy of the Cybermen #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 155,
+      "title": "Doctor Who: The Tenth Doctor Year Three #1",
+      "issue_type": "ongoing",
+      "year": "2017",
+      "note": "Takes place between S04SP03 and S04SP04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 156,
+      "title": "Doctor Who: The Tenth Doctor Year Three #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 157,
+      "title": "Doctor Who: The Tenth Doctor Year Three #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 158,
+      "title": "Doctor Who: The Tenth Doctor Year Three #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 159,
+      "title": "Doctor Who: The Tenth Doctor Year Three #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 160,
+      "title": "Doctor Who: The Tenth Doctor Year Three #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 161,
+      "title": "Doctor Who: The Tenth Doctor Year Three #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 162,
+      "title": "Doctor Who: The Tenth Doctor Year Three #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 163,
+      "title": "Doctor Who: The Tenth Doctor Year Three #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 164,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #1",
+      "issue_type": "ongoing",
+      "year": "2017",
+      "note": "Takes place between S06SP01 and S06E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 165,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 166,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 167,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 168,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 169,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 170,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 171,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 172,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 173,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 174,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 175,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 176,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #1",
+      "issue_type": "ongoing",
+      "year": "2017",
+      "note": "Takes place between S09E12 and S09SP02.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 177,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 178,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 179,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 180,
+      "title": "Doctor Who: Ghost Stories #1",
+      "issue_type": "limited",
+      "year": "2016",
+      "note": "Takes place between S10SP01 and S10E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 181,
+      "title": "Doctor Who: Ghost Stories #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 182,
+      "title": "Doctor Who: Ghost Stories #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 183,
+      "title": "Doctor Who: Ghost Stories #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 184,
+      "title": "Doctor Who: Ghost Stories #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 185,
+      "title": "Doctor Who: Ghost Stories #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 186,
+      "title": "Doctor Who: Ghost Stories #7",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 187,
+      "title": "Doctor Who: Ghost Stories #8",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 188,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S10E10 and S10E11.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 189,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 190,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 191,
+      "title": "Doctor Who: The Lost Dimension Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 192,
+      "title": "Doctor Who: The Ninth Doctor Special #1",
+      "issue_type": "oneshot",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 193,
+      "title": "Doctor Who: The Tenth Doctor Year Three #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 194,
+      "title": "Doctor Who: The Eleventh Doctor Year Three #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 195,
+      "title": "Doctor Who: The Lost Dimension Special #1",
+      "issue_type": "limited",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 196,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 197,
+      "title": "Doctor Who: The Lost Dimension Special #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 198,
+      "title": "Doctor Who: The Lost Dimension Omega #1",
+      "issue_type": "oneshot",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 199,
+      "title": "FCBD 2017 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 200,
+      "title": "Doctor Who: 2017 Convention Special #1",
+      "issue_type": "oneshot",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 201,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 202,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 203,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 204,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 205,
+      "title": "Doctor Who: The Twelfth Doctor Year Three #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 206,
+      "title": "Doctor Who: The Tenth Doctor Year Three #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S04SP03 and S04SP04.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 207,
+      "title": "Doctor Who: The Tenth Doctor Year Three #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 208,
+      "title": "Doctor Who: The Tenth Doctor Year Three #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 209,
+      "title": "Doctor Who: The Tenth Doctor Year Three #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 210,
+      "title": "FCBD 2018 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2018",
+      "note": "First Story, Third Story",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 211,
+      "title": "Doctor Who: Missy #1",
+      "issue_type": "limited",
+      "year": "2021",
+      "note": "Takes place between S10E10 and S10E11.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 212,
+      "title": "Doctor Who: Missy #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 213,
+      "title": "Doctor Who: Missy #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 214,
+      "title": "Doctor Who: Missy #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 215,
+      "title": "Doctor Who: Doom's Day #1",
+      "issue_type": "limited",
+      "year": "2023",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 216,
+      "title": "Doctor Who: Doom's Day #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 217,
+      "title": "Doctor Who: The Road to the Thirteenth Doctor #1",
+      "issue_type": "limited",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 218,
+      "title": "Doctor Who: The Road to the Thirteenth Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 219,
+      "title": "Doctor Who: The Road to the Thirteenth Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 220,
+      "title": "Doctor Who: The Thirteenth Doctor #0",
+      "issue_type": "ongoing",
+      "year": "2018",
+      "note": "Takes place during S10SP02.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 221,
+      "title": "Doctor Who: The Thirteenth Doctor #1",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S11E02 and S11E03.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 222,
+      "title": "Doctor Who: The Thirteenth Doctor #2",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 223,
+      "title": "Doctor Who: The Thirteenth Doctor #3",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 224,
+      "title": "Doctor Who: The Thirteenth Doctor #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 225,
+      "title": "Doctor Who: The Thirteenth Doctor #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Takes place between S11E09 and S11E10.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 226,
+      "title": "Doctor Who: The Thirteenth Doctor #6",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 227,
+      "title": "Doctor Who: The Thirteenth Doctor #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 228,
+      "title": "Doctor Who: The Thirteenth Doctor #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 229,
+      "title": "Doctor Who: The Thirteenth Doctor #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 230,
+      "title": "Doctor Who: The Thirteenth Doctor #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 231,
+      "title": "Doctor Who: The Thirteenth Doctor #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 232,
+      "title": "Doctor Who: The Thirteenth Doctor #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 233,
+      "title": "FCBD 2019 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2019",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 234,
+      "title": "Doctor Who: The Thirteenth Doctor Holiday Special #1",
+      "issue_type": "limited",
+      "year": "2019",
+      "note": "Takes place after S11SP01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 235,
+      "title": "Doctor Who: The Thirteenth Doctor Holiday Special #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 236,
+      "title": "Doctor Who: The Thirteenth Doctor Vol. 2 #1",
+      "issue_type": "limited",
+      "year": "2020",
+      "note": "Takes place between S12E04 and S12SP01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 237,
+      "title": "Doctor Who: The Thirteenth Doctor Vol. 2 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 238,
+      "title": "Doctor Who: The Thirteenth Doctor Vol. 2 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 239,
+      "title": "Doctor Who: The Thirteenth Doctor Vol. 2 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 240,
+      "title": "Doctor Who #1",
+      "issue_type": "limited",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 241,
+      "title": "Doctor Who #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 242,
+      "title": "Doctor Who #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 243,
+      "title": "Doctor Who #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 244,
+      "title": "Doctor Who: Time Lord Victorious #1",
+      "issue_type": "limited",
+      "year": "2020",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 245,
+      "title": "Doctor Who: Time Lord Victorious #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 246,
+      "title": "Doctor Who: Empire of the Wolf #1",
+      "issue_type": "limited",
+      "year": "2021",
+      "note": "Takes place between S07E05 and S07SP02.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 247,
+      "title": "Doctor Who: Empire of the Wolf #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 248,
+      "title": "Doctor Who: Empire of the Wolf #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 249,
+      "title": "Doctor Who: Empire of the Wolf #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 250,
+      "title": "FCBD 2022 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2022",
+      "note": "Takes place prior to S12E05.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 251,
+      "title": "Doctor Who: Origins #1",
+      "issue_type": "limited",
+      "year": "2022",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 252,
+      "title": "Doctor Who: Origins #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 253,
+      "title": "Doctor Who: Origins #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 254,
+      "title": "Doctor Who: Origins #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 255,
+      "title": "FCBD 2024 Doctor Who #1",
+      "issue_type": "oneshot",
+      "year": "2024",
+      "note": "Takes place between S14E06 and S14E07.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 256,
+      "title": "Doctor Who: The Fifteenth Doctor #1",
+      "issue_type": "limited",
+      "year": "2024",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 257,
+      "title": "Doctor Who: The Fifteenth Doctor #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 258,
+      "title": "Doctor Who: The Fifteenth Doctor #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 259,
+      "title": "Doctor Who: The Fifteenth Doctor #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 260,
+      "title": "Doctor Who: The Prison Paradox #1",
+      "issue_type": "limited",
+      "year": "2025",
+      "note": "Takes place between S15E02 and S15E07.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 261,
+      "title": "Doctor Who: The Prison Paradox #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 262,
+      "title": "Doctor Who: The Prison Paradox #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 263,
+      "title": "Doctor Who: The Prison Paradox #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 264,
+      "title": "The following S##E## refer to the Doctor Who spin-off series Torchwood.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 265,
+      "title": "Torchwood: Rift War #1",
+      "issue_type": "oneshot",
+      "year": "2009",
+      "note": "Takes place between S02E04 and S02E06.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 266,
+      "title": "Torchwood Archives #1",
+      "issue_type": "limited",
+      "year": "2017",
+      "note": "Take place between S02E01 and S03E05.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 267,
+      "title": "Torchwood Archives #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": "Takes place between S02E13 and S03E01.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 268,
+      "title": "The Torchwood: Code Exodus novel is recommended reading at this point.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 269,
+      "title": "Torchwood #1",
+      "issue_type": "limited",
+      "year": "2016",
+      "note": "Takes place after S04E10.",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 270,
+      "title": "Torchwood #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 271,
+      "title": "Torchwood #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 272,
+      "title": "Torchwood #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 273,
+      "title": "Torchwood Vol. 2 #1",
+      "issue_type": "limited",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 274,
+      "title": "Torchwood Vol. 2 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 275,
+      "title": "Torchwood Vol. 2 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 276,
+      "title": "Torchwood Vol. 2 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 277,
+      "title": "Torchwood Vol. 3 #1",
+      "issue_type": "limited",
+      "year": "2017",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 278,
+      "title": "Torchwood Vol. 3 #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 279,
+      "title": "Torchwood Vol. 3 #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 280,
+      "title": "Torchwood Vol. 3 #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

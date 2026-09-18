@@ -1,0 +1,103 @@
+{
+  "id": 322,
+  "slug": "batman-a-lonely-place-of-dying",
+  "direct_slug": "batman-a-lonely-place-of-dying-reading-order",
+  "title": "Batman: A Lonely Place of Dying",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/batman-a-lonely-place-of-dying-reading-order/",
+  "description": "",
+  "year_published": "1989",
+  "featured_characters": "Batman, Nightwing, Tim Drake, Joker",
+  "previous_event_title": "Janus Directive",
+  "previous_event_slug": "janus-directive",
+  "next_event_title": "War of the Gods",
+  "next_event_slug": "war-of-the-gods",
+  "cover_image": "",
+  "total_issues": 10,
+  "comic_issues_count": 9,
+  "comments_count": 1,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Batman #440",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "New Titans #60",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Batman #441",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "New Titans #61",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Batman #442",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "This collection includes both the Death in the Family and A Lonely Place of Dying events.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Batman: A Death in the Family",
+      "issue_type": "ongoing",
+      "year": "1990",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "• Batman #426-429",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "• Batman #440-442",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "• Teen Titans #60-61",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

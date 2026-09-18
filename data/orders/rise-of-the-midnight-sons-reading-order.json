@@ -1,0 +1,71 @@
+{
+  "id": 105,
+  "slug": "rise-of-the-midnight-sons",
+  "direct_slug": "rise-of-the-midnight-sons-reading-order",
+  "title": "Rise of the Midnight Sons",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/rise-of-the-midnight-sons-reading-order/",
+  "description": "",
+  "year_published": "1992",
+  "featured_characters": "Ghost Rider, Blade, Morbius",
+  "previous_event_title": "Dead Man's Hand",
+  "previous_event_slug": "dead-mans-hand",
+  "next_event_title": "X-Cutioner's Song",
+  "next_event_slug": "x-cutioners-song",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Ghost Rider Vol. 3 #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Spirits of Vengeance #1",
+      "issue_type": "ongoing",
+      "year": "1992",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Morbius: The Living Vampire #1",
+      "issue_type": "ongoing",
+      "year": "1992",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Darkhold #1",
+      "issue_type": "ongoing",
+      "year": "1992",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Nightstalkers #1",
+      "issue_type": "ongoing",
+      "year": "1992",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Ghost Rider Vol. 3 #31",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": 10,
+  "slug": "all-new-all-different-marvel",
+  "direct_slug": "all-new-all-different-marvel-reading-order",
+  "title": "All-New, All-Different Marvel",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/all-new-all-different-marvel-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 10,
+  "comic_issues_count": 10,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Issues: Avengers: Rage of Ultron #1 to Thunderbolts Vol. 3 #9",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Years: 2015-2017",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Events: Avengers: Standoff!, Spider-Women, Apocalypse Wars, Civil War II, Dead No More: The Clone Conspiracy",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "First Appearances: Gwenpool, Riri Williams",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "It has been 8 months since Secret Wars ended and the Marvel Universe managed to survive. Dive into an insane number of new series to explore this new status quo. Mary Jane is hanging around with Tony Stark. Peter Parker is rich. There is a new Hulk, a new Star-Lord, and both a new and old Wolverine. There is no Fantastic Four and the Inhumans are still trying to be a thing.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Issues: Scarlet Witch Vol. 2 #10 to Jean Grey #7",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Years: 2016-2018",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Events: Monsters Unleashed, Inhumans vs. X-Men, Secret Empire",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "First Appearances: None",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "The repercussions of Civil War II are felt and the long road to Secret Empire continues. Meanwhile the war between the Inhumans and X-Men finally comes to a head.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

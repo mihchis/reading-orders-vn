@@ -1,0 +1,647 @@
+{
+  "id": 372,
+  "slug": "forever-evil",
+  "direct_slug": "forever-evil-reading-order",
+  "title": "Forever Evil",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/forever-evil-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 78,
+  "comic_issues_count": 77,
+  "comments_count": 1,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Action Comics #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Lex Luthor",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Forever Evil #1",
+      "issue_type": "limited",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Aquaman Vol. 7 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Black Manta",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Aquaman Vol. 7 #23.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Ocean Master",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Batman and Robin Vol. 2 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Two-Face",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Batman: The Dark Knight Vol. 2 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Ventriloquist",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Detective Comics Vol. 2 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Poison Ivy",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "The Flash Vol. 4 #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "The Rogues",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Justice League of America Vol. 3 #7.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Deadshot",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Superman Vol. 3 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Bizarro",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Wonder Woman Vol. 4 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Cheetah",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Trinity of Sin: Pandora #4",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Trinity of Sin: Pandora #5",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 14,
+      "title": "Green Lantern Vol. 5 #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Black Hand",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 15,
+      "title": "Justice League of America Vol. 3 #7.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Killer Frost",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 16,
+      "title": "Trinity of Sin: The Phantom Stranger Vol. 4 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 17,
+      "title": "Trinity of Sin: The Phantom Stranger Vol. 4 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 18,
+      "title": "Justice League Vol. 2 #23.4 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Secret Society",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 19,
+      "title": "Forever Evil #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 20,
+      "title": "Batman Vol. 2 #23.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Riddler",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 21,
+      "title": "Detective Comics Vol. 2 #23.4 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Man-Bat",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 22,
+      "title": "Batman: The Dark Knight Vol. 2 #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Clayface",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 23,
+      "title": "Batman and Robin Vol. 2 #23.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Court of Owls",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 24,
+      "title": "Batman: The Dark Knight Vol. 2 #23.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Mr. Freeze",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 25,
+      "title": "Detective Comics Vol. 2 #23.2 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Harley Quinn",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 26,
+      "title": "Suicide Squad Vol. 4 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 27,
+      "title": "Suicide Squad Vol. 4 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 28,
+      "title": "Suicide Squad Vol. 4 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 29,
+      "title": "The Flash Vol. 4 #23.1 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Grodd",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 30,
+      "title": "Forever Evil: Rogues Rebellion #1",
+      "issue_type": "limited",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 31,
+      "title": "Justice League of America Vol. 3 #7.4 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Black Adam",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 32,
+      "title": "Justice League Vol. 2 #24",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 33,
+      "title": "Justice League of America Vol. 3 #8",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 34,
+      "title": "Justice League of America Vol. 3 #9",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 35,
+      "title": "Forever Evil: A.R.G.U.S. #1",
+      "issue_type": "limited",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 36,
+      "title": "Forever Evil: A.R.G.U.S. #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 37,
+      "title": "Justice League of America Vol. 3 #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 38,
+      "title": "Suicide Squad Vol. 4 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 39,
+      "title": "Suicide Squad Vol. 4 #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 40,
+      "title": "Suicide Squad Vol. 4 #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 41,
+      "title": "Read Forever Evil: Blight here.",
+      "issue_type": "comment",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 42,
+      "title": "Forever Evil #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 43,
+      "title": "Forever Evil: Rogues Rebellion #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 44,
+      "title": "Forever Evil: Rogues Rebellion #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 45,
+      "title": "Forever Evil: Rogues Rebellion #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 46,
+      "title": "Justice League Vol. 2 #25",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 47,
+      "title": "Justice League of America Vol. 3 #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 48,
+      "title": "Batman and Robin Vol. 2 #23.4 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Killer Croc",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 49,
+      "title": "Batman and Robin Vol. 2 #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Ra’s al Ghul and the League of Assassins",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 50,
+      "title": "Batman Vol. 2 #23.4 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Bane",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 51,
+      "title": "Detective Comics Vol. 2 #23.3 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Scarecrow",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 52,
+      "title": "Forever Evil: Arkham War #1",
+      "issue_type": "limited",
+      "year": "2013",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 53,
+      "title": "Forever Evil #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 54,
+      "title": "Justice League Vol. 2 #26",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 55,
+      "title": "Justice League Vol. 2 #27",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 56,
+      "title": "Justice League Vol. 2 #28",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 57,
+      "title": "Justice League of America Vol. 3 #12",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 58,
+      "title": "Forever Evil: Rogues Rebellion #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 59,
+      "title": "Forever Evil: Rogues Rebellion #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 60,
+      "title": "Forever Evil: A.R.G.U.S. #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 61,
+      "title": "Forever Evil: A.R.G.U.S. #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 62,
+      "title": "Forever Evil #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 63,
+      "title": "Forever Evil: Arkham War #2",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 64,
+      "title": "Forever Evil: Arkham War #3",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 65,
+      "title": "Forever Evil: Arkham War #4",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 66,
+      "title": "Forever Evil: Arkham War #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 67,
+      "title": "Forever Evil: A.R.G.U.S. #5",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 68,
+      "title": "Forever Evil #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 69,
+      "title": "Justice League of America Vol. 3 #13",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 70,
+      "title": "Forever Evil: A.R.G.U.S. #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 71,
+      "title": "Forever Evil: Arkham War #6",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 72,
+      "title": "Justice League Vol. 2 #29",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 73,
+      "title": "Forever Evil #7",
+      "issue_type": "limited",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 74,
+      "title": "Justice League of America Vol. 3 #14",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 75,
+      "title": "Justice League Vol. 2 #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 76,
+      "title": "Suicide Squad Vol. 4 #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 77,
+      "title": "Forever Evil Aftermath: Batman vs. Bane #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 78,
+      "title": "Nightwing Vol. 3 #30",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

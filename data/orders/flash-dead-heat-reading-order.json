@@ -1,0 +1,71 @@
+{
+  "id": 369,
+  "slug": "flash-dead-heat",
+  "direct_slug": "flash-dead-heat-reading-order",
+  "title": "Flash: Dead Heat",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/flash-dead-heat-reading-order/",
+  "description": "",
+  "year_published": "1995",
+  "featured_characters": "The Flash",
+  "previous_event_title": "Underworld Unleashed",
+  "previous_event_slug": "underworld-unleashed",
+  "next_event_title": "Batman: Contagion",
+  "next_event_slug": "batman-contagion",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "The Flash Vol. 2 #108",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "The Flash Vol. 2 #109",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Impulse #10",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "The Flash Vol. 2 #110",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Impulse #11",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "The Flash Vol. 2 #111",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": 413,
+  "slug": "robin-rises",
+  "direct_slug": "robin-rises-reading-order",
+  "title": "Robin Rises",
+  "universe_slug": "dc",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/dc/events/robin-rises-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 11,
+  "comic_issues_count": 11,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Batman and Robin Vol. 2 #29 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Titled Batman and Aquaman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Batman and Robin Vol. 2 #30 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Titled Batman and Wonder Woman",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Batman and Robin Vol. 2 #31 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Titled Batman and Frankenstein",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Batman and Robin Vol. 2 #32 &#8211;",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": "Titled Batman and Ra&#8217;s al Ghul",
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Robin Rises: Omega #1",
+      "issue_type": "oneshot",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Batman and Robin Vol. 2 #33",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Batman and Robin Vol. 2 #34",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Batman and Robin Vol. 2 #35",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Batman and Robin Vol. 2 #36",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Batman and Robin Vol. 2 #37",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Robin Rises: Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

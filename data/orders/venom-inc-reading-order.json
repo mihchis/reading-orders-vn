@@ -1,0 +1,71 @@
+{
+  "id": 131,
+  "slug": "venom-inc",
+  "direct_slug": "venom-inc-reading-order",
+  "title": "Venom Inc.",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/venom-inc-reading-order/",
+  "description": "",
+  "year_published": "2018",
+  "featured_characters": "Venom, Spider-Man, Anti-Venom",
+  "previous_event_title": "Venomverse",
+  "previous_event_slug": "venomverse",
+  "next_event_title": "Damnation",
+  "next_event_slug": "damnation",
+  "cover_image": "",
+  "total_issues": 6,
+  "comic_issues_count": 6,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Amazing Spider-Man: Venom Inc. Alpha #1",
+      "issue_type": "oneshot",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Amazing Spider-Man #792",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Venom #159",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Amazing Spider-Man #793",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Venom #160",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Amazing Spider-Man: Venom Inc. Omega #1",
+      "issue_type": "oneshot",
+      "year": "2018",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": 588,
+  "slug": "godzilla-reading-list",
+  "direct_slug": "godzilla-reading-list-reading-order",
+  "title": "Danh Sách Đọc Godzilla",
+  "universe_slug": "other",
+  "category_slug": "series",
+  "category_name": "Series",
+  "url": "/other/godzilla-reading-list/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 13,
+  "comic_issues_count": 13,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Danh Sách Đọc Godzilla - Comic Book Reading Orders VN Skip to content Điều hướng Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Marvel Sự Kiện Marvel Nhân Vật Marvel Master Reading Order (Tổng Thể) DC Sự Kiện DC Nhân Vật DC Master Reading Order (Tổng Thể) Truyện Khác Cập Nhật Hỏi Đáp Liên Hệ Tìm kiếm Trang chủ Other Godzilla Reading List Godzilla",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Dưới đây là danh sách tất cả truyện tranh Godzilla thường được khuyên nên đọc.",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Nhà xuất bản: Marvel, Dark Horse, IDW Publishing",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "Thời gian xuất bản: 1977-Present",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "Thể loại: Science Fiction, Giant Monster",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Tác giả sáng tạo: Kevin Eastman, Peter Laird",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Godzilla: King of the Monsters #1-24",
+      "issue_type": "ongoing",
+      "year": "1977",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Godzilla: King of the Monsters Vol. 2 #0-16",
+      "issue_type": "ongoing",
+      "year": "1995",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "Dark Horse Classics: Terror of Godzilla #1-6",
+      "issue_type": "limited",
+      "year": "1998",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Godzilla: Gangsters and Goliaths #1-5",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 11,
+      "title": "Godzilla: Legends #1-5",
+      "issue_type": "limited",
+      "year": "2011",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 12,
+      "title": "Godzilla: The Half-Century War #1-5",
+      "issue_type": "limited",
+      "year": "2012",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 13,
+      "title": "Godzilla: Cataclysm #1-5",
+      "issue_type": "limited",
+      "year": "2014",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}

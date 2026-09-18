@@ -1,0 +1,103 @@
+{
+  "id": 82,
+  "slug": "marvel-now",
+  "direct_slug": "marvel-now-reading-order",
+  "title": "Marvel NOW!",
+  "universe_slug": "marvel",
+  "category_slug": "events",
+  "category_name": "Sự kiện",
+  "url": "/marvel/events/marvel-now-reading-order/",
+  "description": "",
+  "year_published": "",
+  "featured_characters": "",
+  "previous_event_title": "",
+  "previous_event_slug": "",
+  "next_event_title": "",
+  "next_event_slug": "",
+  "cover_image": "",
+  "total_issues": 10,
+  "comic_issues_count": 10,
+  "comments_count": 0,
+  "issues": [
+    {
+      "sort_order": 1,
+      "title": "Issues: Marvel NOW! Point One #1 to Revolutionary War: Omega #1",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 2,
+      "title": "Years: 2012-2014",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 3,
+      "title": "Events: Age of Ultron, Infinity, Inhumanity, Battle of the Atom, Revolutionary War",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 4,
+      "title": "First Appearances: Angela, Kamala Khan",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 5,
+      "title": "The first half of the Marvel NOW! reading order contains dozens of new series and major shifts in the status quo. The five original X-Men are back. The teams of X-Force, the Defenders, and the Thunderbolts consist of new members. They is a new, superior, Spider-Man swinging through the streets of New York. The Avengers and New Avengers series see the beginnings of an epic story that will culminate years later with the Secret Wars (2015) event.",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 6,
+      "title": "Issues: X-Men Vol. 4 #7 to Secret Wars Too #1",
+      "issue_type": "oneshot",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 7,
+      "title": "Years: 2014-2016",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 8,
+      "title": "Events: Goblin Nation, The Trial of Jean Grey, Original Sin, Cái chết của Wolverine, Avengers & X-Men: AXIS, Spider-Verse, Black Vortex, Secret Wars",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 9,
+      "title": "First Appearances: Silk, Spider-Gwen",
+      "issue_type": "ongoing",
+      "year": null,
+      "note": null,
+      "is_noncanon": 0
+    },
+    {
+      "sort_order": 10,
+      "title": "Part Two of the Marvel NOW! reading order continues many of the series from Part One as well as premiering several new ones. Steve Rogers is no longer Captain America. A hero who couldn&#8217;t die is dead. There is a new female Thor after the original Thor is unworthy to continue wielding Mjolnir. Jonathan Hickman&#8217;s epic storyline comes to a close with Secret Wars (2015) and brings about the end of the Marvel NOW! era.",
+      "issue_type": "ongoing",
+      "year": "2015",
+      "note": null,
+      "is_noncanon": 0
+    }
+  ]
+}
