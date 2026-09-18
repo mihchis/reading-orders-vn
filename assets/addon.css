@@ -9,11 +9,9 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 38px;
-  background: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #f1f1f1;
+  height: 36px;
+  background: #181818;
+  color: #d1d5db;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,25 +19,18 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
   z-index: 100000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-}
-
-#ro-top-bar::-webkit-scrollbar {
-  display: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 body.has-ro-bar {
-  padding-top: 38px !important;
+  padding-top: 36px !important;
 }
 
 .ro-bar-left, .ro-bar-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
@@ -48,71 +39,158 @@ body.has-ro-bar {
   display: flex;
 }
 
+/* Brand Link */
+.ro-brand-link {
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+}
+
+.ro-brand-link:hover {
+  color: #e42525;
+}
+
+/* Minimalist Top Link (dùng cho nav links, buttons, lang) */
+.ro-top-link {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+  font-family: inherit;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ro-top-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Nút Tiến độ */
+.ro-progress-link {
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  padding: 3px 8px;
+}
+
+.ro-progress-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Số đếm huy hiệu */
+.ro-count-pill {
+  background: #e42525;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 10px;
+  line-height: 1.2;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* Đường phân cách mảnh */
+.ro-top-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 4px;
+}
+
+/* User & Auth buttons */
+.ro-user-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ro-user-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.ro-admin-tag {
+  background: #b45309;
+  color: #fef3c7;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.ro-logout-link:hover {
+  color: #ef4444;
+}
+
 /* --- Mobile Bar --- */
 .ro-mobile-bar {
   display: none;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
-}
-
-/* --- Mobile Icon Buttons --- */
-.ro-icon-btn {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  color: #fff;
-  font-size: 18px;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.2s;
-  padding: 0;
-}
-
-.ro-icon-btn:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-/* --- Mobile Badge trên nút tiến độ --- */
-.ro-mobile-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #e42525;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  min-width: 16px;
-  height: 16px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 3px;
-  line-height: 1;
+  padding: 0 4px;
 }
 
 /* --- Hamburger Icon --- */
 .ro-hamburger {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ro-hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .ro-hamburger span {
   display: block;
-  width: 18px;
+  width: 16px;
   height: 2px;
-  background: #fff;
+  background: #d1d5db;
   border-radius: 2px;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   transform-origin: center;
 }
 
@@ -131,38 +209,37 @@ body.has-ro-bar {
 /* --- Mobile Drawer --- */
 .ro-mobile-drawer {
   position: fixed;
-  top: 48px;
+  top: 42px;
   left: 0;
   right: 0;
-  background: rgba(18, 18, 22, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: #181818;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 99999;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
   opacity: 0;
   display: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .ro-mobile-drawer.is-open {
-  max-height: 400px;
+  max-height: 360px;
   opacity: 1;
 }
 
 .ro-drawer-section {
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
 .ro-drawer-link {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  color: #e0e0e0;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: #d1d5db;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   transition: background 0.15s, color 0.15s;
   border: none;
@@ -174,28 +251,28 @@ body.has-ro-bar {
 }
 
 .ro-drawer-link:hover, .ro-drawer-link:active {
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
 }
 
 .ro-drawer-btn {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .ro-drawer-divider {
   height: 1px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   margin: 0 16px;
 }
 
 .ro-drawer-user {
-  padding: 12px 20px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #e0e0e0;
-  font-size: 14px;
-  font-weight: 600;
+  color: #e5e7eb;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .ro-drawer-role {
@@ -833,104 +910,29 @@ body.x-navbar-fixed-top-active .x-navbar-wrap {
 }
 
 /* =========================================================
-   RESPONSIVE: TOP BAR - Tránh vỡ khi thu nhỏ cửa sổ
+   RESPONSIVE: TOP BAR
    ========================================================= */
 
-/* Màn hình nhỏ trung bình (< 1024px): ẩn nav links Marvel/DC/Other */
+/* Màn hình nhỏ trung bình (< 1024px): ẩn các nav links phụ */
 @media (max-width: 1023px) {
-  /* Ẩn các nav link phụ (Marvel, DC, Truyện Khác) */
-  #ro-top-bar .ro-bar-right > a.ro-btn {
+  #ro-top-bar .ro-bar-right > a.ro-top-link {
     display: none !important;
-  }
-
-  /* Thu gọn nút ngôn ngữ */
-  #ro-lang-btn {
-    font-size: 11px !important;
-    padding: 3px 7px !important;
-  }
-
-  /* Thu gọn tiến độ */
-  #ro-open-dashboard {
-    font-size: 12px !important;
-    padding: 3px 8px !important;
   }
 }
 
-/* Màn hình nhỏ (< 768px): ẩn text dài */
+/* Màn hình nhỏ (< 768px): chuyển sang mobile bar & drawer */
 @media (max-width: 767px) {
-  /* Ẩn text tìm kiếm dài */
-  .ro-search-text {
-    display: none !important;
-  }
-
-  /* Ẩn text ngôn ngữ */
-  .ro-lang-text {
-    display: none !important;
-  }
-
-  /* Ẩn text tiến độ, chỉ giữ icon + số */
-  .ro-dashboard-text {
-    display: none !important;
-  }
-
-  /* Hiện số count riêng bên cạnh icon */
-  #ro-open-dashboard::after {
-    content: ' ' attr(data-count);
-    font-size: 12px;
-  }
-
-  /* Ẩn summary tracker */
-  #ro-global-tracker-summary {
-    display: none !important;
-  }
-
-  /* Rút gọn gaps */
-  .ro-bar-left, .ro-bar-right {
-    gap: 6px !important;
-  }
-}
-
-/* Màn hình rất nhỏ (< 540px): rút gọn tối đa */
-@media (max-width: 539px) {
-  /* Ẩn "Reading Orders VN" text, chỉ giữ icon */
-  #ro-top-bar .ro-bar-left > a.ro-btn {
-    font-size: 0 !important;
-    padding: 4px 7px !important;
-    letter-spacing: 0 !important;
-  }
-
-  /* Hiện lại emoji */
-  #ro-top-bar .ro-bar-left > a.ro-btn::before {
-    content: '📚';
-    font-size: 15px;
-  }
-
-  /* Rút gọn gaps */
-  .ro-bar-left, .ro-bar-right {
-    gap: 4px !important;
-  }
-
-  .ro-btn {
-    padding: 3px 7px !important;
-    font-size: 11px !important;
-  }
-}
-
-/* =========================================================
-   MOBILE: Chuyển sang hamburger menu dưới 768px
-   ========================================================= */
-@media (max-width: 767px) {
-  /* Tăng chiều cao bar cho mobile (dễ bấm hơn) */
   #ro-top-bar {
-    height: 48px !important;
+    height: 42px !important;
     overflow: visible !important;
+    padding: 0 12px;
   }
 
   body.has-ro-bar {
-    padding-top: 48px !important;
+    padding-top: 42px !important;
   }
 
-  /* Ẩn toàn bộ desktop layout */
+  /* Ẩn desktop layout */
   .ro-desktop-only {
     display: none !important;
   }
@@ -940,14 +942,10 @@ body.x-navbar-fixed-top-active .x-navbar-wrap {
     display: flex !important;
   }
 
-  /* Hiện drawer khi cần */
+  /* Hiện mobile drawer */
   .ro-mobile-drawer {
     display: block !important;
-  }
-
-  /* Điều chỉnh drawer top theo chiều cao bar mobile */
-  .ro-mobile-drawer {
-    top: 48px !important;
+    top: 42px !important;
   }
 }
 

@@ -47,12 +47,7 @@ window.grecaptcha = window.grecaptcha || {
      1. QUẢN LÝ PHIÊN ĐĂNG NHẬP & NGÔN NGỮ (AUTH & LANG)
      ========================================================= */
   function getCurrentLang() {
-    return localStorage.getItem('ro_lang') || 'vi';
-  }
-
-  function setLang(lang) {
-    localStorage.setItem('ro_lang', lang);
-    window.location.reload();
+    return 'vi';
   }
 
   function getCurrentUser() {
@@ -93,40 +88,32 @@ window.grecaptcha = window.grecaptcha || {
 
     document.body.classList.add('has-ro-bar');
 
-    const curLang = getCurrentLang();
     const topBar = document.createElement('div');
     topBar.id = 'ro-top-bar';
     topBar.innerHTML = `
       <!-- Desktop layout -->
       <div class="ro-bar-left ro-desktop-only">
-        <a href="/" class="ro-btn ro-logo-btn">
-          📚 Reading Orders VN
-        </a>
-        <button id="ro-open-dashboard" class="ro-btn" style="background:#1e3a8a;border-color:#3b82f6;font-weight:600;" title="Tiến độ đọc của bạn">
-          📊 <span class="ro-dashboard-text">Tiến độ</span> (<span id="ro-global-count">0</span>)
+        <a href="/" class="ro-brand-link">Reading Orders VN</a>
+        <button id="ro-open-dashboard" class="ro-top-link ro-progress-link" title="Tiến độ đọc của bạn">
+          Tiến độ <span id="ro-global-count" class="ro-count-pill">0</span>
         </button>
       </div>
       <div class="ro-bar-right ro-desktop-only">
-        <span id="ro-global-tracker-summary" style="font-size:12px;color:#fbbf24;font-weight:600;"></span>
-        <button id="ro-lang-btn" class="ro-btn" style="background:#334155;border-color:#475569;font-size:12px;font-weight:600;" title="Chuyển ngôn ngữ">
-          ${curLang === 'vi' ? '🇻🇳 <span class="ro-lang-text">Tiếng Việt</span>' : '🇬🇧 <span class="ro-lang-text">English</span>'}
-        </button>
-        <a href="/marvel/events/" class="ro-btn">Marvel</a>
-        <a href="/dc/events/" class="ro-btn">DC Comics</a>
-        <a href="/other/" class="ro-btn">Truyện Khác</a>
+        <a href="/marvel/events/" class="ro-top-link">Marvel</a>
+        <a href="/dc/events/" class="ro-top-link">DC Comics</a>
+        <a href="/other/" class="ro-top-link">Truyện Khác</a>
+        <span class="ro-top-divider"></span>
         <div id="ro-auth-section"></div>
       </div>
 
       <!-- Mobile layout -->
       <div class="ro-mobile-bar">
-        <a href="/" class="ro-logo-btn" style="color:#fff;text-decoration:none;font-weight:bold;font-size:14px;display:flex;align-items:center;gap:6px;">
-          📚 <span>Reading Orders VN</span>
-        </a>
+        <a href="/" class="ro-brand-link">Reading Orders VN</a>
         <div style="display:flex;align-items:center;gap:8px;">
-          <button id="ro-mobile-dashboard" class="ro-icon-btn" title="Tiến độ" style="position:relative;">
-            📊<span id="ro-mobile-count" class="ro-mobile-badge">0</span>
+          <button id="ro-mobile-dashboard" class="ro-top-link ro-progress-link" title="Tiến độ">
+            Tiến độ <span id="ro-mobile-count" class="ro-count-pill">0</span>
           </button>
-          <button id="ro-mobile-menu" class="ro-icon-btn ro-hamburger" title="Menu" aria-expanded="false">
+          <button id="ro-mobile-menu" class="ro-hamburger" title="Menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -135,15 +122,9 @@ window.grecaptcha = window.grecaptcha || {
       <!-- Mobile dropdown drawer -->
       <div id="ro-mobile-drawer" class="ro-mobile-drawer">
         <div class="ro-drawer-section">
-          <a href="/marvel/events/" class="ro-drawer-link">🦸 Marvel Universe</a>
-          <a href="/dc/events/" class="ro-drawer-link">⚡ DC Comics</a>
-          <a href="/other/" class="ro-drawer-link">📖 Truyện Khác</a>
-        </div>
-        <div class="ro-drawer-divider"></div>
-        <div class="ro-drawer-section">
-          <button id="ro-drawer-lang" class="ro-drawer-link ro-drawer-btn">
-            ${curLang === 'vi' ? '🇻🇳 Tiếng Việt' : '🇬🇧 English'}
-          </button>
+          <a href="/marvel/events/" class="ro-drawer-link">Marvel</a>
+          <a href="/dc/events/" class="ro-drawer-link">DC Comics</a>
+          <a href="/other/" class="ro-drawer-link">Truyện Khác</a>
         </div>
         <div class="ro-drawer-divider"></div>
         <div class="ro-drawer-section" id="ro-mobile-auth-section"></div>
@@ -154,15 +135,9 @@ window.grecaptcha = window.grecaptcha || {
 
     // Desktop events
     document.getElementById('ro-open-dashboard')?.addEventListener('click', openDashboardModal);
-    document.getElementById('ro-lang-btn')?.addEventListener('click', () => {
-      setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
-    });
 
     // Mobile events
     document.getElementById('ro-mobile-dashboard')?.addEventListener('click', openDashboardModal);
-    document.getElementById('ro-drawer-lang')?.addEventListener('click', () => {
-      setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
-    });
 
     // Hamburger toggle
     const menuBtn = document.getElementById('ro-mobile-menu');
@@ -201,11 +176,18 @@ window.grecaptcha = window.grecaptcha || {
     if (authSection) {
       if (user) {
         const isAdmin = user.role === 'admin';
+        let displayName = user.display_name || user.username || 'Độc giả';
+        // Tránh lặp chữ nếu tên hiển thị đã là "Quản Trị Viên"
+        if (isAdmin && /quản trị/i.test(displayName)) {
+          displayName = 'Quản trị viên';
+        }
+
         authSection.innerHTML = `
-          <button id="ro-admin-badge-btn" class="ro-user-badge ${isAdmin ? 'is-admin' : ''}" style="background:none;border:none;cursor:${isAdmin ? 'pointer' : 'default'};" title="${isAdmin ? 'Bấm để mở Bảng Quản Lý Quản Trị Viên' : ''}">
-            ${isAdmin ? '👑 Quản Trị Viên' : '👤'} ${escapeHtml(user.display_name || user.username)}
+          <button id="ro-admin-badge-btn" class="ro-user-btn ${isAdmin ? 'is-admin' : ''}" title="${isAdmin ? 'Bấm để mở Bảng Quản Lý' : ''}">
+            ${isAdmin ? '<span class="ro-admin-tag">Admin</span>' : ''}
+            <span>${escapeHtml(displayName)}</span>
           </button>
-          <button id="ro-logout-btn" class="ro-btn" style="background:#444;font-size:11px;cursor:pointer;">Đăng xuất</button>
+          <button id="ro-logout-btn" class="ro-top-link ro-logout-link" title="Đăng xuất">Đăng xuất</button>
         `;
         if (isAdmin) {
           document.getElementById('ro-admin-badge-btn')?.addEventListener('click', (e) => {
@@ -219,7 +201,7 @@ window.grecaptcha = window.grecaptcha || {
         });
       } else {
         authSection.innerHTML = `
-          <button id="ro-login-btn" class="ro-btn" style="background:#2563eb;border-color:#2563eb;font-weight:bold;">🔑 Đăng nhập</button>
+          <button id="ro-login-btn" class="ro-top-link ro-login-link">Đăng nhập</button>
         `;
         document.getElementById('ro-login-btn')?.addEventListener('click', () => openAuthModal('login'));
       }
@@ -228,12 +210,16 @@ window.grecaptcha = window.grecaptcha || {
     if (mobileAuth) {
       if (user) {
         const isAdmin = user.role === 'admin';
+        let displayName = user.display_name || user.username || 'Độc giả';
+        if (isAdmin && /quản trị/i.test(displayName)) {
+          displayName = 'Quản trị viên';
+        }
         mobileAuth.innerHTML = `
           <div class="ro-drawer-user">
-            <span>${isAdmin ? '👑' : '👤'} ${escapeHtml(user.display_name || user.username)}</span>
-            ${isAdmin ? '<span class="ro-drawer-role">Quản Trị Viên</span>' : ''}
+            <span>${escapeHtml(displayName)}</span>
+            ${isAdmin ? '<span class="ro-admin-tag">Admin</span>' : ''}
           </div>
-          <button id="ro-mobile-logout-btn" class="ro-drawer-link ro-drawer-btn" style="color:#f87171;">🚪 Đăng xuất</button>
+          <button id="ro-mobile-logout-btn" class="ro-drawer-link ro-drawer-btn" style="color:#ef4444;">Đăng xuất</button>
         `;
         document.getElementById('ro-mobile-logout-btn')?.addEventListener('click', (e) => {
           e.preventDefault(); e.stopPropagation();
@@ -241,7 +227,7 @@ window.grecaptcha = window.grecaptcha || {
         });
       } else {
         mobileAuth.innerHTML = `
-          <button id="ro-mobile-login-btn" class="ro-drawer-link ro-drawer-btn" style="color:#60a5fa;font-weight:600;">🔑 Đăng nhập</button>
+          <button id="ro-mobile-login-btn" class="ro-drawer-link ro-drawer-btn" style="color:#e42525;font-weight:600;">Đăng nhập</button>
         `;
         document.getElementById('ro-mobile-login-btn')?.addEventListener('click', () => {
           document.getElementById('ro-mobile-drawer')?.classList.remove('is-open');
@@ -600,20 +586,23 @@ window.grecaptcha = window.grecaptcha || {
       <!-- Phím tắt nhanh -->
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;">
         <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
-          ⚡ <span>Liên Kết Nhanh Hệ Thống</span>
+          Liên Kết Nhanh Hệ Thống
         </h4>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <button id="ro-admin-open-dash" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;cursor:pointer;">
-            📊 Xem Bảng Tiến Độ Đọc
+            Xem Bảng Tiến Độ Đọc
           </button>
           <a href="/updates/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            📝 Trang Nhật Ký Cập Nhật
+            Nhật Ký Cập Nhật
           </a>
           <a href="/faq/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            ❓ Trang Hỏi Đáp (FAQ)
+            Hỏi Đáp (FAQ)
           </a>
-          <a href="/contact/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            ✉️ Trang Liên Hệ
+          <a href="https://t.me/mihchis" target="_blank" rel="noopener noreferrer" class="ro-btn" style="background:#0088cc;color:#fff;border:1px solid #0077b5;font-size:12px;text-decoration:none;">
+            Telegram @mihchis
+          </a>
+          <a href="mailto:trin79136@gmail.com" class="ro-btn" style="background:#ea4335;color:#fff;border:1px solid #c5221f;font-size:12px;text-decoration:none;">
+            trin79136@gmail.com
           </a>
         </div>
       </div>
@@ -1357,8 +1346,6 @@ window.grecaptcha = window.grecaptcha || {
      8. ĐỘNG CƠ VIỆT HÓA TỰ ĐỘNG & TÓM TẮT SỰ KIỆN (LOCALIZATION ENGINE)
      ========================================================= */
   function applyLocalization() {
-    if (getCurrentLang() !== 'vi') return;
-
     // 1. Menu chính và Submenu - Rút gọn để giữ navbar 1 dòng, không phình to che nội dung
     const navMap = {
       'Marvel': 'Marvel',
@@ -1689,8 +1676,6 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function applyVietnameseSynopsis() {
-    if (getCurrentLang() !== 'vi') return;
-
     const path = window.location.pathname.toLowerCase();
     const match = path.match(/([a-z0-9-]+-reading-order)/);
     if (!match) return;
@@ -1718,37 +1703,16 @@ window.grecaptcha = window.grecaptcha || {
 
       overviewP.innerHTML = `
         <div style="background:rgba(228,37,37,0.04);border-left:3px solid #e42525;padding:8px 12px;border-radius:4px;margin-bottom:8px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+          <div style="display:flex;align-items:center;margin-bottom:4px;">
             <span style="font-weight:700;font-size:11px;color:#e42525;text-transform:uppercase;letter-spacing:0.5px;">
               🇻🇳 Tóm Tắt Cốt Truyện Tiếng Việt
             </span>
-            <button id="ro-toggle-synopsis-lang" style="background:none;border:none;color:#666;font-size:11px;cursor:pointer;text-decoration:underline;">
-              Xem nguyên bản English
-            </button>
           </div>
           <div id="ro-synopsis-text" style="color:#222;line-height:1.6;text-align:justify;">
             ${viSynopsis}
           </div>
         </div>
       `;
-
-      let isShowingVi = true;
-      document.getElementById('ro-toggle-synopsis-lang')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        const textContainer = document.getElementById('ro-synopsis-text');
-        const btn = document.getElementById('ro-toggle-synopsis-lang');
-        if (!textContainer || !btn) return;
-
-        if (isShowingVi) {
-          textContainer.innerHTML = originalEn;
-          btn.textContent = 'Xem tóm tắt Tiếng Việt';
-          isShowingVi = false;
-        } else {
-          textContainer.innerHTML = viSynopsis;
-          btn.textContent = 'Xem nguyên bản English';
-          isShowingVi = true;
-        }
-      });
     }
 
     if (synopsisData) {
