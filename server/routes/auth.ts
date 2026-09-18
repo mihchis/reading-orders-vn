@@ -202,20 +202,8 @@ router.get('/progress/:orderId', authMiddleware, async (req: AuthRequest, res) =
       }
     }
 
-    // 2. Fallback local SQLite
-    const orderIdNum = Number(orderIdParam) || 0;
-    const rows = db.prepare(`
-      SELECT issue_id FROM user_progress
-      WHERE user_id = ? AND reading_order_id = ? AND is_read = 1
-    `).all(userId, orderIdNum) as any[];
-
-    res.json({
-      success: true,
-      data: {
-        orderId: orderIdParam,
-        readIssueIds: rows.map(r => r.issue_id)
-      }
-    });
+    // Không tìm thấy user trong Supabase
+    res.json({ success: true, data: { orderId: orderIdParam, readIssueIds: [] } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -280,40 +268,8 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
       });
     }
 
-    // Fallback SQLite
-    const orderIdNum = Number(orderIdParam) || 0;
-    const existingLocal = db.prepare(`
-      SELECT id, is_read FROM user_progress
-      WHERE user_id = ? AND reading_order_id = ? AND issue_id = ?
-    `).get(userId, orderIdNum, issueId) as any;
-
-    let localStatus = true;
-    if (existingLocal) {
-      localStatus = !existingLocal.is_read;
-      if (localStatus) {
-        db.prepare(`UPDATE user_progress SET is_read = 1, updated_at = CURRENT_TIMESTAMP WHERE id = ?`).run(existingLocal.id);
-      } else {
-        db.prepare(`DELETE FROM user_progress WHERE id = ?`).run(existingLocal.id);
-      }
-    } else {
-      db.prepare(`
-        INSERT INTO user_progress (user_id, reading_order_id, issue_id, is_read)
-        VALUES (?, ?, ?, 1)
-      `).run(userId, orderIdNum, issueId);
-      localStatus = true;
-    }
-
-    const currentRows = db.prepare(`
-      SELECT issue_id FROM user_progress
-      WHERE user_id = ? AND reading_order_id = ? AND is_read = 1
-    `).all(userId, orderIdNum) as any[];
-
-    res.json({
-      success: true,
-      issueId,
-      isRead: localStatus,
-      readIssueIds: currentRows.map(r => r.issue_id)
-    });
+    // Không hỗ trợ user không phải Supabase
+    res.status(400).json({ success: false, message: 'Tài khoản không hợp lệ' });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
