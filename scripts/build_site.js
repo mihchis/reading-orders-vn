@@ -38,6 +38,16 @@ function processDirectory(src, dest) {
       if (entry.name.endsWith('.html')) {
         htmlCount++;
         let content = fs.readFileSync(srcPath, 'utf8');
+        // Sanitize Mixed Content & insecure URLs
+        content = content.replace(/http:\/\/fonts\.googleapis\.com/g, 'https://fonts.googleapis.com');
+        content = content.replace(/http:\/\/www\.googletagmanager\.com/g, 'https://www.googletagmanager.com');
+        content = content.replace(/http:\/\/schema\.org/g, 'https://schema.org');
+
+        // Replace broken recaptcha script (apic353.js) with safe stub
+        const safeRecaptcha = '<script id="google-recaptcha-js">window.grecaptcha=window.grecaptcha||{ready:function(cb){if(typeof cb==="function")try{cb()}catch(e){}},execute:function(){return Promise.resolve("")}};</script>';
+        content = content.replace(/<script id=["']google-recaptcha-js["'][^>]*apic353\.js[^>]*><\/script>/gi, safeRecaptcha);
+        content = content.replace(/<script[^>]*src=["'][^"']*apic353\.js[^"']*["'][^>]*><\/script>/gi, safeRecaptcha);
+
         if (!content.includes('/assets/addon.css')) {
           if (content.includes('</head>')) {
             content = content.replace('</head>', `${addonTags}</head>`);
