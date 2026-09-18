@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const siteDir = path.resolve(__dirname, '..', 'site');
+const rootDir = path.resolve(__dirname, '..');
+const siteFolders = ['marvel', 'dc', 'other', 'faq', 'contact', 'updates'];
 
 let cleanedCount = 0;
 
@@ -55,5 +56,16 @@ function walkDir(dir) {
 
 console.log('Bắt đầu dọn dẹp và khắc phục lỗi HTTPS/Mixed Content/Recaptcha...');
 const start = Date.now();
-walkDir(siteDir);
+if (fs.existsSync(path.join(rootDir, 'index.html'))) {
+  const original = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf8');
+  const cleaned = cleanHtmlContent(original);
+  if (cleaned !== original) {
+    fs.writeFileSync(path.join(rootDir, 'index.html'), cleaned, 'utf8');
+    cleanedCount++;
+  }
+}
+siteFolders.forEach(folder => {
+  const p = path.join(rootDir, folder);
+  if (fs.existsSync(p)) walkDir(p);
+});
 console.log(`✅ Đã dọn dẹp & sửa thành công ${cleanedCount} file HTML trong ${((Date.now() - start) / 1000).toFixed(2)}s`);

@@ -1,0 +1,34 @@
+/* --- Member / Unlock Button Styles --- */
+
+.mpp-cta-button {
+    display: inline-block;
+    padding: 15px 24px;
+    margin: 15px 0;
+    background-color: #FF6B35 !important;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    line-height: 1.4;
+}
+.mpp-cta-button:hover {
+    background-color: #E55A2B !important;
+    color: #FFFFFF !important;
+}
+
+/* --- Custom Styles --- */
+
+/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+/* submenu font size */
+.desktop .sub-menu li>a {
+    font-size: 14px;
+}

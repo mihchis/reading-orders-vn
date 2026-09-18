@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const siteDir = path.resolve(__dirname, '..', 'site');
+const rootDir = path.resolve(__dirname, '..');
+const siteDir = rootDir;
 const indexList = [];
 
 // Quét Marvel, DC, Other

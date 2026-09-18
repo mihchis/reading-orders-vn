@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(__dirname, '..', 'site', 'updates', 'index.html');
+const filePath = path.join(__dirname, '..', 'updates', 'index.html');
 let html = fs.readFileSync(filePath, 'utf8');
 
 console.log('🚀 Bắt đầu việt hóa toàn diện trang site/updates/index.html...');

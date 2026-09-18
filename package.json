@@ -5,8 +5,7 @@
   "description": "Thứ tự đọc truyện tranh - Comic Book Reading Orders phong cách chuẩn tham_khao",
   "scripts": {
     "dev:server": "tsx watch server/index.ts",
-    "dev:client": "vite",
-    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev": "tsx watch server/index.ts",
     "build": "node scripts/build_site.js",
     "build:react": "vite build",
     "seed": "tsx server/database/seed.ts",

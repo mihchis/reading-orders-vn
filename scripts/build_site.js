@@ -2,10 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
-const siteDir = path.join(rootDir, 'site');
 const distDir = path.join(rootDir, 'dist');
 
-console.log('🚀 Đang chuẩn bị bản build từ thư mục site/...');
+console.log('🚀 Đang chuẩn bị bản build từ thư mục gốc (root)...');
 const startTime = Date.now();
 
 // 1. Tạo mới thư mục dist
@@ -14,13 +13,28 @@ if (fs.existsSync(distDir)) {
 }
 fs.mkdirSync(distDir, { recursive: true });
 
-// 2. Hàm copy đệ quy và chèn addon vào HTML
+// Danh sách các thư mục và file thuộc website tĩnh cần build
+const siteItems = [
+  'assets',
+  'comments',
+  'contact',
+  'dc',
+  'faq',
+  'feed',
+  'marvel',
+  'other',
+  'updates',
+  'wp-content',
+  'wp-includes',
+  'wp-json',
+  'index.html',
+  'search_index.json'
+];
+
 let htmlCount = 0;
 let fileCount = 0;
 
-const addonTags = `\n<!-- Reading Orders VN Enhancements -->\n<link rel="stylesheet" href="/assets/addon.css">\n<script src="/assets/addon.js" defer></script>\n`;
-
-function processDirectory(src, dest) {
+function copyRecursive(src, dest) {
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
   }
@@ -32,53 +46,37 @@ function processDirectory(src, dest) {
     const destPath = path.join(dest, entry.name);
 
     if (entry.isDirectory()) {
-      processDirectory(srcPath, destPath);
+      copyRecursive(srcPath, destPath);
     } else if (entry.isFile()) {
       fileCount++;
       if (entry.name.endsWith('.html')) {
         htmlCount++;
-        let content = fs.readFileSync(srcPath, 'utf8');
-        // Sanitize Mixed Content & insecure URLs
-        content = content.replace(/http:\/\/fonts\.googleapis\.com/g, 'https://fonts.googleapis.com');
-        content = content.replace(/http:\/\/www\.googletagmanager\.com/g, 'https://www.googletagmanager.com');
-        content = content.replace(/http:\/\/schema\.org/g, 'https://schema.org');
-
-        // Replace broken recaptcha script (apic353.js) with safe stub
-        const safeRecaptcha = '<script id="google-recaptcha-js">window.grecaptcha=window.grecaptcha||{ready:function(cb){if(typeof cb==="function")try{cb()}catch(e){}},execute:function(){return Promise.resolve("")}};</script>';
-        content = content.replace(/<script id=["']google-recaptcha-js["'][^>]*apic353\.js[^>]*><\/script>/gi, safeRecaptcha);
-        content = content.replace(/<script[^>]*src=["'][^"']*apic353\.js[^"']*["'][^>]*><\/script>/gi, safeRecaptcha);
-
-        if (!content.includes('/assets/addon.css')) {
-          if (content.includes('</head>')) {
-            content = content.replace('</head>', `${addonTags}</head>`);
-          } else {
-            content = `${addonTags}${content}`;
-          }
-        }
-        fs.writeFileSync(destPath, content, 'utf8');
-      } else {
-        // Copy các file tĩnh (css, js, jpg, png, svg, json, woff2...)
-        fs.copyFileSync(srcPath, destPath);
       }
+      fs.copyFileSync(srcPath, destPath);
     }
   }
 }
 
-// Chạy xử lý từ site sang dist
-processDirectory(siteDir, distDir);
+for (const item of siteItems) {
+  const src = path.join(rootDir, item);
+  const dest = path.join(distDir, item);
+  if (!fs.existsSync(src)) continue;
 
-// 3. Đảm bảo search_index.json có mặt trong dist
-const searchIndexSrc = path.join(siteDir, 'search_index.json');
-const searchIndexDest = path.join(distDir, 'search_index.json');
-if (fs.existsSync(searchIndexSrc) && !fs.existsSync(searchIndexDest)) {
-  fs.copyFileSync(searchIndexSrc, searchIndexDest);
+  const stat = fs.statSync(src);
+  if (stat.isDirectory()) {
+    copyRecursive(src, dest);
+  } else if (stat.isFile()) {
+    fileCount++;
+    if (item.endsWith('.html')) htmlCount++;
+    fs.copyFileSync(src, dest);
+  }
 }
 
-// 4. Tạo các trang alias/redirect tại gốc cho toàn bộ 609 reading orders
-// Giúp truy cập trực tiếp /the-boys-reading-order hay /house-of-m-reading-order tự động chuyển hướng đúng, không bị 404
-if (fs.existsSync(searchIndexSrc)) {
+// 2. Tạo các trang alias/redirect tại gốc cho toàn bộ reading orders
+const searchIndexDest = path.join(distDir, 'search_index.json');
+if (fs.existsSync(searchIndexDest)) {
   try {
-    const items = JSON.parse(fs.readFileSync(searchIndexSrc, 'utf8'));
+    const items = JSON.parse(fs.readFileSync(searchIndexDest, 'utf8'));
     let aliasCount = 0;
     const reserved = ['marvel', 'dc', 'other', 'updates', 'faq', 'contact', 'assets', 'wp-content', 'wp-includes', 'wp-json'];
 
@@ -113,4 +111,4 @@ if (fs.existsSync(searchIndexSrc)) {
 
 const duration = ((Date.now() - startTime) / 1000).toFixed(2);
 console.log(`✅ Build hoàn tất trong ${duration}s!`);
-console.log(`📊 Đã copy ${fileCount} files, tối ưu & chèn addon cho ${htmlCount} trang HTML.`);
+console.log(`📊 Đã copy ${fileCount} files, tối ưu cho ${htmlCount} trang HTML.`);
