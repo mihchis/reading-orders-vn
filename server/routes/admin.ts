@@ -34,6 +34,160 @@ router.get('/stats', async (req: AuthRequest, res) => {
   }
 });
 
+// GET /api/admin/reading-orders - Danh sách reading orders có phân trang, tìm kiếm & bộ lọc cho Admin
+router.get('/reading-orders', async (req: AuthRequest, res) => {
+  try {
+    const page = Math.max(1, Number(req.query.page) || 1);
+    const limit = Math.min(100, Math.max(10, Number(req.query.limit) || 25));
+    const search = (req.query.search as string || '').trim();
+    const universe = req.query.universe as string;
+    const category = req.query.category as string;
+
+    const offset = (page - 1) * limit;
+
+    let query = supabaseAdmin
+      .from('reading_orders')
+      .select(`
+        *,
+        universes(id, name, slug, accent_color),
+        categories(id, name, slug)
+      `, { count: 'exact' });
+
+    if (search) {
+      query = query.or(`title.ilike.%${search}%,slug.ilike.%${search}%,featured_characters.ilike.%${search}%`);
+    }
+
+    if (universe) {
+      query = query.eq('universe_slug', universe);
+    }
+
+    if (category) {
+      query = query.eq('category_slug', category);
+    }
+
+    query = query.order('id', { ascending: false }).range(offset, offset + limit - 1);
+
+    const { data: rows, count, error } = await query;
+    if (error) throw error;
+
+    const total = count || 0;
+    const totalPages = Math.ceil(total / limit);
+
+    res.json({
+      success: true,
+      data: rows || [],
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages
+      }
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// GET /api/admin/reading-orders/:id - Chi tiết 1 reading order kèm toàn bộ issues
+router.get('/reading-orders/:id', async (req: AuthRequest, res) => {
+  try {
+    const { id } = req.params;
+
+    const { data: order, error } = await supabaseAdmin
+      .from('reading_orders')
+      .select(`
+        *,
+        universes(id, name, slug, accent_color),
+        categories(id, name, slug)
+      `)
+      .eq('id', Number(id))
+      .maybeSingle();
+
+    if (error || !order) {
+      res.status(404).json({ success: false, message: 'Không tìm thấy thứ tự đọc' });
+      return;
+    }
+
+    const { data: issues = [] } = await supabaseAdmin
+      .from('issues')
+      .select('*')
+      .eq('reading_order_id', Number(id))
+      .order('sort_order', { ascending: true });
+
+    res.json({
+      success: true,
+      data: {
+        ...order,
+        issues: issues || []
+      }
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// GET /api/admin/users - Danh sách độc giả từ Supabase Auth kèm thống kê tiến độ
+router.get('/users', async (req: AuthRequest, res) => {
+  try {
+    const { data: authData, error: authErr } = await supabaseAdmin.auth.admin.listUsers();
+    if (authErr) throw authErr;
+
+    const { data: progressRows } = await supabaseAdmin
+      .from('user_progress')
+      .select('user_id');
+
+    const progressCountMap: Record<string, number> = {};
+    (progressRows || []).forEach((r: any) => {
+      progressCountMap[r.user_id] = (progressCountMap[r.user_id] || 0) + 1;
+    });
+
+    const users = (authData.users || []).map((u: any) => ({
+      id: u.id,
+      email: u.email,
+      username: u.user_metadata?.username || u.email?.split('@')[0],
+      display_name: u.user_metadata?.display_name || u.user_metadata?.username || 'Độc giả',
+      role: u.user_metadata?.role || 'user',
+      created_at: u.created_at,
+      last_sign_in_at: u.last_sign_in_at,
+      read_issues_count: progressCountMap[u.id] || 0
+    }));
+
+    res.json({
+      success: true,
+      data: users
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// GET /api/admin/universes - Danh sách vũ trụ & danh mục
+router.get('/universes', async (req: AuthRequest, res) => {
+  try {
+    const { data: universes = [], error: uErr } = await supabaseAdmin
+      .from('universes')
+      .select('*')
+      .order('sort_order', { ascending: true });
+
+    const { data: categories = [], error: cErr } = await supabaseAdmin
+      .from('categories')
+      .select('*')
+      .order('sort_order', { ascending: true });
+
+    if (uErr) throw uErr;
+    if (cErr) throw cErr;
+
+    const result = (universes || []).map((u: any) => ({
+      ...u,
+      categories: (categories || []).filter((c: any) => c.universe_id === u.id),
+    }));
+
+    res.json({ success: true, data: result });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 // POST /api/admin/reading-orders - Tạo mới thứ tự đọc
 router.post('/reading-orders', async (req: AuthRequest, res) => {
   try {

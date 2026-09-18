@@ -82,9 +82,18 @@ const sendHtml = (res: express.Response, filePath: string) => {
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
     let content = fs.readFileSync(filePath, 'utf8');
 
-    // 0. Đảm bảo base href="/" để các liên kết/tài nguyên tương đối luôn trỏ đúng về root
+    // 0. Đảm bảo base href đúng theo thư mục của file để các link tương đối hoạt động
     if (!content.includes('<base href=')) {
-      content = content.replace(/<head>/i, '<head>\n<base href="/">');
+      // Tính base href = thư mục chứa file tính từ rootDir, luôn kết thúc bằng /
+      const fileDir = path.dirname(filePath);
+      const relDir = path.relative(rootDir, fileDir).replace(/\\/g, '/');
+      const baseHref = relDir ? `/${relDir}/` : '/';
+      content = content.replace(/<head>/i, `<head>\n<base href="${baseHref}">`);
+    }
+
+    // Trang Admin độc lập: giữ nguyên layout chuyên biệt của Dashboard
+    if (filePath.toLowerCase().includes('admin')) {
+      return res.send(content);
     }
 
     // 1. Header Navigation
@@ -173,6 +182,34 @@ app.get('*', (req, res, next) => {
   const dirIndexPath = path.join(rootDir, cleanPath, 'index.html');
   if (fs.existsSync(dirIndexPath)) {
     return sendHtml(res, dirIndexPath);
+  }
+
+  // 2b. Nếu path chỉ có 1 segment (slug đơn, ví dụ /zombie-reading-list),
+  //     thử tìm trong các thư mục vũ trụ: marvel/, dc/, other/ và subdirectory của chúng
+  const segments = cleanPath.replace(/^\//, '').split('/').filter(Boolean);
+  if (segments.length === 1) {
+    const slug = segments[0];
+    const universeDirs = ['marvel', 'dc', 'other'];
+    for (const universe of universeDirs) {
+      // Trực tiếp: /marvel/<slug>/index.html hoặc /dc/<slug>/index.html
+      const directPath = path.join(rootDir, universe, slug, 'index.html');
+      if (fs.existsSync(directPath)) {
+        return sendHtml(res, directPath);
+      }
+      // Một cấp lồng: /marvel/<category>/<slug>/index.html
+      const universeDir = path.join(rootDir, universe);
+      if (fs.existsSync(universeDir)) {
+        const subDirs = fs.readdirSync(universeDir, { withFileTypes: true })
+          .filter(d => d.isDirectory())
+          .map(d => d.name);
+        for (const sub of subDirs) {
+          const nestedPath = path.join(rootDir, universe, sub, slug, 'index.html');
+          if (fs.existsSync(nestedPath)) {
+            return sendHtml(res, nestedPath);
+          }
+        }
+      }
+    }
   }
 
   // 3. Thử tìm file .html tương ứng (ví dụ: /faq.html)

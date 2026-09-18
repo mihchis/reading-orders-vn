@@ -184,7 +184,7 @@ window.grecaptcha = window.grecaptcha || {
         }
 
         authSection.innerHTML = `
-          <button id="ro-admin-badge-btn" class="ro-user-btn ${isAdmin ? 'is-admin' : ''}" title="${isAdmin ? 'Bấm để mở Bảng Quản Lý' : ''}">
+          <button id="ro-admin-badge-btn" class="ro-user-btn ${isAdmin ? 'is-admin' : ''}" title="${isAdmin ? 'Mở Bảng Điều Khiển Admin' : ''}">
             ${isAdmin ? '<span class="ro-admin-tag">Admin</span>' : ''}
             <span>${escapeHtml(displayName)}</span>
           </button>
@@ -193,7 +193,7 @@ window.grecaptcha = window.grecaptcha || {
         if (isAdmin) {
           document.getElementById('ro-admin-badge-btn')?.addEventListener('click', (e) => {
             e.preventDefault();
-            openAdminModal();
+            window.open('/admin/', '_blank');
           });
         }
         document.getElementById('ro-logout-btn')?.addEventListener('click', (e) => {

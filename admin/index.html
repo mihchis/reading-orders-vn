@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Điều Khiển Quản Trị Viên - Reading Orders VN</title>
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-base: #0b0f17;
+      --bg-surface: #111827;
+      --bg-card: #1f2937;
+      --bg-input: #172033;
+      --border-color: #374151;
+      --border-focus: #3b82f6;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --color-primary: #3b82f6;
+      --color-primary-hover: #2563eb;
+      --color-marvel: #e42525;
+      --color-dc: #0476f2;
+      --color-other: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-success: #10b981;
+      --radius: 10px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-surface); }
+    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+
+    /* Login Screen */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: radial-gradient(circle at top, #1e293b 0%, #0b0f17 70%);
+    }
+    .login-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 440px;
+      padding: 36px 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+    .login-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .login-brand i {
+      font-size: 28px;
+      color: #e42525;
+    }
+    .login-brand h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .login-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-input:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 12px 18px;
+      background: var(--color-primary);
+      border: none;
+      border-radius: var(--radius);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .login-error {
+      display: none;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-size: 13px;
+      border-radius: var(--radius);
+      text-align: left;
+    }
+
+    /* Admin Dashboard Layout */
+    #dashboard-screen {
+      display: none;
+      min-height: 100vh;
+      display: flex;
+    }
+    .sidebar {
+      width: 260px;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .sidebar-header {
+      padding: 24px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-header i { font-size: 22px; color: var(--color-marvel); }
+    .sidebar-header .title { font-weight: 700; font-size: 16px; letter-spacing: -0.3px; }
+    .sidebar-header .badge {
+      font-size: 11px;
+      padding: 2px 7px;
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border-radius: 999px;
+      margin-left: auto;
+    }
+    .sidebar-nav {
+      list-style: none;
+      padding: 16px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-item button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .nav-item button:hover {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+    .nav-item button.active {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    .nav-item button i { font-size: 16px; width: 20px; text-align: center; }
+
+    .sidebar-footer {
+      padding: 16px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-role { font-size: 11px; color: var(--text-dim); }
+    .btn-logout {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 16px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+    }
+    .btn-logout:hover { color: var(--color-danger); background: rgba(239, 68, 68, 0.1); }
+
+    /* Main Content */
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    .topbar {
+      height: 64px;
+      border-bottom: 1px solid var(--border-color);
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .page-title { font-size: 18px; font-weight: 700; }
+    .topbar-actions { display: flex; align-items: center; gap: 14px; }
+    .status-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      border-radius: 999px;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    .content-body {
+      padding: 28px;
+      flex: 1;
+    }
+
+    /* Tab Panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.25s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .stat-val { font-size: 26px; font-weight: 800; line-height: 1.1; margin-bottom: 4px; }
+    .stat-lbl { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+    /* Tables & Card Boxes */
+    .data-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .box-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      padding: 8px 14px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      min-width: 220px;
+    }
+    .search-input:focus { border-color: var(--border-focus); }
+    .select-filter {
+      padding: 8px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+    table.data-table th {
+      padding: 12px 14px;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+    }
+    table.data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    table.data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-marvel { background: rgba(228, 37, 37, 0.15); color: #f87171; border: 1px solid rgba(228, 37, 37, 0.3); }
+    .badge-dc { background: rgba(4, 118, 242, 0.15); color: #60a5fa; border: 1px solid rgba(4, 118, 242, 0.3); }
+    .badge-other { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    .btn-action {
+      padding: 6px 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .btn-action:hover { background: #374151; }
+    .btn-action.btn-danger:hover { color: var(--color-danger); border-color: var(--color-danger); }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 13px;
+    }
+    .btn-page {
+      padding: 6px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-page:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Modals */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      animation: modalScale 0.2s ease-out;
+    }
+    @keyframes modalScale {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-title { font-size: 16px; font-weight: 700; }
+    .btn-close-modal { background: none; border: none; color: var(--text-muted); font-size: 18px; cursor: pointer; }
+    .modal-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Issue List Editor */
+    .issue-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .issue-num { font-size: 12px; font-weight: 700; color: var(--text-dim); width: 32px; }
+    .issue-title-input { flex: 1; }
+    .issue-link-input { width: 35%; }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 100;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+    #toast.success { background: #10b981; }
+    #toast.error { background: #ef4444; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. MÀN HÌNH ĐĂNG NHẬP ADMIN (KHI CHƯA XÁC THỰC) -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-brand">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h1>Admin Portal</h1>
+      </div>
+      <p>Đăng nhập tài khoản Quản Trị Viên để quản lý toàn bộ hệ thống Reading Orders VN</p>
+
+      <div id="login-error" class="login-error"></div>
+
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label>Tên đăng nhập hoặc Email</label>
+          <input type="text" id="admin-username" class="form-input" placeholder="admin hoặc admin@readingorders.vn" required>
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="admin-password" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" id="btn-login" class="btn-primary" style="margin-top: 10px;">
+          <i class="fa-solid fa-lock"></i> Đăng nhập Quản Trị Viên
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. GIAO DIỆN BẢNG ĐIỀU KHIỂN CHÍNH (KHI ĐÃ ĐĂNG NHẬP) -->
+  <div id="dashboard-screen" style="display: none;">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fa-solid fa-book-open-reader"></i>
+        <span class="title">Reading Orders</span>
+        <span class="badge">Admin</span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li class="nav-item">
+          <button class="active" onclick="switchTab('overview')">
+            <i class="fa-solid fa-chart-pie"></i> Tổng Quan Thống Kê
+          </button>
+        </li>
+        <li class="nav-item">
+          <button onclick="switchTab('orders')">
+            <i class="fa-solid fa-list-ol"></i> Quản Lý 608 Thứ Tự Đọc
+          </button>
+        </li>
+        <li class="nav-item">
+          <button onclick="switchTab('issues')">
+            <i class="fa-solid fa-book-bookmark"></i> Quản Lý Tập & Link Đọc
+          </button>
+        </li>
+        <li class="nav-item">
+          <button onclick="switchTab('users')">
+            <i class="fa-solid fa-users"></i> Độc Giả & Tiến Độ Đọc
+          </button>
+        </li>
+        <li class="nav-item">
+          <button onclick="switchTab('universes')">
+            <i class="fa-solid fa-globe"></i> Vũ Trụ & Danh Mục
+          </button>
+        </li>
+        <li class="nav-item">
+          <button onclick="switchTab('tools')">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Đồng Bộ & Sao Lưu
+          </button>
+        </li>
+        <li class="nav-item" style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+          <button onclick="window.open('/', '_blank')">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Trang Độc Giả
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar" id="avatar-initial">A</div>
+        <div class="user-info">
+          <div class="user-name" id="display-user-name">Quản Trị Viên</div>
+          <div class="user-role">Super Admin</div>
+        </div>
+        <button class="btn-logout" title="Đăng xuất" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="page-title" id="page-heading">Tổng Quan Thống Kê</div>
+        <div class="topbar-actions">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Supabase Cloud Connected</span>
+          </div>
+          <button class="btn-action" onclick="refreshCurrentTab()">
+            <i class="fa-solid fa-arrows-rotate"></i> Làm mới
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        
+        <!-- TAB 1: TỔNG QUAN -->
+        <div id="tab-overview" class="tab-panel active">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="stat-total-orders">608</div>
+                <div class="stat-lbl">Bộ Reading Orders</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                <i class="fa-solid fa-book"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="stat-total-issues">95.859</div>
+                <div class="stat-lbl">Tổng Số Tập Truyện</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background: rgba(228, 37, 37, 0.15); color: #f87171;">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="stat-total-universes">3</div>
+                <div class="stat-lbl">Vũ Trụ Comics</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+                <i class="fa-solid fa-link"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="stat-total-links">0</div>
+                <div class="stat-lbl">Tập Có Link Đọc Online</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-chart-column" style="color: #60a5fa;"></i> Phân Bổ Theo Vũ Trụ
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+              <div style="background: var(--bg-card); border-left: 4px solid var(--color-marvel); padding: 16px; border-radius: 6px;">
+                <h4 style="color: #f87171; margin-bottom: 6px;">Marvel Comics</h4>
+                <p style="font-size: 13px; color: var(--text-muted);">Sự kiện, nhân vật Avengers, Spider-Man, X-Men, Master Era</p>
+              </div>
+              <div style="background: var(--bg-card); border-left: 4px solid var(--color-dc); padding: 16px; border-radius: 6px;">
+                <h4 style="color: #60a5fa; margin-bottom: 6px;">DC Comics</h4>
+                <p style="font-size: 13px; color: var(--text-muted);">Crisis, Batman, Superman, Justice League, Flashpoint</p>
+              </div>
+              <div style="background: var(--bg-card); border-left: 4px solid var(--color-other); padding: 16px; border-radius: 6px;">
+                <h4 style="color: #34d399; margin-bottom: 6px;">Truyện Tranh Độc Lập</h4>
+                <p style="font-size: 13px; color: var(--text-muted);">The Boys, Invincible, Hellboy, TMNT, Spawn, Transformers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: QUẢN LÝ THỨ TỰ ĐỌC -->
+        <div id="tab-orders" class="tab-panel">
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-list-check" style="color: #60a5fa;"></i> Danh Sách Reading Orders
+              </div>
+              <div class="toolbar">
+                <input type="text" id="order-search" class="search-input" placeholder="Tìm theo tên bộ, slug..." oninput="debounceSearchOrders()">
+                <select id="order-universe-filter" class="select-filter" onchange="loadOrders(1)">
+                  <option value="">Tất cả vũ trụ</option>
+                  <option value="marvel">Marvel Comics</option>
+                  <option value="dc">DC Comics</option>
+                  <option value="other">Khác (Other)</option>
+                </select>
+                <button class="btn-primary" style="width: auto; padding: 8px 16px; font-size: 13px;" onclick="openCreateOrderModal()">
+                  <i class="fa-solid fa-plus"></i> Thêm mới
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tiêu đề bộ đọc</th>
+                    <th>Vũ trụ</th>
+                    <th>Năm</th>
+                    <th>Số tập</th>
+                    <th>Trạng thái</th>
+                    <th style="text-align: right;">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                  <tr><td colspan="7" style="text-align: center; padding: 30px; color: var(--text-dim);">Đang tải dữ liệu...</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="pagination">
+              <button id="btn-prev-page" class="btn-page" onclick="changeOrderPage(-1)">Trang trước</button>
+              <span id="page-info" style="color: var(--text-muted);">Trang 1 / 1</span>
+              <button id="btn-next-page" class="btn-page" onclick="changeOrderPage(1)">Trang sau</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: QUẢN LÝ TẬP TRUYỆN & LINK ĐỌC -->
+        <div id="tab-issues" class="tab-panel">
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-book-bookmark" style="color: #34d399;"></i> Gắn Link Đọc Trực Tiếp Cho Từng Tập
+              </div>
+              <div class="toolbar">
+                <input type="text" id="issue-order-search" class="search-input" placeholder="Gõ tên bộ truyện để chọn..." oninput="searchOrdersForIssues()">
+                <select id="select-order-for-issues" class="select-filter" style="min-width: 250px;" onchange="loadIssuesForSelectedOrder()">
+                  <option value="">-- Chọn thứ tự đọc --</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="issues-container" style="display: none;">
+              <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <strong id="current-order-title" style="font-size: 15px; color: #60a5fa;"></strong>
+                  <span id="current-order-badge" class="badge" style="margin-left: 8px;"></span>
+                  <span id="current-order-count" style="font-size: 13px; color: var(--text-muted); margin-left: 10px;"></span>
+                </div>
+                <button class="btn-primary" style="width: auto; padding: 6px 14px; font-size: 13px;" onclick="saveAllIssueLinks()">
+                  <i class="fa-solid fa-floppy-disk"></i> Lưu toàn bộ link
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 50px;">STT</th>
+                      <th>Tên tập truyện</th>
+                      <th style="width: 120px;">Phân loại</th>
+                      <th>Link đọc online (read_url)</th>
+                      <th style="width: 100px; text-align: right;">Lưu</th>
+                    </tr>
+                  </thead>
+                  <tbody id="issues-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="issues-placeholder" style="text-align: center; padding: 50px; color: var(--text-dim);">
+              <i class="fa-solid fa-hand-pointer" style="font-size: 28px; margin-bottom: 12px; display: block;"></i>
+              Vui lòng chọn một bộ Reading Order ở thanh công cụ phía trên để xem và gắn link đọc.
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: QUẢN LÝ ĐỘC GIẢ -->
+        <div id="tab-users" class="tab-panel">
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-users" style="color: #f59e0b;"></i> Danh Sách Độc Giả Đăng Ký (Supabase Auth)
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Email</th>
+                    <th>Tên hiển thị</th>
+                    <th>Vai trò</th>
+                    <th>Tập đã đọc</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Lần đăng nhập cuối</th>
+                  </tr>
+                </thead>
+                <tbody id="users-table-body">
+                  <tr><td colspan="6" style="text-align: center; padding: 30px; color: var(--text-dim);">Đang tải danh sách độc giả...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: VŨ TRỤ & DANH MỤC -->
+        <div id="tab-universes" class="tab-panel">
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-network-wired" style="color: #60a5fa;"></i> Quản Lý Vũ Trụ & Danh Mục
+              </div>
+            </div>
+            <div id="universes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB 6: CÔNG CỤ & SAO LƯU -->
+        <div id="tab-tools" class="tab-panel">
+          <div class="data-box">
+            <div class="box-header">
+              <div class="box-title">
+                <i class="fa-solid fa-cloud-arrow-up" style="color: #34d399;"></i> Đồng Bộ & Sao Lưu Dữ Liệu
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px;">
+              <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="margin-bottom: 6px;">📥 Xuất Dữ Liệu Sao Lưu (Backup JSON)</h4>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Tải toàn bộ tiến độ đọc và cài đặt ra file JSON để lưu trữ ngoại tuyến.</p>
+                <button class="btn-action" onclick="exportBackup()"><i class="fa-solid fa-download"></i> Tải file JSON</button>
+              </div>
+
+              <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="margin-bottom: 6px;">📤 Khôi Phục Bản Sao Lưu</h4>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Nhập file sao lưu JSON trước đó để phục hồi tiến độ đọc.</p>
+                <input type="file" id="backup-file-input" accept=".json" style="display: none;" onchange="importBackup(event)">
+                <button class="btn-action" onclick="document.getElementById('backup-file-input').click()"><i class="fa-solid fa-upload"></i> Chọn file sao lưu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: THÊM / CHỈNH SỬA READING ORDER -->
+  <div id="order-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="order-modal-title">Chỉnh Sửa Thứ Tự Đọc</h3>
+        <button class="btn-close-modal" onclick="closeOrderModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="order-form">
+          <input type="hidden" id="edit-order-id">
+          <div class="form-group">
+            <label>Tiêu đề thứ tự đọc</label>
+            <input type="text" id="edit-order-title" class="form-input" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label>Đường dẫn tĩnh (Slug)</label>
+              <input type="text" id="edit-order-slug" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label>Vũ trụ</label>
+              <select id="edit-order-universe" class="form-input">
+                <option value="marvel">Marvel Comics</option>
+                <option value="dc">DC Comics</option>
+                <option value="other">Truyện Tranh Khác</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label>Năm phát hành</label>
+              <input type="text" id="edit-order-year" class="form-input" placeholder="VD: 2024">
+            </div>
+            <div class="form-group">
+              <label>Nhân vật tiêu biểu</label>
+              <input type="text" id="edit-order-characters" class="form-input" placeholder="VD: Batman, Spider-Man">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mô tả tóm tắt</label>
+            <textarea id="edit-order-description" class="form-input" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Link ảnh bìa (Cover Image)</label>
+            <input type="text" id="edit-order-cover" class="form-input" placeholder="https://...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-action" onclick="closeOrderModal()">Hủy</button>
+        <button type="button" class="btn-primary" style="width: auto;" onclick="saveOrderForm()">Lưu thay đổi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Message -->
+  <div id="toast"></div>
+
+  <script>
+    // State Quản trị
+    let currentAdminToken = localStorage.getItem('ro_token') || '';
+    let currentAdminUser = null;
+    let currentOrderPage = 1;
+    let searchDebounceTimer = null;
+    let currentEditingIssues = [];
+    let currentSelectedOrderId = null;
+
+    // Khởi tạo
+    document.addEventListener('DOMContentLoaded', async () => {
+      checkAuthAndInit();
+    });
+
+    // Kiểm tra đăng nhập
+    async function checkAuthAndInit() {
+      if (!currentAdminToken) {
+        showLoginScreen();
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/auth/me', {
+          headers: { 'Authorization': `Bearer ${currentAdminToken}` }
+        });
+        const data = await res.json();
+
+        if (data.success && (data.user?.role === 'admin' || data.admin)) {
+          currentAdminUser = data.user || data.admin;
+          showDashboardScreen();
+          loadDashboardStats();
+        } else {
+          showLoginScreen();
+        }
+      } catch (err) {
+        showLoginScreen();
+      }
+    }
+
+    function showLoginScreen() {
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('dashboard-screen').style.display = 'none';
+    }
+
+    function showDashboardScreen() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard-screen').style.display = 'flex';
+
+      if (currentAdminUser) {
+        const name = currentAdminUser.display_name || currentAdminUser.username || 'Admin';
+        document.getElementById('display-user-name').textContent = name;
+        document.getElementById('avatar-initial').textContent = name.charAt(0).toUpperCase();
+      }
+    }
+
+    // Xử lý đăng nhập Form
+    document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('admin-username').value.trim();
+      const password = document.getElementById('admin-password').value;
+      const errorBox = document.getElementById('login-error');
+      const submitBtn = document.getElementById('btn-login');
+
+      errorBox.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xác thực...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if (data.success && (data.user?.role === 'admin' || data.admin)) {
+          currentAdminToken = data.token;
+          localStorage.setItem('ro_token', data.token);
+          localStorage.setItem('ro_user', JSON.stringify(data.user || data.admin));
+          currentAdminUser = data.user || data.admin;
+          showToast('Đăng nhập Quản trị viên thành công!', 'success');
+          showDashboardScreen();
+          loadDashboardStats();
+        } else {
+          errorBox.textContent = data.message || 'Tài khoản không có quyền Quản trị viên';
+          errorBox.style.display = 'block';
+        }
+      } catch (err) {
+        errorBox.textContent = 'Lỗi kết nối tới máy chủ';
+        errorBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Đăng nhập Quản Trị Viên';
+      }
+    });
+
+    function handleLogout() {
+      if (confirm('Bạn có chắc chắn muốn đăng xuất tài khoản Quản trị?')) {
+        localStorage.removeItem('ro_token');
+        localStorage.removeItem('ro_user');
+        currentAdminToken = '';
+        currentAdminUser = null;
+        showLoginScreen();
+      }
+    }
+
+    // Điều hướng Tabs
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.sidebar-nav button').forEach(b => b.classList.remove('active'));
+
+      const activePanel = document.getElementById(`tab-${tabId}`);
+      if (activePanel) activePanel.classList.add('active');
+
+      const activeBtn = Array.from(document.querySelectorAll('.sidebar-nav button')).find(b => b.getAttribute('onclick')?.includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const headings = {
+        overview: 'Tổng Quan Thống Kê',
+        orders: 'Quản Lý 608 Thứ Tự Đọc',
+        issues: 'Quản Lý Tập & Link Đọc Online',
+        users: 'Độc Giả & Tiến Độ Đọc',
+        universes: 'Vũ Trụ & Danh Mục',
+        tools: 'Đồng Bộ & Sao Lưu Dữ Liệu'
+      };
+      document.getElementById('page-heading').textContent = headings[tabId] || 'Quản Trị';
+
+      // Nạp dữ liệu tương ứng khi mở tab
+      if (tabId === 'overview') loadDashboardStats();
+      if (tabId === 'orders') loadOrders(currentOrderPage);
+      if (tabId === 'issues') populateOrderDropdownForIssues();
+      if (tabId === 'users') loadUsers();
+      if (tabId === 'universes') loadUniverses();
+    }
+
+    function refreshCurrentTab() {
+      const activePanel = document.querySelector('.tab-panel.active');
+      if (!activePanel) return;
+      const tabId = activePanel.id.replace('tab-', '');
+      switchTab(tabId);
+      showToast('Đã làm mới dữ liệu', 'success');
+    }
+
+    // Helper gọi API có Auth
+    async function apiFetch(url, options = {}) {
+      options.headers = options.headers || {};
+      options.headers['Authorization'] = `Bearer ${currentAdminToken}`;
+      if (options.body && typeof options.body === 'object') {
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(options.body);
+      }
+      return fetch(url, options);
+    }
+
+    // TAB 1: TẢI STATS
+    async function loadDashboardStats() {
+      try {
+        const res = await apiFetch('/api/admin/stats');
+        const json = await res.json();
+        if (json.success) {
+          const d = json.data;
+          document.getElementById('stat-total-orders').textContent = (d.totalOrders || 608).toLocaleString();
+          document.getElementById('stat-total-issues').textContent = (d.totalIssues || 95859).toLocaleString();
+          document.getElementById('stat-total-universes').textContent = d.totalUniverses || 3;
+          document.getElementById('stat-total-links').textContent = (d.totalReadLinks || 0).toLocaleString();
+        }
+      } catch (e) {}
+    }
+
+    // TAB 2: TẢI ORDERS
+    async function loadOrders(page = 1) {
+      currentOrderPage = page;
+      const search = document.getElementById('order-search').value.trim();
+      const universe = document.getElementById('order-universe-filter').value;
+      const tbody = document.getElementById('orders-table-body');
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 25px;">Đang tải danh sách...</td></tr>';
+
+      try {
+        const url = `/api/admin/reading-orders?page=${page}&limit=20&search=${encodeURIComponent(search)}&universe=${encodeURIComponent(universe)}`;
+        const res = await apiFetch(url);
+        const json = await res.json();
+
+        if (json.success) {
+          const rows = json.data;
+          if (rows.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 25px; color: var(--text-dim);">Không tìm thấy thứ tự đọc nào</td></tr>';
+            return;
+          }
+
+          tbody.innerHTML = rows.map(ro => `
+            <tr>
+              <td><span style="color: var(--text-dim); font-size: 12px;">#${ro.id}</span></td>
+              <td>
+                <strong style="color: var(--text-main);">${ro.title}</strong>
+                <div style="font-size: 11px; color: var(--text-dim); margin-top: 2px;">/${ro.slug}/</div>
+              </td>
+              <td>
+                <span class="badge badge-${ro.universe_slug || 'other'}">${(ro.universe_slug || 'other').toUpperCase()}</span>
+              </td>
+              <td>${ro.year_published || '-'}</td>
+              <td><strong>${(ro.total_issues || 0).toLocaleString()}</strong> tập</td>
+              <td>
+                <span class="badge" style="${ro.is_published ? 'background: rgba(16, 185, 129, 0.2); color: #34d399;' : 'background: rgba(107, 114, 128, 0.2); color: #9ca3af;'}">
+                  ${ro.is_published ? 'Xuất bản' : 'Bản nháp'}
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <button class="btn-action" onclick="openEditOrderModal(${ro.id})" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i> Sửa</button>
+                <button class="btn-action" onclick="jumpToIssues(${ro.id})" title="Gắn link đọc"><i class="fa-solid fa-link"></i> Link đọc</button>
+                <button class="btn-action btn-danger" onclick="deleteOrder(${ro.id}, '${ro.title.replace(/'/g, "\\'")}')" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+          `).join('');
+
+          const p = json.pagination;
+          document.getElementById('page-info').textContent = `Trang ${p.page} / ${p.totalPages || 1} (${p.total} bộ)`;
+          document.getElementById('btn-prev-page').disabled = p.page <= 1;
+          document.getElementById('btn-next-page').disabled = p.page >= p.totalPages;
+        }
+      } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--color-danger); padding: 25px;">Lỗi tải danh sách thứ tự đọc</td></tr>';
+      }
+    }
+
+    function changeOrderPage(delta) {
+      loadOrders(currentOrderPage + delta);
+    }
+
+    function debounceSearchOrders() {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        loadOrders(1);
+      }, 350);
+    }
+
+    // Modal Sửa Order
+    async function openEditOrderModal(orderId) {
+      try {
+        const res = await apiFetch(`/api/admin/reading-orders/${orderId}`);
+        const json = await res.json();
+        if (json.success) {
+          const o = json.data;
+          document.getElementById('order-modal-title').textContent = `Chỉnh Sửa: ${o.title}`;
+          document.getElementById('edit-order-id').value = o.id;
+          document.getElementById('edit-order-title').value = o.title || '';
+          document.getElementById('edit-order-slug').value = o.slug || '';
+          document.getElementById('edit-order-universe').value = o.universe_slug || 'marvel';
+          document.getElementById('edit-order-year').value = o.year_published || '';
+          document.getElementById('edit-order-characters').value = o.featured_characters || '';
+          document.getElementById('edit-order-description').value = o.description || '';
+          document.getElementById('edit-order-cover').value = o.cover_image || '';
+          document.getElementById('order-modal').style.display = 'flex';
+        }
+      } catch (e) {
+        showToast('Không thể tải thông tin thứ tự đọc', 'error');
+      }
+    }
+
+    function openCreateOrderModal() {
+      document.getElementById('order-modal-title').textContent = 'Thêm Mới Thứ Tự Đọc';
+      document.getElementById('order-form').reset();
+      document.getElementById('edit-order-id').value = '';
+      document.getElementById('order-modal').style.display = 'flex';
+    }
+
+    function closeOrderModal() {
+      document.getElementById('order-modal').style.display = 'none';
+    }
+
+    async function saveOrderForm() {
+      const id = document.getElementById('edit-order-id').value;
+      const title = document.getElementById('edit-order-title').value.trim();
+      const slug = document.getElementById('edit-order-slug').value.trim();
+      const universe_slug = document.getElementById('edit-order-universe').value;
+      const year_published = document.getElementById('edit-order-year').value.trim();
+      const featured_characters = document.getElementById('edit-order-characters').value.trim();
+      const description = document.getElementById('edit-order-description').value.trim();
+      const cover_image = document.getElementById('edit-order-cover').value.trim();
+
+      if (!title || !slug) {
+        showToast('Vui lòng điền tiêu đề và slug', 'error');
+        return;
+      }
+
+      const payload = { title, slug, universe_slug, year_published, featured_characters, description, cover_image };
+
+      try {
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `/api/admin/reading-orders/${id}` : '/api/admin/reading-orders';
+        const res = await apiFetch(url, { method, body: payload });
+        const json = await res.json();
+
+        if (json.success) {
+          showToast(id ? 'Cập nhật thành công!' : 'Tạo mới thành công!', 'success');
+          closeOrderModal();
+          loadOrders(currentOrderPage);
+        } else {
+          showToast(json.message || 'Lỗi khi lưu', 'error');
+        }
+      } catch (err) {
+        showToast('Lỗi khi gửi yêu cầu', 'error');
+      }
+    }
+
+    async function deleteOrder(id, title) {
+      if (confirm(`Bạn có chắc chắn muốn xóa vĩnh viễn bộ đọc "${title}" cùng toàn bộ tập truyện đi kèm không?`)) {
+        try {
+          const res = await apiFetch(`/api/admin/reading-orders/${id}`, { method: 'DELETE' });
+          const json = await res.json();
+          if (json.success) {
+            showToast('Đã xóa thành công', 'success');
+            loadOrders(currentOrderPage);
+          } else {
+            showToast(json.message || 'Lỗi khi xóa', 'error');
+          }
+        } catch (e) {
+          showToast('Lỗi máy chủ khi xóa', 'error');
+        }
+      }
+    }
+
+    // TAB 3: TẬP TRUYỆN & LINK ĐỌC
+    async function populateOrderDropdownForIssues() {
+      const select = document.getElementById('select-order-for-issues');
+      if (select.children.length > 1) return;
+
+      try {
+        const res = await apiFetch('/api/admin/reading-orders?limit=100');
+        const json = await res.json();
+        if (json.success) {
+          select.innerHTML = '<option value="">-- Chọn thứ tự đọc --</option>' +
+            json.data.map(o => `<option value="${o.id}">[${(o.universe_slug || 'other').toUpperCase()}] ${o.title} (${o.total_issues || 0} tập)</option>`).join('');
+        }
+      } catch (e) {}
+    }
+
+    function jumpToIssues(orderId) {
+      switchTab('issues');
+      const select = document.getElementById('select-order-for-issues');
+      // Thêm option tạm thời nếu chưa có
+      if (!Array.from(select.options).some(o => o.value == orderId)) {
+        select.innerHTML += `<option value="${orderId}">Bộ đọc ID #${orderId}</option>`;
+      }
+      select.value = orderId;
+      loadIssuesForSelectedOrder();
+    }
+
+    async function loadIssuesForSelectedOrder() {
+      const orderId = document.getElementById('select-order-for-issues').value;
+      const container = document.getElementById('issues-container');
+      const placeholder = document.getElementById('issues-placeholder');
+      const tbody = document.getElementById('issues-table-body');
+
+      if (!orderId) {
+        container.style.display = 'none';
+        placeholder.style.display = 'block';
+        return;
+      }
+
+      placeholder.style.display = 'none';
+      container.style.display = 'block';
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 25px;">Đang tải danh sách tập truyện...</td></tr>';
+      currentSelectedOrderId = orderId;
+
+      try {
+        const res = await apiFetch(`/api/admin/reading-orders/${orderId}`);
+        const json = await res.json();
+
+        if (json.success) {
+          const o = json.data;
+          document.getElementById('current-order-title').textContent = o.title;
+          document.getElementById('current-order-badge').textContent = (o.universe_slug || 'other').toUpperCase();
+          document.getElementById('current-order-badge').className = `badge badge-${o.universe_slug || 'other'}`;
+          document.getElementById('current-order-count').textContent = `${(o.issues || []).length} tập truyện`;
+
+          currentEditingIssues = o.issues || [];
+
+          if (currentEditingIssues.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 25px; color: var(--text-dim);">Bộ truyện này chưa có tập nào.</td></tr>';
+            return;
+          }
+
+          tbody.innerHTML = currentEditingIssues.map((issue, idx) => `
+            <tr>
+              <td><span style="color: var(--text-dim);">${idx + 1}</span></td>
+              <td><strong style="color: var(--text-main); font-size: 13px;">${issue.title}</strong></td>
+              <td><span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">${issue.issue_type || 'ongoing'}</span></td>
+              <td>
+                <input type="text" id="issue-link-${issue.id}" class="form-input" style="padding: 6px 10px; font-size: 12px;" 
+                       value="${issue.read_url || ''}" placeholder="Dán link đọc (Drive, Web...)">
+              </td>
+              <td style="text-align: right;">
+                <button class="btn-action" onclick="saveSingleIssueLink(${issue.id})" title="Lưu link tập này">
+                  <i class="fa-solid fa-check"></i> Lưu
+                </button>
+              </td>
+            </tr>
+          `).join('');
+        }
+      } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: var(--color-danger); padding: 25px;">Lỗi tải tập truyện</td></tr>';
+      }
+    }
+
+    async function saveSingleIssueLink(issueId) {
+      const linkInput = document.getElementById(`issue-link-${issueId}`);
+      const link = linkInput.value.trim();
+
+      try {
+        const res = await apiFetch(`/api/admin/issues/${issueId}`, {
+          method: 'PUT',
+          body: { read_url: link }
+        });
+        const json = await res.json();
+        if (json.success) {
+          showToast('Đã lưu link đọc tập!', 'success');
+        } else {
+          showToast(json.message || 'Không thể lưu link', 'error');
+        }
+      } catch (e) {
+        showToast('Lỗi khi lưu link đọc', 'error');
+      }
+    }
+
+    async function saveAllIssueLinks() {
+      let count = 0;
+      for (const issue of currentEditingIssues) {
+        const input = document.getElementById(`issue-link-${issue.id}`);
+        if (input && input.value.trim() !== (issue.read_url || '')) {
+          await apiFetch(`/api/admin/issues/${issue.id}`, {
+            method: 'PUT',
+            body: { read_url: input.value.trim() }
+          });
+          count++;
+        }
+      }
+      showToast(`Đã cập nhật ${count} link đọc thành công!`, 'success');
+    }
+
+    // TAB 4: DANH SÁCH ĐỘC GIẢ
+    async function loadUsers() {
+      const tbody = document.getElementById('users-table-body');
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 25px;">Đang tải danh sách độc giả...</td></tr>';
+
+      try {
+        const res = await apiFetch('/api/admin/users');
+        const json = await res.json();
+        if (json.success) {
+          const users = json.data;
+          if (users.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 25px; color: var(--text-dim);">Chưa có độc giả nào đăng ký</td></tr>';
+            return;
+          }
+
+          tbody.innerHTML = users.map(u => `
+            <tr>
+              <td><strong>${u.email || '-'}</strong></td>
+              <td>${u.display_name || u.username || '-'}</td>
+              <td><span class="badge" style="${u.role === 'admin' ? 'background: rgba(228,37,37,0.2); color: #f87171;' : 'background: rgba(59,130,246,0.2); color: #60a5fa;'}">${u.role || 'user'}</span></td>
+              <td><strong style="color: #34d399;">${(u.read_issues_count || 0).toLocaleString()}</strong> tập</td>
+              <td style="color: var(--text-dim); font-size: 12px;">${u.created_at ? new Date(u.created_at).toLocaleDateString('vi-VN') : '-'}</td>
+              <td style="color: var(--text-dim); font-size: 12px;">${u.last_sign_in_at ? new Date(u.last_sign_in_at).toLocaleString('vi-VN') : 'Chưa đăng nhập'}</td>
+            </tr>
+          `).join('');
+        }
+      } catch (e) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--color-danger); padding: 25px;">Lỗi tải độc giả</td></tr>';
+      }
+    }
+
+    // TAB 5: VŨ TRỤ
+    async function loadUniverses() {
+      const grid = document.getElementById('universes-grid');
+      try {
+        const res = await apiFetch('/api/admin/universes');
+        const json = await res.json();
+        if (json.success) {
+          grid.innerHTML = json.data.map(u => `
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-top: 4px solid ${u.accent_color || '#fff'}; padding: 20px; border-radius: 8px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                <h3 style="font-size: 16px;">${u.name}</h3>
+                <span class="badge" style="background: rgba(255,255,255,0.08);">${u.slug}</span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">${u.description || 'Không có mô tả'}</p>
+              <div style="font-size: 12px; font-weight: 600; color: var(--text-dim); margin-bottom: 8px;">DANH MỤC CON:</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                ${(u.categories || []).map(c => `<span class="badge" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">${c.name}</span>`).join('')}
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (e) {}
+    }
+
+    // TAB 6: CÔNG CỤ & SAO LƯU
+    function exportBackup() {
+      const backupData = {
+        exported_at: new Date().toISOString(),
+        local_progress: JSON.parse(localStorage.getItem('ro_user_progress') || '{}'),
+        local_users: JSON.parse(localStorage.getItem('ro_local_users') || '{}')
+      };
+      const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `reading_orders_backup_${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Đã xuất file sao lưu thành công!', 'success');
+    }
+
+    function importBackup(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        try {
+          const data = JSON.parse(event.target.result);
+          if (data.local_progress) {
+            localStorage.setItem('ro_user_progress', JSON.stringify(data.local_progress));
+          }
+          showToast('Khôi phục bản sao lưu thành công!', 'success');
+        } catch (err) {
+          showToast('File JSON không hợp lệ', 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Toast Helper
+    function showToast(msg, type = 'success') {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.className = `show ${type}`;
+      setTimeout(() => { toast.className = ''; }, 3000);
+    }
+  </script>
+</body>
+</html>

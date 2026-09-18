@@ -15,6 +15,7 @@ fs.mkdirSync(distDir, { recursive: true });
 
 // Danh sách các thư mục và file thuộc website tĩnh cần build
 const siteItems = [
+  'admin',
   'assets',
   'comments',
   'contact',
