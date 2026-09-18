@@ -1,19 +1,29 @@
 import { Router } from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
-import { db } from '../database/db';
+import { supabaseAdmin } from '../database/supabase';
 
 const router = Router();
 
-// GET /api/universes - Lấy danh sách vũ trụ kèm các danh mục con
-router.get('/', (req, res) => {
+// GET /api - Lấy danh sách vũ trụ kèm các danh mục con
+router.get('/', async (req, res) => {
   try {
-    const universes = db.prepare('SELECT * FROM universes ORDER BY sort_order ASC').all() as any[];
-    const categories = db.prepare('SELECT * FROM categories ORDER BY sort_order ASC').all() as any[];
+    const { data: universes = [], error: uErr } = await supabaseAdmin
+      .from('universes')
+      .select('*')
+      .order('sort_order', { ascending: true });
 
-    const result = universes.map(u => ({
+    const { data: categories = [], error: cErr } = await supabaseAdmin
+      .from('categories')
+      .select('*')
+      .order('sort_order', { ascending: true });
+
+    if (uErr) throw uErr;
+    if (cErr) throw cErr;
+
+    const result = (universes || []).map((u: any) => ({
       ...u,
-      categories: categories.filter(c => c.universe_id === u.id),
+      categories: (categories || []).filter((c: any) => c.universe_id === u.id),
     }));
 
     res.json({ success: true, data: result });
@@ -23,17 +33,22 @@ router.get('/', (req, res) => {
 });
 
 // GET /api/faqs - Lấy danh sách câu hỏi thường gặp
-router.get('/faqs', (req, res) => {
+router.get('/faqs', async (req, res) => {
   try {
-    const faqs = db.prepare('SELECT * FROM faqs ORDER BY sort_order ASC').all();
-    res.json({ success: true, data: faqs });
+    const { data: faqs = [], error } = await supabaseAdmin
+      .from('faqs')
+      .select('*')
+      .order('sort_order', { ascending: true });
+
+    if (error) throw error;
+    res.json({ success: true, data: faqs || [] });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 });
 
 // GET /api/search?q=... - Tìm kiếm toàn cục
-router.get('/search', (req, res) => {
+router.get('/search', async (req, res) => {
   try {
     const q = req.query.q as string;
     if (!q || !q.trim()) {
@@ -41,26 +56,44 @@ router.get('/search', (req, res) => {
       return;
     }
 
-    const term = `%${q.trim()}%`;
-    const orders = db.prepare(`
-      SELECT ro.id, ro.title, ro.slug, ro.year_published, u.name as universe_name, u.slug as universe_slug
-      FROM reading_orders ro
-      LEFT JOIN universes u ON ro.universe_id = u.id
-      WHERE ro.title LIKE ? OR ro.description LIKE ? OR ro.featured_characters LIKE ?
-      LIMIT 15
-    `).all(term, term, term);
+    const term = q.trim();
 
-    const issues = db.prepare(`
-      SELECT i.id, i.title, i.read_url, ro.title as order_title, ro.slug as order_slug
-      FROM issues i
-      JOIN reading_orders ro ON i.reading_order_id = ro.id
-      WHERE i.title LIKE ?
-      LIMIT 15
-    `).all(term);
+    // Tìm kiếm reading orders
+    const { data: orders = [] } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id, title, slug, year_published, universe_slug')
+      .or(`title.ilike.%${term}%,description.ilike.%${term}%,featured_characters.ilike.%${term}%`)
+      .limit(15);
+
+    // Tìm kiếm issues
+    const { data: rawIssues = [] } = await supabaseAdmin
+      .from('issues')
+      .select(`
+        id,
+        title,
+        read_url,
+        reading_orders (
+          title,
+          slug
+        )
+      `)
+      .ilike('title', `%${term}%`)
+      .limit(15);
+
+    const formattedIssues = (rawIssues || []).map((i: any) => ({
+      id: i.id,
+      title: i.title,
+      read_url: i.read_url,
+      order_title: i.reading_orders?.title || '',
+      order_slug: i.reading_orders?.slug || ''
+    }));
 
     res.json({
       success: true,
-      data: { orders, issues }
+      data: {
+        orders: orders || [],
+        issues: formattedIssues
+      }
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });

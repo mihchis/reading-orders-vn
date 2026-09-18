@@ -1,97 +1,113 @@
 import { Router } from 'express';
-import { db } from '../database/db';
+import { supabaseAdmin } from '../database/supabase';
 
 const router = Router();
 
 // GET /api/reading-orders - Lấy danh sách thứ tự đọc kèm bộ lọc
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const { universe, category, letter, search, sort, limit = 500, offset = 0 } = req.query;
 
-    let sql = `
-      SELECT 
-        ro.id, ro.slug, ro.title, ro.description, ro.year_published,
-        ro.featured_characters, ro.previous_event_title, ro.previous_event_slug,
-        ro.next_event_title, ro.next_event_slug, ro.cover_image, ro.is_published,
-        ro.timeline_order,
-        ro.created_at, ro.updated_at,
-        u.id as universe_id, u.slug as universe_slug, u.name as universe_name, u.accent_color,
-        c.id as category_id, c.slug as category_slug, c.name as category_name,
-        (SELECT COUNT(*) FROM issues WHERE reading_order_id = ro.id AND issue_type != 'comment') as issue_count
-      FROM reading_orders ro
-      LEFT JOIN universes u ON ro.universe_id = u.id
-      LEFT JOIN categories c ON ro.category_id = c.id
-      WHERE ro.is_published = 1
-    `;
-
-    const params: any[] = [];
+    let query = supabaseAdmin
+      .from('reading_orders')
+      .select(`
+        *,
+        universes(id, slug, name, accent_color),
+        categories(id, slug, name)
+      `)
+      .eq('is_published', true);
 
     if (universe) {
-      sql += ` AND u.slug = ?`;
-      params.push(universe);
+      query = query.eq('universe_slug', String(universe));
     }
 
     if (category) {
-      sql += ` AND c.slug = ?`;
-      params.push(category);
+      query = query.eq('category_slug', String(category));
     }
 
     if (letter) {
-      if (letter === '#') {
-        sql += ` AND ro.title GLOB '[0-9]*'`;
+      const l = String(letter).trim();
+      if (l === '#') {
+        query = query.or('title.ilike.0%,title.ilike.1%,title.ilike.2%,title.ilike.3%,title.ilike.4%,title.ilike.5%,title.ilike.6%,title.ilike.7%,title.ilike.8%,title.ilike.9%');
       } else {
-        sql += ` AND ro.title LIKE ?`;
-        params.push(`${letter}%`);
+        query = query.ilike('title', `${l}%`);
       }
-      // Sắp xếp / lọc theo chữ cái chỉ hoạt động với các bộ đã có tập truyện
-      sql += ` AND (SELECT COUNT(*) FROM issues WHERE reading_order_id = ro.id AND issue_type != 'comment') > 0`;
+      // Khi lọc theo chữ cái, chỉ lấy những bộ đã có tập truyện
+      query = query.gt('total_issues', 0);
     }
 
     if (search) {
-      sql += ` AND (ro.title LIKE ? OR ro.description LIKE ? OR ro.featured_characters LIKE ?)`;
-      const s = `%${search}%`;
-      params.push(s, s, s);
+      const s = String(search).trim();
+      query = query.or(`title.ilike.%${s}%,description.ilike.%${s}%,featured_characters.ilike.%${s}%`);
     }
 
-    // Sắp xếp: Nếu sort=timeline thì xếp theo dòng thời gian chuẩn, ngược lại ưu tiên bộ đã có tập truyện rồi theo bảng chữ cái
+    // Sắp xếp
     if (sort === 'timeline') {
-      sql += ` ORDER BY (CASE WHEN ro.timeline_order IS NOT NULL THEN 0 ELSE 1 END) ASC, ro.timeline_order ASC, ro.title ASC LIMIT ? OFFSET ?`;
+      query = query
+        .order('timeline_order', { ascending: true, nullsFirst: false })
+        .order('title', { ascending: true });
     } else {
-      sql += ` ORDER BY (CASE WHEN (SELECT COUNT(*) FROM issues WHERE reading_order_id = ro.id AND issue_type != 'comment') > 0 THEN 0 ELSE 1 END) ASC, ro.title ASC LIMIT ? OFFSET ?`;
+      query = query.order('title', { ascending: true });
     }
-    params.push(Number(limit), Number(offset));
 
-    const stmt = db.prepare(sql);
-    const rows = stmt.all(...params);
+    const lim = Math.min(Number(limit) || 500, 1000);
+    const off = Number(offset) || 0;
+    query = query.range(off, off + lim - 1);
+
+    const { data: rows = [], error } = await query;
+    if (error) {
+      throw error;
+    }
 
     // Tính danh sách các chữ cái thực sự có tập truyện
-    let lettersSql = `
-      SELECT DISTINCT 
-        CASE 
-          WHEN ro.title GLOB '[0-9]*' THEN '#'
-          ELSE UPPER(SUBSTR(ro.title, 1, 1))
-        END as letter
-      FROM reading_orders ro
-      LEFT JOIN universes u ON ro.universe_id = u.id
-      LEFT JOIN categories c ON ro.category_id = c.id
-      WHERE ro.is_published = 1
-        AND (SELECT COUNT(*) FROM issues WHERE reading_order_id = ro.id AND issue_type != 'comment') > 0
-    `;
-    const lettersParams: any[] = [];
+    let lettersQuery = supabaseAdmin
+      .from('reading_orders')
+      .select('title')
+      .eq('is_published', true)
+      .gt('total_issues', 0);
+
     if (universe) {
-      lettersSql += ` AND u.slug = ?`;
-      lettersParams.push(universe);
+      lettersQuery = lettersQuery.eq('universe_slug', String(universe));
     }
     if (category) {
-      lettersSql += ` AND c.slug = ?`;
-      lettersParams.push(category);
+      lettersQuery = lettersQuery.eq('category_slug', String(category));
     }
-    const availableLettersRows = db.prepare(lettersSql).all(...lettersParams) as any[];
-    const available_letters = availableLettersRows.map(r => r.letter);
+
+    const { data: titlesData } = await lettersQuery;
+    const lettersSet = new Set<string>();
+    titlesData?.forEach((r: any) => {
+      if (r.title) {
+        const firstChar = r.title.trim()[0];
+        if (/[0-9]/.test(firstChar)) {
+          lettersSet.add('#');
+        } else if (/[a-zA-Z]/.test(firstChar)) {
+          lettersSet.add(firstChar.toUpperCase());
+        }
+      }
+    });
+
+    const available_letters = Array.from(lettersSet).sort((a, b) => {
+      if (a === '#') return -1;
+      if (b === '#') return 1;
+      return a.localeCompare(b);
+    });
+
+    // Format dữ liệu trả về tương thích với giao diện
+    const formattedRows = (rows || []).map((ro: any) => ({
+      ...ro,
+      universe_id: ro.universes?.id || ro.universe_id,
+      universe_slug: ro.universe_slug || ro.universes?.slug,
+      universe_name: ro.universes?.name || '',
+      accent_color: ro.universes?.accent_color || '',
+      category_id: ro.categories?.id || ro.category_id,
+      category_slug: ro.category_slug || ro.categories?.slug,
+      category_name: ro.categories?.name || '',
+      issue_count: ro.total_issues || 0
+    }));
 
     res.json({
       success: true,
-      data: rows,
+      data: formattedRows,
       available_letters
     });
   } catch (err: any) {
@@ -100,45 +116,52 @@ router.get('/', (req, res) => {
 });
 
 // GET /api/reading-orders/:slug - Lấy chi tiết 1 thứ tự đọc cùng danh sách tập truyện
-router.get('/:slug', (req, res) => {
+router.get('/:slug', async (req, res) => {
   try {
     const { slug } = req.params;
     const rawSlug = slug.trim();
     const cleanSlug = rawSlug.replace(/-+$/, '');
 
-    const orderQuery = db.prepare(`
-      SELECT 
-        ro.*,
-        u.slug as universe_slug, u.name as universe_name, u.accent_color,
-        c.slug as category_slug, c.name as category_name
-      FROM reading_orders ro
-      LEFT JOIN universes u ON ro.universe_id = u.id
-      LEFT JOIN categories c ON ro.category_id = c.id
-      WHERE ro.slug = ? OR ro.slug = ?
-    `);
+    const { data: order, error } = await supabaseAdmin
+      .from('reading_orders')
+      .select(`
+        *,
+        universes(id, slug, name, accent_color),
+        categories(id, slug, name)
+      `)
+      .or(`slug.eq.${rawSlug},slug.eq.${cleanSlug},direct_slug.eq.${rawSlug},direct_slug.eq.${cleanSlug}`)
+      .limit(1)
+      .maybeSingle();
 
-    const order = orderQuery.get(rawSlug, cleanSlug) as any;
-    if (!order) {
+    if (error || !order) {
       res.status(404).json({ success: false, message: 'Không tìm thấy thứ tự đọc này' });
       return;
     }
 
-    // Tăng lượt xem
-    db.prepare('UPDATE reading_orders SET view_count = view_count + 1 WHERE id = ?').run(order.id);
+    // Tăng lượt xem (không chặn luồng xử lý)
+    supabaseAdmin
+      .from('reading_orders')
+      .update({ view_count: (order.view_count || 0) + 1 })
+      .eq('id', order.id)
+      .then(() => {});
 
     // Lấy danh sách các tập truyện (issues)
-    const issuesQuery = db.prepare(`
-      SELECT * FROM issues
-      WHERE reading_order_id = ?
-      ORDER BY tab_type ASC, sort_order ASC, id ASC
-    `);
-    const issues = issuesQuery.all(order.id);
+    const { data: issues = [] } = await supabaseAdmin
+      .from('issues')
+      .select('*')
+      .eq('reading_order_id', order.id)
+      .order('sort_order', { ascending: true });
 
     res.json({
       success: true,
       data: {
         ...order,
-        issues,
+        universe_slug: order.universes?.slug || order.universe_slug,
+        universe_name: order.universes?.name || '',
+        accent_color: order.universes?.accent_color || '',
+        category_slug: order.categories?.slug || order.category_slug,
+        category_name: order.categories?.name || '',
+        issues: issues || []
       }
     });
   } catch (err: any) {

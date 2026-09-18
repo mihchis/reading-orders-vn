@@ -10,7 +10,6 @@ import express from 'express';
 import cors from 'cors';
 import path from 'node:path';
 import fs from 'node:fs';
-import { initDatabase } from './database/db';
 import authRoutes from './routes/auth';
 import readingOrdersRoutes from './routes/readingOrders';
 import adminRoutes from './routes/admin';
@@ -18,9 +17,6 @@ import commonRoutes from './routes/common';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Khởi tạo Database nếu chưa có
-initDatabase();
 
 // Middlewares
 app.use(cors({

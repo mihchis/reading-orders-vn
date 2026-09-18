@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
-import { db } from '../database/db';
+import { supabaseAdmin } from '../database/supabase';
 import { adminOnlyMiddleware, AuthRequest } from '../middleware/auth';
 import { parseReadingOrderHtml } from '../utils/htmlParser';
 
@@ -11,20 +11,22 @@ const router = Router();
 router.use(adminOnlyMiddleware);
 
 // GET /api/admin/stats - Thống kê tổng quan cho Dashboard
-router.get('/stats', (req: AuthRequest, res) => {
+router.get('/stats', async (req: AuthRequest, res) => {
   try {
-    const totalOrders = (db.prepare('SELECT COUNT(*) as count FROM reading_orders').get() as any).count;
-    const totalIssues = (db.prepare('SELECT COUNT(*) as count FROM issues').get() as any).count;
-    const totalReadLinks = (db.prepare("SELECT COUNT(*) as count FROM issues WHERE read_url IS NOT NULL AND TRIM(read_url) != ''").get() as any).count;
-    const totalUniverses = (db.prepare('SELECT COUNT(*) as count FROM universes').get() as any).count;
+    const [ordersRes, issuesRes, readLinksRes, universesRes] = await Promise.all([
+      supabaseAdmin.from('reading_orders').select('*', { count: 'exact', head: true }),
+      supabaseAdmin.from('issues').select('*', { count: 'exact', head: true }),
+      supabaseAdmin.from('issues').select('*', { count: 'exact', head: true }).not('read_url', 'is', null).neq('read_url', ''),
+      supabaseAdmin.from('universes').select('*', { count: 'exact', head: true })
+    ]);
 
     res.json({
       success: true,
       data: {
-        totalOrders,
-        totalIssues,
-        totalReadLinks,
-        totalUniverses,
+        totalOrders: ordersRes.count || 0,
+        totalIssues: issuesRes.count || 0,
+        totalReadLinks: readLinksRes.count || 0,
+        totalUniverses: universesRes.count || 0,
       }
     });
   } catch (err: any) {
@@ -33,7 +35,7 @@ router.get('/stats', (req: AuthRequest, res) => {
 });
 
 // POST /api/admin/reading-orders - Tạo mới thứ tự đọc
-router.post('/reading-orders', (req: AuthRequest, res) => {
+router.post('/reading-orders', async (req: AuthRequest, res) => {
   try {
     const {
       title,
@@ -48,7 +50,7 @@ router.post('/reading-orders', (req: AuthRequest, res) => {
       next_event_title,
       next_event_slug,
       cover_image,
-      is_published = 1,
+      is_published = true,
     } = req.body;
 
     if (!title) {
@@ -58,100 +60,75 @@ router.post('/reading-orders', (req: AuthRequest, res) => {
 
     const finalSlug = slug || title.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-    const insert = db.prepare(`
-      INSERT INTO reading_orders (
-        title, slug, universe_id, category_id, description,
-        year_published, featured_characters, previous_event_title, previous_event_slug,
-        next_event_title, next_event_slug, cover_image, is_published
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
+    const { data: newOrder, error } = await supabaseAdmin
+      .from('reading_orders')
+      .insert({
+        title,
+        slug: finalSlug,
+        direct_slug: `${finalSlug}-reading-order`,
+        universe_id: universe_id || null,
+        category_id: category_id || null,
+        description: description || '',
+        year_published: year_published || '',
+        featured_characters: featured_characters || '',
+        previous_event_title: previous_event_title || '',
+        previous_event_slug: previous_event_slug || '',
+        next_event_title: next_event_title || '',
+        next_event_slug: next_event_slug || '',
+        cover_image: cover_image || '',
+        is_published: !!is_published,
+      })
+      .select('id, slug')
+      .single();
 
-    const result = insert.run(
-      title,
-      finalSlug,
-      universe_id || null,
-      category_id || null,
-      description || '',
-      year_published || '',
-      featured_characters || '',
-      previous_event_title || '',
-      previous_event_slug || '',
-      next_event_title || '',
-      next_event_slug || '',
-      cover_image || '',
-      is_published ? 1 : 0
-    );
+    if (error) {
+      if (error.message.includes('duplicate key') || error.message.includes('unique')) {
+        res.status(400).json({ success: false, message: 'Đường dẫn tĩnh (slug) đã tồn tại, vui lòng chọn đường dẫn khác' });
+        return;
+      }
+      throw error;
+    }
 
     res.json({
       success: true,
       message: 'Tạo thứ tự đọc thành công',
-      id: Number(result.lastInsertRowid),
-      slug: finalSlug,
+      id: newOrder.id,
+      slug: newOrder.slug,
     });
   } catch (err: any) {
-    if (err.message.includes('UNIQUE constraint failed')) {
-      res.status(400).json({ success: false, message: 'Đường dẫn tĩnh (slug) đã tồn tại, vui lòng chọn đường dẫn khác' });
-      return;
-    }
     res.status(500).json({ success: false, message: err.message });
   }
 });
 
 // PUT /api/admin/reading-orders/:id - Cập nhật thứ tự đọc
-router.put('/reading-orders/:id', (req: AuthRequest, res) => {
+router.put('/reading-orders/:id', async (req: AuthRequest, res) => {
   try {
     const { id } = req.params;
-    const {
-      title,
-      slug,
-      universe_id,
-      category_id,
-      description,
-      year_published,
-      featured_characters,
-      previous_event_title,
-      previous_event_slug,
-      next_event_title,
-      next_event_slug,
-      cover_image,
-      is_published,
-    } = req.body;
+    const body = req.body;
 
-    const update = db.prepare(`
-      UPDATE reading_orders SET
-        title = COALESCE(?, title),
-        slug = COALESCE(?, slug),
-        universe_id = COALESCE(?, universe_id),
-        category_id = COALESCE(?, category_id),
-        description = COALESCE(?, description),
-        year_published = COALESCE(?, year_published),
-        featured_characters = COALESCE(?, featured_characters),
-        previous_event_title = COALESCE(?, previous_event_title),
-        previous_event_slug = COALESCE(?, previous_event_slug),
-        next_event_title = COALESCE(?, next_event_title),
-        next_event_slug = COALESCE(?, next_event_slug),
-        cover_image = COALESCE(?, cover_image),
-        is_published = COALESCE(?, is_published),
-        updated_at = CURRENT_TIMESTAMP
-      WHERE id = ?
-    `);
+    const updatePayload: Record<string, any> = {
+      updated_at: new Date().toISOString()
+    };
 
-    update.run(
-      title,
-      slug,
-      universe_id,
-      category_id,
-      description,
-      year_published,
-      featured_characters,
-      previous_event_title,
-      previous_event_slug,
-      next_event_title,
-      next_event_slug,
-      cover_image,
-      is_published !== undefined ? (is_published ? 1 : 0) : null,
-      Number(id)
-    );
+    const allowedFields = [
+      'title', 'slug', 'universe_id', 'category_id', 'description',
+      'year_published', 'featured_characters', 'previous_event_title',
+      'previous_event_slug', 'next_event_title', 'next_event_slug',
+      'cover_image', 'is_published'
+    ];
+
+    for (const field of allowedFields) {
+      if (body[field] !== undefined) {
+        updatePayload[field] = body[field];
+      }
+    }
+
+    const { error } = await supabaseAdmin
+      .from('reading_orders')
+      .update(updatePayload)
+      .eq('id', Number(id));
+
+    if (error) throw error;
 
     res.json({ success: true, message: 'Cập nhật thứ tự đọc thành công' });
   } catch (err: any) {
@@ -160,11 +137,15 @@ router.put('/reading-orders/:id', (req: AuthRequest, res) => {
 });
 
 // DELETE /api/admin/reading-orders/:id - Xóa thứ tự đọc
-router.delete('/reading-orders/:id', (req: AuthRequest, res) => {
+router.delete('/reading-orders/:id', async (req: AuthRequest, res) => {
   try {
     const { id } = req.params;
-    db.prepare('DELETE FROM issues WHERE reading_order_id = ?').run(Number(id));
-    db.prepare('DELETE FROM reading_orders WHERE id = ?').run(Number(id));
+    const { error } = await supabaseAdmin
+      .from('reading_orders')
+      .delete()
+      .eq('id', Number(id));
+
+    if (error) throw error;
 
     res.json({ success: true, message: 'Đã xóa thứ tự đọc thành công' });
   } catch (err: any) {
@@ -173,85 +154,105 @@ router.delete('/reading-orders/:id', (req: AuthRequest, res) => {
 });
 
 // POST /api/admin/reading-orders/:id/issues - Thêm một hoặc nhiều tập truyện
-router.post('/reading-orders/:id/issues', (req: AuthRequest, res) => {
+router.post('/reading-orders/:id/issues', async (req: AuthRequest, res) => {
   try {
     const { id } = req.params;
-    const { issues } = req.body; // Có thể là object đơn hoặc mảng các object
+    const { issues } = req.body;
 
-    const orderExists = db.prepare('SELECT id FROM reading_orders WHERE id = ?').get(Number(id));
-    if (!orderExists) {
+    const { data: orderExists, error: checkErr } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id')
+      .eq('id', Number(id))
+      .maybeSingle();
+
+    if (checkErr || !orderExists) {
       res.status(404).json({ success: false, message: 'Không tìm thấy thứ tự đọc' });
       return;
     }
 
-    const maxOrderQuery = db.prepare('SELECT MAX(sort_order) as max_sort FROM issues WHERE reading_order_id = ?');
-    let currentMaxSort = (maxOrderQuery.get(Number(id)) as any)?.max_sort || 0;
+    const { data: lastIssue } = await supabaseAdmin
+      .from('issues')
+      .select('sort_order')
+      .eq('reading_order_id', Number(id))
+      .order('sort_order', { ascending: false })
+      .limit(1)
+      .maybeSingle();
 
-    const insert = db.prepare(`
-      INSERT INTO issues (reading_order_id, tab_type, title, issue_type, year, note, read_url, sort_order, is_noncanon)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
+    let currentMaxSort = lastIssue?.sort_order || 0;
     const issueList = Array.isArray(issues) ? issues : [req.body];
-    const insertedIds: number[] = [];
 
+    const toInsert = [];
     for (const item of issueList) {
       if (!item.title || !item.title.trim()) continue;
       currentMaxSort += 1;
-      const resRun = insert.run(
-        Number(id),
-        item.tab_type || 'single',
-        item.title.trim(),
-        item.issue_type || 'ongoing',
-        item.year || null,
-        item.note || null,
-        item.read_url || null,
-        item.sort_order !== undefined ? item.sort_order : currentMaxSort,
-        item.is_noncanon ? 1 : 0
-      );
-      insertedIds.push(Number(resRun.lastInsertRowid));
+      toInsert.push({
+        reading_order_id: Number(id),
+        tab_type: item.tab_type || 'single',
+        title: item.title.trim(),
+        issue_type: item.issue_type || 'ongoing',
+        year: item.year || null,
+        note: item.note || null,
+        read_url: item.read_url || null,
+        sort_order: item.sort_order !== undefined ? Number(item.sort_order) : currentMaxSort,
+        is_noncanon: !!item.is_noncanon
+      });
     }
+
+    if (toInsert.length === 0) {
+      res.status(400).json({ success: false, message: 'Không có tập truyện hợp lệ nào để thêm' });
+      return;
+    }
+
+    const { data: inserted, error: insErr } = await supabaseAdmin
+      .from('issues')
+      .insert(toInsert)
+      .select('id');
+
+    if (insErr) throw insErr;
+
+    // Cập nhật lại total_issues
+    const { count: totalCount } = await supabaseAdmin
+      .from('issues')
+      .select('*', { count: 'exact', head: true })
+      .eq('reading_order_id', Number(id));
+
+    await supabaseAdmin
+      .from('reading_orders')
+      .update({ total_issues: totalCount || 0 })
+      .eq('id', Number(id));
 
     res.json({
       success: true,
-      message: `Đã thêm thành công ${insertedIds.length} tập truyện`,
-      insertedIds,
+      message: `Đã thêm thành công ${inserted?.length || 0} tập truyện`,
+      insertedIds: (inserted || []).map((i: any) => i.id),
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 });
 
-// PUT /api/admin/issues/:id - Chỉnh sửa tập truyện (bao gồm cả link đọc truyện)
-router.put('/issues/:id', (req: AuthRequest, res) => {
+// PUT /api/admin/issues/:id - Chỉnh sửa tập truyện
+router.put('/issues/:id', async (req: AuthRequest, res) => {
   try {
     const { id } = req.params;
     const { title, issue_type, year, note, read_url, sort_order, tab_type, is_noncanon } = req.body;
 
-    const update = db.prepare(`
-      UPDATE issues SET
-        title = COALESCE(?, title),
-        issue_type = COALESCE(?, issue_type),
-        year = COALESCE(?, year),
-        note = COALESCE(?, note),
-        read_url = ?,
-        sort_order = COALESCE(?, sort_order),
-        tab_type = COALESCE(?, tab_type),
-        is_noncanon = COALESCE(?, is_noncanon)
-      WHERE id = ?
-    `);
+    const payload: Record<string, any> = {};
+    if (title !== undefined) payload.title = title;
+    if (issue_type !== undefined) payload.issue_type = issue_type;
+    if (year !== undefined) payload.year = year;
+    if (note !== undefined) payload.note = note;
+    if (read_url !== undefined) payload.read_url = read_url;
+    if (sort_order !== undefined) payload.sort_order = Number(sort_order);
+    if (tab_type !== undefined) payload.tab_type = tab_type;
+    if (is_noncanon !== undefined) payload.is_noncanon = !!is_noncanon;
 
-    update.run(
-      title !== undefined ? title : null,
-      issue_type !== undefined ? issue_type : null,
-      year !== undefined ? year : null,
-      note !== undefined ? note : null,
-      read_url !== undefined ? read_url : null,
-      sort_order !== undefined ? Number(sort_order) : null,
-      tab_type !== undefined ? tab_type : null,
-      is_noncanon !== undefined ? (is_noncanon ? 1 : 0) : null,
-      Number(id)
-    );
+    const { error } = await supabaseAdmin
+      .from('issues')
+      .update(payload)
+      .eq('id', Number(id));
+
+    if (error) throw error;
 
     res.json({
       success: true,
@@ -263,10 +264,31 @@ router.put('/issues/:id', (req: AuthRequest, res) => {
 });
 
 // DELETE /api/admin/issues/:id - Xóa tập truyện
-router.delete('/issues/:id', (req: AuthRequest, res) => {
+router.delete('/issues/:id', async (req: AuthRequest, res) => {
   try {
     const { id } = req.params;
-    db.prepare('DELETE FROM issues WHERE id = ?').run(Number(id));
+
+    const { data: issue } = await supabaseAdmin
+      .from('issues')
+      .select('reading_order_id')
+      .eq('id', Number(id))
+      .maybeSingle();
+
+    const { error } = await supabaseAdmin.from('issues').delete().eq('id', Number(id));
+    if (error) throw error;
+
+    if (issue?.reading_order_id) {
+      const { count: totalCount } = await supabaseAdmin
+        .from('issues')
+        .select('*', { count: 'exact', head: true })
+        .eq('reading_order_id', issue.reading_order_id);
+
+      await supabaseAdmin
+        .from('reading_orders')
+        .update({ total_issues: totalCount || 0 })
+        .eq('id', issue.reading_order_id);
+    }
+
     res.json({ success: true, message: 'Đã xóa tập truyện thành công' });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
@@ -274,17 +296,19 @@ router.delete('/issues/:id', (req: AuthRequest, res) => {
 });
 
 // PUT /api/admin/reading-orders/:id/reorder-issues - Cập nhật vị trí sắp xếp của các tập
-router.put('/reading-orders/:id/reorder-issues', (req: AuthRequest, res) => {
+router.put('/reading-orders/:id/reorder-issues', async (req: AuthRequest, res) => {
   try {
-    const { issue_orders } = req.body; // Mảng [{ id: 1, sort_order: 1 }, { id: 2, sort_order: 2 }]
+    const { issue_orders } = req.body;
     if (!Array.isArray(issue_orders)) {
       res.status(400).json({ success: false, message: 'Dữ liệu sắp xếp không hợp lệ' });
       return;
     }
 
-    const updateStmt = db.prepare('UPDATE issues SET sort_order = ? WHERE id = ?');
     for (const item of issue_orders) {
-      updateStmt.run(Number(item.sort_order), Number(item.id));
+      await supabaseAdmin
+        .from('issues')
+        .update({ sort_order: Number(item.sort_order) })
+        .eq('id', Number(item.id));
     }
 
     res.json({ success: true, message: 'Đã lưu thứ tự các tập thành công' });
@@ -312,8 +336,8 @@ router.post('/parse-html', (req: AuthRequest, res) => {
   }
 });
 
-// POST /api/admin/import-reading-order - Nhập thứ tự đọc đã bóc tách vào Database
-router.post('/import-reading-order', (req: AuthRequest, res) => {
+// POST /api/admin/import-reading-order - Nhập thứ tự đọc đã bóc tách vào Supabase Cloud
+router.post('/import-reading-order', async (req: AuthRequest, res) => {
   try {
     const { orderData, deleteSourceFile, fileName } = req.body;
     if (!orderData || !orderData.title || !orderData.slug) {
@@ -321,87 +345,71 @@ router.post('/import-reading-order', (req: AuthRequest, res) => {
       return;
     }
 
-    const getUniv = db.prepare('SELECT id FROM universes WHERE slug = ?').get(orderData.universe_slug || 'other') as any;
-    const universe_id = getUniv ? getUniv.id : 1;
-    const getCat = db.prepare('SELECT id FROM categories WHERE universe_id = ? AND slug = ?').get(universe_id, orderData.category_slug || 'events') as any;
-    const category_id = getCat ? getCat.id : null;
+    const { data: univ } = await supabaseAdmin
+      .from('universes')
+      .select('id')
+      .eq('slug', orderData.universe_slug || 'other')
+      .maybeSingle();
+    const universe_id = univ?.id || 1;
 
-    const checkOrder = db.prepare('SELECT id FROM reading_orders WHERE slug = ?').get(orderData.slug) as any;
-    let orderId: number;
+    const { data: cat } = await supabaseAdmin
+      .from('categories')
+      .select('id')
+      .eq('universe_id', universe_id)
+      .eq('slug', orderData.category_slug || 'events')
+      .maybeSingle();
+    const category_id = cat?.id || null;
 
-    if (checkOrder) {
-      orderId = checkOrder.id;
-      db.prepare(`
-        UPDATE reading_orders
-        SET title = ?,
-            universe_id = ?,
-            category_id = ?,
-            description = ?,
-            year_published = ?,
-            featured_characters = ?,
-            previous_event_title = ?,
-            previous_event_slug = ?,
-            next_event_title = ?,
-            next_event_slug = ?,
-            updated_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-      `).run(
-        orderData.title,
-        universe_id,
-        category_id,
-        orderData.description || '',
-        orderData.year_published || '',
-        orderData.featured_characters || '',
-        orderData.previous_event_title || '',
-        orderData.previous_event_slug || '',
-        orderData.next_event_title || '',
-        orderData.next_event_slug || '',
-        orderId
-      );
-    } else {
-      const insert = db.prepare(`
-        INSERT INTO reading_orders (
-          title, slug, universe_id, category_id, description,
-          year_published, featured_characters, previous_event_title, previous_event_slug,
-          next_event_title, next_event_slug, cover_image, is_published
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `).run(
-        orderData.title,
-        orderData.slug,
-        universe_id,
-        category_id,
-        orderData.description || '',
-        orderData.year_published || '',
-        orderData.featured_characters || '',
-        orderData.previous_event_title || '',
-        orderData.previous_event_slug || '',
-        orderData.next_event_title || '',
-        orderData.next_event_slug || '',
-        'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&auto=format&fit=crop&q=80',
-        1
-      );
-      orderId = Number(insert.lastInsertRowid);
-    }
+    // Upsert reading_orders
+    const payload = {
+      title: orderData.title,
+      slug: orderData.slug,
+      direct_slug: `${orderData.slug}-reading-order`,
+      universe_id,
+      category_id,
+      universe_slug: orderData.universe_slug || 'other',
+      category_slug: orderData.category_slug || 'events',
+      description: orderData.description || '',
+      year_published: orderData.year_published || '',
+      featured_characters: orderData.featured_characters || '',
+      previous_event_title: orderData.previous_event_title || '',
+      previous_event_slug: orderData.previous_event_slug || '',
+      next_event_title: orderData.next_event_title || '',
+      next_event_slug: orderData.next_event_slug || '',
+      cover_image: orderData.cover_image || 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&auto=format&fit=crop&q=80',
+      is_published: true,
+      total_issues: (orderData.issues || []).length,
+      updated_at: new Date().toISOString()
+    };
 
-    // Xóa issues cũ và nạp issues mới
-    db.prepare('DELETE FROM issues WHERE reading_order_id = ?').run(orderId);
-    const insertIssue = db.prepare(`
-      INSERT INTO issues (reading_order_id, tab_type, title, issue_type, year, note, is_noncanon, sort_order)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    `);
+    const { data: savedOrder, error: upsertErr } = await supabaseAdmin
+      .from('reading_orders')
+      .upsert(payload, { onConflict: 'slug' })
+      .select('id')
+      .single();
 
-    let idx = 1;
-    for (const issue of (orderData.issues || [])) {
-      insertIssue.run(
-        orderId,
-        'single',
-        issue.title,
-        issue.issue_type || 'ongoing',
-        issue.year || null,
-        issue.note || null,
-        issue.is_noncanon ? 1 : 0,
-        idx++
-      );
+    if (upsertErr) throw upsertErr;
+    const orderId = savedOrder.id;
+
+    // Xóa issues cũ của order này và nạp lại
+    await supabaseAdmin.from('issues').delete().eq('reading_order_id', orderId);
+
+    const issuesToInsert = (orderData.issues || []).map((issue: any, index: number) => ({
+      reading_order_id: orderId,
+      tab_type: 'single',
+      title: issue.title,
+      issue_type: issue.issue_type || 'ongoing',
+      year: issue.year || null,
+      note: issue.note || null,
+      is_noncanon: !!issue.is_noncanon,
+      sort_order: index + 1
+    }));
+
+    if (issuesToInsert.length > 0) {
+      const batchSize = 200;
+      for (let i = 0; i < issuesToInsert.length; i += batchSize) {
+        await supabaseAdmin.from('issues').insert(issuesToInsert.slice(i, i + batchSize));
+      }
     }
 
     // Xóa file nguồn nếu có yêu cầu
@@ -414,7 +422,7 @@ router.post('/import-reading-order', (req: AuthRequest, res) => {
 
     res.json({
       success: true,
-      message: `Đã nhập thành công thứ tự đọc [${orderData.title}] với ${(orderData.issues || []).length} tập.`,
+      message: `Đã nhập thành công thứ tự đọc [${orderData.title}] với ${(orderData.issues || []).length} tập vào Supabase Cloud.`,
       slug: orderData.slug,
       id: orderId
     });
