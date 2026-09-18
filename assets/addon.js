@@ -1080,6 +1080,9 @@ window.grecaptcha = window.grecaptcha || {
     // Tìm container chứa danh sách tập truyện
     // Ưu tiên panel tab đầu tiên (Single Issues), nếu không có tabs thì tìm trong cs-content hoặc entry-content
     const targetPanel = document.querySelector('.x-tabs-panel.x-active') || document.querySelector('.x-tabs-panel:first-of-type');
+
+    // Key lưu link đọc do admin đặt cho trang này
+    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
     const mainContainer = targetPanel || document.querySelector('#cs-content') || document.querySelector('.entry-content');
     if (!mainContainer) return;
 
@@ -1089,6 +1092,14 @@ window.grecaptcha = window.grecaptcha || {
       savedProgress = JSON.parse(localStorage.getItem(pageKey) || '{}');
     } catch {
       savedProgress = {};
+    }
+
+    // Đọc links admin đã đặt
+    let savedLinks = {};
+    try {
+      savedLinks = JSON.parse(localStorage.getItem(linkKey) || '{}');
+    } catch {
+      savedLinks = {};
     }
 
     // Kiểm tra xem trang này đã được biến đổi trước đó chưa
@@ -1142,12 +1153,15 @@ window.grecaptcha = window.grecaptcha || {
           const displayTitle = titleWithoutNote || trimmed.replace(/<[^>]+>/g, '').trim();
           issueGlobalIndex++;
 
+          const savedLink = savedLinks[issueId] || '';
+          const hasLink = Boolean(savedLink);
           return `
             <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(displayTitle)}">
               <label class="ro-issue-left">
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
-                <span class="ro-issue-label">${trimmed}</span>
+                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" title="Đọc tập này">📖</a> ` : ''}${trimmed}</span>
               </label>
+              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}" title="Gắn link đọc" style="background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;color:${hasLink ? '#16a34a' : '#9ca3af'};flex-shrink:0;">🔗</button>` : ''}
             </div>
           `;
         }
@@ -1157,19 +1171,12 @@ window.grecaptcha = window.grecaptcha || {
       p.innerHTML = transformed.filter(l => l !== '').join('');
     });
 
-    // Chèn banner Admin nếu là Quản trị viên
+    // Chèn banner Admin nếu là Quản trị viên (chỉ nhãn, không cần nút - đã có trên header)
     document.querySelector('.ro-admin-banner')?.remove();
     if (isAdmin) {
       const adminBanner = document.createElement('div');
       adminBanner.className = 'ro-admin-banner';
-      adminBanner.innerHTML = `
-        <span>👑 <strong>Chế độ Quản Trị Viên</strong></span>
-        <button id="ro-admin-export-btn" class="ro-btn" style="background:#b45309;font-size:11px;cursor:pointer;">Quản lý chung</button>
-      `;
-      adminBanner.querySelector('#ro-admin-export-btn')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        openAdminModal();
-      });
+      adminBanner.innerHTML = `<span><strong>Chế độ Quản Trị Viên</strong> — Bấm 🔗 để gắn link đọc cho từng tập</span>`;
       if (targetPanel) {
         targetPanel.insertBefore(adminBanner, targetPanel.firstChild);
       } else if (firstTransformedP) {
@@ -1231,6 +1238,44 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function attachTrackerEvents(container, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin) {
+    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+    let savedLinks = {};
+    try { savedLinks = JSON.parse(localStorage.getItem(linkKey) || '{}'); } catch {}
+
+    // Admin: xử lý click nút 🔗 gắn link đọc
+    if (isAdmin) {
+      container.addEventListener('click', (e) => {
+        const btn = e.target.closest('.ro-admin-link-btn');
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        const issueId = btn.dataset.issueId;
+        const current = savedLinks[issueId] || '';
+        const newLink = prompt('Nhập URL đọc tập này (để trống để xoá):', current);
+        if (newLink === null) return; // huỷ
+        if (newLink.trim()) {
+          savedLinks[issueId] = newLink.trim();
+          btn.style.color = '#16a34a'; // xanh = có link
+          btn.title = 'Đã gắn link — bấm để sửa';
+          // Cập nhật icon đọc trong label
+          const item = btn.closest('.ro-issue-item');
+          const label = item?.querySelector('.ro-issue-label');
+          if (label && !label.querySelector('.ro-issue-read-link')) {
+            label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(newLink.trim())}" class="ro-issue-read-link" target="_blank" rel="noopener" title="Đọc tập này">📖</a> `);
+          } else if (label) {
+            label.querySelector('.ro-issue-read-link').href = newLink.trim();
+          }
+        } else {
+          delete savedLinks[issueId];
+          btn.style.color = '#9ca3af'; // xám = không có link
+          btn.title = 'Gắn link đọc';
+          const item = btn.closest('.ro-issue-item');
+          item?.querySelector('.ro-issue-read-link')?.remove();
+        }
+        try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
+      });
+    }
+
     const checkboxes = container.querySelectorAll('.ro-issue-checkbox');
     const totalCount = checkboxes.length;
     if (totalCount === 0) return;
