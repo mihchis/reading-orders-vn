@@ -999,22 +999,60 @@ window.grecaptcha = window.grecaptcha || {
 
   function isIssueLine(str) {
     if (!str) return false;
+
+    // 1. Loại bỏ phần chú thích màu xanh dương (Blue comments/annotations) trước khi kiểm tra định danh tập
+    // Quy ước website: chữ xanh dương là ghi chú / chú thích sự kiện, KHÔNG PHẢI tập truyện
+    const strWithoutComments = str
+      .replace(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue|rgb\(\s*0\s*,\s*(?:0|102)\s*,\s*(?:255|170)\s*\))[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+      .replace(/<strong[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue)[^"]*"[^>]*>[\s\S]*?<\/strong>/gi, '');
+    
+    const cleanWithoutComments = strWithoutComments.replace(/<[^>]+>/g, '').trim();
     const clean = str.replace(/<[^>]+>/g, '').trim();
     if (!clean || clean.length < 3) return false;
 
-    // Loại trừ các mô tả / chú thích / metadata
+    // 2. Loại trừ các mô tả / chú thích / metadata / hướng dẫn đọc
     const excludes = [
       'year published', 'featured characters', 'previous event', 'next event',
       'ongoing series', 'limited series', 'one-shots', 'comments',
       'black entries', 'green entries', 'red entries', 'blue is for',
-      'publisher:', 'publication date:', 'genre:', 'creator:', 'writer:'
+      'năm phát hành', 'nhân vật xuất hiện', 'sự kiện trước', 'sự kiện tiếp theo',
+      'đầu truyện dài kỳ', 'truyện ngắn tập', 'tập truyện đơn lẻ', 'ghi chú', 'chú thích',
+      'chữ đen:', 'chữ xanh lá:', 'chữ đỏ:', 'chữ xanh dương:',
+      'publisher:', 'publication date:', 'genre:', 'creator:', 'writer:',
+      'nhà xuất bản:', 'thời gian xuất bản:', 'thể loại:', 'tác giả:',
+      'reading order', 'thứ tự đọc',
+      'skip these', 'want to skip', 'bỏ qua',
+      'stick to the main series', 'tập trung vào bộ truyện chính',
+      'recommended that you', 'khuyến nghị',
+      'unless you have been', 'trừ khi bạn',
+      'alternate starting point', 'điểm bắt đầu thay thế',
+      'alternate universe', 'vũ trụ song song',
+      'elseworlds story',
+      'patreon exclusive', 'dành riêng cho',
+      'storyline takes place', 'cốt truyện diễn ra',
+      'takes place in backups', 'diễn ra trong các phần truyện phụ',
+      'click here to expand', 'bấm vào đây để mở rộng',
+      'click here to collapse', 'bấm vào đây để thu gọn',
+      'contains minor spoilers', 'có chứa tình tiết tiết lộ',
+      'can be read after', 'có thể đọc sau',
+      'the series was retitled', 'the series is retitled', 'được đổi tên thành',
+      'reverts to its original numbering', 'quay lại cách đánh số tập gốc',
+      'first appearance of', 'lần xuất hiện đầu tiên',
+      'uncollected in trade', 'chưa được phát hành dưới dạng'
     ];
     const cleanLower = clean.toLowerCase();
     for (const ex of excludes) {
       if (cleanLower.includes(ex)) return false;
     }
 
-    // Các mẫu định danh tập truyện tranh
+    // 3. Nếu là đoạn văn bản tự sự dài hoặc chứa nhiều câu (không phải tên tập truyện đơn lẻ)
+    if (clean.length > 70 && (/\.\s+[A-ZÀ-Ỹ]/.test(clean) || /[.!?]$/.test(clean))) {
+      if (!/^[\w\s:.'’\-–&]+#\d+\s*\(\d{4}\)/i.test(clean)) {
+        return false;
+      }
+    }
+
+    // 4. Các mẫu định danh tập truyện tranh
     const issuePatterns = [
       /#\d+/i,
       /\bVol\.\s*\d+/i,
@@ -1026,7 +1064,8 @@ window.grecaptcha = window.grecaptcha || {
       /\bMini-Series\b/i
     ];
 
-    return issuePatterns.some(pat => pat.test(clean));
+    // Chỉ công nhận là tập truyện khi phần nội dung chính (ngoài chú thích xanh) chứa mẫu tập truyện
+    return issuePatterns.some(pat => pat.test(cleanWithoutComments));
   }
 
   function getPageSeriesInfo() {
@@ -1445,6 +1484,170 @@ window.grecaptcha = window.grecaptcha || {
           Tất cả các nhân vật, biểu tượng và hình ảnh truyện tranh đều thuộc bản quyền của Marvel Comics, DC Comics và các tác giả, nhà xuất bản tương ứng.<br />
           Website Reading Orders VN được phát triển phi thương mại nhằm phục vụ cộng đồng người hâm mộ truyện tranh Việt Nam tra cứu lộ trình đọc mạch lạc và thuận tiện nhất.
         `;
+      }
+    });
+
+    // 9. Accordion toggles
+    document.querySelectorAll('.x-accordion-toggle span').forEach(sp => {
+      const t = sp.textContent.trim();
+      if (t === 'Click here to expand') sp.textContent = 'Bấm vào đây để mở rộng';
+      else if (t === 'Click here to collapse') sp.textContent = 'Bấm vào đây để thu gọn';
+    });
+
+    // 10. Việt hóa các ghi chú, lưu ý và chú thích sự kiện (Notes & Annotations)
+    applyVietnameseReadingOrderNotes();
+  }
+
+  const EXACT_READING_NOTES = {
+    'This reading order includes the Pre-Crisis appearances of the Monitor. These are generally short cameos that show the Monitor observing the events of the comic and are unnecessary to understand Crisis on Infinite Earths. If you want to skip these then start at Crisis on Infinite Earths #1.':
+      'Thứ tự đọc này bao gồm các lần xuất hiện trước Crisis của Monitor. Đây thường là các vai khách mời (cameo) ngắn cho thấy Monitor đang quan sát các sự kiện trong truyện và không bắt buộc phải đọc để hiểu Crisis on Infinite Earths. Nếu bạn muốn bỏ qua phần này, hãy bắt đầu ngay từ Crisis on Infinite Earths #1.',
+    'Pre-Crisis Monitor Appearances': 'Sự Xuất Hiện Trước Crisis Của Monitor',
+    'Crisis on Infinite Earths': 'Crisis on Infinite Earths',
+    'Unless you have been reading the various tie-in series prior to Crisis on Infinite Earths it is recommended that you skip them and stick to the main series.':
+      'Trừ khi bạn đã và đang theo dõi các đầu truyện tie-in khác trước Crisis on Infinite Earths, bạn nên bỏ qua chúng và tập trung vào bộ truyện chính.',
+    'Final Crisis: Rage of the Red Lanterns #1 doesn’t really have anything to do with the actual Final Crisis event and I suggest reading it after the event as part of the lead up to Blackest Night. If you want to read it as part of this order read it after Final Crisis #1.':
+      'Final Crisis: Rage of the Red Lanterns #1 không thực sự liên quan nhiều đến sự kiện Final Crisis chính, bạn nên đọc nó sau sự kiện như một phần dẫn dắt đến Blackest Night. Nếu bạn vẫn muốn đọc trong thứ tự này, hãy đọc nó sau Final Crisis #1.',
+    'This event is uncollected in trade paperback format.': 'Sự kiện này chưa được phát hành dưới dạng sách tổng hợp (TPB).',
+    'This reading order is a Patreon exclusive.': 'Thứ tự đọc này dành riêng cho người ủng hộ trên Patreon.',
+    'Alternate Universe': 'Vũ trụ song song',
+    'Alternate Universe.': 'Vũ trụ song song.',
+    'Elseworlds story.': 'Truyện thuộc dòng Elseworlds.',
+    'Alternate Starting Point:': 'Điểm bắt đầu thay thế:',
+    'Alternate Starting Point': 'Điểm bắt đầu thay thế',
+    'Digital Chapters': 'Các chương phát hành kỹ thuật số',
+    'Digital First': 'Phát hành kỹ thuật số trước',
+    'Marvel Digital Original': 'Bản kỹ thuật số Marvel gốc',
+    'Backup story': 'Phần truyện phụ (Backup story)',
+    'Most of the storyline takes place in backups in the following issues.': 'Phần lớn cốt truyện diễn ra trong các phần truyện phụ (backup) ở các tập sau.',
+    'Click here to expand': 'Bấm vào đây để mở rộng',
+    'Click here to collapse': 'Bấm vào đây để thu gọn',
+    'Comments': 'Ghi chú & Chú thích sự kiện',
+    'Whatever Happened to the Man of Tomorrow?': 'Điều Gì Đã Xảy Ra Với Người Đàn Ông Của Ngày Mai?',
+    'The for-real-this-time Post-Crisis origin of Superman.': 'Nguồn gốc thực sự thời kỳ Post-Crisis của Superman.',
+    'Wonder Woman tells two different stories in alternating issues.': 'Wonder Woman kể hai câu chuyện khác nhau xen kẽ qua từng tập.',
+    'Batman: War Games Book Two also includes the Batman: War Crimes event.': 'Batman: War Games Book Two cũng bao gồm sự kiện Batman: War Crimes.'
+  };
+
+  const READING_NOTE_RULES = [
+    {
+      re: /^Read\s+(<a[^>]*>[\s\S]*?<\/a>)\s+here\.?$/i,
+      fn: (_, link) => `Đọc ${link} tại đây.`
+    },
+    {
+      re: /^Read\s+([\w\s:.'’\-–]+?)\s+here\.?$/i,
+      fn: (_, title) => `Đọc ${title} tại đây.`
+    },
+    {
+      re: /^After\s+([\w\s:.'’#\-–]+?)\s+the\s+series\s+(?:was|is)\s+retitled\s+([\w\s:.'’#\-–]+?)(?:\s+and\s+continues\s+with\s+issue\s+(#?\d+))?\.?$/i,
+      fn: (_, s1, s2, iss) => iss ? `Sau ${s1}, bộ truyện được đổi tên thành ${s2} và tiếp tục với tập ${iss}.` : `Sau ${s1}, bộ truyện được đổi tên thành ${s2}.`
+    },
+    {
+      re: /^After\s+([\w\s:.'’#\-–]+?)\s+the\s+titled\s+was\s+renamed\s+([\w\s:.'’#\-–]+?)\.?$/i,
+      fn: (_, s1, s2) => `Sau ${s1}, bộ truyện được đổi tên thành ${s2}.`
+    },
+    {
+      re: /^After\s+([\w\s:.'’#\-–]+?)\s+the\s+series\s+(?:reverts?|reverted)\s+to\s+its\s+original\s+numbering(?:\s+starting\s+with\s+([\w\s:.'’#\-–]+?))?\.?$/i,
+      fn: (_, s1, start) => start ? `Sau ${s1}, bộ truyện quay lại cách đánh số tập gốc bắt đầu từ ${start}.` : `Sau ${s1}, bộ truyện quay lại cách đánh số tập gốc.`
+    },
+    {
+      re: /^([\w\s:.'’#\-–]+?)\s+(?:changes\s+title\s+to|is\s+retitled)\s+([\w\s:.'’#\-–]+?)\.?$/i,
+      fn: (_, s1, s2) => `${s1} được đổi tên thành ${s2}.`
+    },
+    {
+      re: /^Collects\s+(the\s+)?([\w\s,.'’#\-–&]+?)\.?$/i,
+      fn: (_, the, content) => `Tập hợp ${content}.`
+    },
+    {
+      re: /^([\w\s:.'’\-–]+?\.\s*)?First\s+appearance\s+of\s+([\w\s,.'’\-–&]+)$/i,
+      fn: (_, prefix, chars) => `${prefix || ''}Lần xuất hiện đầu tiên của ${chars}`
+    },
+    {
+      re: /^([-\s]*)First\s+appearance\s+of\s+([\w\s,.'’\-–&]+)$/i,
+      fn: (_, prefix, chars) => `${prefix ? prefix.trim() + ' ' : ''}Lần xuất hiện đầu tiên của ${chars}`
+    },
+    {
+      re: /Contains\s+minor\s+spoilers\s+about\s+([\w\s:.'’#\-–]+?)\s+and\s+can\s+be\s+read\s+after\.?/i,
+      fn: (_, target) => `Có chứa tình tiết tiết lộ nhẹ về ${target} và có thể đọc sau đó.`
+    },
+    {
+      re: /Optionally\s+can\s+be\s+read\s+during\s+the\s+([\w\s:.'’\-–]+?)\s+event\.?/i,
+      fn: (_, ev) => `Có thể tùy chọn đọc trong sự kiện ${ev}.`
+    },
+    {
+      re: /Collects\s+the\s+backups\s+running\s+through\s+([\w\s:.'’#\-–]+?)\.?$/i,
+      fn: (_, iss) => `Tập hợp các phần truyện phụ (backup) trong ${iss}.`
+    },
+    {
+      re: /Optionally\s+you\s+can\s+read\s+([\w\s:.'’#\-–]+?)\s+for\s+further\s+background\.?\s*(?:I\s+recommend\s+skipping\s+([\w\s:.'’#\-–]+?)\s+if\s+you\s+haven't\s+been\s+reading\s+it\s+previously\.?)?/i,
+      fn: (_, bkg, skip) => {
+        let res = `Tùy chọn: Bạn có thể đọc thêm ${bkg} để hiểu rõ hơn bối cảnh.`;
+        if (skip) res += ` Khuyên bạn nên bỏ qua ${skip} nếu chưa từng theo dõi trước đó.`;
+        return res;
+      }
+    },
+    {
+      re: /This\s+reading\s+order\s+is\s+a\s+(<a[^>]*>Patreon<\/a>)\s+exclusive\.?/i,
+      fn: (_, patreon) => `Thứ tự đọc này dành riêng cho người ủng hộ trên ${patreon}.`
+    }
+  ];
+
+  function translateReadingOrderNote(text) {
+    if (!text) return text;
+    const t = text.trim();
+    const cleanKey = t.replace(/<[^>]+>/g, '').replace(/&nbsp;|\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+
+    if (EXACT_READING_NOTES[cleanKey]) {
+      const trans = EXACT_READING_NOTES[cleanKey];
+      if (/^<strong\b[^>]*>.*<\/strong>$/i.test(t)) {
+        return `<strong>${trans}</strong>`;
+      }
+      return trans;
+    }
+
+    for (const rule of READING_NOTE_RULES) {
+      const m = cleanKey.match(rule.re) || t.match(rule.re);
+      if (m) {
+        return rule.fn(...m);
+      }
+    }
+
+    return text;
+  }
+
+  function applyVietnameseReadingOrderNotes() {
+    // 1. Quét các thẻ span màu xanh dương (Comments & Notes)
+    const blueSpans = document.querySelectorAll(
+      'span[style*="0000ff"], span[style*="0066aa"], span[style*="color: blue"], span[style*="color:blue"]'
+    );
+    blueSpans.forEach(span => {
+      if (span.textContent.includes('Blue is for') || span.textContent.includes('Ghi chú & Chú thích')) return;
+
+      const strong = span.querySelector('strong');
+      if (strong) {
+        const trStrong = translateReadingOrderNote(strong.textContent);
+        if (trStrong !== strong.textContent) {
+          strong.textContent = trStrong.replace(/<[^>]+>/g, '');
+        }
+      }
+
+      const originalHtml = span.innerHTML;
+      const trHtml = translateReadingOrderNote(originalHtml);
+      if (trHtml !== originalHtml) {
+        span.innerHTML = trHtml;
+      } else {
+        const originalText = span.textContent;
+        const trText = translateReadingOrderNote(originalText);
+        if (trText !== originalText) {
+          span.textContent = trText;
+        }
+      }
+    });
+
+    // 2. Quét các đoạn <p> chứa ghi chú dạng text trần trong #cs-content
+    document.querySelectorAll('#cs-content .x-text p, .entry-content .x-text p').forEach(p => {
+      const pText = p.textContent.replace(/&nbsp;|\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+      if (EXACT_READING_NOTES[pText]) {
+        p.innerHTML = `<span style="color: #0000ff;">${EXACT_READING_NOTES[pText]}</span>`;
       }
     });
   }
