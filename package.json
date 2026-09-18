@@ -8,7 +8,6 @@
     "dev": "tsx watch server/index.ts",
     "sync:components": "node scripts/sync_components.js",
     "build": "node scripts/sync_components.js && node scripts/build_site.js",
-    "build:react": "vite build",
     "seed": "tsx server/database/seed.ts",
     "start": "tsx server/index.ts"
   },

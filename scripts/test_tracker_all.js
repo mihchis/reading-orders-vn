@@ -39,12 +39,12 @@ function simulateAddon(filePath) {
 }
 
 const testFiles = [
-  'site/marvel/events/house-of-m-reading-order/index.html',
-  'site/dc/events/flashpoint-reading-order/index.html',
-  'site/other/the-boys-reading-order/index.html',
-  'site/marvel/characters/spider-man-reading-order/index.html',
-  'site/dc/characters/batman-reading-order/index.html',
-  'site/marvel/marvel-master-reading-order-part-1/index.html'
+  'marvel/events/house-of-m-reading-order/index.html',
+  'dc/events/flashpoint-reading-order/index.html',
+  'other/the-boys-reading-order/index.html',
+  'marvel/characters/spider-man-reading-order/index.html',
+  'dc/characters/batman-reading-order/index.html',
+  'marvel/marvel-master-reading-order-part-1/index.html'
 ];
 
 for (const f of testFiles) {

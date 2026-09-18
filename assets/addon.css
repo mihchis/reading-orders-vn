@@ -346,16 +346,16 @@ body.has-ro-bar {
   border: 1px solid #555;
 }
 
-/* --- Progress Bar Card on Reading Order Pages --- */
+/* --- Progress Bar Card on Reading Order Pages (Hài Hòa Hệ Thống) --- */
 .ro-tracker-card {
   background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-left: 5px solid #e42525;
-  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  border-top: 3px solid #e42525;
+  border-radius: 4px;
   padding: 14px 18px;
-  margin: 18px 0 24px 0;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 16px 0 22px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-family: "Lato", -apple-system, sans-serif;
 }
 
 .ro-tracker-header {
@@ -364,78 +364,137 @@ body.has-ro-bar {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .ro-tracker-title {
+  font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 15px;
-  color: #222;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #272727;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.ro-tracker-icon {
+  color: #e42525;
+  flex-shrink: 0;
+}
+
 .ro-tracker-stats {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: #e42525;
+  margin-left: 4px;
 }
 
 .ro-tracker-bar-bg {
   width: 100%;
-  height: 10px;
-  background: #eee;
-  border-radius: 5px;
+  height: 6px;
+  background: #ebebeb;
+  border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .ro-tracker-bar-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #e42525, #febd11);
-  border-radius: 5px;
-  transition: width 0.3s ease;
+  background: #e42525;
+  border-radius: 3px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ro-tracker-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .ro-tracker-btn {
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 12px;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  padding: 4px 11px;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   cursor: pointer;
   color: #444;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .ro-tracker-btn:hover {
   background: #e42525;
-  color: #fff;
+  color: #ffffff;
   border-color: #e42525;
 }
 
-/* --- Interactive Issue Item --- */
+.ro-tracker-login-btn {
+  background: #e42525;
+  color: #ffffff;
+  border: 1px solid #e42525;
+  padding: 5px 14px;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ro-tracker-login-btn:hover {
+  background: #c81e1e;
+  border-color: #c81e1e;
+}
+
+.ro-tracker-guest-notice {
+  font-size: 12px;
+  color: #666;
+  background: #fafafa;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* --- Banner Quản trị viên --- */
+.ro-admin-banner {
+  background: #fdfdfd;
+  border: 1px solid #e5e5e5;
+  border-left: 3px solid #16a34a;
+  border-radius: 3px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-family: "Lato", sans-serif;
+}
+
+/* --- Interactive Single Issue Item --- */
 .ro-issue-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 8px;
-  border-radius: 4px;
-  margin: 2px 0;
-  transition: background 0.15s ease;
+  border-radius: 3px;
+  margin: 1px 0;
+  transition: background 0.12s ease;
   line-height: 1.5;
+  font-family: "Lato", sans-serif;
 }
 
 .ro-issue-item:hover {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(228, 37, 37, 0.035);
 }
 
 .ro-issue-left {
@@ -443,6 +502,7 @@ body.has-ro-bar {
   align-items: center;
   gap: 10px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .ro-issue-checkbox {
@@ -451,30 +511,69 @@ body.has-ro-bar {
   cursor: pointer;
   accent-color: #e42525;
   flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.ro-issue-label {
+  font-size: 14px;
+  color: #3a3a3a;
+  transition: color 0.15s ease, opacity 0.15s ease;
 }
 
 .ro-issue-item.is-read .ro-issue-label {
   text-decoration: line-through;
-  opacity: 0.55;
+  opacity: 0.45;
+  color: #777;
 }
 
-.ro-issue-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.ro-issue-read-link {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 5px;
+  background: #e42525;
+  color: #ffffff !important;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 2px;
+  text-decoration: none !important;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+.ro-admin-link-btn {
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  color: #555;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
   flex-shrink: 0;
-  margin-left: 12px;
+  transition: all 0.15s ease;
+}
+
+.ro-admin-link-btn:hover {
+  border-color: #e42525;
+  color: #e42525;
 }
 
 .ro-read-link-btn {
-  background: #f0f0f0;
-  color: #0066cc;
-  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  color: #555;
+  border: 1px solid #d5d5d5;
   border-radius: 3px;
   padding: 2px 8px;
+  font-family: "Lato", sans-serif;
   font-size: 11px;
   text-decoration: none !important;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -487,6 +586,7 @@ body.has-ro-bar {
   color: #ffffff !important;
   border-color: #e42525;
 }
+
 
 /* --- Global Search Modal --- */
 .ro-modal-backdrop {
@@ -1055,5 +1155,251 @@ body .x-scroll-top i {
   background: #0066cc;
 }
 
+/* =========================================================
+   TPBs TRACKER STYLES (HÀI HÒA HỆ THỐNG X-THEME)
+   ========================================================= */
+.ro-tpb-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
 
+.ro-tpb-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.15s ease;
+  font-family: "Lato", sans-serif;
+}
+
+.ro-tpb-card:hover {
+  border-color: #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.ro-tpb-card.is-read {
+  background: #fafafa;
+  border-color: #e5e5e5;
+  opacity: 0.7;
+}
+
+.ro-tpb-card.is-read .ro-tpb-title {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.ro-tpb-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ro-tpb-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.ro-tpb-checkbox {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  accent-color: #e42525;
+  flex-shrink: 0;
+}
+
+.ro-tpb-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  background: #272727;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.ro-tpb-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #272727;
+  line-height: 1.4;
+}
+
+.ro-tpb-title a {
+  color: #272727;
+  text-decoration: none;
+}
+
+.ro-tpb-title a:hover {
+  color: #e42525;
+  text-decoration: underline;
+}
+
+.ro-tpb-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ro-tpb-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.ro-tpb-buy-btn:hover {
+  border-color: #e42525;
+  color: #e42525;
+  background: #fff5f5;
+}
+
+.ro-tpb-collected-wrapper {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  padding-left: 27px;
+}
+
+.ro-tpb-collected-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ro-tpb-sub-issues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ro-tpb-sub-issue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #3a3a3a;
+  transition: all 0.12s ease;
+  cursor: pointer;
+}
+
+.ro-tpb-sub-issue:hover {
+  background: #ececec;
+  border-color: #d8d8d8;
+}
+
+.ro-tpb-sub-issue.is-read {
+  text-decoration: line-through;
+  opacity: 0.5;
+  background: #eaeaea;
+  color: #777;
+}
+
+.ro-tpb-sub-checkbox {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: #e42525;
+}
+
+.ro-tpb-empty-notice {
+  text-align: center;
+  padding: 36px 20px;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  margin: 18px 0;
+  font-family: "Lato", sans-serif;
+}
+
+.ro-tpb-empty-icon {
+  margin-bottom: 8px;
+  color: #888;
+}
+
+.ro-tpb-empty-notice h4 {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #272727;
+  margin: 0 0 8px 0;
+}
+
+.ro-tpb-empty-notice p {
+  font-size: 13.5px;
+  color: #666;
+  max-width: 580px;
+  margin: 0 auto 16px auto;
+  line-height: 1.6;
+}
+
+.ro-switch-single-tab-btn {
+  background: #e42525;
+  color: #ffffff;
+  border: 1px solid #e42525;
+  font-family: "Lato", sans-serif;
+  padding: 7px 18px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ro-switch-single-tab-btn:hover {
+  background: #c81e1e;
+  border-color: #c81e1e;
+}
+
+.ro-tpb-note-box {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-left: 3px solid #272727;
+  padding: 10px 14px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+}
+
+.ro-tpb-link-wrapper {
+  display: inline-block;
+}
 

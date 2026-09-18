@@ -251,7 +251,8 @@ window.grecaptcha = window.grecaptcha || {
       <div class="ro-dashboard-card">
         <div class="ro-dashboard-header">
           <div class="ro-dashboard-title">
-            <span>📊 Tiến Độ Đọc Truyện Toàn Bộ Các Bộ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:#e42525;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Tiến độ đọc toàn hệ thống</span>
           </div>
           <button id="ro-dashboard-close" class="ro-btn" style="background:none;border:none;font-size:20px;color:#888;cursor:pointer;">✕</button>
         </div>
@@ -261,9 +262,9 @@ window.grecaptcha = window.grecaptcha || {
         </div>
 
         <div class="ro-search-footer" style="padding:12px 20px;">
-          <span style="color:#777;font-size:12px;">💡 Bấm vào tên bộ truyện để chuyển ngay đến trang tiếp tục đọc</span>
-          <button id="ro-clear-all-progress" class="ro-btn" style="background:#dc2626;border-color:#dc2626;font-size:11px;">
-            🗑️ Đặt lại tất cả
+          <span style="color:#777;font-size:12px;">Bấm vào tên bộ truyện để chuyển ngay đến trang tiếp tục đọc</span>
+          <button id="ro-clear-all-progress" class="ro-btn" style="background:#e42525;border-color:#e42525;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">
+            Đặt lại tất cả
           </button>
         </div>
       </div>
@@ -586,21 +587,21 @@ window.grecaptcha = window.grecaptcha || {
 
       <!-- Phím tắt nhanh -->
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;">
-        <h4 style="margin:0 0 8px 0;font-size:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
-          ⚡ <span>Liên Kết Nhanh Hệ Thống</span>
+        <h4 style="margin:0 0 8px 0;font-size:14px;color:#272727;font-family:'Lato',sans-serif;font-weight:700;">
+          Liên kết nhanh hệ thống
         </h4>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button id="ro-admin-open-dash" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;cursor:pointer;">
-            📊 Xem Bảng Tiến Độ Đọc
+          <button id="ro-admin-open-dash" class="ro-btn" style="background:#ffffff;color:#333;border:1px solid #d5d5d5;font-size:12px;font-family:'Lato',sans-serif;font-weight:700;cursor:pointer;">
+            Bảng tiến độ đọc
           </button>
-          <a href="/updates/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            📝 Trang Nhật Ký Cập Nhật
+          <a href="/updates/" class="ro-btn" style="background:#ffffff;color:#333;border:1px solid #d5d5d5;font-size:12px;font-family:'Lato',sans-serif;font-weight:700;text-decoration:none;">
+            Nhật ký cập nhật
           </a>
-          <a href="/faq/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            ❓ Trang Hỏi Đáp (FAQ)
+          <a href="/faq/" class="ro-btn" style="background:#ffffff;color:#333;border:1px solid #d5d5d5;font-size:12px;font-family:'Lato',sans-serif;font-weight:700;text-decoration:none;">
+            Hỏi đáp (FAQ)
           </a>
-          <a href="/contact/" class="ro-btn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:12px;text-decoration:none;">
-            ✉️ Trang Liên Hệ
+          <a href="/contact/" class="ro-btn" style="background:#ffffff;color:#333;border:1px solid #d5d5d5;font-size:12px;font-family:'Lato',sans-serif;font-weight:700;text-decoration:none;">
+            Liên hệ
           </a>
         </div>
       </div>
@@ -1367,25 +1368,96 @@ window.grecaptcha = window.grecaptcha || {
     _currentLinkModalCallback = null;
   }
 
-  function setupIssueTracker() {
-    const currentUser = getCurrentUser();
-    const isLoggedIn = Boolean(currentUser);
-    const isAdmin = currentUser && currentUser.role === 'admin';
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 
-    const cleanPath = window.location.pathname
-      .replace(/\/index\.html$/i, '')
-      .replace(/\/+$/, '') || '/';
-    const pageKey = 'ro_progress_' + cleanPath.replace(/\//g, '_');
+  function parseTpbPanelDom(tpbPanel) {
+    const cleanText = (tpbPanel.textContent || '').trim();
+    if (!cleanText) return { type: 'empty', items: [], note: '' };
 
-    // Tìm container chứa danh sách tập truyện
-    const targetPanel = document.querySelector('.x-tabs-panel.x-active') || document.querySelector('.x-tabs-panel:first-of-type');
+    if (/coming soon/i.test(cleanText) || /sắp ra mắt/i.test(cleanText)) {
+      return { type: 'coming_soon', items: [], note: '' };
+    }
 
-    // Key lưu link đọc cho trang này (kết hợp cả static json + local)
-    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
-    const mainContainer = targetPanel || document.querySelector('#cs-content') || document.querySelector('.entry-content');
+    if (/uncollected in trade paperback/i.test(cleanText) || /chưa được tập hợp/i.test(cleanText)) {
+      return { type: 'uncollected', items: [], note: '' };
+    }
+
+    const pElements = Array.from(tpbPanel.querySelectorAll('p'));
+    if (pElements.length === 0) {
+      return { type: 'raw', text: cleanText, items: [], note: '' };
+    }
+
+    const tpbList = [];
+    let curTpb = null;
+    let noteText = '';
+
+    pElements.forEach(p => {
+      const rawHtml = p.innerHTML;
+      const text = (p.textContent || '').trim();
+      if (!text) return;
+
+      if (/^(?:note:|alternatively:|it seems this tpb|all of the issues are collected|lưu ý:)/i.test(text)) {
+        if (!noteText) noteText = text;
+        return;
+      }
+
+      const isBulletLine = rawHtml.includes('•') || rawHtml.includes('&bull;') || /^\s*•/.test(text);
+
+      if (isBulletLine) {
+        const subLines = rawHtml.split(/<br\s*\/?>/i);
+        const subIssues = [];
+        subLines.forEach(l => {
+          const cleanSub = l.replace(/<strong>•<\/strong>|•|&bull;/g, '').replace(/<[^>]+>/g, '').trim();
+          if (cleanSub && cleanSub.length > 1) {
+            subIssues.push(cleanSub);
+          }
+        });
+
+        if (curTpb) {
+          curTpb.subIssues = curTpb.subIssues.concat(subIssues);
+          tpbList.push(curTpb);
+          curTpb = null;
+        } else {
+          tpbList.push({
+            title: 'Tập tổng hợp',
+            buyLink: '',
+            subIssues: subIssues
+          });
+        }
+      } else {
+        if (curTpb) {
+          tpbList.push(curTpb);
+        }
+        const a = p.querySelector('a');
+        curTpb = {
+          title: a ? a.textContent.trim() : text,
+          buyLink: a ? (a.getAttribute('href') || '') : '',
+          subIssues: []
+        };
+      }
+    });
+
+    if (curTpb) {
+      tpbList.push(curTpb);
+    }
+
+    return { type: tpbList.length > 0 ? 'success' : 'empty', items: tpbList, note: noteText };
+  }
+
+  function setupSingleIssuesTracker(mainContainer, cleanPath, isLoggedIn, isAdmin) {
     if (!mainContainer) return;
 
-    // Đọc trạng thái đã lưu từ localStorage
+    const pageKey = 'ro_progress_' + cleanPath.replace(/\//g, '_');
+    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+
     let savedProgress = {};
     try {
       savedProgress = JSON.parse(localStorage.getItem(pageKey) || '{}');
@@ -1393,10 +1465,8 @@ window.grecaptcha = window.grecaptcha || {
       savedProgress = {};
     }
 
-    // Đọc links đã có
     const savedLinks = getCombinedIssueLinks(cleanPath);
 
-    // Kiểm tra xem trang này đã được biến đổi trước đó chưa
     const existingItems = mainContainer.querySelectorAll('.ro-issue-item');
     if (existingItems.length > 0) {
       attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
@@ -1404,7 +1474,6 @@ window.grecaptcha = window.grecaptcha || {
       return;
     }
 
-    // Tìm tất cả các thẻ <p> trong container chứa tập truyện
     const pElements = Array.from(mainContainer.querySelectorAll('p'));
     let totalIssuesDetected = 0;
     const issueParagraphs = [];
@@ -1423,9 +1492,8 @@ window.grecaptcha = window.grecaptcha || {
       }
     });
 
-    if (totalIssuesDetected < 3) return; // Không phải trang reading order có danh sách tập
+    if (totalIssuesDetected < 3) return;
 
-    // Biến đổi các dòng thành item tương tác
     let issueGlobalIndex = 0;
     const firstTransformedP = issueParagraphs[0];
 
@@ -1453,9 +1521,9 @@ window.grecaptcha = window.grecaptcha || {
             <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(displayTitle)}">
               <label class="ro-issue-left">
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
-                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> ` : ''}${trimmed}</span>
+                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> ` : ''}${trimmed}</span>
               </label>
-              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}" style="background:#f3f4f6;border:1px solid ${hasLink ? '#86efac' : '#d1d5db'};color:${hasLink ? '#16a34a' : '#6b7280'};font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;cursor:pointer;flex-shrink:0;">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
+              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
             </div>
           `;
         }
@@ -1465,21 +1533,19 @@ window.grecaptcha = window.grecaptcha || {
       p.innerHTML = transformed.filter(l => l !== '').join('');
     });
 
-    // Chèn banner Admin nếu là Quản trị viên
     document.querySelector('.ro-admin-banner')?.remove();
     if (isAdmin) {
       const adminBanner = document.createElement('div');
       adminBanner.className = 'ro-admin-banner';
       adminBanner.innerHTML = `<span><strong>Chế độ Quản Trị Viên:</strong> Bấm [Gắn link] để thêm liên kết đọc cho từng tập (tự động lưu vào hệ thống cho Vercel).</span>`;
-      if (targetPanel) {
-        targetPanel.insertBefore(adminBanner, targetPanel.firstChild);
+      if (mainContainer) {
+        mainContainer.insertBefore(adminBanner, mainContainer.firstChild);
       } else if (firstTransformedP) {
         firstTransformedP.parentNode.insertBefore(adminBanner, firstTransformedP);
       }
     }
 
-    // Chèn thẻ theo dõi tiến độ (Tracker Card)
-    document.querySelector('.ro-tracker-card')?.remove();
+    document.querySelector('.ro-tracker-card:not(.ro-tpb-tracker-card)')?.remove();
     const trackerCard = document.createElement('div');
     trackerCard.className = 'ro-tracker-card';
 
@@ -1487,7 +1553,8 @@ window.grecaptcha = window.grecaptcha || {
       trackerCard.innerHTML = `
         <div class="ro-tracker-header">
           <div class="ro-tracker-title">
-            <span>📊 Tiến Độ Đọc Của Bạn</span>
+            <svg class="ro-tracker-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Tiến độ đọc</span>
             <span class="ro-tracker-stats" id="ro-stats-text">0 / ${issueGlobalIndex} tập (0%)</span>
           </div>
           <div class="ro-tracker-actions">
@@ -1503,23 +1570,24 @@ window.grecaptcha = window.grecaptcha || {
       trackerCard.innerHTML = `
         <div class="ro-tracker-header">
           <div class="ro-tracker-title">
-            <span>📊 Tiến Độ Đọc Của Bạn</span>
-            <span style="font-size:12px;color:#888;font-weight:normal;">(${issueGlobalIndex} tập)</span>
+            <svg class="ro-tracker-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Tiến độ đọc</span>
+            <span class="ro-tracker-stats">(${issueGlobalIndex} tập)</span>
           </div>
           <div class="ro-tracker-actions">
-            <button id="ro-tracker-login-btn" class="ro-btn" style="background:#2563eb;border-color:#2563eb;font-weight:bold;">
-              🔑 Đăng nhập để lưu tiến độ
+            <button id="ro-tracker-login-btn" class="ro-tracker-login-btn">
+              Đăng nhập để lưu tiến độ
             </button>
           </div>
         </div>
-        <div style="font-size:13px;color:#555;background:#f9f9f9;padding:8px 12px;border-radius:6px;border:1px dashed #ccc;margin-top:6px;">
-          🔒 Vui lòng đăng nhập tài khoản độc giả để tích chọn các tập truyện đã đọc và đồng bộ tiến độ toàn bộ trang web.
+        <div class="ro-tracker-guest-notice">
+          Đăng nhập tài khoản độc giả để tích chọn các tập truyện đã đọc và lưu tiến độ trên mọi thiết bị.
         </div>
       `;
     }
 
-    if (targetPanel) {
-      targetPanel.insertBefore(trackerCard, targetPanel.firstChild);
+    if (mainContainer) {
+      mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     } else if (firstTransformedP) {
       firstTransformedP.parentNode.insertBefore(trackerCard, firstTransformedP);
     }
@@ -1531,6 +1599,399 @@ window.grecaptcha = window.grecaptcha || {
     attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
     syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
   }
+
+  function setupTpbTracker(tpbPanel, singleTab, cleanPath, isLoggedIn, isAdmin) {
+    if (!tpbPanel) return;
+
+    if (tpbPanel.querySelector('.ro-tpb-container') || tpbPanel.querySelector('.ro-tpb-empty-notice')) {
+      return;
+    }
+
+    const tpbPageKey = 'ro_progress_tpb_' + cleanPath.replace(/\//g, '_');
+    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+
+    let savedProgress = {};
+    try {
+      savedProgress = JSON.parse(localStorage.getItem(tpbPageKey) || '{}');
+    } catch {
+      savedProgress = {};
+    }
+
+    const savedLinks = getCombinedIssueLinks(cleanPath);
+
+    const parsed = parseTpbPanelDom(tpbPanel);
+
+    if (parsed.type === 'coming_soon' || parsed.type === 'uncollected' || parsed.type === 'empty' || parsed.items.length === 0) {
+      tpbPanel.innerHTML = `
+        <div class="ro-tpb-empty-notice">
+          <div class="ro-tpb-empty-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </div>
+          <h4>Chưa có ấn bản TPB chính thức</h4>
+          <p>Hiện chưa có thông tin phát hành tập tổng hợp (Trade Paperback / Omnibus) cho phần này, hoặc sự kiện chưa được xuất bản dưới dạng TPB. Bạn có thể theo dõi tiến độ theo danh sách <strong>Từng tập truyện</strong>.</p>
+          <div>
+            <button class="ro-switch-single-tab-btn">
+              Chuyển sang đọc Từng Tập Truyện
+            </button>
+          </div>
+        </div>
+      `;
+      tpbPanel.querySelector('.ro-switch-single-tab-btn')?.addEventListener('click', () => {
+        if (singleTab) {
+          singleTab.click();
+        } else {
+          const firstTab = document.querySelector('[role="tab"], [data-x-toggle="tab"]');
+          if (firstTab) firstTab.click();
+        }
+      });
+      return;
+    }
+
+    const tpbList = parsed.items;
+
+    let adminBannerHtml = '';
+    if (isAdmin) {
+      adminBannerHtml = `
+        <div class="ro-admin-banner">
+          <span><strong>Chế độ Quản Trị Viên:</strong> Bấm [Gắn link] để thêm liên kết đọc cho từng tập TPB (tự động lưu vào hệ thống cho Vercel).</span>
+        </div>
+      `;
+    }
+
+    let trackerHtml = '';
+    if (isLoggedIn) {
+      trackerHtml = `
+        <div class="ro-tracker-card ro-tpb-tracker-card">
+          <div class="ro-tracker-header">
+            <div class="ro-tracker-title">
+              <svg class="ro-tracker-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Tiến độ đọc TPB</span>
+              <span class="ro-tracker-stats" id="ro-tpb-stats-text">0 / ${tpbList.length} tập (0%)</span>
+            </div>
+            <div class="ro-tracker-actions">
+              <button id="ro-tpb-mark-all" class="ro-tracker-btn">✓ Đã đọc tất cả</button>
+              <button id="ro-tpb-reset-all" class="ro-tracker-btn">↺ Bỏ chọn</button>
+            </div>
+          </div>
+          <div class="ro-tracker-bar-bg">
+            <div id="ro-tpb-bar-fill" class="ro-tracker-bar-fill"></div>
+          </div>
+        </div>
+      `;
+    } else {
+      trackerHtml = `
+        <div class="ro-tracker-card ro-tpb-tracker-card">
+          <div class="ro-tracker-header">
+            <div class="ro-tracker-title">
+              <svg class="ro-tracker-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Tiến độ đọc TPB</span>
+              <span class="ro-tracker-stats">(${tpbList.length} tập)</span>
+            </div>
+            <div class="ro-tracker-actions">
+              <button id="ro-tpb-login-btn" class="ro-tracker-login-btn">
+                Đăng nhập để lưu tiến độ
+              </button>
+            </div>
+          </div>
+          <div class="ro-tracker-guest-notice">
+            Đăng nhập tài khoản độc giả để tích chọn các tập TPB đã đọc và lưu tiến độ trên mọi thiết bị.
+          </div>
+        </div>
+      `;
+    }
+
+    let noteHtml = '';
+    if (parsed.note) {
+      noteHtml = `
+        <div class="ro-tpb-note-box">
+          <em>${escapeHtml(parsed.note)}</em>
+        </div>
+      `;
+    }
+
+    const cardsHtml = tpbList.map((tpb, idx) => {
+      const tpbId = `tpb_${idx}`;
+      const isTpbChecked = isLoggedIn && Boolean(savedProgress[tpbId]);
+      const savedLink = savedLinks[tpbId] || '';
+      const hasLink = Boolean(savedLink);
+
+      return `
+        <div class="ro-tpb-card ${isTpbChecked ? 'is-read' : ''}" data-tpb-id="${tpbId}" data-tpb-title="${escapeHtml(tpb.title)}">
+          <div class="ro-tpb-main-row">
+            <label class="ro-tpb-left">
+              <input type="checkbox" class="ro-tpb-checkbox" data-tpb-id="${tpbId}" ${isTpbChecked ? 'checked' : ''} />
+              <span class="ro-tpb-badge">Tập TPB ${idx + 1}</span>
+              <div class="ro-tpb-title">
+                <span class="ro-tpb-link-wrapper">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> ` : ''}</span>${escapeHtml(tpb.title)}
+              </div>
+            </label>
+            <div class="ro-tpb-actions">
+              ${tpb.buyLink ? `<a href="${escapeHtml(tpb.buyLink)}" target="_blank" rel="noopener" class="ro-tpb-buy-btn" title="Mua ấn bản gốc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:3px;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>Mua sách</a>` : ''}
+              ${isAdmin ? `<button class="ro-admin-link-btn ro-tpb-admin-btn" data-issue-id="${tpbId}">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
+            </div>
+          </div>
+          ${tpb.subIssues.length > 0 ? `
+            <div class="ro-tpb-collected-wrapper">
+              <div class="ro-tpb-collected-label">Bao gồm các tập lẻ (${tpb.subIssues.length} tập):</div>
+              <div class="ro-tpb-sub-issues">
+                ${tpb.subIssues.map((sub, sIdx) => {
+                  const subId = `${tpbId}_sub_${sIdx}`;
+                  const isSubChecked = isTpbChecked || (isLoggedIn && Boolean(savedProgress[subId]));
+                  return `
+                    <label class="ro-tpb-sub-issue ${isSubChecked ? 'is-read' : ''}" data-sub-id="${subId}">
+                      <input type="checkbox" class="ro-tpb-sub-checkbox" data-tpb-id="${tpbId}" data-sub-id="${subId}" ${isSubChecked ? 'checked' : ''} />
+                      <span>${escapeHtml(sub)}</span>
+                    </label>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }).join('');
+
+    tpbPanel.innerHTML = `
+      ${adminBannerHtml}
+      ${trackerHtml}
+      ${noteHtml}
+      <div class="ro-tpb-container">
+        ${cardsHtml}
+      </div>
+    `;
+
+    document.getElementById('ro-tpb-login-btn')?.addEventListener('click', () => {
+      openAuthModal('login');
+    });
+
+    if (isAdmin) {
+      tpbPanel.querySelectorAll('.ro-tpb-admin-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const issueId = btn.dataset.issueId;
+          const current = savedLinks[issueId] || '';
+          const card = btn.closest('.ro-tpb-card');
+          const tpbTitle = card?.dataset.tpbTitle || issueId;
+
+          openIssueLinkModal(issueId, tpbTitle, current, (newLink) => {
+            const cleanLink = (newLink || '').trim();
+            if (cleanLink) {
+              savedLinks[issueId] = cleanLink;
+              btn.textContent = 'Sửa link';
+              btn.style.color = '#16a34a';
+              btn.style.borderColor = '#86efac';
+              const wrapper = card?.querySelector('.ro-tpb-link-wrapper');
+              if (wrapper) {
+                wrapper.innerHTML = `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> `;
+              }
+            } else {
+              delete savedLinks[issueId];
+              btn.textContent = 'Gắn link';
+              btn.style.color = '#6b7280';
+              btn.style.borderColor = '#d1d5db';
+              const wrapper = card?.querySelector('.ro-tpb-link-wrapper');
+              if (wrapper) wrapper.innerHTML = '';
+            }
+
+            try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
+
+            if (!_roGlobalLinksCache) _roGlobalLinksCache = {};
+            if (!_roGlobalLinksCache[cleanPath]) _roGlobalLinksCache[cleanPath] = {};
+            if (cleanLink) {
+              _roGlobalLinksCache[cleanPath][issueId] = cleanLink;
+            } else {
+              delete _roGlobalLinksCache[cleanPath][issueId];
+            }
+
+            const token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || '';
+            fetch('/api/admin/issue-links', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                ...(token ? { 'Authorization': 'Bearer ' + token } : {})
+              },
+              body: JSON.stringify({
+                path: cleanPath,
+                issueId: issueId,
+                link: cleanLink
+              })
+            })
+            .then(r => r.json())
+            .then(res => {
+              if (res.success) {
+                showRoToast(cleanLink ? 'Đã lưu liên kết TPB thành công' : 'Đã xóa liên kết TPB', 'success');
+              } else {
+                showRoToast('Đã lưu local: ' + (res.message || 'Chưa lưu server'), 'warning');
+              }
+            })
+            .catch(() => {
+              showRoToast('Đã lưu trên máy bạn', 'info');
+            });
+          });
+        });
+      });
+    }
+
+    const tpbCards = Array.from(tpbPanel.querySelectorAll('.ro-tpb-card'));
+    const totalTpbCount = tpbCards.length;
+
+    function updateTpbStats() {
+      if (!isLoggedIn) return;
+
+      let checkedTpbCount = 0;
+      tpbCards.forEach(card => {
+        const tpbId = card.dataset.tpbId;
+        const mainCb = card.querySelector('.ro-tpb-checkbox');
+        const subCbs = Array.from(card.querySelectorAll('.ro-tpb-sub-checkbox'));
+
+        if (mainCb && mainCb.checked) {
+          checkedTpbCount++;
+          card.classList.add('is-read');
+          savedProgress[tpbId] = true;
+        } else {
+          card.classList.remove('is-read');
+          delete savedProgress[tpbId];
+        }
+
+        subCbs.forEach(subCb => {
+          const subId = subCb.dataset.subId;
+          const subItem = subCb.closest('.ro-tpb-sub-issue');
+          if (subCb.checked) {
+            subItem?.classList.add('is-read');
+            savedProgress[subId] = true;
+          } else {
+            subItem?.classList.remove('is-read');
+            delete savedProgress[subId];
+          }
+        });
+      });
+
+      const percent = totalTpbCount > 0 ? Math.round((checkedTpbCount / totalTpbCount) * 100) : 0;
+      const fill = document.getElementById('ro-tpb-bar-fill');
+      const text = document.getElementById('ro-tpb-stats-text');
+      if (fill) fill.style.width = percent + '%';
+      if (text) text.textContent = `${checkedTpbCount} / ${totalTpbCount} tập (${percent}%)`;
+
+      try {
+        localStorage.setItem(tpbPageKey, JSON.stringify(savedProgress));
+      } catch {}
+    }
+
+    tpbCards.forEach(card => {
+      const mainCb = card.querySelector('.ro-tpb-checkbox');
+      const subCbs = Array.from(card.querySelectorAll('.ro-tpb-sub-checkbox'));
+
+      mainCb?.addEventListener('click', (e) => {
+        if (!isLoggedIn) {
+          e.preventDefault();
+          mainCb.checked = false;
+          openAuthModal('login');
+          return;
+        }
+        const checked = mainCb.checked;
+        subCbs.forEach(scb => {
+          scb.checked = checked;
+        });
+        updateTpbStats();
+      });
+
+      subCbs.forEach(subCb => {
+        subCb.addEventListener('click', (e) => {
+          if (!isLoggedIn) {
+            e.preventDefault();
+            subCb.checked = false;
+            openAuthModal('login');
+            return;
+          }
+          const allSubsChecked = subCbs.length > 0 && subCbs.every(s => s.checked);
+          if (mainCb) mainCb.checked = allSubsChecked;
+          updateTpbStats();
+        });
+      });
+    });
+
+    document.getElementById('ro-tpb-mark-all')?.addEventListener('click', () => {
+      if (!isLoggedIn) {
+        openAuthModal('login');
+        return;
+      }
+      tpbCards.forEach(card => {
+        const mainCb = card.querySelector('.ro-tpb-checkbox');
+        const subCbs = card.querySelectorAll('.ro-tpb-sub-checkbox');
+        if (mainCb) mainCb.checked = true;
+        subCbs.forEach(scb => scb.checked = true);
+      });
+      updateTpbStats();
+    });
+
+    document.getElementById('ro-tpb-reset-all')?.addEventListener('click', () => {
+      if (!isLoggedIn) {
+        openAuthModal('login');
+        return;
+      }
+      tpbCards.forEach(card => {
+        const mainCb = card.querySelector('.ro-tpb-checkbox');
+        const subCbs = card.querySelectorAll('.ro-tpb-sub-checkbox');
+        if (mainCb) mainCb.checked = false;
+        subCbs.forEach(scb => scb.checked = false);
+      });
+      updateTpbStats();
+    });
+
+    updateTpbStats();
+  }
+
+  function setupIssueTracker() {
+    const currentUser = getCurrentUser();
+    const isLoggedIn = Boolean(currentUser);
+    const isAdmin = currentUser && currentUser.role === 'admin';
+
+    const cleanPath = window.location.pathname
+      .replace(/\/index\.html$/i, '')
+      .replace(/\/+$/, '') || '/';
+
+    const tabButtons = Array.from(document.querySelectorAll('[role="tab"], [data-x-toggle="tab"], .x-tabs-list button'));
+    let singleTab = null;
+    let tpbTab = null;
+
+    tabButtons.forEach(btn => {
+      const txt = (btn.textContent || '').trim();
+      if (/từng tập truyện|single issues?/i.test(txt)) {
+        singleTab = btn;
+      } else if (/tpbs?|trade paperbacks?|tập tổng hợp/i.test(txt)) {
+        tpbTab = btn;
+      }
+    });
+
+    let singlePanel = null;
+    if (singleTab) {
+      const pId = singleTab.getAttribute('aria-controls') || (singleTab.id ? singleTab.id.replace('tab-', 'panel-') : null);
+      if (pId) singlePanel = document.getElementById(pId);
+    }
+    if (!singlePanel) {
+      singlePanel = document.querySelector('.x-tabs-panel.x-active') || document.querySelector('.x-tabs-panel:first-of-type') || document.querySelector('#cs-content') || document.querySelector('.entry-content');
+    }
+
+    let tpbPanel = null;
+    if (tpbTab) {
+      const pId = tpbTab.getAttribute('aria-controls') || (tpbTab.id ? tpbTab.id.replace('tab-', 'panel-') : null);
+      if (pId) tpbPanel = document.getElementById(pId);
+      if (!tpbPanel) {
+        const panels = document.querySelectorAll('.x-tabs-panels > .x-tabs-panel, .x-tabs-panel');
+        if (panels.length >= 2) tpbPanel = panels[1];
+      }
+    }
+
+    if (singlePanel) {
+      setupSingleIssuesTracker(singlePanel, cleanPath, isLoggedIn, isAdmin);
+    }
+
+    if (tpbPanel) {
+      setupTpbTracker(tpbPanel, singleTab, cleanPath, isLoggedIn, isAdmin);
+    }
+  }
+
 
   function attachTrackerEvents(container, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin) {
     const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
@@ -1559,7 +2020,7 @@ window.grecaptcha = window.grecaptcha || {
             // Cập nhật nhãn đọc trong label
             const label = item?.querySelector('.ro-issue-label');
             if (label && !label.querySelector('.ro-issue-read-link')) {
-              label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> `);
+              label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> `);
             } else if (label && label.querySelector('.ro-issue-read-link')) {
               label.querySelector('.ro-issue-read-link').href = cleanLink;
             }
