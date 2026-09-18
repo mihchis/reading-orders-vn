@@ -1,8 +1,18 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.SUPABASE_URL || '';
+if (typeof process.loadEnvFile === 'function') {
+  try {
+    process.loadEnvFile();
+  } catch {
+    // .env có thể đã được nạp qua --env-file hoặc môi trường production
+  }
+}
+
+
+const supabaseUrl = process.env.SUPABASE_URL || 'https://lhllsgrvedsumyjhzssy.supabase.co';
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || '';
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+
 
 // Client cho phía công khai (frontend hoặc API với quyền người dùng thông thường)
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {

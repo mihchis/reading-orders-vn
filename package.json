@@ -4,12 +4,12 @@
   "private": true,
   "description": "Thứ tự đọc truyện tranh - Comic Book Reading Orders phong cách chuẩn tham_khao",
   "scripts": {
-    "dev:server": "tsx watch server/index.ts",
-    "dev": "tsx watch server/index.ts",
+    "dev:server": "tsx --env-file=.env watch server/index.ts",
+    "dev": "tsx --env-file=.env watch server/index.ts",
     "sync:components": "node scripts/sync_components.js",
     "build": "node scripts/sync_components.js && node scripts/build_site.js",
-    "seed": "tsx server/database/seed.ts",
-    "start": "tsx server/index.ts"
+    "seed": "tsx --env-file=.env server/database/seed.ts",
+    "start": "tsx --env-file=.env server/index.ts"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.6",
