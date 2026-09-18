@@ -39,6 +39,7 @@ function simulateAddon(filePath) {
 }
 
 const testFiles = [
+  'dc/events/crisis-on-infinite-earths-reading-order/index.html',
   'marvel/events/house-of-m-reading-order/index.html',
   'dc/events/flashpoint-reading-order/index.html',
   'other/the-boys-reading-order/index.html',

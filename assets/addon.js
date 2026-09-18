@@ -1586,10 +1586,12 @@ window.grecaptcha = window.grecaptcha || {
       `;
     }
 
-    if (mainContainer) {
+    if (mainContainer && !mainContainer.classList.contains('cs-content') && !mainContainer.classList.contains('entry-content')) {
       mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     } else if (firstTransformedP) {
       firstTransformedP.parentNode.insertBefore(trackerCard, firstTransformedP);
+    } else if (mainContainer) {
+      mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     }
 
     document.getElementById('ro-tracker-login-btn')?.addEventListener('click', () => {
@@ -2541,18 +2543,7 @@ window.grecaptcha = window.grecaptcha || {
       overviewP.setAttribute('data-original-en', originalEn);
       const viSynopsis = data[slug];
 
-      overviewP.innerHTML = `
-        <div style="background:rgba(228,37,37,0.04);border-left:3px solid #e42525;padding:8px 12px;border-radius:4px;margin-bottom:8px;">
-          <div style="display:flex;align-items:center;margin-bottom:4px;">
-            <span style="font-weight:700;font-size:11px;color:#e42525;text-transform:uppercase;letter-spacing:0.5px;">
-              🇻🇳 Tóm Tắt Cốt Truyện Tiếng Việt
-            </span>
-          </div>
-          <div id="ro-synopsis-text" style="color:#222;line-height:1.6;text-align:justify;">
-            ${viSynopsis}
-          </div>
-        </div>
-      `;
+      overviewP.innerHTML = viSynopsis;
     }
 
     if (synopsisData) {

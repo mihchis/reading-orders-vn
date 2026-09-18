@@ -1403,3 +1403,106 @@ body .x-scroll-top i {
   display: inline-block;
 }
 
+/* =========================================================
+   UNIFIED READING ORDER LAYOUT (CHUẨN MARVEL 2099)
+   ========================================================= */
+.cs-content .x-section,
+.cs-content .ro-title-section,
+.cs-content .ro-overview-section,
+.cs-content .ro-counter-section,
+.cs-content .ro-shared-legend,
+.cs-content .ro-reading-order-section {
+  padding: 0 45px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.cs-content .x-container.max.width,
+.cs-content .x-row.x-container.max.width {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 960px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Triệt tiêu mọi inline style co lề 100px / 80px */
+.cs-content div[style*="margin-left:100px"],
+.cs-content div[style*="margin-left: 100px"],
+.cs-content div[style*="margin-left:80px"],
+.cs-content div[style*="margin-left: 80px"] {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2 cột Overview và Metadata chuẩn Marvel 2099 */
+.cs-content .ro-overview-section .x-row-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  gap: 0 !important;
+}
+
+.cs-content .ro-overview-section .x-row-inner > .x-col {
+  flex: 0 0 50% !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  box-sizing: border-box !important;
+  padding: 0 15px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .cs-content .ro-overview-section .x-row-inner > .x-col {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Cải tiến giao diện Accordion (Danh sách phụ / Pre-Crisis...) */
+.cs-content .x-accordion {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  margin: 16px 0 24px 0;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.cs-content .x-accordion-group {
+  margin-bottom: 0;
+  border: none;
+}
+
+.cs-content .x-accordion-heading .x-accordion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f4f6;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cs-content .x-accordion-heading .x-accordion-toggle:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.cs-content .x-accordion-inner {
+  padding: 16px 20px;
+  background: #ffffff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
