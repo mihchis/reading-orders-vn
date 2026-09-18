@@ -14,15 +14,8 @@ Trang tra cứu và theo dõi thứ tự đọc truyện tranh toàn diện dàn
    - Checkbox đánh dấu `[x] Đã đọc` bên cạnh từng tập truyện, tự động lưu trữ trên trình duyệt (`localStorage`).
    - Khối hiển thị tiến độ % đọc kèm nút *✓ Đã đọc tất cả* và *↺ Bỏ chọn*.
 
-3. **Tìm kiếm toàn trang tức thì (Global Instant Search)**:
-   - Hộp tìm kiếm nhanh hỗ trợ phím tắt `Ctrl + K` hoặc gõ `/`.
-   - Tìm kiếm nhanh hơn 609 sự kiện và nhân vật với gợi ý theo vũ trụ (Marvel, DC, Khác).
-
-4. **Nút "Đọc truyện" trực tiếp**:
-   - Tích hợp nút `📖 Đọc` bên cạnh từng tập truyện để mở trang đọc online nhanh chóng.
-
-5. **Tốc độ tải trang siêu nhanh**:
-   - Chạy trên nền tảng Express tĩnh kết hợp Clean URL, không phụ thuộc cơ sở dữ liệu nặng, tải trang chỉ trong vài mili-giây.
+3. **Tốc độ tải trang siêu nhanh**:
+   - Chạy trên nền tảng tĩnh kết hợp Clean URL, không phụ thuộc cơ sở dữ liệu nặng, tải trang tức thì.
 
 ---
 

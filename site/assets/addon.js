@@ -16,7 +16,6 @@
     const tasks = [
       ['createTopBar', createTopBar],
       ['createDashboardModal', createDashboardModal],
-      ['createSearchModal', createSearchModal],
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
       ['updateGlobalBadgeCount', updateGlobalBadgeCount],
@@ -96,9 +95,6 @@
         <a href="/" class="ro-btn ro-logo-btn">
           📚 Reading Orders VN
         </a>
-        <div class="ro-search-trigger" id="ro-open-search" title="Tìm kiếm">
-          🔍 <span class="ro-search-text">Tìm kiếm sự kiện, nhân vật... <span class="ro-search-kbd">Ctrl + K</span></span>
-        </div>
         <button id="ro-open-dashboard" class="ro-btn" style="background:#1e3a8a;border-color:#3b82f6;font-weight:600;" title="Tiến độ đọc của bạn">
           📊 <span class="ro-dashboard-text">Tiến độ</span> (<span id="ro-global-count">0</span>)
         </button>
@@ -120,7 +116,6 @@
           📚 <span>Reading Orders VN</span>
         </a>
         <div style="display:flex;align-items:center;gap:8px;">
-          <button id="ro-mobile-search" class="ro-icon-btn" title="Tìm kiếm">🔍</button>
           <button id="ro-mobile-dashboard" class="ro-icon-btn" title="Tiến độ" style="position:relative;">
             📊<span id="ro-mobile-count" class="ro-mobile-badge">0</span>
           </button>
@@ -151,14 +146,12 @@
     document.body.prepend(topBar);
 
     // Desktop events
-    document.getElementById('ro-open-search')?.addEventListener('click', openSearchModal);
     document.getElementById('ro-open-dashboard')?.addEventListener('click', openDashboardModal);
     document.getElementById('ro-lang-btn')?.addEventListener('click', () => {
       setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
     });
 
     // Mobile events
-    document.getElementById('ro-mobile-search')?.addEventListener('click', openSearchModal);
     document.getElementById('ro-mobile-dashboard')?.addEventListener('click', openDashboardModal);
     document.getElementById('ro-drawer-lang')?.addEventListener('click', () => {
       setLang(getCurrentLang() === 'vi' ? 'en' : 'vi');
@@ -659,133 +652,7 @@
   }
 
   /* =========================================================
-     5. HỆ THỐNG TÌM KIẾM TOÀN TRANG (GLOBAL INSTANT SEARCH)
-     ========================================================= */
-  function loadSearchData() {
-    if (isSearchLoaded) return Promise.resolve(searchData);
-    return fetch('/search_index.json')
-      .then(res => res.json())
-      .then(data => {
-        searchData = data;
-        isSearchLoaded = true;
-        return searchData;
-      })
-      .catch(err => {
-        console.warn('[Reading Orders] Lỗi tải search index:', err);
-        return [];
-      });
-  }
-
-  function createSearchModal() {
-    if (document.getElementById('ro-search-modal')) return;
-
-    const modal = document.createElement('div');
-    modal.id = 'ro-search-modal';
-    modal.className = 'ro-modal-backdrop';
-    modal.innerHTML = `
-      <div class="ro-search-box">
-        <div class="ro-search-header">
-          <span style="font-size:18px;">🔍</span>
-          <input type="text" id="ro-search-input" class="ro-search-input" placeholder="Tìm kiếm trong hơn 600+ reading orders (Marvel, DC, Invincible...)..." autocomplete="off" />
-          <button id="ro-search-close" class="ro-btn">Đóng (ESC)</button>
-        </div>
-        <div id="ro-search-results" class="ro-search-results">
-          <div style="padding: 24px; text-align: center; color: #888;">
-            Đang tải dữ liệu tìm kiếm...
-          </div>
-        </div>
-        <div class="ro-search-footer">
-          <span>Gõ từ khóa để tìm kiếm tức thì</span>
-          <span id="ro-search-counter">600+ mục</span>
-        </div>
-      </div>
-    `;
-
-    document.body.appendChild(modal);
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeSearchModal();
-    });
-
-    document.getElementById('ro-search-close')?.addEventListener('click', closeSearchModal);
-
-    const searchInput = document.getElementById('ro-search-input');
-    searchInput?.addEventListener('input', () => {
-      renderSearchResults(searchInput.value.trim());
-    });
-  }
-
-  function openSearchModal() {
-    const modal = document.getElementById('ro-search-modal');
-    if (!modal) return;
-    modal.classList.add('is-open');
-
-    loadSearchData().then(() => {
-      const input = document.getElementById('ro-search-input');
-      if (input) {
-        input.focus();
-        input.select();
-        renderSearchResults(input.value.trim());
-      }
-    });
-  }
-
-  function closeSearchModal() {
-    const modal = document.getElementById('ro-search-modal');
-    if (modal) modal.classList.remove('is-open');
-  }
-
-  function renderSearchResults(keyword) {
-    const resultsContainer = document.getElementById('ro-search-results');
-    const counter = document.getElementById('ro-search-counter');
-    if (!resultsContainer) return;
-
-    const lower = keyword.toLowerCase();
-    let matches = [];
-
-    if (!lower) {
-      matches = searchData.filter(item => 
-        ['House of M', 'Secret Wars (2015)', 'Civil War', 'Flashpoint', 'Crisis on Infinite Earths', 'The Boys', 'Invincible'].some(name => item.title.includes(name))
-      );
-      if (matches.length === 0) matches = searchData.slice(0, 15);
-    } else {
-      matches = searchData.filter(item => 
-        item.title.toLowerCase().includes(lower) || 
-        item.slug.toLowerCase().includes(lower) ||
-        (item.universe && item.universe.toLowerCase().includes(lower))
-      ).slice(0, 30);
-    }
-
-    if (counter) counter.textContent = `${matches.length} kết quả`;
-
-    if (matches.length === 0) {
-      resultsContainer.innerHTML = `
-        <div style="padding: 30px; text-align: center; color: #888;">
-          Không tìm thấy reading order nào khớp với "<strong>${escapeHtml(keyword)}</strong>".
-        </div>
-      `;
-      return;
-    }
-
-    resultsContainer.innerHTML = matches.map(item => {
-      let badgeClass = 'badge-other';
-      if (item.universe && item.universe.includes('Marvel')) badgeClass = 'badge-marvel';
-      else if (item.universe && item.universe.includes('DC')) badgeClass = 'badge-dc';
-
-      return `
-        <a href="${item.url}" class="ro-search-item">
-          <div>
-            <div class="ro-search-item-title">${escapeHtml(item.title)}</div>
-            <div style="font-size:12px;color:#888;margin-top:2px;">${escapeHtml(item.category || '')} ${item.year ? '• Năm ' + item.year : ''}</div>
-          </div>
-          <span class="ro-search-item-badge ${badgeClass}">${escapeHtml(item.universe || 'Truyện')}</span>
-        </a>
-      `;
-    }).join('');
-  }
-
-  /* =========================================================
-     6. BỘ THEO DÕI TIẾN ĐỘ ĐỌC & LINK ĐỌC TRUYỆN (UNIVERSAL TRACKER)
+     5. BỘ THEO DÕI TIẾN ĐỘ ĐỌC (UNIVERSAL TRACKER)
      ========================================================= */
 
   function isIssueLine(str) {
@@ -857,19 +724,11 @@
       savedProgress = {};
     }
 
-    // Đọc các link đọc truyện đã lưu
-    let savedReadLinks = {};
-    try {
-      savedReadLinks = JSON.parse(localStorage.getItem('ro_custom_read_links') || '{}');
-    } catch {
-      savedReadLinks = {};
-    }
-
     // Kiểm tra xem trang này đã được biến đổi trước đó chưa
     const existingItems = mainContainer.querySelectorAll('.ro-issue-item');
     if (existingItems.length > 0) {
       // Đã có phần tử, chỉ cần gán lại logic trạng thái đăng nhập & sự kiện
-      attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, savedReadLinks, isLoggedIn, isAdmin);
+      attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
       return;
     }
 
@@ -909,7 +768,6 @@
           const issueId = `issue_${issueGlobalIndex}`;
           const isChecked = isLoggedIn && Boolean(savedProgress[issueId]);
           const textOnly = trimmed.replace(/<[^>]+>/g, '').trim();
-          const customUrl = savedReadLinks[textOnly] || '';
           issueGlobalIndex++;
 
           return `
@@ -918,16 +776,6 @@
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
                 <span class="ro-issue-label">${trimmed}</span>
               </label>
-              <div class="ro-issue-actions">
-                <a href="${customUrl || getSearchReadingUrl(textOnly)}" target="_blank" rel="noopener noreferrer" class="ro-read-link-btn" title="Đọc online tập này">
-                  📖 Đọc
-                </a>
-                ${isAdmin ? `
-                  <button class="ro-admin-setup-btn" data-issue-title="${escapeHtml(textOnly)}" title="Cấu hình link đọc cho tập này">
-                    ⚙️ Setup link
-                  </button>
-                ` : ''}
-              </div>
             </div>
           `;
         }
@@ -943,7 +791,7 @@
       const adminBanner = document.createElement('div');
       adminBanner.className = 'ro-admin-banner';
       adminBanner.innerHTML = `
-        <span>👑 <strong>Chế độ Quản Trị Viên:</strong> Bạn có thể bấm <code>⚙️ Setup link</code> cạnh bất kỳ tập nào để gán link đọc truyện.</span>
+        <span>👑 <strong>Chế độ Quản Trị Viên</strong></span>
         <button id="ro-admin-export-btn" class="ro-btn" style="background:#b45309;font-size:11px;">Quản lý chung</button>
       `;
       if (targetPanel) {
@@ -1003,10 +851,10 @@
       openAuthModal('login');
     });
 
-    attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, savedReadLinks, isLoggedIn, isAdmin);
+    attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
   }
 
-  function attachTrackerEvents(container, pageKey, cleanPath, savedProgress, savedReadLinks, isLoggedIn, isAdmin) {
+  function attachTrackerEvents(container, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin) {
     const checkboxes = container.querySelectorAll('.ro-issue-checkbox');
     const totalCount = checkboxes.length;
     if (totalCount === 0) return;
@@ -1081,39 +929,7 @@
       updateStats();
     });
 
-    // Xử lý sự kiện bấm nút "Setup link" của Admin
-    if (isAdmin) {
-      container.querySelectorAll('.ro-admin-setup-btn').forEach(btn => {
-        btn.onclick = () => {
-          const issueTitle = btn.getAttribute('data-issue-title');
-          const currentUrl = savedReadLinks[issueTitle] || '';
-          const newUrl = prompt(`[Quản trị] Nhập đường dẫn link đọc truyện cho tập:\n"${issueTitle}"`, currentUrl);
-
-          if (newUrl !== null) {
-            const cleanUrl = newUrl.trim();
-            if (cleanUrl) {
-              savedReadLinks[issueTitle] = cleanUrl;
-            } else {
-              delete savedReadLinks[issueTitle];
-            }
-            localStorage.setItem('ro_custom_read_links', JSON.stringify(savedReadLinks));
-            
-            const readBtn = btn.closest('.ro-issue-item').querySelector('.ro-read-link-btn');
-            if (readBtn) {
-              readBtn.href = cleanUrl || getSearchReadingUrl(issueTitle);
-            }
-            alert('Đã cập nhật link đọc thành công!');
-          }
-        };
-      });
-    }
-
     updateStats();
-  }
-
-  function getSearchReadingUrl(issueTitle) {
-    const clean = issueTitle.replace(/\([^)]+\)/g, '').trim();
-    return `https://www.google.com/search?q=${encodeURIComponent('read ' + clean + ' comic online')}`;
   }
 
   /* =========================================================
@@ -1121,11 +937,7 @@
      ========================================================= */
   function setupKeyboardShortcuts() {
     window.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey && e.key.toLowerCase() === 'k') || (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA')) {
-        e.preventDefault();
-        openSearchModal();
-      } else if (e.key === 'Escape') {
-        closeSearchModal();
+      if (e.key === 'Escape') {
         closeAuthModal();
         closeDashboardModal();
       }
