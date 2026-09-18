@@ -43,11 +43,71 @@ app.get('/search_index.json', (req, res) => {
   res.sendFile(path.join(rootDir, 'search_index.json'));
 });
 
-// Hàm trả về file HTML
+// Đường dẫn và Regex các components dùng chung
+const componentsDir = path.join(rootDir, 'components');
+const headerNavComponentPath = path.join(componentsDir, 'header-nav.html');
+const footerComponentPath = path.join(componentsDir, 'footer.html');
+const overlaysComponentPath = path.join(componentsDir, 'overlays.html');
+const footerScriptsComponentPath = path.join(componentsDir, 'footer-scripts.html');
+const readingLegendComponentPath = path.join(componentsDir, 'reading-legend.html');
+
+const headerNavRegex = /<div class="x-logobar">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/i;
+const footerRegex = /<footer class="x-colophon"[\s\S]*?<\/footer>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/footer>/i;
+const overlaysRegex = /<div class="x-searchform-overlay">[\s\S]*?<\/div>\s*<!-- END \.x-root -->/i;
+const scriptsRegex = /<script type="speculationrules">[\s\S]*?<\/body>/i;
+const legendRegex = /<div class="x-section[^"]*?"[^>]*?>[\s\S]*?(?:Bộ truyện dài kỳ|Ongoing Series)[\s\S]*?(?:Ghi chú đọc|Comments)[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/i;
+const yoastSchemaRegex = /<script type="application\/ld\+json" class="yoast-schema-graph">[\s\S]*?<\/script>/i;
+const csPageCssRegex = /<style id="cs-page-css">[\s\S]*?<\/style>/i;
+
+// Hàm trả về file HTML có nhúng components dùng chung
 const sendHtml = (res: express.Response, filePath: string) => {
   try {
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    res.sendFile(filePath);
+    let content = fs.readFileSync(filePath, 'utf8');
+
+    // 1. Header Navigation
+    if (fs.existsSync(headerNavComponentPath)) {
+      const sharedHeaderNav = fs.readFileSync(headerNavComponentPath, 'utf8').trim();
+      if (sharedHeaderNav && headerNavRegex.test(content)) {
+        content = content.replace(headerNavRegex, sharedHeaderNav);
+      }
+    }
+
+    // 2. Footer
+    if (fs.existsSync(footerComponentPath)) {
+      const sharedFooter = fs.readFileSync(footerComponentPath, 'utf8').trim();
+      if (sharedFooter && footerRegex.test(content)) {
+        content = content.replace(footerRegex, sharedFooter);
+      }
+    }
+
+    // 3. Overlays
+    if (fs.existsSync(overlaysComponentPath)) {
+      const sharedOverlays = fs.readFileSync(overlaysComponentPath, 'utf8').trim();
+      if (sharedOverlays && overlaysRegex.test(content)) {
+        content = content.replace(overlaysRegex, sharedOverlays);
+      }
+    }
+
+    // 4. Footer Scripts
+    if (fs.existsSync(footerScriptsComponentPath)) {
+      const sharedScripts = fs.readFileSync(footerScriptsComponentPath, 'utf8').trim();
+      if (sharedScripts && scriptsRegex.test(content)) {
+        content = content.replace(scriptsRegex, sharedScripts + '\n</body>');
+      }
+    }
+
+    // 6. Dọn dẹp Yoast Schema JSON-LD rác
+    if (yoastSchemaRegex.test(content)) {
+      content = content.replace(yoastSchemaRegex, '');
+    }
+
+    // 7. Chuyển CSS Inline cs-page-css ra ngoài
+    if (csPageCssRegex.test(content)) {
+      content = content.replace(csPageCssRegex, '');
+    }
+
+    res.send(content);
   } catch (err) {
     res.status(500).send('Error loading page');
   }

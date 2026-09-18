@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import path from 'node:path';
+import fs from 'node:fs';
 import { db } from '../database/db';
 
 const router = Router();
@@ -60,6 +62,22 @@ router.get('/search', (req, res) => {
       success: true,
       data: { orders, issues }
     });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// GET /api/issue-links - Lấy link đọc công khai cho mọi độc giả (fallback từ assets/issue_links.json)
+router.get('/issue-links', (req, res) => {
+  try {
+    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, 'utf8');
+      res.setHeader('Content-Type', 'application/json');
+      res.send(data);
+    } else {
+      res.json({});
+    }
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

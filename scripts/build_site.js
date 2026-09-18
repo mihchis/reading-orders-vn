@@ -31,8 +31,58 @@ const siteItems = [
   'search_index.json'
 ];
 
+// Nạp các components dùng chung
+const componentsDir = path.join(rootDir, 'components');
+const headerNavComponentPath = path.join(componentsDir, 'header-nav.html');
+const footerComponentPath = path.join(componentsDir, 'footer.html');
+const overlaysComponentPath = path.join(componentsDir, 'overlays.html');
+const footerScriptsComponentPath = path.join(componentsDir, 'footer-scripts.html');
+
+const readingLegendComponentPath = path.join(componentsDir, 'reading-legend.html');
+
+const sharedHeaderNav = fs.existsSync(headerNavComponentPath) ? fs.readFileSync(headerNavComponentPath, 'utf8').trim() : '';
+const sharedFooter = fs.existsSync(footerComponentPath) ? fs.readFileSync(footerComponentPath, 'utf8').trim() : '';
+const sharedOverlays = fs.existsSync(overlaysComponentPath) ? fs.readFileSync(overlaysComponentPath, 'utf8').trim() : '';
+const sharedFooterScripts = fs.existsSync(footerScriptsComponentPath) ? fs.readFileSync(footerScriptsComponentPath, 'utf8').trim() : '';
+const sharedReadingLegend = fs.existsSync(readingLegendComponentPath) ? fs.readFileSync(readingLegendComponentPath, 'utf8').trim() : '';
+
+const headerNavRegex = /<div class="x-logobar">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/i;
+const footerRegex = /<footer class="x-colophon"[\s\S]*?<\/footer>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/footer>/i;
+const overlaysRegex = /<div class="x-searchform-overlay">[\s\S]*?<\/div>\s*<!-- END \.x-root -->/i;
+const scriptsRegex = /<script type="speculationrules">[\s\S]*?<\/body>/i;
+const legendRegex = /<div class="x-section[^"]*?"[^>]*?>[\s\S]*?(?:Bộ truyện dài kỳ|Ongoing Series)[\s\S]*?(?:Ghi chú đọc|Comments)[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/i;
+const yoastSchemaRegex = /<script type="application\/ld\+json" class="yoast-schema-graph">[\s\S]*?<\/script>/i;
+const csPageCssRegex = /<style id="cs-page-css">[\s\S]*?<\/style>/i;
+
 let htmlCount = 0;
 let fileCount = 0;
+
+function copyAndInjectHtml(srcPath, destPath) {
+  fileCount++;
+  htmlCount++;
+  let content = fs.readFileSync(srcPath, 'utf8');
+
+  if (sharedHeaderNav && headerNavRegex.test(content)) {
+    content = content.replace(headerNavRegex, sharedHeaderNav);
+  }
+  if (sharedFooter && footerRegex.test(content)) {
+    content = content.replace(footerRegex, sharedFooter);
+  }
+  if (sharedOverlays && overlaysRegex.test(content)) {
+    content = content.replace(overlaysRegex, sharedOverlays);
+  }
+  if (sharedFooterScripts && scriptsRegex.test(content)) {
+    content = content.replace(scriptsRegex, sharedFooterScripts + '\n</body>');
+  }
+  if (yoastSchemaRegex.test(content)) {
+    content = content.replace(yoastSchemaRegex, '');
+  }
+  if (csPageCssRegex.test(content)) {
+    content = content.replace(csPageCssRegex, '');
+  }
+
+  fs.writeFileSync(destPath, content, 'utf8');
+}
 
 function copyRecursive(src, dest) {
   if (!fs.existsSync(dest)) {
@@ -48,11 +98,12 @@ function copyRecursive(src, dest) {
     if (entry.isDirectory()) {
       copyRecursive(srcPath, destPath);
     } else if (entry.isFile()) {
-      fileCount++;
       if (entry.name.endsWith('.html')) {
-        htmlCount++;
+        copyAndInjectHtml(srcPath, destPath);
+      } else {
+        fileCount++;
+        fs.copyFileSync(srcPath, destPath);
       }
-      fs.copyFileSync(srcPath, destPath);
     }
   }
 }
@@ -66,9 +117,12 @@ for (const item of siteItems) {
   if (stat.isDirectory()) {
     copyRecursive(src, dest);
   } else if (stat.isFile()) {
-    fileCount++;
-    if (item.endsWith('.html')) htmlCount++;
-    fs.copyFileSync(src, dest);
+    if (item.endsWith('.html')) {
+      copyAndInjectHtml(src, dest);
+    } else {
+      fileCount++;
+      fs.copyFileSync(src, dest);
+    }
   }
 }
 

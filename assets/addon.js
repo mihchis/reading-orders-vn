@@ -23,6 +23,7 @@ window.grecaptcha = window.grecaptcha || {
       ['createTopBar', createTopBar],
       ['createDashboardModal', createDashboardModal],
       ['createAdminModal', createAdminModal],
+      ['createIssueLinkModal', createIssueLinkModal],
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
       ['updateGlobalBadgeCount', updateGlobalBadgeCount],
@@ -1067,6 +1068,305 @@ window.grecaptcha = window.grecaptcha || {
     return { title, universe };
   }
 
+  /* ------------------ TOAST THÔNG BÁO ------------------ */
+  function showRoToast(message, type = 'info') {
+    let toastContainer = document.getElementById('ro-toast-container');
+    if (!toastContainer) {
+      toastContainer = document.createElement('div');
+      toastContainer.id = 'ro-toast-container';
+      toastContainer.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999999;display:flex;flex-direction:column;gap:8px;pointer-events:none;';
+      document.body.appendChild(toastContainer);
+    }
+    const toast = document.createElement('div');
+    const bgColors = {
+      success: '#15803d',
+      warning: '#b45309',
+      info: '#1e3a8a',
+      error: '#b91c1c'
+    };
+    toast.style.cssText = `background:${bgColors[type] || bgColors.info};color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,0.25);pointer-events:auto;opacity:0;transform:translateY(10px);transition:all 0.25s ease;max-width:360px;line-height:1.4;`;
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+    });
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      setTimeout(() => toast.remove(), 300);
+    }, 3500);
+  }
+
+  /* ------------------ QUẢN LÝ LINK ĐỌC TẬP (PERSISTENT LINKS) ------------------ */
+  let _roGlobalLinksCache = null;
+  let _roLinksPromise = null;
+
+  function fetchServerIssueLinks() {
+    if (_roGlobalLinksCache !== null) {
+      return Promise.resolve(_roGlobalLinksCache);
+    }
+    if (_roLinksPromise) {
+      return _roLinksPromise;
+    }
+    _roLinksPromise = fetch('/assets/issue_links.json?t=' + Date.now())
+      .then(res => {
+        if (!res.ok) throw new Error('Cannot load static links');
+        return res.json();
+      })
+      .catch(() => {
+        return fetch('/api/issue-links').then(res => res.ok ? res.json() : {}).catch(() => ({}));
+      })
+      .then(data => {
+        _roGlobalLinksCache = data || {};
+        return _roGlobalLinksCache;
+      });
+    return _roLinksPromise;
+  }
+
+  function getCombinedIssueLinks(cleanPath) {
+    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+    let localLinks = {};
+    try {
+      localLinks = JSON.parse(localStorage.getItem(linkKey) || '{}');
+    } catch {}
+
+    const serverLinks = (_roGlobalLinksCache && _roGlobalLinksCache[cleanPath]) || {};
+    return Object.assign({}, serverLinks, localLinks);
+  }
+
+  function syncIssueLinksOnPage(container, cleanPath, isAdmin) {
+    fetchServerIssueLinks().then(allLinks => {
+      const pageLinks = allLinks[cleanPath] || {};
+      const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+      let localLinks = {};
+      try { localLinks = JSON.parse(localStorage.getItem(linkKey) || '{}'); } catch {}
+      const combined = Object.assign({}, pageLinks, localLinks);
+
+      container.querySelectorAll('.ro-issue-item').forEach(item => {
+        const issueId = item.dataset.issueId;
+        const link = combined[issueId];
+        const label = item.querySelector('.ro-issue-label');
+        const readLinkEl = label?.querySelector('.ro-issue-read-link');
+        const adminBtn = item.querySelector('.ro-admin-link-btn');
+
+        if (link && String(link).trim()) {
+          const validUrl = String(link).trim();
+          if (!readLinkEl && label) {
+            label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(validUrl)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> `);
+          } else if (readLinkEl) {
+            readLinkEl.href = validUrl;
+          }
+          if (adminBtn) {
+            adminBtn.textContent = 'Sửa link';
+            adminBtn.style.color = '#16a34a';
+            adminBtn.style.borderColor = '#86efac';
+            adminBtn.title = 'Đã gắn liên kết — bấm để sửa';
+          }
+        } else {
+          if (readLinkEl) readLinkEl.remove();
+          if (adminBtn) {
+            adminBtn.textContent = 'Gắn link';
+            adminBtn.style.color = '#6b7280';
+            adminBtn.style.borderColor = '#d1d5db';
+            adminBtn.title = 'Gắn liên kết đọc';
+          }
+        }
+      });
+    });
+  }
+
+  /* ------------------ MODAL CẤU HÌNH LINK ĐỌC TẬP (ADMIN MODAL) ------------------ */
+  let _currentLinkModalCallback = null;
+
+  function createIssueLinkModal() {
+    if (document.getElementById('ro-issue-link-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'ro-issue-link-modal';
+    modal.className = 'ro-modal-backdrop';
+    modal.innerHTML = `
+      <div class="ro-auth-card" style="max-width: 460px; width: 92%; padding: 22px 24px; position: relative; border-radius: 8px; box-shadow: 0 16px 40px rgba(0,0,0,0.25);">
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+          <div>
+            <h3 style="margin: 0; font-size: 17px; font-weight: 700; color: #111;">Cấu hình liên kết đọc</h3>
+            <div style="margin-top: 3px; font-size: 12px; color: #666;">Chế độ Quản Trị Viên</div>
+          </div>
+          <button id="ro-link-modal-close" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #888; padding: 0 4px; line-height: 1;">✕</button>
+        </div>
+
+        <!-- Body -->
+        <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 12px; margin-bottom: 14px;">
+          <div style="font-size: 11px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Tập truyện</div>
+          <div id="ro-link-modal-title" style="font-size: 14px; font-weight: 700; color: #111827; margin-top: 2px; word-break: break-word;"></div>
+          <div id="ro-link-modal-id-badge" style="font-size: 11px; color: #6b7280; margin-top: 4px; font-family: monospace;"></div>
+        </div>
+
+        <div class="ro-form-group" style="margin-bottom: 8px;">
+          <label for="ro-link-modal-input" class="ro-form-label">
+            Đường dẫn đọc trực tuyến (URL)
+          </label>
+          <input
+            type="url"
+            id="ro-link-modal-input"
+            class="ro-form-input"
+            placeholder="https://..."
+          />
+        </div>
+
+        <!-- Nút trợ giúp bên dưới input (không dùng icons) -->
+        <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+          <button id="ro-link-modal-paste-btn" type="button" class="ro-btn" style="background: #f3f4f6; border: 1px solid #d1d5db; color: #374151; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
+            Dán từ bộ nhớ tạm
+          </button>
+          <button id="ro-link-modal-test-btn" type="button" class="ro-btn" style="background: #f3f4f6; border: 1px solid #d1d5db; color: #374151; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
+            Mở thử liên kết
+          </button>
+        </div>
+
+        <div style="font-size: 12px; color: #666; background: #f9f9f9; border: 1px dashed #ccc; border-radius: 6px; padding: 8px 12px; line-height: 1.4; margin-bottom: 18px;">
+          Liên kết sẽ được tự động lưu vào assets/issue_links.json để mọi độc giả đều đọc được khi deploy website.
+        </div>
+
+        <!-- Footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 14px;">
+          <button id="ro-link-modal-delete-btn" type="button" class="ro-btn" style="background: #fff; border: 1px solid #ef4444; color: #ef4444; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 4px; display: none;">
+            Xóa liên kết
+          </button>
+          <div style="display: flex; gap: 8px; margin-left: auto;">
+            <button id="ro-link-modal-cancel-btn" type="button" class="ro-btn" style="background: #f3f4f6; border: 1px solid #d1d5db; color: #374151; font-size: 12px; padding: 6px 14px; border-radius: 4px;">
+              Hủy
+            </button>
+            <button id="ro-link-modal-save-btn" type="button" class="ro-btn" style="background: #e42525; border: 1px solid #cc1f1f; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 4px;">
+              Lưu liên kết
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeIssueLinkModal();
+    });
+
+    document.getElementById('ro-link-modal-close')?.addEventListener('click', closeIssueLinkModal);
+    document.getElementById('ro-link-modal-cancel-btn')?.addEventListener('click', closeIssueLinkModal);
+
+    // Paste từ clipboard
+    document.getElementById('ro-link-modal-paste-btn')?.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          const text = await navigator.clipboard.readText();
+          if (text) {
+            const input = document.getElementById('ro-link-modal-input');
+            if (input) {
+              input.value = text.trim();
+              input.focus();
+            }
+          }
+        } else {
+          showRoToast('Hãy dùng phím Ctrl+V để dán link vào ô', 'info');
+        }
+      } catch (err) {
+        showRoToast('Hãy dùng phím Ctrl+V để dán link vào ô', 'info');
+      }
+    });
+
+    // Xem thử link
+    document.getElementById('ro-link-modal-test-btn')?.addEventListener('click', () => {
+      const input = document.getElementById('ro-link-modal-input');
+      const val = input ? input.value.trim() : '';
+      if (!val) {
+        showRoToast('Chưa có liên kết để xem thử', 'warning');
+        return;
+      }
+      try {
+        new URL(val);
+        window.open(val, '_blank', 'noopener,noreferrer');
+      } catch (e) {
+        showRoToast('URL không hợp lệ, vui lòng kiểm tra lại', 'error');
+      }
+    });
+
+    // Enter để lưu, Escape để đóng
+    document.getElementById('ro-link-modal-input')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('ro-link-modal-save-btn')?.click();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        closeIssueLinkModal();
+      }
+    });
+
+    // Nút Lưu
+    document.getElementById('ro-link-modal-save-btn')?.addEventListener('click', () => {
+      const input = document.getElementById('ro-link-modal-input');
+      const val = input ? input.value.trim() : '';
+      if (val) {
+        if (!val.startsWith('http://') && !val.startsWith('https://')) {
+          if (!confirm('Link này không bắt đầu bằng http:// hoặc https://. Bạn có chắc muốn lưu không?')) {
+            return;
+          }
+        }
+      }
+      if (_currentLinkModalCallback) {
+        _currentLinkModalCallback(val);
+      }
+      closeIssueLinkModal();
+    });
+
+    // Nút Xóa
+    document.getElementById('ro-link-modal-delete-btn')?.addEventListener('click', () => {
+      if (confirm('Bạn có chắc muốn xóa liên kết đọc của tập này không?')) {
+        if (_currentLinkModalCallback) {
+          _currentLinkModalCallback('');
+        }
+        closeIssueLinkModal();
+      }
+    });
+  }
+
+  function openIssueLinkModal(issueId, issueTitle, currentLink, callback) {
+    createIssueLinkModal();
+    const modal = document.getElementById('ro-issue-link-modal');
+    if (!modal) return;
+
+    _currentLinkModalCallback = callback;
+
+    const titleEl = document.getElementById('ro-link-modal-title');
+    const badgeEl = document.getElementById('ro-link-modal-id-badge');
+    const inputEl = document.getElementById('ro-link-modal-input');
+    const deleteBtn = document.getElementById('ro-link-modal-delete-btn');
+
+    if (titleEl) titleEl.textContent = issueTitle || issueId;
+    if (badgeEl) badgeEl.textContent = `Mã tập: ${issueId}`;
+    if (inputEl) {
+      inputEl.value = currentLink || '';
+      inputEl.style.borderColor = '#ccc';
+    }
+    if (deleteBtn) {
+      deleteBtn.style.display = currentLink ? 'inline-block' : 'none';
+    }
+
+    modal.classList.add('is-open');
+    setTimeout(() => {
+      if (inputEl) {
+        inputEl.focus();
+        inputEl.select();
+      }
+    }, 100);
+  }
+
+  function closeIssueLinkModal() {
+    const modal = document.getElementById('ro-issue-link-modal');
+    if (modal) modal.classList.remove('is-open');
+    _currentLinkModalCallback = null;
+  }
+
   function setupIssueTracker() {
     const currentUser = getCurrentUser();
     const isLoggedIn = Boolean(currentUser);
@@ -1078,10 +1378,9 @@ window.grecaptcha = window.grecaptcha || {
     const pageKey = 'ro_progress_' + cleanPath.replace(/\//g, '_');
 
     // Tìm container chứa danh sách tập truyện
-    // Ưu tiên panel tab đầu tiên (Single Issues), nếu không có tabs thì tìm trong cs-content hoặc entry-content
     const targetPanel = document.querySelector('.x-tabs-panel.x-active') || document.querySelector('.x-tabs-panel:first-of-type');
 
-    // Key lưu link đọc do admin đặt cho trang này
+    // Key lưu link đọc cho trang này (kết hợp cả static json + local)
     const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
     const mainContainer = targetPanel || document.querySelector('#cs-content') || document.querySelector('.entry-content');
     if (!mainContainer) return;
@@ -1094,19 +1393,14 @@ window.grecaptcha = window.grecaptcha || {
       savedProgress = {};
     }
 
-    // Đọc links admin đã đặt
-    let savedLinks = {};
-    try {
-      savedLinks = JSON.parse(localStorage.getItem(linkKey) || '{}');
-    } catch {
-      savedLinks = {};
-    }
+    // Đọc links đã có
+    const savedLinks = getCombinedIssueLinks(cleanPath);
 
     // Kiểm tra xem trang này đã được biến đổi trước đó chưa
     const existingItems = mainContainer.querySelectorAll('.ro-issue-item');
     if (existingItems.length > 0) {
-      // Đã có phần tử, chỉ cần gán lại logic trạng thái đăng nhập & sự kiện
       attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
+      syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
       return;
     }
 
@@ -1159,9 +1453,9 @@ window.grecaptcha = window.grecaptcha || {
             <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(displayTitle)}">
               <label class="ro-issue-left">
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
-                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" title="Đọc tập này">📖</a> ` : ''}${trimmed}</span>
+                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> ` : ''}${trimmed}</span>
               </label>
-              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}" title="Gắn link đọc" style="background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;color:${hasLink ? '#16a34a' : '#9ca3af'};flex-shrink:0;">🔗</button>` : ''}
+              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}" style="background:#f3f4f6;border:1px solid ${hasLink ? '#86efac' : '#d1d5db'};color:${hasLink ? '#16a34a' : '#6b7280'};font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;cursor:pointer;flex-shrink:0;">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
             </div>
           `;
         }
@@ -1171,12 +1465,12 @@ window.grecaptcha = window.grecaptcha || {
       p.innerHTML = transformed.filter(l => l !== '').join('');
     });
 
-    // Chèn banner Admin nếu là Quản trị viên (chỉ nhãn, không cần nút - đã có trên header)
+    // Chèn banner Admin nếu là Quản trị viên
     document.querySelector('.ro-admin-banner')?.remove();
     if (isAdmin) {
       const adminBanner = document.createElement('div');
       adminBanner.className = 'ro-admin-banner';
-      adminBanner.innerHTML = `<span><strong>Chế độ Quản Trị Viên</strong> — Bấm 🔗 để gắn link đọc cho từng tập</span>`;
+      adminBanner.innerHTML = `<span><strong>Chế độ Quản Trị Viên:</strong> Bấm [Gắn link] để thêm liên kết đọc cho từng tập (tự động lưu vào hệ thống cho Vercel).</span>`;
       if (targetPanel) {
         targetPanel.insertBefore(adminBanner, targetPanel.firstChild);
       } else if (firstTransformedP) {
@@ -1235,14 +1529,14 @@ window.grecaptcha = window.grecaptcha || {
     });
 
     attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
+    syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
   }
 
   function attachTrackerEvents(container, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin) {
     const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
-    let savedLinks = {};
-    try { savedLinks = JSON.parse(localStorage.getItem(linkKey) || '{}'); } catch {}
+    let savedLinks = getCombinedIssueLinks(cleanPath);
 
-    // Admin: xử lý click nút 🔗 gắn link đọc
+    // Admin: xử lý click nút gắn link đọc qua Modal
     if (isAdmin) {
       container.addEventListener('click', (e) => {
         const btn = e.target.closest('.ro-admin-link-btn');
@@ -1251,28 +1545,71 @@ window.grecaptcha = window.grecaptcha || {
         e.stopPropagation();
         const issueId = btn.dataset.issueId;
         const current = savedLinks[issueId] || '';
-        const newLink = prompt('Nhập URL đọc tập này (để trống để xoá):', current);
-        if (newLink === null) return; // huỷ
-        if (newLink.trim()) {
-          savedLinks[issueId] = newLink.trim();
-          btn.style.color = '#16a34a'; // xanh = có link
-          btn.title = 'Đã gắn link — bấm để sửa';
-          // Cập nhật icon đọc trong label
-          const item = btn.closest('.ro-issue-item');
-          const label = item?.querySelector('.ro-issue-label');
-          if (label && !label.querySelector('.ro-issue-read-link')) {
-            label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(newLink.trim())}" class="ro-issue-read-link" target="_blank" rel="noopener" title="Đọc tập này">📖</a> `);
-          } else if (label) {
-            label.querySelector('.ro-issue-read-link').href = newLink.trim();
+        const item = btn.closest('.ro-issue-item');
+        const issueTitle = item?.dataset.issueTitle || issueId;
+
+        openIssueLinkModal(issueId, issueTitle, current, (newLink) => {
+          const cleanLink = (newLink || '').trim();
+          if (cleanLink) {
+            savedLinks[issueId] = cleanLink;
+            btn.textContent = 'Sửa link';
+            btn.style.color = '#16a34a';
+            btn.style.borderColor = '#86efac';
+            btn.title = 'Đã gắn liên kết — bấm để sửa';
+            // Cập nhật nhãn đọc trong label
+            const label = item?.querySelector('.ro-issue-label');
+            if (label && !label.querySelector('.ro-issue-read-link')) {
+              label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> `);
+            } else if (label && label.querySelector('.ro-issue-read-link')) {
+              label.querySelector('.ro-issue-read-link').href = cleanLink;
+            }
+          } else {
+            delete savedLinks[issueId];
+            btn.textContent = 'Gắn link';
+            btn.style.color = '#6b7280';
+            btn.style.borderColor = '#d1d5db';
+            btn.title = 'Gắn liên kết đọc';
+            item?.querySelector('.ro-issue-read-link')?.remove();
           }
-        } else {
-          delete savedLinks[issueId];
-          btn.style.color = '#9ca3af'; // xám = không có link
-          btn.title = 'Gắn link đọc';
-          const item = btn.closest('.ro-issue-item');
-          item?.querySelector('.ro-issue-read-link')?.remove();
-        }
-        try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
+
+          // 1. Lưu ngay vào localStorage
+          try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
+
+          // 2. Cập nhật cache bộ nhớ
+          if (!_roGlobalLinksCache) _roGlobalLinksCache = {};
+          if (!_roGlobalLinksCache[cleanPath]) _roGlobalLinksCache[cleanPath] = {};
+          if (cleanLink) {
+            _roGlobalLinksCache[cleanPath][issueId] = cleanLink;
+          } else {
+            delete _roGlobalLinksCache[cleanPath][issueId];
+          }
+
+          // 3. Gửi lên Server Local để ghi vào file assets/issue_links.json (cho Vercel deploy)
+          const token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || '';
+          fetch('/api/admin/issue-links', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              ...(token ? { 'Authorization': 'Bearer ' + token } : {})
+            },
+            body: JSON.stringify({
+              path: cleanPath,
+              issueId: issueId,
+              link: cleanLink
+            })
+          })
+          .then(r => r.json())
+          .then(res => {
+            if (res.success) {
+              showRoToast(cleanLink ? 'Đã lưu liên kết vào assets/issue_links.json thành công' : 'Đã xóa liên kết đọc của tập này', 'success');
+            } else {
+              showRoToast('Đã lưu local: ' + (res.message || 'Chưa lưu server'), 'warning');
+            }
+          })
+          .catch(() => {
+            showRoToast('Đã lưu trên máy bạn (Server API chưa kết nối)', 'info');
+          });
+        });
       });
     }
 

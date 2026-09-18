@@ -6,7 +6,8 @@
   "scripts": {
     "dev:server": "tsx watch server/index.ts",
     "dev": "tsx watch server/index.ts",
-    "build": "node scripts/build_site.js",
+    "sync:components": "node scripts/sync_components.js",
+    "build": "node scripts/sync_components.js && node scripts/build_site.js",
     "build:react": "vite build",
     "seed": "tsx server/database/seed.ts",
     "start": "tsx server/index.ts"

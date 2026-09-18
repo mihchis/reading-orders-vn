@@ -949,3 +949,111 @@ body.x-navbar-fixed-top-active .x-navbar-wrap {
   }
 }
 
+/* --- Nút Cuộn Lên Đầu Trang (Back to Top) Nhỏ Gọn & Tinh Tế --- */
+body .x-scroll-top,
+.x-scroll-top.right {
+  right: 16px !important;
+  bottom: 20px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  line-height: 30px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(4px) !important;
+  border: 1px solid rgba(228, 37, 37, 0.5) !important;
+  color: #e42525 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  padding: 0 !important;
+  opacity: 0.6 !important;
+  transition: all 0.2s ease !important;
+  z-index: 99999 !important;
+}
+
+body .x-scroll-top:hover,
+.x-scroll-top.right:hover {
+  opacity: 1 !important;
+  background: #e42525 !important;
+  color: #ffffff !important;
+  border-color: #e42525 !important;
+  transform: translateY(-2px) scale(1.08) !important;
+  box-shadow: 0 4px 14px rgba(228, 37, 37, 0.35) !important;
+}
+
+body .x-scroll-top i {
+  line-height: 1 !important;
+  font-size: 13px !important;
+  margin: 0 !important;
+}
+
+/* --- Bảng Chú Giải Loại Truyện (Reading Legend) Hiện Đại & Gọn Gàng --- */
+.ro-reading-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto 30px auto;
+  padding: 10px 16px;
+  max-width: 780px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ro-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.ro-legend-item::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.ro-legend-ongoing {
+  color: #222;
+}
+.ro-legend-ongoing::before {
+  background: #222;
+}
+
+.ro-legend-limited {
+  color: #008000;
+}
+.ro-legend-limited::before {
+  background: #008000;
+}
+
+.ro-legend-oneshot {
+  color: #e42525;
+}
+.ro-legend-oneshot::before {
+  background: #e42525;
+}
+
+.ro-legend-comment {
+  color: #0066cc;
+}
+.ro-legend-comment::before {
+  background: #0066cc;
+}
+
+
+

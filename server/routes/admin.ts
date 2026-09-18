@@ -423,4 +423,88 @@ router.post('/import-reading-order', (req: AuthRequest, res) => {
   }
 });
 
+// GET /api/admin/issue-links - Lấy danh sách link đọc theo trang hoặc toàn bộ
+router.get('/issue-links', (req: AuthRequest, res) => {
+  try {
+    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
+    let allLinks: Record<string, any> = {};
+    if (fs.existsSync(filePath)) {
+      try {
+        allLinks = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      } catch (e) {
+        allLinks = {};
+      }
+    }
+
+    const orderPath = req.query.path as string;
+    if (orderPath) {
+      const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+      return res.json({ success: true, data: allLinks[clean] || {} });
+    }
+
+    res.json({ success: true, data: allLinks });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// POST /api/admin/issue-links - Lưu link đọc của tập vào assets/issue_links.json (dùng khi deploy Vercel)
+router.post('/issue-links', (req: AuthRequest, res) => {
+  try {
+    const { path: orderPath, issueId, link, links } = req.body;
+    if (!orderPath) {
+      res.status(400).json({ success: false, message: 'Thiếu đường dẫn bài viết (path)' });
+      return;
+    }
+
+    const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
+    const dataPath = path.resolve(process.cwd(), 'data', 'issue_links.json');
+
+    let allLinks: Record<string, Record<string, string>> = {};
+    if (fs.existsSync(filePath)) {
+      try {
+        allLinks = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      } catch (e) {
+        allLinks = {};
+      }
+    }
+
+    if (!allLinks[clean]) {
+      allLinks[clean] = {};
+    }
+
+    if (links && typeof links === 'object') {
+      allLinks[clean] = links;
+    } else if (issueId) {
+      if (link && String(link).trim()) {
+        allLinks[clean][issueId] = String(link).trim();
+      } else {
+        delete allLinks[clean][issueId];
+      }
+    }
+
+    // Nếu trang đó không còn link nào, dọn dẹp key
+    if (Object.keys(allLinks[clean]).length === 0) {
+      delete allLinks[clean];
+    }
+
+    const jsonStr = JSON.stringify(allLinks, null, 2);
+    fs.writeFileSync(filePath, jsonStr, 'utf8');
+
+    try {
+      fs.writeFileSync(dataPath, jsonStr, 'utf8');
+    } catch (e) {}
+
+    res.json({
+      success: true,
+      message: 'Đã lưu link đọc vào assets/issue_links.json thành công!',
+      data: allLinks[clean] || {}
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: 'Lỗi khi lưu link: ' + err.message });
+  }
+});
+
 export default router;
+
