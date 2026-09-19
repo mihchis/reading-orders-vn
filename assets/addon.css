@@ -1348,6 +1348,171 @@ body .x-scroll-top i {
   color: #888;
 }
 
+/* =========================================================
+   FOOTER RESPONSIVE STYLES
+   Only responsive fix - GIỮ NGUYÊN UI desktop
+   ========================================================= */
+
+/* Desktop: giữ nguyên UI gốc */
+.ro-footer-text {
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 0;
+}
+
+/* Đảm bảo text không bị ngắt dòng / overflow */
+.x-colophon,
+.x-colophon.bottom,
+.x-colophon-content,
+.x-colophon-content p,
+.ro-footer-text {
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.x-colophon-content {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible !important;
+}
+
+.x-colophon.bottom {
+  overflow: visible !important;
+  width: 100%;
+}
+
+.x-colophon.bottom .x-container.max.width {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Outer bar containers full width */
+.m60o-0.x-bar,
+.m60o-0.x-bar > .x-bar-content,
+.m60o-1.x-bar-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Site container full width on mobile */
+@media (max-width: 979px) {
+  .site,
+  .x-site {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* --- Tablet (<= 979px): giảm padding nhẹ --- */
+@media (max-width: 979px) {
+  .ro-footer-text {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* --- Mobile (<= 767px): giảm padding, full-width container --- */
+@media (max-width: 767px) {
+  .x-colophon.bottom .x-container.max.width {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .x-colophon.bottom {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 18px !important;
+    width: 100% !important;
+  }
+
+  .x-colophon-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .ro-footer-text {
+    padding-left: 12px !important;
+    /* Dành chỗ cho nút scroll-top bên phải (kích thước nút ~44px + khoảng cách) */
+    padding-right: 60px !important;
+    text-align: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    display: block !important;
+    float: none !important;
+  }
+
+  /* Bỏ giới hạn width site trên mobile */
+  .site,
+  .x-site,
+  #top {
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    display: block !important;
+  }
+
+  /* Bar containers full-width */
+  .m60o-0 .x-bar-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .m60o-1.x-bar-container {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .m60o-0.x-bar-footer {
+    width: 100% !important;
+  }
+
+  /* Nhỏ nút scroll-top trên mobile & đẩy lên trên để không đè footer */
+  body .x-scroll-top {
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 32px !important;
+    font-size: 16px !important;
+    right: 12px !important;
+    bottom: 14px !important;
+    margin: 0 !important;
+  }
+}
+
+/* --- Mobile nhỏ (<= 480px): padding tối thiểu --- */
+@media (max-width: 480px) {
+  .x-colophon.bottom .x-container.max.width {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .ro-footer-text {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    text-align: center;
+    width: 100% !important;
+  }
+}
+
+/* --- Mobile rất nhỏ (<= 360px) --- */
+@media (max-width: 360px) {
+  .ro-footer-text {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    width: 100% !important;
+  }
+}
+
 .ro-tpb-empty-notice h4 {
   font-family: "Lato", sans-serif;
   font-size: 15px;

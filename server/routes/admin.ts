@@ -610,7 +610,7 @@ router.get('/issue-links', (req: AuthRequest, res) => {
   }
 });
 
-// POST /api/admin/issue-links - Lưu link đọc của tập vào assets/issue_links.json (dùng khi deploy Vercel)
+// POST /api/admin/issue-links - Lưu link đọc (ghi file local & trả về success ngay cả trên Vercel read-only)
 router.post('/issue-links', (req: AuthRequest, res) => {
   try {
     const { path: orderPath, issueId, link, links } = req.body;
@@ -652,15 +652,33 @@ router.post('/issue-links', (req: AuthRequest, res) => {
     }
 
     const jsonStr = JSON.stringify(allLinks, null, 2);
-    fs.writeFileSync(filePath, jsonStr, 'utf8');
 
+    // Ghi file assets/issue_links.json
+    // Trên môi trường Vercel (/var/task read-only) writeFileSync sẽ throw EROFS.
+    // Chúng ta bắt lỗi để route không crash, vẫn trả về success (frontend đã lưu localStorage).
+    // Admin khi cần public link cho mọi người phải chạy local save rồi commit file lên git & redeploy.
+    let savedToFile = true;
+    let fileWarning = '';
     try {
-      fs.writeFileSync(dataPath, jsonStr, 'utf8');
+      fs.writeFileSync(filePath, jsonStr, 'utf8');
+    } catch (fileErr: any) {
+      savedToFile = false;
+      fileWarning = fileErr?.message || 'Không ghi được file';
+    }
+
+    // Ghi file dự phòng data/issue_links.json (tùy chọn)
+    try {
+      if (fs.existsSync(path.dirname(dataPath))) {
+        fs.writeFileSync(dataPath, jsonStr, 'utf8');
+      }
     } catch (e) {}
 
     res.json({
       success: true,
-      message: 'Đã lưu link đọc vào assets/issue_links.json thành công!',
+      savedToFile,
+      message: savedToFile
+        ? 'Đã lưu link đọc vào assets/issue_links.json thành công!'
+        : `Đã lưu tạm trên máy bạn (server môi trường cloud chỉ đọc file). ${fileWarning}`,
       data: allLinks[clean] || {}
     });
   } catch (err: any) {

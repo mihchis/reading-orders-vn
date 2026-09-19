@@ -57,6 +57,28 @@ export async function authMiddleware(req: AuthRequest, res: Response, next: Next
     }
     return next();
   } catch (err) {
+    // 3. Fallback cho string token cũ từ api/auth/login.js (dạng admin-token-<timestamp> / user-token-<timestamp>)
+    if (typeof token === 'string' && token.startsWith('admin-token-')) {
+      const adminUser: AuthUser = {
+        id: 1,
+        username: 'admin',
+        display_name: 'Quản Trị Viên',
+        role: 'admin'
+      };
+      req.user = adminUser;
+      req.admin = adminUser;
+      return next();
+    }
+    if (typeof token === 'string' && token.startsWith('user-token-')) {
+      const baseUser: AuthUser = {
+        id: 2,
+        username: 'reader',
+        display_name: 'Độc giả',
+        role: 'user'
+      };
+      req.user = baseUser;
+      return next();
+    }
     res.status(401).json({ success: false, message: 'Phiên đăng nhập đã hết hạn hoặc không hợp lệ' });
   }
 }
@@ -103,7 +125,27 @@ export async function optionalAuthMiddleware(req: AuthRequest, res: Response, ne
       if (decoded.role === 'admin') {
         req.admin = decoded;
       }
-    } catch (e) {}
+    } catch (e) {
+      // Fallback string token cũ
+      if (typeof token === 'string' && token.startsWith('admin-token-')) {
+        const adminUser: AuthUser = {
+          id: 1,
+          username: 'admin',
+          display_name: 'Quản Trị Viên',
+          role: 'admin'
+        };
+        req.user = adminUser;
+        req.admin = adminUser;
+      } else if (typeof token === 'string' && token.startsWith('user-token-')) {
+        const baseUser: AuthUser = {
+          id: 2,
+          username: 'reader',
+          display_name: 'Độc giả',
+          role: 'user'
+        };
+        req.user = baseUser;
+      }
+    }
   }
   next();
 }
