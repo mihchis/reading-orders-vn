@@ -1148,14 +1148,29 @@ window.grecaptcha = window.grecaptcha || {
         const issueId = item.dataset.issueId;
         const link = combined[issueId];
         const label = item.querySelector('.ro-issue-label');
-        const readLinkEl = label?.querySelector('.ro-issue-read-link');
+        let rightCol = item.querySelector('.ro-issue-right');
+        if (!rightCol) {
+          rightCol = document.createElement('div');
+          rightCol.className = 'ro-issue-right';
+          // Đưa admin button (nếu có) vào trong rightCol mới
+          const existingAdminBtn = item.querySelector(':scope > .ro-admin-link-btn');
+          if (existingAdminBtn) rightCol.appendChild(existingAdminBtn);
+          item.appendChild(rightCol);
+        }
+        let readLinkEl = rightCol.querySelector('.ro-issue-read-link');
         const adminBtn = item.querySelector('.ro-admin-link-btn');
 
         if (link && String(link).trim()) {
           const validUrl = String(link).trim();
-          if (!readLinkEl && label) {
-            label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(validUrl)}" class="ro-issue-read-link" target="_blank" rel="noopener" style="display:inline-block;margin-right:6px;padding:1px 5px;background:#e42525;color:#fff;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;line-height:1.3;">ĐỌC</a> `);
-          } else if (readLinkEl) {
+          if (!readLinkEl) {
+            const a = document.createElement('a');
+            a.href = validUrl;
+            a.className = 'ro-issue-read-link';
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = 'ĐỌC';
+            rightCol.insertBefore(a, rightCol.firstChild);
+          } else {
             readLinkEl.href = validUrl;
           }
           if (adminBtn) {
@@ -1521,9 +1536,12 @@ window.grecaptcha = window.grecaptcha || {
             <div class="ro-issue-item ${isChecked ? 'is-read' : ''}" data-issue-id="${issueId}" data-issue-title="${escapeHtml(displayTitle)}">
               <label class="ro-issue-left">
                 <input type="checkbox" class="ro-issue-checkbox" ${isChecked ? 'checked' : ''} />
-                <span class="ro-issue-label">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> ` : ''}${trimmed}</span>
+                <span class="ro-issue-label">${trimmed}</span>
               </label>
-              ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
+              <div class="ro-issue-right">
+                ${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a>` : ''}
+                ${isAdmin ? `<button class="ro-admin-link-btn" data-issue-id="${issueId}">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
+              </div>
             </div>
           `;
         }
@@ -1724,10 +1742,11 @@ window.grecaptcha = window.grecaptcha || {
               <input type="checkbox" class="ro-tpb-checkbox" data-tpb-id="${tpbId}" ${isTpbChecked ? 'checked' : ''} />
               <span class="ro-tpb-badge">Tập TPB ${idx + 1}</span>
               <div class="ro-tpb-title">
-                <span class="ro-tpb-link-wrapper">${hasLink ? `<a href="${escapeHtml(savedLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> ` : ''}</span>${escapeHtml(tpb.title)}
+                ${escapeHtml(tpb.title)}
               </div>
             </label>
             <div class="ro-tpb-actions">
+              ${hasLink ? `<span class="ro-tpb-link-wrapper"><a href="${escapeHtml(savedLink)}" class="ro-issue-read-link ro-tpb-read" target="_blank" rel="noopener">ĐỌC</a></span>` : ''}
               ${tpb.buyLink ? `<a href="${escapeHtml(tpb.buyLink)}" target="_blank" rel="noopener" class="ro-tpb-buy-btn" title="Mua ấn bản gốc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:3px;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>Mua sách</a>` : ''}
               ${isAdmin ? `<button class="ro-admin-link-btn ro-tpb-admin-btn" data-issue-id="${tpbId}">${hasLink ? 'Sửa link' : 'Gắn link'}</button>` : ''}
             </div>
@@ -1778,22 +1797,27 @@ window.grecaptcha = window.grecaptcha || {
 
           openIssueLinkModal(issueId, tpbTitle, current, (newLink) => {
             const cleanLink = (newLink || '').trim();
+            const actions = card?.querySelector('.ro-tpb-actions');
+            let wrapper = card?.querySelector('.ro-tpb-link-wrapper');
             if (cleanLink) {
               savedLinks[issueId] = cleanLink;
               btn.textContent = 'Sửa link';
               btn.style.color = '#16a34a';
               btn.style.borderColor = '#86efac';
-              const wrapper = card?.querySelector('.ro-tpb-link-wrapper');
+              if (!wrapper && actions) {
+                wrapper = document.createElement('span');
+                wrapper.className = 'ro-tpb-link-wrapper';
+                actions.insertBefore(wrapper, actions.firstChild);
+              }
               if (wrapper) {
-                wrapper.innerHTML = `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> `;
+                wrapper.innerHTML = `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link ro-tpb-read" target="_blank" rel="noopener">ĐỌC</a>`;
               }
             } else {
               delete savedLinks[issueId];
               btn.textContent = 'Gắn link';
               btn.style.color = '#6b7280';
               btn.style.borderColor = '#d1d5db';
-              const wrapper = card?.querySelector('.ro-tpb-link-wrapper');
-              if (wrapper) wrapper.innerHTML = '';
+              if (wrapper) wrapper.remove();
             }
 
             try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
@@ -2019,12 +2043,29 @@ window.grecaptcha = window.grecaptcha || {
             btn.style.color = '#16a34a';
             btn.style.borderColor = '#86efac';
             btn.title = 'Đã gắn liên kết — bấm để sửa';
-            // Cập nhật nhãn đọc trong label
-            const label = item?.querySelector('.ro-issue-label');
-            if (label && !label.querySelector('.ro-issue-read-link')) {
-              label.insertAdjacentHTML('afterbegin', `<a href="${escapeHtml(cleanLink)}" class="ro-issue-read-link" target="_blank" rel="noopener">ĐỌC</a> `);
-            } else if (label && label.querySelector('.ro-issue-read-link')) {
-              label.querySelector('.ro-issue-read-link').href = cleanLink;
+            // Cập nhật nút ĐỌC vào cột bên phải (.ro-issue-right)
+            let rightCol = item?.querySelector('.ro-issue-right');
+            if (!rightCol && item) {
+              rightCol = document.createElement('div');
+              rightCol.className = 'ro-issue-right';
+              const oldAdminBtn = item.querySelector(':scope > .ro-admin-link-btn');
+              if (oldAdminBtn && oldAdminBtn !== btn) rightCol.appendChild(oldAdminBtn);
+              if (!rightCol.contains(btn)) rightCol.appendChild(btn);
+              item.appendChild(rightCol);
+            }
+            if (rightCol) {
+              let readLinkEl = rightCol.querySelector('.ro-issue-read-link');
+              if (!readLinkEl) {
+                const a = document.createElement('a');
+                a.href = cleanLink;
+                a.className = 'ro-issue-read-link';
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.textContent = 'ĐỌC';
+                rightCol.insertBefore(a, rightCol.firstChild);
+              } else {
+                readLinkEl.href = cleanLink;
+              }
             }
           } else {
             delete savedLinks[issueId];
@@ -2032,7 +2073,8 @@ window.grecaptcha = window.grecaptcha || {
             btn.style.color = '#6b7280';
             btn.style.borderColor = '#d1d5db';
             btn.title = 'Gắn liên kết đọc';
-            item?.querySelector('.ro-issue-read-link')?.remove();
+            const rightCol = item?.querySelector('.ro-issue-right');
+            (rightCol || item)?.querySelector('.ro-issue-read-link')?.remove();
           }
 
           // 1. Lưu ngay vào localStorage

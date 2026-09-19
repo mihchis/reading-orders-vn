@@ -562,6 +562,39 @@ body.has-ro-bar {
   color: #e42525;
 }
 
+/* === CỘT BÊN PHẢI issue row (chứa nút ĐỌC + nút admin Gắn link) === */
+.ro-issue-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Nút ĐỌC: nằm ở cột phải, căn chỉnh lại k/cách với nội dung bên trái */
+.ro-issue-read-link {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #e42525;
+  color: #ffffff !important;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 2px;
+  text-decoration: none !important;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  border: 1px solid #020000;
+  box-shadow: 0 2px 0 0 #a71000;
+  transition: all 0.12s ease;
+}
+.ro-issue-read-link:hover {
+  background: #febd11;
+  color: #020202 !important;
+  border-color: #020000;
+  box-shadow: 0 2px 0 0 #d9a100;
+}
+
 .ro-read-link-btn {
   background: #ffffff;
   color: #555;
@@ -580,7 +613,6 @@ body.has-ro-bar {
   transition: all 0.15s ease;
   cursor: pointer;
 }
-
 .ro-read-link-btn:hover {
   background: #e42525;
   color: #ffffff !important;
@@ -1551,6 +1583,57 @@ body .x-scroll-top i {
   border-color: #c81e1e;
 }
 
+/* --- Responsive mobile issue rows layout */
+@media (max-width: 767px) {
+  .ro-issue-item {
+    flex-wrap: wrap;
+    padding: 6px 6px;
+    gap: 4px;
+  }
+  .ro-issue-left {
+    min-width: 0;
+    flex: 1 1 180px;
+  }
+  .ro-issue-right {
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+  .ro-issue-label {
+    font-size: 13px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .ro-tpb-main-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ro-tpb-left {
+    min-width: 0;
+    flex: 1 1 200px;
+  }
+  .ro-tpb-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .ro-issue-left {
+    flex: 1 1 140px;
+    gap: 8px;
+  }
+  .ro-issue-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  .ro-issue-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .ro-issue-label {
+    font-size: 12.5px;
+  }
+}
+
 .ro-tpb-note-box {
   background: #fafafa;
   border: 1px solid #e5e5e5;
@@ -1565,7 +1648,8 @@ body .x-scroll-top i {
 }
 
 .ro-tpb-link-wrapper {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* =========================================================
