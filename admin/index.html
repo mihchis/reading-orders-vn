@@ -1149,7 +1149,8 @@
             </div>
 
             <div id="issues-container" style="display: none;">
-              <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+              <!-- Info bar: tiêu đề + nút lưu -->
+              <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
                 <div>
                   <strong id="current-order-title" style="font-size: 15px; color: #60a5fa;"></strong>
                   <span id="current-order-badge" class="badge" style="margin-left: 8px;"></span>
@@ -1160,11 +1161,48 @@
                 </button>
               </div>
 
+              <!-- Stats bar: thống kê link -->
+              <div id="issues-stats-bar" style="background: var(--bg-card); padding: 14px 16px; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-color);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                  <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                    <span style="font-size: 13px; font-weight: 800; color: var(--text-main);">
+                      <i class="fa-solid fa-chart-simple" style="color: #60a5fa;"></i> Tiến độ gắn link:
+                    </span>
+                    <span id="stat-linked" style="font-size: 13px; font-weight: 800; color: var(--color-success);">
+                      <i class="fa-solid fa-circle-check"></i> <span id="stat-linked-count">0</span> đã có link
+                    </span>
+                    <span id="stat-unlinked" style="font-size: 13px; font-weight: 800; color: var(--color-warning);">
+                      <i class="fa-solid fa-circle-exclamation"></i> <span id="stat-unlinked-count">0</span> chưa có link
+                    </span>
+                  </div>
+                  <!-- Filter buttons -->
+                  <div style="display: flex; gap: 6px;" id="issue-filter-btns">
+                    <button class="btn-action issue-filter-btn active" data-filter="all" onclick="filterIssues('all')" style="font-size: 11px; padding: 4px 10px;">
+                      Tất cả
+                    </button>
+                    <button class="btn-action issue-filter-btn" data-filter="unlinked" onclick="filterIssues('unlinked')" style="font-size: 11px; padding: 4px 10px;">
+                      <i class="fa-solid fa-circle-exclamation" style="color: var(--color-warning);"></i> Chưa có link
+                    </button>
+                    <button class="btn-action issue-filter-btn" data-filter="linked" onclick="filterIssues('linked')" style="font-size: 11px; padding: 4px 10px;">
+                      <i class="fa-solid fa-circle-check" style="color: var(--color-success);"></i> Đã có link
+                    </button>
+                  </div>
+                </div>
+                <!-- Progress bar -->
+                <div style="background: #e5e5e5; border-radius: 4px; height: 8px; overflow: hidden;">
+                  <div id="link-progress-bar" style="height: 100%; background: linear-gradient(90deg, var(--color-success), #34d399); border-radius: 4px; transition: width 0.4s ease; width: 0%;"></div>
+                </div>
+                <div style="text-align: right; margin-top: 4px;">
+                  <span id="link-progress-pct" style="font-size: 11px; font-weight: 800; color: var(--text-dim);">0%</span>
+                </div>
+              </div>
+
               <div class="table-responsive">
                 <table class="data-table">
                   <thead>
                     <tr>
                       <th style="width: 50px;">STT</th>
+                      <th style="width: 60px; text-align: center;">Trạng thái</th>
                       <th>Tên tập truyện</th>
                       <th style="width: 120px;">Phân loại</th>
                       <th>Link đọc online (read_url)</th>
@@ -1669,6 +1707,8 @@
       loadIssuesForSelectedOrder();
     }
 
+    let currentIssueFilter = 'all';
+
     async function loadIssuesForSelectedOrder() {
       const orderId = document.getElementById('select-order-for-issues').value;
       const container = document.getElementById('issues-container');
@@ -1683,8 +1723,24 @@
 
       placeholder.style.display = 'none';
       container.style.display = 'block';
-      tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 25px;">Đang tải danh sách tập truyện...</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 25px;">Đang tải danh sách tập truyện...</td></tr>';
       currentSelectedOrderId = orderId;
+      currentIssueFilter = 'all';
+
+      // Reset filter buttons
+      document.querySelectorAll('.issue-filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.style.background = '';
+        b.style.color = '';
+        b.style.borderColor = '';
+      });
+      const allBtn = document.querySelector('.issue-filter-btn[data-filter="all"]');
+      if (allBtn) {
+        allBtn.classList.add('active');
+        allBtn.style.background = 'var(--color-primary)';
+        allBtn.style.color = '#fff';
+        allBtn.style.borderColor = '#020000';
+      }
 
       try {
         const res = await apiFetch(`/api/admin/reading-orders/${orderId}`);
@@ -1695,35 +1751,109 @@
           document.getElementById('current-order-title').textContent = o.title;
           document.getElementById('current-order-badge').textContent = (o.universe_slug || 'other').toUpperCase();
           document.getElementById('current-order-badge').className = `badge badge-${o.universe_slug || 'other'}`;
-          document.getElementById('current-order-count').textContent = `${(o.issues || []).length} tập truyện`;
 
           currentEditingIssues = o.issues || [];
 
-          if (currentEditingIssues.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 25px; color: var(--text-dim);">Bộ truyện này chưa có tập nào.</td></tr>';
+          // Tính stats
+          const linked = currentEditingIssues.filter(i => i.read_url && i.read_url.trim() !== '');
+          const unlinked = currentEditingIssues.filter(i => !i.read_url || i.read_url.trim() === '');
+          const total = currentEditingIssues.length;
+          const pct = total > 0 ? Math.round((linked.length / total) * 100) : 0;
+
+          document.getElementById('current-order-count').textContent = `${total} tập truyện`;
+          document.getElementById('stat-linked-count').textContent = linked.length;
+          document.getElementById('stat-unlinked-count').textContent = unlinked.length;
+          document.getElementById('link-progress-bar').style.width = `${pct}%`;
+          document.getElementById('link-progress-pct').textContent = `${pct}% hoàn thành`;
+
+          if (total === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 25px; color: var(--text-dim);">Bộ truyện này chưa có tập nào.</td></tr>';
             return;
           }
 
-          tbody.innerHTML = currentEditingIssues.map((issue, idx) => `
-            <tr>
-              <td><span style="color: var(--text-dim);">${idx + 1}</span></td>
-              <td><strong style="color: var(--text-main); font-size: 13px;">${issue.title}</strong></td>
-              <td><span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">${issue.issue_type || 'ongoing'}</span></td>
-              <td>
-                <input type="text" id="issue-link-${issue.id}" class="form-input" style="padding: 6px 10px; font-size: 12px;" 
-                       value="${issue.read_url || ''}" placeholder="Dán link đọc (Drive, Web...)">
-              </td>
-              <td style="text-align: right;">
-                <button class="btn-action" onclick="saveSingleIssueLink(${issue.id})" title="Lưu link tập này">
-                  <i class="fa-solid fa-check"></i> Lưu
-                </button>
-              </td>
-            </tr>
-          `).join('');
+          renderIssuesTable('all');
         }
       } catch (err) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: var(--color-danger); padding: 25px;">Lỗi tải tập truyện</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--color-danger); padding: 25px;">Lỗi tải tập truyện</td></tr>';
       }
+    }
+
+    function renderIssuesTable(filter) {
+      const tbody = document.getElementById('issues-table-body');
+      let issues = [...currentEditingIssues];
+
+      // Sort: chưa có link lên trước
+      issues.sort((a, b) => {
+        const aHas = a.read_url && a.read_url.trim() !== '' ? 1 : 0;
+        const bHas = b.read_url && b.read_url.trim() !== '' ? 1 : 0;
+        return aHas - bHas;
+      });
+
+      // Filter
+      if (filter === 'unlinked') {
+        issues = issues.filter(i => !i.read_url || i.read_url.trim() === '');
+      } else if (filter === 'linked') {
+        issues = issues.filter(i => i.read_url && i.read_url.trim() !== '');
+      }
+
+      if (issues.length === 0) {
+        const msg = filter === 'unlinked' ? 'Tất cả tập đã có link! 🎉' : filter === 'linked' ? 'Chưa có tập nào được gắn link.' : 'Không có tập truyện.';
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 25px; color: var(--text-dim);">${msg}</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = issues.map((issue, idx) => {
+        const hasLink = issue.read_url && issue.read_url.trim() !== '';
+        const statusIcon = hasLink
+          ? '<i class="fa-solid fa-circle-check" style="color: var(--color-success); font-size: 16px;" title="Đã có link đọc"></i>'
+          : '<i class="fa-solid fa-circle-exclamation" style="color: var(--color-warning); font-size: 16px;" title="Chưa có link đọc"></i>';
+        const rowBg = hasLink
+          ? 'background: rgba(16, 185, 129, 0.04);'
+          : 'background: rgba(217, 119, 6, 0.04);';
+        const borderLeft = hasLink
+          ? 'border-left: 3px solid var(--color-success);'
+          : 'border-left: 3px solid var(--color-warning);';
+
+        // Tìm index gốc trong currentEditingIssues
+        const origIdx = currentEditingIssues.indexOf(issue);
+
+        return `
+          <tr style="${rowBg} ${borderLeft}" data-issue-id="${issue.id}" data-has-link="${hasLink ? '1' : '0'}">
+            <td><span style="color: var(--text-dim);">${origIdx + 1}</span></td>
+            <td style="text-align: center;">${statusIcon}</td>
+            <td><strong style="color: var(--text-main); font-size: 13px;">${issue.title}</strong></td>
+            <td><span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">${issue.issue_type || 'ongoing'}</span></td>
+            <td>
+              <input type="text" id="issue-link-${issue.id}" class="form-input" style="padding: 6px 10px; font-size: 12px; ${hasLink ? 'border-color: var(--color-success);' : ''}" 
+                     value="${issue.read_url || ''}" placeholder="Dán link đọc (Drive, Web...)">
+            </td>
+            <td style="text-align: right;">
+              <button class="btn-action" onclick="saveSingleIssueLink(${issue.id})" title="Lưu link tập này">
+                <i class="fa-solid fa-check"></i> Lưu
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterIssues(filter) {
+      currentIssueFilter = filter;
+      // Update active button
+      document.querySelectorAll('.issue-filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.style.background = '';
+        b.style.color = '';
+        b.style.borderColor = '';
+      });
+      const activeBtn = document.querySelector(`.issue-filter-btn[data-filter="${filter}"]`);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.style.background = 'var(--color-primary)';
+        activeBtn.style.color = '#fff';
+        activeBtn.style.borderColor = '#020000';
+      }
+      renderIssuesTable(filter);
     }
 
     async function saveSingleIssueLink(issueId) {
