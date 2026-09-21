@@ -8,10 +8,15 @@ if (typeof process.loadEnvFile === 'function') {
   }
 }
 
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const supabaseUrl = process.env.SUPABASE_URL || 'https://lhllsgrvedsumyjhzssy.supabase.co';
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || '';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+if (!supabaseUrl || !supabaseAnonKey || !supabaseServiceKey) {
+  throw new Error(
+    'Thiếu biến môi trường Supabase. Hãy kiểm tra SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY trong file .env hoặc Vercel Dashboard.'
+  );
+}
 
 
 // Client cho phía công khai (frontend hoặc API với quyền người dùng thông thường)
