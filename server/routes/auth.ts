@@ -196,7 +196,7 @@ router.get('/progress/:orderId', authMiddleware, async (req: AuthRequest, res) =
           success: true,
           data: {
             orderId: orderIdParam,
-            readIssueIds: progressRows.map(r => `issue_${r.issue_sort_order}`)
+            readIssueIds: progressRows.map(r => `issue_${r.issue_sort_order - 1}`)
           }
         });
       }
@@ -223,8 +223,10 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
 
     // Nếu userId là UUID trên Supabase Cloud
     if (typeof userId === 'string' && userId.length > 20) {
+      // issueId là "issue_N" (0-based) → sort_order = N+1 (1-based trong Supabase)
       const sortOrderMatch = String(issueId).match(/\d+/);
-      const sortOrder = sortOrderMatch ? parseInt(sortOrderMatch[0], 10) : 0;
+      const sortOrder = sortOrderMatch ? parseInt(sortOrderMatch[0], 10) + 1 : 1;
+
 
       // Kiểm tra trạng thái hiện tại
       const { data: existing } = await supabaseAdmin
@@ -264,7 +266,7 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
         success: true,
         issueId,
         isRead: newStatus,
-        readIssueIds: (currentRows || []).map(r => `issue_${r.issue_sort_order}`)
+        readIssueIds: (currentRows || []).map(r => `issue_${r.issue_sort_order - 1}`)
       });
     }
 
@@ -275,9 +277,106 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
   }
 });
 
+// DELETE /api/auth/progress/all - Xóa toàn bộ tiến độ đọc của user hiện tại
+router.delete('/progress/all', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.user!.id;
+    if (typeof userId !== 'string' || userId.length <= 20) {
+      return res.status(400).json({ success: false, message: 'Tài khoản không hợp lệ' });
+    }
+
+    const { error } = await supabaseAdmin
+      .from('user_progress')
+      .delete()
+      .eq('user_id', userId);
+
+    if (error) throw error;
+
+    res.json({ success: true, message: 'Đã xóa toàn bộ tiến độ đọc' });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 // POST /api/auth/logout
 router.post('/logout', (req, res) => {
   res.json({ success: true, message: 'Đăng xuất thành công' });
 });
 
+
+// GET /api/auth/reading-list - Lấy danh sách reading orders + tiến độ đọc của user hiện tại
+// Trả về: { "/marvel/slug": { path, title, total, completed, percent, lastReadTime } }
+router.get('/reading-list', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.user!.id;
+
+    if (typeof userId !== 'string' || userId.length <= 20) {
+      return res.json({ success: true, data: {} });
+    }
+
+    // Lấy tất cả progress của user
+    const { data: progressRows } = await supabaseAdmin
+      .from('user_progress')
+      .select('reading_order_slug, issue_sort_order, updated_at')
+      .eq('user_id', userId)
+      .eq('is_read', true);
+
+    if (!progressRows || progressRows.length === 0) {
+      return res.json({ success: true, data: {} });
+    }
+
+    // Nhóm theo slug
+    const slugSet = new Set(progressRows.map((r: any) => r.reading_order_slug));
+    const slugList = Array.from(slugSet) as string[];
+
+    // Lấy thông tin reading orders
+    const { data: orders } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id, title, slug, direct_slug, universe_slug, total_issues')
+      .in('slug', slugList);
+
+    if (!orders) return res.json({ success: true, data: {} });
+
+    // Tính completed count cho mỗi slug
+    const completedMap: Record<string, { count: number; lastReadTime: string }> = {};
+    progressRows.forEach((r: any) => {
+      const slug = r.reading_order_slug;
+      if (!completedMap[slug]) {
+        completedMap[slug] = { count: 0, lastReadTime: r.updated_at };
+      }
+      completedMap[slug].count++;
+      if (r.updated_at > completedMap[slug].lastReadTime) {
+        completedMap[slug].lastReadTime = r.updated_at;
+      }
+    });
+
+    const result: Record<string, any> = {};
+    orders.forEach((order: any) => {
+      const slug = order.slug;
+      const progress = completedMap[slug];
+      if (!progress || progress.count === 0) return;
+
+      const total = order.total_issues || 0;
+      const completed = progress.count;
+      const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+      const path = `/${order.universe_slug}/${order.direct_slug || order.slug}`;
+
+      result[path] = {
+        path,
+        title: order.title,
+        universe: order.universe_slug,
+        total,
+        completed,
+        percent,
+        lastReadTime: new Date(progress.lastReadTime).getTime(),
+      };
+    });
+
+    res.json({ success: true, data: result });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 export default router;
+

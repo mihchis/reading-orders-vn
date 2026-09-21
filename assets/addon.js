@@ -17,6 +17,7 @@ window.grecaptcha = window.grecaptcha || {
   let searchData = [];
   let isSearchLoaded = false;
   let synopsisData = null;
+  let _roReadingListCache = null; // null = chua load, {} = da load nhung rong
 
   function initAddon() {
     const tasks = [
@@ -26,8 +27,6 @@ window.grecaptcha = window.grecaptcha || {
       ['createIssueLinkModal', createIssueLinkModal],
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
-      ['updateGlobalBadgeCount', updateGlobalBadgeCount],
-      ['renderDirectoryBadges', renderDirectoryBadges],
       ['applyLocalization', applyLocalization],
       ['applyVietnameseSynopsis', applyVietnameseSynopsis],
       ['setupIssueTracker', setupIssueTracker],
@@ -41,6 +40,17 @@ window.grecaptcha = window.grecaptcha || {
       } catch (err) {
         console.error(`[Reading Orders VN] Lỗi trong ${name}:`, err);
       }
+    }
+
+    // Load reading list tu API -> cap nhat badge
+    if (localStorage.getItem('ro_token')) {
+      loadReadingList().then(function() {
+        updateGlobalBadgeCount();
+        renderDirectoryBadges();
+      });
+    } else {
+      updateGlobalBadgeCount();
+      renderDirectoryBadges();
     }
   }
 
@@ -297,20 +307,22 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function renderDashboardContent() {
-    const container = document.getElementById('ro-dashboard-content');
+    var container = document.getElementById('ro-dashboard-content');
     if (!container) return;
 
-    const currentUser = getCurrentUser();
-    const isLoggedIn = Boolean(currentUser);
+    var currentUser = getCurrentUser();
+    var isLoggedIn = Boolean(currentUser);
 
-    let list = {};
-    try {
-      list = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-    } catch {
-      list = {};
+    if (!isLoggedIn) {
+      container.innerHTML = '<div style="text-align:center;padding:30px 10px;"><div style="font-size:40px;margin-bottom:12px;">\uD83D\uDD12</div><h3 style="margin:0 0 8px 0;font-size:17px;color:#222;">Vui long dang nhap de luu tien do</h3><button id="ro-dash-login-btn" class="ro-btn" style="background:#2563eb;border-color:#2563eb;font-weight:bold;padding:6px 18px;">\uD83D\uDD11 Dang nhap ngay</button></div>';
+      document.getElementById('ro-dash-login-btn') && document.getElementById('ro-dash-login-btn').addEventListener('click', function() { closeDashboardModal(); openAuthModal('login'); });
+      return;
     }
 
-    const items = Object.values(list);
+    container.innerHTML = '<div style="text-align:center;padding:30px;">Dang tai tien do doc...</div>';
+
+    loadReadingList().then(function(list) {
+      var items = Object.values(list || {});
 
     if (!isLoggedIn) {
       container.innerHTML = `
@@ -409,6 +421,7 @@ window.grecaptcha = window.grecaptcha || {
     }).join('');
 
     container.innerHTML = statsGrid + itemsListHtml;
+    }); // end loadReadingList.then
   }
 
   function openDashboardModal() {
@@ -500,20 +513,11 @@ window.grecaptcha = window.grecaptcha || {
     const container = document.getElementById('ro-admin-modal-content');
     if (!container) return;
 
-    let readingList = {};
-    try {
-      readingList = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-    } catch {}
-
-    const trackedCount = Object.keys(readingList).length;
-    let totalReadIssues = 0;
-    Object.values(readingList).forEach(it => { totalReadIssues += (it.completed || 0); });
-
-    let localUsers = {};
-    try {
-      localUsers = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
-    } catch {}
-    const userNames = Object.keys(localUsers);
+    var readingList = _roReadingListCache || {};
+    var trackedCount = Object.keys(readingList).length;
+    var totalReadIssues = 0;
+    Object.values(readingList).forEach(function(it) { totalReadIssues += (it.completed || 0); });
+    var userNames = [];
 
     container.innerHTML = `
       <!-- Thống kê nhanh -->
@@ -607,89 +611,34 @@ window.grecaptcha = window.grecaptcha || {
       </div>
     `;
 
-    // Gán sự kiện Export JSON
-    document.getElementById('ro-btn-export-json')?.addEventListener('click', () => {
-      const backup = {
-        version: '1.0',
-        exportedAt: new Date().toISOString(),
-        site: 'Reading Orders VN',
-        readingList: JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}'),
-        localUsers: JSON.parse(localStorage.getItem('ro_local_users') || '{}'),
-        progress: {}
-      };
-      for (let i = 0; i < localStorage.length; i++) {
-        const k = localStorage.key(i);
-        if (k && k.startsWith('ro_progress_')) {
-          backup.progress[k] = localStorage.getItem(k);
-        }
-      }
-      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `reading_orders_backup_${new Date().toISOString().slice(0, 10)}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
+    document.getElementById('ro-btn-export-json')?.addEventListener('click', function() {
+      alert('Du lieu tien do duoc luu tren Supabase. Dang nhap de truy cap tu bat ky thiet bi.');
     });
 
-    // Gán sự kiện Import JSON
-    document.getElementById('ro-input-import-json')?.addEventListener('change', (e) => {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        try {
-          const data = JSON.parse(event.target.result);
-          if (data.readingList) {
-            localStorage.setItem('ro_global_reading_list', JSON.stringify(data.readingList));
-          }
-          if (data.localUsers) {
-            localStorage.setItem('ro_local_users', JSON.stringify(data.localUsers));
-          }
-          if (data.progress) {
-            for (const [k, v] of Object.entries(data.progress)) {
-              localStorage.setItem(k, v);
-            }
-          }
-          alert('✅ Nhập dữ liệu sao lưu thành công!');
-          renderAdminContent();
+    document.getElementById('ro-input-import-json')?.addEventListener('change', function() {
+      alert('Chuc nang import khong con su dung. Du lieu luu tren Supabase.');
+    });
+
+    document.getElementById('ro-btn-reset-data')?.addEventListener('click', function() {
+      if (confirm('CANH BAO: Xoa het toan bo tien do doc. Ban co chac?')) {
+        var token = localStorage.getItem('ro_token') || '';
+        fetch('/api/auth/progress/all', {
+          method: 'DELETE',
+          headers: token ? { 'Authorization': 'Bearer ' + token } : {}
+        }).then(function() {
+          _roReadingListCache = {};
+          alert('Da xoa toan bo tien do.');
           updateGlobalBadgeCount();
           renderDirectoryBadges();
-        } catch (err) {
-          alert('❌ File sao lưu không hợp lệ: ' + err.message);
-        }
-      };
-      reader.readAsText(file);
-    });
-
-    // Gán sự kiện Reset Data
-    document.getElementById('ro-btn-reset-data')?.addEventListener('click', () => {
-      if (confirm('CẢNH BÁO: Thao tác này sẽ xóa sạch toàn bộ tiến độ đọc trên trình duyệt. Bạn có chắc muốn tiếp tục?')) {
-        const keysToRemove = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k && (k.startsWith('ro_progress_') || k === 'ro_global_reading_list')) {
-            keysToRemove.push(k);
-          }
-        }
-        keysToRemove.forEach(k => localStorage.removeItem(k));
-        alert('Đã đặt lại toàn bộ tiến độ đọc.');
-        renderAdminContent();
-        updateGlobalBadgeCount();
-        renderDirectoryBadges();
+        }).catch(function() {
+          alert('Loi khi xoa. Vui long thu lai.');
+        });
       }
     });
 
-    // Xóa user
-    container.querySelectorAll('.ro-btn-del-user').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const uName = e.target.getAttribute('data-user');
-        if (confirm(`Bạn có chắc muốn xóa tài khoản "${uName}" không?`)) {
-          const lu = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
-          delete lu[uName];
-          localStorage.setItem('ro_local_users', JSON.stringify(lu));
-          renderAdminContent();
-        }
+    container.querySelectorAll('.ro-btn-del-user').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        alert('Xoa tai khoan qua trang /admin/');
       });
     });
 
@@ -701,33 +650,19 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function updateGlobalBadgeCount() {
-    try {
-      const list = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-      const count = Object.keys(list).length;
-
-      const badge = document.getElementById('ro-global-count');
-      if (badge) badge.textContent = count;
-
-      const mobileBadge = document.getElementById('ro-mobile-count');
-      if (mobileBadge) {
-        mobileBadge.textContent = count;
-        mobileBadge.style.display = count > 0 ? 'flex' : 'none';
-      }
-    } catch {
-      const badge = document.getElementById('ro-global-count');
-      if (badge) badge.textContent = '0';
-      const mobileBadge = document.getElementById('ro-mobile-count');
-      if (mobileBadge) mobileBadge.style.display = 'none';
+    var list = _roReadingListCache || {};
+    var count = Object.keys(list).length;
+    var badge = document.getElementById('ro-global-count');
+    if (badge) badge.textContent = count;
+    var mobileBadge = document.getElementById('ro-mobile-count');
+    if (mobileBadge) {
+      mobileBadge.textContent = count;
+      mobileBadge.style.display = count > 0 ? 'flex' : 'none';
     }
   }
 
   function renderDirectoryBadges() {
-    let list = {};
-    try {
-      list = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-    } catch {
-      return;
-    }
+    var list = _roReadingListCache || {};
 
     // Xóa huy hiệu cũ trước khi render lại
     document.querySelectorAll('.ro-dir-badge').forEach(b => b.remove());
@@ -754,31 +689,12 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function updateGlobalReadingList(path, title, universe, total, completed, percent) {
-    let list = {};
-    try {
-      list = JSON.parse(localStorage.getItem('ro_global_reading_list') || '{}');
-    } catch {
-      list = {};
-    }
-
+    if (!_roReadingListCache) _roReadingListCache = {};
     if (completed > 0) {
-      list[path] = {
-        path,
-        title,
-        universe,
-        total,
-        completed,
-        percent,
-        lastReadTime: Date.now()
-      };
+      _roReadingListCache[path] = { path: path, title: title, universe: universe, total: total, completed: completed, percent: percent, lastReadTime: Date.now() };
     } else {
-      delete list[path];
+      delete _roReadingListCache[path];
     }
-
-    try {
-      localStorage.setItem('ro_global_reading_list', JSON.stringify(list));
-    } catch (e) {}
-
     updateGlobalBadgeCount();
     renderDirectoryBadges();
   }
@@ -1110,15 +1026,10 @@ window.grecaptcha = window.grecaptcha || {
     if (_roLinksPromise) {
       return _roLinksPromise;
     }
-    _roLinksPromise = fetch('/assets/issue_links.json?t=' + Date.now())
-      .then(res => {
-        if (!res.ok) throw new Error('Cannot load static links');
-        return res.json();
-      })
-      .catch(() => {
-        return fetch('/api/issue-links').then(res => res.ok ? res.json() : {}).catch(() => ({}));
-      })
-      .then(data => {
+    _roLinksPromise = fetch('/api/issue-links')
+      .then(function(res) { return res.ok ? res.json() : {}; })
+      .catch(function() { return {}; })
+      .then(function(data) {
         _roGlobalLinksCache = data || {};
         return _roGlobalLinksCache;
       });
@@ -1126,23 +1037,12 @@ window.grecaptcha = window.grecaptcha || {
   }
 
   function getCombinedIssueLinks(cleanPath) {
-    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
-    let localLinks = {};
-    try {
-      localLinks = JSON.parse(localStorage.getItem(linkKey) || '{}');
-    } catch {}
-
-    const serverLinks = (_roGlobalLinksCache && _roGlobalLinksCache[cleanPath]) || {};
-    return Object.assign({}, serverLinks, localLinks);
+    return (_roGlobalLinksCache && _roGlobalLinksCache[cleanPath]) || {};
   }
 
   function syncIssueLinksOnPage(container, cleanPath, isAdmin) {
     fetchServerIssueLinks().then(allLinks => {
-      const pageLinks = allLinks[cleanPath] || {};
-      const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
-      let localLinks = {};
-      try { localLinks = JSON.parse(localStorage.getItem(linkKey) || '{}'); } catch {}
-      const combined = Object.assign({}, pageLinks, localLinks);
+      const combined = allLinks[cleanPath] || {};
 
       container.querySelectorAll('.ro-issue-item').forEach(item => {
         const issueId = item.dataset.issueId;
@@ -1470,15 +1370,12 @@ window.grecaptcha = window.grecaptcha || {
   function setupSingleIssuesTracker(mainContainer, cleanPath, isLoggedIn, isAdmin) {
     if (!mainContainer) return;
 
-    const pageKey = 'ro_progress_' + cleanPath.replace(/\//g, '_');
-    const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
+    // orderId = slug cuoi cua cleanPath (de query API)
+    var pathSegs = cleanPath.replace(/^\//, '').split('/').filter(Boolean);
+    var orderId = pathSegs[pathSegs.length - 1] || cleanPath;
+    var pageKey = orderId; // dung cho API toggle
 
-    let savedProgress = {};
-    try {
-      savedProgress = JSON.parse(localStorage.getItem(pageKey) || '{}');
-    } catch {
-      savedProgress = {};
-    }
+    var savedProgress = {};
 
     const savedLinks = getCombinedIssueLinks(cleanPath);
 
@@ -1616,8 +1513,21 @@ window.grecaptcha = window.grecaptcha || {
       openAuthModal('login');
     });
 
-    attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
-    syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
+    if (isLoggedIn) {
+      _loadProgressFromApi(orderId).then(function(prog) {
+        savedProgress = prog;
+        mainContainer.querySelectorAll('.ro-issue-item').forEach(function(itm) {
+          var issueId = itm.dataset.issueId;
+          var cb = itm.querySelector('.ro-issue-checkbox');
+          if (cb && prog[issueId]) { cb.checked = true; itm.classList.add('is-read'); }
+        });
+        attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
+        syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
+      });
+    } else {
+      attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
+      syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
+    }
   }
 
   function setupTpbTracker(tpbPanel, singleTab, cleanPath, isLoggedIn, isAdmin) {
@@ -1630,12 +1540,7 @@ window.grecaptcha = window.grecaptcha || {
     const tpbPageKey = 'ro_progress_tpb_' + cleanPath.replace(/\//g, '_');
     const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
 
-    let savedProgress = {};
-    try {
-      savedProgress = JSON.parse(localStorage.getItem(tpbPageKey) || '{}');
-    } catch {
-      savedProgress = {};
-    }
+    let savedProgress = {}; // Load from API if needed
 
     const savedLinks = getCombinedIssueLinks(cleanPath);
 
@@ -1819,8 +1724,6 @@ window.grecaptcha = window.grecaptcha || {
               btn.style.borderColor = '#d1d5db';
               if (wrapper) wrapper.remove();
             }
-
-            try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
 
             if (!_roGlobalLinksCache) _roGlobalLinksCache = {};
             if (!_roGlobalLinksCache[cleanPath]) _roGlobalLinksCache[cleanPath] = {};
@@ -2078,7 +1981,6 @@ window.grecaptcha = window.grecaptcha || {
           }
 
           // 1. Lưu ngay vào localStorage
-          try { localStorage.setItem(linkKey, JSON.stringify(savedLinks)); } catch {}
 
           // 2. Cập nhật cache bộ nhớ
           if (!_roGlobalLinksCache) _roGlobalLinksCache = {};
@@ -2154,23 +2056,32 @@ window.grecaptcha = window.grecaptcha || {
         topSummary.textContent = `Tiến độ: ${checkedCount}/${totalCount} (${percent}%)`;
       }
 
-      try {
-        localStorage.setItem(pageKey, JSON.stringify(savedProgress));
-      } catch (e) {}
-
+      // Luu progress qua API (debounced)
       const { title, universe } = getPageSeriesInfo();
       updateGlobalReadingList(cleanPath, title, universe, totalCount, checkedCount, percent);
     }
 
     checkboxes.forEach(cb => {
-      cb.onclick = (e) => {
+      cb.onclick = function(e) {
         if (!isLoggedIn) {
           e.preventDefault();
           cb.checked = false;
           openAuthModal('login');
           return false;
         }
+        var item = cb.closest('.ro-issue-item');
+        var issueId = item && item.dataset.issueId;
         updateStats();
+        if (issueId) {
+          var token = localStorage.getItem('ro_token') || '';
+          if (token) {
+            fetch('/api/auth/progress/' + pageKey + '/toggle', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+              body: JSON.stringify({ issueId: issueId })
+            }).catch(function() {});
+          }
+        }
       };
     });
 

@@ -100,20 +100,43 @@ router.get('/search', async (req, res) => {
   }
 });
 
-// GET /api/issue-links - Lấy link đọc công khai cho mọi độc giả (fallback từ assets/issue_links.json)
-router.get('/issue-links', (req, res) => {
+// GET /api/issue-links - Lấy link đọc công khai từ Supabase cho mọi độc giả
+// Trả về: { "/marvel/slug": { "issue_0": "url", ... } }
+router.get('/issue-links', async (req, res) => {
   try {
-    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
-      res.setHeader('Content-Type', 'application/json');
-      res.send(data);
-    } else {
-      res.json({});
-    }
+    const { data: orders } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id, universe_slug, direct_slug, slug');
+
+    const { data: issues } = await supabaseAdmin
+      .from('issues')
+      .select('reading_order_id, sort_order, read_url')
+      .not('read_url', 'is', null)
+      .neq('read_url', '');
+
+    const orderMap: Record<number, { universe_slug: string; direct_slug: string }> = {};
+    (orders || []).forEach((o: any) => {
+      orderMap[o.id] = {
+        universe_slug: o.universe_slug,
+        direct_slug: o.direct_slug || o.slug,
+      };
+    });
+
+    const allLinks: Record<string, Record<string, string>> = {};
+    (issues || []).forEach((issue: any) => {
+      const order = orderMap[issue.reading_order_id];
+      if (!order) return;
+      const cleanPath = `/${order.universe_slug}/${order.direct_slug}`;
+      if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
+      // sort_order là 1-based → issue_N (0-based)
+      allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+    });
+
+    res.json(allLinks);
   } catch (err: any) {
-    res.status(500).json({ success: false, message: err.message });
+    res.status(500).json({});
   }
 });
 
 export default router;
+

@@ -5,6 +5,40 @@ import { supabaseAdmin } from '../database/supabase';
 import { adminOnlyMiddleware, AuthRequest } from '../middleware/auth';
 import { parseReadingOrderHtml } from '../utils/htmlParser';
 
+// Helper: chuyển cleanPath → reading_order slug để query Supabase
+// cleanPath ví dụ: /marvel/ultimate-spider-man-reading-order
+// Thử match direct_slug hoặc universe_slug+slug
+async function findOrderIdByPath(cleanPath: string): Promise<number | null> {
+  // Lấy phần cuối đường dẫn làm direct_slug
+  const segments = cleanPath.replace(/^\//, '').split('/').filter(Boolean);
+  if (segments.length === 0) return null;
+
+  const directSlug = segments[segments.length - 1];
+  const universeSlug = segments.length >= 2 ? segments[segments.length - 2] : null;
+
+  // Tìm theo direct_slug trước
+  let query = supabaseAdmin
+    .from('reading_orders')
+    .select('id')
+    .eq('direct_slug', directSlug);
+
+  if (universeSlug) {
+    query = query.eq('universe_slug', universeSlug);
+  }
+
+  const { data } = await query.maybeSingle();
+  if (data?.id) return data.id;
+
+  // Fallback: tìm theo slug
+  const { data: data2 } = await supabaseAdmin
+    .from('reading_orders')
+    .select('id')
+    .eq('slug', directSlug)
+    .maybeSingle();
+
+  return data2?.id || null;
+}
+
 const router = Router();
 
 // Tất cả các route bên dưới đều bắt buộc phải là Admin
@@ -585,24 +619,60 @@ router.post('/import-reading-order', async (req: AuthRequest, res) => {
   }
 });
 
-// GET /api/admin/issue-links - Lấy danh sách link đọc theo trang hoặc toàn bộ
-router.get('/issue-links', (req: AuthRequest, res) => {
+// GET /api/admin/issue-links - Lấy danh sách link đọc từ Supabase
+router.get('/issue-links', async (req: AuthRequest, res) => {
   try {
-    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
-    let allLinks: Record<string, any> = {};
-    if (fs.existsSync(filePath)) {
-      try {
-        allLinks = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      } catch (e) {
-        allLinks = {};
+    const orderPath = req.query.path as string;
+
+    if (orderPath) {
+      // Lấy links cho 1 trang cụ thể
+      const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+      const orderId = await findOrderIdByPath(clean);
+      if (!orderId) {
+        return res.json({ success: true, data: {} });
       }
+
+      const { data: issues } = await supabaseAdmin
+        .from('issues')
+        .select('sort_order, read_url')
+        .eq('reading_order_id', orderId)
+        .not('read_url', 'is', null)
+        .neq('read_url', '')
+        .order('sort_order', { ascending: true });
+
+      const linkMap: Record<string, string> = {};
+      (issues || []).forEach((issue: any) => {
+        // sort_order là 1-based, issueId frontend là issue_N (0-based)
+        linkMap[`issue_${issue.sort_order - 1}`] = issue.read_url;
+      });
+
+      return res.json({ success: true, data: linkMap });
     }
 
-    const orderPath = req.query.path as string;
-    if (orderPath) {
-      const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
-      return res.json({ success: true, data: allLinks[clean] || {} });
-    }
+    // Lấy toàn bộ links, nhóm theo path
+    const { data: orders } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id, universe_slug, direct_slug');
+
+    const { data: issues } = await supabaseAdmin
+      .from('issues')
+      .select('reading_order_id, sort_order, read_url')
+      .not('read_url', 'is', null)
+      .neq('read_url', '');
+
+    const allLinks: Record<string, Record<string, string>> = {};
+    const orderMap: Record<number, { universe_slug: string; direct_slug: string }> = {};
+    (orders || []).forEach((o: any) => {
+      orderMap[o.id] = { universe_slug: o.universe_slug, direct_slug: o.direct_slug };
+    });
+
+    (issues || []).forEach((issue: any) => {
+      const order = orderMap[issue.reading_order_id];
+      if (!order) return;
+      const cleanPath = `/${order.universe_slug}/${order.direct_slug}`;
+      if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
+      allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+    });
 
     res.json({ success: true, data: allLinks });
   } catch (err: any) {
@@ -610,76 +680,47 @@ router.get('/issue-links', (req: AuthRequest, res) => {
   }
 });
 
-// POST /api/admin/issue-links - Lưu link đọc (ghi file local & trả về success ngay cả trên Vercel read-only)
-router.post('/issue-links', (req: AuthRequest, res) => {
+// POST /api/admin/issue-links - Lưu link đọc vào Supabase (issues.read_url)
+router.post('/issue-links', async (req: AuthRequest, res) => {
   try {
-    const { path: orderPath, issueId, link, links } = req.body;
-    if (!orderPath) {
-      res.status(400).json({ success: false, message: 'Thiếu đường dẫn bài viết (path)' });
+    const { path: orderPath, issueId, link } = req.body;
+    if (!orderPath || !issueId) {
+      res.status(400).json({ success: false, message: 'Thiếu path hoặc issueId' });
       return;
     }
 
     const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
-    const filePath = path.resolve(process.cwd(), 'assets', 'issue_links.json');
-    const dataPath = path.resolve(process.cwd(), 'data', 'issue_links.json');
 
-    let allLinks: Record<string, Record<string, string>> = {};
-    if (fs.existsSync(filePath)) {
-      try {
-        allLinks = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      } catch (e) {
-        allLinks = {};
-      }
+    // Tìm reading order từ path
+    const orderId = await findOrderIdByPath(clean);
+    if (!orderId) {
+      res.status(404).json({ success: false, message: `Không tìm thấy reading order cho path: ${clean}` });
+      return;
     }
 
-    if (!allLinks[clean]) {
-      allLinks[clean] = {};
+    // Chuyển issueId (issue_N, 0-based) sang sort_order (1-based)
+    const issueMatch = String(issueId).match(/^(?:issue_|tpb_)?(\d+)/);
+    if (!issueMatch) {
+      res.status(400).json({ success: false, message: `issueId không hợp lệ: ${issueId}` });
+      return;
     }
+    const sortOrder = parseInt(issueMatch[1], 10) + 1;
+    const cleanLink = link && String(link).trim() ? String(link).trim() : null;
 
-    if (links && typeof links === 'object') {
-      allLinks[clean] = links;
-    } else if (issueId) {
-      if (link && String(link).trim()) {
-        allLinks[clean][issueId] = String(link).trim();
-      } else {
-        delete allLinks[clean][issueId];
-      }
-    }
+    // Cập nhật read_url trong bảng issues
+    const { error } = await supabaseAdmin
+      .from('issues')
+      .update({ read_url: cleanLink })
+      .eq('reading_order_id', orderId)
+      .eq('sort_order', sortOrder);
 
-    // Nếu trang đó không còn link nào, dọn dẹp key
-    if (Object.keys(allLinks[clean]).length === 0) {
-      delete allLinks[clean];
-    }
-
-    const jsonStr = JSON.stringify(allLinks, null, 2);
-
-    // Ghi file assets/issue_links.json
-    // Trên môi trường Vercel (/var/task read-only) writeFileSync sẽ throw EROFS.
-    // Chúng ta bắt lỗi để route không crash, vẫn trả về success (frontend đã lưu localStorage).
-    // Admin khi cần public link cho mọi người phải chạy local save rồi commit file lên git & redeploy.
-    let savedToFile = true;
-    let fileWarning = '';
-    try {
-      fs.writeFileSync(filePath, jsonStr, 'utf8');
-    } catch (fileErr: any) {
-      savedToFile = false;
-      fileWarning = fileErr?.message || 'Không ghi được file';
-    }
-
-    // Ghi file dự phòng data/issue_links.json (tùy chọn)
-    try {
-      if (fs.existsSync(path.dirname(dataPath))) {
-        fs.writeFileSync(dataPath, jsonStr, 'utf8');
-      }
-    } catch (e) {}
+    if (error) throw error;
 
     res.json({
       success: true,
-      savedToFile,
-      message: savedToFile
-        ? 'Đã lưu link đọc vào assets/issue_links.json thành công!'
-        : `Đã lưu tạm trên máy bạn (server môi trường cloud chỉ đọc file). ${fileWarning}`,
-      data: allLinks[clean] || {}
+      message: cleanLink
+        ? 'Đã lưu link đọc vào Supabase thành công!'
+        : 'Đã xóa link đọc khỏi Supabase',
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: 'Lỗi khi lưu link: ' + err.message });
