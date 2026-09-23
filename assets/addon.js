@@ -934,7 +934,6 @@ window.grecaptcha = window.grecaptcha || {
       'alternate starting point', 'điểm bắt đầu thay thế',
       'alternate universe', 'vũ trụ song song',
       'elseworlds story',
-      'patreon exclusive', 'dành riêng cho',
       'storyline takes place', 'cốt truyện diễn ra',
       'takes place in backups', 'diễn ra trong các phần truyện phụ',
       'click here to expand', 'bấm vào đây để mở rộng',
@@ -2309,7 +2308,6 @@ window.grecaptcha = window.grecaptcha || {
     'Final Crisis: Rage of the Red Lanterns #1 doesn’t really have anything to do with the actual Final Crisis event and I suggest reading it after the event as part of the lead up to Blackest Night. If you want to read it as part of this order read it after Final Crisis #1.':
       'Final Crisis: Rage of the Red Lanterns #1 không thực sự liên quan nhiều đến sự kiện Final Crisis chính, bạn nên đọc nó sau sự kiện như một phần dẫn dắt đến Blackest Night. Nếu bạn vẫn muốn đọc trong thứ tự này, hãy đọc nó sau Final Crisis #1.',
     'This event is uncollected in trade paperback format.': 'Sự kiện này chưa được phát hành dưới dạng sách tổng hợp (TPB).',
-    'This reading order is a Patreon exclusive.': 'Thứ tự đọc này dành riêng cho người ủng hộ trên Patreon.',
     'Alternate Universe': 'Vũ trụ song song',
     'Alternate Universe.': 'Vũ trụ song song.',
     'Elseworlds story.': 'Truyện thuộc dòng Elseworlds.',
@@ -2403,11 +2401,8 @@ window.grecaptcha = window.grecaptcha || {
         return res;
       }
     },
-    {
-      re: /This\s+reading\s+order\s+is\s+a\s+(<a[^>]*>Patreon<\/a>)\s+exclusive\.?/i,
-      fn: (_, patreon) => `Thứ tự đọc này dành riêng cho người ủng hộ trên ${patreon}.`
-    }
   ];
+
 
   function translateReadingOrderNote(text) {
     if (!text) return text;

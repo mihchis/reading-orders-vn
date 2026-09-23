@@ -47,8 +47,20 @@ let updatedScriptsCount = 0;
 let updatedLegendCount = 0;
 let updatedYoastCount = 0;
 let updatedCsCssCount = 0;
+let updatedPatreonCount = 0;
 let updatedFilesCount = 0;
 let totalHtmlCount = 0;
+
+// Regex loại bỏ Patreon CSS/JS (plugin patron-plugin-pro)
+const patreonCssRegex = /<link[^>]*patron[^>]*\/>/gi;
+const patreonJsRegex = /<script[^>]*patron[^>]*><\/script>/gi;
+const patreonExclusiveRegex = /This\s+reading\s+order\s+is\s+a\s+<a[^>]*>Patreon<\/a>\s+exclusive\.?/gi;
+const patreonExclusiveViRegex = /Thứ\s+tự\s+đọc\s+này\s+dành\s+riêng\s+cho\s+người\s+ủng\s+hộ\s+trên\s+Patreon\./gi;
+// Xóa ảnh banner Patreon (banner.jpg hoặc các ảnh quảng cáo Patreon)
+const patreonBannerRegex = /<p>\s*<a[^>]*>\s*<img[^>]*(?:banner\.jpg|patreon)[^>]*\/>\s*<\/a>\s*<\/p>/gi;
+const patreonFreeTextRegex = /Nội dung miễn phí — Xem tự do không giới hạn!\s*<\/strong>\s*<\/span>\s*<\/p>\s*<p>\s*<a[^>]*><img[^>]*\/><\/a>\s*<\/p>/gi;
+
+
 
 function walkDir(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -125,6 +137,30 @@ function walkDir(dir) {
         }
       }
 
+      // 7. Xóa toàn bộ Patreon plugin CSS/JS và text paywall
+      {
+        let patreonModified = false;
+        // Xóa <link> CSS của Patreon plugin
+        let r = content.replace(patreonCssRegex, '');
+        if (r !== content) { content = r; patreonModified = true; }
+        // Xóa <script> JS của Patreon plugin
+        r = content.replace(patreonJsRegex, '');
+        if (r !== content) { content = r; patreonModified = true; }
+        // Thay "This reading order is a Patreon exclusive." bằng thông báo miễn phí
+        r = content.replace(patreonExclusiveRegex, 'Nội dung miễn phí — Xem tự do không giới hạn!');
+        if (r !== content) { content = r; patreonModified = true; }
+        r = content.replace(patreonExclusiveViRegex, 'Nội dung miễn phí — Xem tự do không giới hạn!');
+        if (r !== content) { content = r; patreonModified = true; }
+        // Xóa ảnh banner Patreon
+        r = content.replace(patreonBannerRegex, '');
+        if (r !== content) { content = r; patreonModified = true; }
+        // Thay cả block "free text + banner" bằng thông báo đang cập nhật
+        r = content.replace(patreonFreeTextRegex, 'Nội dung miễn phí — Sắp cập nhật danh sách đầy đủ!</strong></span></p>');
+        if (r !== content) { content = r; patreonModified = true; }
+        if (patreonModified) { updatedPatreonCount++; fileModified = true; }
+
+      }
+
       if (fileModified && content !== original) {
         fs.writeFileSync(filePath, content, 'utf8');
         updatedFilesCount++;
@@ -148,3 +184,4 @@ console.log(`  - Footer Scripts: ${updatedScriptsCount}`);
 console.log(`  - Bảng Legend chuyển thành Component: ${updatedLegendCount}`);
 console.log(`  - Thẻ Schema Yoast đã loại bỏ: ${updatedYoastCount}`);
 console.log(`  - CSS inline cs-page-css đã loại bỏ: ${updatedCsCssCount}`);
+console.log(`  - Patreon plugin đã xóa: ${updatedPatreonCount}`);

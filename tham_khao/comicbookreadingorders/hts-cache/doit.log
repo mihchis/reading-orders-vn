@@ -1,0 +1,8 @@
+-qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2%f#f -F "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" -%F "" -%l en-US,en;q=0.9,vi;q=0.8 -%X "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" -%X "Accept-Language: en-US,en;q=0.9,vi;q=0.8" -%X "Sec-Ch-Ua: \"Not;A=Brand\";v=\"24\", \"Chromium\";v=\"128\", \"Google Chrome\";v=\"128\"" -%X "Sec-Ch-Ua-Mobile: ?0" -%X "Sec-Ch-Ua-Platform: \"Windows\"" -%X "Sec-Fetch-Dest: document" -%X "Sec-Fetch-Mode: navigate" -%X "Sec-Fetch-Site: none" -%X "Sec-Fetch-User: ?1" -%X "Upgrade-Insecure-Requests: 1" https://comicbookreadingorders.com/ -O1 "\"D:\\code_dao\\reading_orders\\tham_khao\\comicbookreadingorders\"" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar -*wp-json* -*recaptcha* -*moz-extension* -*?p=*
+File generated automatically on Tue, 22 Sep 2026 19:25:48, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+
