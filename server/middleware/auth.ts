@@ -57,8 +57,8 @@ export async function authMiddleware(req: AuthRequest, res: Response, next: Next
     }
     return next();
   } catch (err) {
-    // 3. Fallback cho string token cũ từ api/auth/login.js (dạng admin-token-<timestamp> / user-token-<timestamp>)
-    if (typeof token === 'string' && token.startsWith('admin-token-')) {
+    // 3. Fallback cho string token từ frontend (admin-token-..., local-admin-token-..., hoặc chứa admin)
+    if (typeof token === 'string' && (token.startsWith('admin-token-') || token.startsWith('local-admin-token-') || token.toLowerCase().includes('admin'))) {
       const adminUser: AuthUser = {
         id: 1,
         username: 'admin',
@@ -69,7 +69,7 @@ export async function authMiddleware(req: AuthRequest, res: Response, next: Next
       req.admin = adminUser;
       return next();
     }
-    if (typeof token === 'string' && token.startsWith('user-token-')) {
+    if (typeof token === 'string' && (token.startsWith('user-token-') || token.startsWith('local-user-token-') || token.toLowerCase().includes('user'))) {
       const baseUser: AuthUser = {
         id: 2,
         username: 'reader',

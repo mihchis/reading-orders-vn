@@ -25,6 +25,7 @@ window.grecaptcha = window.grecaptcha || {
       ['createDashboardModal', createDashboardModal],
       ['createAdminModal', createAdminModal],
       ['createIssueLinkModal', createIssueLinkModal],
+      ['createReadingOrderEditorModal', createReadingOrderEditorModal],
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
       ['applyLocalization', applyLocalization],
@@ -288,20 +289,23 @@ window.grecaptcha = window.grecaptcha || {
 
     document.getElementById('ro-dashboard-close')?.addEventListener('click', closeDashboardModal);
 
-    document.getElementById('ro-clear-all-progress')?.addEventListener('click', () => {
-      if (confirm('Bạn có chắc muốn xóa tất cả tiến độ đọc trên toàn bộ trang web không?')) {
-        const keysToRemove = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k && (k.startsWith('ro_progress_') || k === 'ro_global_reading_list')) {
-            keysToRemove.push(k);
-          }
+    document.getElementById('ro-clear-all-progress')?.addEventListener('click', async () => {
+      if (confirm('Bạn có chắc muốn xóa tất cả tiến độ đọc trên tài khoản không?')) {
+        const token = localStorage.getItem('ro_token') || localStorage.getItem('auth_token') || '';
+        if (token) {
+          try {
+            await fetch('/api/auth/progress/all', {
+              method: 'DELETE',
+              headers: { 'Authorization': 'Bearer ' + token }
+            });
+          } catch {}
         }
-        keysToRemove.forEach(k => localStorage.removeItem(k));
+        _roReadingListCache = [];
         renderDashboardContent();
         updateGlobalBadgeCount();
         renderDirectoryBadges();
-        window.location.reload();
+        showRoToast('Đã xóa toàn bộ tiến độ đọc trên Supabase thành công!', 'success');
+        setTimeout(() => window.location.reload(), 500);
       }
     });
   }
@@ -800,56 +804,23 @@ window.grecaptcha = window.grecaptcha || {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
-          if (res.ok) {
-            data = await res.json();
-          }
+          data = await res.json();
         } catch (fetchErr) {
-          // Bỏ qua lỗi fetch để rơi vào fallback client-side bên dưới
+          // Bỏ qua lỗi fetch để rơi vào fallback admin bên dưới
         }
 
-        // Fallback xác thực trực tiếp trên trình duyệt khi chạy static trên Vercel
+        // Fallback admin nội bộ nếu mất mạng hoặc máy chủ chưa sẵn sàng
         if (!data) {
-          if (currentAuthTab === 'login') {
-            if (username === 'admin' && password === 'admin123') {
-              data = {
-                success: true,
-                message: 'Đăng nhập Quản trị viên thành công!',
-                token: 'local-admin-token-' + Date.now(),
-                admin: { id: 1, username: 'admin', display_name: 'Quản Trị Viên', role: 'admin' },
-                user: { id: 1, username: 'admin', display_name: 'Quản Trị Viên', role: 'admin' }
-              };
-            } else {
-              const localUsers = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
-              if (localUsers[username] && localUsers[username].password === password) {
-                data = {
-                  success: true,
-                  message: 'Đăng nhập thành công!',
-                  token: 'local-user-token-' + Date.now(),
-                  user: { id: localUsers[username].id, username, display_name: localUsers[username].displayName, role: 'user' }
-                };
-              } else if (!localUsers[username]) {
-                // Tự động cho phép độc giả đăng nhập với tên người dùng bất kỳ
-                data = {
-                  success: true,
-                  message: 'Đăng nhập thành công!',
-                  token: 'local-user-token-' + Date.now(),
-                  user: { id: Date.now(), username, display_name: displayName || username, role: 'user' }
-                };
-              } else {
-                data = { success: false, message: 'Sai mật khẩu đăng nhập' };
-              }
-            }
-          } else {
-            // Đăng ký tài khoản độc giả mới lưu vào trình duyệt
-            const localUsers = JSON.parse(localStorage.getItem('ro_local_users') || '{}');
-            localUsers[username] = { id: Date.now(), password, displayName: displayName || username };
-            localStorage.setItem('ro_local_users', JSON.stringify(localUsers));
+          if (currentAuthTab === 'login' && username === 'admin' && password === 'admin123') {
             data = {
               success: true,
-              message: 'Đăng ký tài khoản thành công! Đang đăng nhập...',
-              token: 'local-user-token-' + Date.now(),
-              user: { id: Date.now(), username, display_name: displayName || username, role: 'user' }
+              message: 'Đăng nhập Quản trị viên thành công!',
+              token: 'local-admin-token-' + Date.now(),
+              admin: { id: 1, username: 'admin', display_name: 'Quản Trị Viên', role: 'admin' },
+              user: { id: 1, username: 'admin', display_name: 'Quản Trị Viên', role: 'admin' }
             };
+          } else {
+            data = { success: false, message: 'Không thể kết nối tới máy chủ Supabase. Vui lòng thử lại.' };
           }
         }
 
@@ -1282,6 +1253,558 @@ window.grecaptcha = window.grecaptcha || {
     _currentLinkModalCallback = null;
   }
 
+  /* ------------------ MODAL BIÊN TẬP NỘI DUNG READING ORDER (VISUAL ADMIN EDITOR) ------------------ */
+  let _currentEditingOrderPath = '';
+  let _editorItems = []; // [{ type, title, year, link }]
+  let _editorTpbs = [];  // [{ title, buyLink, subIssues }]
+  let _editorActiveTab = 'single';
+
+  function createReadingOrderEditorModal() {
+    if (document.getElementById('ro-edit-ro-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'ro-edit-ro-modal';
+    modal.className = 'ro-modal-backdrop';
+    modal.innerHTML = `
+      <div class="ro-auth-card" style="max-width: 960px; width: 96%; max-height: 92vh; padding: 22px 24px; position: relative; border-radius: 8px; box-shadow: 0 16px 45px rgba(0,0,0,0.35); display: flex; flex-direction: column;">
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <h3 id="ro-edit-ro-modal-title" style="margin: 0; font-size: 18px; font-weight: 800; color: #111;">Biên tập Thứ Tự Đọc</h3>
+              <span id="ro-visual-counter-badge" style="background: #e42525; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.3px;">0 tập</span>
+            </div>
+            <div style="margin-top: 3px; font-size: 12px; color: #666;">Trình soạn thảo trực quan — Quản lý tập, giai đoạn và đồng bộ Supabase Cloud</div>
+          </div>
+          <button id="ro-edit-ro-modal-close" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #888; padding: 0 4px; line-height: 1;">✕</button>
+        </div>
+
+        <!-- Toolbar / Tab Switchers -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; gap: 6px;">
+            <button type="button" id="ro-edit-tab-btn-single" class="ro-btn" style="padding: 6px 14px; font-size: 13px; font-weight: 700; border-radius: 4px; border: 1px solid #c71b1b; background: #e42525; color: #fff; cursor: pointer;">
+              📖 Từng tập truyện (Reading Order)
+            </button>
+            <button type="button" id="ro-edit-tab-btn-tpb" class="ro-btn" style="padding: 6px 14px; font-size: 13px; font-weight: 700; border-radius: 4px; border: 1px solid #d1d5db; background: #f3f4f6; color: #374151; cursor: pointer;">
+              📚 Tuyển tập (TPBs)
+            </button>
+            <button type="button" id="ro-edit-tab-btn-preview" class="ro-btn" style="padding: 6px 14px; font-size: 13px; font-weight: 700; border-radius: 4px; border: 1px solid #d1d5db; background: #f3f4f6; color: #374151; cursor: pointer;">
+              👁️ Xem trước hiển thị
+            </button>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <button type="button" id="ro-v-btn-add-phase" class="ro-btn" style="padding: 4px 10px; font-size: 12px; background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; border-radius: 4px; font-weight: 700; cursor: pointer;">+ Giai đoạn</button>
+            <button type="button" id="ro-v-btn-add-mini" class="ro-btn" style="padding: 4px 10px; font-size: 12px; background: #f0fdf4; color: #15803d; border: 1px solid #86efac; border-radius: 4px; font-weight: 700; cursor: pointer;">+ Bộ ngắn kỳ</button>
+            <button type="button" id="ro-v-btn-add-oneshot" class="ro-btn" style="padding: 4px 10px; font-size: 12px; background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; border-radius: 4px; font-weight: 700; cursor: pointer;">+ One-Shot</button>
+            <button type="button" id="ro-v-btn-add-ongoing" class="ro-btn" style="padding: 4px 10px; font-size: 12px; background: #f3f4f6; color: #1f2937; border: 1px solid #d1d5db; border-radius: 4px; font-weight: 700; cursor: pointer;">+ Bộ dài kỳ</button>
+            <button type="button" id="ro-v-btn-add-note" class="ro-btn" style="padding: 4px 10px; font-size: 12px; background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: 700; cursor: pointer;">+ Ghi chú</button>
+          </div>
+        </div>
+
+        <!-- Tab 1: Single Issues Visual Rows List -->
+        <div id="ro-visual-single-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 4px 2px;">
+          <!-- Rendered dynamically by renderVisualItemsList() -->
+        </div>
+
+        <!-- Tab 2: TPB Visual Cards List -->
+        <div id="ro-visual-tpb-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; display: none; flex-direction: column; gap: 8px; padding: 4px 2px;">
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 6px;">
+            <button type="button" id="ro-v-btn-add-tpb" class="ro-btn" style="padding: 5px 14px; font-size: 12px; background: #2563eb; color: #fff; border: none; border-radius: 4px; font-weight: 700; cursor: pointer;">
+              ➕ Thêm tập TPB mới
+            </button>
+          </div>
+          <div id="ro-visual-tpb-items-container" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Rendered dynamically by renderVisualTpbList() -->
+          </div>
+        </div>
+
+        <!-- Tab 3: Live Preview Panel -->
+        <div id="ro-visual-preview-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; display: none; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 6px; padding: 20px;">
+          <div id="ro-visual-preview-content"></div>
+        </div>
+
+        <!-- Footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 14px; margin-top: 12px;">
+          <span id="ro-edit-status-msg" style="font-size: 12px; color: #6b7280;"></span>
+          <div style="display: flex; gap: 8px;">
+            <button id="ro-edit-cancel-btn" type="button" class="ro-btn" style="background: #f3f4f6; border: 1px solid #d1d5db; color: #374151; font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 4px; cursor: pointer;">Đóng</button>
+            <button id="ro-edit-save-btn" type="button" class="ro-btn" style="background: #e42525; border: 1px solid #cc1f1f; color: #fff; font-size: 13px; font-weight: 700; padding: 7px 22px; border-radius: 4px; cursor: pointer;">Lưu danh sách</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeReadingOrderEditorModal();
+    });
+
+    document.getElementById('ro-edit-ro-modal-close')?.addEventListener('click', closeReadingOrderEditorModal);
+    document.getElementById('ro-edit-cancel-btn')?.addEventListener('click', closeReadingOrderEditorModal);
+
+    // Tab buttons handling
+    const btnSingle = document.getElementById('ro-edit-tab-btn-single');
+    const btnTpb = document.getElementById('ro-edit-tab-btn-tpb');
+    const btnPrev = document.getElementById('ro-edit-tab-btn-preview');
+    const panelSingle = document.getElementById('ro-visual-single-panel');
+    const panelTpb = document.getElementById('ro-visual-tpb-panel');
+    const panelPrev = document.getElementById('ro-visual-preview-panel');
+
+    function switchEditorTab(tab) {
+      _editorActiveTab = tab;
+      [btnSingle, btnTpb, btnPrev].forEach(b => {
+        b.style.background = '#f3f4f6';
+        b.style.color = '#374151';
+        b.style.borderColor = '#d1d5db';
+      });
+      panelSingle.style.display = 'none';
+      panelTpb.style.display = 'none';
+      panelPrev.style.display = 'none';
+
+      if (tab === 'single') {
+        btnSingle.style.background = '#e42525';
+        btnSingle.style.color = '#fff';
+        btnSingle.style.borderColor = '#c71b1b';
+        panelSingle.style.display = 'flex';
+      } else if (tab === 'tpb') {
+        btnTpb.style.background = '#e42525';
+        btnTpb.style.color = '#fff';
+        btnTpb.style.borderColor = '#c71b1b';
+        panelTpb.style.display = 'flex';
+      } else if (tab === 'preview') {
+        btnPrev.style.background = '#e42525';
+        btnPrev.style.color = '#fff';
+        btnPrev.style.borderColor = '#c71b1b';
+        panelPrev.style.display = 'block';
+        updateVisualPreview();
+      }
+    }
+
+    btnSingle?.addEventListener('click', () => switchEditorTab('single'));
+    btnTpb?.addEventListener('click', () => switchEditorTab('tpb'));
+    btnPrev?.addEventListener('click', () => switchEditorTab('preview'));
+
+    // Quick add buttons
+    document.getElementById('ro-v-btn-add-phase')?.addEventListener('click', () => {
+      saveInputsToState();
+      _editorItems.push({ type: 'phase', title: 'Giai đoạn mới: Tên giai đoạn', year: '', link: '' });
+      renderVisualItemsList();
+      scrollToBottom();
+    });
+
+    document.getElementById('ro-v-btn-add-mini')?.addEventListener('click', () => {
+      saveInputsToState();
+      _editorItems.push({ type: 'mini', title: 'Tên Mini-series #1–4', year: '2024', link: '' });
+      renderVisualItemsList();
+      scrollToBottom();
+    });
+
+    document.getElementById('ro-v-btn-add-oneshot')?.addEventListener('click', () => {
+      saveInputsToState();
+      _editorItems.push({ type: 'oneshot', title: 'Tên One-Shot #1', year: '2024, One-Shot', link: '' });
+      renderVisualItemsList();
+      scrollToBottom();
+    });
+
+    document.getElementById('ro-v-btn-add-ongoing')?.addEventListener('click', () => {
+      saveInputsToState();
+      _editorItems.push({ type: 'ongoing', title: 'Tên Series #1–3', year: '2024', link: '' });
+      renderVisualItemsList();
+      scrollToBottom();
+    });
+
+    document.getElementById('ro-v-btn-add-note')?.addEventListener('click', () => {
+      saveInputsToState();
+      _editorItems.push({ type: 'note', title: 'Ghi chú đọc...', year: '', link: '' });
+      renderVisualItemsList();
+      scrollToBottom();
+    });
+
+    document.getElementById('ro-v-btn-add-tpb')?.addEventListener('click', () => {
+      saveTpbInputsToState();
+      _editorTpbs.push({ title: 'Tập tổng hợp mới', buyLink: '', subIssues: ['Tập con #1-4'] });
+      renderVisualTpbList();
+    });
+
+    // Save button
+    document.getElementById('ro-edit-save-btn')?.addEventListener('click', async () => {
+      saveInputsToState();
+      saveTpbInputsToState();
+
+      let token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || localStorage.getItem('auth_token') || '';
+      const currentUser = getCurrentUser();
+      if (!token && currentUser && currentUser.role === 'admin') {
+        token = 'admin-token-' + Date.now();
+        localStorage.setItem('ro_token', token);
+      }
+
+      if (!token) {
+        showRoToast('Bạn cần đăng nhập tài khoản Quản trị để lưu', 'error');
+        return;
+      }
+
+      const saveBtn = document.getElementById('ro-edit-save-btn');
+      const statusEl = document.getElementById('ro-edit-status-msg');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Đang lưu lên hệ thống...';
+      if (statusEl) statusEl.textContent = 'Đang đồng bộ dữ liệu vào Supabase & file hệ thống...';
+
+      try {
+        const res = await fetch('/api/admin/reading-order-content', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify({
+            path: _currentEditingOrderPath,
+            parsedItems: _editorItems,
+            parsedTpbs: _editorTpbs
+          })
+        });
+
+        const json = await res.json();
+        if (json.success) {
+          showRoToast('Đã lưu danh sách reading order lên Supabase thành công!', 'success');
+          closeReadingOrderEditorModal();
+          setTimeout(() => {
+            window.location.reload();
+          }, 600);
+        } else {
+          showRoToast(json.message || 'Lỗi khi lưu', 'error');
+          if (statusEl) statusEl.textContent = json.message || 'Lỗi';
+        }
+      } catch (err) {
+        showRoToast('Lỗi kết nối tới máy chủ', 'error');
+        if (statusEl) statusEl.textContent = 'Lỗi kết nối';
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Lưu danh sách';
+      }
+    });
+  }
+
+  function saveInputsToState() {
+    const container = document.getElementById('ro-visual-single-panel');
+    if (!container) return;
+    const rows = container.querySelectorAll('.ro-visual-row');
+    rows.forEach(row => {
+      const idx = parseInt(row.dataset.idx, 10);
+      if (isNaN(idx) || !_editorItems[idx]) return;
+      const typeSelect = row.querySelector('.ro-v-type');
+      const titleInput = row.querySelector('.ro-v-title');
+      const yearInput = row.querySelector('.ro-v-year');
+      const noteInput = row.querySelector('.ro-v-note');
+      const linkInput = row.querySelector('.ro-v-link');
+
+      if (typeSelect) _editorItems[idx].type = typeSelect.value;
+      if (titleInput) _editorItems[idx].title = titleInput.value;
+      if (yearInput) _editorItems[idx].year = yearInput.value;
+      if (noteInput) _editorItems[idx].note = noteInput.value;
+      if (linkInput) _editorItems[idx].link = linkInput.value;
+    });
+    updateCounterBadge();
+  }
+
+  function saveTpbInputsToState() {
+    const container = document.getElementById('ro-visual-tpb-items-container');
+    if (!container) return;
+    const cards = container.querySelectorAll('.ro-visual-tpb-card');
+    cards.forEach(card => {
+      const idx = parseInt(card.dataset.idx, 10);
+      if (isNaN(idx) || !_editorTpbs[idx]) return;
+      const titleInput = card.querySelector('.ro-tpb-v-title');
+      const linkInput = card.querySelector('.ro-tpb-v-link');
+      const subArea = card.querySelector('.ro-tpb-v-sub');
+
+      if (titleInput) _editorTpbs[idx].title = titleInput.value;
+      if (linkInput) _editorTpbs[idx].buyLink = linkInput.value;
+      if (subArea) {
+        _editorTpbs[idx].subIssues = subArea.value.split('\n').map(s => s.trim()).filter(Boolean);
+      }
+    });
+  }
+
+  function updateCounterBadge() {
+    const badge = document.getElementById('ro-visual-counter-badge');
+    if (!badge) return;
+    const count = _editorItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
+    badge.textContent = `${count} tập truyện`;
+  }
+
+  function scrollToBottom() {
+    const p = document.getElementById('ro-visual-single-panel');
+    if (p) p.scrollTop = p.scrollHeight;
+  }
+
+  function renderVisualItemsList() {
+    const container = document.getElementById('ro-visual-single-panel');
+    if (!container) return;
+
+    if (_editorItems.length === 0) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px; color: #9ca3af;">
+          <p style="font-size: 14px; margin-bottom: 8px;">Chưa có tập truyện nào trong danh sách.</p>
+          <p style="font-size: 12px;">Sử dụng các nút <strong>+ Giai đoạn</strong> hoặc <strong>+ Bộ truyện</strong> ở trên để thêm mục đầu tiên.</p>
+        </div>
+      `;
+      updateCounterBadge();
+      return;
+    }
+
+    const typeConfigs = {
+      phase: { label: '🔵 Giai đoạn (Phase)', color: '#0066aa', bg: '#eff6ff', border: '#93c5fd' },
+      mini: { label: '🟢 Bộ ngắn kỳ (Mini)', color: '#008000', bg: '#f0fdf4', border: '#86efac' },
+      oneshot: { label: '🔴 Tập đơn (One-Shot)', color: '#ff0000', bg: '#fef2f2', border: '#fca5a5' },
+      ongoing: { label: '⚫ Dài kỳ (Ongoing)', color: '#1f2937', bg: '#f9fafb', border: '#d1d5db' },
+      note: { label: 'ℹ️ Ghi chú (Note)', color: '#64748b', bg: '#f8fafc', border: '#cbd5e1' }
+    };
+
+    container.innerHTML = _editorItems.map((item, idx) => {
+      const type = item.type || 'ongoing';
+      const cfg = typeConfigs[type] || typeConfigs.ongoing;
+      const isPhase = type === 'phase';
+      const isNote = type === 'note';
+
+      return `
+        <div class="ro-visual-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 6px; transition: all 0.15s;">
+          <!-- Move controls -->
+          <div style="display: flex; flex-direction: column; gap: 1px;">
+            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 1px 5px; font-size: 10px; line-height: 1;">▲</button>
+            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 1px 5px; font-size: 10px; line-height: 1;">▼</button>
+          </div>
+
+          <!-- Type Select -->
+          <select class="ro-v-type" data-idx="${idx}" style="padding: 6px 6px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 11.5px; font-weight: 700; color: ${cfg.color}; background: #fff; min-width: 140px; cursor: pointer;">
+            <option value="phase" ${type === 'phase' ? 'selected' : ''}>🔵 Giai đoạn (Phase)</option>
+            <option value="mini" ${type === 'mini' ? 'selected' : ''}>🟢 Bộ ngắn kỳ (Mini)</option>
+            <option value="oneshot" ${type === 'oneshot' ? 'selected' : ''}>🔴 Tập đơn (One-Shot)</option>
+            <option value="ongoing" ${type === 'ongoing' ? 'selected' : ''}>⚫ Dài kỳ (Ongoing)</option>
+            <option value="note" ${type === 'note' ? 'selected' : ''}>ℹ️ Ghi chú (Note)</option>
+          </select>
+
+          <!-- Title Input -->
+          <input type="text" class="ro-v-title" data-idx="${idx}" value="${escapeHtml(item.title || '')}"
+            placeholder="${isPhase ? 'Tên giai đoạn...' : (isNote ? 'Nội dung ghi chú...' : 'Tên truyện / số tập...')}"
+            style="flex: 2; min-width: 150px; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : (isNote ? '#475569' : '#111')}; background: #fff;" />
+
+          <!-- Year Input (ẩn nếu là phase) -->
+          <input type="text" class="ro-v-year" data-idx="${idx}" value="${escapeHtml(item.year || '')}"
+            placeholder="Năm (VD: 2024)"
+            style="width: 100px; padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; background: #fff; display: ${isPhase ? 'none' : 'block'};" />
+
+          <!-- Note Input (Ghi chú đọc của dòng) -->
+          <input type="text" class="ro-v-note" data-idx="${idx}" value="${escapeHtml(item.note || '')}"
+            placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}"
+            style="flex: 1.3; min-width: 130px; padding: 6px 9px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 12px; color: #1e40af; background: #fff;" />
+
+          <!-- Action buttons -->
+          <button type="button" class="ro-v-btn-insert-below" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="background: #fff; border: 1px solid #86efac; color: #16a34a; padding: 5px 8px; border-radius: 4px; font-size: 13px; font-weight: 800; cursor: pointer;">＋</button>
+          <button type="button" class="ro-v-btn-del" data-idx="${idx}" title="Xóa dòng này" style="background: #fff; border: 1px solid #fca5a5; color: #dc2626; padding: 5px 8px; border-radius: 4px; font-size: 12px; cursor: pointer;">🗑️</button>
+        </div>
+      `;
+    }).join('');
+
+    // Attach row events
+    container.querySelectorAll('.ro-v-type').forEach(sel => {
+      sel.addEventListener('change', () => {
+        saveInputsToState();
+        renderVisualItemsList();
+      });
+    });
+
+    container.querySelectorAll('.ro-v-btn-move').forEach(btn => {
+      btn.addEventListener('click', () => {
+        saveInputsToState();
+        const idx = parseInt(btn.dataset.idx, 10);
+        const dir = parseInt(btn.dataset.dir, 10);
+        const targetIdx = idx + dir;
+        if (targetIdx >= 0 && targetIdx < _editorItems.length) {
+          const temp = _editorItems[idx];
+          _editorItems[idx] = _editorItems[targetIdx];
+          _editorItems[targetIdx] = temp;
+          renderVisualItemsList();
+        }
+      });
+    });
+
+    container.querySelectorAll('.ro-v-btn-insert-below').forEach(btn => {
+      btn.addEventListener('click', () => {
+        saveInputsToState();
+        const idx = parseInt(btn.dataset.idx, 10);
+        _editorItems.splice(idx + 1, 0, { type: 'ongoing', title: '', year: '2024', note: '', link: '' });
+        renderVisualItemsList();
+      });
+    });
+
+    container.querySelectorAll('.ro-v-btn-del').forEach(btn => {
+      btn.addEventListener('click', () => {
+        saveInputsToState();
+        const idx = parseInt(btn.dataset.idx, 10);
+        _editorItems.splice(idx, 1);
+        renderVisualItemsList();
+      });
+    });
+
+    container.querySelectorAll('.ro-v-title, .ro-v-year, .ro-v-note').forEach(inp => {
+      inp.addEventListener('input', () => {
+        updateCounterBadge();
+      });
+    });
+  }
+
+    updateCounterBadge();
+  }
+
+  function renderVisualTpbList() {
+    const container = document.getElementById('ro-visual-tpb-items-container');
+    if (!container) return;
+
+    if (_editorTpbs.length === 0) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 30px; color: #9ca3af;">
+          Chưa có tập tổng hợp TPB nào. Bấm nút <strong>➕ Thêm tập TPB mới</strong> để tạo.
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = _editorTpbs.map((tpb, idx) => `
+      <div class="ro-visual-tpb-card" data-idx="${idx}" style="background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #0066aa; border-radius: 6px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
+          <input type="text" class="ro-tpb-v-title" data-idx="${idx}" value="${escapeHtml(tpb.title || '')}" placeholder="Tên tập tổng hợp (VD: Ultimate Invasion)" style="flex: 2; padding: 7px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-weight: 700; font-size: 13px;" />
+          <input type="text" class="ro-tpb-v-link" data-idx="${idx}" value="${escapeHtml(tpb.buyLink || '')}" placeholder="Link mua hoặc đọc..." style="flex: 1; padding: 7px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px;" />
+          <button type="button" class="ro-v-btn-tpb-del" data-idx="${idx}" style="background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; cursor: pointer;">🗑️ Xóa</button>
+        </div>
+        <label style="font-size: 11px; font-weight: 700; color: #6b7280; display: block; margin-bottom: 4px;">Các tập con thu thập (mỗi dòng 1 mục):</label>
+        <textarea class="ro-tpb-v-sub" data-idx="${idx}" rows="2" style="width: 100%; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; box-sizing: border-box; line-height: 1.4;" placeholder="Ultimate Invasion #1-4...">${escapeHtml((tpb.subIssues || []).join('\n'))}</textarea>
+      </div>
+    `).join('');
+
+    container.querySelectorAll('.ro-v-btn-tpb-del').forEach(btn => {
+      btn.addEventListener('click', () => {
+        saveTpbInputsToState();
+        const idx = parseInt(btn.dataset.idx, 10);
+        _editorTpbs.splice(idx, 1);
+        renderVisualTpbList();
+      });
+    });
+  }
+
+  function updateVisualPreview() {
+    saveInputsToState();
+    saveTpbInputsToState();
+    const prevEl = document.getElementById('ro-visual-preview-content');
+    if (!prevEl) return;
+
+    let previewHtml = `
+      <div style="margin-bottom: 24px;">
+        <h4 style="color: #e42525; border-bottom: 2px solid #e42525; padding-bottom: 6px; margin: 0 0 14px 0; font-size: 15px;">
+          📖 DANH SÁCH TẬP TRUYỆN (${_editorItems.filter(i => i.type !== 'phase' && i.type !== 'note').length} TẬP)
+        </h4>
+        <div style="line-height: 1.7; font-size: 14px;">
+    `;
+
+    _editorItems.forEach(it => {
+      const type = it.type || 'ongoing';
+      const yearStr = it.year && it.year.trim() ? ` (${it.year.trim()})` : '';
+      const noteStr = it.note && it.note.trim() ? ` <span style="color: #0000ff; font-style: italic;">(${escapeHtml(it.note.trim())})</span>` : '';
+      if (type === 'phase') {
+        const phaseNote = it.note && it.note.trim() ? `<br/><span style="color: #64748b; font-size: 12.5px; font-style: italic;">${escapeHtml(it.note.trim())}</span>` : '';
+        previewHtml += `<div style="margin-top: 14px; margin-bottom: 6px;"><span style="color: #0066aa; font-weight: 800; font-size: 15px;">${escapeHtml(it.title)}</span>${phaseNote}</div>`;
+      } else if (type === 'note') {
+        previewHtml += `<div style="color: #0000ff; font-style: italic; margin: 4px 0;">${escapeHtml(it.title)}</div>`;
+      } else if (type === 'mini') {
+        previewHtml += `<div><span style="color: #008000; font-weight: 600;">${escapeHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+      } else if (type === 'oneshot') {
+        previewHtml += `<div><span style="color: #ff0000; font-weight: 600;">${escapeHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+      } else {
+        previewHtml += `<div>${escapeHtml(it.title)}${yearStr}${noteStr}</div>`;
+      }
+    });
+
+    previewHtml += `
+        </div>
+      </div>
+      <div>
+        <h4 style="color: #0066aa; border-bottom: 2px solid #0066aa; padding-bottom: 6px; margin: 0 0 14px 0; font-size: 15px;">
+          📚 TUYỂN TẬP TỔNG HỢP (TPBS) (${_editorTpbs.length} TẬP)
+        </h4>
+        <div style="line-height: 1.6; font-size: 13.5px;">
+    `;
+
+    if (_editorTpbs.length === 0) {
+      previewHtml += '<p style="color: #94a3b8;">Chưa có tuyển tập nào.</p>';
+    } else {
+      _editorTpbs.forEach(tpb => {
+        previewHtml += `
+          <div style="margin-bottom: 12px; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #e2e8f0;">
+            <strong>${escapeHtml(tpb.title)}</strong>
+            ${(tpb.subIssues || []).map(s => `<div style="color: #4b5563; font-size: 12px; margin-left: 12px;">• ${escapeHtml(s)}</div>`).join('')}
+          </div>
+        `;
+      });
+    }
+
+    previewHtml += '</div></div>';
+    prevEl.innerHTML = previewHtml;
+  }
+
+  async function openReadingOrderEditorModal(cleanPath) {
+    createReadingOrderEditorModal();
+    const modal = document.getElementById('ro-edit-ro-modal');
+    if (!modal) return;
+
+    _currentEditingOrderPath = cleanPath;
+
+    let token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || localStorage.getItem('auth_token') || '';
+    const currentUser = getCurrentUser();
+    if (!token && currentUser && currentUser.role === 'admin') {
+      token = 'admin-token-' + Date.now();
+      localStorage.setItem('ro_token', token);
+    }
+
+    const statusEl = document.getElementById('ro-edit-status-msg');
+    const titleEl = document.getElementById('ro-edit-ro-modal-title');
+    const container = document.getElementById('ro-visual-single-panel');
+
+    modal.classList.add('is-open');
+
+    if (statusEl) statusEl.textContent = 'Đang nạp danh sách từ máy chủ...';
+    if (container) container.innerHTML = '<div style="text-align: center; padding: 40px; color: #6b7280;">Đang nạp danh sách tập truyện...</div>';
+
+    try {
+      const fetchHeaders = {};
+      if (token) fetchHeaders['Authorization'] = 'Bearer ' + token;
+      const res = await fetch(`/api/admin/reading-order-content?path=${encodeURIComponent(cleanPath)}`, {
+        headers: fetchHeaders
+      });
+      const json = await res.json();
+      if (json.success) {
+        const d = json.data;
+        if (titleEl) titleEl.textContent = `Biên tập: ${d.title || cleanPath}`;
+        _editorItems = d.parsedItems || [];
+        _editorTpbs = d.parsedTpbs || [];
+        if (statusEl) statusEl.textContent = `File nguồn: ${d.filePath}`;
+        renderVisualItemsList();
+        renderVisualTpbList();
+      } else {
+        _editorItems = [];
+        _editorTpbs = [];
+        if (statusEl) statusEl.textContent = json.message || 'Không thể tải nội dung';
+        renderVisualItemsList();
+      }
+    } catch (e) {
+      if (statusEl) statusEl.textContent = 'Lỗi kết nối máy chủ';
+    }
+  }
+
+  function closeReadingOrderEditorModal() {
+    const modal = document.getElementById('ro-edit-ro-modal');
+    if (modal) modal.classList.remove('is-open');
+  }
+
   function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -1451,7 +1974,17 @@ window.grecaptcha = window.grecaptcha || {
     if (isAdmin) {
       const adminBanner = document.createElement('div');
       adminBanner.className = 'ro-admin-banner';
-      adminBanner.innerHTML = `<span><strong>Chế độ Quản Trị Viên:</strong> Bấm [Gắn link] để thêm liên kết đọc cho từng tập (tự động lưu vào hệ thống cho Vercel).</span>`;
+      adminBanner.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; width: 100%;">
+          <span><strong>Chế độ Quản Trị Viên:</strong> Bạn có quyền gắn link đọc và chỉnh sửa nội dung danh sách tập truyện này.</span>
+          <button id="ro-admin-edit-ro-btn" class="ro-btn" style="background: #e42525; color: #fff; border: 1px solid #c71b1b; padding: 5px 14px; font-size: 12px; font-weight: 700; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            ✏️ Sửa danh sách đọc
+          </button>
+        </div>
+      `;
+      adminBanner.querySelector('#ro-admin-edit-ro-btn')?.addEventListener('click', () => {
+        openReadingOrderEditorModal(cleanPath);
+      });
       if (mainContainer) {
         mainContainer.insertBefore(adminBanner, mainContainer.firstChild);
       } else if (firstTransformedP) {
@@ -1536,10 +2069,9 @@ window.grecaptcha = window.grecaptcha || {
       return;
     }
 
-    const tpbPageKey = 'ro_progress_tpb_' + cleanPath.replace(/\//g, '_');
     const linkKey = 'ro_links_' + cleanPath.replace(/\//g, '_');
 
-    let savedProgress = {}; // Load from API if needed
+    let savedProgress = {}; // In-memory session progress synced with Supabase
 
     const savedLinks = getCombinedIssueLinks(cleanPath);
 
@@ -1800,10 +2332,6 @@ window.grecaptcha = window.grecaptcha || {
       const text = document.getElementById('ro-tpb-stats-text');
       if (fill) fill.style.width = percent + '%';
       if (text) text.textContent = `${checkedTpbCount} / ${totalTpbCount} tập (${percent}%)`;
-
-      try {
-        localStorage.setItem(tpbPageKey, JSON.stringify(savedProgress));
-      } catch {}
     }
 
     tpbCards.forEach(card => {
@@ -1979,9 +2507,7 @@ window.grecaptcha = window.grecaptcha || {
             (rightCol || item)?.querySelector('.ro-issue-read-link')?.remove();
           }
 
-          // 1. Lưu ngay vào localStorage
-
-          // 2. Cập nhật cache bộ nhớ
+          // 1. Cập nhật cache bộ nhớ
           if (!_roGlobalLinksCache) _roGlobalLinksCache = {};
           if (!_roGlobalLinksCache[cleanPath]) _roGlobalLinksCache[cleanPath] = {};
           if (cleanLink) {

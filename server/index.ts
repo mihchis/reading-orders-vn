@@ -51,7 +51,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/assets', express.static(path.join(rootDir, 'assets')));
+app.use('/assets', express.static(path.join(rootDir, 'assets'), {
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  }
+}));
 app.use('/wp-content', express.static(path.join(rootDir, 'wp-content')));
 app.use('/wp-includes', express.static(path.join(rootDir, 'wp-includes')));
 app.use('/wp-json', express.static(path.join(rootDir, 'wp-json')));

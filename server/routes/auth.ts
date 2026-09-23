@@ -221,18 +221,27 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
       return;
     }
 
+    // Chuyển đổi userId nếu là admin fallback
+    let finalUserId = String(userId);
+    if (finalUserId === '1' || finalUserId === 'admin') {
+      try {
+        const { data: adminList } = await supabaseAdmin.auth.admin.listUsers();
+        const adm = adminList?.users?.find((u: any) => u.email === 'admin@readingorders.vn' || u.user_metadata?.role === 'admin');
+        if (adm) finalUserId = adm.id;
+      } catch {}
+    }
+
     // Nếu userId là UUID trên Supabase Cloud
-    if (typeof userId === 'string' && userId.length > 20) {
+    if (typeof finalUserId === 'string' && finalUserId.length > 20) {
       // issueId là "issue_N" (0-based) → sort_order = N+1 (1-based trong Supabase)
       const sortOrderMatch = String(issueId).match(/\d+/);
       const sortOrder = sortOrderMatch ? parseInt(sortOrderMatch[0], 10) + 1 : 1;
-
 
       // Kiểm tra trạng thái hiện tại
       const { data: existing } = await supabaseAdmin
         .from('user_progress')
         .select('id, is_read')
-        .eq('user_id', userId)
+        .eq('user_id', finalUserId)
         .eq('reading_order_slug', orderIdParam)
         .eq('issue_sort_order', sortOrder)
         .maybeSingle();
@@ -247,7 +256,7 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
         }
       } else {
         await supabaseAdmin.from('user_progress').insert({
-          user_id: userId,
+          user_id: finalUserId,
           reading_order_slug: orderIdParam,
           issue_sort_order: sortOrder,
           is_read: true
@@ -258,7 +267,7 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
       const { data: currentRows } = await supabaseAdmin
         .from('user_progress')
         .select('issue_sort_order')
-        .eq('user_id', userId)
+        .eq('user_id', finalUserId)
         .eq('reading_order_slug', orderIdParam)
         .eq('is_read', true);
 
@@ -270,8 +279,56 @@ router.post('/progress/:orderId/toggle', authMiddleware, async (req: AuthRequest
       });
     }
 
-    // Không hỗ trợ user không phải Supabase
+    // Không hỗ trợ user không hợp lệ
     res.status(400).json({ success: false, message: 'Tài khoản không hợp lệ' });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// POST /api/auth/progress/:orderId/bulk - Đánh dấu tất cả hoặc bỏ đánh dấu tất cả các tập
+router.post('/progress/:orderId/bulk', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    let finalUserId = String(req.user!.id);
+    if (finalUserId === '1' || finalUserId === 'admin') {
+      try {
+        const { data: adminList } = await supabaseAdmin.auth.admin.listUsers();
+        const adm = adminList?.users?.find((u: any) => u.email === 'admin@readingorders.vn' || u.user_metadata?.role === 'admin');
+        if (adm) finalUserId = adm.id;
+      } catch {}
+    }
+
+    const orderIdParam = req.params.orderId;
+    const { action, totalIssues } = req.body;
+
+    if (action === 'unmark_all') {
+      await supabaseAdmin
+        .from('user_progress')
+        .delete()
+        .eq('user_id', finalUserId)
+        .eq('reading_order_slug', orderIdParam);
+
+      return res.json({ success: true, readIssueIds: [] });
+    }
+
+    if (action === 'mark_all') {
+      const total = Math.max(1, Number(totalIssues) || 50);
+      const rowsToInsert = [];
+      const readIssueIds = [];
+      for (let i = 1; i <= total; i++) {
+        rowsToInsert.push({
+          user_id: finalUserId,
+          reading_order_slug: orderIdParam,
+          issue_sort_order: i,
+          is_read: true
+        });
+        readIssueIds.push(`issue_${i - 1}`);
+      }
+      await supabaseAdmin.from('user_progress').upsert(rowsToInsert, { onConflict: 'user_id,reading_order_slug,issue_sort_order' });
+      return res.json({ success: true, readIssueIds });
+    }
+
+    res.status(400).json({ success: false, message: 'Hành động không hợp lệ' });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

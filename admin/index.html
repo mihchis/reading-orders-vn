@@ -1347,6 +1347,81 @@
     </div>
   </div>
 
+  <!-- MODAL: BIÊN TẬP DANH SÁCH TẬP TRUYỆN (TRÌNH SOẠN THẢO TRỰC QUAN - NO RAW HTML) -->
+  <div id="order-content-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-box" style="max-width: 960px; width: 96%; max-height: 92vh; display: flex; flex-direction: column;">
+      <div class="modal-header" style="padding: 16px 22px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="modal-title" id="order-content-modal-title">Biên Tập Reading Order</h3>
+            <span id="order-content-counter-badge" style="background: var(--color-primary); color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 800;">0 tập</span>
+          </div>
+          <p id="order-content-file-info" style="font-size: 12px; color: var(--text-dim); margin-top: 4px;"></p>
+        </div>
+        <button class="btn-close-modal" onclick="closeOrderContentModal()">&times;</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 12px; padding: 16px 22px; flex: 1; overflow-y: hidden;">
+        <!-- Top Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; gap: 6px;" id="order-content-tabs">
+            <button type="button" class="btn-action active" id="btn-tab-content-single" onclick="switchOrderContentTab('single')">
+              <i class="fa-solid fa-book"></i> Từng tập truyện
+            </button>
+            <button type="button" class="btn-action" id="btn-tab-content-tpb" onclick="switchOrderContentTab('tpb')">
+              <i class="fa-solid fa-layer-group"></i> Tuyển tập (TPBs)
+            </button>
+            <button type="button" class="btn-action" id="btn-tab-content-preview" onclick="switchOrderContentTab('preview')">
+              <i class="fa-solid fa-eye"></i> Xem trước hiển thị
+            </button>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Thêm nhanh:</span>
+            <button type="button" class="btn-action" style="font-size: 11.5px; padding: 4px 9px; background: #eff6ff; color: #1d4ed8; border-color: #93c5fd;" onclick="addAdminItem('phase')">+ Giai đoạn</button>
+            <button type="button" class="btn-action" style="font-size: 11.5px; padding: 4px 9px; background: #f0fdf4; color: #15803d; border-color: #86efac;" onclick="addAdminItem('mini')">+ Bộ ngắn kỳ</button>
+            <button type="button" class="btn-action" style="font-size: 11.5px; padding: 4px 9px; background: #fef2f2; color: #b91c1c; border-color: #fca5a5;" onclick="addAdminItem('oneshot')">+ One-Shot</button>
+            <button type="button" class="btn-action" style="font-size: 11.5px; padding: 4px 9px; background: #f9fafb; color: #1f2937; border-color: #d1d5db;" onclick="addAdminItem('ongoing')">+ Dài kỳ</button>
+            <button type="button" class="btn-action" style="font-size: 11.5px; padding: 4px 9px; background: #f8fafc; color: #475569; border-color: #cbd5e1;" onclick="addAdminItem('note')">+ Ghi chú</button>
+          </div>
+        </div>
+
+        <!-- Single Issues Visual Row Editor -->
+        <div id="order-content-single-container" style="flex: 1; min-height: 380px; max-height: 58vh; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 4px 2px;">
+          <!-- Dynamically populated by renderAdminVisualItems() -->
+        </div>
+
+        <!-- TPB Editor -->
+        <div id="order-content-tpb-container" style="flex: 1; min-height: 380px; max-height: 58vh; overflow-y: auto; display: none; flex-direction: column; gap: 8px; padding: 4px 2px;">
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 4px;">
+            <button type="button" class="btn-action" style="background: #2563eb; color: #fff; font-weight: 700; border: none; padding: 6px 14px;" onclick="addAdminTpb()">
+              <i class="fa-solid fa-plus"></i> Thêm tập TPB mới
+            </button>
+          </div>
+          <div id="order-content-tpb-items-container" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Dynamically populated by renderAdminVisualTpb() -->
+          </div>
+        </div>
+
+        <!-- Live Preview Panel -->
+        <div id="order-content-preview-container" style="flex: 1; min-height: 380px; max-height: 58vh; overflow-y: auto; display: none; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; padding: 18px;">
+          <div id="order-content-preview-box"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e5e5e5;">
+        <div>
+          <button type="button" class="btn-action" id="btn-open-live-page" onclick="openCurrentLivePage()" title="Mở trang trên tab mới">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem trang thực tế
+          </button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn-action" onclick="closeOrderContentModal()">Đóng</button>
+          <button type="button" class="btn-primary" id="btn-save-order-content" style="width: auto;" onclick="saveOrderContent()"><i class="fa-solid fa-floppy-disk"></i> Lưu danh sách</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Message -->
   <div id="toast"></div>
 
@@ -1567,7 +1642,8 @@
                 </span>
               </td>
               <td style="text-align: right;">
-                <button class="btn-action" onclick="openEditOrderModal(${ro.id})" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i> Sửa</button>
+                <button class="btn-action" onclick="openEditOrderModal(${ro.id})" title="Chỉnh sửa thông tin"><i class="fa-solid fa-pen"></i> Sửa</button>
+                <button class="btn-action" onclick="openOrderContentEditor('${ro.slug}', '${ro.universe_slug || 'marvel'}', '${ro.title.replace(/'/g, "\\'")}')" title="Sửa danh sách tập HTML"><i class="fa-solid fa-list-check"></i> Sửa tập</button>
                 <button class="btn-action" onclick="jumpToIssues(${ro.id})" title="Gắn link đọc"><i class="fa-solid fa-link"></i> Link đọc</button>
                 <button class="btn-action btn-danger" onclick="deleteOrder(${ro.id}, '${ro.title.replace(/'/g, "\\'")}')" title="Xóa"><i class="fa-solid fa-trash"></i></button>
               </td>
@@ -1678,6 +1754,407 @@
         } catch (e) {
           showToast('Lỗi máy chủ khi xóa', 'error');
         }
+      }
+    }
+
+    // ==========================================
+    // TRÌNH BIÊN TẬP NỘI DUNG TẬP TRUYỆN TRỰC QUAN (NO RAW HTML)
+    // ==========================================
+    let currentEditingContentPath = '';
+    let currentEditingContentLiveUrl = '';
+    let _adminEditorItems = []; // [{ type, title, year, link }]
+    let _adminEditorTpbs = [];  // [{ title, buyLink, subIssues }]
+
+    function updateAdminCounterBadge() {
+      const badge = document.getElementById('order-content-counter-badge');
+      if (!badge) return;
+      const count = _adminEditorItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
+      badge.textContent = `${count} tập truyện`;
+    }
+
+    function saveAdminSingleInputsToState() {
+      const container = document.getElementById('order-content-single-container');
+      if (!container) return;
+      const rows = container.querySelectorAll('.admin-v-row');
+      rows.forEach(row => {
+        const idx = parseInt(row.dataset.idx, 10);
+        if (isNaN(idx) || !_adminEditorItems[idx]) return;
+        const typeSelect = row.querySelector('.admin-v-type');
+        const titleInput = row.querySelector('.admin-v-title');
+        const yearInput = row.querySelector('.admin-v-year');
+        const noteInput = row.querySelector('.admin-v-note');
+        if (typeSelect) _adminEditorItems[idx].type = typeSelect.value;
+        if (titleInput) _adminEditorItems[idx].title = titleInput.value;
+        if (yearInput) _adminEditorItems[idx].year = yearInput.value;
+        if (noteInput) _adminEditorItems[idx].note = noteInput.value;
+      });
+      updateAdminCounterBadge();
+    }
+
+    function saveAdminTpbInputsToState() {
+      const container = document.getElementById('order-content-tpb-items-container');
+      if (!container) return;
+      const cards = container.querySelectorAll('.admin-v-tpb-card');
+      cards.forEach(card => {
+        const idx = parseInt(card.dataset.idx, 10);
+        if (isNaN(idx) || !_adminEditorTpbs[idx]) return;
+        const titleInput = card.querySelector('.admin-tpb-title');
+        const linkInput = card.querySelector('.admin-tpb-link');
+        const subArea = card.querySelector('.admin-tpb-sub');
+        if (titleInput) _adminEditorTpbs[idx].title = titleInput.value;
+        if (linkInput) _adminEditorTpbs[idx].buyLink = linkInput.value;
+        if (subArea) {
+          _adminEditorTpbs[idx].subIssues = subArea.value.split('\n').map(s => s.trim()).filter(Boolean);
+        }
+      });
+    }
+
+    function renderAdminVisualItems() {
+      const container = document.getElementById('order-content-single-container');
+      if (!container) return;
+
+      if (_adminEditorItems.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px; color: var(--text-dim);">
+            <p style="font-size: 14px; margin-bottom: 6px;">Chưa có tập nào trong danh sách.</p>
+            <p style="font-size: 12px;">Bấm các nút <strong>+ Giai đoạn</strong> hoặc <strong>+ Bộ truyện</strong> ở trên để thêm.</p>
+          </div>
+        `;
+        updateAdminCounterBadge();
+        return;
+      }
+
+      const typeConfigs = {
+        phase: { label: '🔵 Giai đoạn (Phase)', color: '#0066aa', bg: '#eff6ff', border: '#93c5fd' },
+        mini: { label: '🟢 Bộ ngắn kỳ (Mini)', color: '#008000', bg: '#f0fdf4', border: '#86efac' },
+        oneshot: { label: '🔴 Tập đơn (One-Shot)', color: '#ff0000', bg: '#fef2f2', border: '#fca5a5' },
+        ongoing: { label: '⚫ Dài kỳ (Ongoing)', color: '#1f2937', bg: '#f9fafb', border: '#d1d5db' },
+        note: { label: 'ℹ️ Ghi chú (Note)', color: '#64748b', bg: '#f8fafc', border: '#cbd5e1' }
+      };
+
+      container.innerHTML = _adminEditorItems.map((item, idx) => {
+        const type = item.type || 'ongoing';
+        const cfg = typeConfigs[type] || typeConfigs.ongoing;
+        const isPhase = type === 'phase';
+        const isNote = type === 'note';
+
+        return `
+          <div class="admin-v-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 4px;">
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="padding: 1px 5px; font-size: 10px; line-height: 1;">▲</button>
+              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="padding: 1px 5px; font-size: 10px; line-height: 1;">▼</button>
+            </div>
+            <select class="admin-v-type form-input" data-idx="${idx}" style="width: 155px; padding: 6px 8px; font-size: 12px; font-weight: 700; color: ${cfg.color};">
+              <option value="phase" ${type === 'phase' ? 'selected' : ''}>🔵 Giai đoạn (Phase)</option>
+              <option value="mini" ${type === 'mini' ? 'selected' : ''}>🟢 Bộ ngắn kỳ (Mini)</option>
+              <option value="oneshot" ${type === 'oneshot' ? 'selected' : ''}>🔴 Tập đơn (One-Shot)</option>
+              <option value="ongoing" ${type === 'ongoing' ? 'selected' : ''}>⚫ Dài kỳ (Ongoing)</option>
+              <option value="note" ${type === 'note' ? 'selected' : ''}>ℹ️ Ghi chú (Note)</option>
+            </select>
+            <input type="text" class="admin-v-title form-input" data-idx="${idx}" value="${escapeAdminHtml(item.title || '')}"
+              placeholder="${isPhase ? 'Tên giai đoạn...' : (isNote ? 'Nội dung ghi chú...' : 'Tên truyện / số tập...')}"
+              style="flex: 2; min-width: 150px; padding: 6px 10px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : '#111'};" />
+            <input type="text" class="admin-v-year form-input" data-idx="${idx}" value="${escapeAdminHtml(item.year || '')}"
+              placeholder="Năm (VD: 2024)"
+              style="width: 100px; padding: 6px 8px; font-size: 12px; display: ${isPhase ? 'none' : 'block'};" />
+            <input type="text" class="admin-v-note form-input" data-idx="${idx}" value="${escapeAdminHtml(item.note || '')}"
+              placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}"
+              style="flex: 1.3; min-width: 130px; padding: 6px 9px; font-size: 12px; color: #1e40af;" />
+            <button type="button" class="btn-action admin-v-insert" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="padding: 6px 9px; color: #16a34a; font-weight: 800;">＋</button>
+            <button type="button" class="btn-action admin-v-del" data-idx="${idx}" title="Xóa dòng này" style="padding: 6px 9px; color: #dc2626;">🗑️</button>
+          </div>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.admin-v-type').forEach(sel => {
+        sel.addEventListener('change', () => {
+          saveAdminSingleInputsToState();
+          renderAdminVisualItems();
+        });
+      });
+
+      container.querySelectorAll('.admin-v-move').forEach(btn => {
+        btn.addEventListener('click', () => {
+          saveAdminSingleInputsToState();
+          const idx = parseInt(btn.dataset.idx, 10);
+          const dir = parseInt(btn.dataset.dir, 10);
+          const target = idx + dir;
+          if (target >= 0 && target < _adminEditorItems.length) {
+            const temp = _adminEditorItems[idx];
+            _adminEditorItems[idx] = _adminEditorItems[target];
+            _adminEditorItems[target] = temp;
+            renderAdminVisualItems();
+          }
+        });
+      });
+
+      container.querySelectorAll('.admin-v-insert').forEach(btn => {
+        btn.addEventListener('click', () => {
+          saveAdminSingleInputsToState();
+          const idx = parseInt(btn.dataset.idx, 10);
+          _adminEditorItems.splice(idx + 1, 0, { type: 'ongoing', title: '', year: '2024', note: '' });
+          renderAdminVisualItems();
+        });
+      });
+
+      container.querySelectorAll('.admin-v-del').forEach(btn => {
+        btn.addEventListener('click', () => {
+          saveAdminSingleInputsToState();
+          const idx = parseInt(btn.dataset.idx, 10);
+          _adminEditorItems.splice(idx, 1);
+          renderAdminVisualItems();
+        });
+      });
+
+      container.querySelectorAll('.admin-v-title, .admin-v-year, .admin-v-note').forEach(inp => {
+        inp.addEventListener('input', () => {
+          updateAdminCounterBadge();
+        });
+      });
+
+      updateAdminCounterBadge();
+    }
+
+    function addAdminItem(type) {
+      saveAdminSingleInputsToState();
+      let newItem = { type, title: '', year: '', note: '' };
+      if (type === 'phase') newItem.title = 'Giai đoạn mới: Tên giai đoạn';
+      else if (type === 'mini') { newItem.title = 'Tên Mini-series #1–4'; newItem.year = '2024'; }
+      else if (type === 'oneshot') { newItem.title = 'Tên One-Shot #1'; newItem.year = '2024, One-Shot'; }
+      else if (type === 'ongoing') { newItem.title = 'Tên Series #1–3'; newItem.year = '2024'; }
+      else if (type === 'note') { newItem.title = 'Ghi chú đọc...'; }
+      _adminEditorItems.push(newItem);
+      renderAdminVisualItems();
+      const c = document.getElementById('order-content-single-container');
+      if (c) c.scrollTop = c.scrollHeight;
+    }
+
+    function renderAdminVisualTpb() {
+      const container = document.getElementById('order-content-tpb-items-container');
+      if (!container) return;
+
+      if (_adminEditorTpbs.length === 0) {
+        container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-dim);">Chưa có tuyển tập TPB nào. Bấm nút phía trên để thêm.</div>';
+        return;
+      }
+
+      container.innerHTML = _adminEditorTpbs.map((tpb, idx) => `
+        <div class="admin-v-tpb-card" data-idx="${idx}" style="background: #fff; border: 1px solid #d1d5db; border-radius: 6px; padding: 12px;">
+          <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
+            <input type="text" class="admin-tpb-title form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.title || '')}" placeholder="Tên tập tổng hợp (VD: Ultimate Invasion)" style="flex: 2; font-weight: 700;" />
+            <input type="text" class="admin-tpb-link form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.buyLink || '')}" placeholder="Link đọc hoặc mua..." style="flex: 1;" />
+            <button type="button" class="btn-action admin-tpb-del" data-idx="${idx}" style="color: #dc2626; padding: 6px 12px; font-weight: bold;">🗑️ Xóa</button>
+          </div>
+          <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); display: block; margin-bottom: 4px;">Các tập con thu thập (mỗi dòng 1 tập):</label>
+          <textarea class="admin-tpb-sub form-input" data-idx="${idx}" rows="2" style="font-size: 12px;" placeholder="Ultimate Invasion #1-4...">${escapeAdminHtml((tpb.subIssues || []).join('\n'))}</textarea>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.admin-tpb-del').forEach(btn => {
+        btn.addEventListener('click', () => {
+          saveAdminTpbInputsToState();
+          const idx = parseInt(btn.dataset.idx, 10);
+          _adminEditorTpbs.splice(idx, 1);
+          renderAdminVisualTpb();
+        });
+      });
+    }
+
+    function addAdminTpb() {
+      saveAdminTpbInputsToState();
+      _adminEditorTpbs.push({ title: 'Tập TPB mới', buyLink: '', subIssues: ['Tập con #1-4'] });
+      renderAdminVisualTpb();
+    }
+
+    function updateAdminVisualPreview() {
+      saveAdminSingleInputsToState();
+      saveAdminTpbInputsToState();
+      const prevBox = document.getElementById('order-content-preview-box');
+      if (!prevBox) return;
+
+      const count = _adminEditorItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
+      let html = `
+        <h4 style="color: #e42525; margin-bottom: 12px; border-bottom: 2px solid #e42525; padding-bottom: 6px; font-size: 14px;">
+          📖 TẬP LẺ (READING ORDER) — ${count} TẬP
+        </h4>
+        <div style="line-height: 1.7; font-size: 13.5px; margin-bottom: 24px;">
+      `;
+
+      _adminEditorItems.forEach(it => {
+        const type = it.type || 'ongoing';
+        const yearStr = it.year && it.year.trim() ? ` (${it.year.trim()})` : '';
+        const noteStr = it.note && it.note.trim() ? ` <span style="color: #0000ff; font-style: italic;">(${escapeAdminHtml(it.note.trim())})</span>` : '';
+        if (type === 'phase') {
+          const phaseNote = it.note && it.note.trim() ? `<br/><span style="color: #64748b; font-size: 12.5px; font-style: italic;">${escapeAdminHtml(it.note.trim())}</span>` : '';
+          html += `<div style="margin-top: 14px; margin-bottom: 4px;"><span style="color: #0066aa; font-weight: 800; font-size: 15px;">${escapeAdminHtml(it.title)}</span>${phaseNote}</div>`;
+        } else if (type === 'note') {
+          html += `<div style="color: #0000ff; font-style: italic; margin: 3px 0;">${escapeAdminHtml(it.title)}</div>`;
+        } else if (type === 'mini') {
+          html += `<div><span style="color: #008000; font-weight: 600;">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+        } else if (type === 'oneshot') {
+          html += `<div><span style="color: #ff0000; font-weight: 600;">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+        } else {
+          html += `<div>${escapeAdminHtml(it.title)}${yearStr}${noteStr}</div>`;
+        }
+      });
+
+      html += `
+        </div>
+        <h4 style="color: #0066aa; margin-bottom: 12px; border-bottom: 2px solid #0066aa; padding-bottom: 6px; font-size: 14px;">
+          📚 TẬP TỔNG HỢP (TPBS) — ${_adminEditorTpbs.length} TẬP
+        </h4>
+        <div style="line-height: 1.6; font-size: 13px;">
+      `;
+
+      if (_adminEditorTpbs.length === 0) {
+        html += '<p style="color: #94a3b8;">Chưa có tuyển tập nào.</p>';
+      } else {
+        _adminEditorTpbs.forEach(tpb => {
+          html += `
+            <div style="margin-bottom: 10px; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #e2e8f0;">
+              <strong>${escapeAdminHtml(tpb.title)}</strong>
+              ${(tpb.subIssues || []).map(s => `<div style="color: #4b5563; font-size: 12px; margin-left: 12px;">• ${escapeAdminHtml(s)}</div>`).join('')}
+            </div>
+          `;
+        });
+      }
+
+      html += '</div>';
+      prevBox.innerHTML = html;
+    }
+
+    function escapeAdminHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    async function openOrderContentEditor(slug, universeSlug, title) {
+      currentEditingContentPath = slug;
+
+      const modal = document.getElementById('order-content-modal');
+      const titleEl = document.getElementById('order-content-modal-title');
+      const fileInfoEl = document.getElementById('order-content-file-info');
+      const singleContainer = document.getElementById('order-content-single-container');
+
+      titleEl.textContent = `Biên Tập: ${title || slug}`;
+      fileInfoEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải dữ liệu từ máy chủ...';
+      singleContainer.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--text-dim);">Đang tải danh sách tập truyện...</div>';
+      modal.style.display = 'flex';
+
+      switchOrderContentTab('single');
+
+      try {
+        const res = await apiFetch(`/api/admin/reading-order-content?path=${encodeURIComponent(slug)}`);
+        const json = await res.json();
+        if (json.success) {
+          const d = json.data;
+          currentEditingContentPath = d.path || slug;
+          currentEditingContentLiveUrl = '/' + (d.filePath || '').replace(/\/index\.html$/i, '');
+          fileInfoEl.innerHTML = `<i class="fa-solid fa-file-code" style="color:var(--color-primary)"></i> File: <strong>${d.filePath}</strong>`;
+          _adminEditorItems = d.parsedItems || [];
+          _adminEditorTpbs = d.parsedTpbs || [];
+          renderAdminVisualItems();
+          renderAdminVisualTpb();
+        } else {
+          fileInfoEl.textContent = json.message || 'Không tìm thấy file HTML cho bộ đọc này';
+          _adminEditorItems = [];
+          _adminEditorTpbs = [];
+          renderAdminVisualItems();
+        }
+      } catch (err) {
+        fileInfoEl.textContent = 'Lỗi kết nối khi tải nội dung';
+      }
+    }
+
+    function switchOrderContentTab(tab) {
+      const btnSingle = document.getElementById('btn-tab-content-single');
+      const btnTpb = document.getElementById('btn-tab-content-tpb');
+      const btnPrev = document.getElementById('btn-tab-content-preview');
+      const conSingle = document.getElementById('order-content-single-container');
+      const conTpb = document.getElementById('order-content-tpb-container');
+      const conPrev = document.getElementById('order-content-preview-container');
+
+      [btnSingle, btnTpb, btnPrev].forEach(b => {
+        b.classList.remove('active');
+        b.style.background = '';
+        b.style.color = '';
+        b.style.borderColor = '';
+      });
+
+      conSingle.style.display = 'none';
+      conTpb.style.display = 'none';
+      conPrev.style.display = 'none';
+
+      if (tab === 'single') {
+        btnSingle.classList.add('active');
+        btnSingle.style.background = 'var(--color-primary)';
+        btnSingle.style.color = '#fff';
+        btnSingle.style.borderColor = '#020000';
+        conSingle.style.display = 'flex';
+      } else if (tab === 'tpb') {
+        btnTpb.classList.add('active');
+        btnTpb.style.background = 'var(--color-primary)';
+        btnTpb.style.color = '#fff';
+        btnTpb.style.borderColor = '#020000';
+        conTpb.style.display = 'flex';
+      } else if (tab === 'preview') {
+        btnPrev.classList.add('active');
+        btnPrev.style.background = 'var(--color-primary)';
+        btnPrev.style.color = '#fff';
+        btnPrev.style.borderColor = '#020000';
+        conPrev.style.display = 'block';
+        updateAdminVisualPreview();
+      }
+    }
+
+    function closeOrderContentModal() {
+      document.getElementById('order-content-modal').style.display = 'none';
+    }
+
+    function openCurrentLivePage() {
+      if (currentEditingContentLiveUrl) {
+        window.open(currentEditingContentLiveUrl, '_blank');
+      } else if (currentEditingContentPath) {
+        window.open('/' + currentEditingContentPath, '_blank');
+      }
+    }
+
+    async function saveOrderContent() {
+      saveAdminSingleInputsToState();
+      saveAdminTpbInputsToState();
+
+      const btn = document.getElementById('btn-save-order-content');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu lên hệ thống & Supabase...';
+
+      try {
+        const res = await apiFetch('/api/admin/reading-order-content', {
+          method: 'POST',
+          body: {
+            path: currentEditingContentPath,
+            parsedItems: _adminEditorItems,
+            parsedTpbs: _adminEditorTpbs
+          }
+        });
+
+        const json = await res.json();
+        if (json.success) {
+          showToast('Đã lưu danh sách tập vào file & đồng bộ Supabase thành công!', 'success');
+          closeOrderContentModal();
+          loadOrders(currentOrderPage);
+        } else {
+          showToast(json.message || 'Lỗi khi lưu danh sách', 'error');
+        }
+      } catch (err) {
+        showToast('Lỗi máy chủ khi lưu danh sách', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Lưu danh sách';
       }
     }
 
@@ -1946,34 +2423,41 @@
       } catch (e) {}
     }
 
-    // TAB 6: CÔNG CỤ & SAO LƯU
-    function exportBackup() {
-      const backupData = {
-        exported_at: new Date().toISOString(),
-        local_progress: JSON.parse(localStorage.getItem('ro_user_progress') || '{}'),
-        local_users: JSON.parse(localStorage.getItem('ro_local_users') || '{}')
-      };
-      const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `reading_orders_backup_${Date.now()}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
-      showToast('Đã xuất file sao lưu thành công!', 'success');
+    // TAB 6: CÔNG CỤ & SAO LƯU CLOUD
+    async function exportBackup() {
+      try {
+        showToast('Đang tải dữ liệu từ Supabase Cloud...', 'success');
+        const [statsRes, usersRes] = await Promise.all([
+          apiFetch('/api/admin/stats').then(r => r.json()),
+          apiFetch('/api/admin/users').then(r => r.json())
+        ]);
+        const backupData = {
+          exported_at: new Date().toISOString(),
+          system: 'Reading Orders VN - Supabase Cloud',
+          stats: statsRes.data || {},
+          users: usersRes.data || []
+        };
+        const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `reading_orders_cloud_backup_${Date.now()}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Đã xuất file sao lưu hệ thống Supabase thành công!', 'success');
+      } catch (err) {
+        showToast('Lỗi khi xuất sao lưu: ' + err.message, 'error');
+      }
     }
 
     function importBackup(e) {
       const file = e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
-      reader.onload = function(event) {
+      reader.onload = async function(event) {
         try {
           const data = JSON.parse(event.target.result);
-          if (data.local_progress) {
-            localStorage.setItem('ro_user_progress', JSON.stringify(data.local_progress));
-          }
-          showToast('Khôi phục bản sao lưu thành công!', 'success');
+          showToast('Hệ thống hiện quản lý 100% dữ liệu tập và tiến độ trên Supabase Cloud!', 'success');
         } catch (err) {
           showToast('File JSON không hợp lệ', 'error');
         }

@@ -51,7 +51,7 @@ Hệ thống bao gồm hơn **609 danh sách thứ tự đọc** bao quát từ 
 
 ### 3. 🎯 Trình Theo Dõi Tiến Độ Đọc Thông Minh (Reading Tracker)
 - **Đánh dấu từng tập**: Tích chọn `[x] Đã đọc` trực tiếp bên cạnh từng issue.
-- **Tự động đồng bộ**: Lưu trạng thái vào `localStorage` của trình duyệt, không lo mất tiến độ khi đóng tab.
+- **Tự động đồng bộ Supabase Cloud**: Lưu trữ trạng thái đọc trực tiếp lên Supabase Cloud (`user_progress`), đồng bộ xuyên suốt trên mọi thiết bị và trình duyệt.
 - **Bảng điều khiển tiến độ**: Tự động hiển thị thanh tiến độ %, tổng số tập đã đọc / tổng số tập của từng sự kiện kèm tính năng *Đánh dấu tất cả* hoặc *Bỏ chọn toàn bộ*.
 
 ### 4. ⚡ Hiệu Năng Vượt Trội & Tương Thích Vercel

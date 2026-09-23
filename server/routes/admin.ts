@@ -39,9 +39,318 @@ async function findOrderIdByPath(cleanPath: string): Promise<number | null> {
   return data2?.id || null;
 }
 
+// Helper: tìm file HTML trên đĩa dựa vào request path hoặc slug
+function resolveHtmlPath(reqPath: string): string | null {
+  const rootDir = process.cwd();
+  const clean = reqPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '').replace(/^\//, '');
+
+  const p1 = path.join(rootDir, clean, 'index.html');
+  if (fs.existsSync(p1)) return p1;
+
+  const p2 = path.join(rootDir, clean + '.html');
+  if (fs.existsSync(p2)) return p2;
+
+  const p3 = path.join(rootDir, clean);
+  if (fs.existsSync(p3) && fs.statSync(p3).isFile()) return p3;
+
+  // Nếu không thấy, tìm kiếm trong các thư mục marvel, dc, other theo slug
+  const slug = clean.split('/').pop() || clean;
+  const searchDirs = ['marvel', 'dc', 'other'];
+  for (const sDir of searchDirs) {
+    const baseDir = path.join(rootDir, sDir);
+    if (!fs.existsSync(baseDir)) continue;
+    try {
+      const subdirs = fs.readdirSync(baseDir, { withFileTypes: true });
+      for (const sub of subdirs) {
+        if (sub.isDirectory()) {
+          const cand = path.join(baseDir, sub.name, slug, 'index.html');
+          if (fs.existsSync(cand)) return cand;
+          const candDirect = path.join(baseDir, slug, 'index.html');
+          if (fs.existsSync(candDirect)) return candDirect;
+        }
+      }
+    } catch {}
+  }
+
+  return null;
+}
+
+// Helper: bóc tách HTML danh sách tập lẻ thành các object có cấu trúc
+function parseSingleIssuesHtml(html: string): any[] {
+  const panelMatch = html.match(/<div id="panel-(?:reading-order-1|[^"]+)"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+    || html.match(/<div id="panel-reading-order-1"[^>]*>([\s\S]*?)<\/div>/i);
+  if (!panelMatch) return [];
+
+  let content = panelMatch[1];
+  const textMatch = content.match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+  if (textMatch) content = textMatch[1];
+
+  const pTags = content.match(/<p[\s\S]*?<\/p>/gi) || [content];
+  const items: any[] = [];
+
+  pTags.forEach(p => {
+    // 1. Giai đoạn (Phase header)
+    if (p.includes('#0066aa') || /^(?:giai đoạn|phase)/i.test(p.replace(/<[^>]+>/g, '').trim())) {
+      if (p.includes('<br')) {
+        const parts = p.split(/<br\s*\/?>/i);
+        const titlePart = parts[0].replace(/<[^>]+>/g, '').trim();
+        const notePart = parts.slice(1).join(' ').replace(/<[^>]+>/g, '').trim();
+        items.push({ type: 'phase', title: titlePart, year: '', note: notePart, link: '' });
+        return;
+      } else {
+        const title = p.replace(/<[^>]+>/g, '').trim();
+        if (title) {
+          items.push({ type: 'phase', title, year: '', note: '', link: '' });
+          return;
+        }
+      }
+    }
+
+    // 2. Ghi chú thuần túy cả đoạn (Standalone Note paragraph)
+    if (!p.includes('<br') && (/^\s*<p>\s*<em>[\s\S]*?<\/em>\s*<\/p>\s*$/i.test(p) || /^\s*<p>\s*<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>[\s\S]*?<\/span>\s*<\/p>\s*$/i.test(p) || /^(?:ghi chú|lưu ý|note):/i.test(p.replace(/<[^>]+>/g, '').trim()))) {
+      const text = p.replace(/<[^>]+>/g, '').trim();
+      if (text) {
+        items.push({ type: 'note', title: text, year: '', note: '', link: '' });
+        return;
+      }
+    }
+
+    // 3. Tách từng dòng theo <br />
+    const lines = p.split(/<br\s*\/?>/i);
+    lines.forEach(line => {
+      const cleanHtml = line.replace(/<p[^>]*>/gi, '').replace(/<\/p>/gi, '').trim();
+      if (!cleanHtml) return;
+
+      let type = 'ongoing';
+      if (cleanHtml.includes('#008000') || cleanHtml.includes('green')) {
+        type = 'mini';
+      } else if (cleanHtml.includes('#ff0000') || cleanHtml.includes('red') || /one-shot/i.test(cleanHtml)) {
+        type = 'oneshot';
+      }
+
+      // Trích xuất link đọc nếu có sẵn thẻ <a>
+      const aMatch = cleanHtml.match(/<a[^>]*href="([^"]+)"[^>]*>/i);
+      const link = aMatch ? aMatch[1] : '';
+
+      // Tách ghi chú nếu có (trong thẻ span màu xanh dương #0000ff hoặc <em>)
+      let note = '';
+      let remainingHtml = cleanHtml;
+      const blueNoteMatch = cleanHtml.match(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>([\s\S]*?)<\/span>/i);
+      const emNoteMatch = cleanHtml.match(/<em>([\s\S]*?)<\/em>/i);
+
+      if (blueNoteMatch) {
+        note = blueNoteMatch[1].replace(/<[^>]+>/g, '').trim().replace(/^\((.*)\)$/, '$1').trim();
+        remainingHtml = remainingHtml.replace(blueNoteMatch[0], '');
+      } else if (emNoteMatch && !cleanHtml.startsWith('<em>')) {
+        note = emNoteMatch[1].replace(/<[^>]+>/g, '').trim().replace(/^\((.*)\)$/, '$1').trim();
+        remainingHtml = remainingHtml.replace(emNoteMatch[0], '');
+      }
+
+      // Tách tên và năm từ remainingHtml
+      const rawText = remainingHtml.replace(/<[^>]+>/g, '').trim().replace(/[-–—\s]+$/, '');
+      if (!rawText && !note) return;
+
+      const yearMatch = rawText.match(/\(([^)]+)\)$/);
+      let title = rawText;
+      let year = '';
+      if (yearMatch) {
+        year = yearMatch[1];
+        title = rawText.replace(/\s*\([^)]+\)$/, '').trim();
+      }
+
+      // Nếu chỉ có ghi chú thuần túy
+      if (!title && note) {
+        type = 'note';
+        title = note;
+        note = '';
+      }
+
+      items.push({ type, title, year, note, link });
+    });
+  });
+
+  return items;
+}
+
+// Helper: bóc tách HTML TPBs thành các object có cấu trúc
+function parseTpbHtml(html: string): any[] {
+  const panelMatch = html.match(/<div id="panel-(?:reading-order-2|[^"]+)"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+    || html.match(/<div id="panel-reading-order-2"[^>]*>([\s\S]*?)<\/div>/i);
+  if (!panelMatch) return [];
+
+  let content = panelMatch[1];
+  const textMatch = content.match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+  if (textMatch) content = textMatch[1];
+
+  const pTags = content.match(/<p[\s\S]*?<\/p>/gi) || [];
+  const tpbs: any[] = [];
+  let currentTpb: any = null;
+
+  pTags.forEach(p => {
+    const text = p.replace(/<[^>]+>/g, '').trim();
+    if (!text) return;
+
+    if (text.startsWith('•') || text.includes('Thu thập:') || text.includes('Collects:')) {
+      const subIssues = text.replace(/^[•\s]+/, '').split(/<br\s*\/?>/i).map(s => s.replace(/<[^>]+>/g, '').trim()).filter(Boolean);
+      if (currentTpb) {
+        currentTpb.subIssues = currentTpb.subIssues.concat(subIssues);
+        tpbs.push(currentTpb);
+        currentTpb = null;
+      } else {
+        tpbs.push({ title: 'Tập tổng hợp', buyLink: '', subIssues });
+      }
+    } else {
+      if (currentTpb) tpbs.push(currentTpb);
+      const a = p.match(/<a[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/i);
+      currentTpb = {
+        title: a ? a[2].replace(/<[^>]+>/g, '').trim() : text,
+        buyLink: a ? a[1] : '',
+        subIssues: []
+      };
+    }
+  });
+
+  if (currentTpb) tpbs.push(currentTpb);
+  return tpbs;
+}
+
+// Helper: chuyển đổi danh sách items có cấu trúc thành mã HTML chuẩn trang web
+function serializeItemsToHtml(items: any[]): string {
+  let html = '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;">\n';
+  let openP = false;
+
+  items.forEach(item => {
+    const type = item.type || 'ongoing';
+    const title = (item.title || '').trim();
+    const yearStr = item.year && item.year.trim() ? ` (${item.year.trim()})` : '';
+    const noteStr = item.note && item.note.trim() ? ` <span style="color: #0000ff;"><em>(${item.note.trim()})</em></span>` : '';
+
+    if (type === 'phase') {
+      if (openP) { html += '</p>\n'; openP = false; }
+      const phaseNote = item.note && item.note.trim() ? `<br />\n  <span style="color: #666; font-size: 0.9em;"><em>${item.note.trim()}</em></span>` : '';
+      html += `  <p><span style="color: #0066aa;"><strong>${title}</strong></span>${phaseNote}</p>\n`;
+    } else if (type === 'note') {
+      if (openP) { html += '</p>\n'; openP = false; }
+      html += `  <p><span style="color: #0000ff;"><em>${title}</em></span></p>\n`;
+    } else {
+      let formattedLine = '';
+      if (type === 'mini') {
+        formattedLine = `<span style="color: #008000;">${title}</span>${yearStr}${noteStr}`;
+      } else if (type === 'oneshot') {
+        formattedLine = `<span style="color: #ff0000;">${title}</span>${yearStr}${noteStr}`;
+      } else {
+        formattedLine = `${title}${yearStr}${noteStr}`;
+      }
+
+      if (!openP) {
+        html += `  <p>${formattedLine}`;
+        openP = true;
+      } else {
+        html += `<br />\n  ${formattedLine}`;
+      }
+    }
+  });
+
+  if (openP) html += '</p>\n';
+  html += '</div>';
+  return html;
+}
+
+// Helper: chuyển đổi danh sách TPBs có cấu trúc thành HTML chuẩn
+function serializeTpbToHtml(tpbs: any[]): string {
+  let html = '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;">\n';
+  tpbs.forEach(tpb => {
+    const title = (tpb.title || '').trim();
+    const buyLink = (tpb.buyLink || '').trim();
+    let subIssues = Array.isArray(tpb.subIssues) ? tpb.subIssues : (tpb.subIssues ? String(tpb.subIssues).split('\n') : []);
+    subIssues = subIssues.map((s: string) => s.trim()).filter(Boolean);
+
+    html += '  <p>';
+    if (buyLink) {
+      html += `<a href="${buyLink}" target="_blank" rel="noopener"><strong>${title}</strong></a>`;
+    } else {
+      html += `<strong>${title}</strong>`;
+    }
+    if (subIssues.length > 0) {
+      html += '<br />\n';
+      html += subIssues.map((s: string) => `  • ${s}`).join('<br />\n');
+    }
+    html += '</p>\n';
+  });
+  html += '</div>';
+  return html;
+}
+
 const router = Router();
 
-// Tất cả các route bên dưới đều bắt buộc phải là Admin
+// GET /api/admin/reading-order-content - Cho phép đọc nội dung công khai để nạp vào form biên tập
+router.get('/reading-order-content', async (req, res) => {
+  try {
+    const orderPath = (req.query.path as string || '').trim();
+    if (!orderPath) {
+      res.status(400).json({ success: false, message: 'Thiếu tham số path' });
+      return;
+    }
+
+    const filePath = resolveHtmlPath(orderPath);
+    if (!filePath) {
+      res.status(404).json({ success: false, message: `Không tìm thấy file HTML cho: ${orderPath}` });
+      return;
+    }
+
+    const html = fs.readFileSync(filePath, 'utf8');
+
+    // Trích xuất tiêu đề
+    const titleMatch = html.match(/<h2[^>]*class="[^"]*h-custom-headline[^"]*"[^>]*>[\s\S]*?<span><strong>(.*?)<\/strong><\/span>/i)
+      || html.match(/<title>(.*?)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].replace(/ - Comic Book Reading Orders.*$/i, '').trim() : '';
+
+    // Bóc tách có cấu trúc danh sách tập lẻ và TPBs
+    const parsedItems = parseSingleIssuesHtml(html);
+    const parsedTpbs = parseTpbHtml(html);
+
+    // Trích xuất counter (hoặc tự tính từ parsedItems)
+    const counterMatch = html.match(/data-x-element-counter="[^"]*?&quot;to&quot;:&quot;(\d+)&quot;/i);
+    const calculatedCount = parsedItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
+    const counterTo = counterMatch ? parseInt(counterMatch[1], 10) : calculatedCount;
+
+    // Trích xuất nội dung Tab 1 (Từng tập truyện)
+    const panel1Match = html.match(/<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+      || html.match(/<div id="panel-reading-order-1"[^>]*>([\s\S]*?)<\/div>/i);
+    let singleIssuesHtml = '';
+    if (panel1Match) {
+      const textMatch = panel1Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+      singleIssuesHtml = textMatch ? textMatch[1].trim() : panel1Match[1].trim();
+    }
+
+    // Trích xuất nội dung Tab 2 (TPBs)
+    const panel2Match = html.match(/<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+      || html.match(/<div id="panel-reading-order-2"[^>]*>([\s\S]*?)<\/div>/i);
+    let tpbHtml = '';
+    if (panel2Match) {
+      const textMatch = panel2Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+      tpbHtml = textMatch ? textMatch[1].trim() : panel2Match[1].trim();
+    }
+
+    res.json({
+      success: true,
+      data: {
+        path: orderPath,
+        filePath: path.relative(process.cwd(), filePath).replace(/\\/g, '/'),
+        title,
+        counterTo,
+        parsedItems,
+        parsedTpbs,
+        singleIssuesHtml,
+        tpbHtml
+      }
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// Tất cả các route bên dưới (thay đổi, lưu dữ liệu) đều bắt buộc phải là Admin
 router.use(adminOnlyMiddleware);
 
 // GET /api/admin/stats - Thống kê tổng quan cho Dashboard
@@ -723,7 +1032,83 @@ router.post('/issue-links', async (req: AuthRequest, res) => {
         : 'Đã xóa link đọc khỏi Supabase',
     });
   } catch (err: any) {
-    res.status(500).json({ success: false, message: 'Lỗi khi lưu link: ' + err.message });
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+
+
+// POST /api/admin/reading-order-content - Cập nhật nội dung danh sách tập vào file HTML & Supabase
+router.post('/reading-order-content', async (req: AuthRequest, res) => {
+  try {
+    let { path: orderPath, singleIssuesHtml, tpbHtml, counterTo, parsedItems, parsedTpbs } = req.body;
+    if (!orderPath) {
+      res.status(400).json({ success: false, message: 'Thiếu path của reading order' });
+      return;
+    }
+
+    const filePath = resolveHtmlPath(orderPath);
+    if (!filePath) {
+      res.status(404).json({ success: false, message: `Không tìm thấy file HTML cho: ${orderPath}` });
+      return;
+    }
+
+    // Nếu gửi dữ liệu dạng mảng có cấu trúc từ Visual Editor
+    if (Array.isArray(parsedItems)) {
+      singleIssuesHtml = serializeItemsToHtml(parsedItems);
+      counterTo = parsedItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
+    }
+
+    if (Array.isArray(parsedTpbs)) {
+      tpbHtml = serializeTpbToHtml(parsedTpbs);
+    }
+
+    let html = fs.readFileSync(filePath, 'utf8');
+
+    // 1. Cập nhật counter
+    if (counterTo !== undefined && counterTo !== null) {
+      html = html.replace(
+        /(data-x-element-counter="[^"]*?&quot;to&quot;:&quot;)\d+(&quot;)/i,
+        `$1${counterTo}$2`
+      );
+    }
+
+    // 2. Cập nhật Tab 1 (Từng tập truyện)
+    if (singleIssuesHtml !== undefined) {
+      const panel1Regex = /(<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
+      if (panel1Regex.test(html)) {
+        html = html.replace(panel1Regex, `$1\n${singleIssuesHtml.trim()}\n                  $3`);
+      }
+    }
+
+    // 3. Cập nhật Tab 2 (Tuyển tập TPBs)
+    if (tpbHtml !== undefined) {
+      const panel2Regex = /(<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
+      if (panel2Regex.test(html)) {
+        html = html.replace(panel2Regex, `$1\n${tpbHtml.trim()}\n                  $3`);
+      }
+    }
+
+    fs.writeFileSync(filePath, html, 'utf8');
+
+    // 4. Đồng bộ tổng số tập lên Supabase
+    const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+    findOrderIdByPath(clean).then(async (orderId) => {
+      if (orderId && counterTo !== undefined) {
+        await supabaseAdmin.from('reading_orders').update({
+          total_issues: counterTo,
+          updated_at: new Date().toISOString()
+        }).eq('id', orderId);
+      }
+    }).catch(() => {});
+
+    res.json({
+      success: true,
+      message: 'Đã cập nhật danh sách tập truyện lên hệ thống thành công!',
+      counterTo
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: 'Lỗi khi lưu: ' + err.message });
   }
 });
 
