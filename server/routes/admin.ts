@@ -475,6 +475,8 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
       query = query.order('total_issues', { ascending, nullsFirst: false });
     } else if (sortBy === 'universe') {
       query = query.order('universe_slug', { ascending });
+    } else if (sortBy === 'category') {
+      query = query.order('category_slug', { ascending });
     } else {
       query = query.order('id', { ascending });
     }
