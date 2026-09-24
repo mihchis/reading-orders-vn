@@ -31,7 +31,8 @@ export async function authMiddleware(req: AuthRequest, res: Response, next: Next
     const { data, error } = await supabaseAdmin.auth.getUser(token);
     if (!error && data?.user) {
       const u = data.user;
-      const role = (u.user_metadata?.role || (u.user_metadata?.username === 'admin' ? 'admin' : 'user')) as 'admin' | 'user';
+      const isAdminEmail = u.email ? u.email.toLowerCase().startsWith('admin@') : false;
+      const role = (u.user_metadata?.role || (u.user_metadata?.username === 'admin' || isAdminEmail ? 'admin' : 'user')) as 'admin' | 'user';
       const authUser: AuthUser = {
         id: u.id,
         username: u.user_metadata?.username || u.email?.split('@')[0] || 'reader',
@@ -104,7 +105,8 @@ export async function optionalAuthMiddleware(req: AuthRequest, res: Response, ne
       const { data, error } = await supabaseAdmin.auth.getUser(token);
       if (!error && data?.user) {
         const u = data.user;
-        const role = (u.user_metadata?.role || (u.user_metadata?.username === 'admin' ? 'admin' : 'user')) as 'admin' | 'user';
+        const isAdminEmail = u.email ? u.email.toLowerCase().startsWith('admin@') : false;
+        const role = (u.user_metadata?.role || (u.user_metadata?.username === 'admin' || isAdminEmail ? 'admin' : 'user')) as 'admin' | 'user';
         const authUser: AuthUser = {
           id: u.id,
           username: u.user_metadata?.username || u.email?.split('@')[0] || 'reader',

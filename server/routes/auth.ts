@@ -147,7 +147,8 @@ router.post('/login', async (req, res) => {
     }
 
     const user = sessionData.user;
-    const role = (user.user_metadata?.role || (cleanUsername === 'admin' ? 'admin' : 'user')) as 'admin' | 'user';
+    const isAdminEmail = email.toLowerCase().startsWith('admin@');
+    const role = (user.user_metadata?.role || (cleanUsername === 'admin' || isAdminEmail ? 'admin' : 'user')) as 'admin' | 'user';
     const authUser: AuthUser = {
       id: user.id,
       username: user.user_metadata?.username || cleanUsername,

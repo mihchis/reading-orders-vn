@@ -146,19 +146,17 @@ function walkDir(dir) {
         // Xóa <script> JS của Patreon plugin
         r = content.replace(patreonJsRegex, '');
         if (r !== content) { content = r; patreonModified = true; }
-        // Thay "This reading order is a Patreon exclusive." bằng thông báo miễn phí
-        r = content.replace(patreonExclusiveRegex, 'Nội dung miễn phí — Xem tự do không giới hạn!');
+        // Xóa các thông báo Patreon paywall cũ
+        r = content.replace(patreonExclusiveRegex, '');
         if (r !== content) { content = r; patreonModified = true; }
-        r = content.replace(patreonExclusiveViRegex, 'Nội dung miễn phí — Xem tự do không giới hạn!');
+        r = content.replace(patreonExclusiveViRegex, '');
         if (r !== content) { content = r; patreonModified = true; }
         // Xóa ảnh banner Patreon
         r = content.replace(patreonBannerRegex, '');
         if (r !== content) { content = r; patreonModified = true; }
-        // Thay cả block "free text + banner" bằng thông báo đang cập nhật
-        r = content.replace(patreonFreeTextRegex, 'Nội dung miễn phí — Sắp cập nhật danh sách đầy đủ!</strong></span></p>');
+        r = content.replace(patreonFreeTextRegex, '');
         if (r !== content) { content = r; patreonModified = true; }
         if (patreonModified) { updatedPatreonCount++; fileModified = true; }
-
       }
 
       if (fileModified && content !== original) {

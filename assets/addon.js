@@ -1652,7 +1652,6 @@ window.grecaptcha = window.grecaptcha || {
         updateCounterBadge();
       });
     });
-  }
 
     updateCounterBadge();
   }

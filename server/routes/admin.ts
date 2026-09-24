@@ -5,6 +5,36 @@ import { supabaseAdmin } from '../database/supabase';
 import { adminOnlyMiddleware, AuthRequest } from '../middleware/auth';
 import { parseReadingOrderHtml } from '../utils/htmlParser';
 
+// Danh sách các reading orders đang ở trạng thái Coming Soon (Chưa có danh sách tập)
+export const COMING_SOON_SLUGS = new Set([
+  'absolute-universe',
+  'agatha-harkness',
+  'clayface',
+  'cyborg-superman',
+  'dc-all-in',
+  'dc-k-o',
+  'hobgoblin',
+  'imperial',
+  'invincible',
+  'jeff-the-land-shark',
+  'malekith',
+  'marvel-master-reading-order-part-15',
+  'one-world-under-doom',
+  'peacemaker',
+  'red-skull',
+  'reverse-flash',
+  'scarecrow',
+  'scorpion',
+  'the-atom',
+  'the-leader',
+  'the-mandarin',
+  'the-massive-verse',
+  'the-titans',
+  'ultimate-universe',
+  'winter-soldier',
+  'x-men-age-of-revelation'
+]);
+
 // Helper: chuyển cleanPath → reading_order slug để query Supabase
 // cleanPath ví dụ: /marvel/ultimate-spider-man-reading-order
 // Thử match direct_slug hoặc universe_slug+slug
@@ -370,6 +400,7 @@ router.get('/stats', async (req: AuthRequest, res) => {
         totalIssues: issuesRes.count || 0,
         totalReadLinks: readLinksRes.count || 0,
         totalUniverses: universesRes.count || 0,
+        totalComingSoon: COMING_SOON_SLUGS.size
       }
     });
   } catch (err: any) {
@@ -385,6 +416,7 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
     const search = (req.query.search as string || '').trim();
     const universe = req.query.universe as string;
     const category = req.query.category as string;
+    const status = (req.query.status as string || '').trim(); // 'coming_soon' | 'ready' | ''
 
     const offset = (page - 1) * limit;
 
@@ -408,6 +440,14 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
       query = query.eq('category_slug', category);
     }
 
+    if (status === 'coming_soon') {
+      const slugArr = Array.from(COMING_SOON_SLUGS);
+      query = query.in('slug', slugArr);
+    } else if (status === 'ready') {
+      const slugListStr = `(${Array.from(COMING_SOON_SLUGS).join(',')})`;
+      query = query.not('slug', 'in', slugListStr);
+    }
+
     query = query.order('id', { ascending: false }).range(offset, offset + limit - 1);
 
     const { data: rows, count, error } = await query;
@@ -416,9 +456,14 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
     const total = count || 0;
     const totalPages = Math.ceil(total / limit);
 
+    const enrichedRows = (rows || []).map((ro: any) => ({
+      ...ro,
+      is_coming_soon: COMING_SOON_SLUGS.has(ro.slug) || ro.total_issues === 0
+    }));
+
     res.json({
       success: true,
-      data: rows || [],
+      data: enrichedRows,
       pagination: {
         page,
         limit,
@@ -1091,8 +1136,14 @@ router.post('/reading-order-content', async (req: AuthRequest, res) => {
 
     fs.writeFileSync(filePath, html, 'utf8');
 
-    // 4. Đồng bộ tổng số tập lên Supabase
+    // 4. Đồng bộ tổng số tập lên Supabase & Cập nhật trạng thái Coming Soon
     const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+    const slug = clean.split('/').pop() || '';
+    if (counterTo && counterTo > 0) {
+      COMING_SOON_SLUGS.delete(slug);
+      COMING_SOON_SLUGS.delete(slug.replace(/-reading-order$/, ''));
+    }
+
     findOrderIdByPath(clean).then(async (orderId) => {
       if (orderId && counterTo !== undefined) {
         await supabaseAdmin.from('reading_orders').update({

@@ -15,17 +15,9 @@
   "next_event_title": "",
   "next_event_slug": "",
   "cover_image": "",
-  "total_issues": 1,
+  "total_issues": 0,
   "comic_issues_count": 0,
-  "comments_count": 1,
-  "issues": [
-    {
-      "sort_order": 1,
-      "title": "This reading order is a Patreon exclusive",
-      "issue_type": "comment",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    }
-  ]
+  "comments_count": 0,
+  "issues": [],
+  "status": "coming_soon"
 }

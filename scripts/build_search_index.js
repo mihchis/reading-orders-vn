@@ -21,7 +21,7 @@ function extractTitleFromHtml(htmlPath) {
     const html = fs.readFileSync(htmlPath, 'utf8');
     const titleMatch = html.match(/<title>(.*?)<\/title>/i);
     let title = titleMatch ? titleMatch[1].trim() : '';
-    title = title.replace(/\s*\|\s*Start Reading.*$/i, '').replace(/\s*-\s*Comic Book Reading Orders.*$/i, '');
+    title = title.replace(/\s*\|\s*Start Reading.*$/i, '').replace(/\s*-\s*Comic Book Reading Orders.*$/i, '').replace(/\s*\|\s*Thứ Tự Đọc Truyện Tranh.*$/i, '');
     return title;
   } catch {
     return '';
