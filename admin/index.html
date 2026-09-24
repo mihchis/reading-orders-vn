@@ -1372,8 +1372,14 @@
 </head>
 <body>
 
+  <!-- 0. MÀN HÌNH TẢI KHỞI ĐỘNG (TRÁNH FLASH LOGIN SCREEN VÀ POPUP BÀN PHÍM AUTOFILL TRÊN MOBILE) -->
+  <div id="admin-init-loader" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; flex-direction: column; gap: 14px; text-align: center; padding: 20px;">
+    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 32px; color: var(--color-primary);"></i>
+    <span style="font-size: 14px; font-weight: 700; color: #4b5563;">Đang kiểm tra quyền Quản trị viên...</span>
+  </div>
+
   <!-- 1. MÀN HÌNH ĐĂNG NHẬP ADMIN (KHI CHƯA XÁC THỰC) -->
-  <div id="login-screen">
+  <div id="login-screen" style="display: none;">
     <div class="login-card">
       <div class="login-brand">
         <i class="fa-solid fa-shield-halved"></i>
@@ -1384,14 +1390,14 @@
       <div id="reader-notice" class="login-reader-notice"></div>
       <div id="login-error" class="login-error"></div>
 
-      <form id="admin-login-form">
+      <form id="admin-login-form" autocomplete="off">
         <div class="form-group">
           <label>Tên đăng nhập hoặc Email</label>
-          <input type="text" id="admin-username" class="form-input" placeholder="admin hoặc admin@readingorders.vn" required>
+          <input type="text" id="admin-username" class="form-input" placeholder="admin hoặc admin@readingorders.vn" autocomplete="username" required disabled>
         </div>
         <div class="form-group">
           <label>Mật khẩu</label>
-          <input type="password" id="admin-password" class="form-input" placeholder="••••••••" required>
+          <input type="password" id="admin-password" class="form-input" placeholder="••••••••" autocomplete="current-password" required disabled>
         </div>
         <button type="submit" id="btn-login" class="btn-primary" style="margin-top: 10px;">
           <i class="fa-solid fa-lock"></i> Đăng nhập Quản Trị Viên
@@ -1623,7 +1629,7 @@
                 <!-- Search bar full-width on mobile -->
                 <div class="search-box-wrap">
                   <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                  <input type="text" id="order-search" class="search-input" placeholder="Tìm theo tên bộ, slug, nhân vật..." oninput="debounceSearchOrders()">
+                  <input type="text" id="order-search" class="search-input" placeholder="Tìm theo tên bộ, slug, nhân vật..." oninput="debounceSearchOrders()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
                   <button type="button" id="btn-clear-search" class="btn-clear-search" onclick="clearOrderSearch()" title="Xóa tìm kiếm" style="display: none;">
                     <i class="fa-solid fa-xmark"></i>
                   </button>
@@ -1748,7 +1754,7 @@
                 <i class="fa-solid fa-book-bookmark" style="color: #34d399;"></i> Gắn Link Đọc Trực Tiếp Cho Từng Tập
               </div>
               <div class="toolbar">
-                <input type="text" id="issue-order-search" class="search-input" placeholder="Gõ tên bộ truyện để chọn..." oninput="searchOrdersForIssues()">
+                <input type="text" id="issue-order-search" class="search-input" placeholder="Gõ tên bộ truyện để chọn..." oninput="searchOrdersForIssues()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
                 <select id="select-order-for-issues" class="select-filter" style="min-width: 250px;" onchange="loadIssuesForSelectedOrder()">
                   <option value="">-- Chọn thứ tự đọc --</option>
                 </select>
@@ -1907,16 +1913,16 @@
         <button class="btn-close-modal" onclick="closeOrderModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <form id="order-form">
+        <form id="order-form" autocomplete="off">
           <input type="hidden" id="edit-order-id">
           <div class="form-group">
             <label>Tiêu đề thứ tự đọc</label>
-            <input type="text" id="edit-order-title" class="form-input" required>
+            <input type="text" id="edit-order-title" class="form-input" autocomplete="off" required>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
             <div class="form-group">
               <label>Đường dẫn tĩnh (Slug)</label>
-              <input type="text" id="edit-order-slug" class="form-input" required>
+              <input type="text" id="edit-order-slug" class="form-input" autocomplete="off" autocorrect="off" autocapitalize="off" required>
             </div>
             <div class="form-group">
               <label>Vũ trụ</label>
@@ -1930,20 +1936,20 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
             <div class="form-group">
               <label>Năm phát hành</label>
-              <input type="text" id="edit-order-year" class="form-input" placeholder="VD: 2024">
+              <input type="text" id="edit-order-year" class="form-input" placeholder="VD: 2024" autocomplete="off">
             </div>
             <div class="form-group">
               <label>Nhân vật tiêu biểu</label>
-              <input type="text" id="edit-order-characters" class="form-input" placeholder="VD: Batman, Spider-Man">
+              <input type="text" id="edit-order-characters" class="form-input" placeholder="VD: Batman, Spider-Man" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label>Mô tả tóm tắt</label>
-            <textarea id="edit-order-description" class="form-input" rows="3"></textarea>
+            <textarea id="edit-order-description" class="form-input" rows="3" autocomplete="off"></textarea>
           </div>
           <div class="form-group">
             <label>Link ảnh bìa (Cover Image)</label>
-            <input type="text" id="edit-order-cover" class="form-input" placeholder="https://...">
+            <input type="text" id="edit-order-cover" class="form-input" placeholder="https://..." autocomplete="off" autocorrect="off" autocapitalize="off">
           </div>
         </form>
       </div>
@@ -2061,10 +2067,17 @@
     function fillAdminDefaults() {
       const u = document.getElementById('admin-username');
       const p = document.getElementById('admin-password');
-      if (u) u.value = 'admin';
+      if (u) {
+        u.disabled = false;
+        u.removeAttribute('disabled');
+        u.value = 'admin';
+      }
       if (p) {
+        p.type = 'password';
+        p.disabled = false;
+        p.removeAttribute('disabled');
         p.value = 'admin123';
-        p.focus();
+        // Không gọi p.focus() trên mobile để tránh ép bật bàn phím
       }
     }
 
@@ -2115,6 +2128,21 @@
     }
 
     function showLoginScreen(readerUser = null, errorMsg = null) {
+      const loader = document.getElementById('admin-init-loader');
+      if (loader) loader.style.display = 'none';
+
+      const p = document.getElementById('admin-password');
+      if (p) {
+        p.type = 'password';
+        p.disabled = false;
+        p.removeAttribute('disabled');
+      }
+      const u = document.getElementById('admin-username');
+      if (u) {
+        u.disabled = false;
+        u.removeAttribute('disabled');
+      }
+
       document.getElementById('login-screen').style.display = 'flex';
       document.getElementById('dashboard-screen').style.display = 'none';
 
@@ -2161,7 +2189,26 @@
     }
 
     function showDashboardScreen() {
+      const loader = document.getElementById('admin-init-loader');
+      if (loader) loader.style.display = 'none';
+
       document.getElementById('login-screen').style.display = 'none';
+
+      // VÔ HIỆU HÓA HOÀN TOÀN INPUT PASSWORD ĐỂ TRÌNH DUYỆT ĐIỆN THOẠI (IOS/ANDROID)
+      // KHÔNG TỰ ĐỘNG BẬT BÀN PHÍM HOẶC AUTOFILL MẬT KHẨU KHI ĐANG DÙNG ADMIN
+      const p = document.getElementById('admin-password');
+      if (p) {
+        p.value = '';
+        p.disabled = true;
+        p.setAttribute('disabled', 'disabled');
+        p.type = 'text'; // Chuyển thành text thông thường để triệt tiêu mọi password heuristic
+      }
+      const u = document.getElementById('admin-username');
+      if (u) {
+        u.disabled = true;
+        u.setAttribute('disabled', 'disabled');
+      }
+
       document.getElementById('dashboard-screen').style.display = 'flex';
 
       if (currentAdminUser) {
@@ -2901,12 +2948,13 @@
             </select>
             <input type="text" class="admin-v-title form-input" data-idx="${idx}" value="${escapeAdminHtml(item.title || '')}"
               placeholder="${isPhase ? 'Tên giai đoạn...' : (isNote ? 'Nội dung ghi chú...' : 'Tên truyện / số tập...')}"
+              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
               style="flex: 2; min-width: 150px; padding: 6px 10px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : '#111'};" />
             <input type="text" class="admin-v-year form-input" data-idx="${idx}" value="${escapeAdminHtml(item.year || '')}"
-              placeholder="Năm (VD: 2024)"
+              placeholder="Năm (VD: 2024)" autocomplete="off"
               style="width: 100px; padding: 6px 8px; font-size: 12px; display: ${isPhase ? 'none' : 'block'};" />
             <input type="text" class="admin-v-note form-input" data-idx="${idx}" value="${escapeAdminHtml(item.note || '')}"
-              placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}"
+              placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}" autocomplete="off"
               style="flex: 1.3; min-width: 130px; padding: 6px 9px; font-size: 12px; color: #1e40af;" />
             <button type="button" class="btn-action admin-v-insert" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="padding: 6px 9px; color: #16a34a; font-weight: 800;">＋</button>
             <button type="button" class="btn-action admin-v-del" data-idx="${idx}" title="Xóa dòng này" style="padding: 6px 9px; color: #dc2626;">🗑️</button>
@@ -2989,8 +3037,8 @@
       container.innerHTML = _adminEditorTpbs.map((tpb, idx) => `
         <div class="admin-v-tpb-card" data-idx="${idx}" style="background: #fff; border: 1px solid #d1d5db; border-radius: 6px; padding: 12px;">
           <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-            <input type="text" class="admin-tpb-title form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.title || '')}" placeholder="Tên tập tổng hợp (VD: Ultimate Invasion)" style="flex: 2; font-weight: 700;" />
-            <input type="text" class="admin-tpb-link form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.buyLink || '')}" placeholder="Link đọc hoặc mua..." style="flex: 1;" />
+            <input type="text" class="admin-tpb-title form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.title || '')}" placeholder="Tên tập tổng hợp (VD: Ultimate Invasion)" autocomplete="off" style="flex: 2; font-weight: 700;" />
+            <input type="text" class="admin-tpb-link form-input" data-idx="${idx}" value="${escapeAdminHtml(tpb.buyLink || '')}" placeholder="Link đọc hoặc mua..." autocomplete="off" autocorrect="off" autocapitalize="off" style="flex: 1;" />
             <button type="button" class="btn-action admin-tpb-del" data-idx="${idx}" style="color: #dc2626; padding: 6px 12px; font-weight: bold;">🗑️ Xóa</button>
           </div>
           <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); display: block; margin-bottom: 4px;">Các tập con thu thập (mỗi dòng 1 tập):</label>
@@ -3370,7 +3418,8 @@
             <td>
               <div class="issue-input-wrap">
                 <input type="text" id="issue-link-${issue.id}" class="form-input" style="padding: 7px 10px; font-size: 13px; width: 100%; ${hasLink ? 'border-color: var(--color-success);' : ''}" 
-                       value="${issue.read_url || ''}" placeholder="Dán link đọc (Drive, Web, Blog...)">
+                       value="${issue.read_url || ''}" placeholder="Dán link đọc (Drive, Web, Blog...)"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
               </div>
             </td>
             <td style="text-align: right;">
