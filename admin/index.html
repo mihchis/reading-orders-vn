@@ -512,6 +512,28 @@
       letter-spacing: 0.04em;
       font-size: 12px;
     }
+    table.data-table th.sortable {
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    table.data-table th.sortable:hover {
+      background: #f1f5f9;
+      color: var(--color-primary);
+    }
+    table.data-table th.sortable.active-sort {
+      color: var(--color-primary);
+      background: rgba(228, 37, 37, 0.05);
+    }
+    table.data-table th .sort-icon {
+      margin-left: 6px;
+      font-size: 11px;
+      color: #9ca3af;
+      transition: color 0.15s;
+    }
+    table.data-table th .sort-icon.active {
+      color: var(--color-primary);
+    }
     table.data-table td {
       padding: 12px 14px;
       border-bottom: 1px solid #f0f0f0;
@@ -1116,18 +1138,46 @@
                 <i class="fa-solid fa-list-check" style="color: #60a5fa;"></i> Danh Sách Reading Orders
               </div>
               <div class="toolbar">
-                <input type="text" id="order-search" class="search-input" placeholder="Tìm theo tên bộ, slug..." oninput="debounceSearchOrders()">
+                <input type="text" id="order-search" class="search-input" placeholder="Tìm theo tên bộ, slug, nhân vật..." oninput="debounceSearchOrders()">
+                
                 <select id="order-universe-filter" class="select-filter" onchange="loadOrders(1)">
                   <option value="">Tất cả vũ trụ</option>
                   <option value="marvel">Marvel Comics</option>
                   <option value="dc">DC Comics</option>
                   <option value="other">Khác (Other)</option>
                 </select>
-                <select id="order-status-filter" class="select-filter" style="border-color: #f59e0b; color: #b45309; font-weight: 600;" onchange="loadOrders(1)">
+
+                <select id="order-status-filter" class="select-filter" style="border-color: #f59e0b; font-weight: 600;" onchange="loadOrders(1)">
                   <option value="" style="color: var(--text-main); font-weight: normal;">Tất cả trạng thái</option>
-                  <option value="coming_soon" style="color: #b45309; font-weight: 700;">⏳ Đang biên tập (Coming Soon - 26 bộ)</option>
-                  <option value="ready" style="color: #15803d;">✅ Đã có nội dung</option>
+                  <option value="coming_soon" style="color: #b45309; font-weight: 700;">⏳ Đang biên tập (Coming Soon / 0 tập)</option>
+                  <option value="ready" style="color: #15803d; font-weight: 600;">✅ Đã có nội dung</option>
+                  <option value="published">🟢 Đã xuất bản</option>
+                  <option value="draft">⚪ Bản nháp</option>
                 </select>
+
+                <select id="order-issues-filter" class="select-filter" onchange="loadOrders(1)">
+                  <option value="">Tất cả quy mô tập</option>
+                  <option value="zero">Chưa có tập (0 tập)</option>
+                  <option value="1-25">1 - 25 tập (Ngắn)</option>
+                  <option value="26-100">26 - 100 tập (Vừa)</option>
+                  <option value="100+">> 100 tập (Dài kỳ)</option>
+                </select>
+
+                <select id="order-sort-select" class="select-filter" style="border-color: #3b82f6; font-weight: 600;" onchange="handleSortSelectChange()">
+                  <option value="id-desc">Sắp xếp: Mới nhất (#ID giảm dần)</option>
+                  <option value="id-asc">Sắp xếp: Cũ nhất (#ID tăng dần)</option>
+                  <option value="title-asc">Sắp xếp: Tên A ➔ Z</option>
+                  <option value="title-desc">Sắp xếp: Tên Z ➔ A</option>
+                  <option value="issues-desc">Sắp xếp: Số tập nhiều nhất</option>
+                  <option value="issues-asc">Sắp xếp: Số tập ít nhất</option>
+                  <option value="year-desc">Sắp xếp: Năm mới nhất</option>
+                  <option value="year-asc">Sắp xếp: Năm cũ nhất</option>
+                </select>
+
+                <button id="btn-reset-order-filters" class="btn-action" style="padding: 7px 12px; font-size: 13px;" onclick="resetOrderFilters()" title="Đặt lại toàn bộ lọc & tìm kiếm">
+                  <i class="fa-solid fa-rotate-left"></i> Đặt lại
+                </button>
+
                 <button class="btn-primary" style="width: auto; padding: 8px 16px; font-size: 13px;" onclick="openCreateOrderModal()">
                   <i class="fa-solid fa-plus"></i> Thêm mới
                 </button>
@@ -1138,11 +1188,21 @@
               <table class="data-table">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Tiêu đề bộ đọc</th>
-                    <th>Vũ trụ</th>
-                    <th>Năm</th>
-                    <th>Số tập</th>
+                    <th class="sortable active-sort" onclick="setOrderSort('id')" title="Bấm để sắp xếp theo ID">
+                      ID <i id="sort-icon-id" class="fa-solid fa-sort-down sort-icon active"></i>
+                    </th>
+                    <th class="sortable" onclick="setOrderSort('title')" title="Bấm để sắp xếp theo Tiêu đề">
+                      Tiêu đề bộ đọc <i id="sort-icon-title" class="fa-solid fa-sort sort-icon"></i>
+                    </th>
+                    <th class="sortable" onclick="setOrderSort('universe')" title="Bấm để sắp xếp theo Vũ trụ">
+                      Vũ trụ <i id="sort-icon-universe" class="fa-solid fa-sort sort-icon"></i>
+                    </th>
+                    <th class="sortable" onclick="setOrderSort('year')" title="Bấm để sắp xếp theo Năm">
+                      Năm <i id="sort-icon-year" class="fa-solid fa-sort sort-icon"></i>
+                    </th>
+                    <th class="sortable" onclick="setOrderSort('issues')" title="Bấm để sắp xếp theo Số tập">
+                      Số tập <i id="sort-icon-issues" class="fa-solid fa-sort sort-icon"></i>
+                    </th>
                     <th>Trạng thái</th>
                     <th style="text-align: right;">Thao tác</th>
                   </tr>
@@ -1741,6 +1801,61 @@
       } catch (e) {}
     }
 
+    // Trạng thái Sắp xếp & Lọc Orders
+    let currentOrderSort = 'id';
+    let currentOrderSortDir = 'desc';
+
+    function setOrderSort(field) {
+      if (currentOrderSort === field) {
+        currentOrderSortDir = currentOrderSortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentOrderSort = field;
+        currentOrderSortDir = (field === 'title' || field === 'universe') ? 'asc' : 'desc';
+      }
+      syncSortControls();
+      loadOrders(1);
+    }
+
+    function handleSortSelectChange() {
+      const val = document.getElementById('order-sort-select').value;
+      const [field, dir] = val.split('-');
+      currentOrderSort = field;
+      currentOrderSortDir = dir;
+      syncSortControls();
+      loadOrders(1);
+    }
+
+    function syncSortControls() {
+      const sel = document.getElementById('order-sort-select');
+      if (sel) sel.value = `${currentOrderSort}-${currentOrderSortDir}`;
+
+      const fields = ['id', 'title', 'universe', 'year', 'issues'];
+      fields.forEach(f => {
+        const icon = document.getElementById(`sort-icon-${f}`);
+        const th = icon?.closest('th');
+        if (!icon) return;
+        if (f === currentOrderSort) {
+          th?.classList.add('active-sort');
+          icon.className = `fa-solid fa-sort-${currentOrderSortDir === 'asc' ? 'up' : 'down'} sort-icon active`;
+        } else {
+          th?.classList.remove('active-sort');
+          icon.className = 'fa-solid fa-sort sort-icon';
+        }
+      });
+    }
+
+    function resetOrderFilters() {
+      document.getElementById('order-search').value = '';
+      document.getElementById('order-universe-filter').value = '';
+      document.getElementById('order-status-filter').value = '';
+      const issuesFilter = document.getElementById('order-issues-filter');
+      if (issuesFilter) issuesFilter.value = '';
+      currentOrderSort = 'id';
+      currentOrderSortDir = 'desc';
+      syncSortControls();
+      loadOrders(1);
+    }
+
     // Lọc nhanh các bộ Coming Soon từ Dashboard
     function filterComingSoonOrders() {
       switchTab('orders');
@@ -1755,11 +1870,12 @@
       const search = document.getElementById('order-search').value.trim();
       const universe = document.getElementById('order-universe-filter').value;
       const status = document.getElementById('order-status-filter')?.value || '';
+      const issueRange = document.getElementById('order-issues-filter')?.value || '';
       const tbody = document.getElementById('orders-table-body');
       tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 25px;">Đang tải danh sách...</td></tr>';
 
       try {
-        const url = `/api/admin/reading-orders?page=${page}&limit=20&search=${encodeURIComponent(search)}&universe=${encodeURIComponent(universe)}&status=${encodeURIComponent(status)}`;
+        const url = `/api/admin/reading-orders?page=${page}&limit=20&search=${encodeURIComponent(search)}&universe=${encodeURIComponent(universe)}&status=${encodeURIComponent(status)}&issueRange=${encodeURIComponent(issueRange)}&sortBy=${encodeURIComponent(currentOrderSort)}&sortOrder=${encodeURIComponent(currentOrderSortDir)}`;
         const res = await apiFetch(url);
         const json = await res.json();
 

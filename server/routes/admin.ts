@@ -416,7 +416,11 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
     const search = (req.query.search as string || '').trim();
     const universe = req.query.universe as string;
     const category = req.query.category as string;
-    const status = (req.query.status as string || '').trim(); // 'coming_soon' | 'ready' | ''
+    const status = (req.query.status as string || '').trim(); // 'coming_soon' | 'ready' | 'published' | 'draft' | ''
+    const issueRange = (req.query.issueRange as string || '').trim(); // 'zero' | '1-25' | '26-100' | '100+'
+    const sortBy = (req.query.sortBy as string || 'id').trim(); // 'id' | 'title' | 'universe' | 'year' | 'issues'
+    const sortOrder = (req.query.sortOrder as string || 'desc').toLowerCase(); // 'asc' | 'desc'
+    const ascending = sortOrder === 'asc';
 
     const offset = (page - 1) * limit;
 
@@ -442,13 +446,40 @@ router.get('/reading-orders', async (req: AuthRequest, res) => {
 
     if (status === 'coming_soon') {
       const slugArr = Array.from(COMING_SOON_SLUGS);
-      query = query.in('slug', slugArr);
+      query = query.or(`slug.in.(${slugArr.join(',')}),total_issues.eq.0`);
     } else if (status === 'ready') {
       const slugListStr = `(${Array.from(COMING_SOON_SLUGS).join(',')})`;
-      query = query.not('slug', 'in', slugListStr);
+      query = query.not('slug', 'in', slugListStr).gt('total_issues', 0);
+    } else if (status === 'published') {
+      query = query.eq('is_published', true);
+    } else if (status === 'draft') {
+      query = query.eq('is_published', false);
     }
 
-    query = query.order('id', { ascending: false }).range(offset, offset + limit - 1);
+    if (issueRange === 'zero') {
+      query = query.eq('total_issues', 0);
+    } else if (issueRange === '1-25') {
+      query = query.gt('total_issues', 0).lte('total_issues', 25);
+    } else if (issueRange === '26-100') {
+      query = query.gt('total_issues', 25).lte('total_issues', 100);
+    } else if (issueRange === '100+') {
+      query = query.gt('total_issues', 100);
+    }
+
+    // Dynamic sorting
+    if (sortBy === 'title') {
+      query = query.order('title', { ascending });
+    } else if (sortBy === 'year') {
+      query = query.order('year_published', { ascending, nullsFirst: false });
+    } else if (sortBy === 'issues') {
+      query = query.order('total_issues', { ascending, nullsFirst: false });
+    } else if (sortBy === 'universe') {
+      query = query.order('universe_slug', { ascending });
+    } else {
+      query = query.order('id', { ascending });
+    }
+
+    query = query.range(offset, offset + limit - 1);
 
     const { data: rows, count, error } = await query;
     if (error) throw error;
