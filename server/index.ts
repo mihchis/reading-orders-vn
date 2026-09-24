@@ -7,33 +7,11 @@ if (typeof process.loadEnvFile === 'function') {
 }
 
 import express from 'express';
-import cors from 'cors';
 import path from 'node:path';
 import fs from 'node:fs';
-import authRoutes from './routes/auth';
-import readingOrdersRoutes from './routes/readingOrders';
-import adminRoutes from './routes/admin';
-import commonRoutes from './routes/common';
+import app from './app';
 
-const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Middlewares
-app.use(cors({
-  origin: true,
-  credentials: true,
-}));
-app.use(express.json({ limit: '10mb' }));
-
-// Đăng ký các Route API
-app.use('/api/auth', authRoutes);
-app.use('/api/reading-orders', readingOrdersRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api', commonRoutes);
-
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString() });
-});
 
 // Phục vụ tài nguyên tĩnh công khai (assets, wp-content, wp-includes, wp-json)
 const rootDir = process.cwd();

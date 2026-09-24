@@ -29,6 +29,7 @@ const siteItems = [
   'wp-includes',
   'wp-json',
   'index.html',
+  'public',
   'search_index.json'
 ];
 

@@ -12,5 +12,5 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["src", "server"]
+  "include": ["src", "server", "api"]
 }
