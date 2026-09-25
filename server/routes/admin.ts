@@ -1373,26 +1373,39 @@ router.post(['/reading-order-content', '/reading-order-content/'], async (req: A
             /(data-x-element-counter="[^"]*?&quot;to&quot;:&quot;)\d+(&quot;)/i,
             `$1${counterTo}$2`
           );
-        }
-
-        // Cập nhật Tab 1 (Từng tập truyện)
-        if (singleIssuesHtml !== undefined) {
-          const panel1Regex = /(<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
-          if (panel1Regex.test(html)) {
-            html = html.replace(panel1Regex, `$1\n${singleIssuesHtml.trim()}\n                  $3`);
+          html = html.replace(
+            /(<div class="x-counter-number-wrap"><span class="x-counter-number">)\d+(<\/span><\/div>)/i,
+            `$1${counterTo}$2`
+          );
+          if (counterTo > 0) {
+            html = html.replace(
+              /(<div class="x-counter-after">)TẬP TRUYỆN • ĐANG CẬP NHẬT(<\/div>)/i,
+              `$1TẬP TRUYỆN$2`
+            );
           }
         }
 
-        // Cập nhật Tab 2 (Tuyển tập TPBs)
-        if (tpbHtml !== undefined) {
-          const panel2Regex = /(<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
-          if (panel2Regex.test(html)) {
-            html = html.replace(panel2Regex, `$1\n${tpbHtml.trim()}\n                  $3`);
-          } else {
-            // Nếu chưa có panel-reading-order-2 trong HTML (như trang Coming Soon), chèn vào sau panel 1
-            const panelsCloseRegex = /(<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<script)/i;
-            const newPanel2Html = `\n<div id="panel-reading-order-2" class="x-tabs-panel" role="tabpanel" aria-labelledby="tab-reading-order-2" aria-hidden="true">\n${tpbHtml.trim()}\n</div>`;
-            html = html.replace(/(<div id="panel-reading-order-1"[^>]*>[\s\S]*?<\/div>\s*<\/div>)/i, `$1${newPanel2Html}`);
+        // Cập nhật toàn bộ khối x-tabs-panels chuẩn xác, tránh lồng div và thừa tag
+        const safeTpb = (tpbHtml && tpbHtml.trim())
+          ? tpbHtml.trim()
+          : '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;"><p style="color: #64748b; font-style: italic;">Chưa có tuyển tập (TPBs).</p></div>';
+
+        const replacementTabsPanels = `<div class="x-tabs-panels">
+                          <div id="panel-reading-order-1" class="x-tabs-panel x-active" role="tabpanel" aria-labelledby="tab-reading-order-1" aria-hidden="false">
+${(singleIssuesHtml || '').trim()}
+                          </div>
+                          <div id="panel-reading-order-2" class="x-tabs-panel" role="tabpanel" aria-labelledby="tab-reading-order-2" aria-hidden="true">
+${safeTpb}
+                          </div>
+                        </div>`;
+
+        const tabsPanelsMatch = html.match(/<div class="x-tabs-panels">[\s\S]*?(?=<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>|\s*<\/article>)/i);
+        if (tabsPanelsMatch) {
+          html = html.replace(tabsPanelsMatch[0], replacementTabsPanels + '\n                      ');
+        } else {
+          const p1Regex = /<div class="x-tabs-panels">[\s\S]*?(?=<\/div>\s*<\/div>\s*<\/div>)/i;
+          if (p1Regex.test(html)) {
+            html = html.replace(p1Regex, replacementTabsPanels);
           }
         }
 
