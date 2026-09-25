@@ -3,6 +3,96 @@
    Tích hợp tương tác thông minh trên nền tảng bản mirror gốc
    ========================================================= */
 
+/* =========================================================
+   1. DESIGN TOKENS & STANDARDIZED SEMANTIC STYLES
+   Hệ thống biến màu và class ngữ nghĩa cho toàn bộ 600+ trang
+   ========================================================= */
+:root {
+  --ro-color-ongoing: inherit;
+  --ro-color-mini: #008000;
+  --ro-color-oneshot: #ff0000;
+  --ro-color-phase: #0066aa;
+  --ro-color-note: #0000ff;
+  --ro-color-dim: #64748b;
+  --ro-tab-padding: 1.5rem 30px;
+}
+
+/* Các lớp loại tập truyện */
+.ro-item-phase {
+  color: var(--ro-color-phase) !important;
+  font-weight: 800;
+}
+
+.ro-item-mini {
+  color: var(--ro-color-mini) !important;
+  font-weight: 600;
+}
+
+.ro-item-oneshot {
+  color: var(--ro-color-oneshot) !important;
+  font-weight: 600;
+}
+
+.ro-item-note {
+  color: var(--ro-color-note) !important;
+  font-style: italic;
+}
+
+.ro-phase-note {
+  color: var(--ro-color-dim) !important;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+/* Nội dung bên trong Tab */
+.ro-tab-content {
+  padding: var(--ro-tab-padding) !important;
+  text-align: left !important;
+}
+
+.ro-tab-empty {
+  color: var(--ro-color-dim) !important;
+  font-style: italic;
+}
+
+/* Khối Section sạch không margin/padding thừa */
+.ro-section-clean {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.ro-counter-clean {
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.ro-overview-clean {
+  margin: 0 0 1.5em 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.ro-legend-clean {
+  margin: 0 0 1.5em 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Kiểu chữ thông dụng */
+.ro-legend-text {
+  text-align: center !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+.ro-text-justify {
+  text-align: justify !important;
+}
+
+
+
 /* --- Top Quick Action Floating Bar --- */
 #ro-top-bar {
   position: fixed;
@@ -1753,84 +1843,6 @@ body .x-scroll-top i {
   background: #ffffff;
   font-size: 13px;
   line-height: 1.7;
-}
-
-/* =========================================================
-   READING ORDERS STANDARDIZED SEMANTIC STYLES
-   Thay thế các inline style trên toàn bộ 600+ trang reading order
-   ========================================================= */
-:root {
-  --ro-color-ongoing: inherit;
-  --ro-color-mini: #008000;
-  --ro-color-oneshot: #ff0000;
-  --ro-color-phase: #0066aa;
-  --ro-color-note: #0000ff;
-  --ro-color-dim: #64748b;
-  --ro-tab-padding: 1.5rem 30px;
-}
-
-/* Các lớp loại tập truyện */
-.ro-item-phase {
-  color: var(--ro-color-phase) !important;
-  font-weight: 800;
-}
-
-.ro-item-mini {
-  color: var(--ro-color-mini) !important;
-  font-weight: 600;
-}
-
-.ro-item-oneshot {
-  color: var(--ro-color-oneshot) !important;
-  font-weight: 600;
-}
-
-.ro-item-note {
-  color: var(--ro-color-note) !important;
-  font-style: italic;
-}
-
-.ro-phase-note {
-  color: var(--ro-color-dim) !important;
-  font-size: 0.9em;
-  font-style: italic;
-}
-
-/* Nội dung bên trong Tab */
-.ro-tab-content {
-  padding: var(--ro-tab-padding) !important;
-  text-align: left !important;
-}
-
-.ro-tab-empty {
-  color: var(--ro-color-dim) !important;
-  font-style: italic;
-}
-
-/* Khối Section sạch không margin/padding thừa */
-.ro-section-clean {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-}
-
-.ro-counter-clean {
-  margin: 0 0 1em 0 !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-}
-
-.ro-legend-clean {
-  margin: 0 0 1.5em 0 !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-}
-
-/* Chú giải (Legend) */
-.ro-legend-text {
-  text-align: center !important;
-  margin: 0 !important;
-  font-size: 14px !important;
 }
 
 

@@ -25,6 +25,9 @@ const emptyTpbRegex = /<p\s+style="color:\s*#64748b;\s*font-style:\s*italic;">\s
 const counterCleanRegex = /<div class="x-section ro-counter-section mbm"\s+style="margin:\s*0px 0px 1em 0px;\s*padding:\s*0px;\s*background-color:\s*transparent;">/gi;
 const roSectionCleanRegex = /<div class="x-section ro-reading-order-section"\s+style="margin:\s*0px;\s*padding:\s*0px;\s*background-color:\s*transparent;">/gi;
 const roSharedLegendCleanRegex = /<div class="x-section ro-shared-legend mbm"\s+style="margin:\s*0px 0px 1\.5em 0px;\s*padding:\s*0px;\s*background-color:\s*transparent;">/gi;
+const roTitleCleanRegex = /<div class="x-section ro-title-section"\s+style="margin:\s*0px;\s*padding:\s*0px;\s*background-color:\s*transparent;">/gi;
+const roOverviewCleanRegex = /<div class="x-section ro-overview-section"\s+style="margin:\s*0px 0px 1\.5em 0px;\s*padding:\s*0px;\s*background-color:\s*transparent;">/gi;
+const textJustifyRegex = /<p\s+style="text-align:\s*justify;">/gi;
 
 // Legend text clean
 const legendOngoingTextRegex = /<p style="text-align:\s*center;\s*margin:\s*0;\s*font-size:\s*14px;"><strong>Bộ truyện dài kỳ<\/strong><\/p>/gi;
@@ -44,7 +47,10 @@ let stats = {
   counterCleanReplaced: 0,
   roSectionCleanReplaced: 0,
   legendSectionReplaced: 0,
-  legendTextReplaced: 0
+  legendTextReplaced: 0,
+  titleSectionReplaced: 0,
+  overviewSectionReplaced: 0,
+  textJustifyReplaced: 0
 };
 
 function processHtmlFile(filePath) {
@@ -148,6 +154,30 @@ function processHtmlFile(filePath) {
     fileChanged = true;
   }
 
+  // 11. Refactor Title Section
+  if (roTitleCleanRegex.test(content)) {
+    const matches = (content.match(roTitleCleanRegex) || []).length;
+    stats.titleSectionReplaced += matches;
+    content = content.replace(roTitleCleanRegex, '<div class="x-section ro-title-section ro-section-clean">');
+    fileChanged = true;
+  }
+
+  // 12. Refactor Overview Section
+  if (roOverviewCleanRegex.test(content)) {
+    const matches = (content.match(roOverviewCleanRegex) || []).length;
+    stats.overviewSectionReplaced += matches;
+    content = content.replace(roOverviewCleanRegex, '<div class="x-section ro-overview-section ro-overview-clean">');
+    fileChanged = true;
+  }
+
+  // 13. Refactor Text Justify
+  if (textJustifyRegex.test(content)) {
+    const matches = (content.match(textJustifyRegex) || []).length;
+    stats.textJustifyReplaced += matches;
+    content = content.replace(textJustifyRegex, '<p class="ro-text-justify">');
+    fileChanged = true;
+  }
+
   if (fileChanged && content !== originalContent) {
     modifiedFilesCount++;
     if (!isDryRun) {
@@ -207,4 +237,7 @@ console.log(`🔹 Counter Clean: ${stats.counterCleanReplaced}`);
 console.log(`🔹 Section Clean: ${stats.roSectionCleanReplaced}`);
 console.log(`🔹 Legend Section Clean: ${stats.legendSectionReplaced}`);
 console.log(`🔹 Legend Text Clean: ${stats.legendTextReplaced}`);
+console.log(`🔹 Title Section Clean: ${stats.titleSectionReplaced}`);
+console.log(`🔹 Overview Section Clean: ${stats.overviewSectionReplaced}`);
+console.log(`🔹 Text Justify Clean: ${stats.textJustifyReplaced}`);
 console.log(`=========================================`);

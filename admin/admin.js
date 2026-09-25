@@ -1058,16 +1058,16 @@
       _adminEditorItems.forEach(it => {
         const type = it.type || 'ongoing';
         const yearStr = it.year && it.year.trim() ? ` (${it.year.trim()})` : '';
-        const noteStr = it.note && it.note.trim() ? ` <span style="color: #0000ff; font-style: italic;">(${escapeAdminHtml(it.note.trim())})</span>` : '';
+        const noteStr = it.note && it.note.trim() ? ` <span class="ro-item-note">(${escapeAdminHtml(it.note.trim())})</span>` : '';
         if (type === 'phase') {
-          const phaseNote = it.note && it.note.trim() ? `<br/><span style="color: #64748b; font-size: 12.5px; font-style: italic;">${escapeAdminHtml(it.note.trim())}</span>` : '';
-          html += `<div style="margin-top: 14px; margin-bottom: 4px;"><span style="color: #0066aa; font-weight: 800; font-size: 15px;">${escapeAdminHtml(it.title)}</span>${phaseNote}</div>`;
+          const phaseNote = it.note && it.note.trim() ? `<br/><span class="ro-phase-note">${escapeAdminHtml(it.note.trim())}</span>` : '';
+          html += `<div style="margin-top: 14px; margin-bottom: 4px;"><span class="ro-item-phase" style="font-size: 15px;">${escapeAdminHtml(it.title)}</span>${phaseNote}</div>`;
         } else if (type === 'note') {
-          html += `<div style="color: #0000ff; font-style: italic; margin: 3px 0;">${escapeAdminHtml(it.title)}</div>`;
+          html += `<div class="ro-item-note" style="margin: 3px 0;">${escapeAdminHtml(it.title)}</div>`;
         } else if (type === 'mini') {
-          html += `<div><span style="color: #008000; font-weight: 600;">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+          html += `<div><span class="ro-item-mini">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
         } else if (type === 'oneshot') {
-          html += `<div><span style="color: #ff0000; font-weight: 600;">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
+          html += `<div><span class="ro-item-oneshot">${escapeAdminHtml(it.title)}</span>${yearStr}${noteStr}</div>`;
         } else {
           html += `<div>${escapeAdminHtml(it.title)}${yearStr}${noteStr}</div>`;
         }
