@@ -37,8 +37,7 @@ apiRouter.use('/reading-orders', readingOrdersRoutes);
 apiRouter.use('/admin', adminRoutes);
 apiRouter.use('/', commonRoutes);
 
-// Phục vụ cả khi req.url giữ nguyên tiền tố /api hoặc bị rewrite bỏ /api
+// Phục vụ toàn bộ API dưới tiền tố /api
 app.use('/api', apiRouter);
-app.use('/', apiRouter);
 
 export default app;

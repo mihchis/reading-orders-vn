@@ -21,9 +21,19 @@ app.use((req, res, next) => {
   const match = req.path.match(/\/(wp-content|wp-includes|assets|wp-json)\/(.+)$/);
   if (match) {
     const [, folder, subpath] = match;
-    const resolvedPath = path.join(rootDir, folder, subpath);
+    let resolvedPath = path.join(rootDir, folder, subpath);
+    if (!fs.existsSync(resolvedPath)) {
+      if (subpath.endsWith('integrity-light.css')) {
+        resolvedPath = path.join(rootDir, folder, subpath.replace('integrity-light.css', 'integrity-lightb34e.css'));
+      } else if (subpath.endsWith('style.css')) {
+        resolvedPath = path.join(rootDir, folder, subpath.replace('style.css', 'styleb34e.css'));
+      }
+    }
     if (fs.existsSync(resolvedPath)) {
       return res.sendFile(resolvedPath);
+    }
+    if (subpath.endsWith('common.min.css')) {
+      return res.type('text/css').send('/* empty common */');
     }
   }
   next();

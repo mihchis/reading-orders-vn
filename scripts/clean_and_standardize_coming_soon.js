@@ -123,12 +123,19 @@ function createMassiveVerseHtml(fullPath, item) {
 <title>The Massive-Verse Reading Order | Thứ Tự Đọc Truyện Tranh</title>
 <meta name="description" content="Thứ tự đọc The Massive-Verse (Radiant Black, Rogue Sun, The Dead Lucky, Radiant Red...). Toàn bộ truyện tranh thuộc vũ trụ Massive-Verse theo dòng thời gian chuẩn." />
 <link rel="canonical" href="index.html" />
-<link rel="stylesheet" href="/assets/addon.css" />
-<link rel="stylesheet" href="/wp-content/themes/pro/framework/dist/css/site/stacks/integrity-light.css" />
-<link rel="stylesheet" href="/wp-content/themes/pro-child/style.css" />
-<link rel="stylesheet" href="/wp-includes/css/dist/block-library/common.min.css" />
+<link rel="stylesheet" id="x-stack-css" href="/wp-content/themes/pro/framework/dist/css/site/stacks/integrity-lightb34e.css?ver=6.9.4" media="all" />
+<link rel="stylesheet" id="x-child-css" href="/wp-content/themes/pro-child/styleb34e.css?ver=6.9.4" media="all" />
+<link rel="stylesheet" id="wp-global-css" href="/assets/css/wp-theme-global.css" media="all" />
+<link rel="stylesheet" id="wp-theme-layout-css" href="/assets/css/wp-theme-layout.css" media="all" />
+<link rel="stylesheet" id="wp-custom-css" href="/assets/css/wp-custom.css" media="all" />
+<link rel="stylesheet" id="ro-addon-css" href="/assets/addon.css" media="all" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&amp;subset=latin,latin-ext&amp;display=auto" type="text/css" media="all" crossorigin="anonymous" data-x-google-fonts/>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script src="/assets/js/theme-init.js"></script>
+<script src="/assets/addon.js" defer></script>
 </head>
-<body class="wp-singular page-template page-template-template-blank-4 x-integrity x-integrity-light">
+<body class="wp-singular page-template page-template-template-blank-4-php page x-integrity x-integrity-light x-child-theme-active x-boxed-layout-active x-full-width-active x-navbar-fixed-top-active pro-v6_9_4">
   <div id="x-root" class="x-root">
     <div id="top" class="site">
       <div id="x-main" class="x-main full" role="main">

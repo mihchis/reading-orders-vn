@@ -5,8 +5,8 @@ import { supabaseAdmin } from '../database/supabase';
 
 const router = Router();
 
-// GET /api - Lấy danh sách vũ trụ kèm các danh mục con
-router.get('/', async (req, res) => {
+// GET /api hoặc /api/universes - Lấy danh sách vũ trụ kèm các danh mục con
+router.get(['/', '/universes'], async (req, res) => {
   try {
     const { data: universes = [], error: uErr } = await supabaseAdmin
       .from('universes')

@@ -343,92 +343,106 @@ router.get(['/reading-order-content', '/reading-order-content/'], async (req, re
       return;
     }
 
-    const filePath = resolveHtmlPath(orderPath);
-    if (!filePath) {
-      // Fallback: Kiểm tra dữ liệu từ Supabase Cloud
-      const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '').replace(/^\//, '');
-      const slug = clean.split('/').pop() || clean;
-      const { data: order } = await supabaseAdmin
+    const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '').replace(/^\//, '');
+    const slug = clean.split('/').pop() || clean;
+
+    // 1. Kiểm tra dữ liệu từ Supabase Cloud trước
+    let dbOrder: any = null;
+    let dbIssues: any[] = [];
+    try {
+      const { data: ro } = await supabaseAdmin
         .from('reading_orders')
         .select('*')
         .or(`slug.eq.${slug},direct_slug.eq.${slug}`)
         .maybeSingle();
-
-      if (order) {
-        const { data: issues = [] } = await supabaseAdmin
+      if (ro) {
+        dbOrder = ro;
+        const { data: iss } = await supabaseAdmin
           .from('issues')
           .select('*')
-          .eq('reading_order_id', order.id)
+          .eq('reading_order_id', ro.id)
           .order('sort_order', { ascending: true });
-
-        const parsedItems = (issues || []).map((iss: any) => ({
-          type: iss.issue_type || 'ongoing',
-          title: iss.title,
-          year: iss.year || '',
-          note: iss.note || '',
-          link: iss.read_url || ''
-        }));
-
-        res.json({
-          success: true,
-          data: {
-            path: orderPath,
-            filePath: order.url || `cloud:${order.slug}`,
-            title: order.title,
-            counterTo: order.total_issues || parsedItems.length,
-            parsedItems,
-            parsedTpbs: [],
-            singleIssuesHtml: '',
-            tpbHtml: ''
-          }
-        });
-        return;
+        dbIssues = iss || [];
       }
+    } catch (e) {
+      console.warn('Lỗi đọc dữ liệu Supabase:', e);
+    }
 
+    // 2. Kiểm tra file HTML trên ổ đĩa
+    const filePath = resolveHtmlPath(orderPath);
+    let html = '';
+    let parsedItemsFromFile: any[] = [];
+    let parsedTpbs: any[] = [];
+    let title = '';
+    let singleIssuesHtml = '';
+    let tpbHtml = '';
+
+    if (filePath) {
+      try {
+        html = fs.readFileSync(filePath, 'utf8');
+
+        // Trích xuất tiêu đề
+        const titleMatch = html.match(/<h2[^>]*class="[^"]*h-custom-headline[^"]*"[^>]*>[\s\S]*?<span><strong>(.*?)<\/strong><\/span>/i)
+          || html.match(/<title>(.*?)<\/title>/i);
+        title = titleMatch ? titleMatch[1].replace(/ - Comic Book Reading Orders.*$/i, '').trim() : '';
+
+        // Bóc tách danh sách tập lẻ và TPBs từ HTML
+        parsedItemsFromFile = parseSingleIssuesHtml(html);
+        parsedTpbs = parseTpbHtml(html);
+
+        // Trích xuất nội dung Tab 1 (Từng tập truyện)
+        const panel1Match = html.match(/<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+          || html.match(/<div id="panel-reading-order-1"[^>]*>([\s\S]*?)<\/div>/i);
+        if (panel1Match) {
+          const textMatch = panel1Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+          singleIssuesHtml = textMatch ? textMatch[1].trim() : panel1Match[1].trim();
+        }
+
+        // Trích xuất nội dung Tab 2 (TPBs)
+        const panel2Match = html.match(/<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
+          || html.match(/<div id="panel-reading-order-2"[^>]*>([\s\S]*?)<\/div>/i);
+        if (panel2Match) {
+          const textMatch = panel2Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+          tpbHtml = textMatch ? textMatch[1].trim() : panel2Match[1].trim();
+        }
+      } catch (e) {
+        console.warn('Lỗi đọc file HTML:', e);
+      }
+    }
+
+    if (!filePath && !dbOrder) {
       res.status(404).json({ success: false, message: `Không tìm thấy file HTML hoặc dữ liệu cho: ${orderPath}` });
       return;
     }
 
-    const html = fs.readFileSync(filePath, 'utf8');
+    if (!title && dbOrder?.title) {
+      title = dbOrder.title;
+    }
 
-    // Trích xuất tiêu đề
-    const titleMatch = html.match(/<h2[^>]*class="[^"]*h-custom-headline[^"]*"[^>]*>[\s\S]*?<span><strong>(.*?)<\/strong><\/span>/i)
-      || html.match(/<title>(.*?)<\/title>/i);
-    const title = titleMatch ? titleMatch[1].replace(/ - Comic Book Reading Orders.*$/i, '').trim() : '';
+    // 3. Ưu tiên danh sách tập từ Supabase Cloud nếu có (rất quan trọng trên môi trường Vercel serverless)
+    let parsedItems = parsedItemsFromFile;
+    if (dbIssues.length > 0) {
+      parsedItems = dbIssues.map((iss: any) => ({
+        type: iss.issue_type || 'ongoing',
+        title: iss.title,
+        year: iss.year || '',
+        note: iss.note || '',
+        link: iss.read_url || ''
+      }));
+    }
 
-    // Bóc tách có cấu trúc danh sách tập lẻ và TPBs
-    const parsedItems = parseSingleIssuesHtml(html);
-    const parsedTpbs = parseTpbHtml(html);
-
-    // Trích xuất counter (hoặc tự tính từ parsedItems)
-    const counterMatch = html.match(/data-x-element-counter="[^"]*?&quot;to&quot;:&quot;(\d+)&quot;/i);
+    // Tính counter (số tập không phải phase và note)
     const calculatedCount = parsedItems.filter(it => it.type !== 'phase' && it.type !== 'note').length;
-    const counterTo = counterMatch ? parseInt(counterMatch[1], 10) : calculatedCount;
-
-    // Trích xuất nội dung Tab 1 (Từng tập truyện)
-    const panel1Match = html.match(/<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
-      || html.match(/<div id="panel-reading-order-1"[^>]*>([\s\S]*?)<\/div>/i);
-    let singleIssuesHtml = '';
-    if (panel1Match) {
-      const textMatch = panel1Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
-      singleIssuesHtml = textMatch ? textMatch[1].trim() : panel1Match[1].trim();
-    }
-
-    // Trích xuất nội dung Tab 2 (TPBs)
-    const panel2Match = html.match(/<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
-      || html.match(/<div id="panel-reading-order-2"[^>]*>([\s\S]*?)<\/div>/i);
-    let tpbHtml = '';
-    if (panel2Match) {
-      const textMatch = panel2Match[1].match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
-      tpbHtml = textMatch ? textMatch[1].trim() : panel2Match[1].trim();
-    }
+    const counterTo = (dbOrder?.total_issues !== undefined && dbOrder?.total_issues !== null)
+      ? dbOrder.total_issues
+      : calculatedCount;
 
     res.json({
       success: true,
       data: {
         path: orderPath,
-        filePath: path.relative(process.cwd(), filePath).replace(/\\/g, '/'),
-        title,
+        filePath: filePath ? path.relative(process.cwd(), filePath).replace(/\\/g, '/') : (dbOrder?.url || `cloud:${slug}`),
+        title: title || dbOrder?.title || slug,
         counterTo,
         parsedItems,
         parsedTpbs,
