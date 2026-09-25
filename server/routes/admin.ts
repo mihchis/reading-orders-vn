@@ -140,8 +140,8 @@ function parseSingleIssuesHtml(html: string): any[] {
   const items: any[] = [];
 
   pTags.forEach(p => {
-    // 1. Giai đoạn (Phase header)
-    if (p.includes('#0066aa') || /^(?:giai đoạn|phase)/i.test(p.replace(/<[^>]+>/g, '').trim())) {
+    // 1. Giai đoạn (Phase header) - nhận cả class mới ro-item-phase lẫn style cũ #0066aa
+    if (p.includes('ro-item-phase') || p.includes('#0066aa') || /^(?:giai đoạn|phase)/i.test(p.replace(/<[^>]+>/g, '').trim())) {
       if (p.includes('<br')) {
         const parts = p.split(/<br\s*\/?>/i);
         const titlePart = parts[0].replace(/<[^>]+>/g, '').trim();
@@ -158,7 +158,12 @@ function parseSingleIssuesHtml(html: string): any[] {
     }
 
     // 2. Ghi chú thuần túy cả đoạn (Standalone Note paragraph)
-    if (!p.includes('<br') && (/^\s*<p>\s*<em>[\s\S]*?<\/em>\s*<\/p>\s*$/i.test(p) || /^\s*<p>\s*<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>[\s\S]*?<\/span>\s*<\/p>\s*$/i.test(p) || /^(?:ghi chú|lưu ý|note):/i.test(p.replace(/<[^>]+>/g, '').trim()))) {
+    if (!p.includes('<br') && (
+      p.includes('ro-item-note') ||
+      /^\s*<p>\s*<em>[\s\S]*?<\/em>\s*<\/p>\s*$/i.test(p) ||
+      /^\s*<p>\s*<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>[\s\S]*?<\/span>\s*<\/p>\s*$/i.test(p) ||
+      /^(?:ghi chú|lưu ý|note):/i.test(p.replace(/<[^>]+>/g, '').trim())
+    )) {
       const text = p.replace(/<[^>]+>/g, '').trim();
       if (text) {
         items.push({ type: 'note', title: text, year: '', note: '', link: '' });
@@ -173,9 +178,9 @@ function parseSingleIssuesHtml(html: string): any[] {
       if (!cleanHtml) return;
 
       let type = 'ongoing';
-      if (cleanHtml.includes('#008000') || cleanHtml.includes('green')) {
+      if (cleanHtml.includes('ro-item-mini') || cleanHtml.includes('#008000') || cleanHtml.includes('green')) {
         type = 'mini';
-      } else if (cleanHtml.includes('#ff0000') || cleanHtml.includes('red') || /one-shot/i.test(cleanHtml)) {
+      } else if (cleanHtml.includes('ro-item-oneshot') || cleanHtml.includes('#ff0000') || cleanHtml.includes('red') || /one-shot/i.test(cleanHtml)) {
         type = 'oneshot';
       }
 
@@ -183,10 +188,11 @@ function parseSingleIssuesHtml(html: string): any[] {
       const aMatch = cleanHtml.match(/<a[^>]*href="([^"]+)"[^>]*>/i);
       const link = aMatch ? aMatch[1] : '';
 
-      // Tách ghi chú nếu có (trong thẻ span màu xanh dương #0000ff hoặc <em>)
+      // Tách ghi chú nếu có (trong thẻ span ro-item-note hoặc style màu xanh dương #0000ff hoặc <em>)
       let note = '';
       let remainingHtml = cleanHtml;
-      const blueNoteMatch = cleanHtml.match(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>([\s\S]*?)<\/span>/i);
+      const blueNoteMatch = cleanHtml.match(/<span[^>]*class="[^"]*ro-item-note[^"]*"[^>]*>([\s\S]*?)<\/span>/i)
+        || cleanHtml.match(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|blue)[^"]*"[^>]*>([\s\S]*?)<\/span>/i);
       const emNoteMatch = cleanHtml.match(/<em>([\s\S]*?)<\/em>/i);
 
       if (blueNoteMatch) {
@@ -230,7 +236,7 @@ function parseTpbHtml(html: string): any[] {
   if (!panelMatch) return [];
 
   let content = panelMatch[1];
-  const textMatch = content.match(/<div class="x-text x-content"[^>]*>([\s\S]*?)<\/div>/i);
+  const textMatch = content.match(/<div class="x-text x-content[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
   if (textMatch) content = textMatch[1];
 
   const pTags = content.match(/<p[\s\S]*?<\/p>/gi) || [];
@@ -265,30 +271,30 @@ function parseTpbHtml(html: string): any[] {
   return tpbs;
 }
 
-// Helper: chuyển đổi danh sách items có cấu trúc thành mã HTML chuẩn trang web
+// Helper: chuyển đổi danh sách items có cấu trúc thành mã HTML chuẩn trang web dùng class ngữ nghĩa
 function serializeItemsToHtml(items: any[]): string {
-  let html = '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;">\n';
+  let html = '<div class="x-text x-content ro-tab-content">\n';
   let openP = false;
 
   items.forEach(item => {
     const type = item.type || 'ongoing';
     const title = (item.title || '').trim();
     const yearStr = item.year && item.year.trim() ? ` (${item.year.trim()})` : '';
-    const noteStr = item.note && item.note.trim() ? ` <span style="color: #0000ff;"><em>(${item.note.trim()})</em></span>` : '';
+    const noteStr = item.note && item.note.trim() ? ` <span class="ro-item-note"><em>(${item.note.trim()})</em></span>` : '';
 
     if (type === 'phase') {
       if (openP) { html += '</p>\n'; openP = false; }
-      const phaseNote = item.note && item.note.trim() ? `<br />\n  <span style="color: #666; font-size: 0.9em;"><em>${item.note.trim()}</em></span>` : '';
-      html += `  <p><span style="color: #0066aa;"><strong>${title}</strong></span>${phaseNote}</p>\n`;
+      const phaseNote = item.note && item.note.trim() ? `<br />\n  <span class="ro-phase-note"><em>${item.note.trim()}</em></span>` : '';
+      html += `  <p><span class="ro-item-phase"><strong>${title}</strong></span>${phaseNote}</p>\n`;
     } else if (type === 'note') {
       if (openP) { html += '</p>\n'; openP = false; }
-      html += `  <p><span style="color: #0000ff;"><em>${title}</em></span></p>\n`;
+      html += `  <p><span class="ro-item-note"><em>${title}</em></span></p>\n`;
     } else {
       let formattedLine = '';
       if (type === 'mini') {
-        formattedLine = `<span style="color: #008000;">${title}</span>${yearStr}${noteStr}`;
+        formattedLine = `<span class="ro-item-mini">${title}</span>${yearStr}${noteStr}`;
       } else if (type === 'oneshot') {
-        formattedLine = `<span style="color: #ff0000;">${title}</span>${yearStr}${noteStr}`;
+        formattedLine = `<span class="ro-item-oneshot">${title}</span>${yearStr}${noteStr}`;
       } else {
         formattedLine = `${title}${yearStr}${noteStr}`;
       }
@@ -309,7 +315,7 @@ function serializeItemsToHtml(items: any[]): string {
 
 // Helper: chuyển đổi danh sách TPBs có cấu trúc thành HTML chuẩn
 function serializeTpbToHtml(tpbs: any[]): string {
-  let html = '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;">\n';
+  let html = '<div class="x-text x-content ro-tab-content">\n';
   tpbs.forEach(tpb => {
     const title = (tpb.title || '').trim();
     const buyLink = (tpb.buyLink || '').trim();
@@ -1388,7 +1394,7 @@ router.post(['/reading-order-content', '/reading-order-content/'], async (req: A
         // Cập nhật toàn bộ khối x-tabs-panels chuẩn xác, tránh lồng div và thừa tag
         const safeTpb = (tpbHtml && tpbHtml.trim())
           ? tpbHtml.trim()
-          : '<div class="x-text x-content" style="padding: 1.5rem 30px; text-align: left;"><p style="color: #64748b; font-style: italic;">Chưa có tuyển tập (TPBs).</p></div>';
+          : '<div class="x-text x-content ro-tab-content"><p class="ro-tab-empty">Chưa có tuyển tập (TPBs).</p></div>';
 
         const replacementTabsPanels = `<div class="x-tabs-panels">
                           <div id="panel-reading-order-1" class="x-tabs-panel x-active" role="tabpanel" aria-labelledby="tab-reading-order-1" aria-hidden="false">
