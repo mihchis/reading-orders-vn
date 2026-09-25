@@ -83,20 +83,41 @@ function resolveHtmlPath(reqPath: string): string | null {
   const p3 = path.join(rootDir, clean);
   if (fs.existsSync(p3) && fs.statSync(p3).isFile()) return p3;
 
-  // Nếu không thấy, tìm kiếm trong các thư mục marvel, dc, other theo slug
   const slug = clean.split('/').pop() || clean;
+
+  // 1. Tra cứu từ catalog.json nếu có
+  try {
+    const catalogPath = path.join(rootDir, 'data', 'catalog.json');
+    if (fs.existsSync(catalogPath)) {
+      const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+      const found = catalog.find((c: any) => c.slug === slug || c.direct_slug === slug || (c.url && c.url.includes(slug)));
+      if (found && found.url) {
+        const candCat = path.join(rootDir, found.url.replace(/^\//, '').replace(/\/+$/, ''), 'index.html');
+        if (fs.existsSync(candCat)) return candCat;
+      }
+    }
+  } catch {}
+
+  // 2. Tìm kiếm trong các thư mục marvel, dc, other theo slug và các biến thể slug
+  const slugVariants = [slug, `${slug}-reading-order`, slug.replace(/-reading-order$/, '')];
   const searchDirs = ['marvel', 'dc', 'other'];
   for (const sDir of searchDirs) {
     const baseDir = path.join(rootDir, sDir);
     if (!fs.existsSync(baseDir)) continue;
+
+    for (const v of slugVariants) {
+      const candDirect = path.join(baseDir, v, 'index.html');
+      if (fs.existsSync(candDirect)) return candDirect;
+    }
+
     try {
       const subdirs = fs.readdirSync(baseDir, { withFileTypes: true });
       for (const sub of subdirs) {
         if (sub.isDirectory()) {
-          const cand = path.join(baseDir, sub.name, slug, 'index.html');
-          if (fs.existsSync(cand)) return cand;
-          const candDirect = path.join(baseDir, slug, 'index.html');
-          if (fs.existsSync(candDirect)) return candDirect;
+          for (const v of slugVariants) {
+            const cand = path.join(baseDir, sub.name, v, 'index.html');
+            if (fs.existsSync(cand)) return cand;
+          }
         }
       }
     } catch {}
@@ -314,7 +335,7 @@ function serializeTpbToHtml(tpbs: any[]): string {
 const router = Router();
 
 // GET /api/admin/reading-order-content - Cho phép đọc nội dung công khai để nạp vào form biên tập
-router.get('/reading-order-content', async (req, res) => {
+router.get(['/reading-order-content', '/reading-order-content/'], async (req, res) => {
   try {
     const orderPath = (req.query.path as string || '').trim();
     if (!orderPath) {
@@ -324,7 +345,47 @@ router.get('/reading-order-content', async (req, res) => {
 
     const filePath = resolveHtmlPath(orderPath);
     if (!filePath) {
-      res.status(404).json({ success: false, message: `Không tìm thấy file HTML cho: ${orderPath}` });
+      // Fallback: Kiểm tra dữ liệu từ Supabase Cloud
+      const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '').replace(/^\//, '');
+      const slug = clean.split('/').pop() || clean;
+      const { data: order } = await supabaseAdmin
+        .from('reading_orders')
+        .select('*')
+        .or(`slug.eq.${slug},direct_slug.eq.${slug}`)
+        .maybeSingle();
+
+      if (order) {
+        const { data: issues = [] } = await supabaseAdmin
+          .from('issues')
+          .select('*')
+          .eq('reading_order_id', order.id)
+          .order('sort_order', { ascending: true });
+
+        const parsedItems = (issues || []).map((iss: any) => ({
+          type: iss.issue_type || 'ongoing',
+          title: iss.title,
+          year: iss.year || '',
+          note: iss.note || '',
+          link: iss.read_url || ''
+        }));
+
+        res.json({
+          success: true,
+          data: {
+            path: orderPath,
+            filePath: order.url || `cloud:${order.slug}`,
+            title: order.title,
+            counterTo: order.total_issues || parsedItems.length,
+            parsedItems,
+            parsedTpbs: [],
+            singleIssuesHtml: '',
+            tpbHtml: ''
+          }
+        });
+        return;
+      }
+
+      res.status(404).json({ success: false, message: `Không tìm thấy file HTML hoặc dữ liệu cho: ${orderPath}` });
       return;
     }
 
@@ -582,28 +643,175 @@ router.get('/users', async (req: AuthRequest, res) => {
   }
 });
 
-// GET /api/admin/universes - Danh sách vũ trụ & danh mục
-router.get('/universes', async (req: AuthRequest, res) => {
+// GET /api/admin/universes - Danh sách vũ trụ & danh mục kèm thống kê chi tiết
+router.get(['/universes', '/universes/'], async (req: AuthRequest, res) => {
   try {
-    const { data: universes = [], error: uErr } = await supabaseAdmin
-      .from('universes')
-      .select('*')
-      .order('sort_order', { ascending: true });
+    const [uRes, cRes, roRes] = await Promise.all([
+      supabaseAdmin.from('universes').select('*').order('sort_order', { ascending: true }),
+      supabaseAdmin.from('categories').select('*').order('sort_order', { ascending: true }),
+      supabaseAdmin.from('reading_orders').select('id, universe_id, category_id, universe_slug, category_slug, total_issues')
+    ]);
 
-    const { data: categories = [], error: cErr } = await supabaseAdmin
-      .from('categories')
-      .select('*')
-      .order('sort_order', { ascending: true });
+    if (uRes.error) throw uRes.error;
+    if (cRes.error) throw cRes.error;
 
-    if (uErr) throw uErr;
-    if (cErr) throw cErr;
+    const universes = uRes.data || [];
+    const categories = cRes.data || [];
+    const orders = roRes.data || [];
 
-    const result = (universes || []).map((u: any) => ({
+    // Tính toán số lượng theo vũ trụ và danh mục
+    const univCounts: Record<string, { orders: number; issues: number }> = {};
+    const catCounts: Record<string, { orders: number; issues: number }> = {};
+
+    universes.forEach((u: any) => {
+      univCounts[u.id] = { orders: 0, issues: 0 };
+    });
+    categories.forEach((c: any) => {
+      catCounts[c.id] = { orders: 0, issues: 0 };
+    });
+
+    orders.forEach((r: any) => {
+      const issues = Number(r.total_issues) || 0;
+      if (r.universe_id && univCounts[r.universe_id]) {
+        univCounts[r.universe_id].orders += 1;
+        univCounts[r.universe_id].issues += issues;
+      }
+      if (r.category_id && catCounts[r.category_id]) {
+        catCounts[r.category_id].orders += 1;
+        catCounts[r.category_id].issues += issues;
+      } else if (r.universe_slug && r.category_slug) {
+        const cat = categories.find((c: any) => c.slug === r.category_slug && universes.find((u: any) => u.id === c.universe_id && u.slug === r.universe_slug));
+        if (cat && catCounts[cat.id]) {
+          catCounts[cat.id].orders += 1;
+          catCounts[cat.id].issues += issues;
+        }
+      }
+    });
+
+    const result = universes.map((u: any) => ({
       ...u,
-      categories: (categories || []).filter((c: any) => c.universe_id === u.id),
+      order_count: univCounts[u.id]?.orders || 0,
+      total_issues: univCounts[u.id]?.issues || 0,
+      categories: categories
+        .filter((c: any) => c.universe_id === u.id)
+        .map((c: any) => ({
+          ...c,
+          order_count: catCounts[c.id]?.orders || 0,
+          total_issues: catCounts[c.id]?.issues || 0
+        }))
     }));
 
-    res.json({ success: true, data: result });
+    res.json({
+      success: true,
+      data: result,
+      summary: {
+        totalUniverses: universes.length,
+        totalCategories: categories.length,
+        totalOrders: orders.length
+      }
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// PUT /api/admin/universes/:id - Cập nhật thông tin vũ trụ
+router.put(['/universes/:id', '/universes/:id/'], async (req: AuthRequest, res) => {
+  try {
+    const { id } = req.params;
+    const { name, accent_color, description, sort_order } = req.body;
+    const { data, error } = await supabaseAdmin
+      .from('universes')
+      .update({
+        ...(name !== undefined && { name: name.trim() }),
+        ...(accent_color !== undefined && { accent_color: accent_color.trim() }),
+        ...(description !== undefined && { description: description?.trim() || null }),
+        ...(sort_order !== undefined && { sort_order: Number(sort_order) })
+      })
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) throw error;
+    res.json({ success: true, message: 'Đã cập nhật thông tin vũ trụ thành công!', data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// POST /api/admin/categories - Thêm danh mục mới
+router.post(['/categories', '/categories/'], async (req: AuthRequest, res) => {
+  try {
+    const { universe_id, slug, name, description, sort_order } = req.body;
+    if (!universe_id || !slug || !name) {
+      res.status(400).json({ success: false, message: 'Vui lòng điền đủ vũ trụ, slug và tên danh mục' });
+      return;
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from('categories')
+      .insert({
+        universe_id: Number(universe_id),
+        slug: slug.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-'),
+        name: name.trim(),
+        description: description?.trim() || null,
+        sort_order: Number(sort_order) || 0
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+    res.json({ success: true, message: 'Đã tạo danh mục mới thành công!', data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// PUT /api/admin/categories/:id - Cập nhật danh mục
+router.put(['/categories/:id', '/categories/:id/'], async (req: AuthRequest, res) => {
+  try {
+    const { id } = req.params;
+    const { name, description, sort_order } = req.body;
+
+    const { data, error } = await supabaseAdmin
+      .from('categories')
+      .update({
+        ...(name !== undefined && { name: name.trim() }),
+        ...(description !== undefined && { description: description?.trim() || null }),
+        ...(sort_order !== undefined && { sort_order: Number(sort_order) })
+      })
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) throw error;
+    res.json({ success: true, message: 'Đã cập nhật danh mục thành công!', data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// DELETE /api/admin/categories/:id - Xóa danh mục
+router.delete(['/categories/:id', '/categories/:id/'], async (req: AuthRequest, res) => {
+  try {
+    const { id } = req.params;
+    // Kiểm tra xem có reading orders nào đang gắn với category này không
+    const { count } = await supabaseAdmin
+      .from('reading_orders')
+      .select('*', { count: 'exact', head: true })
+      .eq('category_id', id);
+
+    if (count && count > 0) {
+      res.status(400).json({
+        success: false,
+        message: `Không thể xóa danh mục vì đang có ${count} bộ truyện liên kết. Vui lòng chuyển các bộ truyện sang danh mục khác trước!`
+      });
+      return;
+    }
+
+    const { error } = await supabaseAdmin.from('categories').delete().eq('id', id);
+    if (error) throw error;
+    res.json({ success: true, message: 'Đã xóa danh mục thành công!' });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -1116,8 +1324,8 @@ router.post('/issue-links', async (req: AuthRequest, res) => {
 
 
 
-// POST /api/admin/reading-order-content - Cập nhật nội dung danh sách tập vào file HTML & Supabase
-router.post('/reading-order-content', async (req: AuthRequest, res) => {
+// POST /api/admin/reading-order-content - Cập nhật nội dung danh sách tập vào file HTML & Supabase Cloud
+router.post(['/reading-order-content', '/reading-order-content/'], async (req: AuthRequest, res) => {
   try {
     let { path: orderPath, singleIssuesHtml, tpbHtml, counterTo, parsedItems, parsedTpbs } = req.body;
     if (!orderPath) {
@@ -1125,11 +1333,8 @@ router.post('/reading-order-content', async (req: AuthRequest, res) => {
       return;
     }
 
-    const filePath = resolveHtmlPath(orderPath);
-    if (!filePath) {
-      res.status(404).json({ success: false, message: `Không tìm thấy file HTML cho: ${orderPath}` });
-      return;
-    }
+    const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
+    const slug = clean.split('/').pop() || '';
 
     // Nếu gửi dữ liệu dạng mảng có cấu trúc từ Visual Editor
     if (Array.isArray(parsedItems)) {
@@ -1141,55 +1346,103 @@ router.post('/reading-order-content', async (req: AuthRequest, res) => {
       tpbHtml = serializeTpbToHtml(parsedTpbs);
     }
 
-    let html = fs.readFileSync(filePath, 'utf8');
+    // 1. Thử cập nhật file HTML trên đĩa nếu tìm thấy và có quyền ghi
+    const filePath = resolveHtmlPath(orderPath);
+    let diskUpdated = false;
+    if (filePath && fs.existsSync(filePath)) {
+      try {
+        let html = fs.readFileSync(filePath, 'utf8');
 
-    // 1. Cập nhật counter
-    if (counterTo !== undefined && counterTo !== null) {
-      html = html.replace(
-        /(data-x-element-counter="[^"]*?&quot;to&quot;:&quot;)\d+(&quot;)/i,
-        `$1${counterTo}$2`
-      );
-    }
+        // Cập nhật counter
+        if (counterTo !== undefined && counterTo !== null) {
+          html = html.replace(
+            /(data-x-element-counter="[^"]*?&quot;to&quot;:&quot;)\d+(&quot;)/i,
+            `$1${counterTo}$2`
+          );
+        }
 
-    // 2. Cập nhật Tab 1 (Từng tập truyện)
-    if (singleIssuesHtml !== undefined) {
-      const panel1Regex = /(<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
-      if (panel1Regex.test(html)) {
-        html = html.replace(panel1Regex, `$1\n${singleIssuesHtml.trim()}\n                  $3`);
+        // Cập nhật Tab 1 (Từng tập truyện)
+        if (singleIssuesHtml !== undefined) {
+          const panel1Regex = /(<div id="panel-(?:reading-order-1|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
+          if (panel1Regex.test(html)) {
+            html = html.replace(panel1Regex, `$1\n${singleIssuesHtml.trim()}\n                  $3`);
+          }
+        }
+
+        // Cập nhật Tab 2 (Tuyển tập TPBs)
+        if (tpbHtml !== undefined) {
+          const panel2Regex = /(<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
+          if (panel2Regex.test(html)) {
+            html = html.replace(panel2Regex, `$1\n${tpbHtml.trim()}\n                  $3`);
+          } else {
+            // Nếu chưa có panel-reading-order-2 trong HTML (như trang Coming Soon), chèn vào sau panel 1
+            const panelsCloseRegex = /(<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<script)/i;
+            const newPanel2Html = `\n<div id="panel-reading-order-2" class="x-tabs-panel" role="tabpanel" aria-labelledby="tab-reading-order-2" aria-hidden="true">\n${tpbHtml.trim()}\n</div>`;
+            html = html.replace(/(<div id="panel-reading-order-1"[^>]*>[\s\S]*?<\/div>\s*<\/div>)/i, `$1${newPanel2Html}`);
+          }
+        }
+
+        fs.writeFileSync(filePath, html, 'utf8');
+        diskUpdated = true;
+      } catch (fsErr: any) {
+        console.warn('Không thể ghi file HTML (môi trường serverless):', fsErr.message);
       }
     }
 
-    // 3. Cập nhật Tab 2 (Tuyển tập TPBs)
-    if (tpbHtml !== undefined) {
-      const panel2Regex = /(<div id="panel-(?:reading-order-2|[^"]+)"[^>]*class="[^"]*x-tabs-panel[^"]*"[^>]*>\s*<div class="x-text x-content"[^>]*>)([\s\S]*?)(<\/div>\s*<\/div>)/i;
-      if (panel2Regex.test(html)) {
-        html = html.replace(panel2Regex, `$1\n${tpbHtml.trim()}\n                  $3`);
-      }
-    }
-
-    fs.writeFileSync(filePath, html, 'utf8');
-
-    // 4. Đồng bộ tổng số tập lên Supabase & Cập nhật trạng thái Coming Soon
-    const clean = orderPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '') || '/';
-    const slug = clean.split('/').pop() || '';
+    // 2. Cập nhật trạng thái Coming Soon
     if (counterTo && counterTo > 0) {
       COMING_SOON_SLUGS.delete(slug);
       COMING_SOON_SLUGS.delete(slug.replace(/-reading-order$/, ''));
     }
 
-    findOrderIdByPath(clean).then(async (orderId) => {
-      if (orderId && counterTo !== undefined) {
+    // 3. Đồng bộ lên Supabase Cloud (cả reading_orders và bảng issues)
+    let orderId = await findOrderIdByPath(clean);
+    if (!orderId) {
+      const { data: roData } = await supabaseAdmin
+        .from('reading_orders')
+        .select('id')
+        .or(`slug.eq.${slug},direct_slug.eq.${slug}`)
+        .maybeSingle();
+      if (roData?.id) orderId = roData.id;
+    }
+
+    if (orderId) {
+      if (counterTo !== undefined) {
         await supabaseAdmin.from('reading_orders').update({
           total_issues: counterTo,
           updated_at: new Date().toISOString()
         }).eq('id', orderId);
       }
-    }).catch(() => {});
+
+      // Lưu chi tiết các tập truyện vào bảng issues trên Supabase
+      if (Array.isArray(parsedItems) && parsedItems.length > 0) {
+        try {
+          await supabaseAdmin.from('issues').delete().eq('reading_order_id', orderId);
+          const toInsert = parsedItems.map((item: any, idx: number) => ({
+            reading_order_id: orderId,
+            tab_type: 'single',
+            title: item.title || '',
+            issue_type: item.type || 'ongoing',
+            year: item.year || null,
+            note: item.note || null,
+            read_url: item.link || null,
+            sort_order: idx + 1,
+            is_noncanon: false
+          }));
+          await supabaseAdmin.from('issues').insert(toInsert);
+        } catch (dbErr: any) {
+          console.warn('Lỗi chèn issues lên Supabase:', dbErr.message);
+        }
+      }
+    }
 
     res.json({
       success: true,
-      message: 'Đã cập nhật danh sách tập truyện lên hệ thống thành công!',
-      counterTo
+      message: diskUpdated
+        ? 'Đã cập nhật danh sách tập vào file & đồng bộ Supabase Cloud thành công!'
+        : 'Đã lưu và đồng bộ danh sách tập lên Supabase Cloud thành công!',
+      counterTo,
+      orderId
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: 'Lỗi khi lưu: ' + err.message });
