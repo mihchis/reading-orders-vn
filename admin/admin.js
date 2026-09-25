@@ -918,12 +918,12 @@
         const isNote = type === 'note';
 
         return `
-          <div class="admin-v-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 4px;">
-            <div style="display: flex; flex-direction: column; gap: 2px;">
-              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="padding: 1px 5px; font-size: 10px; line-height: 1;">▲</button>
-              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="padding: 1px 5px; font-size: 10px; line-height: 1;">▼</button>
+          <div class="admin-v-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 4px; box-sizing: border-box; width: 100%;">
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; width: 22px;">
+              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="width: 22px; height: 16px; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 9px; line-height: 1;">▲</button>
+              <button type="button" class="btn-action admin-v-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="width: 22px; height: 16px; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 9px; line-height: 1;">▼</button>
             </div>
-            <select class="admin-v-type form-input" data-idx="${idx}" style="width: 155px; padding: 6px 8px; font-size: 12px; font-weight: 700; color: ${cfg.color};">
+            <select class="admin-v-type form-input" data-idx="${idx}" style="width: 145px; flex-shrink: 0; padding: 6px 8px; font-size: 11.5px; font-weight: 700; color: ${cfg.color};">
               <option value="phase" ${type === 'phase' ? 'selected' : ''}>🔵 Giai đoạn (Phase)</option>
               <option value="mini" ${type === 'mini' ? 'selected' : ''}>🟢 Bộ ngắn kỳ (Mini)</option>
               <option value="oneshot" ${type === 'oneshot' ? 'selected' : ''}>🔴 Tập đơn (One-Shot)</option>
@@ -933,15 +933,17 @@
             <input type="text" class="admin-v-title form-input" data-idx="${idx}" value="${escapeAdminHtml(item.title || '')}"
               placeholder="${isPhase ? 'Tên giai đoạn...' : (isNote ? 'Nội dung ghi chú...' : 'Tên truyện / số tập...')}"
               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-              style="flex: 2; min-width: 150px; padding: 6px 10px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : '#111'};" />
+              style="flex: 2; min-width: 120px; padding: 6px 10px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : '#111'};" />
             <input type="text" class="admin-v-year form-input" data-idx="${idx}" value="${escapeAdminHtml(item.year || '')}"
               placeholder="Năm (VD: 2024)" autocomplete="off"
-              style="width: 100px; padding: 6px 8px; font-size: 12px; display: ${isPhase ? 'none' : 'block'};" />
+              style="width: 85px; flex-shrink: 0; padding: 6px 6px; font-size: 12px; text-align: center; display: ${isPhase ? 'none' : 'block'};" />
             <input type="text" class="admin-v-note form-input" data-idx="${idx}" value="${escapeAdminHtml(item.note || '')}"
               placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}" autocomplete="off"
-              style="flex: 1.3; min-width: 130px; padding: 6px 9px; font-size: 12px; color: #1e40af;" />
-            <button type="button" class="btn-action admin-v-insert" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="padding: 6px 9px; color: #16a34a; font-weight: 800;">＋</button>
-            <button type="button" class="btn-action admin-v-del" data-idx="${idx}" title="Xóa dòng này" style="padding: 6px 9px; color: #dc2626;">🗑️</button>
+              style="flex: 1.4; min-width: 120px; padding: 6px 8px; font-size: 12px; color: #1e40af;" />
+            <div style="display: flex; gap: 4px; flex-shrink: 0;">
+              <button type="button" class="btn-action admin-v-insert" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; color: #16a34a; font-weight: 800;">＋</button>
+              <button type="button" class="btn-action admin-v-del" data-idx="${idx}" title="Xóa dòng này" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; padding: 0; color: #dc2626;">🗑️</button>
+            </div>
           </div>
         `;
       }).join('');

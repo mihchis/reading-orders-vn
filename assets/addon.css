@@ -1845,4 +1845,55 @@ body .x-scroll-top i {
   line-height: 1.7;
 }
 
+/* =========================================================
+   VISUAL EDITOR MODAL & SCROLLBAR REFINEMENTS
+   Loại bỏ scrollbar retro và icon lệch ngoài container
+   ========================================================= */
+#ro-visual-single-panel,
+#ro-visual-tpb-panel,
+#ro-visual-preview-panel,
+#order-content-single-container,
+#order-content-tpb-container,
+#order-content-preview-container {
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+#ro-visual-single-panel::-webkit-scrollbar,
+#ro-visual-tpb-panel::-webkit-scrollbar,
+#ro-visual-preview-panel::-webkit-scrollbar,
+#order-content-single-container::-webkit-scrollbar,
+#order-content-tpb-container::-webkit-scrollbar,
+#order-content-preview-container::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+#ro-visual-single-panel::-webkit-scrollbar-thumb,
+#ro-visual-tpb-panel::-webkit-scrollbar-thumb,
+#ro-visual-preview-panel::-webkit-scrollbar-thumb,
+#order-content-single-container::-webkit-scrollbar-thumb,
+#order-content-tpb-container::-webkit-scrollbar-thumb,
+#order-content-preview-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+#ro-visual-single-panel::-webkit-scrollbar-thumb:hover,
+#order-content-single-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+#ro-visual-single-panel::-webkit-scrollbar-button,
+#ro-visual-tpb-panel::-webkit-scrollbar-button,
+#ro-visual-preview-panel::-webkit-scrollbar-button,
+#order-content-single-container::-webkit-scrollbar-button,
+#order-content-tpb-container::-webkit-scrollbar-button,
+#order-content-preview-container::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 

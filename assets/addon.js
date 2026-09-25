@@ -1268,15 +1268,15 @@ window.grecaptcha = window.grecaptcha || {
     modal.innerHTML = `
       <div class="ro-auth-card" style="max-width: 960px; width: 96%; max-height: 92vh; padding: 22px 24px; position: relative; border-radius: 8px; box-shadow: 0 16px 45px rgba(0,0,0,0.35); display: flex; flex-direction: column;">
         <!-- Header -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <h3 id="ro-edit-ro-modal-title" style="margin: 0; font-size: 18px; font-weight: 800; color: #111;">Biên tập Thứ Tự Đọc</h3>
-              <span id="ro-visual-counter-badge" style="background: #e42525; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.3px;">0 tập</span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px; gap: 16px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <h3 id="ro-edit-ro-modal-title" style="margin: 0; font-size: 17px; font-weight: 800; color: #111; line-height: 1.3;">Biên tập Thứ Tự Đọc</h3>
+              <span id="ro-visual-counter-badge" style="background: #e42525; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.3px; white-space: nowrap; flex-shrink: 0;">0 tập truyện</span>
             </div>
-            <div style="margin-top: 3px; font-size: 12px; color: #666;">Trình soạn thảo trực quan — Quản lý tập, giai đoạn và đồng bộ Supabase Cloud</div>
+            <div style="margin-top: 4px; font-size: 12px; color: #666; line-height: 1.4;">Trình soạn thảo trực quan — Quản lý tập, giai đoạn và đồng bộ Supabase Cloud</div>
           </div>
-          <button id="ro-edit-ro-modal-close" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #888; padding: 0 4px; line-height: 1;">✕</button>
+          <button id="ro-edit-ro-modal-close" style="flex-shrink: 0; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 18px; cursor: pointer; color: #64748b; line-height: 1; transition: all 0.2s;">✕</button>
         </div>
 
         <!-- Toolbar / Tab Switchers -->
@@ -1302,12 +1302,12 @@ window.grecaptcha = window.grecaptcha || {
         </div>
 
         <!-- Tab 1: Single Issues Visual Rows List -->
-        <div id="ro-visual-single-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 4px 2px;">
+        <div id="ro-visual-single-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 6px; padding: 4px 2px;">
           <!-- Rendered dynamically by renderVisualItemsList() -->
         </div>
 
         <!-- Tab 2: TPB Visual Cards List -->
-        <div id="ro-visual-tpb-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; display: none; flex-direction: column; gap: 8px; padding: 4px 2px;">
+        <div id="ro-visual-tpb-panel" style="flex: 1; min-height: 340px; max-height: 55vh; overflow-y: auto; overflow-x: hidden; display: none; flex-direction: column; gap: 8px; padding: 4px 2px;">
           <div style="display: flex; justify-content: flex-end; margin-bottom: 6px;">
             <button type="button" id="ro-v-btn-add-tpb" class="ro-btn" style="padding: 5px 14px; font-size: 12px; background: #2563eb; color: #fff; border: none; border-radius: 4px; font-weight: 700; cursor: pointer;">
               ➕ Thêm tập TPB mới
@@ -1388,42 +1388,42 @@ window.grecaptcha = window.grecaptcha || {
     // Quick add buttons
     document.getElementById('ro-v-btn-add-phase')?.addEventListener('click', () => {
       saveInputsToState();
-      _editorItems.push({ type: 'phase', title: 'Giai đoạn mới: Tên giai đoạn', year: '', link: '' });
+      _editorItems.push({ type: 'phase', title: '', year: '', note: '' });
       renderVisualItemsList();
       scrollToBottom();
     });
 
     document.getElementById('ro-v-btn-add-mini')?.addEventListener('click', () => {
       saveInputsToState();
-      _editorItems.push({ type: 'mini', title: 'Tên Mini-series #1–4', year: '2024', link: '' });
+      _editorItems.push({ type: 'mini', title: '', year: '', note: '' });
       renderVisualItemsList();
       scrollToBottom();
     });
 
     document.getElementById('ro-v-btn-add-oneshot')?.addEventListener('click', () => {
       saveInputsToState();
-      _editorItems.push({ type: 'oneshot', title: 'Tên One-Shot #1', year: '2024, One-Shot', link: '' });
+      _editorItems.push({ type: 'oneshot', title: '', year: '', note: '' });
       renderVisualItemsList();
       scrollToBottom();
     });
 
     document.getElementById('ro-v-btn-add-ongoing')?.addEventListener('click', () => {
       saveInputsToState();
-      _editorItems.push({ type: 'ongoing', title: 'Tên Series #1–3', year: '2024', link: '' });
+      _editorItems.push({ type: 'ongoing', title: '', year: '', note: '' });
       renderVisualItemsList();
       scrollToBottom();
     });
 
     document.getElementById('ro-v-btn-add-note')?.addEventListener('click', () => {
       saveInputsToState();
-      _editorItems.push({ type: 'note', title: 'Ghi chú đọc...', year: '', link: '' });
+      _editorItems.push({ type: 'note', title: '', year: '', note: '' });
       renderVisualItemsList();
       scrollToBottom();
     });
 
     document.getElementById('ro-v-btn-add-tpb')?.addEventListener('click', () => {
       saveTpbInputsToState();
-      _editorTpbs.push({ title: 'Tập tổng hợp mới', buyLink: '', subIssues: ['Tập con #1-4'] });
+      _editorTpbs.push({ title: '', buyLink: '', subIssues: [] });
       renderVisualTpbList();
     });
 
@@ -1568,15 +1568,15 @@ window.grecaptcha = window.grecaptcha || {
       const isNote = type === 'note';
 
       return `
-        <div class="ro-visual-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 6px; transition: all 0.15s;">
+        <div class="ro-visual-row" data-idx="${idx}" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: ${cfg.bg}; border: 1px solid ${cfg.border}; border-left: 4px solid ${cfg.color}; border-radius: 6px; box-sizing: border-box; width: 100%; transition: all 0.15s;">
           <!-- Move controls -->
-          <div style="display: flex; flex-direction: column; gap: 1px;">
-            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 1px 5px; font-size: 10px; line-height: 1;">▲</button>
-            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 1px 5px; font-size: 10px; line-height: 1;">▼</button>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; width: 22px;">
+            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="-1" title="Chuyển lên" style="width: 22px; height: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 0; font-size: 9px; line-height: 1;">▲</button>
+            <button type="button" class="ro-v-btn-move" data-idx="${idx}" data-dir="1" title="Chuyển xuống" style="width: 22px; height: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid #d1d5db; background: #fff; cursor: pointer; border-radius: 3px; padding: 0; font-size: 9px; line-height: 1;">▼</button>
           </div>
 
           <!-- Type Select -->
-          <select class="ro-v-type" data-idx="${idx}" style="padding: 6px 6px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 11.5px; font-weight: 700; color: ${cfg.color}; background: #fff; min-width: 140px; cursor: pointer;">
+          <select class="ro-v-type" data-idx="${idx}" style="flex-shrink: 0; width: 145px; padding: 6px 6px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 11.5px; font-weight: 700; color: ${cfg.color}; background: #fff; cursor: pointer;">
             <option value="phase" ${type === 'phase' ? 'selected' : ''}>🔵 Giai đoạn (Phase)</option>
             <option value="mini" ${type === 'mini' ? 'selected' : ''}>🟢 Bộ ngắn kỳ (Mini)</option>
             <option value="oneshot" ${type === 'oneshot' ? 'selected' : ''}>🔴 Tập đơn (One-Shot)</option>
@@ -1587,21 +1587,23 @@ window.grecaptcha = window.grecaptcha || {
           <!-- Title Input -->
           <input type="text" class="ro-v-title" data-idx="${idx}" value="${escapeHtml(item.title || '')}"
             placeholder="${isPhase ? 'Tên giai đoạn...' : (isNote ? 'Nội dung ghi chú...' : 'Tên truyện / số tập...')}"
-            style="flex: 2; min-width: 150px; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : (isNote ? '#475569' : '#111')}; background: #fff;" />
+            style="flex: 2; min-width: 120px; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; font-weight: ${isPhase ? '800' : '600'}; color: ${isPhase ? '#0066aa' : (isNote ? '#475569' : '#111')}; background: #fff;" />
 
           <!-- Year Input (ẩn nếu là phase) -->
           <input type="text" class="ro-v-year" data-idx="${idx}" value="${escapeHtml(item.year || '')}"
             placeholder="Năm (VD: 2024)"
-            style="width: 100px; padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; background: #fff; display: ${isPhase ? 'none' : 'block'};" />
+            style="width: 85px; flex-shrink: 0; padding: 6px 6px; text-align: center; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; background: #fff; display: ${isPhase ? 'none' : 'block'};" />
 
           <!-- Note Input (Ghi chú đọc của dòng) -->
           <input type="text" class="ro-v-note" data-idx="${idx}" value="${escapeHtml(item.note || '')}"
             placeholder="${isPhase ? 'Mô tả giai đoạn...' : 'Ghi chú đọc (tùy chọn)...'}"
-            style="flex: 1.3; min-width: 130px; padding: 6px 9px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 12px; color: #1e40af; background: #fff;" />
+            style="flex: 1.4; min-width: 120px; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 12px; color: #1e40af; background: #fff;" />
 
           <!-- Action buttons -->
-          <button type="button" class="ro-v-btn-insert-below" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="background: #fff; border: 1px solid #86efac; color: #16a34a; padding: 5px 8px; border-radius: 4px; font-size: 13px; font-weight: 800; cursor: pointer;">＋</button>
-          <button type="button" class="ro-v-btn-del" data-idx="${idx}" title="Xóa dòng này" style="background: #fff; border: 1px solid #fca5a5; color: #dc2626; padding: 5px 8px; border-radius: 4px; font-size: 12px; cursor: pointer;">🗑️</button>
+          <div style="display: flex; gap: 4px; flex-shrink: 0;">
+            <button type="button" class="ro-v-btn-insert-below" data-idx="${idx}" title="Chèn dòng mới phía dưới" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #86efac; color: #16a34a; border-radius: 4px; font-size: 13px; font-weight: 800; cursor: pointer; padding: 0;">＋</button>
+            <button type="button" class="ro-v-btn-del" data-idx="${idx}" title="Xóa dòng này" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #fca5a5; color: #dc2626; border-radius: 4px; font-size: 12px; cursor: pointer; padding: 0;">🗑️</button>
+          </div>
         </div>
       `;
     }).join('');
@@ -1633,7 +1635,7 @@ window.grecaptcha = window.grecaptcha || {
       btn.addEventListener('click', () => {
         saveInputsToState();
         const idx = parseInt(btn.dataset.idx, 10);
-        _editorItems.splice(idx + 1, 0, { type: 'ongoing', title: '', year: '2024', note: '', link: '' });
+        _editorItems.splice(idx + 1, 0, { type: 'ongoing', title: '', year: '', note: '', link: '' });
         renderVisualItemsList();
       });
     });
