@@ -14,29 +14,56 @@ import { renderReadingOrderHtml } from './services/readingOrderRenderer';
 
 const PORT = process.env.PORT || 3000;
 
-// Phục vụ tài nguyên tĩnh công khai (assets, wp-content, wp-includes, wp-json)
+// Phục vụ tài nguyên tĩnh công khai (assets, wp-json)
 const rootDir = process.cwd();
 
-// Middleware bắt mọi request tài nguyên tĩnh (dù là relative path từ thư mục con sâu như /marvel/events/wp-includes/...)
+// Middleware chuyển hướng / tương thích ngược các URL cũ sang /assets/
 app.use((req, res, next) => {
-  const match = req.path.match(/\/(wp-content|wp-includes|assets|wp-json)\/(.+)$/);
-  if (match) {
-    const [, folder, subpath] = match;
-    let resolvedPath = path.join(rootDir, folder, subpath);
-    if (!fs.existsSync(resolvedPath)) {
-      if (subpath.endsWith('integrity-light.css')) {
-        resolvedPath = path.join(rootDir, folder, subpath.replace('integrity-light.css', 'integrity-lightb34e.css'));
-      } else if (subpath.endsWith('style.css')) {
-        resolvedPath = path.join(rootDir, folder, subpath.replace('style.css', 'styleb34e.css'));
-      }
-    }
-    if (fs.existsSync(resolvedPath)) {
-      return res.sendFile(resolvedPath);
-    }
-    if (subpath.endsWith('common.min.css')) {
-      return res.type('text/css').send('/* empty common */');
+  const p = req.path;
+  if (p.includes('/wp-content/uploads/')) {
+    const filename = path.basename(p);
+    const assetPath = path.join(rootDir, 'assets', 'images', filename);
+    if (fs.existsSync(assetPath)) return res.sendFile(assetPath);
+  }
+  if (p.includes('integrity-light')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'css', 'integrity-light.css'));
+  }
+  if (p.includes('styleb34e.css') || p.includes('pro-child')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'css', 'pro-child.css'));
+  }
+  if (p.includes('/fonts/fa-') && p.endsWith('.woff2')) {
+    const fontName = path.basename(p.split('?')[0]);
+    const fontPath = path.join(rootDir, 'assets', 'fonts', fontName);
+    if (fs.existsSync(fontPath)) return res.sendFile(fontPath);
+  }
+  if (p.includes('jquery.min')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'js', 'jquery.min.js'));
+  }
+  if (p.includes('jquery-migrate')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'js', 'jquery-migrate.min.js'));
+  }
+  if (p.includes('xb34e.js')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'js', 'x.min.js'));
+  }
+  if (p.includes('stackb34e.js')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'js', 'stack.min.js'));
+  }
+  if (p.includes('cs-classic')) {
+    return res.sendFile(path.join(rootDir, 'assets', 'js', 'cs-classic.min.js'));
+  }
+  if (p.includes('common.min.css')) {
+    return res.type('text/css').send('/* empty common */');
+  }
+
+  // Bắt các request tương đối /.../assets/...
+  const assetMatch = p.match(/\/assets\/(.+)$/);
+  if (assetMatch) {
+    const assetResolved = path.join(rootDir, 'assets', assetMatch[1]);
+    if (fs.existsSync(assetResolved)) {
+      return res.sendFile(assetResolved);
     }
   }
+
   next();
 });
 
@@ -45,8 +72,6 @@ app.use('/assets', express.static(path.join(rootDir, 'assets'), {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   }
 }));
-app.use('/wp-content', express.static(path.join(rootDir, 'wp-content')));
-app.use('/wp-includes', express.static(path.join(rootDir, 'wp-includes')));
 app.use('/wp-json', express.static(path.join(rootDir, 'wp-json')));
 
 app.get('/search_index.json', (req, res) => {
@@ -163,16 +188,6 @@ app.get('*', async (req, res, next) => {
   let cleanPath = req.path.replace(/\/index\.html$/i, '').replace(/\/+$/, '');
   if (!cleanPath) cleanPath = '';
 
-  // Ưu tiên SSR: Nếu request khớp một reading order trong hệ thống -> Render động ngay lập tức
-  if (cleanPath && !cleanPath.startsWith('/admin') && !cleanPath.startsWith('/api')) {
-    const ssrHtml = await renderReadingOrderHtml(cleanPath);
-    if (ssrHtml) {
-      res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-      res.setHeader('X-Rendered-By', 'Express-SSR-Engine');
-      return res.send(ssrHtml);
-    }
-  }
-
   // 1. Nếu đường dẫn chỉ định trực tiếp file .html
   if (req.path.endsWith('.html')) {
     const directHtmlPath = path.join(rootDir, req.path.replace(/^\//, ''));
@@ -181,10 +196,20 @@ app.get('*', async (req, res, next) => {
     }
   }
 
-  // 2. Thử tìm index.html trong thư mục con (ví dụ: /marvel/events/house-of-m-reading-order)
+  // 2. Thử tìm index.html vật lý trong thư mục con (ví dụ: /marvel/events/index.html, /dc/characters/index.html, hub pages)
   const dirIndexPath = path.join(rootDir, cleanPath, 'index.html');
   if (fs.existsSync(dirIndexPath)) {
     return sendHtml(res, dirIndexPath);
+  }
+
+  // 3. Nếu không có file vật lý trên disk -> Render động qua SSR (dành cho 600+ reading orders đã lưu trữ trong Supabase/Cache)
+  if (cleanPath && !cleanPath.startsWith('/admin') && !cleanPath.startsWith('/api')) {
+    const ssrHtml = await renderReadingOrderHtml(cleanPath);
+    if (ssrHtml) {
+      res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+      res.setHeader('X-Rendered-By', 'Express-SSR-Engine');
+      return res.send(ssrHtml);
+    }
   }
 
   // 2b. Nếu path chỉ có 1 segment (slug đơn, ví dụ /zombie-reading-list),

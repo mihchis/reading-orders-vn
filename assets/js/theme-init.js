@@ -24,7 +24,7 @@ var xJsData = {
 };
 
 var xJsStackData = {
-  "backstretch": [["/wp-content/uploads/cbro.background.newest.svg"], {"fade": "0"}]
+  "backstretch": [["/assets/images/cbro.background.newest.svg"], {"fade": "0"}]
 };
 
 var wpcf7 = {

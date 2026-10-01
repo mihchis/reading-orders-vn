@@ -35,8 +35,6 @@ const siteItems = [
   'marvel',
   'other',
   'updates',
-  'wp-content',
-  'wp-includes',
   'wp-json',
   'index.html',
   'public',

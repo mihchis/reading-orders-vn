@@ -89,6 +89,8 @@
 
 .ro-text-justify {
   text-align: justify !important;
+  text-align-last: left !important;
+  text-justify: inter-word !important;
 }
 
 

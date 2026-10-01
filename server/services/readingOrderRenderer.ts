@@ -104,8 +104,25 @@ export async function getOrderData(slugOrPath: string): Promise<ReadingOrderData
   const slugOnly = clean.split('/').pop() || clean;
   const withoutReadingOrder = slugOnly.replace(/-reading-order$/, '');
 
-  // Master Hub Pages không phải là reading order đơn lẻ -> để Express phục vụ layout tổng thể
-  if (slugOnly === 'marvel-master-reading-order' || slugOnly === 'dc-master-reading-order') {
+  // Danh sách các trang Hub, danh mục, điều hướng cố định - tuyệt đối không SSR dạng reading order đơn
+  const reservedHubSlugs = new Set([
+    'events',
+    'characters',
+    'marvel',
+    'dc',
+    'other',
+    'marvel-master-reading-order',
+    'dc-master-reading-order',
+    'all-new-all-different-marvel-reading-order',
+    'all-new-all-different-marvel',
+    'faq',
+    'contact',
+    'updates',
+    'admin',
+    'api'
+  ]);
+
+  if (reservedHubSlugs.has(slugOnly) || reservedHubSlugs.has(clean)) {
     return null;
   }
 
@@ -144,7 +161,7 @@ export async function getOrderData(slugOrPath: string): Promise<ReadingOrderData
         universes(id, slug, name, accent_color),
         categories(id, slug, name)
       `)
-      .or(`slug.eq.${slugOnly},slug.eq.${withoutReadingOrder},direct_slug.eq.${slugOnly},direct_slug.eq.${withoutReadingOrder}-reading-order,url.ilike.%/${slugOnly}/%`)
+      .or(`slug.eq.${slugOnly},slug.eq.${withoutReadingOrder},direct_slug.eq.${slugOnly},direct_slug.eq.${withoutReadingOrder}-reading-order,url.ilike.%/${slugOnly}/`)
       .limit(1)
       .maybeSingle();
 
