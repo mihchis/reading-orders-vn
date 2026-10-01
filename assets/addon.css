@@ -572,6 +572,20 @@ body.has-ro-bar {
   font-family: "Lato", sans-serif;
 }
 
+/* --- Loại bỏ khung viền bao quanh danh sách đọc --- */
+.cs-content .x-tabs-panels > .x-tabs-panel,
+.x-tabs-panels > .x-tabs-panel {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 1rem 0 !important;
+}
+
+.x-tabs-panel > p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
 /* --- Interactive Single Issue Item --- */
 .ro-issue-item {
   display: flex;
