@@ -7,7 +7,7 @@
     "dev:server": "tsx watch server/index.ts",
     "dev": "tsx watch server/index.ts",
     "sync:components": "node scripts/sync_components.js",
-    "build": "node scripts/sync_components.js && node scripts/build_site.js",
+    "build": "node scripts/sync_components.js && node scripts/build_site.js && tsx scripts/export_ssr_reading_orders.ts",
     "seed": "tsx scripts/sync_to_supabase_cloud.ts",
     "start": "tsx server/index.ts"
   },

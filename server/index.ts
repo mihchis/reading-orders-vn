@@ -10,6 +10,7 @@ import express from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
 import app from './app';
+import { renderReadingOrderHtml } from './services/readingOrderRenderer';
 
 const PORT = process.env.PORT || 3000;
 
@@ -140,7 +141,7 @@ const sendHtml = (res: express.Response, filePath: string) => {
 const protectedPrefixes = ['/server', '/data', '/archive', '/node_modules', '/scripts', '/.git', '/.env'];
 
 // Middleware xử lý và phục vụ tất cả các trang HTML
-app.get('*', (req, res, next) => {
+app.get('*', async (req, res, next) => {
   if (req.path.startsWith('/api')) return next();
 
   for (const prefix of protectedPrefixes) {
@@ -158,9 +159,19 @@ app.get('*', (req, res, next) => {
     return next();
   }
 
-  // Chuẩn hóa path loại bỏ trailing slash
-  let cleanPath = req.path.replace(/\/+$/, '');
+  // Chuẩn hóa path loại bỏ trailing slash và index.html
+  let cleanPath = req.path.replace(/\/index\.html$/i, '').replace(/\/+$/, '');
   if (!cleanPath) cleanPath = '';
+
+  // Ưu tiên SSR: Nếu request khớp một reading order trong hệ thống -> Render động ngay lập tức
+  if (cleanPath && !cleanPath.startsWith('/admin') && !cleanPath.startsWith('/api')) {
+    const ssrHtml = await renderReadingOrderHtml(cleanPath);
+    if (ssrHtml) {
+      res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+      res.setHeader('X-Rendered-By', 'Express-SSR-Engine');
+      return res.send(ssrHtml);
+    }
+  }
 
   // 1. Nếu đường dẫn chỉ định trực tiếp file .html
   if (req.path.endsWith('.html')) {

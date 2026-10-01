@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="pingback" href="#">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>{{PAGE_TITLE}} - Comic Book Reading Orders VN</title>
+<meta name="description" content="{{META_DESCRIPTION}}" />
+<link rel="canonical" href="{{CANONICAL_URL}}" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{PAGE_TITLE}} - Comic Book Reading Orders VN" />
+<meta property="og:description" content="{{META_DESCRIPTION}}" />
+<meta property="og:url" content="{{CANONICAL_URL}}" />
+<meta property="og:site_name" content="comicbookreadingorders" />
+<meta property="article:modified_time" content="{{MODIFIED_TIME}}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@comicbookro" />
+<meta name="twitter:label1" content="Est. reading time" />
+<meta name="twitter:data1" content="2 minutes" />
+
+<link rel='stylesheet' id='x-stack-css' href='/wp-content/themes/pro/framework/dist/css/site/stacks/integrity-lightb34e.css?ver=6.9.4' media='all' />
+<link rel='stylesheet' id='x-child-css' href='/wp-content/themes/pro-child/styleb34e.css?ver=6.9.4' media='all' />
+<link rel="stylesheet" id="wp-global-css" href="/assets/css/wp-theme-global.css" media="all" />
+<link rel="stylesheet" id="wp-theme-layout-css" href="/assets/css/wp-theme-layout.css" media="all" />
+<link rel="stylesheet" id="wp-custom-css" href="/assets/css/wp-custom.css" media="all" />
+<link rel="stylesheet" id="ro-addon-css" href="/assets/addon.css" media="all" />
+
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1"></script>
+<script src="/assets/js/theme-init.js"></script>
+
+<link rel="icon" href="/wp-content/uploads/cbro.circle.01.svg" sizes="32x32" />
+<link rel="icon" href="/wp-content/uploads/cbro.circle.01.svg" sizes="192x192" />
+<link rel="apple-touch-icon" href="/wp-content/uploads/cbro.circle.01.svg" />
+<meta name="msapplication-TileImage" content="/wp-content/uploads/cbro.circle.01.svg" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&amp;subset=latin,latin-ext&amp;display=auto" type="text/css" media="all" crossorigin="anonymous" data-x-google-fonts/>
+<script src="/assets/addon.js" defer></script>
+</head>
+
+<body class="wp-singular page-template page-template-template-blank-4 page-template-template-blank-4-php page page-child wp-theme-pro wp-child-theme-pro-child x-integrity x-integrity-light x-child-theme-active x-boxed-layout-active x-full-width-active x-post-meta-disabled x-navbar-fixed-top-active pro-v6_9_4">
+
+  <div class="x-skip-links"><a class="x-skip-link" href="#x-main">Skip to content</a></div>
+  
+  <div id="x-root" class="x-root">
+    <div id="top" class="site">
+
+      <header class="masthead masthead-stacked" role="banner">
+        {{HEADER_NAV}}
+        {{BREADCRUMBS}}
+      </header>
+
+      <div id="x-main" class="x-main full" role="main" tabindex="-1">
+        <article class="page type-page status-publish hentry no-post-thumbnail">
+          <div class="entry-content content">
+            <div id="cs-content" class="cs-content">
+
+              <!-- Section 1: Headline -->
+              <div class="x-section ro-headline-section ro-section-clean mts">
+                <div class="x-row x-container max width">
+                  <div class="x-row-inner">
+                    <div class="x-col" style="width: 100%;">
+                      <h1 class="h-custom-headline cs-ta-center mts mbs red-class h3 accent">
+                        <span><strong>{{TITLE}}</strong></span>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Tổng quan & Thông tin xuất bản -->
+              <div class="x-section ro-overview-section ro-section-clean">
+                <div class="x-row x-container max width">
+                  <div class="x-row-inner">
+                    <div class="x-col x-1-2">
+                      <div class="x-text x-content">
+                        <p class="ro-text-justify">{{DESCRIPTION}}</p>
+                      </div>
+                    </div>
+                    <div class="x-col x-1-2">
+                      <div class="x-text x-content">
+                        <p>
+                          {{META_INFO}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Bộ đếm số tập -->
+              {{COUNTER_BLOCK}}
+
+              <!-- Section 4: Bảng màu chú giải (Legend) -->
+              {{COLOR_LEGEND}}
+
+              <!-- Section 5: Tabs & Panels -->
+              <div class="x-section ro-reading-order-section ro-section-clean">
+                <div class="x-row x-container max width">
+                  <div class="x-row-inner">
+                    <div class="x-col" style="width: 100%;">
+                      <div class="x-tabs" data-x-element-tabs="">
+                        <div class="x-tabs-list">
+                          <ul role="tablist">
+                            {{TABS_HEADER}}
+                          </ul>
+                        </div>
+                        <div class="x-tabs-panels">
+                          {{TABS_PANELS}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+      </div>
+
+      {{FOOTER}}
+      {{OVERLAYS}}
+
+    </div> <!-- END .site -->
+  </div> <!-- END .x-root -->
+
+  {{FOOTER_SCRIPTS}}
+</body>
+
+</html>

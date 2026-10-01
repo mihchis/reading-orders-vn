@@ -10,10 +10,10 @@
   "description": "Sau thảm họa New Warriors tại Stamford cướp đi sinh mạng của hàng trăm thường dân vô tội, chính phủ Hoa Kỳ chính thức thông qua Đạo luật Đăng ký Siêu anh hùng (Superhero Registration Act), buộc tất cả những người mang siêu năng lực phải công khai danh tính và chịu sự quản lý của quân đội. Sự kiện này đã đẩy cộng đồng siêu anh hùng vào một cuộc nội chiến đẫm máu chưa từng có: phe ủng hộ Đạo luật do Iron Man lãnh đạo đối đầu quyết liệt với phe kháng chiến vì tự do do Captain America dẫn đầu, với Spider-Man đau đớn kẹt lại ở lằn ranh giữa tình nghĩa và lý tưởng.",
   "year_published": "2006",
   "featured_characters": "Iron Man, Captain America, Spider-Man, Fantastic Four",
-  "previous_event_title": "Spider-Man: The Other",
-  "previous_event_slug": "spider-man-the-other",
-  "next_event_title": "One More Day",
-  "next_event_slug": "one-more-day",
+  "previous_event_title": "Planet Hulk",
+  "previous_event_slug": "planet-hulk-reading-order",
+  "next_event_title": "The Initiative",
+  "next_event_slug": "the-initiative-reading-order",
   "cover_image": "",
   "total_issues": 132,
   "comic_issues_count": 132,
@@ -277,7 +277,7 @@
     },
     {
       "sort_order": 33,
-      "title": "Iron Man Vol. 4 #13",
+      "title": "Invincible Iron Man #13",
       "issue_type": "ongoing",
       "year": null,
       "note": null,
@@ -781,7 +781,7 @@
     },
     {
       "sort_order": 96,
-      "title": "Iron Man Vol. 4 #14",
+      "title": "Invincible Iron Man #14",
       "issue_type": "ongoing",
       "year": null,
       "note": null,
@@ -1021,7 +1021,7 @@
     },
     {
       "sort_order": 126,
-      "title": "Fallen Son: The Cái chết của Captain America #1",
+      "title": "Fallen Son: The Death of Captain America #1",
       "issue_type": "limited",
       "year": "2007",
       "note": null,
@@ -1029,7 +1029,7 @@
     },
     {
       "sort_order": 127,
-      "title": "Fallen Son: The Cái chết của Captain America #2",
+      "title": "Fallen Son: The Death of Captain America #2",
       "issue_type": "limited",
       "year": null,
       "note": null,
@@ -1037,7 +1037,7 @@
     },
     {
       "sort_order": 128,
-      "title": "Fallen Son: The Cái chết của Captain America #3",
+      "title": "Fallen Son: The Death of Captain America #3",
       "issue_type": "limited",
       "year": null,
       "note": null,
@@ -1045,7 +1045,7 @@
     },
     {
       "sort_order": 129,
-      "title": "Fallen Son: The Cái chết của Captain America #4",
+      "title": "Fallen Son: The Death of Captain America #4",
       "issue_type": "limited",
       "year": null,
       "note": null,
@@ -1053,7 +1053,7 @@
     },
     {
       "sort_order": 130,
-      "title": "Fallen Son: The Cái chết của Captain America #5",
+      "title": "Fallen Son: The Death of Captain America #5",
       "issue_type": "limited",
       "year": null,
       "note": null,
@@ -1075,5 +1075,36 @@
       "note": null,
       "is_noncanon": 0
     }
-  ]
+  ],
+  "essential_issues": [
+    "Amazing Spider-Man #529",
+    "Amazing Spider-Man #530",
+    "Amazing Spider-Man #531",
+    "<span class=\"ro-item-oneshot\">New Avengers: Illuminati #1</span> (2006)",
+    "<span class=\"ro-item-mini\">Civil War #1</span> (2006)",
+    "New Avengers #21",
+    "New Avengers #22",
+    "<span class=\"ro-item-mini\">Civil War #2</span>",
+    "Amazing Spider-Man #532",
+    "Amazing Spider-Man #533",
+    "Amazing Spider-Man #534",
+    "<span class=\"ro-item-mini\">Civil War #3</span>",
+    "<span class=\"ro-item-mini\">Civil War #4</span>",
+    "New Avengers #23",
+    "Captain America Vol. 5 #22",
+    "Captain America Vol. 5 #23",
+    "Captain America Vol. 5 #24",
+    "New Avengers #24",
+    "Amazing Spider-Man #535",
+    "<span class=\"ro-item-mini\">Civil War #5</span>",
+    "Amazing Spider-Man #536",
+    "New Avengers #25",
+    "Amazing Spider-Man #537",
+    "<span class=\"ro-item-mini\">Civil War #6</span>",
+    "<span class=\"ro-item-mini\">Civil War #7</span>",
+    "Amazing Spider-Man #538",
+    "Amazing Spider-Man #539",
+    "Captain America Vol. 5 #25"
+  ],
+  "notes": "<h5 style=\"text-align: center;\"><span style=\"text-decoration: underline;\">Nên đọc gì trước Civil War?</span></h5>\n<p class=\"ro-text-justify\">Mặc dù sự kiện Civil War không bắt buộc phải đọc trước bất kỳ phần nào để có thể thưởng thức trọn vẹn, dưới đây là một số bộ truyện cung cấp thông tin bối cảnh dẫn tới Civil War theo thứ tự thời gian:</p>\n<ul>\n<li><a href=\"../avengers-disassembled-reading-order/index.html\">Avengers Disassembled</a> – Sự kiện này đã phá vỡ hoàn toàn nguyên trạng của Avengers, khiến cộng đồng siêu anh hùng rơi vào tình trạng chia rẽ.</li>\n<li>Invincible Iron Man #1-6 (2005) – Cốt truyện Extremis.</li>\n<li><span class=\"ro-item-mini\">Secret War #1-5</span> (2004) – Nick Fury chỉ đạo một chiến dịch bí mật nhưng thất bại, hủy hoại niềm tin của công chúng vào S.H.I.E.L.D. và làm tổn hại nghiêm trọng đến hình ảnh của các siêu anh hùng.</li>\n<li>New Avengers #1-10 (2005) – Sau khi Avengers giải tán trong Avengers Disassembled, một đội ngũ mới chưa được cấp phép đã được thành lập.</li>\n<li><span class=\"ro-item-mini\">New Warriors Vol. 3 #1-6</span> (2005) – Giai đoạn truyền hình thực tế của nhóm New Warriors, những người phải chịu trách nhiệm trực tiếp cho thảm kịch châm ngòi Civil War.</li>\n<li>New Avengers #11-20</li>\n</ul>\n<p class=\"ro-text-justify\">Ngoài ra, có một số đầu truyện giải thích lý do vắng mặt của vài siêu anh hùng nổi bật trong Civil War:</p>\n<ul>\n<li><a href=\"../planet-hulk-reading-order/index.html\">Planet Hulk</a> – Ngay trước Civil War, hội Illuminati đã trục xuất Hulk vào không gian, khiến anh không thể góp mặt trong Civil War.</li>\n<li><a href=\"../annihilation-reading-order/index.html\">Annihilation</a> – Diễn ra ngoài vũ trụ cùng thời điểm Civil War đang bùng nổ trên Trái Đất.</li>\n</ul>\n<h5 style=\"text-align: center;\"><span style=\"text-decoration: underline;\">Nên đọc những tập nào trong sự kiện này?</span></h5>\n<ul>\n<li>Các tập bắt buộc duy nhất là bộ truyện ngắn kỳ chính <span class=\"ro-item-mini\">Civil War #1-7</span>.</li>\n<li>Các tie-in hay nhất bao gồm <span class=\"ro-item-mini\">Civil War: Front Line #1-11</span>, Amazing Spider-Man #529-538, New Avengers #21-25, Captain America Vol. 5 #22-25 và Wolverine Vol. 3 #42-48.</li>\n<li>Hầu như không có tie-in nào quá tệ.</li>\n<li>Trang có tab Cốt truyện chính (Essential) chỉ bao gồm các tie-in quan trọng nhất, giúp rút ngắn hơn 100 tập so với thứ tự đọc đầy đủ.</li>\n<li>Nếu bạn đang theo dõi Marvel Master Reading Order, bạn nên đọc các tie-in của những bộ truyện mà bạn đang theo dõi trước khi bước vào sự kiện.</li>\n</ul>\n<h5 style=\"text-align: center;\"><span style=\"text-decoration: underline;\">Nên đọc gì sau Civil War?</span></h5>\n<p class=\"ro-text-justify\">Civil War để lại ảnh hưởng sâu rộng trên toàn Vũ trụ Marvel, có lẽ lớn hơn bất kỳ sự kiện nào trước hoặc sau đó. Dưới đây là các phần truyện tiếp nối theo thứ tự thời gian:</p>\n<ul>\n<li>Amazing Spider-Man #539-543 – Cốt truyện Back in Black: Spider-Man đối mặt với hậu quả nặng nề từ Civil War.</li>\n<li><a href=\"../the-initiative-reading-order/index.html\">The Initiative</a> – Tony Stark trở thành Giám đốc mới của S.H.I.E.L.D. và thành lập Sáng kiến 50 Bang (Fifty-State Initiative), trao cho mỗi bang một đội siêu anh hùng riêng.</li>\n<li><a href=\"../world-war-hulk-reading-order/index.html\">World War Hulk</a> – Hậu quả từ việc Illuminati đày Hulk ra không gian đã quay trở lại ám ảnh họ.</li>\n<li><a href=\"../one-more-day-reading-order/index.html\">One More Day</a> – Spider-Man khép lại tuyến truyện Civil War của mình trong câu chuyện nổi tiếng này.</li>\n<li><a href=\"../secret-invasion-reading-order/index.html\">Secret Invasion</a> – Tình trạng hỗn loạn trên diện rộng và những mối quan hệ rạn nứt sau Civil War đã khiến Trái Đất dễ bị tổn thương trước một hiểm họa lớn hơn.</li>\n</ul>"
 }

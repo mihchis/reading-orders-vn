@@ -9,7 +9,17 @@ const startTime = Date.now();
 
 // 1. Tạo mới thư mục dist
 if (fs.existsSync(distDir)) {
-  fs.rmSync(distDir, { recursive: true, force: true });
+  try {
+    fs.rmSync(distDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+  } catch {
+    // Nếu vẫn lock, dọn sạch nội dung bên trong
+    const entries = fs.readdirSync(distDir);
+    for (const e of entries) {
+      try {
+        fs.rmSync(path.join(distDir, e), { recursive: true, force: true, maxRetries: 3 });
+      } catch {}
+    }
+  }
 }
 fs.mkdirSync(distDir, { recursive: true });
 
