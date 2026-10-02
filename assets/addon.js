@@ -875,6 +875,18 @@ window.grecaptcha = window.grecaptcha || {
   function isIssueLine(str) {
     if (!str) return false;
 
+    // Kiểm tra trực tiếp trên toàn bộ chuỗi gốc: nếu là Điểm khởi đầu thay thế / Alternate Starting Point
+    const fullRawText = str.replace(/<[^>]+>/g, '').toLowerCase().trim();
+    if (
+      fullRawText.includes('alternate starting point') ||
+      fullRawText.includes('điểm khởi đầu thay thế') ||
+      fullRawText.includes('điểm bắt đầu thay thế') ||
+      fullRawText.includes('khởi đầu thay thế') ||
+      str.includes('ro-starting-point')
+    ) {
+      return false;
+    }
+
     // 1. Loại bỏ phần chú thích màu xanh dương (Blue comments/annotations) trước khi kiểm tra định danh tập
     // Quy ước website: chữ xanh dương là ghi chú / chú thích sự kiện, KHÔNG PHẢI tập truyện
     const strWithoutComments = str
@@ -1914,6 +1926,9 @@ window.grecaptcha = window.grecaptcha || {
     const issueParagraphs = [];
 
     pElements.forEach(p => {
+      if (p.classList.contains('ro-starting-point') || /điểm (?:khởi|bắt) đầu thay thế/i.test(p.textContent)) {
+        return;
+      }
       const lines = p.innerHTML.split(/<br\s*\/?>/i);
       let pHasIssues = false;
       lines.forEach(line => {
@@ -2042,21 +2057,48 @@ window.grecaptcha = window.grecaptcha || {
       mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     }
 
+  function _loadProgressFromApi(orderId) {
+    const token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || '';
+    if (!token) return Promise.resolve({});
+    return fetch('/api/auth/progress/' + encodeURIComponent(orderId), {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
+    .then(r => r.ok ? r.json() : null)
+    .then(res => {
+      const map = {};
+      if (res && res.success && res.data && Array.isArray(res.data.readIssueIds)) {
+        res.data.readIssueIds.forEach(id => {
+          map[id] = true;
+        });
+      }
+      return map;
+    })
+    .catch(() => ({}));
+  }
+
     document.getElementById('ro-tracker-login-btn')?.addEventListener('click', () => {
       openAuthModal('login');
     });
 
     if (isLoggedIn) {
-      _loadProgressFromApi(orderId).then(function(prog) {
-        savedProgress = prog;
-        mainContainer.querySelectorAll('.ro-issue-item').forEach(function(itm) {
-          var issueId = itm.dataset.issueId;
-          var cb = itm.querySelector('.ro-issue-checkbox');
-          if (cb && prog[issueId]) { cb.checked = true; itm.classList.add('is-read'); }
+      _loadProgressFromApi(orderId)
+        .then(function(prog) {
+          savedProgress = prog || {};
+          mainContainer.querySelectorAll('.ro-issue-item').forEach(function(itm) {
+            var issueId = itm.dataset.issueId;
+            var cb = itm.querySelector('.ro-issue-checkbox');
+            if (cb && savedProgress[issueId]) { cb.checked = true; itm.classList.add('is-read'); }
+          });
+        })
+        .catch(function(err) {
+          console.warn('[Progress] Lỗi tải tiến độ:', err);
+        })
+        .finally(function() {
+          attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
+          syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
         });
-        attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
-        syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);
-      });
     } else {
       attachTrackerEvents(mainContainer, pageKey, cleanPath, savedProgress, isLoggedIn, isAdmin);
       syncIssueLinksOnPage(mainContainer, cleanPath, isAdmin);

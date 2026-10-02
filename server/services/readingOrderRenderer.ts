@@ -427,7 +427,7 @@ function renderIssueItem(issue: ReadingOrderIssue): string {
 function renderStartingPoints(points?: Array<{ title: string; link: string }>): string {
   if (!points || points.length === 0) return '';
   return points.map(p => {
-    return `<p><span style="color: #0000ff;"><strong>Điểm khởi đầu thay thế: </strong></span> <a class="dc-class" href="${escapeHtml(p.link)}">${escapeHtml(p.title)}</a></p>`;
+    return `<p class="ro-starting-point"><span style="color: #0000ff;"><strong>Điểm khởi đầu thay thế: </strong></span> <a class="dc-class" href="${escapeHtml(p.link)}">${escapeHtml(p.title)}</a></p>`;
   }).join('\n') + '\n';
 }
 
