@@ -23,6 +23,7 @@ export interface ReadingOrderIssue {
   note?: string | null;
   is_noncanon?: number;
   link?: string | null;
+  anchor_id?: string | null;
 }
 
 export interface ReadingOrderTpb {
@@ -382,35 +383,44 @@ function renderIssueItem(issue: ReadingOrderIssue): string {
   const title = issue.title.trim();
   const yearStr = issue.year && String(issue.year).trim() ? ` (${String(issue.year).trim()})` : '';
   const noteStr = issue.note && String(issue.note).trim() ? ` <span style="color: #0000ff; font-style: italic;">(${escapeHtml(String(issue.note).trim())})</span>` : '';
+  const anchorTag = issue.anchor_id ? `<a id="${escapeHtml(issue.anchor_id)}"></a>` : '';
 
-  if (type === 'event_link' || issue.link) {
+  if (type === 'starting_point' || title.startsWith('Alternate Starting Point') || title.startsWith('Điểm khởi đầu thay thế')) {
+    const targetUrl = issue.link || '#';
+    const targetTitle = title
+      .replace(/^Alternate Starting Point:\s*/i, '')
+      .replace(/^Điểm khởi đầu thay thế:\s*/i, '');
+    return `<p>${anchorTag}<span style="color: #0000ff;"><strong>Điểm khởi đầu thay thế: </strong></span> <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(targetTitle)}</a></p>`;
+  }
+
+  if (type === 'event_link' || (issue.link && (issue.link.includes('/events/') || type.includes('event')))) {
     const targetUrl = issue.link || '#';
     const eventName = title
       .replace(/^Read\s+/i, '')
       .replace(/\s+here\.?$/i, '')
       .replace(/^Đọc\s+(sự kiện\s+)?/i, '')
       .replace(/\s+tại đây\.?$/i, '');
-    return `<p><strong><span style="color: #ff0000;">Đọc sự kiện <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(eventName)}</a> tại đây.</span></strong></p>`;
+    return `<p>${anchorTag}<strong><span style="color: #ff0000;">Đọc sự kiện <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(eventName)}</a> tại đây.</span></strong></p>`;
   }
 
   if (type === 'phase') {
     const phaseNote = issue.note && String(issue.note).trim() ? `<br /><span style="color: #64748b; font-size: 12.5px; font-style: italic;">${escapeHtml(String(issue.note).trim())}</span>` : '';
-    return `<p><span class="ro-item-phase"><strong>${escapeHtml(title)}</strong></span>${phaseNote}</p>`;
+    return `<p>${anchorTag}<span class="ro-item-phase"><strong>${escapeHtml(title)}</strong></span>${phaseNote}</p>`;
   }
 
-  if (type === 'note') {
-    return `<p><span class="ro-item-note">${escapeHtml(title)}</span></p>`;
+  if (type === 'note' || type === 'comment') {
+    return `<p>${anchorTag}<span class="ro-item-note">${escapeHtml(title)}</span></p>`;
   }
 
   if (type === 'mini' || type === 'limited') {
-    return `<p><span class="ro-item-mini">${escapeHtml(title)}</span>${yearStr}${noteStr}</p>`;
+    return `<p>${anchorTag}<span class="ro-item-mini">${escapeHtml(title)}</span>${yearStr}${noteStr}</p>`;
   }
 
   if (type === 'oneshot') {
-    return `<p><span class="ro-item-oneshot">${escapeHtml(title)}</span>${yearStr}${noteStr}</p>`;
+    return `<p>${anchorTag}<span class="ro-item-oneshot">${escapeHtml(title)}</span>${yearStr}${noteStr}</p>`;
   }
 
-  return `<p>${escapeHtml(title)}${yearStr}${noteStr}</p>`;
+  return `<p>${anchorTag}${escapeHtml(title)}${yearStr}${noteStr}</p>`;
 }
 
 function renderSingleIssuesPanel(issues: ReadingOrderIssue[]): string {
