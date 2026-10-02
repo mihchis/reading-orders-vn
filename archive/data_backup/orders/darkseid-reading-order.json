@@ -15,9 +15,9 @@
   "next_event_title": "",
   "next_event_slug": "",
   "cover_image": "",
-  "total_issues": 234,
-  "comic_issues_count": 233,
-  "comments_count": 1,
+  "total_issues": 232,
+  "comic_issues_count": 232,
+  "comments_count": 0,
   "issues": [
     {
       "sort_order": 1,
@@ -1373,14 +1373,6 @@
     },
     {
       "sort_order": 170,
-      "title": "Read Darkseid War here.",
-      "issue_type": "oneshot",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 171,
       "title": "Wonder Woman Vol. 5 #31",
       "issue_type": "ongoing",
       "year": null,
@@ -1388,7 +1380,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 172,
+      "sort_order": 171,
       "title": "Wonder Woman Vol. 5 #32",
       "issue_type": "ongoing",
       "year": null,
@@ -1396,7 +1388,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 173,
+      "sort_order": 172,
       "title": "Wonder Woman Vol. 5 #33",
       "issue_type": "ongoing",
       "year": null,
@@ -1404,7 +1396,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 174,
+      "sort_order": 173,
       "title": "Wonder Woman Vol. 5 #34",
       "issue_type": "ongoing",
       "year": null,
@@ -1412,7 +1404,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 175,
+      "sort_order": 174,
       "title": "Wonder Woman Vol. 5 #35",
       "issue_type": "ongoing",
       "year": null,
@@ -1420,7 +1412,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 176,
+      "sort_order": 175,
       "title": "Wonder Woman Vol. 5 #36",
       "issue_type": "ongoing",
       "year": null,
@@ -1428,7 +1420,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 177,
+      "sort_order": 176,
       "title": "Wonder Woman Vol. 5 #37",
       "issue_type": "ongoing",
       "year": null,
@@ -1436,7 +1428,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 178,
+      "sort_order": 177,
       "title": "Wonder Woman Vol. 5 #38",
       "issue_type": "ongoing",
       "year": null,
@@ -1444,7 +1436,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 179,
+      "sort_order": 178,
       "title": "Wonder Woman Vol. 5 #39",
       "issue_type": "ongoing",
       "year": null,
@@ -1452,7 +1444,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 180,
+      "sort_order": 179,
       "title": "Wonder Woman Vol. 5 #40",
       "issue_type": "ongoing",
       "year": null,
@@ -1460,7 +1452,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 181,
+      "sort_order": 180,
       "title": "Wonder Woman Vol. 5 #41",
       "issue_type": "ongoing",
       "year": null,
@@ -1468,7 +1460,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 182,
+      "sort_order": 181,
       "title": "Wonder Woman Vol. 5 #42",
       "issue_type": "ongoing",
       "year": null,
@@ -1476,7 +1468,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 183,
+      "sort_order": 182,
       "title": "Wonder Woman Vol. 5 #43",
       "issue_type": "ongoing",
       "year": null,
@@ -1484,7 +1476,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 184,
+      "sort_order": 183,
       "title": "Wonder Woman Vol. 5 #44",
       "issue_type": "ongoing",
       "year": null,
@@ -1492,7 +1484,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 185,
+      "sort_order": 184,
       "title": "Wonder Woman Vol. 5 #45",
       "issue_type": "ongoing",
       "year": null,
@@ -1500,7 +1492,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 186,
+      "sort_order": 185,
       "title": "Justice League Odyssey #1",
       "issue_type": "ongoing",
       "year": "2018",
@@ -1508,7 +1500,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 187,
+      "sort_order": 186,
       "title": "Justice League Odyssey #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1516,7 +1508,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 188,
+      "sort_order": 187,
       "title": "Justice League Odyssey #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1524,7 +1516,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 189,
+      "sort_order": 188,
       "title": "Justice League Odyssey #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1532,7 +1524,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 190,
+      "sort_order": 189,
       "title": "Justice League Odyssey #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1540,7 +1532,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 191,
+      "sort_order": 190,
       "title": "Justice League Odyssey #6",
       "issue_type": "ongoing",
       "year": null,
@@ -1548,7 +1540,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 192,
+      "sort_order": 191,
       "title": "Justice League Odyssey #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1556,7 +1548,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 193,
+      "sort_order": 192,
       "title": "Justice League Odyssey #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1564,7 +1556,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 194,
+      "sort_order": 193,
       "title": "Justice League Odyssey #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1572,7 +1564,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 195,
+      "sort_order": 194,
       "title": "Justice League Odyssey #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1580,7 +1572,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 196,
+      "sort_order": 195,
       "title": "Justice League Odyssey #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1588,7 +1580,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 197,
+      "sort_order": 196,
       "title": "Justice League Odyssey #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1596,7 +1588,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 198,
+      "sort_order": 197,
       "title": "Justice League Odyssey #13",
       "issue_type": "ongoing",
       "year": null,
@@ -1604,7 +1596,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 199,
+      "sort_order": 198,
       "title": "Justice League Odyssey #14",
       "issue_type": "ongoing",
       "year": null,
@@ -1612,7 +1604,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 200,
+      "sort_order": 199,
       "title": "Justice League Odyssey #15",
       "issue_type": "ongoing",
       "year": null,
@@ -1620,7 +1612,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 201,
+      "sort_order": 200,
       "title": "Justice League Odyssey #16",
       "issue_type": "ongoing",
       "year": null,
@@ -1628,7 +1620,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 202,
+      "sort_order": 201,
       "title": "Justice League Odyssey #17",
       "issue_type": "ongoing",
       "year": null,
@@ -1636,7 +1628,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 203,
+      "sort_order": 202,
       "title": "Justice League Odyssey #18",
       "issue_type": "ongoing",
       "year": null,
@@ -1644,7 +1636,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 204,
+      "sort_order": 203,
       "title": "Justice League Odyssey #19",
       "issue_type": "ongoing",
       "year": null,
@@ -1652,7 +1644,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 205,
+      "sort_order": 204,
       "title": "Justice League Odyssey #20",
       "issue_type": "ongoing",
       "year": null,
@@ -1660,7 +1652,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 206,
+      "sort_order": 205,
       "title": "Justice League Odyssey #21",
       "issue_type": "ongoing",
       "year": null,
@@ -1668,7 +1660,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 207,
+      "sort_order": 206,
       "title": "Justice League Odyssey #22",
       "issue_type": "ongoing",
       "year": null,
@@ -1676,7 +1668,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 208,
+      "sort_order": 207,
       "title": "Justice League Odyssey #23",
       "issue_type": "ongoing",
       "year": null,
@@ -1684,7 +1676,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 209,
+      "sort_order": 208,
       "title": "Justice League Odyssey #24",
       "issue_type": "ongoing",
       "year": null,
@@ -1692,7 +1684,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 210,
+      "sort_order": 209,
       "title": "Justice League Odyssey #25",
       "issue_type": "ongoing",
       "year": null,
@@ -1700,7 +1692,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 211,
+      "sort_order": 210,
       "title": "Infinite Frontier #0",
       "issue_type": "limited",
       "year": "2021",
@@ -1708,7 +1700,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 212,
+      "sort_order": 211,
       "title": "Infinite Frontier #1",
       "issue_type": "limited",
       "year": null,
@@ -1716,7 +1708,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 213,
+      "sort_order": 212,
       "title": "Infinite Frontier #2",
       "issue_type": "limited",
       "year": null,
@@ -1724,7 +1716,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 214,
+      "sort_order": 213,
       "title": "Infinite Frontier #3",
       "issue_type": "limited",
       "year": null,
@@ -1732,7 +1724,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 215,
+      "sort_order": 214,
       "title": "Infinite Frontier #4",
       "issue_type": "limited",
       "year": null,
@@ -1740,7 +1732,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 216,
+      "sort_order": 215,
       "title": "Infinite Frontier #5",
       "issue_type": "limited",
       "year": null,
@@ -1748,7 +1740,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 217,
+      "sort_order": 216,
       "title": "Infinite Frontier #6",
       "issue_type": "limited",
       "year": null,
@@ -1756,7 +1748,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 218,
+      "sort_order": 217,
       "title": "Justice League Incarnate #1",
       "issue_type": "limited",
       "year": "2022",
@@ -1764,7 +1756,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 219,
+      "sort_order": 218,
       "title": "Justice League Incarnate #2",
       "issue_type": "limited",
       "year": null,
@@ -1772,7 +1764,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 220,
+      "sort_order": 219,
       "title": "Justice League Incarnate #3",
       "issue_type": "limited",
       "year": null,
@@ -1780,7 +1772,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 221,
+      "sort_order": 220,
       "title": "Justice League Incarnate #4",
       "issue_type": "limited",
       "year": null,
@@ -1788,7 +1780,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 222,
+      "sort_order": 221,
       "title": "Justice League Incarnate #5",
       "issue_type": "limited",
       "year": null,
@@ -1796,7 +1788,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 223,
+      "sort_order": 222,
       "title": "Dark Crisis on Infinite Earths #1",
       "issue_type": "limited",
       "year": "2022",
@@ -1804,7 +1796,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 224,
+      "sort_order": 223,
       "title": "Dark Crisis on Infinite Earths #2",
       "issue_type": "limited",
       "year": null,
@@ -1812,7 +1804,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 225,
+      "sort_order": 224,
       "title": "Dark Crisis on Infinite Earths #3",
       "issue_type": "limited",
       "year": null,
@@ -1820,7 +1812,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 226,
+      "sort_order": 225,
       "title": "Dark Crisis on Infinite Earths #4",
       "issue_type": "limited",
       "year": null,
@@ -1828,7 +1820,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 227,
+      "sort_order": 226,
       "title": "Dark Crisis on Infinite Earths #5",
       "issue_type": "limited",
       "year": null,
@@ -1836,7 +1828,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 228,
+      "sort_order": 227,
       "title": "Dark Crisis on Infinite Earths #6",
       "issue_type": "limited",
       "year": null,
@@ -1844,7 +1836,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 229,
+      "sort_order": 228,
       "title": "Dark Crisis on Infinite Earths #7",
       "issue_type": "limited",
       "year": null,
@@ -1852,7 +1844,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 230,
+      "sort_order": 229,
       "title": "New History of the DC Universe #1",
       "issue_type": "limited",
       "year": "2025",
@@ -1860,7 +1852,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 231,
+      "sort_order": 230,
       "title": "New History of the DC Universe #2",
       "issue_type": "limited",
       "year": null,
@@ -1868,7 +1860,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 232,
+      "sort_order": 231,
       "title": "New History of the DC Universe #3",
       "issue_type": "limited",
       "year": null,
@@ -1876,17 +1868,9 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 233,
+      "sort_order": 232,
       "title": "New History of the DC Universe #4",
       "issue_type": "limited",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 234,
-      "title": "Read DC K.O. here.",
-      "issue_type": "comment",
       "year": null,
       "note": null,
       "is_noncanon": 0

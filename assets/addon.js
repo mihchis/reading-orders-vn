@@ -891,6 +891,7 @@ window.grecaptcha = window.grecaptcha || {
     // Quy ước website: chữ xanh dương là ghi chú / chú thích sự kiện, KHÔNG PHẢI tập truyện
     const strWithoutComments = str
       .replace(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue|rgb\(\s*0\s*,\s*(?:0|102)\s*,\s*(?:255|170)\s*\))[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+      .replace(/<span[^>]*class="[^"]*ro-item-note[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
       .replace(/<strong[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue)[^"]*"[^>]*>[\s\S]*?<\/strong>/gi, '');
     
     const cleanWithoutComments = strWithoutComments.replace(/<[^>]+>/g, '').trim();
@@ -1960,6 +1961,7 @@ window.grecaptcha = window.grecaptcha || {
           const isChecked = isLoggedIn && Boolean(savedProgress[issueId]);
           const titleWithoutNote = trimmed
             .replace(/<span[^>]*style="[^"]*color:\s*(?:#0000ff|#0066aa|blue|rgb\(\s*0\s*,\s*(?:0|102)\s*,\s*(?:255|170)\s*\))[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+            .replace(/<span[^>]*class="[^"]*ro-item-note[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
             .replace(/<[^>]+>/g, '')
             .replace(/\s*[-–—]\s*$/, '')
             .trim();

@@ -15,8 +15,8 @@
   "next_event_title": "",
   "next_event_slug": "",
   "cover_image": "",
-  "total_issues": 272,
-  "comic_issues_count": 272,
+  "total_issues": 271,
+  "comic_issues_count": 271,
   "comments_count": 0,
   "issues": [
     {
@@ -525,14 +525,6 @@
     },
     {
       "sort_order": 64,
-      "title": "Read Batman: No Man’s Land here.",
-      "issue_type": "oneshot",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 65,
       "title": "JLA #34",
       "issue_type": "ongoing",
       "year": null,
@@ -540,7 +532,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 66,
+      "sort_order": 65,
       "title": "JLA #36",
       "issue_type": "ongoing",
       "year": null,
@@ -548,7 +540,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 67,
+      "sort_order": 66,
       "title": "JLA #37",
       "issue_type": "ongoing",
       "year": null,
@@ -556,7 +548,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 68,
+      "sort_order": 67,
       "title": "JLA #38",
       "issue_type": "ongoing",
       "year": null,
@@ -564,7 +556,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 69,
+      "sort_order": 68,
       "title": "JLA #39",
       "issue_type": "ongoing",
       "year": null,
@@ -572,7 +564,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 70,
+      "sort_order": 69,
       "title": "JLA #40",
       "issue_type": "ongoing",
       "year": null,
@@ -580,7 +572,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 71,
+      "sort_order": 70,
       "title": "JLA #41",
       "issue_type": "ongoing",
       "year": null,
@@ -588,7 +580,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 72,
+      "sort_order": 71,
       "title": "Batman/Huntress: Cry for Blood #1",
       "issue_type": "limited",
       "year": "2000",
@@ -596,7 +588,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 73,
+      "sort_order": 72,
       "title": "Batman/Huntress: Cry for Blood #2",
       "issue_type": "limited",
       "year": null,
@@ -604,7 +596,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 74,
+      "sort_order": 73,
       "title": "Batman/Huntress: Cry for Blood #3",
       "issue_type": "limited",
       "year": null,
@@ -612,7 +604,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 75,
+      "sort_order": 74,
       "title": "Batman/Huntress: Cry for Blood #4",
       "issue_type": "limited",
       "year": null,
@@ -620,7 +612,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 76,
+      "sort_order": 75,
       "title": "Batman/Huntress: Cry for Blood #5",
       "issue_type": "limited",
       "year": null,
@@ -628,7 +620,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 77,
+      "sort_order": 76,
       "title": "Batman/Huntress: Cry for Blood #6",
       "issue_type": "limited",
       "year": null,
@@ -636,7 +628,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 78,
+      "sort_order": 77,
       "title": "Batman: Gotham Knights #38",
       "issue_type": "ongoing",
       "year": null,
@@ -644,7 +636,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 79,
+      "sort_order": 78,
       "title": "Batman: Gotham Knights #39",
       "issue_type": "ongoing",
       "year": null,
@@ -652,7 +644,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 80,
+      "sort_order": 79,
       "title": "Batman: Gotham Knights #40",
       "issue_type": "ongoing",
       "year": null,
@@ -660,7 +652,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 81,
+      "sort_order": 80,
       "title": "Birds of Prey #56",
       "issue_type": "ongoing",
       "year": null,
@@ -668,7 +660,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 82,
+      "sort_order": 81,
       "title": "Birds of Prey #57",
       "issue_type": "ongoing",
       "year": null,
@@ -676,7 +668,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 83,
+      "sort_order": 82,
       "title": "Birds of Prey #58",
       "issue_type": "ongoing",
       "year": null,
@@ -684,7 +676,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 84,
+      "sort_order": 83,
       "title": "Birds of Prey #59",
       "issue_type": "ongoing",
       "year": null,
@@ -692,7 +684,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 85,
+      "sort_order": 84,
       "title": "Birds of Prey #60",
       "issue_type": "ongoing",
       "year": null,
@@ -700,7 +692,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 86,
+      "sort_order": 85,
       "title": "Birds of Prey #61",
       "issue_type": "ongoing",
       "year": null,
@@ -708,7 +700,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 87,
+      "sort_order": 86,
       "title": "Birds of Prey #62",
       "issue_type": "ongoing",
       "year": null,
@@ -716,7 +708,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 88,
+      "sort_order": 87,
       "title": "Birds of Prey #63",
       "issue_type": "ongoing",
       "year": null,
@@ -724,7 +716,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 89,
+      "sort_order": 88,
       "title": "Birds of Prey #64",
       "issue_type": "ongoing",
       "year": null,
@@ -732,7 +724,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 90,
+      "sort_order": 89,
       "title": "Birds of Prey #65",
       "issue_type": "ongoing",
       "year": null,
@@ -740,7 +732,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 91,
+      "sort_order": 90,
       "title": "Birds of Prey #66",
       "issue_type": "ongoing",
       "year": null,
@@ -748,7 +740,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 92,
+      "sort_order": 91,
       "title": "Birds of Prey #67",
       "issue_type": "ongoing",
       "year": null,
@@ -756,7 +748,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 93,
+      "sort_order": 92,
       "title": "Birds of Prey #68",
       "issue_type": "ongoing",
       "year": null,
@@ -764,7 +756,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 94,
+      "sort_order": 93,
       "title": "Birds of Prey #69",
       "issue_type": "ongoing",
       "year": null,
@@ -772,7 +764,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 95,
+      "sort_order": 94,
       "title": "Birds of Prey #70",
       "issue_type": "ongoing",
       "year": null,
@@ -780,7 +772,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 96,
+      "sort_order": 95,
       "title": "Birds of Prey #71",
       "issue_type": "ongoing",
       "year": null,
@@ -788,7 +780,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 97,
+      "sort_order": 96,
       "title": "Birds of Prey #72",
       "issue_type": "ongoing",
       "year": null,
@@ -796,7 +788,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 98,
+      "sort_order": 97,
       "title": "Birds of Prey #73",
       "issue_type": "ongoing",
       "year": null,
@@ -804,7 +796,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 99,
+      "sort_order": 98,
       "title": "Birds of Prey #74",
       "issue_type": "ongoing",
       "year": null,
@@ -812,7 +804,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 100,
+      "sort_order": 99,
       "title": "Birds of Prey #75",
       "issue_type": "ongoing",
       "year": null,
@@ -820,7 +812,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 101,
+      "sort_order": 100,
       "title": "Birds of Prey #76",
       "issue_type": "ongoing",
       "year": null,
@@ -828,7 +820,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 102,
+      "sort_order": 101,
       "title": "Birds of Prey #77",
       "issue_type": "ongoing",
       "year": null,
@@ -836,7 +828,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 103,
+      "sort_order": 102,
       "title": "Birds of Prey #78",
       "issue_type": "ongoing",
       "year": null,
@@ -844,7 +836,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 104,
+      "sort_order": 103,
       "title": "Birds of Prey #79",
       "issue_type": "ongoing",
       "year": null,
@@ -852,7 +844,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 105,
+      "sort_order": 104,
       "title": "Birds of Prey #80",
       "issue_type": "ongoing",
       "year": null,
@@ -860,7 +852,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 106,
+      "sort_order": 105,
       "title": "Birds of Prey #81",
       "issue_type": "ongoing",
       "year": null,
@@ -868,7 +860,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 107,
+      "sort_order": 106,
       "title": "Birds of Prey #82",
       "issue_type": "ongoing",
       "year": null,
@@ -876,7 +868,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 108,
+      "sort_order": 107,
       "title": "Birds of Prey #83",
       "issue_type": "ongoing",
       "year": null,
@@ -884,7 +876,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 109,
+      "sort_order": 108,
       "title": "Birds of Prey #84",
       "issue_type": "ongoing",
       "year": null,
@@ -892,7 +884,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 110,
+      "sort_order": 109,
       "title": "Birds of Prey #85",
       "issue_type": "ongoing",
       "year": null,
@@ -900,7 +892,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 111,
+      "sort_order": 110,
       "title": "Birds of Prey #86",
       "issue_type": "ongoing",
       "year": null,
@@ -908,7 +900,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 112,
+      "sort_order": 111,
       "title": "Birds of Prey #87",
       "issue_type": "ongoing",
       "year": null,
@@ -916,7 +908,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 113,
+      "sort_order": 112,
       "title": "Birds of Prey #88",
       "issue_type": "ongoing",
       "year": null,
@@ -924,7 +916,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 114,
+      "sort_order": 113,
       "title": "Birds of Prey #89",
       "issue_type": "ongoing",
       "year": null,
@@ -932,7 +924,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 115,
+      "sort_order": 114,
       "title": "Birds of Prey #90",
       "issue_type": "ongoing",
       "year": null,
@@ -940,7 +932,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 116,
+      "sort_order": 115,
       "title": "Birds of Prey #92",
       "issue_type": "ongoing",
       "year": null,
@@ -948,7 +940,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 117,
+      "sort_order": 116,
       "title": "Birds of Prey #93",
       "issue_type": "ongoing",
       "year": null,
@@ -956,7 +948,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 118,
+      "sort_order": 117,
       "title": "Birds of Prey #94",
       "issue_type": "ongoing",
       "year": null,
@@ -964,7 +956,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 119,
+      "sort_order": 118,
       "title": "Birds of Prey #95",
       "issue_type": "ongoing",
       "year": null,
@@ -972,7 +964,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 120,
+      "sort_order": 119,
       "title": "Birds of Prey #96",
       "issue_type": "ongoing",
       "year": null,
@@ -980,7 +972,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 121,
+      "sort_order": 120,
       "title": "Birds of Prey #97",
       "issue_type": "ongoing",
       "year": null,
@@ -988,7 +980,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 122,
+      "sort_order": 121,
       "title": "Birds of Prey #98",
       "issue_type": "ongoing",
       "year": null,
@@ -996,7 +988,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 123,
+      "sort_order": 122,
       "title": "Birds of Prey #99",
       "issue_type": "ongoing",
       "year": null,
@@ -1004,7 +996,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 124,
+      "sort_order": 123,
       "title": "Birds of Prey #100",
       "issue_type": "ongoing",
       "year": null,
@@ -1012,7 +1004,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 125,
+      "sort_order": 124,
       "title": "Birds of Prey #101",
       "issue_type": "ongoing",
       "year": null,
@@ -1020,7 +1012,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 126,
+      "sort_order": 125,
       "title": "Birds of Prey #102",
       "issue_type": "ongoing",
       "year": null,
@@ -1028,7 +1020,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 127,
+      "sort_order": 126,
       "title": "Birds of Prey #103",
       "issue_type": "ongoing",
       "year": null,
@@ -1036,7 +1028,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 128,
+      "sort_order": 127,
       "title": "Birds of Prey #104",
       "issue_type": "ongoing",
       "year": null,
@@ -1044,7 +1036,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 129,
+      "sort_order": 128,
       "title": "Birds of Prey #105",
       "issue_type": "ongoing",
       "year": null,
@@ -1052,7 +1044,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 130,
+      "sort_order": 129,
       "title": "Birds of Prey #106",
       "issue_type": "ongoing",
       "year": null,
@@ -1060,7 +1052,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 131,
+      "sort_order": 130,
       "title": "Birds of Prey #107",
       "issue_type": "ongoing",
       "year": null,
@@ -1068,7 +1060,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 132,
+      "sort_order": 131,
       "title": "Birds of Prey #108",
       "issue_type": "ongoing",
       "year": null,
@@ -1076,7 +1068,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 133,
+      "sort_order": 132,
       "title": "Birds of Prey #109",
       "issue_type": "ongoing",
       "year": null,
@@ -1084,7 +1076,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 134,
+      "sort_order": 133,
       "title": "Birds of Prey #110",
       "issue_type": "ongoing",
       "year": null,
@@ -1092,7 +1084,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 135,
+      "sort_order": 134,
       "title": "Birds of Prey #111",
       "issue_type": "ongoing",
       "year": null,
@@ -1100,7 +1092,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 136,
+      "sort_order": 135,
       "title": "Birds of Prey #112",
       "issue_type": "ongoing",
       "year": null,
@@ -1108,7 +1100,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 137,
+      "sort_order": 136,
       "title": "Birds of Prey #113",
       "issue_type": "ongoing",
       "year": null,
@@ -1116,7 +1108,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 138,
+      "sort_order": 137,
       "title": "Birds of Prey #114",
       "issue_type": "ongoing",
       "year": null,
@@ -1124,7 +1116,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 139,
+      "sort_order": 138,
       "title": "Birds of Prey #115",
       "issue_type": "ongoing",
       "year": null,
@@ -1132,7 +1124,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 140,
+      "sort_order": 139,
       "title": "Birds of Prey #116",
       "issue_type": "ongoing",
       "year": null,
@@ -1140,7 +1132,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 141,
+      "sort_order": 140,
       "title": "Birds of Prey #117",
       "issue_type": "ongoing",
       "year": null,
@@ -1148,7 +1140,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 142,
+      "sort_order": 141,
       "title": "Birds of Prey #118",
       "issue_type": "ongoing",
       "year": null,
@@ -1156,7 +1148,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 143,
+      "sort_order": 142,
       "title": "Birds of Prey #119",
       "issue_type": "ongoing",
       "year": null,
@@ -1164,7 +1156,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 144,
+      "sort_order": 143,
       "title": "Birds of Prey #120",
       "issue_type": "ongoing",
       "year": null,
@@ -1172,7 +1164,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 145,
+      "sort_order": 144,
       "title": "Birds of Prey #121",
       "issue_type": "ongoing",
       "year": null,
@@ -1180,7 +1172,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 146,
+      "sort_order": 145,
       "title": "Birds of Prey #122",
       "issue_type": "ongoing",
       "year": null,
@@ -1188,7 +1180,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 147,
+      "sort_order": 146,
       "title": "Birds of Prey #123",
       "issue_type": "ongoing",
       "year": null,
@@ -1196,7 +1188,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 148,
+      "sort_order": 147,
       "title": "Birds of Prey #124",
       "issue_type": "ongoing",
       "year": null,
@@ -1204,7 +1196,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 149,
+      "sort_order": 148,
       "title": "Birds of Prey #125",
       "issue_type": "ongoing",
       "year": null,
@@ -1212,7 +1204,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 150,
+      "sort_order": 149,
       "title": "Birds of Prey #126",
       "issue_type": "ongoing",
       "year": null,
@@ -1220,7 +1212,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 151,
+      "sort_order": 150,
       "title": "Birds of Prey #127",
       "issue_type": "ongoing",
       "year": null,
@@ -1228,7 +1220,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 152,
+      "sort_order": 151,
       "title": "Huntress: Year One #1",
       "issue_type": "limited",
       "year": "2008",
@@ -1236,7 +1228,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 153,
+      "sort_order": 152,
       "title": "Huntress: Year One #2",
       "issue_type": "limited",
       "year": null,
@@ -1244,7 +1236,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 154,
+      "sort_order": 153,
       "title": "Huntress: Year One #3",
       "issue_type": "limited",
       "year": null,
@@ -1252,7 +1244,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 155,
+      "sort_order": 154,
       "title": "Huntress: Year One #4",
       "issue_type": "limited",
       "year": null,
@@ -1260,7 +1252,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 156,
+      "sort_order": 155,
       "title": "Huntress: Year One #5",
       "issue_type": "limited",
       "year": null,
@@ -1268,7 +1260,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 157,
+      "sort_order": 156,
       "title": "Huntress: Year One #6",
       "issue_type": "limited",
       "year": null,
@@ -1276,7 +1268,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 158,
+      "sort_order": 157,
       "title": "Batman #692",
       "issue_type": "ongoing",
       "year": null,
@@ -1284,7 +1276,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 159,
+      "sort_order": 158,
       "title": "Batman #693",
       "issue_type": "ongoing",
       "year": null,
@@ -1292,7 +1284,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 160,
+      "sort_order": 159,
       "title": "Batman #694",
       "issue_type": "ongoing",
       "year": null,
@@ -1300,7 +1292,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 161,
+      "sort_order": 160,
       "title": "Batman #695",
       "issue_type": "ongoing",
       "year": null,
@@ -1308,7 +1300,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 162,
+      "sort_order": 161,
       "title": "Batman #696",
       "issue_type": "ongoing",
       "year": null,
@@ -1316,7 +1308,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 163,
+      "sort_order": 162,
       "title": "Batman #697",
       "issue_type": "ongoing",
       "year": null,
@@ -1324,7 +1316,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 164,
+      "sort_order": 163,
       "title": "Birds of Prey Vol. 2 #1",
       "issue_type": "ongoing",
       "year": "2010",
@@ -1332,7 +1324,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 165,
+      "sort_order": 164,
       "title": "Birds of Prey Vol. 2 #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1340,7 +1332,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 166,
+      "sort_order": 165,
       "title": "Birds of Prey Vol. 2 #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1348,7 +1340,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 167,
+      "sort_order": 166,
       "title": "Birds of Prey Vol. 2 #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1356,7 +1348,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 168,
+      "sort_order": 167,
       "title": "Birds of Prey Vol. 2 #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1364,7 +1356,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 169,
+      "sort_order": 168,
       "title": "Birds of Prey Vol. 2 #6",
       "issue_type": "ongoing",
       "year": null,
@@ -1372,7 +1364,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 170,
+      "sort_order": 169,
       "title": "Birds of Prey Vol. 2 #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1380,7 +1372,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 171,
+      "sort_order": 170,
       "title": "Birds of Prey Vol. 2 #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1388,7 +1380,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 172,
+      "sort_order": 171,
       "title": "Birds of Prey Vol. 2 #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1396,7 +1388,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 173,
+      "sort_order": 172,
       "title": "Birds of Prey Vol. 2 #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1404,7 +1396,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 174,
+      "sort_order": 173,
       "title": "Birds of Prey Vol. 2 #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1412,7 +1404,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 175,
+      "sort_order": 174,
       "title": "Birds of Prey Vol. 2 #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1420,7 +1412,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 176,
+      "sort_order": 175,
       "title": "Birds of Prey Vol. 2 #13",
       "issue_type": "ongoing",
       "year": null,
@@ -1428,7 +1420,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 177,
+      "sort_order": 176,
       "title": "Birds of Prey Vol. 2 #14",
       "issue_type": "ongoing",
       "year": null,
@@ -1436,7 +1428,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 178,
+      "sort_order": 177,
       "title": "Birds of Prey Vol. 2 #15",
       "issue_type": "ongoing",
       "year": null,
@@ -1444,7 +1436,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 179,
+      "sort_order": 178,
       "title": "Nightwing Vol. 3 #30",
       "issue_type": "ongoing",
       "year": null,
@@ -1452,7 +1444,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 180,
+      "sort_order": 179,
       "title": "Grayson #1",
       "issue_type": "ongoing",
       "year": "2014",
@@ -1460,7 +1452,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 181,
+      "sort_order": 180,
       "title": "Grayson #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1468,7 +1460,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 182,
+      "sort_order": 181,
       "title": "Grayson #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1476,7 +1468,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 183,
+      "sort_order": 182,
       "title": "Grayson #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1484,7 +1476,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 184,
+      "sort_order": 183,
       "title": "Grayson #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1492,7 +1484,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 185,
+      "sort_order": 184,
       "title": "Grayson #6",
       "issue_type": "ongoing",
       "year": null,
@@ -1500,7 +1492,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 186,
+      "sort_order": 185,
       "title": "Grayson #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1508,7 +1500,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 187,
+      "sort_order": 186,
       "title": "Grayson #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1516,7 +1508,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 188,
+      "sort_order": 187,
       "title": "Grayson Annual #1",
       "issue_type": "ongoing",
       "year": "2015",
@@ -1524,7 +1516,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 189,
+      "sort_order": 188,
       "title": "Grayson #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1532,7 +1524,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 190,
+      "sort_order": 189,
       "title": "Grayson #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1540,7 +1532,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 191,
+      "sort_order": 190,
       "title": "Grayson #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1548,7 +1540,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 192,
+      "sort_order": 191,
       "title": "Grayson #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1556,7 +1548,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 193,
+      "sort_order": 192,
       "title": "Grayson Annual #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1564,7 +1556,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 194,
+      "sort_order": 193,
       "title": "Midnighter Vol. 2 #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1572,7 +1564,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 195,
+      "sort_order": 194,
       "title": "Midnighter Vol. 2 #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1580,7 +1572,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 196,
+      "sort_order": 195,
       "title": "Midnighter Vol. 2 #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1588,7 +1580,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 197,
+      "sort_order": 196,
       "title": "Midnighter Vol. 2 #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1596,7 +1588,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 198,
+      "sort_order": 197,
       "title": "Midnighter Vol. 2 #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1604,7 +1596,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 199,
+      "sort_order": 198,
       "title": "Batman and Robin Eternal #17",
       "issue_type": "limited",
       "year": null,
@@ -1612,7 +1604,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 200,
+      "sort_order": 199,
       "title": "Batman and Robin Eternal #18",
       "issue_type": "limited",
       "year": null,
@@ -1620,7 +1612,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 201,
+      "sort_order": 200,
       "title": "Batman and Robin Eternal #19",
       "issue_type": "limited",
       "year": null,
@@ -1628,7 +1620,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 202,
+      "sort_order": 201,
       "title": "Batman and Robin Eternal #20",
       "issue_type": "limited",
       "year": null,
@@ -1636,7 +1628,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 203,
+      "sort_order": 202,
       "title": "Batman and Robin Eternal #21",
       "issue_type": "limited",
       "year": null,
@@ -1644,7 +1636,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 204,
+      "sort_order": 203,
       "title": "Batman and Robin Eternal #22",
       "issue_type": "limited",
       "year": null,
@@ -1652,7 +1644,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 205,
+      "sort_order": 204,
       "title": "Batman and Robin Eternal #23",
       "issue_type": "limited",
       "year": null,
@@ -1660,7 +1652,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 206,
+      "sort_order": 205,
       "title": "Batman and Robin Eternal #24",
       "issue_type": "limited",
       "year": null,
@@ -1668,7 +1660,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 207,
+      "sort_order": 206,
       "title": "Batman and Robin Eternal #25",
       "issue_type": "limited",
       "year": null,
@@ -1676,7 +1668,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 208,
+      "sort_order": 207,
       "title": "Grayson #13",
       "issue_type": "ongoing",
       "year": null,
@@ -1684,7 +1676,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 209,
+      "sort_order": 208,
       "title": "Grayson #14",
       "issue_type": "ongoing",
       "year": null,
@@ -1692,7 +1684,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 210,
+      "sort_order": 209,
       "title": "Grayson #16",
       "issue_type": "ongoing",
       "year": null,
@@ -1700,7 +1692,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 211,
+      "sort_order": 210,
       "title": "Grayson #17",
       "issue_type": "ongoing",
       "year": null,
@@ -1708,7 +1700,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 212,
+      "sort_order": 211,
       "title": "Grayson #18",
       "issue_type": "ongoing",
       "year": null,
@@ -1716,7 +1708,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 213,
+      "sort_order": 212,
       "title": "Grayson #19",
       "issue_type": "ongoing",
       "year": null,
@@ -1724,7 +1716,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 214,
+      "sort_order": 213,
       "title": "Grayson #20",
       "issue_type": "ongoing",
       "year": null,
@@ -1732,7 +1724,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 215,
+      "sort_order": 214,
       "title": "Grayson Annual #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1740,7 +1732,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 216,
+      "sort_order": 215,
       "title": "Batgirl and the Birds of Prey: Rebirth #1",
       "issue_type": "oneshot",
       "year": "2016",
@@ -1748,7 +1740,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 217,
+      "sort_order": 216,
       "title": "Batgirl and the Birds of Prey #1",
       "issue_type": "ongoing",
       "year": "2016",
@@ -1756,7 +1748,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 218,
+      "sort_order": 217,
       "title": "Batgirl and the Birds of Prey #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1764,7 +1756,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 219,
+      "sort_order": 218,
       "title": "Batgirl and the Birds of Prey #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1772,7 +1764,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 220,
+      "sort_order": 219,
       "title": "Batgirl and the Birds of Prey #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1780,7 +1772,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 221,
+      "sort_order": 220,
       "title": "Batgirl and the Birds of Prey #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1788,7 +1780,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 222,
+      "sort_order": 221,
       "title": "Batgirl and the Birds of Prey #6",
       "issue_type": "ongoing",
       "year": null,
@@ -1796,7 +1788,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 223,
+      "sort_order": 222,
       "title": "Batgirl and the Birds of Prey #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1804,7 +1796,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 224,
+      "sort_order": 223,
       "title": "Batgirl and the Birds of Prey #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1812,7 +1804,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 225,
+      "sort_order": 224,
       "title": "Batgirl and the Birds of Prey #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1820,7 +1812,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 226,
+      "sort_order": 225,
       "title": "Batgirl and the Birds of Prey #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1828,7 +1820,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 227,
+      "sort_order": 226,
       "title": "Batgirl and the Birds of Prey #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1836,7 +1828,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 228,
+      "sort_order": 227,
       "title": "Batgirl and the Birds of Prey #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1844,7 +1836,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 229,
+      "sort_order": 228,
       "title": "Batgirl and the Birds of Prey #13",
       "issue_type": "ongoing",
       "year": null,
@@ -1852,7 +1844,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 230,
+      "sort_order": 229,
       "title": "Batgirl and the Birds of Prey #14",
       "issue_type": "ongoing",
       "year": null,
@@ -1860,7 +1852,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 231,
+      "sort_order": 230,
       "title": "Nightwing Vol. 4 #26",
       "issue_type": "ongoing",
       "year": null,
@@ -1868,7 +1860,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 232,
+      "sort_order": 231,
       "title": "Nightwing Vol. 4 #27",
       "issue_type": "ongoing",
       "year": null,
@@ -1876,7 +1868,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 233,
+      "sort_order": 232,
       "title": "Nightwing Vol. 4 #28",
       "issue_type": "ongoing",
       "year": null,
@@ -1884,7 +1876,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 234,
+      "sort_order": 233,
       "title": "Batgirl and the Birds of Prey #15",
       "issue_type": "ongoing",
       "year": null,
@@ -1892,7 +1884,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 235,
+      "sort_order": 234,
       "title": "Batgirl and the Birds of Prey #16",
       "issue_type": "ongoing",
       "year": null,
@@ -1900,7 +1892,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 236,
+      "sort_order": 235,
       "title": "Batgirl and the Birds of Prey #17",
       "issue_type": "ongoing",
       "year": null,
@@ -1908,7 +1900,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 237,
+      "sort_order": 236,
       "title": "Batgirl and the Birds of Prey #18",
       "issue_type": "ongoing",
       "year": null,
@@ -1916,7 +1908,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 238,
+      "sort_order": 237,
       "title": "Batgirl and the Birds of Prey #19",
       "issue_type": "ongoing",
       "year": null,
@@ -1924,7 +1916,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 239,
+      "sort_order": 238,
       "title": "Batgirl and the Birds of Prey #20",
       "issue_type": "ongoing",
       "year": null,
@@ -1932,7 +1924,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 240,
+      "sort_order": 239,
       "title": "Batgirl and the Birds of Prey #21",
       "issue_type": "ongoing",
       "year": null,
@@ -1940,7 +1932,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 241,
+      "sort_order": 240,
       "title": "Batgirl and the Birds of Prey #22",
       "issue_type": "ongoing",
       "year": null,
@@ -1948,7 +1940,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 242,
+      "sort_order": 241,
       "title": "The Hellblazer #19",
       "issue_type": "ongoing",
       "year": null,
@@ -1956,7 +1948,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 243,
+      "sort_order": 242,
       "title": "The Hellblazer #20",
       "issue_type": "ongoing",
       "year": null,
@@ -1964,7 +1956,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 244,
+      "sort_order": 243,
       "title": "The Hellblazer #21",
       "issue_type": "ongoing",
       "year": null,
@@ -1972,7 +1964,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 245,
+      "sort_order": 244,
       "title": "The Hellblazer #22",
       "issue_type": "ongoing",
       "year": null,
@@ -1980,7 +1972,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 246,
+      "sort_order": 245,
       "title": "The Hellblazer #23",
       "issue_type": "ongoing",
       "year": null,
@@ -1988,7 +1980,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 247,
+      "sort_order": 246,
       "title": "The Hellblazer #24",
       "issue_type": "ongoing",
       "year": null,
@@ -1996,7 +1988,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 248,
+      "sort_order": 247,
       "title": "Harley Quinn and the Birds of Prey #1",
       "issue_type": "limited",
       "year": "2020",
@@ -2004,7 +1996,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 249,
+      "sort_order": 248,
       "title": "Harley Quinn and the Birds of Prey #2",
       "issue_type": "limited",
       "year": null,
@@ -2012,7 +2004,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 250,
+      "sort_order": 249,
       "title": "Harley Quinn and the Birds of Prey #3",
       "issue_type": "limited",
       "year": null,
@@ -2020,7 +2012,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 251,
+      "sort_order": 250,
       "title": "Harley Quinn and the Birds of Prey #4",
       "issue_type": "limited",
       "year": null,
@@ -2028,7 +2020,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 252,
+      "sort_order": 251,
       "title": "Detective Comics #1034",
       "issue_type": "ongoing",
       "year": null,
@@ -2036,7 +2028,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 253,
+      "sort_order": 252,
       "title": "Detective Comics #1035",
       "issue_type": "ongoing",
       "year": null,
@@ -2044,7 +2036,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 254,
+      "sort_order": 253,
       "title": "Detective Comics #1036",
       "issue_type": "ongoing",
       "year": null,
@@ -2052,7 +2044,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 255,
+      "sort_order": 254,
       "title": "Detective Comics #1037",
       "issue_type": "ongoing",
       "year": null,
@@ -2060,7 +2052,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 256,
+      "sort_order": 255,
       "title": "Detective Comics #1038",
       "issue_type": "ongoing",
       "year": null,
@@ -2068,7 +2060,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 257,
+      "sort_order": 256,
       "title": "Detective Comics #1039",
       "issue_type": "ongoing",
       "year": null,
@@ -2076,7 +2068,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 258,
+      "sort_order": 257,
       "title": "Detective Comics #1040",
       "issue_type": "ongoing",
       "year": null,
@@ -2084,7 +2076,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 259,
+      "sort_order": 258,
       "title": "Detective Comics #1041",
       "issue_type": "ongoing",
       "year": null,
@@ -2092,7 +2084,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 260,
+      "sort_order": 259,
       "title": "Detective Comics #1042",
       "issue_type": "ongoing",
       "year": null,
@@ -2100,7 +2092,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 261,
+      "sort_order": 260,
       "title": "Detective Comics #1047",
       "issue_type": "ongoing",
       "year": null,
@@ -2108,7 +2100,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 262,
+      "sort_order": 261,
       "title": "Detective Comics #1048",
       "issue_type": "ongoing",
       "year": null,
@@ -2116,7 +2108,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 263,
+      "sort_order": 262,
       "title": "Detective Comics #1049",
       "issue_type": "ongoing",
       "year": null,
@@ -2124,7 +2116,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 264,
+      "sort_order": 263,
       "title": "Detective Comics #1050",
       "issue_type": "ongoing",
       "year": null,
@@ -2132,7 +2124,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 265,
+      "sort_order": 264,
       "title": "Detective Comics #1051",
       "issue_type": "ongoing",
       "year": null,
@@ -2140,7 +2132,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 266,
+      "sort_order": 265,
       "title": "Detective Comics #1052",
       "issue_type": "ongoing",
       "year": null,
@@ -2148,7 +2140,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 267,
+      "sort_order": 266,
       "title": "Detective Comics #1053",
       "issue_type": "ongoing",
       "year": null,
@@ -2156,7 +2148,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 268,
+      "sort_order": 267,
       "title": "Detective Comics #1054",
       "issue_type": "ongoing",
       "year": null,
@@ -2164,7 +2156,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 269,
+      "sort_order": 268,
       "title": "Detective Comics #1055",
       "issue_type": "ongoing",
       "year": null,
@@ -2172,7 +2164,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 270,
+      "sort_order": 269,
       "title": "Detective Comics #1056",
       "issue_type": "ongoing",
       "year": null,
@@ -2180,7 +2172,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 271,
+      "sort_order": 270,
       "title": "Detective Comics #1057",
       "issue_type": "ongoing",
       "year": null,
@@ -2188,7 +2180,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 272,
+      "sort_order": 271,
       "title": "Detective Comics #1058",
       "issue_type": "ongoing",
       "year": null,
