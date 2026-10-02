@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { normalizeHtmlAssets } = require('./fix_asset_paths');
 
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
@@ -90,6 +91,8 @@ function copyAndInjectHtml(srcPath, destPath) {
   if (csPageCssRegex.test(content)) {
     content = content.replace(csPageCssRegex, '');
   }
+
+  content = normalizeHtmlAssets(content);
 
   fs.writeFileSync(destPath, content, 'utf8');
 }
