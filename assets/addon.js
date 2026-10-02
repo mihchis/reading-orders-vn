@@ -1028,7 +1028,8 @@ window.grecaptcha = window.grecaptcha || {
 
       container.querySelectorAll('.ro-issue-item').forEach(item => {
         const issueId = item.dataset.issueId;
-        const link = combined[issueId];
+        const issueTitle = (item.dataset.issueTitle || '').trim();
+        const link = combined[issueId] || (issueTitle ? combined[issueTitle] : '');
         const label = item.querySelector('.ro-issue-label');
         let rightCol = item.querySelector('.ro-issue-right');
         if (!rightCol) {
@@ -2317,15 +2318,16 @@ window.grecaptcha = window.grecaptcha || {
               body: JSON.stringify({
                 path: cleanPath,
                 issueId: issueId,
+                issueTitle: tpbTitle,
                 link: cleanLink
               })
             })
             .then(r => r.json())
             .then(res => {
               if (res.success) {
-                showRoToast(cleanLink ? 'Đã lưu liên kết TPB thành công' : 'Đã xóa liên kết TPB', 'success');
+                showRoToast(cleanLink ? 'Đã lưu liên kết TPB vào Supabase thành công' : 'Đã xóa liên kết TPB', 'success');
               } else {
-                showRoToast('Đã lưu local: ' + (res.message || 'Chưa lưu server'), 'warning');
+                showRoToast('Chưa lưu server: ' + (res.message || 'Lỗi server'), 'warning');
               }
             })
             .catch(() => {
@@ -2559,7 +2561,7 @@ window.grecaptcha = window.grecaptcha || {
             delete _roGlobalLinksCache[cleanPath][issueId];
           }
 
-          // 3. Gửi lên Server Local để ghi vào file assets/issue_links.json (cho Vercel deploy)
+          // 3. Gửi lên Server API để lưu trực tiếp vào Supabase Cloud
           const token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || '';
           fetch('/api/admin/issue-links', {
             method: 'POST',
@@ -2570,15 +2572,16 @@ window.grecaptcha = window.grecaptcha || {
             body: JSON.stringify({
               path: cleanPath,
               issueId: issueId,
+              issueTitle: issueTitle,
               link: cleanLink
             })
           })
           .then(r => r.json())
           .then(res => {
             if (res.success) {
-              showRoToast(cleanLink ? 'Đã lưu liên kết vào assets/issue_links.json thành công' : 'Đã xóa liên kết đọc của tập này', 'success');
+              showRoToast(cleanLink ? 'Đã lưu link đọc vào Supabase thành công!' : 'Đã xóa link đọc của tập này', 'success');
             } else {
-              showRoToast('Đã lưu local: ' + (res.message || 'Chưa lưu server'), 'warning');
+              showRoToast('Chưa lưu server: ' + (res.message || 'Lỗi lưu Supabase'), 'warning');
             }
           })
           .catch(() => {

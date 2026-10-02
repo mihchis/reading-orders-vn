@@ -36,37 +36,83 @@ export const COMING_SOON_SLUGS = new Set([
 ]);
 
 // Helper: chuyển cleanPath → reading_order slug để query Supabase
-// cleanPath ví dụ: /marvel/ultimate-spider-man-reading-order
-// Thử match direct_slug hoặc universe_slug+slug
+// cleanPath ví dụ: /dc/characters/batman-reading-order hoặc /marvel/ultimate-spider-man-reading-order
 async function findOrderIdByPath(cleanPath: string): Promise<number | null> {
-  // Lấy phần cuối đường dẫn làm direct_slug
-  const segments = cleanPath.replace(/^\//, '').split('/').filter(Boolean);
+  const clean = cleanPath.replace(/\/index\.html$/i, '').replace(/\/+$/, '').replace(/^\//, '');
+  if (!clean) return null;
+
+  const cleanWithSlash = `/${clean}/`;
+  const cleanNoSlash = `/${clean}`;
+
+  // 1. Thử match chính xác cột url trong bảng reading_orders trước (chuẩn nhất cho full path như /dc/characters/batman-reading-order)
+  try {
+    const { data: byUrl } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id')
+      .or(`url.eq.${cleanWithSlash},url.eq.${cleanNoSlash}`)
+      .maybeSingle();
+
+    if (byUrl?.id) return byUrl.id;
+  } catch {}
+
+  // Lấy segments
+  const segments = clean.split('/').filter(Boolean);
   if (segments.length === 0) return null;
 
   const directSlug = segments[segments.length - 1];
-  const universeSlug = segments.length >= 2 ? segments[segments.length - 2] : null;
+  const slugOnly = directSlug.replace(/-reading-order$/, '');
+  const universeSlug = ['marvel', 'dc', 'other', 'star-wars', 'image', 'dark-horse', 'idw', 'valiant'].includes(segments[0])
+    ? segments[0]
+    : null;
 
-  // Tìm theo direct_slug trước
-  let query = supabaseAdmin
-    .from('reading_orders')
-    .select('id')
-    .eq('direct_slug', directSlug);
-
+  // 2. Tìm theo direct_slug hoặc slug kết hợp universe_slug (nếu có)
   if (universeSlug) {
-    query = query.eq('universe_slug', universeSlug);
+    try {
+      const { data: byUniDirect } = await supabaseAdmin
+        .from('reading_orders')
+        .select('id')
+        .eq('universe_slug', universeSlug)
+        .or(`direct_slug.eq.${directSlug},direct_slug.eq.${slugOnly}-reading-order,slug.eq.${slugOnly},slug.eq.${directSlug}`)
+        .maybeSingle();
+
+      if (byUniDirect?.id) return byUniDirect.id;
+    } catch {}
   }
 
-  const { data } = await query.maybeSingle();
-  if (data?.id) return data.id;
+  // 3. Fallback: tìm theo direct_slug
+  try {
+    const { data: byDirect } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id')
+      .or(`direct_slug.eq.${directSlug},direct_slug.eq.${slugOnly}-reading-order`)
+      .maybeSingle();
 
-  // Fallback: tìm theo slug
-  const { data: data2 } = await supabaseAdmin
-    .from('reading_orders')
-    .select('id')
-    .eq('slug', directSlug)
-    .maybeSingle();
+    if (byDirect?.id) return byDirect.id;
+  } catch {}
 
-  return data2?.id || null;
+  // 4. Fallback: tìm theo slug
+  try {
+    const { data: bySlug } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id')
+      .or(`slug.eq.${slugOnly},slug.eq.${directSlug}`)
+      .maybeSingle();
+
+    if (bySlug?.id) return bySlug.id;
+  } catch {}
+
+  // 5. Fallback cuối cùng: url chứa directSlug
+  try {
+    const { data: byUrlLike } = await supabaseAdmin
+      .from('reading_orders')
+      .select('id')
+      .ilike('url', `%/${directSlug}/%`)
+      .maybeSingle();
+
+    if (byUrlLike?.id) return byUrlLike.id;
+  } catch {}
+
+  return null;
 }
 
 // Helper: tìm file HTML trên đĩa dựa vào request path hoặc slug
@@ -1249,16 +1295,24 @@ router.get('/issue-links', async (req: AuthRequest, res) => {
 
       const { data: issues } = await supabaseAdmin
         .from('issues')
-        .select('sort_order, read_url')
+        .select('id, sort_order, title, issue_type, read_url')
         .eq('reading_order_id', orderId)
         .not('read_url', 'is', null)
         .neq('read_url', '')
         .order('sort_order', { ascending: true });
 
       const linkMap: Record<string, string> = {};
+      let validIdx = 0;
       (issues || []).forEach((issue: any) => {
-        // sort_order là 1-based, issueId frontend là issue_N (0-based)
+        if (issue.issue_type !== 'comment') {
+          linkMap[`issue_${validIdx}`] = issue.read_url;
+          validIdx++;
+        }
+        // Luôn map cả sort_order cũ và title để client tìm theo cách nào cũng trúng
         linkMap[`issue_${issue.sort_order - 1}`] = issue.read_url;
+        if (issue.title) {
+          linkMap[issue.title.trim()] = issue.read_url;
+        }
       });
 
       return res.json({ success: true, data: linkMap });
@@ -1267,26 +1321,43 @@ router.get('/issue-links', async (req: AuthRequest, res) => {
     // Lấy toàn bộ links, nhóm theo path
     const { data: orders } = await supabaseAdmin
       .from('reading_orders')
-      .select('id, universe_slug, direct_slug');
+      .select('id, universe_slug, direct_slug, slug, url');
 
     const { data: issues } = await supabaseAdmin
       .from('issues')
-      .select('reading_order_id, sort_order, read_url')
+      .select('reading_order_id, sort_order, title, issue_type, read_url')
       .not('read_url', 'is', null)
       .neq('read_url', '');
 
     const allLinks: Record<string, Record<string, string>> = {};
-    const orderMap: Record<number, { universe_slug: string; direct_slug: string }> = {};
+    const orderMap: Record<number, { universe_slug: string; direct_slug: string; url?: string }> = {};
     (orders || []).forEach((o: any) => {
-      orderMap[o.id] = { universe_slug: o.universe_slug, direct_slug: o.direct_slug };
+      orderMap[o.id] = {
+        universe_slug: o.universe_slug,
+        direct_slug: o.direct_slug || o.slug,
+        url: o.url,
+      };
     });
 
     (issues || []).forEach((issue: any) => {
       const order = orderMap[issue.reading_order_id];
       if (!order) return;
-      const cleanPath = `/${order.universe_slug}/${order.direct_slug}`;
-      if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
-      allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+      const pathsToSet: string[] = [];
+      if (order.universe_slug && order.direct_slug) {
+        pathsToSet.push(`/${order.universe_slug}/${order.direct_slug}`);
+      }
+      if (order.url) {
+        const cleanU = order.url.replace(/\/+$/, '');
+        if (cleanU && !pathsToSet.includes(cleanU)) pathsToSet.push(cleanU);
+      }
+
+      pathsToSet.forEach(cleanPath => {
+        if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
+        allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+        if (issue.title) {
+          allLinks[cleanPath][issue.title.trim()] = issue.read_url;
+        }
+      });
     });
 
     res.json({ success: true, data: allLinks });
@@ -1298,7 +1369,7 @@ router.get('/issue-links', async (req: AuthRequest, res) => {
 // POST /api/admin/issue-links - Lưu link đọc vào Supabase (issues.read_url)
 router.post('/issue-links', async (req: AuthRequest, res) => {
   try {
-    const { path: orderPath, issueId, link } = req.body;
+    const { path: orderPath, issueId, link, issueTitle } = req.body;
     if (!orderPath || !issueId) {
       res.status(400).json({ success: false, message: 'Thiếu path hoặc issueId' });
       return;
@@ -1313,23 +1384,66 @@ router.post('/issue-links', async (req: AuthRequest, res) => {
       return;
     }
 
-    // Chuyển issueId (issue_N, 0-based) sang sort_order (1-based)
-    const issueMatch = String(issueId).match(/^(?:issue_|tpb_)?(\d+)/);
-    if (!issueMatch) {
-      res.status(400).json({ success: false, message: `issueId không hợp lệ: ${issueId}` });
+    const cleanLink = link && String(link).trim() ? String(link).trim() : null;
+    let targetIssueId: number | null = null;
+
+    // 1. Ưu tiên tìm issue theo issueTitle nếu client truyền lên
+    if (issueTitle && typeof issueTitle === 'string' && issueTitle.trim()) {
+      const cleanTitle = issueTitle.trim();
+      const { data: matchedIssue } = await supabaseAdmin
+        .from('issues')
+        .select('id')
+        .eq('reading_order_id', orderId)
+        .ilike('title', cleanTitle)
+        .maybeSingle();
+
+      if (matchedIssue?.id) {
+        targetIssueId = matchedIssue.id;
+      }
+    }
+
+    // 2. Nếu chưa tìm được bằng title, tìm theo issueId
+    if (!targetIssueId) {
+      const issueMatch = String(issueId).match(/^(?:issue_|tpb_)?(\d+)/);
+      if (!issueMatch) {
+        res.status(400).json({ success: false, message: `issueId không hợp lệ: ${issueId}` });
+        return;
+      }
+      const rawIdx = parseInt(issueMatch[1], 10);
+      const sortOrder = rawIdx + 1;
+
+      // Tìm trong danh sách các issue hợp lệ (loại bỏ comment) để tránh bị lệch
+      const { data: validIssues } = await supabaseAdmin
+        .from('issues')
+        .select('id')
+        .eq('reading_order_id', orderId)
+        .neq('issue_type', 'comment')
+        .order('sort_order', { ascending: true });
+
+      if (validIssues && validIssues[rawIdx]) {
+        targetIssueId = validIssues[rawIdx].id;
+      } else {
+        // Fallback theo sort_order gốc
+        const { data: fallbackIssue } = await supabaseAdmin
+          .from('issues')
+          .select('id')
+          .eq('reading_order_id', orderId)
+          .eq('sort_order', sortOrder)
+          .maybeSingle();
+        if (fallbackIssue?.id) targetIssueId = fallbackIssue.id;
+      }
+    }
+
+    if (targetIssueId) {
+      const { error } = await supabaseAdmin
+        .from('issues')
+        .update({ read_url: cleanLink })
+        .eq('id', targetIssueId);
+      if (error) throw error;
+    } else {
+      res.status(404).json({ success: false, message: 'Không tìm thấy tập truyện tương ứng trên Supabase' });
       return;
     }
-    const sortOrder = parseInt(issueMatch[1], 10) + 1;
-    const cleanLink = link && String(link).trim() ? String(link).trim() : null;
-
-    // Cập nhật read_url trong bảng issues
-    const { error } = await supabaseAdmin
-      .from('issues')
-      .update({ read_url: cleanLink })
-      .eq('reading_order_id', orderId)
-      .eq('sort_order', sortOrder);
-
-    if (error) throw error;
 
     res.json({
       success: true,

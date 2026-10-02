@@ -106,19 +106,20 @@ router.get('/issue-links', async (req, res) => {
   try {
     const { data: orders } = await supabaseAdmin
       .from('reading_orders')
-      .select('id, universe_slug, direct_slug, slug');
+      .select('id, universe_slug, direct_slug, slug, url');
 
     const { data: issues } = await supabaseAdmin
       .from('issues')
-      .select('reading_order_id, sort_order, read_url')
+      .select('reading_order_id, sort_order, title, issue_type, read_url')
       .not('read_url', 'is', null)
       .neq('read_url', '');
 
-    const orderMap: Record<number, { universe_slug: string; direct_slug: string }> = {};
+    const orderMap: Record<number, { universe_slug: string; direct_slug: string; url?: string }> = {};
     (orders || []).forEach((o: any) => {
       orderMap[o.id] = {
         universe_slug: o.universe_slug,
         direct_slug: o.direct_slug || o.slug,
+        url: o.url,
       };
     });
 
@@ -126,10 +127,23 @@ router.get('/issue-links', async (req, res) => {
     (issues || []).forEach((issue: any) => {
       const order = orderMap[issue.reading_order_id];
       if (!order) return;
-      const cleanPath = `/${order.universe_slug}/${order.direct_slug}`;
-      if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
-      // sort_order là 1-based → issue_N (0-based)
-      allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+
+      const pathsToSet: string[] = [];
+      if (order.universe_slug && order.direct_slug) {
+        pathsToSet.push(`/${order.universe_slug}/${order.direct_slug}`);
+      }
+      if (order.url) {
+        const cleanU = order.url.replace(/\/+$/, '');
+        if (cleanU && !pathsToSet.includes(cleanU)) pathsToSet.push(cleanU);
+      }
+
+      pathsToSet.forEach(cleanPath => {
+        if (!allLinks[cleanPath]) allLinks[cleanPath] = {};
+        allLinks[cleanPath][`issue_${issue.sort_order - 1}`] = issue.read_url;
+        if (issue.title) {
+          allLinks[cleanPath][issue.title.trim()] = issue.read_url;
+        }
+      });
     });
 
     res.json(allLinks);
