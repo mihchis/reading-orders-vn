@@ -15,20 +15,12 @@
   "next_event_title": "",
   "next_event_slug": "",
   "cover_image": "",
-  "total_issues": 195,
+  "total_issues": 192,
   "comic_issues_count": 192,
-  "comments_count": 3,
+  "comments_count": 0,
   "issues": [
     {
       "sort_order": 1,
-      "title": "This reading order includes Ultimate Reed Richards before he turned into The Maker. If you are only interested in The Maker and not Ultimate Reed Richards prior to his change start reading after Ultimatum.",
-      "issue_type": "comment",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 2,
       "title": "Ultimate Fantastic Four #1",
       "issue_type": "ongoing",
       "year": "2004",
@@ -36,7 +28,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 3,
+      "sort_order": 2,
       "title": "Ultimate Fantastic Four #2",
       "issue_type": "ongoing",
       "year": null,
@@ -44,7 +36,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 4,
+      "sort_order": 3,
       "title": "Ultimate Fantastic Four #3",
       "issue_type": "ongoing",
       "year": null,
@@ -52,7 +44,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 5,
+      "sort_order": 4,
       "title": "Ultimate Fantastic Four #4",
       "issue_type": "ongoing",
       "year": null,
@@ -60,7 +52,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 6,
+      "sort_order": 5,
       "title": "Ultimate Fantastic Four #5",
       "issue_type": "ongoing",
       "year": null,
@@ -68,7 +60,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 7,
+      "sort_order": 6,
       "title": "Ultimate Fantastic Four #6",
       "issue_type": "ongoing",
       "year": null,
@@ -76,7 +68,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 8,
+      "sort_order": 7,
       "title": "Ultimate Fantastic Four #7",
       "issue_type": "ongoing",
       "year": null,
@@ -84,7 +76,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 9,
+      "sort_order": 8,
       "title": "Ultimate Fantastic Four #8",
       "issue_type": "ongoing",
       "year": null,
@@ -92,7 +84,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 10,
+      "sort_order": 9,
       "title": "Ultimate Fantastic Four #9",
       "issue_type": "ongoing",
       "year": null,
@@ -100,7 +92,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 11,
+      "sort_order": 10,
       "title": "Ultimate Fantastic Four #10",
       "issue_type": "ongoing",
       "year": null,
@@ -108,7 +100,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 12,
+      "sort_order": 11,
       "title": "Ultimate Fantastic Four #11",
       "issue_type": "ongoing",
       "year": null,
@@ -116,7 +108,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 13,
+      "sort_order": 12,
       "title": "Ultimate Fantastic Four #12",
       "issue_type": "ongoing",
       "year": null,
@@ -124,7 +116,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 14,
+      "sort_order": 13,
       "title": "Ultimate Fantastic Four #13",
       "issue_type": "ongoing",
       "year": null,
@@ -132,7 +124,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 15,
+      "sort_order": 14,
       "title": "Ultimate Fantastic Four #14",
       "issue_type": "ongoing",
       "year": null,
@@ -140,7 +132,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 16,
+      "sort_order": 15,
       "title": "Ultimate Fantastic Four #15",
       "issue_type": "ongoing",
       "year": null,
@@ -148,7 +140,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 17,
+      "sort_order": 16,
       "title": "Ultimate Fantastic Four #16",
       "issue_type": "ongoing",
       "year": null,
@@ -156,7 +148,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 18,
+      "sort_order": 17,
       "title": "Ultimate Fantastic Four #17",
       "issue_type": "ongoing",
       "year": null,
@@ -164,7 +156,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 19,
+      "sort_order": 18,
       "title": "Ultimate Fantastic Four #18",
       "issue_type": "ongoing",
       "year": null,
@@ -172,7 +164,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 20,
+      "sort_order": 19,
       "title": "Ultimate Fantastic Four #19",
       "issue_type": "ongoing",
       "year": null,
@@ -180,7 +172,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 21,
+      "sort_order": 20,
       "title": "Ultimate Fantastic Four #20",
       "issue_type": "ongoing",
       "year": null,
@@ -188,7 +180,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 22,
+      "sort_order": 21,
       "title": "Ultimate Fantastic Four #21",
       "issue_type": "ongoing",
       "year": null,
@@ -196,7 +188,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 23,
+      "sort_order": 22,
       "title": "Ultimate Fantastic Four #22",
       "issue_type": "ongoing",
       "year": null,
@@ -204,7 +196,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 24,
+      "sort_order": 23,
       "title": "Ultimate Fantastic Four #23",
       "issue_type": "ongoing",
       "year": null,
@@ -212,7 +204,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 25,
+      "sort_order": 24,
       "title": "Ultimate Fantastic Four #24",
       "issue_type": "ongoing",
       "year": null,
@@ -220,7 +212,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 26,
+      "sort_order": 25,
       "title": "Ultimate Fantastic Four #25",
       "issue_type": "ongoing",
       "year": null,
@@ -228,7 +220,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 27,
+      "sort_order": 26,
       "title": "Ultimate Fantastic Four #26",
       "issue_type": "ongoing",
       "year": null,
@@ -236,7 +228,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 28,
+      "sort_order": 27,
       "title": "Ultimate Fantastic Four Annual #1",
       "issue_type": "ongoing",
       "year": "2005",
@@ -244,7 +236,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 29,
+      "sort_order": 28,
       "title": "Ultimate Fantastic Four #27",
       "issue_type": "ongoing",
       "year": null,
@@ -252,7 +244,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 30,
+      "sort_order": 29,
       "title": "Ultimate Fantastic Four #28",
       "issue_type": "ongoing",
       "year": null,
@@ -260,7 +252,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 31,
+      "sort_order": 30,
       "title": "Ultimate Fantastic Four #29",
       "issue_type": "ongoing",
       "year": null,
@@ -268,7 +260,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 32,
+      "sort_order": 31,
       "title": "Ultimate Fantastic Four #30",
       "issue_type": "ongoing",
       "year": null,
@@ -276,7 +268,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 33,
+      "sort_order": 32,
       "title": "Ultimate Fantastic Four #31",
       "issue_type": "ongoing",
       "year": null,
@@ -284,7 +276,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 34,
+      "sort_order": 33,
       "title": "Ultimate Fantastic Four #32",
       "issue_type": "ongoing",
       "year": null,
@@ -292,7 +284,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 35,
+      "sort_order": 34,
       "title": "Ultimate Fantastic Four Annual #2",
       "issue_type": "ongoing",
       "year": "2006",
@@ -300,7 +292,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 36,
+      "sort_order": 35,
       "title": "Ultimate Nightmare #1",
       "issue_type": "limited",
       "year": "2004",
@@ -308,7 +300,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 37,
+      "sort_order": 36,
       "title": "Ultimate Nightmare #2",
       "issue_type": "limited",
       "year": null,
@@ -316,7 +308,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 38,
+      "sort_order": 37,
       "title": "Ultimate Nightmare #3",
       "issue_type": "limited",
       "year": null,
@@ -324,7 +316,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 39,
+      "sort_order": 38,
       "title": "Ultimate Nightmare #4",
       "issue_type": "limited",
       "year": null,
@@ -332,7 +324,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 40,
+      "sort_order": 39,
       "title": "Ultimate Nightmare #5",
       "issue_type": "limited",
       "year": null,
@@ -340,7 +332,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 41,
+      "sort_order": 40,
       "title": "Ultimate Secret #1",
       "issue_type": "limited",
       "year": "2005",
@@ -348,7 +340,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 42,
+      "sort_order": 41,
       "title": "Ultimate Secret #2",
       "issue_type": "limited",
       "year": null,
@@ -356,7 +348,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 43,
+      "sort_order": 42,
       "title": "Ultimate Secret #3",
       "issue_type": "limited",
       "year": null,
@@ -364,7 +356,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 44,
+      "sort_order": 43,
       "title": "Ultimate Secret #4",
       "issue_type": "limited",
       "year": null,
@@ -372,7 +364,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 45,
+      "sort_order": 44,
       "title": "Ultimate Extinction #1",
       "issue_type": "limited",
       "year": "2006",
@@ -380,7 +372,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 46,
+      "sort_order": 45,
       "title": "Ultimate Extinction #2",
       "issue_type": "limited",
       "year": null,
@@ -388,7 +380,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 47,
+      "sort_order": 46,
       "title": "Ultimate Extinction #3",
       "issue_type": "limited",
       "year": null,
@@ -396,7 +388,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 48,
+      "sort_order": 47,
       "title": "Ultimate Extinction #4",
       "issue_type": "limited",
       "year": null,
@@ -404,7 +396,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 49,
+      "sort_order": 48,
       "title": "Ultimate Extinction #5",
       "issue_type": "limited",
       "year": null,
@@ -412,7 +404,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 50,
+      "sort_order": 49,
       "title": "Ultimate X4 #1",
       "issue_type": "limited",
       "year": "2006",
@@ -420,7 +412,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 51,
+      "sort_order": 50,
       "title": "Ultimate X4 #2",
       "issue_type": "limited",
       "year": null,
@@ -428,7 +420,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 52,
+      "sort_order": 51,
       "title": "Ultimate Fantastic Four #33",
       "issue_type": "ongoing",
       "year": null,
@@ -436,7 +428,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 53,
+      "sort_order": 52,
       "title": "Ultimate Fantastic Four #34",
       "issue_type": "ongoing",
       "year": null,
@@ -444,7 +436,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 54,
+      "sort_order": 53,
       "title": "Ultimate Fantastic Four #35",
       "issue_type": "ongoing",
       "year": null,
@@ -452,7 +444,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 55,
+      "sort_order": 54,
       "title": "Ultimate Fantastic Four #36",
       "issue_type": "ongoing",
       "year": null,
@@ -460,7 +452,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 56,
+      "sort_order": 55,
       "title": "Ultimate Fantastic Four #37",
       "issue_type": "ongoing",
       "year": null,
@@ -468,7 +460,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 57,
+      "sort_order": 56,
       "title": "Ultimate Fantastic Four #38",
       "issue_type": "ongoing",
       "year": null,
@@ -476,7 +468,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 58,
+      "sort_order": 57,
       "title": "Ultimate Fantastic Four #39",
       "issue_type": "ongoing",
       "year": null,
@@ -484,7 +476,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 59,
+      "sort_order": 58,
       "title": "Ultimate Fantastic Four #40",
       "issue_type": "ongoing",
       "year": null,
@@ -492,7 +484,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 60,
+      "sort_order": 59,
       "title": "Ultimate Fantastic Four #41",
       "issue_type": "ongoing",
       "year": null,
@@ -500,7 +492,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 61,
+      "sort_order": 60,
       "title": "Ultimate Fantastic Four #42",
       "issue_type": "ongoing",
       "year": null,
@@ -508,7 +500,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 62,
+      "sort_order": 61,
       "title": "Ultimate Fantastic Four #43",
       "issue_type": "ongoing",
       "year": null,
@@ -516,7 +508,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 63,
+      "sort_order": 62,
       "title": "Ultimate Fantastic Four #44",
       "issue_type": "ongoing",
       "year": null,
@@ -524,7 +516,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 64,
+      "sort_order": 63,
       "title": "Ultimate Fantastic Four #45",
       "issue_type": "ongoing",
       "year": null,
@@ -532,7 +524,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 65,
+      "sort_order": 64,
       "title": "Ultimate Fantastic Four #46",
       "issue_type": "ongoing",
       "year": null,
@@ -540,7 +532,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 66,
+      "sort_order": 65,
       "title": "Ultimate Fantastic Four #47",
       "issue_type": "ongoing",
       "year": null,
@@ -548,7 +540,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 67,
+      "sort_order": 66,
       "title": "Ultimate Fantastic Four #48",
       "issue_type": "ongoing",
       "year": null,
@@ -556,7 +548,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 68,
+      "sort_order": 67,
       "title": "Ultimate Fantastic Four #49",
       "issue_type": "ongoing",
       "year": null,
@@ -564,7 +556,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 69,
+      "sort_order": 68,
       "title": "Ultimate Fantastic Four #50",
       "issue_type": "ongoing",
       "year": null,
@@ -572,7 +564,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 70,
+      "sort_order": 69,
       "title": "Ultimate Fantastic Four #51",
       "issue_type": "ongoing",
       "year": null,
@@ -580,7 +572,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 71,
+      "sort_order": 70,
       "title": "Ultimate Fantastic Four #52",
       "issue_type": "ongoing",
       "year": null,
@@ -588,7 +580,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 72,
+      "sort_order": 71,
       "title": "Ultimate Fantastic Four #53",
       "issue_type": "ongoing",
       "year": null,
@@ -596,7 +588,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 73,
+      "sort_order": 72,
       "title": "Ultimate Fantastic Four #54",
       "issue_type": "ongoing",
       "year": null,
@@ -604,7 +596,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 74,
+      "sort_order": 73,
       "title": "Ultimate Fantastic Four #55",
       "issue_type": "ongoing",
       "year": null,
@@ -612,7 +604,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 75,
+      "sort_order": 74,
       "title": "Ultimate Fantastic Four #56",
       "issue_type": "ongoing",
       "year": null,
@@ -620,7 +612,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 76,
+      "sort_order": 75,
       "title": "Ultimate Fantastic Four #57",
       "issue_type": "ongoing",
       "year": null,
@@ -628,7 +620,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 77,
+      "sort_order": 76,
       "title": "Ultimate X-Men/Fantastic Four Annual #1",
       "issue_type": "ongoing",
       "year": "2008",
@@ -636,7 +628,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 78,
+      "sort_order": 77,
       "title": "Ultimate Fantastic Four/X-Men Annual #1",
       "issue_type": "ongoing",
       "year": "2008",
@@ -644,7 +636,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 79,
+      "sort_order": 78,
       "title": "Ultimate Origins #1",
       "issue_type": "limited",
       "year": "2008",
@@ -652,7 +644,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 80,
+      "sort_order": 79,
       "title": "Ultimate Origins #2",
       "issue_type": "limited",
       "year": null,
@@ -660,7 +652,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 81,
+      "sort_order": 80,
       "title": "Ultimate Origins #3",
       "issue_type": "limited",
       "year": null,
@@ -668,7 +660,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 82,
+      "sort_order": 81,
       "title": "Ultimate Origins #4",
       "issue_type": "limited",
       "year": null,
@@ -676,7 +668,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 83,
+      "sort_order": 82,
       "title": "Ultimate Origins #5",
       "issue_type": "limited",
       "year": null,
@@ -684,7 +676,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 84,
+      "sort_order": 83,
       "title": "Ultimatum #1",
       "issue_type": "limited",
       "year": "2008",
@@ -692,7 +684,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 85,
+      "sort_order": 84,
       "title": "Ultimatum #2",
       "issue_type": "limited",
       "year": null,
@@ -700,7 +692,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 86,
+      "sort_order": 85,
       "title": "Ultimate Fantastic Four #58",
       "issue_type": "ongoing",
       "year": null,
@@ -708,7 +700,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 87,
+      "sort_order": 86,
       "title": "Ultimate Fantastic Four #59",
       "issue_type": "ongoing",
       "year": null,
@@ -716,7 +708,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 88,
+      "sort_order": 87,
       "title": "Ultimatum #3",
       "issue_type": "limited",
       "year": null,
@@ -724,7 +716,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 89,
+      "sort_order": 88,
       "title": "Ultimate Fantastic Four #60",
       "issue_type": "ongoing",
       "year": null,
@@ -732,7 +724,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 90,
+      "sort_order": 89,
       "title": "Ultimatum #4",
       "issue_type": "limited",
       "year": null,
@@ -740,7 +732,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 91,
+      "sort_order": 90,
       "title": "Ultimatum #5",
       "issue_type": "limited",
       "year": null,
@@ -748,7 +740,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 92,
+      "sort_order": 91,
       "title": "Ultimate Fantastic Four Requiem #1",
       "issue_type": "oneshot",
       "year": "2009",
@@ -756,7 +748,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 93,
+      "sort_order": 92,
       "title": "Ultimate Enemy #1",
       "issue_type": "limited",
       "year": "2010",
@@ -764,7 +756,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 94,
+      "sort_order": 93,
       "title": "Ultimate Enemy #2",
       "issue_type": "limited",
       "year": null,
@@ -772,7 +764,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 95,
+      "sort_order": 94,
       "title": "Ultimate Enemy #3",
       "issue_type": "limited",
       "year": null,
@@ -780,7 +772,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 96,
+      "sort_order": 95,
       "title": "Ultimate Enemy #4",
       "issue_type": "limited",
       "year": null,
@@ -788,7 +780,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 97,
+      "sort_order": 96,
       "title": "Ultimate Mystery #1",
       "issue_type": "limited",
       "year": "2010",
@@ -796,7 +788,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 98,
+      "sort_order": 97,
       "title": "Ultimate Mystery #2",
       "issue_type": "limited",
       "year": null,
@@ -804,7 +796,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 99,
+      "sort_order": 98,
       "title": "Ultimate Mystery #3",
       "issue_type": "limited",
       "year": null,
@@ -812,7 +804,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 100,
+      "sort_order": 99,
       "title": "Ultimate Mystery #4",
       "issue_type": "limited",
       "year": null,
@@ -820,7 +812,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 101,
+      "sort_order": 100,
       "title": "Ultimate Doom #1",
       "issue_type": "limited",
       "year": "2011",
@@ -828,7 +820,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 102,
+      "sort_order": 101,
       "title": "Ultimate Doom #2",
       "issue_type": "limited",
       "year": null,
@@ -836,7 +828,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 103,
+      "sort_order": 102,
       "title": "Ultimate Doom #3",
       "issue_type": "limited",
       "year": null,
@@ -844,7 +836,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 104,
+      "sort_order": 103,
       "title": "Ultimate Doom #4",
       "issue_type": "limited",
       "year": null,
@@ -852,7 +844,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 105,
+      "sort_order": 104,
       "title": "Ultimate Fallout #1",
       "issue_type": "limited",
       "year": "2011",
@@ -860,7 +852,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 106,
+      "sort_order": 105,
       "title": "Ultimate Fallout #2",
       "issue_type": "limited",
       "year": null,
@@ -868,7 +860,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 107,
+      "sort_order": 106,
       "title": "Ultimate Fallout #3",
       "issue_type": "limited",
       "year": null,
@@ -876,7 +868,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 108,
+      "sort_order": 107,
       "title": "Ultimate Fallout #4",
       "issue_type": "limited",
       "year": null,
@@ -884,7 +876,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 109,
+      "sort_order": 108,
       "title": "Ultimate Fallout #5",
       "issue_type": "limited",
       "year": null,
@@ -892,7 +884,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 110,
+      "sort_order": 109,
       "title": "Ultimate Fallout #6",
       "issue_type": "limited",
       "year": null,
@@ -900,7 +892,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 111,
+      "sort_order": 110,
       "title": "Ultimate Comics Ultimates #1",
       "issue_type": "ongoing",
       "year": "2011",
@@ -908,7 +900,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 112,
+      "sort_order": 111,
       "title": "Ultimate Comics Ultimates #2",
       "issue_type": "ongoing",
       "year": null,
@@ -916,7 +908,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 113,
+      "sort_order": 112,
       "title": "Ultimate Comics Ultimates #3",
       "issue_type": "ongoing",
       "year": null,
@@ -924,7 +916,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 114,
+      "sort_order": 113,
       "title": "Ultimate Comics Ultimates #4",
       "issue_type": "ongoing",
       "year": null,
@@ -932,7 +924,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 115,
+      "sort_order": 114,
       "title": "Ultimate Comics Ultimates #5",
       "issue_type": "ongoing",
       "year": null,
@@ -940,7 +932,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 116,
+      "sort_order": 115,
       "title": "Ultimate Comics Ultimates #6",
       "issue_type": "ongoing",
       "year": null,
@@ -948,7 +940,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 117,
+      "sort_order": 116,
       "title": "Ultimate Comics Ultimates #7",
       "issue_type": "ongoing",
       "year": null,
@@ -956,7 +948,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 118,
+      "sort_order": 117,
       "title": "Ultimate Comics Ultimates #8",
       "issue_type": "ongoing",
       "year": null,
@@ -964,7 +956,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 119,
+      "sort_order": 118,
       "title": "Ultimate Comics Ultimates #9",
       "issue_type": "ongoing",
       "year": null,
@@ -972,7 +964,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 120,
+      "sort_order": 119,
       "title": "Ultimate Comics Ultimates #10",
       "issue_type": "ongoing",
       "year": null,
@@ -980,7 +972,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 121,
+      "sort_order": 120,
       "title": "Ultimate Comics Ultimates #11",
       "issue_type": "ongoing",
       "year": null,
@@ -988,7 +980,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 122,
+      "sort_order": 121,
       "title": "Ultimate Comics Ultimates #12",
       "issue_type": "ongoing",
       "year": null,
@@ -996,7 +988,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 123,
+      "sort_order": 122,
       "title": "Ultimate Comics Ultimates #25",
       "issue_type": "ongoing",
       "year": null,
@@ -1004,7 +996,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 124,
+      "sort_order": 123,
       "title": "Ultimate Comics Ultimates #26",
       "issue_type": "ongoing",
       "year": null,
@@ -1012,7 +1004,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 125,
+      "sort_order": 124,
       "title": "Ultimate Comics Ultimates #27",
       "issue_type": "ongoing",
       "year": null,
@@ -1020,7 +1012,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 126,
+      "sort_order": 125,
       "title": "Ultimate Comics Ultimates #28",
       "issue_type": "ongoing",
       "year": null,
@@ -1028,7 +1020,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 127,
+      "sort_order": 126,
       "title": "Ultimate Comics Ultimates #29",
       "issue_type": "ongoing",
       "year": null,
@@ -1036,7 +1028,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 128,
+      "sort_order": 127,
       "title": "Ultimate Comics Ultimates #30",
       "issue_type": "ongoing",
       "year": null,
@@ -1044,7 +1036,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 129,
+      "sort_order": 128,
       "title": "Hunger #1",
       "issue_type": "limited",
       "year": "2013",
@@ -1052,7 +1044,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 130,
+      "sort_order": 129,
       "title": "Hunger #2",
       "issue_type": "limited",
       "year": null,
@@ -1060,7 +1052,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 131,
+      "sort_order": 130,
       "title": "Hunger #3",
       "issue_type": "limited",
       "year": null,
@@ -1068,7 +1060,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 132,
+      "sort_order": 131,
       "title": "Hunger #4",
       "issue_type": "limited",
       "year": null,
@@ -1076,7 +1068,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 133,
+      "sort_order": 132,
       "title": "Cataclysm #0.1",
       "issue_type": "oneshot",
       "year": "2013",
@@ -1084,7 +1076,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 134,
+      "sort_order": 133,
       "title": "Cataclysm: Ultimate Spider-Man #1",
       "issue_type": "limited",
       "year": "2013",
@@ -1092,7 +1084,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 135,
+      "sort_order": 134,
       "title": "Cataclysm: Ultimate X-Men #1",
       "issue_type": "limited",
       "year": "2013",
@@ -1100,7 +1092,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 136,
+      "sort_order": 135,
       "title": "Cataclysm: Ultimate X-Men #2",
       "issue_type": "limited",
       "year": null,
@@ -1108,7 +1100,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 137,
+      "sort_order": 136,
       "title": "Cataclysm: Ultimate X-Men #3",
       "issue_type": "limited",
       "year": null,
@@ -1116,7 +1108,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 138,
+      "sort_order": 137,
       "title": "Cataclysm: Ultimates’ Last Stand #1",
       "issue_type": "limited",
       "year": "2013",
@@ -1124,7 +1116,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 139,
+      "sort_order": 138,
       "title": "Cataclysm: Ultimates #1",
       "issue_type": "limited",
       "year": "2013",
@@ -1132,7 +1124,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 140,
+      "sort_order": 139,
       "title": "Cataclysm: Ultimates’ Last Stand #2",
       "issue_type": "limited",
       "year": null,
@@ -1140,7 +1132,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 141,
+      "sort_order": 140,
       "title": "Cataclysm: Ultimates #2",
       "issue_type": "limited",
       "year": null,
@@ -1148,7 +1140,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 142,
+      "sort_order": 141,
       "title": "Cataclysm: Ultimates #3",
       "issue_type": "limited",
       "year": null,
@@ -1156,7 +1148,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 143,
+      "sort_order": 142,
       "title": "Cataclysm: Ultimate Spider-Man #2",
       "issue_type": "limited",
       "year": null,
@@ -1164,7 +1156,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 144,
+      "sort_order": 143,
       "title": "Cataclysm: Ultimate Spider-Man #3",
       "issue_type": "limited",
       "year": null,
@@ -1172,7 +1164,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 145,
+      "sort_order": 144,
       "title": "Cataclysm: Ultimates’ Last Stand #3",
       "issue_type": "limited",
       "year": null,
@@ -1180,7 +1172,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 146,
+      "sort_order": 145,
       "title": "Cataclysm: Ultimates’ Last Stand #4",
       "issue_type": "limited",
       "year": null,
@@ -1188,7 +1180,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 147,
+      "sort_order": 146,
       "title": "Cataclysm: Ultimates’ Last Stand #5",
       "issue_type": "limited",
       "year": null,
@@ -1196,7 +1188,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 148,
+      "sort_order": 147,
       "title": "Survive #1",
       "issue_type": "oneshot",
       "year": "2014",
@@ -1204,7 +1196,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 149,
+      "sort_order": 148,
       "title": "Ultimate FF #1",
       "issue_type": "ongoing",
       "year": "2014",
@@ -1212,7 +1204,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 150,
+      "sort_order": 149,
       "title": "Ultimate FF #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1220,7 +1212,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 151,
+      "sort_order": 150,
       "title": "Ultimate FF #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1228,7 +1220,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 152,
+      "sort_order": 151,
       "title": "Ultimate FF #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1236,7 +1228,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 153,
+      "sort_order": 152,
       "title": "Ultimate FF #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1244,7 +1236,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 154,
+      "sort_order": 153,
       "title": "Ultimate FF #6",
       "issue_type": "ongoing",
       "year": null,
@@ -1252,7 +1244,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 155,
+      "sort_order": 154,
       "title": "Avengers Vol. 5 #41",
       "issue_type": "ongoing",
       "year": null,
@@ -1260,7 +1252,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 156,
+      "sort_order": 155,
       "title": "Avengers Vol. 5 #44",
       "issue_type": "ongoing",
       "year": null,
@@ -1268,7 +1260,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 157,
+      "sort_order": 156,
       "title": "Secret Wars #0",
       "issue_type": "limited",
       "year": "2015",
@@ -1276,7 +1268,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 158,
+      "sort_order": 157,
       "title": "Secret Wars #1",
       "issue_type": "limited",
       "year": null,
@@ -1284,7 +1276,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 159,
+      "sort_order": 158,
       "title": "Secret Wars #2",
       "issue_type": "limited",
       "year": null,
@@ -1292,7 +1284,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 160,
+      "sort_order": 159,
       "title": "Secret Wars #3",
       "issue_type": "limited",
       "year": null,
@@ -1300,7 +1292,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 161,
+      "sort_order": 160,
       "title": "Secret Wars #4",
       "issue_type": "limited",
       "year": null,
@@ -1308,7 +1300,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 162,
+      "sort_order": 161,
       "title": "Secret Wars #5",
       "issue_type": "limited",
       "year": null,
@@ -1316,7 +1308,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 163,
+      "sort_order": 162,
       "title": "Secret Wars #6",
       "issue_type": "limited",
       "year": null,
@@ -1324,7 +1316,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 164,
+      "sort_order": 163,
       "title": "Secret Wars #7",
       "issue_type": "limited",
       "year": null,
@@ -1332,7 +1324,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 165,
+      "sort_order": 164,
       "title": "Secret Wars #8",
       "issue_type": "limited",
       "year": null,
@@ -1340,7 +1332,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 166,
+      "sort_order": 165,
       "title": "Secret Wars #9",
       "issue_type": "limited",
       "year": null,
@@ -1348,7 +1340,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 167,
+      "sort_order": 166,
       "title": "Avengers Vol. 6 #0",
       "issue_type": "ongoing",
       "year": "2015",
@@ -1356,7 +1348,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 168,
+      "sort_order": 167,
       "title": "New Avengers Vol. 4 #1",
       "issue_type": "ongoing",
       "year": "2015",
@@ -1364,7 +1356,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 169,
+      "sort_order": 168,
       "title": "New Avengers Vol. 4 #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1372,7 +1364,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 170,
+      "sort_order": 169,
       "title": "New Avengers Vol. 4 #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1380,7 +1372,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 171,
+      "sort_order": 170,
       "title": "New Avengers Vol. 4 #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1388,7 +1380,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 172,
+      "sort_order": 171,
       "title": "New Avengers Vol. 4 #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1396,7 +1388,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 173,
+      "sort_order": 172,
       "title": "New Avengers Vol. 4 #13",
       "issue_type": "ongoing",
       "year": null,
@@ -1404,7 +1396,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 174,
+      "sort_order": 173,
       "title": "New Avengers Vol. 4 #14",
       "issue_type": "ongoing",
       "year": null,
@@ -1412,7 +1404,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 175,
+      "sort_order": 174,
       "title": "New Avengers Vol. 4 #15",
       "issue_type": "ongoing",
       "year": null,
@@ -1420,7 +1412,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 176,
+      "sort_order": 175,
       "title": "New Avengers Vol. 4 #16",
       "issue_type": "ongoing",
       "year": null,
@@ -1428,7 +1420,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 177,
+      "sort_order": 176,
       "title": "New Avengers Vol. 4 #17",
       "issue_type": "ongoing",
       "year": null,
@@ -1436,7 +1428,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 178,
+      "sort_order": 177,
       "title": "New Avengers Vol. 4 #18",
       "issue_type": "ongoing",
       "year": null,
@@ -1444,7 +1436,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 179,
+      "sort_order": 178,
       "title": "Ultimates 2 Vol. 2 #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1452,7 +1444,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 180,
+      "sort_order": 179,
       "title": "Ultimates 2 Vol. 2 #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1460,7 +1452,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 181,
+      "sort_order": 180,
       "title": "Ultimates 2 #100",
       "issue_type": "ongoing",
       "year": null,
@@ -1468,7 +1460,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 182,
+      "sort_order": 181,
       "title": "Venom Vol. 4 #7",
       "issue_type": "ongoing",
       "year": null,
@@ -1476,7 +1468,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 183,
+      "sort_order": 182,
       "title": "Venom Vol. 4 #8",
       "issue_type": "ongoing",
       "year": null,
@@ -1484,7 +1476,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 184,
+      "sort_order": 183,
       "title": "Venom Vol. 4 #9",
       "issue_type": "ongoing",
       "year": null,
@@ -1492,7 +1484,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 185,
+      "sort_order": 184,
       "title": "Venom Vol. 4 #10",
       "issue_type": "ongoing",
       "year": null,
@@ -1500,7 +1492,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 186,
+      "sort_order": 185,
       "title": "Venom Vol. 4 #11",
       "issue_type": "ongoing",
       "year": null,
@@ -1508,7 +1500,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 187,
+      "sort_order": 186,
       "title": "Venom Vol. 4 #12",
       "issue_type": "ongoing",
       "year": null,
@@ -1516,15 +1508,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 188,
-      "title": "Read Absolute Carnage here.",
-      "issue_type": "comment",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 189,
+      "sort_order": 187,
       "title": "Future Foundation #1",
       "issue_type": "ongoing",
       "year": "2019",
@@ -1532,7 +1516,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 190,
+      "sort_order": 188,
       "title": "Future Foundation #2",
       "issue_type": "ongoing",
       "year": null,
@@ -1540,7 +1524,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 191,
+      "sort_order": 189,
       "title": "Future Foundation #3",
       "issue_type": "ongoing",
       "year": null,
@@ -1548,7 +1532,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 192,
+      "sort_order": 190,
       "title": "Future Foundation #4",
       "issue_type": "ongoing",
       "year": null,
@@ -1556,7 +1540,7 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 193,
+      "sort_order": 191,
       "title": "Future Foundation #5",
       "issue_type": "ongoing",
       "year": null,
@@ -1564,17 +1548,9 @@
       "is_noncanon": 0
     },
     {
-      "sort_order": 194,
+      "sort_order": 192,
       "title": "Venom Vol. 4 #26",
       "issue_type": "ongoing",
-      "year": null,
-      "note": null,
-      "is_noncanon": 0
-    },
-    {
-      "sort_order": 195,
-      "title": "Read Ultimate Universe here.",
-      "issue_type": "comment",
       "year": null,
       "note": null,
       "is_noncanon": 0
