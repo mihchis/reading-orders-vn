@@ -1125,7 +1125,7 @@ window.grecaptcha = window.grecaptcha || {
         </div>
 
         <div style="font-size: 12px; color: #666; background: #f9f9f9; border: 1px dashed #ccc; border-radius: 6px; padding: 8px 12px; line-height: 1.4; margin-bottom: 18px;">
-          Liên kết sẽ được tự động lưu vào assets/issue_links.json để mọi độc giả đều đọc được khi deploy website.
+          Liên kết đọc sẽ được lưu trực tiếp vào Supabase Cloud và áp dụng tức thì cho mọi độc giả trên toàn bộ hệ thống.
         </div>
 
         <!-- Footer -->
@@ -2271,9 +2271,11 @@ window.grecaptcha = window.grecaptcha || {
           e.preventDefault();
           e.stopPropagation();
           const issueId = btn.dataset.issueId;
-          const current = savedLinks[issueId] || '';
           const card = btn.closest('.ro-tpb-card');
-          const tpbTitle = card?.dataset.tpbTitle || issueId;
+          const tpbTitle = (card?.dataset.tpbTitle || issueId).trim();
+          const existingTpbHref = card?.querySelector('.ro-tpb-read')?.getAttribute('href') || card?.querySelector('a.ro-tpb-read')?.href || '';
+          const allLinksCache = getCombinedIssueLinks(cleanPath);
+          const current = (existingTpbHref && existingTpbHref.trim()) || allLinksCache[issueId] || allLinksCache[tpbTitle] || savedLinks[issueId] || '';
 
           openIssueLinkModal(issueId, tpbTitle, current, (newLink) => {
             const cleanLink = (newLink || '').trim();
@@ -2506,9 +2508,11 @@ window.grecaptcha = window.grecaptcha || {
         e.preventDefault();
         e.stopPropagation();
         const issueId = btn.dataset.issueId;
-        const current = savedLinks[issueId] || '';
         const item = btn.closest('.ro-issue-item');
-        const issueTitle = item?.dataset.issueTitle || issueId;
+        const issueTitle = (item?.dataset.issueTitle || issueId).trim();
+        const existingHref = item?.querySelector('.ro-issue-read-link')?.getAttribute('href') || item?.querySelector('a.ro-issue-read-link')?.href || '';
+        const allLinksCache = getCombinedIssueLinks(cleanPath);
+        const current = (existingHref && existingHref.trim()) || allLinksCache[issueId] || allLinksCache[issueTitle] || savedLinks[issueId] || savedLinks[issueTitle] || '';
 
         openIssueLinkModal(issueId, issueTitle, current, (newLink) => {
           const cleanLink = (newLink || '').trim();
