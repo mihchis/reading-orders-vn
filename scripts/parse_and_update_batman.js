@@ -56,7 +56,7 @@ const normalized = content
   .replace(/<br\s*\/?>/gi, '\n');
 
 const rawLines = normalized.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-console.log(`Tìm thấy ${rawLines.length} dòng issues trong file HTML Batman.`);
+console.log(`Tìm thấy ${rawLines.length} dòng raw trong panel HTML.`);
 
 function decodeHtmlEntities(str) {
   if (!str) return str;
@@ -75,7 +75,6 @@ function translateBatmanNote(note) {
   if (!note) return null;
   const trimmed = note.trim();
 
-  // Bảng tra cứu dịch chính xác
   const map = {
     'First appearance of Batman': 'Xuất hiện lần đầu của Batman',
     'First appearance of Joker, Catwoman': 'Xuất hiện lần đầu của Joker, Catwoman',
@@ -105,43 +104,54 @@ function translateBatmanNote(note) {
   return trimmed;
 }
 
-function parseBatmanLine(rawLine, sortOrder) {
+// 6. Xử lý tách riêng Starting Points và Issues
+const startingPoints = [
+  {
+    title: 'Batman #404 (Thời kỳ Hiện đại - Năm Đầu Tiên / Year One)',
+    link: '#batman-404'
+  },
+  {
+    title: 'Batman: Face the Face (Thời kỳ Hậu Khủng hoảng Vô hạn)',
+    link: '#facetheface'
+  }
+];
+
+const issues = [];
+let pendingAnchorId = null;
+let currentSortOrder = 1;
+
+for (const rawLine of rawLines) {
+  // Bỏ qua dòng Alternate Starting Point (đã đưa vào startingPoints)
+  if (rawLine.includes('Alternate Starting Point')) {
+    continue;
+  }
+
+  // Nếu dòng chỉ là thẻ anchor đứng độc lập, lưu lại để gán vào issue tiếp theo
+  const standaloneAnchorMatch = rawLine.match(/^<a\s+id="([^"]+)"[^>]*><\/a>$/i);
+  if (standaloneAnchorMatch) {
+    pendingAnchorId = standaloneAnchorMatch[1];
+    continue;
+  }
+
+  // Nếu dòng chứa thẻ anchor bên trong
+  let anchorId = pendingAnchorId;
+  pendingAnchorId = null;
+  const inlineAnchorMatch = rawLine.match(/<a\s+id="([^"]+)"[^>]*>/i);
+  if (inlineAnchorMatch) {
+    anchorId = inlineAnchorMatch[1];
+  }
+
   let issueType = 'ongoing';
   let isNoncanon = 0;
   let title = '';
   let year = null;
   let note = null;
   let link = null;
-  let anchorId = null;
 
-  // Kiểm tra nếu dòng có thẻ <a id="..."></a>
-  const anchorMatch = rawLine.match(/<a\s+id="([^"]+)"[^>]*>/i);
-  if (anchorMatch) {
-    anchorId = anchorMatch[1];
-  }
-
-  // 1. Kiểm tra Alternate Starting Point
-  // Ví dụ: <span style="color: #0000ff;"><strong>Alternate Starting Point: </strong></span> <a class="dc-class" href="#batman-404">Batman #404</a>
-  if (rawLine.includes('Alternate Starting Point')) {
-    const aMatch = rawLine.match(/<a\s+[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i);
-    const targetHref = aMatch ? aMatch[1].trim() : '#';
-    const targetText = aMatch ? decodeHtmlEntities(aMatch[2].replace(/<[^>]+>/g, '').trim()) : 'Batman #404';
-
-    return {
-      sort_order: sortOrder,
-      title: targetText,
-      issue_type: 'starting_point',
-      year: null,
-      note: null,
-      is_noncanon: 0,
-      link: targetHref
-    };
-  }
-
-  // 2. Kiểm tra Event Tie-in Reading Order Link
-  // Ví dụ: <strong><span style="color: #ff0000;">Read <a class="dc-class" href="https://comicbookreadingorders.com/dc/events/crisis-on-infinite-earths-reading-order/">Crisis on Infinite Earths</a> here.</span></strong>
+  // Kiểm tra Event Tie-in Reading Order Link
+  // Ví dụ: <strong><span style="color: #ff0000;">Read <a class="dc-class" href="...">Crisis on Infinite Earths</a> here.</span></strong>
   const eventLinkMatch = rawLine.match(/<a\s+[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i);
-  if (eventLinkMatch) {
+  if (eventLinkMatch && rawLine.toLowerCase().includes('read ')) {
     const rawHref = eventLinkMatch[1].trim();
     let internalLink = rawHref.replace(/^https?:\/\/comicbookreadingorders\.com/i, '');
     if (!internalLink.startsWith('/') && !internalLink.startsWith('#')) internalLink = '/' + internalLink;
@@ -149,8 +159,8 @@ function parseBatmanLine(rawLine, sortOrder) {
 
     const eventName = decodeHtmlEntities(eventLinkMatch[2].replace(/<[^>]+>/g, '').trim());
 
-    return {
-      sort_order: sortOrder,
+    const item = {
+      sort_order: currentSortOrder++,
       title: eventName,
       issue_type: 'event_link',
       year: null,
@@ -158,19 +168,21 @@ function parseBatmanLine(rawLine, sortOrder) {
       is_noncanon: 0,
       link: internalLink
     };
+    if (anchorId) item.anchor_id = anchorId;
+    issues.push(item);
+    continue;
   }
 
-  // 3. Phân loại màu sắc
+  // Phân loại màu sắc
   if (rawLine.includes('#008000')) {
     issueType = 'limited';
   } else if (rawLine.includes('#ff0000')) {
     issueType = 'oneshot';
   }
 
-  // 4. Tách note sau dấu '-' hoặc '–'
+  // Tách note sau dấu '-' hoặc '–'
   let cleanLine = decodeHtmlEntities(rawLine.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 
-  // Chuẩn hóa dấu gạch ngang
   let dashIndex = cleanLine.indexOf(' - ');
   if (dashIndex === -1) {
     dashIndex = cleanLine.indexOf(' – ');
@@ -182,7 +194,7 @@ function parseBatmanLine(rawLine, sortOrder) {
     mainPart = cleanLine.slice(0, dashIndex).trim();
   }
 
-  // 5. Tách năm phát hành: (YYYY)
+  // Tách năm phát hành: (YYYY)
   const yearMatch = mainPart.match(/\((\d{4}(?:-\d{4})?)\)/);
   if (yearMatch) {
     year = yearMatch[1];
@@ -191,23 +203,20 @@ function parseBatmanLine(rawLine, sortOrder) {
 
   title = mainPart.trim();
 
-  const res = {
-    sort_order: sortOrder,
+  // Bỏ qua nếu title rỗng (tránh dòng rác)
+  if (!title) continue;
+
+  const item = {
+    sort_order: currentSortOrder++,
     title,
     issue_type: issueType,
     year,
     note: translateBatmanNote(note),
     is_noncanon: isNoncanon
   };
-
-  if (anchorId) {
-    res.anchor_id = anchorId;
-  }
-
-  return res;
+  if (anchorId) item.anchor_id = anchorId;
+  issues.push(item);
 }
-
-const parsedIssues = rawLines.map((l, idx) => parseBatmanLine(l, idx + 1));
 
 const updatedOrder = {
   ...oldJson,
@@ -234,19 +243,19 @@ const updatedOrder = {
   comic_issues_count: counterNumber,
   comments_count: oldJson.comments_count || 0,
   updated_at: new Date().toISOString(),
-  issues: parsedIssues
+  starting_points: startingPoints,
+  issues: issues
 };
 
-console.log('--- Batman Metadata Preview (Vietnamese) ---');
+console.log('--- Batman Result ---');
 console.log('Title:', updatedOrder.title);
-console.log('Description:', updatedOrder.description);
-console.log('First Appearance:', updatedOrder.first_appearance);
-console.log('Creators:', updatedOrder.creators);
-console.log('Powers:', updatedOrder.powers);
-console.log('Total Issues Counter:', updatedOrder.total_issues);
-console.log('Total Issues in List:', updatedOrder.issues.length);
-console.log('Sample translated notes:');
-updatedOrder.issues.filter(i => i.note).slice(0, 10).forEach(i => console.log(`- ${i.title}: ${i.note}`));
+console.log('Starting Points count:', updatedOrder.starting_points.length);
+console.log('First 2 actual issues (Tập 1 và Tập 2 chuẩn):');
+console.log(' 1.', updatedOrder.issues[0]);
+console.log(' 2.', updatedOrder.issues[1]);
+console.log('Total Actual Issues in List:', updatedOrder.issues.length);
+console.log('Anchors found in issues:');
+updatedOrder.issues.filter(i => i.anchor_id).forEach(i => console.log(`- Anchor #${i.anchor_id} -> ${i.title}`));
 
 // Ghi file JSON vào archive/data_backup/orders/
 fs.writeFileSync(jsonPath, JSON.stringify(updatedOrder, null, 2), 'utf8');
