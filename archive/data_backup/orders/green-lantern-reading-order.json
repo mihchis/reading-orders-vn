@@ -7,7 +7,7 @@
   "category_slug": "characters",
   "category_name": "Nhân vật",
   "url": "/dc/characters/green-lantern-reading-order/",
-  "description": "Green Lantern is an intergalactic police officer and member of the Green Lantern Corps. The weapon he wields is a power ring that translates his ideas into green energy using the strength of his willpower.",
+  "description": "Green Lantern là một cảnh sát liên ngân hà và là thành viên ưu tú của Quân đoàn Green Lantern (Green Lantern Corps). Vũ khí mà anh sử dụng là một chiếc nhẫn quyền năng có khả năng chuyển hóa ý tưởng và sự sáng tạo thành các thực thể năng lượng xanh lục thông qua sức mạnh của ý chí kiên định.",
   "year_published": "",
   "featured_characters": "",
   "previous_event_title": "",
@@ -24,7 +24,7 @@
       "title": "DC: The New Frontier #1",
       "issue_type": "limited",
       "year": "2004",
-      "note": "Alternate Universe",
+      "note": "Vũ trụ song song",
       "is_noncanon": 0
     },
     {
@@ -208,7 +208,7 @@
       "title": "Green Lantern Vol. 2 #188",
       "issue_type": "ongoing",
       "year": null,
-      "note": "Read the back-up story “Mogo Doesn’t Socialize”.",
+      "note": "Đọc ngoại truyện \"Mogo Doesn’t Socialize\"",
       "is_noncanon": 0
     },
     {
@@ -225,7 +225,7 @@
       "title": "Tales of the Green Lanterns Annual #2",
       "issue_type": "ongoing",
       "year": null,
-      "note": "Read the story “Tygers”.",
+      "note": "Đọc câu chuyện \"Tygers\"",
       "is_noncanon": 0
     },
     {
@@ -233,7 +233,7 @@
       "title": "Green Lantern: Emerald Dawn #1",
       "issue_type": "limited",
       "year": "1989",
-      "note": "The Post-Crisis origin of Hal Jordan.",
+      "note": "Nguồn gốc Hal Jordan thời kỳ Hậu Khủng Hoảng (Post-Crisis)",
       "is_noncanon": 0
     },
     {
@@ -329,7 +329,7 @@
       "title": "Green Lantern Vol. 4 #29",
       "issue_type": "ongoing",
       "year": null,
-      "note": "Secret Origin. Updated origin for Hal Jordan.",
+      "note": "Nguồn gốc Bí mật (Secret Origin). Cập nhật nguồn gốc cho Hal Jordan",
       "is_noncanon": 0
     },
     {
@@ -563,7 +563,7 @@
       "title": "Green Lantern: Willworld #1",
       "issue_type": "oneshot",
       "year": "2001",
-      "note": "Alternate Universe",
+      "note": "Vũ trụ song song",
       "is_noncanon": 0
     },
     {
@@ -4318,6 +4318,6 @@
   ],
   "first_appearance": "All-American Comics #16 (1940)",
   "creators": "Bill Finger, Martin Nodell",
-  "powers": "Power Ring, Indomitable Will",
-  "updated_at": "2026-10-02T14:44:43.979Z"
+  "powers": "Nhẫn quyền năng (Power Ring), Ý chí kiên định (Indomitable Will)",
+  "updated_at": "2026-10-02T14:50:14.285Z"
 }

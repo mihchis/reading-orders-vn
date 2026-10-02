@@ -315,33 +315,33 @@ function renderMetaInfo(order: ReadingOrderData): string {
   const parts: string[] = [];
 
   if (order.first_appearance) {
-    parts.push(`<strong>First Appearance</strong>:&nbsp; ${escapeHtml(order.first_appearance)}`);
+    parts.push(`<strong>Xuất hiện lần đầu</strong>:&nbsp; ${escapeHtml(order.first_appearance)}`);
   }
   if (order.creators) {
-    parts.push(`<strong>Creators</strong>:&nbsp; ${escapeHtml(order.creators)}`);
+    parts.push(`<strong>Tác giả</strong>:&nbsp; ${escapeHtml(order.creators)}`);
   }
   if (order.powers) {
-    parts.push(`<strong>Powers</strong>:&nbsp; ${escapeHtml(order.powers)}`);
+    parts.push(`<strong>Năng lực</strong>:&nbsp; ${escapeHtml(order.powers)}`);
   }
   if (order.year_published) {
-    parts.push(`<strong>Year Published</strong>:&nbsp; ${escapeHtml(order.year_published)}`);
+    parts.push(`<strong>Năm xuất bản</strong>:&nbsp; ${escapeHtml(order.year_published)}`);
   }
   if (order.featured_characters) {
-    parts.push(`<strong>Featured Characters</strong>:&nbsp; ${escapeHtml(order.featured_characters)}`);
+    parts.push(`<strong>Nhân vật nổi bật</strong>:&nbsp; ${escapeHtml(order.featured_characters)}`);
   }
   if (order.previous_event_title) {
     const prevSlug = order.previous_event_slug;
     const prevUrl = prevSlug
       ? (prevSlug.startsWith('/') ? prevSlug : (prevSlug.endsWith('/') ? `../${prevSlug}` : `../${prevSlug}/`))
       : '#';
-    parts.push(`<strong>Previous Event</strong>:&nbsp; <a href="${prevUrl}">${escapeHtml(order.previous_event_title)}</a>`);
+    parts.push(`<strong>Sự kiện trước</strong>:&nbsp; <a href="${prevUrl}">${escapeHtml(order.previous_event_title)}</a>`);
   }
   if (order.next_event_title) {
     const nextSlug = order.next_event_slug;
     const nextUrl = nextSlug
       ? (nextSlug.startsWith('/') ? nextSlug : (nextSlug.endsWith('/') ? `../${nextSlug}` : `../${nextSlug}/`))
       : '#';
-    parts.push(`<strong>Next Event</strong>:&nbsp; <a href="${nextUrl}">${escapeHtml(order.next_event_title)}</a>`);
+    parts.push(`<strong>Sự kiện tiếp theo</strong>:&nbsp; <a href="${nextUrl}">${escapeHtml(order.next_event_title)}</a>`);
   }
 
   return parts.join('<br />\n');
@@ -385,8 +385,12 @@ function renderIssueItem(issue: ReadingOrderIssue): string {
 
   if (type === 'event_link' || issue.link) {
     const targetUrl = issue.link || '#';
-    const eventName = title.replace(/^Read\s+/i, '').replace(/\s+here\.?$/i, '');
-    return `<p><strong><span style="color: #ff0000;">Read <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(eventName)}</a> here.</span></strong></p>`;
+    const eventName = title
+      .replace(/^Read\s+/i, '')
+      .replace(/\s+here\.?$/i, '')
+      .replace(/^Đọc\s+(sự kiện\s+)?/i, '')
+      .replace(/\s+tại đây\.?$/i, '');
+    return `<p><strong><span style="color: #ff0000;">Đọc sự kiện <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(eventName)}</a> tại đây.</span></strong></p>`;
   }
 
   if (type === 'phase') {

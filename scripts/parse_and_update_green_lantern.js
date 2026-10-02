@@ -13,23 +13,19 @@ const oldJson = fs.existsSync(jsonPath) ? JSON.parse(fs.readFileSync(jsonPath, '
 const h2Match = html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
 const title = h2Match ? h2Match[1].replace(/<[^>]+>/g, '').trim() : (oldJson.title || 'Green Lantern');
 
-// 2. Description
-const descMatch = html.match(/<p style="text-align: justify;">([\s\S]*?)<\/p>/i);
-const description = descMatch ? descMatch[1].replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim() : oldJson.description;
+// 2. Description - Việt hóa chuẩn văn phong siêu anh hùng
+const descriptionVi = 'Green Lantern là một cảnh sát liên ngân hà và là thành viên ưu tú của Quân đoàn Green Lantern (Green Lantern Corps). Vũ khí mà anh sử dụng là một chiếc nhẫn quyền năng có khả năng chuyển hóa ý tưởng và sự sáng tạo thành các thực thể năng lượng xanh lục thông qua sức mạnh của ý chí kiên định.';
 
 // 3. Meta: First Appearance, Creators, Powers
 let first_appearance = '';
 let creators = '';
-let powers = '';
+let powers = 'Nhẫn quyền năng (Power Ring), Ý chí kiên định (Indomitable Will)';
 
 const faMatch = html.match(/<strong>First Appearance:<\/strong>\s*([^<\n\r]+)/i);
 if (faMatch) first_appearance = faMatch[1].replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 
 const crMatch = html.match(/<strong>Creators:<\/strong>\s*([^<\n\r]+)/i);
 if (crMatch) creators = crMatch[1].replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
-
-const pwMatch = html.match(/<strong>Powers:<\/strong>\s*([^<\n\r]+)/i);
-if (pwMatch) powers = pwMatch[1].replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 
 // 4. Counter
 const counterMatch = html.match(/data-x-element-counter="([^"]*)"/i);
@@ -72,6 +68,28 @@ function decodeHtmlEntities(str) {
     .replace(/&#039;/g, "'")
     .replace(/&nbsp;/g, ' ')
     .replace(/\u00a0/g, ' ');
+}
+
+// Hàm Việt hóa ghi chú
+function translateNote(note) {
+  if (!note) return null;
+  const trimmed = note.trim();
+  if (/^Alternate Universe$/i.test(trimmed)) {
+    return 'Vũ trụ song song';
+  }
+  if (/^The Post-Crisis origin of Hal Jordan\.?$/i.test(trimmed)) {
+    return 'Nguồn gốc Hal Jordan thời kỳ Hậu Khủng Hoảng (Post-Crisis)';
+  }
+  if (/^Secret Origin\.\s*Updated origin for Hal Jordan\.?$/i.test(trimmed)) {
+    return 'Nguồn gốc Bí mật (Secret Origin). Cập nhật nguồn gốc cho Hal Jordan';
+  }
+  if (/^Read the back-up story\s*[“"']Mogo Doesn’t Socialize[”"']\.?$/i.test(trimmed)) {
+    return 'Đọc ngoại truyện "Mogo Doesn’t Socialize"';
+  }
+  if (/^Read the story\s*[“"']Tygers[”"']\.?$/i.test(trimmed)) {
+    return 'Đọc câu chuyện "Tygers"';
+  }
+  return trimmed;
 }
 
 function parseIssueLine(rawLine, sortOrder) {
@@ -138,7 +156,7 @@ function parseIssueLine(rawLine, sortOrder) {
     title,
     issue_type: issueType,
     year,
-    note: note || null,
+    note: translateNote(note),
     is_noncanon: isNoncanon
   };
 }
@@ -155,7 +173,7 @@ const updatedOrder = {
   category_slug: oldJson.category_slug || 'characters',
   category_name: oldJson.category_name || 'Nhân vật',
   url: '/dc/characters/green-lantern-reading-order/',
-  description: description,
+  description: descriptionVi,
   first_appearance: first_appearance,
   creators: creators,
   powers: powers,
@@ -173,7 +191,7 @@ const updatedOrder = {
   issues: parsedIssues
 };
 
-console.log('--- Metadata Preview ---');
+console.log('--- Metadata Preview (Vietnamese) ---');
 console.log('Title:', updatedOrder.title);
 console.log('Description:', updatedOrder.description);
 console.log('First Appearance:', updatedOrder.first_appearance);
@@ -181,14 +199,23 @@ console.log('Creators:', updatedOrder.creators);
 console.log('Powers:', updatedOrder.powers);
 console.log('Total Issues Counter:', updatedOrder.total_issues);
 console.log('Total Issues in List:', updatedOrder.issues.length);
-console.log('Event links count:', updatedOrder.issues.filter(i => i.issue_type === 'event_link').length);
+console.log('Sample translated notes:');
+updatedOrder.issues.filter(i => i.note).forEach(i => console.log(`- ${i.title}: ${i.note}`));
 
 // Ghi file JSON vào archive/data_backup/orders/
 fs.writeFileSync(jsonPath, JSON.stringify(updatedOrder, null, 2), 'utf8');
 console.log(`Đã ghi thành công: ${jsonPath}`);
 
-// Nếu thư mục data/orders/ tồn tại, ghi cả vào đó
-if (fs.existsSync(path.dirname(dataOrdersPath))) {
-  fs.writeFileSync(dataOrdersPath, JSON.stringify(updatedOrder, null, 2), 'utf8');
-  console.log(`Đã ghi thành công: ${dataOrdersPath}`);
+// Ghi vào data/catalog.json
+const catalogPath = path.join(rootDir, 'data', 'catalog.json');
+if (fs.existsSync(catalogPath)) {
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+  const cIdx = catalog.findIndex(x => x.slug === 'green-lantern' || x.slug === 'green-lantern-reading-order');
+  if (cIdx !== -1) {
+    catalog[cIdx].description = descriptionVi;
+    catalog[cIdx].total_issues = counterNumber;
+    catalog[cIdx].comic_issues_count = counterNumber;
+    fs.writeFileSync(catalogPath, JSON.stringify(catalog, null, 2), 'utf8');
+    console.log('Đã cập nhật data/catalog.json!');
+  }
 }
