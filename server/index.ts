@@ -11,7 +11,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import app from './app';
 import { renderReadingOrderHtml, reloadRendererCache } from './services/readingOrderRenderer';
-reloadRendererCache();
+reloadRendererCache(); // reload latest json data
 
 const PORT = process.env.PORT || 3000;
 

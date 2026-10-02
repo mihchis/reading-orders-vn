@@ -424,30 +424,19 @@ function renderIssueItem(issue: ReadingOrderIssue): string {
   return `<p>${anchorTag}${escapeHtml(title)}${yearStr}${noteStr}</p>`;
 }
 
-function renderStartingPointsBox(points?: Array<{ title: string; link: string }>): string {
+function renderStartingPoints(points?: Array<{ title: string; link: string }>): string {
   if (!points || points.length === 0) return '';
-  const items = points.map(p => {
-    return `<li style="margin-bottom: 4px;"><strong>Điểm khởi đầu thay thế:</strong> <a class="dc-class" href="${escapeHtml(p.link)}" style="color: #0284c7; font-weight: 600;">${escapeHtml(p.title)}</a></li>`;
-  }).join('\n');
-
-  return `
-    <div class="ro-starting-points-box" style="margin-bottom: 24px; padding: 14px 18px; background: rgba(2, 132, 199, 0.06); border-left: 4px solid #0284c7; border-radius: 4px;">
-      <div style="font-weight: 600; font-size: 14px; color: #0369a1; margin-bottom: 8px;">
-        💡 Gợi ý điểm khởi đầu đọc cho độc giả mới:
-      </div>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.8;">
-        ${items}
-      </ul>
-    </div>
-  `;
+  return points.map(p => {
+    return `<p><span style="color: #0000ff;"><strong>Điểm khởi đầu thay thế: </strong></span> <a class="dc-class" href="${escapeHtml(p.link)}">${escapeHtml(p.title)}</a></p>`;
+  }).join('\n') + '\n';
 }
 
 function renderSingleIssuesPanel(issues: ReadingOrderIssue[], startingPoints?: Array<{ title: string; link: string }>): string {
-  const startingBox = renderStartingPointsBox(startingPoints);
+  const startingHtml = renderStartingPoints(startingPoints);
 
   if (!issues || issues.length === 0) {
     return `
-      ${startingBox}
+      ${startingHtml}
       <div class="x-text x-content ro-tab-content">
         <div class="ro-coming-soon-card" style="text-align: center; padding: 28px 20px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; margin: 16px 0;">
           <p style="font-size: 14px; color: #64748b; margin: 0;">Danh sách tập truyện đang được biên tập và cập nhật sớm nhất.</p>
@@ -456,7 +445,7 @@ function renderSingleIssuesPanel(issues: ReadingOrderIssue[], startingPoints?: A
     `;
   }
 
-  return (startingBox ? startingBox + '\n' : '') + issues.map(renderIssueItem).join('\n');
+  return (startingHtml ? startingHtml : '') + issues.map(renderIssueItem).join('\n');
 }
 
 function renderEssentialPanel(essentialIssues: ReadingOrderIssue[] | string[]): string {

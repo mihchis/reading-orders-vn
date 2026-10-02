@@ -107,11 +107,11 @@ function translateBatmanNote(note) {
 // 6. Xử lý tách riêng Starting Points và Issues
 const startingPoints = [
   {
-    title: 'Batman #404 (Thời kỳ Hiện đại - Năm Đầu Tiên / Year One)',
+    title: 'Batman #404',
     link: '#batman-404'
   },
   {
-    title: 'Batman: Face the Face (Thời kỳ Hậu Khủng hoảng Vô hạn)',
+    title: 'Batman: Face the Face',
     link: '#facetheface'
   }
 ];
