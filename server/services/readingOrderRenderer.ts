@@ -42,6 +42,9 @@ export interface ReadingOrderData {
   category_name?: string;
   url?: string;
   description?: string;
+  first_appearance?: string;
+  creators?: string;
+  powers?: string;
   year_published?: string;
   featured_characters?: string;
   previous_event_title?: string;
@@ -311,6 +314,15 @@ function renderBreadcrumbs(order: ReadingOrderData): string {
 function renderMetaInfo(order: ReadingOrderData): string {
   const parts: string[] = [];
 
+  if (order.first_appearance) {
+    parts.push(`<strong>First Appearance</strong>:&nbsp; ${escapeHtml(order.first_appearance)}`);
+  }
+  if (order.creators) {
+    parts.push(`<strong>Creators</strong>:&nbsp; ${escapeHtml(order.creators)}`);
+  }
+  if (order.powers) {
+    parts.push(`<strong>Powers</strong>:&nbsp; ${escapeHtml(order.powers)}`);
+  }
   if (order.year_published) {
     parts.push(`<strong>Year Published</strong>:&nbsp; ${escapeHtml(order.year_published)}`);
   }
@@ -356,7 +368,7 @@ function renderCounterBlock(totalIssues: number): string {
       <div class="x-container max width">
         <div class="x-column x-sm x-1-1">
           <div class="x-counter" data-x-element-counter="{&quot;to&quot;:&quot;${totalIssues}&quot;,&quot;speed&quot;:&quot;1.5s&quot;,&quot;commaSeparatedDecimal&quot;:false}">
-            <div class="x-counter-number-wrap"><span class="x-counter-number">0</span></div>
+            <div class="x-counter-number-wrap"><span class="x-counter-number">${totalIssues}</span></div>
             <div class="x-counter-after">TẬP TRUYỆN</div>
           </div>
         </div>
@@ -370,6 +382,12 @@ function renderIssueItem(issue: ReadingOrderIssue): string {
   const title = issue.title.trim();
   const yearStr = issue.year && String(issue.year).trim() ? ` (${String(issue.year).trim()})` : '';
   const noteStr = issue.note && String(issue.note).trim() ? ` <span style="color: #0000ff; font-style: italic;">(${escapeHtml(String(issue.note).trim())})</span>` : '';
+
+  if (type === 'event_link' || issue.link) {
+    const targetUrl = issue.link || '#';
+    const eventName = title.replace(/^Read\s+/i, '').replace(/\s+here\.?$/i, '');
+    return `<p><strong><span style="color: #ff0000;">Read <a class="dc-class" href="${escapeHtml(targetUrl)}">${escapeHtml(eventName)}</a> here.</span></strong></p>`;
+  }
 
   if (type === 'phase') {
     const phaseNote = issue.note && String(issue.note).trim() ? `<br /><span style="color: #64748b; font-size: 12.5px; font-style: italic;">${escapeHtml(String(issue.note).trim())}</span>` : '';

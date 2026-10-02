@@ -7,7 +7,7 @@
   "category_slug": "characters",
   "category_name": "Nhân vật",
   "url": "/dc/characters/green-lantern-reading-order/",
-  "description": "",
+  "description": "Green Lantern is an intergalactic police officer and member of the Green Lantern Corps. The weapon he wields is a power ring that translates his ideas into green energy using the strength of his willpower.",
   "year_published": "",
   "featured_characters": "",
   "previous_event_title": "",
@@ -15,8 +15,8 @@
   "next_event_title": "",
   "next_event_slug": "",
   "cover_image": "",
-  "total_issues": 535,
-  "comic_issues_count": 535,
+  "total_issues": 519,
+  "comic_issues_count": 519,
   "comments_count": 0,
   "issues": [
     {
@@ -213,11 +213,12 @@
     },
     {
       "sort_order": 25,
-      "title": "Read Crisis on Infinite Earths here.",
-      "issue_type": "oneshot",
+      "title": "Crisis on Infinite Earths",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/crisis-on-infinite-earths-reading-order/"
     },
     {
       "sort_order": 26,
@@ -328,7 +329,7 @@
       "title": "Green Lantern Vol. 4 #29",
       "issue_type": "ongoing",
       "year": null,
-      "note": "Secret Origin.  Updated origin for Hal Jordan.",
+      "note": "Secret Origin. Updated origin for Hal Jordan.",
       "is_noncanon": 0
     },
     {
@@ -541,19 +542,21 @@
     },
     {
       "sort_order": 66,
-      "title": "Read Final Night here.",
-      "issue_type": "oneshot",
+      "title": "Final Night",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/final-night-reading-order/"
     },
     {
       "sort_order": 67,
-      "title": "Read Day of Judgment here.",
-      "issue_type": "oneshot",
+      "title": "Day of Judgment",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/day-of-judgment-reading-order/"
     },
     {
       "sort_order": 68,
@@ -1029,11 +1032,12 @@
     },
     {
       "sort_order": 127,
-      "title": "Read Sinestro Corps War here.",
-      "issue_type": "oneshot",
+      "title": "Sinestro Corps War",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/sinestro-corps-war-reading-order/"
     },
     {
       "sort_order": 128,
@@ -1285,27 +1289,30 @@
     },
     {
       "sort_order": 159,
-      "title": "Read Blackest Night here.",
-      "issue_type": "oneshot",
+      "title": "Blackest Night",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/blackest-night-reading-order/"
     },
     {
       "sort_order": 160,
-      "title": "Read Brightest Day here.",
-      "issue_type": "oneshot",
+      "title": "Brightest Day",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/brightest-day-reading-order/"
     },
     {
       "sort_order": 161,
-      "title": "Read War of the Green Lanterns here.",
-      "issue_type": "oneshot",
+      "title": "War of the Green Lanterns",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/war-of-the-green-lanterns-reading-order/"
     },
     {
       "sort_order": 162,
@@ -1349,11 +1356,12 @@
     },
     {
       "sort_order": 167,
-      "title": "Read Flashpoint here.",
-      "issue_type": "oneshot",
+      "title": "Flashpoint",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/flashpoint-reading-order/"
     },
     {
       "sort_order": 168,
@@ -1741,19 +1749,21 @@
     },
     {
       "sort_order": 216,
-      "title": "Read Rise of the Third Army here.",
-      "issue_type": "oneshot",
+      "title": "Rise of the Third Army",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/rise-of-the-third-army-reading-order/"
     },
     {
       "sort_order": 217,
-      "title": "Read Wrath of the First Lantern here.",
-      "issue_type": "oneshot",
+      "title": "Wrath of the First Lantern",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/wrath-of-the-first-lantern-reading-order/"
     },
     {
       "sort_order": 218,
@@ -1853,11 +1863,12 @@
     },
     {
       "sort_order": 230,
-      "title": "Read Green Lantern: Lights Out here.",
-      "issue_type": "oneshot",
+      "title": "Green Lantern: Lights Out",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/green-lantern-lights-out-reading-order/"
     },
     {
       "sort_order": 231,
@@ -1981,11 +1992,12 @@
     },
     {
       "sort_order": 246,
-      "title": "Read Red Daughter of Krypton here.",
-      "issue_type": "oneshot",
+      "title": "Red Daughter of Krypton",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/red-daughter-of-krypton-reading-order/"
     },
     {
       "sort_order": 247,
@@ -2069,11 +2081,12 @@
     },
     {
       "sort_order": 257,
-      "title": "Read Green Lantern: Uprising here.",
-      "issue_type": "oneshot",
+      "title": "Green Lantern: Uprising",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/green-lantern-uprising-reading-order/"
     },
     {
       "sort_order": 258,
@@ -2141,11 +2154,12 @@
     },
     {
       "sort_order": 266,
-      "title": "Read Green Lantern: Godhead here.",
-      "issue_type": "oneshot",
+      "title": "Green Lantern: Godhead",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/green-lantern-godhead-reading-order/"
     },
     {
       "sort_order": 267,
@@ -3165,11 +3179,12 @@
     },
     {
       "sort_order": 394,
-      "title": "Read Dark Nights: Metal here.",
-      "issue_type": "oneshot",
+      "title": "Dark Nights: Metal",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/dark-nights-metal-reading-order/"
     },
     {
       "sort_order": 395,
@@ -3701,11 +3716,12 @@
     },
     {
       "sort_order": 461,
-      "title": "Read Dark Nights: Death Metal here.",
-      "issue_type": "oneshot",
+      "title": "Dark Nights: Death Metal",
+      "issue_type": "event_link",
       "year": null,
       "note": null,
-      "is_noncanon": 0
+      "is_noncanon": 0,
+      "link": "/dc/events/dark-nights-death-metal-reading-order/"
     },
     {
       "sort_order": 462,
@@ -4299,5 +4315,9 @@
       "note": null,
       "is_noncanon": 0
     }
-  ]
+  ],
+  "first_appearance": "All-American Comics #16 (1940)",
+  "creators": "Bill Finger, Martin Nodell",
+  "powers": "Power Ring, Indomitable Will",
+  "updated_at": "2026-10-02T14:44:43.979Z"
 }
