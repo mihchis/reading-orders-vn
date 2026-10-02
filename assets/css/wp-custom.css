@@ -32,3 +32,13 @@ Click the help icon above to learn more.
 .desktop .sub-menu li>a {
     font-size: 14px;
 }
+
+/* --- Global Comic Background Pattern (Chuẩn phong cách ComicBookReadingOrders gốc) --- */
+body, .x-root {
+    background-color: #f7f7f7 !important;
+    background-image: url('/assets/images/cbro.background.newest.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
