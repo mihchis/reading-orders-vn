@@ -32,6 +32,7 @@ window.grecaptcha = window.grecaptcha || {
       ['applyVietnameseSynopsis', applyVietnameseSynopsis],
       ['setupIssueTracker', setupIssueTracker],
       ['setupKeyboardShortcuts', setupKeyboardShortcuts],
+      ['setupSearch', setupSearch],
       ['applyVietnameseNavigationHints', applyVietnameseNavigationHints]
     ];
 
@@ -875,14 +876,19 @@ window.grecaptcha = window.grecaptcha || {
   function isIssueLine(str) {
     if (!str) return false;
 
-    // Kiểm tra trực tiếp trên toàn bộ chuỗi gốc: nếu là Điểm khởi đầu thay thế / Alternate Starting Point
+    // Kiểm tra trực tiếp trên toàn bộ chuỗi gốc: nếu là Điểm khởi đầu thay thế / Bảng màu chú giải
     const fullRawText = str.replace(/<[^>]+>/g, '').toLowerCase().trim();
     if (
       fullRawText.includes('alternate starting point') ||
       fullRawText.includes('điểm khởi đầu thay thế') ||
       fullRawText.includes('điểm bắt đầu thay thế') ||
       fullRawText.includes('khởi đầu thay thế') ||
-      str.includes('ro-starting-point')
+      str.includes('ro-starting-point') ||
+      str.includes('ro-legend') ||
+      fullRawText.includes('bộ truyện dài kỳ') ||
+      fullRawText.includes('bộ truyện ngắn kỳ') ||
+      fullRawText.includes('tập đơn (one-shot') ||
+      fullRawText.includes('tập đơn')
     ) {
       return false;
     }
@@ -903,10 +909,10 @@ window.grecaptcha = window.grecaptcha || {
     // 2. Loại trừ các mô tả / chú thích / metadata / hướng dẫn đọc dựa trên PHẦN TÊN TẬP THỰC TẾ
     const excludes = [
       'year published', 'featured characters', 'previous event', 'next event',
-      'ongoing series', 'limited series', 'one-shots', 'comments',
+      'ongoing series', 'limited series', 'one-shots', 'one-shot', 'comments',
       'black entries', 'green entries', 'red entries', 'blue is for',
       'năm phát hành', 'nhân vật xuất hiện', 'sự kiện trước', 'sự kiện tiếp theo',
-      'đầu truyện dài kỳ', 'truyện ngắn tập', 'tập truyện đơn lẻ', 'ghi chú', 'chú thích',
+      'đầu truyện dài kỳ', 'truyện ngắn tập', 'tập truyện đơn lẻ', 'tập đơn', 'bộ truyện dài kỳ', 'bộ truyện ngắn kỳ', 'ghi chú', 'chú thích',
       'chữ đen:', 'chữ xanh lá:', 'chữ đỏ:', 'chữ xanh dương:',
       'publisher:', 'publication date:', 'genre:', 'creator:', 'writer:',
       'nhà xuất bản:', 'thời gian xuất bản:', 'thể loại:', 'tác giả:',
@@ -1928,7 +1934,12 @@ window.grecaptcha = window.grecaptcha || {
     const issueParagraphs = [];
 
     pElements.forEach(p => {
-      if (p.classList.contains('ro-starting-point') || /điểm (?:khởi|bắt) đầu thay thế/i.test(p.textContent)) {
+      if (
+        p.classList.contains('ro-starting-point') ||
+        p.classList.contains('ro-legend-text') ||
+        p.closest('.ro-shared-legend, .ro-legend-clean, [class*="legend"], #x-section-4') ||
+        /điểm (?:khởi|bắt) đầu thay thế/i.test(p.textContent)
+      ) {
         return;
       }
       const lines = p.innerHTML.split(/<br\s*\/?>/i);
@@ -2004,10 +2015,11 @@ window.grecaptcha = window.grecaptcha || {
       adminBanner.querySelector('#ro-admin-edit-ro-btn')?.addEventListener('click', () => {
         openReadingOrderEditorModal(cleanPath);
       });
-      if (mainContainer) {
+      const insertTarget = firstTransformedP ? (firstTransformedP.closest('.x-accordion') || firstTransformedP) : null;
+      if (mainContainer && !mainContainer.classList.contains('cs-content') && !mainContainer.classList.contains('entry-content')) {
         mainContainer.insertBefore(adminBanner, mainContainer.firstChild);
-      } else if (firstTransformedP) {
-        firstTransformedP.parentNode.insertBefore(adminBanner, firstTransformedP);
+      } else if (insertTarget) {
+        insertTarget.parentNode.insertBefore(adminBanner, insertTarget);
       }
     }
 
@@ -2052,10 +2064,11 @@ window.grecaptcha = window.grecaptcha || {
       `;
     }
 
+    const trackerInsertTarget = firstTransformedP ? (firstTransformedP.closest('.x-accordion') || firstTransformedP) : null;
     if (mainContainer && !mainContainer.classList.contains('cs-content') && !mainContainer.classList.contains('entry-content')) {
       mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
-    } else if (firstTransformedP) {
-      firstTransformedP.parentNode.insertBefore(trackerCard, firstTransformedP);
+    } else if (trackerInsertTarget) {
+      trackerInsertTarget.parentNode.insertBefore(trackerCard, trackerInsertTarget);
     } else if (mainContainer) {
       mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     }
@@ -2467,6 +2480,45 @@ window.grecaptcha = window.grecaptcha || {
       } else if (/tpbs?|trade paperbacks?|tập tổng hợp/i.test(txt)) {
         tpbTab = btn;
       }
+
+      btn.addEventListener('click', () => {
+        const tabList = btn.closest('.x-tabs-list, [role="tablist"], ul') || btn.parentElement;
+        const container = btn.closest('.x-tabs') || document;
+        if (tabList) {
+          tabList.querySelectorAll('button, [role="tab"]').forEach(b => {
+            b.classList.remove('x-active');
+            b.setAttribute('aria-selected', 'false');
+          });
+        }
+        btn.classList.add('x-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const pId = btn.getAttribute('aria-controls') || (btn.id ? btn.id.replace('tab-', 'panel-') : null);
+        const panels = Array.from(container.querySelectorAll('.x-tabs-panels > .x-tabs-panel, .x-tabs-panel'));
+        if (pId) {
+          panels.forEach(p => {
+            if (p.id === pId) {
+              p.classList.add('x-active');
+              p.setAttribute('aria-hidden', 'false');
+            } else {
+              p.classList.remove('x-active');
+              p.setAttribute('aria-hidden', 'true');
+            }
+          });
+        } else if (tabList) {
+          const allTabs = Array.from(tabList.querySelectorAll('button, [role="tab"]'));
+          const index = allTabs.indexOf(btn);
+          panels.forEach((p, idx) => {
+            if (idx === index) {
+              p.classList.add('x-active');
+              p.setAttribute('aria-hidden', 'false');
+            } else {
+              p.classList.remove('x-active');
+              p.setAttribute('aria-hidden', 'true');
+            }
+          });
+        }
+      });
     });
 
     let singlePanel = null;
@@ -2693,6 +2745,391 @@ window.grecaptcha = window.grecaptcha || {
         closeDashboardModal();
       }
     });
+  }
+
+  /* =========================================================
+     7b. HỆ THỐNG TÌM KIẾM TOÀN DIỆN (FULL-TEXT LIVE SEARCH SYSTEM)
+     ========================================================= */
+  let searchIndexPromise = null;
+  let activeSearchItemIndex = -1;
+
+  function fetchSearchIndex() {
+    if (!searchIndexPromise) {
+      searchIndexPromise = fetch('/search_index.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Cannot load search_index.json');
+          return res.json();
+        })
+        .then(data => {
+          searchData = Array.isArray(data) ? data : [];
+          isSearchLoaded = true;
+          return searchData;
+        })
+        .catch(err => {
+          console.warn('[Search] Lỗi nạp search_index.json:', err);
+          searchIndexPromise = null;
+          return [];
+        });
+    }
+    return searchIndexPromise;
+  }
+
+  function normalizeSearchText(str) {
+    return (str || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s]/gi, ' ')
+      .trim();
+  }
+
+  function highlightMatches(text, queryWords) {
+    if (!queryWords || queryWords.length === 0) return escapeHtml(text);
+    let safe = escapeHtml(text);
+    queryWords.forEach(word => {
+      if (!word || word.length < 2) return;
+      const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      safe = safe.replace(regex, '<mark>$1</mark>');
+    });
+    return safe;
+  }
+
+  function filterReadingOrders(query, data) {
+    const rawQ = query.trim();
+    if (!rawQ) return [];
+
+    const normQ = normalizeSearchText(rawQ);
+    const qTokens = normQ.split(/\s+/).filter(Boolean);
+    if (qTokens.length === 0) return [];
+
+    const matches = [];
+
+    for (const item of data) {
+      const rawTitle = item.title || '';
+      const cleanTitle = rawTitle.replace(/^Thứ Tự Đọc\s+/i, '').trim();
+      const normTitle = normalizeSearchText(cleanTitle);
+      const normSlug = normalizeSearchText(item.slug || '');
+      const normUniv = normalizeSearchText(item.universe || '');
+      const normCat = normalizeSearchText(item.category || '');
+
+      const fullHaystack = `${normTitle} ${normSlug} ${normUniv} ${normCat}`;
+      const matchesAll = qTokens.every(tok => fullHaystack.includes(tok));
+
+      if (matchesAll) {
+        let score = 0;
+        if (normTitle.startsWith(normQ)) score += 100;
+        else if (normTitle.includes(normQ)) score += 50;
+        if (normSlug.includes(normQ)) score += 30;
+        if (normUniv.includes(normQ)) score += 10;
+
+        matches.push({
+          item,
+          cleanTitle,
+          score
+        });
+      }
+    }
+
+    matches.sort((a, b) => b.score - a.score);
+    return matches.map(m => ({ ...m.item, cleanTitle: m.cleanTitle }));
+  }
+
+  function setupSearch() {
+    const overlay = document.querySelector('.x-searchform-overlay');
+    if (!overlay) return;
+
+    const form = overlay.querySelector('#searchform');
+    const input = overlay.querySelector('#s');
+    if (!form || !input) return;
+
+    // 1. Thêm nút đóng overlay dạng tròn đẹp mắt ở góc trên bên phải
+    let closeBtn = document.getElementById('ro-search-close-btn');
+    if (!closeBtn) {
+      closeBtn = document.createElement('button');
+      closeBtn.id = 'ro-search-close-btn';
+      closeBtn.type = 'button';
+      closeBtn.setAttribute('aria-label', 'Đóng tìm kiếm');
+      closeBtn.innerHTML = '&times;';
+      closeBtn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeSearchOverlay();
+      };
+      overlay.appendChild(closeBtn);
+    }
+
+    // 2. Tạo khung kết quả tìm kiếm trực tiếp dưới ô nhập liệu
+    let resultsContainer = document.getElementById('ro-search-results');
+    if (!resultsContainer) {
+      resultsContainer = document.createElement('div');
+      resultsContainer.id = 'ro-search-results';
+      resultsContainer.style.display = 'none';
+      const container = overlay.querySelector('.x-container') || overlay.querySelector('.x-searchform-overlay-inner');
+      if (container) {
+        container.appendChild(resultsContainer);
+      }
+    }
+
+    function closeSearchOverlay() {
+      overlay.classList.remove('in');
+      if (resultsContainer) resultsContainer.style.display = 'none';
+      activeSearchItemIndex = -1;
+    }
+
+    function renderResults(results, query) {
+      if (!resultsContainer) return;
+      activeSearchItemIndex = -1;
+
+      if (!query || !query.trim()) {
+        resultsContainer.style.display = 'none';
+        resultsContainer.innerHTML = '';
+        return;
+      }
+
+      resultsContainer.style.display = 'block';
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="ro-search-empty">
+            <div class="ro-search-empty-icon"><i class="x-framework-icon x-icon-search" data-x-icon-s="&#xf002;"></i></div>
+            <p>Không tìm thấy thứ tự đọc nào phù hợp với từ khóa <strong>"${escapeHtml(query)}"</strong>.</p>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">Gợi ý: Thử tìm theo tên siêu anh hùng (Batman, Spider-Man, Flash...) hoặc tên sự kiện (Absolute, Crisis, Secret Wars...).</p>
+          </div>
+        `;
+        return;
+      }
+
+      const qWords = query.trim().split(/\s+/);
+      const itemsHtml = results.slice(0, 40).map((item, idx) => {
+        const u = (item.universe || '').toLowerCase();
+        let badgeClass = 'ro-badge-other';
+        let badgeText = item.universe || 'Khác';
+        if (u.includes('marvel')) {
+          badgeClass = 'ro-badge-marvel';
+          badgeText = 'Marvel';
+        } else if (u.includes('dc')) {
+          badgeClass = 'ro-badge-dc';
+          badgeText = 'DC';
+        }
+
+        const highlightedTitle = highlightMatches(item.cleanTitle || item.title, qWords);
+        const catText = item.category ? `<span class="ro-search-cat">${escapeHtml(item.category)}</span>` : '';
+        const yearText = item.year ? `<span class="ro-search-year">(${escapeHtml(item.year)})</span>` : '';
+
+        return `
+          <li>
+            <a href="${item.url}" class="ro-search-item" data-index="${idx}">
+              <div class="ro-search-item-left">
+                <span class="ro-search-badge ${badgeClass}">${badgeText}</span>
+                <span class="ro-search-item-title">${highlightedTitle}</span>
+              </div>
+              <div class="ro-search-item-right">
+                ${catText}
+                ${yearText}
+              </div>
+            </a>
+          </li>
+        `;
+      }).join('');
+
+      resultsContainer.innerHTML = `
+        <div class="ro-search-header">
+          <span>Kết quả tìm kiếm cho: <strong>"${escapeHtml(query)}"</strong></span>
+          <span class="ro-search-header-count">${results.length} kết quả</span>
+        </div>
+        <ul class="ro-search-list">
+          ${itemsHtml}
+        </ul>
+        <div class="ro-search-hint">
+          <span>Dùng phím <kbd style="background:#e2e8f0;padding:1px 4px;border-radius:3px;">▲</kbd> <kbd style="background:#e2e8f0;padding:1px 4px;border-radius:3px;">▼</kbd> để chọn</span>
+          <span>Nhấn <kbd style="background:#e2e8f0;padding:1px 4px;border-radius:3px;">Enter</kbd> để mở truyện</span>
+        </div>
+      `;
+
+      // Click vào item
+      resultsContainer.querySelectorAll('.ro-search-item').forEach(link => {
+        link.addEventListener('click', () => {
+          closeSearchOverlay();
+        });
+      });
+    }
+
+    let searchDebounceTimer = null;
+    function triggerLiveSearch(q) {
+      clearTimeout(searchDebounceTimer);
+      if (!q || !q.trim()) {
+        renderResults([], '');
+        return;
+      }
+
+      searchDebounceTimer = setTimeout(() => {
+        fetchSearchIndex().then(data => {
+          const results = filterReadingOrders(q, data);
+          renderResults(results, q);
+        });
+      }, 100);
+    }
+
+    // Lắng nghe sự kiện gõ phím trên ô tìm kiếm
+    input.addEventListener('input', (e) => {
+      triggerLiveSearch(e.target.value);
+    });
+
+    // Điều hướng phím mũi tên và Enter
+    input.addEventListener('keydown', (e) => {
+      const items = resultsContainer ? Array.from(resultsContainer.querySelectorAll('.ro-search-item')) : [];
+      if (items.length === 0) {
+        if (e.key === 'Escape') closeSearchOverlay();
+        return;
+      }
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeSearchItemIndex = (activeSearchItemIndex + 1) % items.length;
+        updateActiveItem(items);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeSearchItemIndex = (activeSearchItemIndex - 1 + items.length) % items.length;
+        updateActiveItem(items);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (activeSearchItemIndex >= 0 && items[activeSearchItemIndex]) {
+          items[activeSearchItemIndex].click();
+        } else if (items[0]) {
+          items[0].click();
+        }
+      } else if (e.key === 'Escape') {
+        closeSearchOverlay();
+      }
+    });
+
+    function updateActiveItem(items) {
+      items.forEach((item, idx) => {
+        if (idx === activeSearchItemIndex) {
+          item.classList.add('ro-search-item-active');
+          item.scrollIntoView({ block: 'nearest' });
+        } else {
+          item.classList.remove('ro-search-item-active');
+        }
+      });
+    }
+
+    // Chặn submit form mặc định làm reload trang
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (!q) return;
+
+      const items = resultsContainer ? Array.from(resultsContainer.querySelectorAll('.ro-search-item')) : [];
+      if (items.length > 0) {
+        if (activeSearchItemIndex >= 0 && items[activeSearchItemIndex]) {
+          items[activeSearchItemIndex].click();
+          return;
+        } else {
+          items[0].click();
+          return;
+        }
+      }
+
+      // Nếu chưa có kết quả, chạy tìm kiếm ngay lập tức
+      fetchSearchIndex().then(data => {
+        const results = filterReadingOrders(q, data);
+        renderResults(results, q);
+        const newItems = resultsContainer ? Array.from(resultsContainer.querySelectorAll('.ro-search-item')) : [];
+        if (newItems.length > 0) {
+          newItems[0].click();
+        }
+      });
+    });
+
+    // 3. Xử lý khi người dùng truy cập trực tiếp URL có tham số tìm kiếm (như /?s=Absolute+)
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('s') || urlParams.get('q');
+    if (searchParam && searchParam.trim()) {
+      const queryText = searchParam.trim();
+      input.value = queryText;
+      overlay.classList.add('in');
+      fetchSearchIndex().then(data => {
+        const results = filterReadingOrders(queryText, data);
+        renderResults(results, queryText);
+
+        // Hiển thị thêm khối kết quả ngay trên trang chính nếu đang ở trang chủ hoặc bất kỳ trang nào
+        renderInPageSearchResults(queryText, results);
+      });
+    }
+
+    // Nạp trước dữ liệu index trong nền khi người dùng di chuột vào nút tìm kiếm
+    document.querySelectorAll('.x-btn-navbar-search').forEach(btn => {
+      btn.addEventListener('mouseenter', () => fetchSearchIndex(), { once: true });
+      btn.addEventListener('focus', () => fetchSearchIndex(), { once: true });
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          fetchSearchIndex();
+          input.focus();
+        }, 150);
+      });
+    });
+  }
+
+  function renderInPageSearchResults(query, results) {
+    const mainContent = document.querySelector('#x-main .entry-content, #x-main') || document.querySelector('.entry-content');
+    if (!mainContent) return;
+
+    let existingSection = document.getElementById('ro-page-search-results-section');
+    if (existingSection) existingSection.remove();
+
+    const section = document.createElement('div');
+    section.id = 'ro-page-search-results-section';
+
+    if (results.length === 0) {
+      section.innerHTML = `
+        <div class="ro-page-search-title">
+          <i class="x-framework-icon x-icon-search" data-x-icon-s="&#xf002;"></i>
+          <span>Kết quả tìm kiếm cho: <strong>"${escapeHtml(query)}"</strong> (0 kết quả)</span>
+        </div>
+        <p style="color: #64748b; font-size: 15px;">Không tìm thấy thứ tự đọc nào phù hợp. Vui lòng thử từ khóa khác.</p>
+      `;
+    } else {
+      const qWords = query.trim().split(/\s+/);
+      const cardsHtml = results.map(item => {
+        const u = (item.universe || '').toLowerCase();
+        let badgeClass = 'ro-badge-other';
+        let badgeText = item.universe || 'Khác';
+        if (u.includes('marvel')) {
+          badgeClass = 'ro-badge-marvel';
+          badgeText = 'Marvel';
+        } else if (u.includes('dc')) {
+          badgeClass = 'ro-badge-dc';
+          badgeText = 'DC';
+        }
+
+        const title = highlightMatches(item.cleanTitle || item.title, qWords);
+        return `
+          <a href="${item.url}" class="ro-page-search-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span class="ro-search-badge ${badgeClass}">${badgeText}</span>
+                <span class="ro-search-cat">${escapeHtml(item.category || 'Thứ tự đọc')}</span>
+              </div>
+              <h4 style="margin:0;font-size:16px;font-weight:700;color:#0f172a;line-height:1.4;">${title}</h4>
+            </div>
+            ${item.year ? `<div style="margin-top:10px;font-size:12px;color:#64748b;">Năm xuất bản: ${escapeHtml(item.year)}</div>` : ''}
+          </a>
+        `;
+      }).join('');
+
+      section.innerHTML = `
+        <div class="ro-page-search-title">
+          <i class="x-framework-icon x-icon-search" data-x-icon-s="&#xf002;"></i>
+          <span>Kết quả tìm kiếm cho: <strong>"${escapeHtml(query)}"</strong> (${results.length} kết quả)</span>
+        </div>
+        <div class="ro-page-search-grid">
+          ${cardsHtml}
+        </div>
+      `;
+    }
+
+    mainContent.insertBefore(section, mainContent.firstChild);
   }
 
   function applyVietnameseNavigationHints() {
