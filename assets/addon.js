@@ -29,6 +29,7 @@ window.grecaptcha = window.grecaptcha || {
       ['createAuthModal', createAuthModal],
       ['updateUserBar', updateUserBar],
       ['applyLocalization', applyLocalization],
+      ['setupCounterAnimation', setupCounterAnimation],
       ['applyVietnameseSynopsis', applyVietnameseSynopsis],
       ['setupIssueTracker', setupIssueTracker],
       ['setupKeyboardShortcuts', setupKeyboardShortcuts],
@@ -2073,6 +2074,22 @@ window.grecaptcha = window.grecaptcha || {
       mainContainer.insertBefore(trackerCard, mainContainer.firstChild);
     }
 
+    // Đồng bộ số tập đếm được với bộ đếm x-counter trên đầu trang & kích hoạt hiệu ứng đếm số
+    if (issueGlobalIndex > 0) {
+      const topCounters = document.querySelectorAll('.x-counter, [data-x-element-counter]');
+      topCounters.forEach(counterEl => {
+        counterEl.dataset.targetValue = issueGlobalIndex;
+        if (typeof counterEl._roStartRolling === 'function') {
+          counterEl._roStartRolling(issueGlobalIndex, 1400);
+        } else {
+          const topCounterEl = counterEl.querySelector('.number, .x-counter-number, [class*="number"]');
+          if (topCounterEl) {
+            topCounterEl.textContent = issueGlobalIndex >= 1000 ? issueGlobalIndex.toLocaleString('en-US') : issueGlobalIndex;
+          }
+        }
+      });
+    }
+
   function _loadProgressFromApi(orderId) {
     const token = localStorage.getItem('ro_token') || localStorage.getItem('admin_token') || '';
     if (!token) return Promise.resolve({});
@@ -3311,6 +3328,107 @@ window.grecaptcha = window.grecaptcha || {
 
     // 10. Việt hóa các ghi chú, lưu ý và chú thích sự kiện (Notes & Annotations)
     applyVietnameseReadingOrderNotes();
+  }
+
+  /* =========================================================
+     BỘ ĐẾM SỐ TẬP TRUYỆN CÓ HIỆU ỨNG CUỘN (COUNTER ANIMATION)
+     ========================================================= */
+  function setupCounterAnimation() {
+    const counterElements = document.querySelectorAll('.x-counter, [data-x-element-counter]');
+    if (!counterElements.length) return;
+
+    counterElements.forEach(counterEl => {
+      if (counterEl.getAttribute('data-counter-initialized') === 'true') return;
+      counterEl.setAttribute('data-counter-initialized', 'true');
+
+      const numEl = counterEl.querySelector('.number, .x-counter-number, [class*="number"]');
+      if (!numEl) return;
+
+      // Đảm bảo chữ bên dưới là tiếng Việt chuẩn
+      const textBelow = counterEl.querySelector('.text-below, .x-counter-after');
+      if (textBelow && (!textBelow.textContent.trim() || /issues?/i.test(textBelow.textContent.trim()))) {
+        textBelow.textContent = 'TẬP TRUYỆN';
+      }
+
+      // Đọc target & duration từ data attribute hoặc text có sẵn
+      let targetNum = 0;
+      let duration = 1400; // ms mặc định
+      const rawData = counterEl.getAttribute('data-x-element-counter');
+      if (rawData) {
+        try {
+          const parsed = JSON.parse(rawData);
+          if (parsed.to) targetNum = parseInt(parsed.to.toString().replace(/,/g, ''), 10) || 0;
+          if (parsed.speed) {
+            const sp = parsed.speed.toString().toLowerCase().trim();
+            if (sp.endsWith('ms')) duration = parseFloat(sp) || 1400;
+            else if (sp.endsWith('s')) duration = (parseFloat(sp) || 1.4) * 1000;
+          }
+        } catch (e) {}
+      }
+
+      if (!targetNum) {
+        const textVal = (numEl.textContent || '').trim().replace(/,/g, '');
+        targetNum = parseInt(textVal, 10) || 0;
+      }
+
+      counterEl.dataset.targetValue = targetNum;
+
+      function formatNum(val) {
+        return val >= 1000 ? val.toLocaleString('en-US') : String(val);
+      }
+
+      let activeRaf = null;
+      function startRolling(target, dur) {
+        if (typeof target !== 'number' || isNaN(target) || target <= 0) return;
+        if (activeRaf) cancelAnimationFrame(activeRaf);
+
+        counterEl._roHasAnimated = true;
+        const startTime = performance.now();
+        const startVal = 0;
+        const totalDuration = dur || duration || 1400;
+        numEl.textContent = '0';
+        counterEl.classList.remove('ro-counter-finished');
+
+        function tick(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / totalDuration, 1);
+          // Ease-out cubic: mượt mà, tự nhiên
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(startVal + (target - startVal) * ease);
+          numEl.textContent = formatNum(current);
+
+          if (progress < 1) {
+            activeRaf = requestAnimationFrame(tick);
+          } else {
+            numEl.textContent = formatNum(target);
+            activeRaf = null;
+            counterEl.classList.add('ro-counter-finished');
+          }
+        }
+        activeRaf = requestAnimationFrame(tick);
+      }
+
+      // Lưu hàm trigger để setupSingleIssuesTracker có thể gọi lại với số tập chính xác
+      counterEl._roStartRolling = startRolling;
+
+      // Kích hoạt khi cuộn đến (IntersectionObserver)
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              observer.unobserve(entry.target);
+              if (!counterEl._roHasAnimated) {
+                const finalTarget = parseInt(counterEl.dataset.targetValue, 10) || targetNum;
+                startRolling(finalTarget, duration);
+              }
+            }
+          });
+        }, { threshold: 0.1 });
+        observer.observe(counterEl);
+      } else {
+        startRolling(targetNum, duration);
+      }
+    });
   }
 
   const EXACT_READING_NOTES = {

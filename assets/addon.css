@@ -2184,5 +2184,27 @@ body .x-scroll-top i {
   box-shadow: 0 6px 16px rgba(0, 102, 170, 0.08);
 }
 
+/* =========================================================
+   BỘ ĐẾM SỐ TẬP TRUYỆN (X-COUNTER ANIMATION & POLISH)
+   ========================================================= */
+.x-counter .number,
+.x-counter .x-counter-number {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.x-counter.ro-counter-finished .number,
+.x-counter.ro-counter-finished .x-counter-number {
+  animation: roCounterPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes roCounterPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
 
 
